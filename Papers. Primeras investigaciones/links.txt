@@ -1,0 +1,15 @@
+
+Papers sobre posicionamiento
+https://proximi.io/accurate-indoor-positioning-bluetooth-beacons/
+
+https://locatify.com/blog/indoor-positioning-systems-ble-beacons/
+
+https://stackoverflow.com/questions/39088632/indoor-positioning-and-ibeacons
+
+Cosas sobre bluetooth y android
+
+https://developer.android.com/reference/android/bluetooth/BluetoothManager
+
+https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/bluetooth/BluetoothManager.java
+
+https://www.programcreek.com/java-api-examples/?class=android.bluetooth.BluetoothManager&method=getAdapter
