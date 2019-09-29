@@ -13,3 +13,5 @@ https://developer.android.com/reference/android/bluetooth/BluetoothManager
 https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/bluetooth/BluetoothManager.java
 
 https://www.programcreek.com/java-api-examples/?class=android.bluetooth.BluetoothManager&method=getAdapter
+
+* Guía android: https://developer.android.com/guide/topics/connectivity/bluetooth?hl=es-419#java
