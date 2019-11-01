@@ -14,3 +14,66 @@ Es posible citar más de una fuente, como por ejemplo \citep{latexCompanion,LaTe
 Después, latex se ocupa de rellenar la sección de bibliografía con las entradas \textbf{que hayan sido citadas} (es decir, no con todas las entradas que hay en el .bib, sino sólo con aquellas que se hayan citado en alguna parte del texto).
 
 Bibtex es un programa separado de latex, pdflatex o cualquier otra cosa que se use para compilar los .tex, de manera que para que se rellene correctamente la sección de bibliografía es necesario compilar primero el trabajo (a veces es necesario compilarlo dos veces), compilar después con bibtex, y volver a compilar otra vez el trabajo (de nuevo, puede ser necesario compilarlo dos veces). 
+
+-------------------------------------------------------------------------------
+
+\section{Balizas Bluetooth}
+
+Los beacons o balizas bluetooth son dispositivos que emiten señales de radio en un rango de 10 a 30 metros en interiores. Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon estándar. El posicionamiento en interiores de Apple se basa en el uso de estos dispositivos, puesto que no usa Wi-Fi para determinar la posición.
+
+Google no se quedó muy atrás y en 2015 sacó Eddystone, un protocolo para el uso de estas balizas bluetooth. (Añadir más info, vamos a usar esto??)
+
+En el caso de nuestro estudio, la navegación por interiores, estas balizas son muy útiles. Basta con colocarlas en distintas posiciones de un edificio y tener una aplicación que interprete las señales que recibe. No obstante, hay que tener en cuenta que la disposición de los beacons y la cantidad necesaria para mapear un área dependerá del edificio concreto.
+
+
+Pero la navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
+
+------------------------------------
+
+(Ver los links: 
+
+Dan un poco de info sobre posicionamiento en interiores:
+
+
+https://www.infsoft.com/technology/sensors/bluetooth-low-energy-beacons
+
+https://www.infsoft.com/solutions/indoor-navigation
+
+https://www.infsoft.com/software/administration/beacon-management
+
+Habla de los beacons:
+$ https://www.youtube.com/watch?v=0HKjEPh_Pu8 $
+
+Ejemplo de traqueo de gente y dispositivos usando beacons 
+
+$ https://www.youtube.com/watch?v=at_UCO_cWAk $
+
+APPI de Eddystone:
+https://github.com/google/eddystone
+
+https://developers.google.com/nearby/connections/overview
+
+https://developers.google.com/beacons/get-started
+
+Beacon SDK for Android: https://github.com/helpscout/beacon-android-sdk-sample
+
+API para Beacons: https://github.com/google/beacon-platform/tree/master/samples/python
+
+ANDROID beacon library: https://altbeacon.github.io/android-beacon-library/samples.html
+
+Video explicativo beacons en español MUY INTERESANTE, es lo que buscamos ahora: https://www.youtube.com/watch?v=NJ6dgsnhQ6M
+
+)
+
+Cosas que incluir aquí:
+
+\begin{itemize}
+	\item API de Eddystone.
+	\item API de Android.
+	\item Explicación de que en función de distintas señales (normalmente 3) se hace el posicionamiento.
+	\item hay que buscar lo del mapa, pasarlo a grafo o lo que sea.
+\end{itemize}
+
+
+
+ 
