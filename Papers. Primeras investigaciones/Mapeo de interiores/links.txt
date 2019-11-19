@@ -1,2 +1,10 @@
-Ejemplo con maps
+Ejemplo con maps:
 https://docs.mapbox.com/android/maps/examples/floor-plan/ 
+Principales formatos de OpenStreetMap:
+https://wiki.openstreetmap.org/wiki/OSM_file_formats
+OpenStreetMap XML (formato nativo):
+https://docs.safe.com/fme/html/FME_Desktop_Documentation/FME_ReadersWriters/osm/osm.htm
+https://wiki.openstreetmap.org/wiki/ES:Elementos
+https://wiki.openstreetmap.org/wiki/OSM_XML
+https://wiki.openstreetmap.org/wiki/ES:C%C3%B3mo_mapear_un
+https://wiki.openstreetmap.org/wiki/Map_Features
