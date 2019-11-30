@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">miniapp</string>
+    <string name="button_start_searching">START SEARCHING BEACONS</string>
+    <string name="start_scan_button">START SCANNING</string>
+    <string name="stop_scan_button">STOP SCANNING</string>
+
+    <string name="FAR_button">FAR</string>
+    <string name="IMMEDIATE_button">IMMEDIATE</string>
+    <string name="NEAR_button">NEAR</string>
+    <string name="UNKNOWN_button">UNKNOWN</string>
+    <string name="beacon_text">beacon</string>
+
+
+</resources>
