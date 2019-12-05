@@ -43,7 +43,23 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
     Button nearButton;
     Button unknownButton;
 
+    Button farButton2;
+    Button immediateButton2;
+    Button nearButton2;
+    Button unknownButton2;
+
+    Button farButton3;
+    Button immediateButton3;
+    Button nearButton3;
+    Button unknownButton3;
+
     EditText editText;
+    EditText editText2;
+    EditText editText3;
+
+    //Array de botones
+    Button buttons_array[];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +84,38 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         unknownButton =  findViewById(R.id.UNKNOWN_button);
 
         editText = findViewById(R.id.beacon_text);
+
+        farButton2 =  findViewById(R.id.FAR_button2);
+        immediateButton2 =  findViewById(R.id.IMMEDIATE_button2);
+        nearButton2 =  findViewById(R.id.NEAR_button2);
+        unknownButton2 =  findViewById(R.id.UNKNOWN_button2);
+
+        editText2 = findViewById(R.id.beacon_text2);
+
+        farButton3 =  findViewById(R.id.FAR_button3);
+        immediateButton3 =  findViewById(R.id.IMMEDIATE_button3);
+        nearButton3 =  findViewById(R.id.NEAR_button3);
+        unknownButton3 =  findViewById(R.id.UNKNOWN_button3);
+
+        editText3 = findViewById(R.id.beacon_text3);
+
+        buttons_array = new Button[12];
+
+        buttons_array[0] = farButton;
+        buttons_array[1] = immediateButton;
+        buttons_array[2] = nearButton;
+        buttons_array[3] = unknownButton;
+
+        buttons_array[4] = farButton2;
+        buttons_array[5] = immediateButton2;
+        buttons_array[6] = nearButton2;
+        buttons_array[7] = unknownButton2;
+
+        buttons_array[8] = farButton3;
+        buttons_array[9] = immediateButton3;
+        buttons_array[10] = nearButton3;
+        buttons_array[11] = unknownButton3;
+
 
         startScanButton.setOnClickListener(this);
         stopScanButton.setOnClickListener(this);
@@ -119,35 +167,19 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onEddystoneDiscovered(IEddystoneDevice eddystone, IEddystoneNamespace namespace) {
                 Log.i(TAG, "onEddystoneDiscovered: " + eddystone.toString());
-                editText.setText("beacon: " + eddystone.getUniqueId());
             }
 
             @Override
             public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
                 //Log.i(TAG, "onEddystonesUpdated: " + eddystones.size());
-                if(eddystones.get(0).getProximity() == Proximity.FAR) {
-                    farButton.setBackgroundColor(Color.GREEN);
-                    immediateButton.setBackgroundColor(Color.GRAY);
-                    nearButton.setBackgroundColor(Color.GRAY);
-                    unknownButton.setBackgroundColor(Color.GRAY);
+                editText.setText("beacon: " + eddystones.get(0).getUniqueId());
+                if(eddystones.size() > 1){
+                    editText2.setText("beacon: " + eddystones.get(1).getUniqueId());
+                    if(eddystones.size() > 2)
+                        editText2.setText("beacon: " + eddystones.get(2).getUniqueId());
                 }
-                else if(eddystones.get(0).getProximity() == Proximity.IMMEDIATE) {
-                    farButton.setBackgroundColor(Color.GRAY);
-                    immediateButton.setBackgroundColor(Color.GREEN);
-                    nearButton.setBackgroundColor(Color.GRAY);
-                    unknownButton.setBackgroundColor(Color.GRAY);
-                }
-                else if(eddystones.get(0).getProximity() == Proximity.NEAR) {
-                    farButton.setBackgroundColor(Color.GRAY);
-                    immediateButton.setBackgroundColor(Color.GRAY);
-                    nearButton.setBackgroundColor(Color.GREEN);
-                    unknownButton.setBackgroundColor(Color.GRAY);
-                }
-                else  {
-                    farButton.setBackgroundColor(Color.GRAY);
-                    immediateButton.setBackgroundColor(Color.GRAY);
-                    nearButton.setBackgroundColor(Color.GRAY);
-                    unknownButton.setBackgroundColor(Color.GREEN);
+                for(int i = 0; i < eddystones.size(); i++) {
+                    setProximity(i, eddystones.get(i).getProximity());
                 }
             }
 
@@ -156,6 +188,38 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
                 Log.e(TAG, "onEddystoneLost: " + eddystone.toString());
             }
         };
+    }
+
+    void setProximity(int i, Proximity p){
+        int ini = 0;
+
+        if (i == 1) ini = 4;
+        else if (i == 2) ini = 8;
+
+        if(p== Proximity.FAR){
+            buttons_array[ini].setBackgroundColor(Color.GREEN);
+            buttons_array[ini+1].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+2].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+3].setBackgroundColor(Color.GRAY);
+        }
+        else if(p== Proximity.IMMEDIATE){
+            buttons_array[ini].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+1].setBackgroundColor(Color.GREEN);
+            buttons_array[ini+2].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+3].setBackgroundColor(Color.GRAY);
+        }
+        else if(p== Proximity.NEAR){
+            buttons_array[ini].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+1].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+2].setBackgroundColor(Color.GREEN);
+            buttons_array[ini+3].setBackgroundColor(Color.GRAY);
+        }
+        else{
+            buttons_array[ini].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+1].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+2].setBackgroundColor(Color.GRAY);
+            buttons_array[ini+3].setBackgroundColor(Color.GREEN);
+        }
     }
 
     @Override

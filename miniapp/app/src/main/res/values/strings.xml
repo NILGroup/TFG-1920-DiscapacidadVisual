@@ -10,5 +10,16 @@
     <string name="UNKNOWN_button">UNKNOWN</string>
     <string name="beacon_text">beacon</string>
 
+    <string name="FAR_button2">FAR</string>
+    <string name="IMMEDIATE_button2">IMMEDIATE</string>
+    <string name="NEAR_button2">NEAR</string>
+    <string name="UNKNOWN_button2">UNKNOWN</string>
+    <string name="beacon_text2">beacon</string>
+
+    <string name="FAR_button3">FAR</string>
+    <string name="IMMEDIATE_button3">IMMEDIATE</string>
+    <string name="NEAR_button3">NEAR</string>
+    <string name="UNKNOWN_button3">UNKNOWN</string>
+    <string name="beacon_text3">beacon</string>
 
 </resources>

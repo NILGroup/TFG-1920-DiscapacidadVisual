@@ -7,6 +7,141 @@
     tools:context=".ScanningActivity">
 
     <Button
+        android:id="@+id/UNKNOWN_button3"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/UNKNOWN_button3"
+        app:layout_constraintBottom_toBottomOf="@+id/UNKNOWN_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/UNKNOWN_button2"
+        app:layout_constraintTop_toTopOf="@+id/UNKNOWN_button2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/FAR_button"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:clickable="false"
+        android:text="@string/FAR_button"
+        app:layout_constraintEnd_toStartOf="@+id/FAR_button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/IMMEDIATE_button3"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/IMMEDIATE_button3"
+        app:layout_constraintBottom_toBottomOf="@+id/IMMEDIATE_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/IMMEDIATE_button2"
+        app:layout_constraintTop_toTopOf="@+id/IMMEDIATE_button2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/IMMEDIATE_button2"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/IMMEDIATE_button2"
+        app:layout_constraintBottom_toBottomOf="@+id/IMMEDIATE_button"
+        app:layout_constraintEnd_toStartOf="@+id/IMMEDIATE_button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/IMMEDIATE_button"
+        app:layout_constraintTop_toTopOf="@+id/IMMEDIATE_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/IMMEDIATE_button"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/IMMEDIATE_button"
+        app:layout_constraintEnd_toStartOf="@+id/IMMEDIATE_button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FAR_button" />
+
+    <Button
+        android:id="@+id/UNKNOWN_button2"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/UNKNOWN_button2"
+        app:layout_constraintBottom_toBottomOf="@+id/UNKNOWN_button"
+        app:layout_constraintEnd_toStartOf="@+id/UNKNOWN_button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/UNKNOWN_button"
+        app:layout_constraintTop_toTopOf="@+id/UNKNOWN_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/NEAR_button"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/NEAR_button"
+        app:layout_constraintEnd_toStartOf="@+id/NEAR_button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IMMEDIATE_button" />
+
+    <Button
+        android:id="@+id/NEAR_button2"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/NEAR_button2"
+        app:layout_constraintBottom_toBottomOf="@+id/NEAR_button"
+        app:layout_constraintEnd_toStartOf="@+id/NEAR_button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/NEAR_button"
+        app:layout_constraintTop_toTopOf="@+id/NEAR_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/NEAR_button3"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/NEAR_button3"
+        app:layout_constraintBottom_toBottomOf="@+id/NEAR_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/NEAR_button2"
+        app:layout_constraintTop_toTopOf="@+id/NEAR_button2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/FAR_button3"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:clickable="false"
+        android:text="@string/FAR_button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/FAR_button2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/UNKNOWN_button"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/UNKNOWN_button"
+        app:layout_constraintEnd_toStartOf="@+id/UNKNOWN_button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NEAR_button" />
+
+    <Button
         android:id="@+id/start_scan_button"
         android:layout_width="235dp"
         android:layout_height="85dp"
@@ -35,66 +170,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/FAR_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:clickable="false"
-        android:text="@string/FAR_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/IMMEDIATE_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:clickable="false"
-        android:text="@string/IMMEDIATE_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FAR_button" />
-
-    <Button
-        android:id="@+id/NEAR_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:clickable="false"
-        android:text="@string/NEAR_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IMMEDIATE_button" />
-
-    <Button
-        android:id="@+id/UNKNOWN_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:clickable="false"
-        android:text="@string/UNKNOWN_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NEAR_button" />
+    <EditText
+        android:id="@+id/beacon_text3"
+        android:layout_width="136dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/beacon_text3"
+        android:inputType="textPersonName"
+        android:text="@string/beacon_text3"
+        app:layout_constraintStart_toEndOf="@+id/beacon_text2"
+        app:layout_constraintTop_toBottomOf="@+id/UNKNOWN_button3" />
 
     <EditText
         android:id="@+id/beacon_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="135dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:hint="@string/beacon_text"
         android:inputType="textPersonName"
         android:text="@string/beacon_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/beacon_text2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UNKNOWN_button" />
+
+    <EditText
+        android:id="@+id/beacon_text2"
+        android:layout_width="136dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/beacon_text2"
+        android:inputType="textPersonName"
+        android:text="@string/beacon_text2"
+        app:layout_constraintBottom_toBottomOf="@+id/beacon_text"
+        app:layout_constraintEnd_toStartOf="@+id/beacon_text3"
+        app:layout_constraintTop_toBottomOf="@+id/UNKNOWN_button2" />
+
+    <Button
+        android:id="@+id/FAR_button2"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/FAR_button2"
+        app:layout_constraintEnd_toStartOf="@+id/FAR_button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/FAR_button"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
