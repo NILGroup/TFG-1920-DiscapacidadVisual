@@ -145,6 +145,7 @@ public class BeaconEddystoneScanActivity extends AppCompatActivity implements Vi
       @Override
       public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
         Log.i(TAG, "onEddystonesUpdated: " + eddystones.size());
+        //eddystones.get(0).getDistance(); este es el valor que hay que meter en el hash map
       }
 
       @Override

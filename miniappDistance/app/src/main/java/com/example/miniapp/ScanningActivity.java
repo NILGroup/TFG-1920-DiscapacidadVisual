@@ -22,8 +22,10 @@ import com.kontakt.sdk.android.common.Proximity;
 import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 import com.kontakt.sdk.android.common.profile.IEddystoneNamespace;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.io.*;
 
 import androidx.annotation.NonNull;
 import android.widget.EditText;
@@ -57,8 +59,16 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
     EditText editText2;
     EditText editText3;
 
+    Button startScanButton;
+    Button stopScanButton;
+
     //Array de botones
     Button buttons_array[];
+
+    //Listas de distancias
+    List<Double> dist_beacon1;
+    List<Double> dist_beacon2;
+    List<Double> dist_beacon3;
 
 
     @Override
@@ -75,8 +85,8 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void setupButtons() {
-        Button startScanButton =  findViewById(R.id.start_scan_button);
-        Button stopScanButton =  findViewById(R.id.stop_scan_button);
+        startScanButton =  findViewById(R.id.start_scan_button);
+        stopScanButton =  findViewById(R.id.stop_scan_button);
 
         farButton =  findViewById(R.id.FAR_button);
         immediateButton =  findViewById(R.id.IMMEDIATE_button);
@@ -116,6 +126,9 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         buttons_array[10] = nearButton3;
         buttons_array[11] = unknownButton3;
 
+        dist_beacon1 = new ArrayList<Double>();
+        dist_beacon2 = new ArrayList<Double>();
+        dist_beacon3 = new ArrayList<Double>();
 
         startScanButton.setOnClickListener(this);
         stopScanButton.setOnClickListener(this);
@@ -159,9 +172,49 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         if (proximityManager.isScanning()) {
             proximityManager.stopScanning();
             Toast.makeText(this, "Scanning stopped", Toast.LENGTH_SHORT).show();
+            printeaDistancia(editText.getText().toString(), editText2.getText().toString(), editText3.getText().toString(), dist_beacon1, dist_beacon2, dist_beacon3);
+            stopScanButton.setBackgroundColor(Color.RED);
         }
     }
 
+
+    private void printeaDistancia(String bea1, String bea2, String bea3, List<Double> dist_beacon1, List<Double> dist_beacon2, List<Double> dist_beacon3){
+
+        /*String file = "C:\\Users\\Belen\\Documents\\Belen\\ucm\\distancias.txt";
+        File fichero = new File(file);
+
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            bw.write(bea1 + "\n");
+            for(int i =0; i < dist_beacon1.size(); i++){
+                bw.write(dist_beacon1.get(i).toString() + "\n");
+            }
+            bw.write(bea2 + "\n");
+            for(int i =0; i < dist_beacon2.size(); i++){
+                bw.write(dist_beacon2.get(i).toString() + "\n");
+            }
+            bw.write(bea3 + "\n");
+            for(int i =0; i < dist_beacon3.size(); i++){
+                bw.write(dist_beacon3.get(i).toString() + "\n");
+            }
+            bw.close();
+        } catch (IOException ioe){
+            stopScanButton.setBackgroundColor(Color.YELLOW);
+            ioe.printStackTrace();
+        }*/
+        Log.i(TAG, "DISTANCIAS: " + bea1 + "\n");
+        Log.i(TAG, dist_beacon1.toString());
+
+        Log.i(TAG, "\n");
+        Log.i(TAG, "DISTANCIAS: " + bea2 + "\n");
+        Log.i(TAG, dist_beacon2.toString());
+
+        Log.i(TAG, "\n");
+        Log.i(TAG, "DISTANCIAS: " + bea3 + "\n");
+        Log.i(TAG, dist_beacon3.toString());
+
+
+    }
     private EddystoneListener createEddystoneListener() {
         return new EddystoneListener() {
             @Override
@@ -179,9 +232,17 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
                 if(eddystones.size() > 2)
                     editText3.setText("beacon: " + eddystones.get(2).getUniqueId());
 
-                for(int i = 0; i < eddystones.size(); i++) {
+                /*for(int i = 0; i < eddystones.size(); i++) {
                     setProximity(i, eddystones.get(i).getProximity());
+                }*/
+
+
+                dist_beacon1.add(eddystones.get(0).getDistance());
+                if(eddystones.size() > 1){
+                    dist_beacon2.add(eddystones.get(1).getDistance());
                 }
+                if(eddystones.size() > 2)
+                    dist_beacon3.add(eddystones.get(2).getDistance());
             }
 
             @Override
@@ -239,6 +300,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         //Stop scanning when leaving screen.
         stopScanning();
         super.onStop();
+
     }
 
     @Override
