@@ -133,14 +133,22 @@ Nos centramos ahora en el estudio e investigación de la tecnología necesaria p
 
 \subsection{Balizas Bluetooth}
 
-Los beacons o balizas bluetooth son dispositivos que emiten señales de radio en un rango de 10 a 30 metros en interiores. Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon estándar. El posicionamiento en interiores de Apple se basa en el uso de estos dispositivos, puesto que no usa Wi-Fi para determinar la posición.
+Los beacons o balizas bluetooth son pequeños dispositivos que emiten señales de radio. Estas señales los identifican de manera única y pueden ser captadas por otros dispositivos receptores, estableciendose así, un canal de comunicación que permanece vivo siempre que permanezcan en un radio de alcance entre 10 y 30 metros. Además, estas balizas son de bajo consumo, es decir, sus baterías tienen una duración muy prolongada, aproximadamente 2 años con una simple pila de botón y su coste es reducido.
 
-Google no se quedó muy atrás y en 2015 sacó Eddystone, un protocolo para el uso de estas balizas bluetooth. (Añadir más info, vamos a usar esto??)
-
-En el caso de nuestro estudio, la navegación por interiores, estas balizas son muy útiles. Basta con colocarlas en distintas posiciones de un edificio y tener una aplicación que interprete las señales que recibe. No obstante, hay que tener en cuenta que la disposición de los beacons y la cantidad necesaria para mapear un área dependerá del edificio concreto.
+Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon estándar y comenzó a utilizarlos para el posicionamiento por interiores. En 2015, Google, que no se quiso quedar atrás, sacó el protocolo Eddystone, un protocolo, que a diferencia del de Apple, es de código abierto y ofrece soporte oficial tanto para iOs como para Android. Los beacons provistos del protocolo Eddystone pueden ser de 4 tipos, estos tipos se distinguen por el paquete de datos que pueden emitir, véase:
 
 
-Pero la navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
+
+\begin{itemize}
+	\item \textbf{Eddystone-UID:} transmite un identificador de baliza único compuesto por 16 bytes, 10 de ellos referidos al espacio de nombres, que identifican a un grupo de beacons, y 6 que se refieren e identifican a la instancia particular dentro del grupo. Esta distinción entre espacio de nombres e instancia se pensó para optimizar el escaneo de beacons.
+	\item \textbf{Eddystone-URL:} transmite una URL utilizando un formato de codificación.
+	\item \textbf{Eddystone-TLM:} transmite información sobre la baliza. Esto puede incluir el nivel de la batería, los datos del sensor u otra información relevante para los administradores de balizas. Para poder usarse como baliza debe ir acompañado de otro tipo de marco (Eddystone-URL o Eddystone-UID).
+	\item Eddystone-EID: emite un identificador encriptado que cambia periódicamente, de modo que su uso está restringido a aplicaciones y dispositivos autorizados.
+\end{itemize}
+
+Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología Bluetooth es muy útil, basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los beacons y la cantidad necesaria para mapear un área dependerá del edificio concreto.
+
+La navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
 
 ------------------------------------
 
