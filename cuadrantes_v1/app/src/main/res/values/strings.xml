@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cuadrantes_v1</string>
+    <string name="button_start_searching">START SEARCHING BEACONS</string>
+    <string name="start_scan_button">START SCANNING</string>
+    <string name="stop_scan_button">STOP SCANNING</string>
+
+    <string name="beacon_text">beacon</string>
+
+</resources>
