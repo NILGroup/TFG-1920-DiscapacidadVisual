@@ -1,5 +1,7 @@
 package com.example.cuadrantes_v1.routes;
 
+import android.util.Log;
+
 import com.kontakt.sdk.android.common.Proximity;
 import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 
@@ -33,6 +35,7 @@ public class Cuadrante {
     ArrayList<String> objetos;
 
     String[] beacons = new String[3];
+    public static final String TAG = "CUADRANTE";
 
     public Cuadrante(int id, Posicion nw, Posicion se, int z, String[] conexiones, String[] beacons,
                      ArrayList<String> objs){
@@ -100,6 +103,7 @@ public class Cuadrante {
     }
 
     public boolean pertenece(List<IEddystoneDevice> eddystones) {
+        Log.e(TAG, "El cuadrante "+ ID +" tiene: "+ beacons[0] + beacons[1] + beacons[2] + "\n");
 
         for(int i=0; i < eddystones.size();i++) {
             if (eddystones.get(i).getProximity() == Proximity.IMMEDIATE && beacons[0] != "nada" &&

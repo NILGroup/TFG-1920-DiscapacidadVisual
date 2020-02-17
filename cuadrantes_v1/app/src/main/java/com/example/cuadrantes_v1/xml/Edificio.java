@@ -1,6 +1,8 @@
 package com.example.cuadrantes_v1.xml;
 
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class Edificio {
         //Se crea un SAXBuilder para poder parsear el archivo
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml" );
-
+        Log.i("EDIFICIO", "En EDIFICIO");
         try
         {
 
@@ -52,6 +54,10 @@ public class Edificio {
                     carga= new CargaXML(archivo);
                     aEstancias.addAll(carga.getEstancias());
                     aCuadrantes.addAll(carga.getCuadrantes());
+                }
+                for(int i=0; i < aCuadrantes.size(); i++) {
+                    Log.i("EDIFICIO", "Cuadrante " + aCuadrantes.get(i).getID());
+
                 }
             }
         }catch ( IOException io ) {

@@ -4,6 +4,6 @@
     <string name="start_scan_button">START SCANNING</string>
     <string name="stop_scan_button">STOP SCANNING</string>
 
-    <string name="beacon_text">beacon</string>
+    <string name="beacon_text">Beacons encontrados:\n</string>
 
 </resources>

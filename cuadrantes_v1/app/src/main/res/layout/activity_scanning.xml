@@ -42,13 +42,22 @@
         android:layout_height="531dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:editable="false"
         android:ems="10"
+        android:fadeScrollbars="true"
         android:hint="@string/beacon_text"
-        android:inputType="textPersonName"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
+        android:scrollHorizontally="false"
         android:text="@string/beacon_text"
+        android:verticalScrollbarPosition="right"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

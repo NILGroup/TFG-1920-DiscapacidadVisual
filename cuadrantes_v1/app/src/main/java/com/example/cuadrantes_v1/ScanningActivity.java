@@ -48,6 +48,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
+        Log.i(TAG, "antes de llamar a new edificio");
         edificio = new Edificio();
 
         //Setup buttons
@@ -119,18 +120,27 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
                 //Log.i(TAG, "onEddystonesUpdated: " + eddystones.size());
-
+                editText.setText(editText.getText()+ "beacon: " + eddystones.get(0).getUniqueId() + " " +
+                        eddystones.get(0).getProximity() + "\n");
+                if(eddystones.size() > 1){
+                    editText.setText(editText.getText()+ "beacon: " + eddystones.get(1).getUniqueId()+ " " +
+                            eddystones.get(1).getProximity()+ "\n");
+                }
+                if(eddystones.size() > 2)
+                    editText.setText(editText.getText()+ "beacon: " + eddystones.get(2).getUniqueId()+ " " +
+                            eddystones.get(2).getProximity()+ "\n");
                 //codigo del cuadrante
                 for(Cuadrante cuadrante: edificio.getCuadrantes()){
-                    if(cuadrante.pertenece(eddystones));
-                    editText.setText(editText.getText()+"\nCuadrante: " + cuadrante.getID()
-                    + "\n");
+                    if(cuadrante.pertenece(eddystones)) {
+                        editText.setText(editText.getText() + "Cuadrante: " + cuadrante.getID()
+                                + "\n");
+                    }
                 }
             }
 
             @Override
             public void onEddystoneLost(IEddystoneDevice eddystone, IEddystoneNamespace namespace) {
-                Log.e(TAG, "onEddystoneLost: " + eddystone.toString());
+                Log.i(TAG, "onEddystoneLost: " + eddystone.toString());
             }
         };
     }
