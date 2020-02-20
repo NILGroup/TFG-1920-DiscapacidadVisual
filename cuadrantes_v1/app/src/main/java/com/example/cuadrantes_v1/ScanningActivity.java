@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
 import android.widget.EditText;
+import java.io.File;
 
 public class ScanningActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -49,6 +50,9 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
         Log.i(TAG, "antes de llamar a new edificio");
+        //File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml" );
+        //Log.i(TAG, "DESPUES DE ABRIR ARCHIVOOOO");
+        //Log.i("EDIFICIO", "En EDIFICIO"+xmlFile.getName());
         edificio = new Edificio();
 
         //Setup buttons

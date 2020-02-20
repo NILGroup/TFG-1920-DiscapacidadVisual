@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <edificio>
-	<planta nombre="plantabaja">
+	<planta nombre="plantabaja" >
 		<archivo>nada</archivo>
 	</planta>
-	<planta nombre="planta1principal">
+	<planta nombre="planta1principal" >
 		<archivo>planta1</archivo>
 	</planta>
-	<planta nombre="planta2principal">
+	<planta nombre="planta2principal" >
 		<archivo>planta2</archivo>
 	</planta>
-	<planta nombre="planta3principal">
+	<planta nombre="planta3principal" >
 		<archivo>nada</archivo>
 	</planta>
-	<planta nombre="planta4principal">
+	<planta nombre="planta4principal" >
 		<archivo>nada</archivo>
 	</planta>
-
 </edificio>

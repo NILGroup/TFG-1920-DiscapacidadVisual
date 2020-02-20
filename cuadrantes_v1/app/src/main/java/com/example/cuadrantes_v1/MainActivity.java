@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,6 +14,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 
 import androidx.annotation.NonNull;
+
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         setupButtons();
         checkPermissions();
+
+        //File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml" );
+        //Log.i("MAAAAINNNN", "ABRIRXML");
     }
 
     //Setting up buttons and listeners.

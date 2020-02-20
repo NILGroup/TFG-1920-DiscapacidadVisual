@@ -3,6 +3,8 @@ package com.example.cuadrantes_v1.xml;
 
 import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +18,10 @@ import org.jdom2.input.SAXBuilder; // |
 import com.example.cuadrantes_v1.routes.Cuadrante;
 import com.example.cuadrantes_v1.routes.Estancia;
 
+//import android.os.Environment;
+import java.io.InputStream;
+import java.io.StringReader;
+
 /**
  *
  * Clase de carga los xml que representan el edificio completo. En el archivo "edificio.xml" se encuentran
@@ -24,22 +30,28 @@ import com.example.cuadrantes_v1.routes.Estancia;
  * 26/05/2014 - Revisado y limpiado
  *
  */
-public class Edificio {
+public class Edificio  {
 
     private CargaXML carga;
     private ArrayList<Estancia> aEstancias = new ArrayList<Estancia>();
     private ArrayList<Cuadrante> aCuadrantes= new ArrayList<Cuadrante>();
 
-    public Edificio() {
+    public Edificio(/*File xmlFile*/) {
 
         //Se crea un SAXBuilder para poder parsear el archivo
         SAXBuilder builder = new SAXBuilder();
-        File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml" );
-        Log.i("EDIFICIO", "En EDIFICIO");
+        //String path = "C:\\Users\\MRS\\Documents\\Belen\\xml\\edificio.xml";
+        String path = "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml";
+        File xmlFile = new File(path);
+
+        //Log.i("EDIFICIO", "En EDIFICIO");
         try
         {
-
-            Document document = (Document) builder.build( xmlFile );//Se crea el documento a traves del archivo
+            Log.i("EDIFICIO", "En EDIFICIO 5555555 "+xmlFile.getName());
+            //Document document = (Document) builder.build( xmlFile );//Se crea el documento a traves del archivo
+            Document document = builder.build(new StringReader(path));
+            //Document document = null;
+            Log.i("EDIFICIO", "En EDIFICIO 2222222 "+xmlFile.getName());
             Element rootNode = document.getRootElement();//Se obtiene la raiz 'edificio'
             List lista_plantas = rootNode.getChildren( "planta" );//Se obtiene la lista de hijos de la raiz 'edificio'
 
@@ -65,6 +77,7 @@ public class Edificio {
         }catch ( JDOMException jdomex ) {
             System.out.println( jdomex.getMessage() );
         }
+
     }
 
     public ArrayList<Estancia> getEstancias(){
@@ -75,8 +88,8 @@ public class Edificio {
         return aCuadrantes;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         new Edificio();
-    }
+    }*/
 
 }

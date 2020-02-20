@@ -37,14 +37,14 @@ public class Cuadrante {
     String[] beacons = new String[3];
     public static final String TAG = "CUADRANTE";
 
-    public Cuadrante(int id, Posicion nw, Posicion se, int z, String[] conexiones, String[] beacons,
+    public Cuadrante(int id, Posicion nw, Posicion se, int z, String[] conexiones, String[] beacons2,
                      ArrayList<String> objs){
 
         ID = id;
         posNW = nw;
         posSE = se;
         conectado = conexiones;
-        beacons = beacons;
+        beacons = beacons2;
         objetos = objs;
         Z = z;
 
