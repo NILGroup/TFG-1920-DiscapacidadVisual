@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">socket_v1</string>
+    <string name="button_start_searching">START SOCKET</string>
+    <string name="start_scan_button">START CONNECTION</string>
+    <string name="stop_scan_button">STOP CONNECTION</string>
+
+    <string name="beacon_text">Mensajes:\n</string>
+
+</resources>
