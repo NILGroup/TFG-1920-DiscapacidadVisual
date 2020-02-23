@@ -31,6 +31,8 @@ import androidx.annotation.NonNull;
 import android.widget.EditText;
 import java.io.File;
 
+import 	android.text.method.ScrollingMovementMethod;
+
 public class ScanningActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static Intent createIntent(@NonNull Context context) {
@@ -43,6 +45,8 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
     private EditText editText;
 
+    private int scanSeg = 0;
+
     private static Edificio edificio;
 
     @Override
@@ -53,7 +57,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         //File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml" );
         //Log.i(TAG, "DESPUES DE ABRIR ARCHIVOOOO");
         //Log.i("EDIFICIO", "En EDIFICIO"+xmlFile.getName());
-        edificio = new Edificio();
+        //edificio = new Edificio();
 
         //Setup buttons
         setupButtons();
@@ -68,6 +72,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         Button stopScanButton =  findViewById(R.id.stop_scan_button);
 
         editText = findViewById(R.id.beacon_text);
+        editText.setMovementMethod(new ScrollingMovementMethod());
 
         startScanButton.setOnClickListener(this);
         stopScanButton.setOnClickListener(this);
@@ -124,22 +129,38 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
                 //Log.i(TAG, "onEddystonesUpdated: " + eddystones.size());
-                editText.setText(editText.getText()+ "beacon: " + eddystones.get(0).getUniqueId() + " " +
-                        eddystones.get(0).getProximity() + "\n");
-                if(eddystones.size() > 1){
-                    editText.setText(editText.getText()+ "beacon: " + eddystones.get(1).getUniqueId()+ " " +
-                            eddystones.get(1).getProximity()+ "\n");
+                //int y = (editText.getLineCount() - 1) * editText.getLineHeight(); // the " - 1" should send it to the TOP of the last line, instead of the bottom of the last line
+                //editText.scrollTo(0, y);
+                //editText.append("______ seg: " + scanSeg +" _________" + "\n");
+
+                editText.setText(editText.getText()+ "______ seg: " + scanSeg +" _________" + "\n");
+                scanSeg = scanSeg+2;
+                for(int i=0; i < eddystones.size();i++){
+                    /*editText.append("beacon: " + eddystones.get(i).getUniqueId() + " " +
+                            eddystones.get(i).getProximity() + "\n");*/
+                    double distance = (double)Math.round(eddystones.get(i).getDistance() * 1000d) / 1000d;
+                    editText.setText(editText.getText()+ "beacon: " + eddystones.get(i).getUniqueId() + " " +
+                            eddystones.get(i).getProximity() + " a " + distance +" m" + "\n");
                 }
-                if(eddystones.size() > 2)
-                    editText.setText(editText.getText()+ "beacon: " + eddystones.get(2).getUniqueId()+ " " +
-                            eddystones.get(2).getProximity()+ "\n");
+                //editText.append("_______________" + "\n");
+                editText.setText(editText.getText() + "_______________" + "\n");
+
+                //para que haga scroll
+                if (editText.getLayout() != null) {
+                    final int scrollAmount = editText.getLayout().getLineTop(editText.getLineCount()) - editText.getHeight();
+                    // if there is no need to scroll, scrollAmount will be <=0
+                    if (scrollAmount > 0)
+                        editText.scrollTo(0, scrollAmount);
+                    else
+                        editText.scrollTo(0, 0);
+                }
                 //codigo del cuadrante
-                for(Cuadrante cuadrante: edificio.getCuadrantes()){
+                /*for(Cuadrante cuadrante: edificio.getCuadrantes()){
                     if(cuadrante.pertenece(eddystones)) {
                         editText.setText(editText.getText() + "Cuadrante: " + cuadrante.getID()
                                 + "\n");
                     }
-                }
+                }*/
             }
 
             @Override
@@ -148,6 +169,18 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
             }
         };
     }
+
+
+    /*private final void focusOnView(){
+        editText.post(new Runnable() {
+            @Override
+            public void run() {
+                editText.sc
+                        smoothScrollTo(0, editText.getBottom());
+            }
+        });
+    }*/
+
 
     @Override
     public void onClick(View view) {

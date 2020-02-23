@@ -1,4 +1,7 @@
-package com.example.cuadrantes_v1.xml;
+package beacons.server_v1.xml;
+
+
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,15 +12,13 @@ import org.jdom2.Element; // |\ Librer�as
 import org.jdom2.JDOMException; // |/ JDOM
 import org.jdom2.input.SAXBuilder; // |
 
-
-import com.example.cuadrantes_v1.routes.Cuadrante;
-import com.example.cuadrantes_v1.routes.Estancia;
-import com.example.cuadrantes_v1.routes.Posicion;
-
+import beacons.server_v1.routes.Cuadrante;
+import beacons.server_v1.routes.Estancia;
+import beacons.server_v1.routes.Posicion;
 
 public class CargaXML {
 
-    private ArrayList<Estancia> aEstancias;
+    private ArrayList<Estancia> aEstancias = new ArrayList<Estancia>();
     private ArrayList<Cuadrante> aCuadrantes = new ArrayList<Cuadrante>();
 
     @SuppressWarnings("rawtypes")
@@ -26,7 +27,6 @@ public class CargaXML {
         //Se crea un SAXBuilder para poder parsear el archivo
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\"+nombreXML+".xml" );
-        //File xmlFile = new File( "");
         try
         {
 

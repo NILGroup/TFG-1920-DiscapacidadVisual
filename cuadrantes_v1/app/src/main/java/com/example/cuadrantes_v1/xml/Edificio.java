@@ -22,6 +22,13 @@ import com.example.cuadrantes_v1.routes.Estancia;
 import java.io.InputStream;
 import java.io.StringReader;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import android.os.Environment;
+//import java.lang.String;
 /**
  *
  * Clase de carga los xml que representan el edificio completo. En el archivo "edificio.xml" se encuentran
@@ -30,18 +37,73 @@ import java.io.StringReader;
  * 26/05/2014 - Revisado y limpiado
  *
  */
-public class Edificio  {
+public class Edificio {
 
     private CargaXML carga;
     private ArrayList<Estancia> aEstancias = new ArrayList<Estancia>();
-    private ArrayList<Cuadrante> aCuadrantes= new ArrayList<Cuadrante>();
+    private ArrayList<Cuadrante> aCuadrantes = new ArrayList<Cuadrante>();
 
     public Edificio(/*File xmlFile*/) {
 
+
+        /*SAXBuilder builder = new SAXBuilder();
+        //File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificioNEW.xml");
+
+
+        /*FileWriter fichero = null;
+        PrintWriter pw = null;
+        try
+        {
+            String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+            // Not sure if the / is on the path or not
+            File f = new File(baseDir + File.separator + "edificioNEW.xml");
+
+            f.write();
+            f.flush();
+            f.close();
+
+            /*File file = new File(path, "/" + fname);
+            fichero = new FileWriter("C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificioNEW.xml");
+            pw = new PrintWriter(fichero);
+
+
+            pw.println("<?xml version='1.0' encoding='UTF-8'?>");
+            pw.println("<edificio>");
+            pw.println("</edificio>");
+
+            pw.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                // Nuevamente aprovechamos el finally para
+                // asegurarnos que se cierra el fichero.
+                if (null != fichero)
+                    //fichero.close();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        Log.i("EDIFICIO", "En EDIFICIO 5555555 ");
+        File xmlFile = new File( "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificioNEW.xml");
+        CargaXML carga;
+        Document document = null;
+        try {
+            document = (Document) builder.build( xmlFile );
+            Log.i("EDIFICIO", "En EDIFICIO 222222 ");
+        } catch (JDOMException | IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }//Se crea el documento a traves del archivo
+        Element rootNode = document.getRootElement();//Se obtiene la raiz 'edificio'
+        System.out.println(rootNode.toString());*/
+
         //Se crea un SAXBuilder para poder parsear el archivo
-        SAXBuilder builder = new SAXBuilder();
+        /*SAXBuilder builder = new SAXBuilder();
         //String path = "C:\\Users\\MRS\\Documents\\Belen\\xml\\edificio.xml";
         String path = "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\xml\\edificio.xml";
+        //String path = "C:\\Users\\MRS\\Documents\\Belen\\ucm\\5\\TFG infor\\TFG-1920-DiscapacidadVisual\\cuadrantes_v1\\app\\src\\main\\AndroidManifest.xml";
         File xmlFile = new File(path);
 
         //Log.i("EDIFICIO", "En EDIFICIO");
@@ -77,7 +139,7 @@ public class Edificio  {
         }catch ( JDOMException jdomex ) {
             System.out.println( jdomex.getMessage() );
         }
-
+    */
     }
 
     public ArrayList<Estancia> getEstancias(){
@@ -91,5 +153,6 @@ public class Edificio  {
     /*public static void main(String[] args) {
         new Edificio();
     }*/
+
 
 }
