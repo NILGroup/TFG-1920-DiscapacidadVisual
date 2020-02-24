@@ -34,7 +34,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$androidToolsVersion"
     implementation 'com.kontaktio:sdk:4.0.3'
     implementation 'androidx.annotation:annotation:1.1.0'
-    implementation files('lib\\jdom-2.0.6\\jdom-2.0.6.jar')
+    implementation files('lib\\jdom-2.0.6.jar')
+
     //implementation fileTree(dir: 'lib\\jenaLibs', include: ['*.aar', '*.jar'], exclude: [])
     //implementation fileTree(dir: 'lib\\marianaLibs', include: ['*.aar', '*.jar'], exclude: [])
     //implementation fileTree(dir: 'lib\\newlib', include: ['*.aar', '*.jar'], exclude: [])

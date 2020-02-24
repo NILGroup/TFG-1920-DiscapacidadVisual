@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.cuadrantes_v1.routes.Cuadrante;
-import com.example.cuadrantes_v1.xml.Edificio;
+//import com.example.cuadrantes_v1.routes.Cuadrante;
+//import com.example.cuadrantes_v1.xml.Edificio;
 import com.kontakt.sdk.android.ble.configuration.ScanMode;
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
 import com.kontakt.sdk.android.ble.connection.OnServiceReadyListener;
@@ -47,7 +47,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
     private int scanSeg = 0;
 
-    private static Edificio edificio;
+    //private static Edificio edificio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +135,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
                 editText.setText(editText.getText()+ "______ seg: " + scanSeg +" _________" + "\n");
                 scanSeg = scanSeg+2;
+
                 for(int i=0; i < eddystones.size();i++){
                     /*editText.append("beacon: " + eddystones.get(i).getUniqueId() + " " +
                             eddystones.get(i).getProximity() + "\n");*/
@@ -181,6 +182,9 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         });
     }*/
 
+    public void escribeResultados(){
+        Log.i(TAG, editText.getText().toString() + "\n");
+    }
 
     @Override
     public void onClick(View view) {
@@ -190,6 +194,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.stop_scan_button:
                 stopScanning();
+                escribeResultados();
                 break;
         }
     }
