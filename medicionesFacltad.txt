@@ -558,11 +558,13 @@ Tenemos beacons (todos colocados en el suelo):
     
 Tenemos beacons en la puerta de entrada de la cafetería 
     
-    CPne: en la puerta de entrada arriba
+    CPne: en la puerta de entrada arriba -> este ya no está en el suelo
     8v2c: en la puerta de delegación
     eAaw: en la puerta del aula 5, la más pegada a la puerta de entrada
     ZxPh: en la puerta de las escaleras
     
+    Debajo de la puerta principal: 
+
     ______ seg: 0 _________
     beacon: eAaw FAR a 4.656 m
     beacon: CPne IMMEDIATE a 0.249 m
