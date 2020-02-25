@@ -22,14 +22,14 @@ Gracias a esta nueva versión, \textit{Google Maps} ayuda a determinar dónde es
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.6\textwidth]{MadSq2}
+	\includegraphics[width=0.6\textwidth]{Imagenes/Estadodelacuestion/MadSq2}
 	\caption{Plano de un edificio proporcionado por Google Maps.}
 	\label{fig:ejemplo}
 \end{figure}
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.6\textwidth]{MadSq3}
+	\includegraphics[width=0.6\textwidth]{Imagenes/Estadodelacuestion/MadSq3}
 	\caption{Vista del interior del Madison Square Garden. }
 	\label{fig:ejemplo2}
 \end{figure}
@@ -38,7 +38,7 @@ En el plano podrás localizar dónde están los baños, escaleras, ascensores, e
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.6\textwidth]{GMapsInd}
+	\includegraphics[width=0.6\textwidth]{Imagenes/Estadodelacuestion/GMapsInd}
 	\caption{Ejemplo de navegación y búsqueda en Google Maps Indoors. }
 	\label{fig:ejemplo3}
 \end{figure}
@@ -111,12 +111,18 @@ El funcionamiento\footnote{\url{https://www.youtube.com/watch?v=mc3KmbfxuUQ}} de
 
 Los desarrolladores recomiendan el uso de auriculares de conducción ósea, de manera que puedan escuchar otros sonidos del exterior.
 
+\subsection{Conclusiones}
+Tras este breve recorrido por algunas de las aplicaciones de guía adaptadas para personas ciegas o con visibilidad reducida podemos decir que cada vez son más las opciones, hemos visto desde aplicaciones de guía por exteriores, pasando por los interiores y llegando hasta algunas tan específicas como \textit{Wayfindr} para el metro de Londres. Todas ellas se rigen por un patrón común: el de la simpleza, que no va, de ninguna manera, reñida con una reducción de la funcionalidad. A pesar de simples, estas aplicaciones permiten filtrar la información que se quiere recibir, guardar lugares favoritos, su manejo mediante voz o sacudidas del teléfono, guían también mediante el uso sonidos específicos, etc.
+
+Sin embargo, si nos centramos en guía por interiores, aún son muchas las situaciones que quedan por cubrir, ya que el \textit{mapeado} del interior de los edificios debe ser realizado de manera expresa, no es tan sencillo como ``pasear el coche de \textit{Google Maps} por los pasillos'', al menos no de momento. En la siguiente sección veremos qué tecnología podemos usar para solventar el problema del posicionamiento en interiores.
+
+
 \section{Tecnología}
 Nos centramos ahora en el estudio e investigación de la tecnología necesaria para realizar nuestra aplicación de guía por interiores:
 
 \subsection{Balizas Bluetooth}
 
-Los beacons o balizas bluetooth son pequeños dispositivos que emiten señales de radio. Estas señales los identifican de manera única y pueden ser captadas por otros dispositivos receptores, estableciendose así, un canal de comunicación que permanece vivo siempre que permanezcan en un radio de alcance entre 10 y 30 metros. Además, estas balizas son de bajo consumo, es decir, sus baterías tienen una duración muy prolongada, aproximadamente 2 años con una simple pila de botón y su coste es reducido.
+Los beacons o balizas bluetooth son pequeños dispositivos que emiten señales de radio. Estas señales los identifican de manera única y pueden ser captadas por otros dispositivos receptores, estableciendose así, un canal de comunicación que permanece vivo siempre que permanezcan en un radio de alcance entre 10 y 30 metros, como máximo. Además, estas balizas son de bajo consumo, es decir, sus baterías tienen una duración muy prolongada, aproximadamente 2 años con una simple pila de botón y su coste es reducido.
 
 Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon estándar y comenzó a utilizarlos para el posicionamiento por interiores. En 2015, Google, que no se quiso quedar atrás, sacó el protocolo Eddystone, un protocolo, que a diferencia del de Apple, es de código abierto y ofrece soporte oficial tanto para iOs como para Android. Los beacons provistos del protocolo Eddystone pueden ser de 4 tipos, estos tipos se distinguen por el paquete de datos que pueden emitir, véase:
 
@@ -126,58 +132,18 @@ Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon 
 	\item \textbf{Eddystone-UID:} transmite un identificador de baliza único compuesto por 16 bytes, 10 de ellos referidos al espacio de nombres, que identifican a un grupo de beacons, y 6 que se refieren e identifican a la instancia particular dentro del grupo. Esta distinción entre espacio de nombres e instancia se pensó para optimizar el escaneo de beacons.
 	\item \textbf{Eddystone-URL:} transmite una URL utilizando un formato de codificación.
 	\item \textbf{Eddystone-TLM:} transmite información sobre la baliza. Esto puede incluir el nivel de la batería, los datos del sensor u otra información relevante para los administradores de balizas. Para poder usarse como baliza debe ir acompañado de otro tipo de marco (Eddystone-URL o Eddystone-UID).
-	\item Eddystone-EID: emite un identificador encriptado que cambia periódicamente, de modo que su uso está restringido a aplicaciones y dispositivos autorizados.
+	\item \textbf{Eddystone-EID:} emite un identificador encriptado que cambia periódicamente, de modo que su uso está restringido a aplicaciones y dispositivos autorizados.
 \end{itemize}
 
-Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología Bluetooth es muy útil, basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los beacons y la cantidad necesaria para mapear un área dependerá del edificio concreto.
+Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología bluetooth es muy útil, basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los beacons y la cantidad necesaria para \textit{mapear} un área dependerá del edificio concreto.
+
+El hecho por el cual se usa esta tecnología bluetooth y no otra, como el conocido GPS, es que las señales GPS funcionan muy mal en interiores, apenas son visibles. Además, con ellas no es posible determinar con exactitud en qué planta del edificio nos encontraríamos, por ejemplo. Para dar solución a estos problemas también se han usado las señales Wi-Fi. Esta técnica se basa en leer la señal de varios puntos de acceso Wi-Fi del edificio y, mediante triangulación, establecer el posicionamiento. Una de las ventajas del uso de la red Wi-Fi es que podemos aprovechar la infraestructura el edificio. Sin embargo, el posicionamiento basado en cliente-servidor no está soportado en dispositivos Apple (recordemos que estos fueron los primeros en sacar al mercado la tecnología beacon). Así que usando Wi-Fi estaríamos descartando de un plumazo a buena parte de los usuarios.
+
+Entre las ventajas que nos ofrecen los beacons destaca su flexibilidad: podemos colocarlos donde queramos, son pequeños y ligeros y proporcionan una exactitud de 1 a 3 metros, frente a una de 5 a 15 con la señal Wi-Fi. 
 
 La navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
 
-------------------------------------
 
-(Ver los links: 
-
-Dan un poco de info sobre posicionamiento en interiores:
-
-
-https://www.infsoft.com/technology/sensors/bluetooth-low-energy-beacons
-
-https://www.infsoft.com/solutions/indoor-navigation
-
-https://www.infsoft.com/software/administration/beacon-management
-
-Habla de los beacons:
-$ https://www.youtube.com/watch?v=0HKjEPh_Pu8 $
-
-Ejemplo de traqueo de gente y dispositivos usando beacons 
-
-$ https://www.youtube.com/watch?v=at_UCO_cWAk $
-
-APPI de Eddystone:
-https://github.com/google/eddystone
-
-https://developers.google.com/nearby/connections/overview
-
-https://developers.google.com/beacons/get-started
-
-Beacon SDK for Android: https://github.com/helpscout/beacon-android-sdk-sample
-
-API para Beacons: https://github.com/google/beacon-platform/tree/master/samples/python
-
-ANDROID beacon library: https://altbeacon.github.io/android-beacon-library/samples.html
-
-Video explicativo beacons en español MUY INTERESANTE, es lo que buscamos ahora: https://www.youtube.com/watch?v=NJ6dgsnhQ6M
-
-)
-
-Cosas que incluir aquí:
-
-\begin{itemize}
-	\item API de Eddystone.
-	\item API de Android.
-	\item Explicación de que en función de distintas señales (normalmente 3) se hace el posicionamiento.
-	\item hay que buscar lo del mapa, pasarlo a grafo o lo que sea.
-\end{itemize}
 
 
  
