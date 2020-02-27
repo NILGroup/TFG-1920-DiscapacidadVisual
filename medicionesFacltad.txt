@@ -1021,4 +1021,182 @@ Tenemos beacons:
     
     Nota: el CPne da near y no puede ser, está bastante lejos (en la puerta). Puede ser que el material sobre el que está proyecta más la onda 
     
+
+*******************************************************************************************************************
+
+Tenemos beacons (todos colocados en el suelo): 
+    ZxPh: en la puerta de entrada del aula 12
+    eAaw: en las escaleras
+    CPne: en la esquina
+    8v2c: en la puerta del baño
+
+    Medimos desde la esquina
+
+    ______ seg: 0 _________
+    beacon: CPne FAR a 3.373 m
+    beacon: ZxPh FAR a 3.968 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 2 _________
+    beacon: CPne FAR a 3.373 m
+    beacon: ZxPh FAR a 5.447 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 4 _________
+    beacon: CPne FAR a 3.66 m
+    beacon: ZxPh FAR a 5.447 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 6 _________
+    beacon: CPne NEAR a 2.221 m
+    beacon: ZxPh FAR a 5.038 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 8 _________
+    beacon: CPne NEAR a 1.871 m
+    beacon: ZxPh FAR a 3.968 m
+    beacon: eAaw NEAR a 2.859 m
+    _______________
+    ______ seg: 10 _________
+    beacon: CPne NEAR a 1.716 m
+    beacon: ZxPh FAR a 5.038 m
+    beacon: eAaw NEAR a 2.859 m
+    _______________
+    ______ seg: 12 _________
+    beacon: CPne NEAR a 1.871 m
+    beacon: ZxPh FAR a 5.038 m
+    beacon: eAaw NEAR a 2.859 m
+    _______________
+    ______ seg: 14 _________
+    beacon: CPne NEAR a 1.871 m
+    beacon: ZxPh FAR a 3.968 m
+    _______________
+    ______ seg: 16 _________
+    beacon: CPne NEAR a 2.417 m
+    beacon: ZxPh FAR a 5.038 m
+    beacon: eAaw FAR a 4.656 m
+    _______________
+    
+    Medimos desde la puerta del baño, más o menos
+    
+    ______ seg: 0 _________
+    beacon: ZxPh NEAR a 1.716 m
+    beacon: CPne FAR a 3.66 m
+    _______________
+    ______ seg: 2 _________
+    beacon: ZxPh NEAR a 2.417 m
+    beacon: CPne FAR a 3.66 m
+    beacon: 8v2c NEAR a 2.859 m
+    _______________
+    ______ seg: 4 _________
+    beacon: ZxPh NEAR a 1.871 m
+    beacon: CPne NEAR a 1.871 m
+    beacon: 8v2c FAR a 5.886 m
+    _______________
+    ______ seg: 6 _________
+    beacon: ZxPh NEAR a 1.105 m
+    beacon: CPne NEAR a 2.63 m
+    beacon: 8v2c FAR a 3.373 m
+    _______________
+    ______ seg: 8 _________
+    beacon: ZxPh NEAR a 1.105 m
+    beacon: CPne NEAR a 2.63 m
+    beacon: 8v2c NEAR a 2.63 m
+    _______________
+    ______ seg: 10 _________
+    beacon: ZxPh NEAR a 1.716 m
+    beacon: CPne NEAR a 2.859 m
+    beacon: 8v2c NEAR a 2.63 m
+    _______________
+    ______ seg: 12 _________
+    beacon: ZxPh NEAR a 1.716 m
+    beacon: CPne FAR a 3.106 m
+    beacon: 8v2c NEAR a 2.859 m
+    _______________
+    ______ seg: 14 _________
+    beacon: ZxPh NEAR a 1.011 m
+    beacon: CPne NEAR a 2.63 m
+    beacon: 8v2c NEAR a 2.859 m
+    _______________
+    
+    Medimos desde las escaleras (desde la puerta)
+    
+    ______ seg: 0 _________
+    beacon: eAaw NEAR a 2.417 m
+    _______________
+    ______ seg: 2 _________
+    beacon: eAaw FAR a 5.038 m
+    _______________
+    ______ seg: 4 _________
+    beacon: eAaw FAR a 3.373 m
+    _______________
+    ______ seg: 6 _________
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 8 _________
+    beacon: eAaw FAR a 5.447 m
+    _______________
+    ______ seg: 10 _________
+    beacon: eAaw NEAR a 2.859 m
+    _______________
+    ______ seg: 12 _________
+    beacon: eAaw FAR a 5.886 m
+    _______________
+    ______ seg: 14 _________
+    beacon: eAaw NEAR a 1.716 m
+    _______________
+    
+    
+    Cambiamos el beacon eAaw de las escaleras a la puerta del aula 11, estas están pegadas porque son pequeñas
+    
+    Medimos desde la mitad de camino, entre las dos aulas 
+    
+    ______ seg: 0 _________
+    beacon: 8v2c FAR a 3.373 m
+    _______________
+    ______ seg: 2 _________
+    beacon: 8v2c FAR a 5.886 m
+    beacon: ZxPh FAR a 4.299 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 4 _________
+    beacon: 8v2c FAR a 5.886 m
+    beacon: ZxPh FAR a 4.299 m
+    beacon: eAaw FAR a 3.66 m
+    _______________
+    ______ seg: 6 _________
+    beacon: 8v2c FAR a 5.886 m
+    beacon: ZxPh FAR a 4.656 m
+    beacon: eAaw FAR a 3.66 m
+    _______________
+    ______ seg: 8 _________
+    beacon: 8v2c FAR a 3.66 m
+    beacon: ZxPh FAR a 4.656 m
+    beacon: eAaw FAR a 4.656 m
+    _______________
+    ______ seg: 10 _________
+    beacon: 8v2c FAR a 6.357 m
+    beacon: ZxPh FAR a 4.656 m
+    beacon: eAaw FAR a 4.656 m
+    _______________
+    ______ seg: 12 _________
+    beacon: 8v2c FAR a 4.656 m
+    beacon: eAaw FAR a 3.968 m
+    _______________
+    ______ seg: 14 _________
+    beacon: 8v2c FAR a 5.038 m
+    beacon: eAaw FAR a 4.299 m
+    _______________
+    ______ seg: 16 _________
+    beacon: 8v2c FAR a 3.66 m
+    beacon: eAaw FAR a 3.66 m
+    beacon: CPne FAR a 5.447 m
+    beacon: ZxPh FAR a 3.968 m
+    _______________
+    
+    Aquí hay un poco más de movida porque estamos como en medio de todos los beacon, pero más o menos nos podemos hacer una idea de por dónde estamos 
+    
+    
+	
+
     
