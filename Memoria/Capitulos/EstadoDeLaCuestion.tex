@@ -93,7 +93,7 @@ Sin embargo, el \textit{mapeo completo} sí nos proporciona una localización pr
 %REFLEXIÓN
 
 \subsection{Lazarillo}
-Lazarillo\footnote{\url{https://www.lazarillo.app/es/}} es una aplicación que actualmente solo proporciona guía para exteriores. Inicialmente la idea era cubrir también la navegación por interiores pero su desarrollo no fue posible por problemas de financiación.
+Lazarillo \citep{lazarilloOnline} es una aplicación que actualmente solo proporciona guía para exteriores. Inicialmente la idea era cubrir también la navegación por interiores pero su desarrollo no fue posible por problemas de financiación.
 
 La navegación por exteriores cuenta con las funcionalidades básicas que ya hemos mencionado en las apps anteriores: \begin{itemize}
 	\item Buscar lugares de interés, cercanos a la ubicación actual. Esta búsqueda se puede acotar filtrando por categorías que vienen predefinidas (transporte, bancos y cajeros, salud, comida, tiendas, etc.).
@@ -106,20 +106,22 @@ La navegación por exteriores cuenta con las funcionalidades básicas que ya hem
 En resumidas cuentas, \textit{Lazarillo} es una aplicación que, como otras, busca mejorar la calidad de vida de las personas con discapacidad visual indicándoles para ello qué les rodea y proporcionándoles una mayor independencia. Ésta, sin embargo, cubre únicamente los aspectos más básicos y elementales, sin reparar en otras posibles funcionalidades o indicaciones (obstáculos, peligros...) que la convierten en una aplicación incompleta.
 
 La app es completamente gratuita y cuenta con versión para Android y iOs.
-\subsection{Wayfindr} %no he conseguido encontrar la app, por eso he puesto que no está disponible pero no estoy segura.
-Wayfindr\footnote{\url{https://www.wayfindr.net/}} es una aplicación cuyo objetivo es guiar a los invidentes por el metro de Londres (uno de los más complejos del mundo). Este proyecto, aún no disponible para el público, pretende llegar a esos lugares que están repletos de señales escritas, por los que las personas que ven pasan sin pensar pero que son precisamente los que más temen y evitan aquellos que tienen discapacidad visual. Investigaciones llevadas a cabo en el Reino Unido revelan que la mayor parte de este colectivo querría salir de su hogar con más frecuencia. Por ello, la sociedad británica \textit{Royal Society for Blind Children (RSBC)} y \textit{UsTwoo}, plataforma de innovación y tecnología digital, se unieron para desarrollar una solución, naciendo así, Wayfindr.
+\subsection{Wayfindr} 
+Wayfindr \citep{wayfindrOnline} es una aplicación cuyo objetivo es guiar a los invidentes por el metro de Londres (uno de los más complejos del mundo). Este proyecto, aún no disponible para el público, pretende llegar a esos lugares que están repletos de señales escritas, por los que las personas que ven pasan sin pensar pero que son precisamente los que más temen y evitan aquellos que tienen discapacidad visual. Investigaciones llevadas a cabo en el Reino Unido revelan que la mayor parte de este colectivo querría salir de su hogar con más frecuencia. Por ello, la sociedad británica \textit{Royal Society for Blind Children (RSBC)} y \textit{UsTwoo}, plataforma de innovación y tecnología digital, se unieron para desarrollar una solución, naciendo así, Wayfindr.
 
-El funcionamiento\footnote{\url{https://www.youtube.com/watch?v=mc3KmbfxuUQ}} de la aplicación es tan práctico como sencillo, se basa en una serie de sistemas Bluetooth, llamados beacons, que se colocan en las paredes de las distintas estaciones de metro emitiendo unas señales que son captadas por el móvil a su paso por un cierto radio de detección. Estas señales permiten ubicar al usuario y darle la siguiente indicación para el conseguimiento de su objetivo (coger un tren o salir de la estación).
+El funcionamiento\footnote{\url{https://www.youtube.com/watch?v=mc3KmbfxuUQ}} de la aplicación es tan práctico como sencillo: se basa en una serie de \textit{beacons}, colocados en puntos estratégicos a lo largo de las distintas estaciones de metro, que emiten unas señales que son captadas por el móvil a su paso por un cierto radio de detección. Estas señales permiten ubicar al usuario y darle la siguiente indicación para el conseguimiento de su objetivo (coger un tren o salir de la estación).
 
 Los desarrolladores recomiendan el uso de auriculares de conducción ósea, de manera que puedan escuchar otros sonidos del exterior.
 
 \subsection{Conclusiones}
-Tras este breve recorrido por algunas de las aplicaciones de guía adaptadas para personas ciegas o con visibilidad reducida podemos decir que cada vez son más las opciones, hemos visto desde aplicaciones de guía por exteriores, pasando por los interiores y llegando hasta algunas tan específicas como \textit{Wayfindr} para el metro de Londres. Todas ellas se rigen por un patrón común: el de la simpleza, que no va, de ninguna manera, reñida con una reducción de la funcionalidad. A pesar de simples, estas aplicaciones permiten filtrar la información que se quiere recibir, guardar lugares favoritos, su manejo mediante voz o sacudidas del teléfono, guían también mediante el uso sonidos específicos, etc.
+Tras este breve recorrido por algunas de las aplicaciones de navegación adaptadas para personas ciegas o con visibilidad reducida podemos decir que cada vez son más las opciones. Hemos visto desde aplicaciones de navegación por exteriores, como también por interiores, llegando hasta algunas tan específicas como \textit{Wayfindr} que está dirigida al metro de Londres concretamente. Todas ellas se rigen por un patrón común: el de la simpleza, sin conllevar por ello una reducción de la funcionalidad. Pues estas aplicaciones nos permiten filtrar la información que se quiere recibir, guardar nuestros lugares más visitados, manejarlas mediante voz o con sacudidas del teléfono..., es decir, nos proporcionan un gran abanico de posibilidades que el usuario puede ejecutar de manera sencilla.
 
-Sin embargo, si nos centramos en guía por interiores, aún son muchas las situaciones que quedan por cubrir, ya que el \textit{mapeado} del interior de los edificios debe ser realizado de manera expresa, no es tan sencillo como ``pasear el coche de \textit{Google Maps} por los pasillos'', al menos no de momento. En la siguiente sección veremos qué tecnología podemos usar para solventar el problema del posicionamiento en interiores.
+Por otro lado, si comparamos las apps, encontramos que aquellas de navegación por interiores están aún por desarrollar ya que el mapeo del interior de los edificios debe realizarse de manera particular e individual, convirtiéndose en una tarea mucho más tediosa que la que lleva a cabo el famoso coche de \textit{Google Maps}. Además, el posicionamiento también es más complejo ya que no es posible utilizar el sistema GPS y hay que recurrir a la triangulación de señales WIFI o a las balizas bluetooth, teniendo que estudiar de nuevo cada caso concreto.
+
+En la siguiente sección veremos qué tecnologías podemos usar para solventar el problema del posicionamiento en interiores.
 
 
-\section{Tecnología}
+\section{Tecnologías utilizadas}
 Nos centramos ahora en el estudio e investigación de la tecnología necesaria para realizar nuestra aplicación de guía por interiores:
 
 \subsection{Balizas Bluetooth}
