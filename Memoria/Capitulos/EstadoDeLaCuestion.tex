@@ -49,7 +49,7 @@ Es una de las aplicaciones de navegación más populares. Su uso se extiende a m
 
 Con el fin de agilizar el uso de la app, y que por tanto esta sea cómoda y rentable para los usuarios finales, incluye: accesos directos a funciones mediante gestos (como sacudir el móvil para que nos diga la ubicación actual y puntos cercanos) y la posibilidad de establecer filtros para recibir únicamente el tipo de información deseada. Por ejemplo, permite filtrar por restaurantes para no tener notificaciones sobre estaciones de tren o librerías.
 
-En cuanto a la navegación por interiores, \textit{BlindSquare}\footnote{\url{https://www.youtube.com/watch?v=9jH-Bdjmgb4}} emplea \textit{beacons} y ¿¿VPS?? para solventar el problema del posicionamiento. Por lo demás, incluye las mismas posibilidades y funcionalidades que la navegación por exteriores, con la única limitación de que el edificio debe estar provisto de dichos sistemas de posicionamiento.
+En cuanto a la navegación por interiores, \textit{BlindSquare}\footnote{\url{https://www.youtube.com/watch?v=9jH-Bdjmgb4}} emplea un sistema de balizas bluetooth, llamadas \textit{beacons}, (y ¿¿VPS??) para solventar el problema del posicionamiento. Por lo demás, incluye las mismas posibilidades y funcionalidades que la navegación por exteriores, con la única limitación de que el edificio debe estar provisto de dichos sistemas de posicionamiento.
 %SOLUCIONAR VPS Y AÑADIR COMO EMPLEAN LOS BEACONS.
 
 Entre los puntos fuertes de esta aplicación destacamos los siguientes:
@@ -115,34 +115,53 @@ Tras este breve recorrido por algunas de las aplicaciones de navegación adaptad
 
 Por otro lado, si comparamos las apps, encontramos que aquellas de navegación por interiores están aún por desarrollar ya que el mapeo del interior de los edificios debe realizarse de manera particular e individual, convirtiéndose en una tarea mucho más tediosa que la que lleva a cabo el famoso coche de \textit{Google Maps}. Además, el posicionamiento también es más complejo ya que no es posible utilizar el sistema GPS y hay que recurrir a la triangulación de señales WIFI o a las balizas bluetooth, teniendo que estudiar de nuevo cada caso concreto.
 
-En la siguiente sección veremos qué tecnologías podemos usar para solventar el problema del posicionamiento en interiores.
+
+\section{Sistemas de posicionamiento}
+Para la consecución de nuestro objetivo, el desarrollo de una aplicación de navegación por interiores, uno de los primeros problemas que se nos plantea es el del posicionamiento en un mapa ya que es de vital importancia poder determinar donde estamos para después indicar la ruta pertinente hacia el destino indicado. En esta sección haremos un pequeño estudio sobre las distintas tecnologías existentes que nos permiten solventar nuestro problema y determinar la posición exacta de un cierto dispositivo, y discutiremos su validez para la consecución del objetivo de este trabajo de fin de grado.
+
+\subsection{GPS}
+
+El Sistema de Posicionamiento Global (GPS) es un sistema de localización, diseñado por el Departamento de
+Defensa de los Estados Unidos con fines militares para proporcionar estimaciones precisas de posición,
+velocidad y tiempo. Este sistema se encuentra operativo desde enero de 1994 y se desarrolló a partir de los 24 satélites que componen la constelación NAVSTAR, cada uno de los cuales cuenta con una órbita de 26560Km de radio y un periodo de 12h \citep{pozo2000sistema}. 
+
+El método mediante el cual el GPS determina la altitud, longitud y latitud de cualquier objeto que se encuentre en la superficie terrestre se conoce como triangulación. Este requiere la distancia desde el dispositivo en cuestión (receptor) a tres satélites como mínimo cuya localización es conocida de antemano. Entonces, cuando el receptor detecta el primer satélite, se genera una esfera a su alrededor cuyo radio será la distancia desde el receptor hasta dicho satélite. De este modo, el receptor se encontrará en un punto de la superficie de esa esfera, aún por determinar. Repetimos el proceso con otro satélite. Al crearse esa segunda esfera, el dispositivo receptor se encontrará en alguno de los puntos de corte de ambas esferas, por lo que el resto de puntos se descartan. De nuevo, se utiliza un tercer satélite de modo que se crea una nueva esfera que cortará a las
+anteriores. De este modo, con el corte de las tres esferas, y teniendo en cuenta que el dispositivo se encuentra en la superficie terrestre, tendremos el punto concreto buscado. En caso de querer conocer la altitud, bastará con usar un cuarto satélite como referencia y repetir el proceso. En la Figura \ref{fig:ejemplogps} vemos un esquema del proceso que acabamos de explicar empleando 3 y 4 satélites.
+
+El problema del Sistema de posicionamiento Global es que pierde mucha precisión cuando nos encontramos bajo superficies como túneles, tejados, etc. ya que la señal se debilita enormemente y el dispositivo no es capaz de llevar a cabo la triangulación de manera exacta. Es por esto, que descartamos este sistema para nuestro propósito puesto que transcurre en interiores.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Imagenes/Estadodelacuestion/triangulacion}
+	\caption{Método de triangulación GPS. }
+	\label{fig:ejemplogps}
+\end{figure}
 
 
-\section{Tecnologías utilizadas}
-Nos centramos ahora en el estudio e investigación de la tecnología necesaria para realizar nuestra aplicación de guía por interiores:
+\subsection{Wi-Fi}
+ %Esta técnica se basa en leer con un dispositivo la intensidad de señal que recibe de distintos puntos de acceso Wi-Fi del edificio y triangularla para determinar la posición exacta.
 
 \subsection{Balizas Bluetooth}
 
-Los beacons o balizas bluetooth son pequeños dispositivos que emiten señales de radio. Estas señales los identifican de manera única y pueden ser captadas por otros dispositivos receptores, estableciendose así, un canal de comunicación que permanece vivo siempre que permanezcan en un radio de alcance entre 10 y 30 metros, como máximo. Además, estas balizas son de bajo consumo, es decir, sus baterías tienen una duración muy prolongada, aproximadamente 2 años con una simple pila de botón y su coste es reducido.
+Los \textit{beacons} o balizas bluetooth son pequeños dispositivos que emiten señales de radio. Estas señales los identifican de manera única y pueden ser captadas por otros dispositivos receptores, estableciéndose así un canal de comunicación que permanece vivo siempre que permanezcan en un radio de alcance de entre 10 y 30 metros como máximo, según el dispositivo. Es importante remarcar que generalmente los \textit{beacons} no aceptan conexiones de otros dispositivos, lo que significa que no pueden registrar qué aparatos están cerca. Por tanto, esta simplicidad conlleva la necesidad de una aplicación capaz de interpretar la señal de la baliza. Otra característica de los \textit{beacons} es que son de bajo consumo, es decir, sus baterías tienen una duración muy prolongada (aproximadamente 2 años) con una simple pila de botón, y su coste es reducido.
 
-Esta tecnología se hizo muy popular en 2013, cuando Apple introdujo su iBeacon estándar y comenzó a utilizarlos para el posicionamiento por interiores. En 2015, Google, que no se quiso quedar atrás, sacó el protocolo Eddystone, un protocolo, que a diferencia del de Apple, es de código abierto y ofrece soporte oficial tanto para iOs como para Android. Los beacons provistos del protocolo Eddystone pueden ser de 4 tipos, estos tipos se distinguen por el paquete de datos que pueden emitir, véase:
-
-
+Esta tecnología se hizo muy popular en 2013 cuando Apple introdujo el \textit{iBeacon} estándar y comenzó a utilizarlos para la navegación, más concretamente, para el posicionamiento en interiores. En 2015 Google, que no quiso quedarse atrás, lanzó el protocolo Eddystone, un protocolo, que a diferencia del de Apple, es de código abierto y ofrece soporte oficial tanto para iOS como para Android. Otras de las ventajas que incluye la versión de Google es que proporciona dos APIs que facilitan mucho el manejo de los \textit{beacons} y que emite 4 paquetes distintos de información, en lugar de 1 como en el caso de los iBeacons. Estos paquetes son:
 
 \begin{itemize}
-	\item \textbf{Eddystone-UID:} transmite un identificador de baliza único compuesto por 16 bytes, 10 de ellos referidos al espacio de nombres, que identifican a un grupo de beacons, y 6 que se refieren e identifican a la instancia particular dentro del grupo. Esta distinción entre espacio de nombres e instancia se pensó para optimizar el escaneo de beacons.
+	\item \textbf{Eddystone-UID:} transmite un identificador de baliza único compuesto por 16 bytes, 10 de ellos referidos al espacio de nombres, que identifican a un grupo de \textit{beacons}, y 6 que se refieren e identifican a la instancia particular dentro del grupo. Esta distinción entre espacio de nombres e instancia se pensó para optimizar el escaneo de beacons. Este paquete es idéntico al que ofrecen los \textit{iBeacons}.
 	\item \textbf{Eddystone-URL:} transmite una URL utilizando un formato de codificación.
-	\item \textbf{Eddystone-TLM:} transmite información sobre la baliza. Esto puede incluir el nivel de la batería, los datos del sensor u otra información relevante para los administradores de balizas. Para poder usarse como baliza debe ir acompañado de otro tipo de marco (Eddystone-URL o Eddystone-UID).
+	\item \textbf{Eddystone-TLM:} transmite información sobre la baliza. Como puede ser el nivel de la batería, los datos del sensor u otra información relevante para los administradores de balizas. Para poder usarse también como baliza necesita ir acompañado de otro tipo de marco (Eddystone-URL o Eddystone-UID).
 	\item \textbf{Eddystone-EID:} emite un identificador encriptado que cambia periódicamente, de modo que su uso está restringido a aplicaciones y dispositivos autorizados.
 \end{itemize}
 
-Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología bluetooth es muy útil, basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los beacons y la cantidad necesaria para \textit{mapear} un área dependerá del edificio concreto.
+Por todo esto, consideramos que el protocolo Eddystone es más ventajoso.
+ %SEGUIR PENSANDO COMO PONER LA CONCLUSIÓN DE QUE USAMOS BEACONS.
+Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología bluetooth es muy útil: basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los \textit{beacons} y la cantidad necesaria para mapear un área dependerá del edificio concreto.
 
-El hecho por el cual se usa esta tecnología bluetooth y no otra, como el conocido GPS, es que las señales GPS funcionan muy mal en interiores, apenas son visibles. Además, con ellas no es posible determinar con exactitud en qué planta del edificio nos encontraríamos, por ejemplo. Para dar solución a estos problemas también se han usado las señales Wi-Fi. Esta técnica se basa en leer la señal de varios puntos de acceso Wi-Fi del edificio y, mediante triangulación, establecer el posicionamiento. Una de las ventajas del uso de la red Wi-Fi es que podemos aprovechar la infraestructura el edificio. Sin embargo, el posicionamiento basado en cliente-servidor no está soportado en dispositivos Apple (recordemos que estos fueron los primeros en sacar al mercado la tecnología beacon). Así que usando Wi-Fi estaríamos descartando de un plumazo a buena parte de los usuarios.
+Aunque la alternativa tecnológica Wi-Fi es también adecuada para solventar el problema del posicionamiento en interiores y cuenta con ventajas como la de aprovechar la infraestructura del edificio, también conlleva inconvenientes como que el posicionamiento basado en cliente-servidor no está soportado en dispositivos Apple, por lo que usando Wi-Fi estaríamos descartando a una gran catidad de los potenciales usuarios que cuenten con un dispositivo móvil iOS. Además entre las ventajas que nos ofrecen los \textit{beacons} destaca su flexibilidad: podemos colocarlos donde queramos, son pequeños y ligeros y proporcionan una exactitud de 1 a 3 metros, frente a una de 5 a 15 con la señal Wi-Fi. 
 
-Entre las ventajas que nos ofrecen los beacons destaca su flexibilidad: podemos colocarlos donde queramos, son pequeños y ligeros y proporcionan una exactitud de 1 a 3 metros, frente a una de 5 a 15 con la señal Wi-Fi. 
-
-La navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
+%NO ENTIENDO NADA DE ESTO:
+%La navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
 
 
 
