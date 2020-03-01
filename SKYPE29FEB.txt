@@ -14,10 +14,8 @@ REUNIÓN TFG INFORMÁTICA:
 
 
 	MEMORIA:
--Añadir reunión de la Once: Descripción del trabajo(Clara).
 -Añadir conclusión de las apps (belen googlemaps y blindsquare-clara nearby y wayfindr).
 -En Blindsquare hay que aclarar lo de VPS (o quitarlo) y tratar de ver como funciona con los beacons (belén).
--Acabar las correcciones (Clara).
 
 -Preguntar cómo hacer las citas de páginas web o si en las apps ponerlas como footnote y en las paginas web como ver la fecha en la que se crearon.
 -Mejor poner autores o lazarillo?
