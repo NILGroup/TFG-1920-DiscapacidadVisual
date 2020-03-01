@@ -150,6 +150,13 @@ El problema del Sistema de posicionamiento Global es que pierde mucha precisión
 
 \subsection{Wi-Fi}
  %Esta técnica se basa en leer con un dispositivo la intensidad de señal que recibe de distintos puntos de acceso Wi-Fi del edificio y triangularla para determinar la posición exacta.
+ 
+El posicionamiento por Wi-Fi fue una de las primeras técnicas empleadas para el posicionamiento por interiores. Como ya hemos avanzado en el apartado anterior, la señal GPS no es suficiente, pues las barreras arquitectónicas como las paredes o tejados la debilitan enormemente. Es por ello que se utiliza la tecnología Wi-Fi, basada en la lectura de la señal Wi-Fi obtenida desde distintos puntos de acceso a esta red.
+
+Una de las grandes ventajas de esta tecnología es que prácticamente la totalidad de los casas, colegios y edificios, en general, están equipados con una red Wi-Fi. Para el posicionamiento, uno de los métodos más usados, se basa en medir la intensidad con la que se recibe la señal en un cierto punto (\textit{Received Signal Strength Indicator, RSSI}) desde varios puntos de acceso y, en base a eso, establecer la distancia a la que se encuentra el dispositivo de este punto de acceso. Este método es fácil y barato de implementar, su desventaja es que no proporciona una buena exactitud (de 2 a 5 metros), ya que la señal es muy dependiente del ambiente: personas, paredes, etc. Aunque no es el único método, también se utiliza uno denominado \textit{fingerprint}, este consiste en guardar la intensidad de la señal desde distintos puntos de acceso en una base de datos de acuerdo a conocidas coordenadas del cliente durante una fase sin conexión. Durante la fase de conexión, las medidas actuales RSSI de una posición que no se conoce se comparan con las guardadas en la base de datos y, aquellas que más se le parezcan, se devuelven como estimación de la posición del usuario. Mejorando la exactitud, cuyo error baja a menos de 3m \citep{wifipositioning}. 
+
+Otras de las muchas utilidades de esta señal Wi-Fi pueden ser el análisis del flujo de personas y las rutas que toman o la medición de la ocupación de un cierto espacio, como una oficina. En el siguiente apartado haremos una pequeña comparativa entre esta tecnología y la ofrecida por las balizas bluetooth.
+
 
 \subsection{Balizas Bluetooth}
 
@@ -168,10 +175,10 @@ Por todo esto, consideramos que el protocolo Eddystone es más ventajoso.
  %SEGUIR PENSANDO COMO PONER LA CONCLUSIÓN DE QUE USAMOS BEACONS.
 Para el motivo de nuestro estudio, la navegación por interiores, esta tecnología bluetooth es muy útil: basta con colocar las balizas en puntos de interés (\textit{landmarks}) del edificio en cuestión y tener una aplicación que interprete las señales que recibe para saber donde se encuentra exactamente el usuario. No obstante, hay que tener en cuenta que la disposición exacta de los \textit{beacons} y la cantidad necesaria para mapear un área dependerá del edificio concreto.
 
-Aunque la alternativa tecnológica Wi-Fi es también adecuada para solventar el problema del posicionamiento en interiores y cuenta con ventajas como la de aprovechar la infraestructura del edificio, también conlleva inconvenientes como que el posicionamiento basado en cliente-servidor no está soportado en dispositivos Apple, por lo que usando Wi-Fi estaríamos descartando a una gran catidad de los potenciales usuarios que cuenten con un dispositivo móvil iOS. Además entre las ventajas que nos ofrecen los \textit{beacons} destaca su flexibilidad: podemos colocarlos donde queramos, son pequeños y ligeros y proporcionan una exactitud de 1 a 3 metros, frente a una de 5 a 15 con la señal Wi-Fi. 
+Aunque la alternativa tecnológica Wi-Fi es también adecuada para solventar el problema del posicionamiento en interiores y cuenta con ventajas como la de aprovechar la infraestructura del edificio, también conlleva inconvenientes como que la intensidad de las señales Wi-Fi depende mucho del entorno, y no es trivial establecer una diferencia entre dos plantas de un edificio si estas no son lo suficientemente altas. Además entre las ventajas que nos ofrecen los \textit{beacons} destaca su flexibilidad: podemos colocarlos donde queramos, son pequeños y ligeros y proporcionan una exactitud de 1 a 3 metros, algo más alta que con la señal Wi-Fi \footnote{\url{https://www.infsoft.com/technology/positioning-technologies/bluetooth-low-energy-beacons}}. 
 
-%NO ENTIENDO NADA DE ESTO:
-%La navegación por interiores no es el único uso que se le puede dar a los beacons. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina (como proyectores o portátiles), dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), el análisis de los flujos de personas en centros públicos como aeropuertos, entre otras. 
+El posicionamiento en interiores no es la única salida que pueden tener los \textit{beacons}. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina, como proyectores o portátiles; si asociamos un \textit{beacon} a cada uno de estos objetos podremos localizarlos fácilmente, dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), entre otras. 
+
 
 
 
