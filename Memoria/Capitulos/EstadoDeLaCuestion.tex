@@ -13,7 +13,10 @@ El pasado 10 de Octubre de 2019, en el ``World Sight Day'', Google dió a conoce
 
 El proyecto consiste en la implementación de una nueva funcionalidad que facilita la posibilidad de recibir instrucciones de voz más detalladas y nuevos tipos de anuncios verbales muy útiles para las rutas de a pie para personas con visibilidad reducida. Algunas de las nuevas instrucciones incluidas son: informar de manera proactiva que estás en la ruta correcta, la distancia hasta el próximo giro, la dirección en la que estás caminando, avisos para cruzar con precaución si te aproximas a una gran intersección, notificaciones en caso de ser redirigido por causa de haber abandonado accidentalmente la ruta correcta, etc. De esta manera, la aplicación pretende brindar de independencia a las personas que padecen ceguera tratando de que se sientan cómodas y seguras a la hora de explorar lugares nuevos y desconocidos. La guía de voz detallada para la navegación está actualmente en desarrollo, estando ya disponible en inglés en los Estados Unidos y en japonés en Japón. Su soporte para otros idiomas y países sigue en camino.
 
-En cuanto a la navegación por interiores, \textit{Google Maps}\footnote{\url{https://www.google.es/intl/es/maps/about/partners/indoormaps/}} con su actualización \textit{6.0} incorporó los primeros planos de ciertos edificios públicos, entre los cuales destacan aeropuertos, centros comerciales, estadios y puntos de transporte público. Gracias a esta nueva versión, \textit{Google Maps} ayuda a determinar dónde estás, en qué planta y hacia dónde ir. Para ello, basta con hacer zoom sobre un edificio cuyo plano esté disponible en la app, y este aparecerá automáticamente y completamente detallado. En la Figura \ref{fig:ejemplo} y \ref{fig:ejemplo2} vemos un ejemplo del famoso Madison Square Garden de Nueva York. 
+En cuanto a la navegación por interiores, \textit{Google Maps}\footnote{\url{https://www.google.es/intl/es/maps/about/partners/indoormaps/}} con su actualización \textit{6.0} incorporó los primeros planos de ciertos edificios públicos, entre los cuales destacan aeropuertos, centros comerciales, estadios y puntos de transporte público. Gracias a esta nueva versión, \textit{Google Maps} ayuda a determinar dónde estás, en qué planta y hacia dónde ir. Para ello, basta con hacer zoom sobre un edificio cuyo plano esté disponible en la app, y este aparecerá automáticamente y completamente detallado. En la Figuras \ref{fig:ejemplo} y \ref{fig:ejemplo2} vemos un ejemplo del famoso Madison Square Garden de Nueva York.
+
+
+ 
 
 \begin{figure}[t]
 	\centering
@@ -38,7 +41,9 @@ Con estos nuevos planos podrás localizar dónde están los baños, escaleras, a
 	\label{fig:ejemplo3}
 \end{figure}
 
-Pese al gran avance que esta aplicación supone en la navegación por interiores, cuenta con ciertas desventajas. El posicionamiento, al contrario que en exteriores, no es muy preciso, y las búsquedas que puedes realizar son limitadas, no pudiendo, por ejemplo, preguntar por la ubicación de los baños. Pero sobre todo, tiene el inconveniente de que no es una tecnología accesible: \textit{Google Maps Indoors}\footnote{\url{https://www.youtube.com/watch?v=cPsTWj_O3Qs}} es una aplicación completamente visual que no cuenta con soporte auditivo por lo que descarta completamente a usuarios invidentes.
+
+Esta aplicación pone a nuestro servicio la utilidad de \textit{Maps} pero en interiores. Además, nos permite colaborar, pudiendo subir nosotros mimos el plano de un edificio. Sin dudar del gran avance que esta aplicación supone en la navegación por interiores, no debemos olvidar algunas de sus desventajas: el posicionamiento, al contrario que en exteriores, no es muy preciso (en la web hablan de varios metros), y las búsquedas que puedes realizar son limitadas, no pudiendo, por ejemplo, preguntar por la ubicación de los baños; esto es, puedes ver dónde están pero no puedes seleccionarlos como destino para que te vaya indicando la ruta a seguir. Pero sobre todo, tiene el inconveniente de que no es una tecnología accesible: \textit{Google Maps Indoors}\footnote{\url{https://www.youtube.com/watch?v=cPsTWj_O3Qs}} es una aplicación completamente visual que no cuenta con soporte auditivo por lo que descarta completamente a usuarios invidentes.
+
 
 
 %SEGUNDA APP
@@ -49,8 +54,10 @@ Es una de las aplicaciones de navegación más populares. Su uso se extiende a m
 
 Con el fin de agilizar el uso de la app, y que por tanto esta sea cómoda y rentable para los usuarios finales, incluye: accesos directos a funciones mediante gestos (como sacudir el móvil para que nos diga la ubicación actual y puntos cercanos) y la posibilidad de establecer filtros para recibir únicamente el tipo de información deseada. Por ejemplo, permite filtrar por restaurantes para no tener notificaciones sobre estaciones de tren o librerías.
 
-En cuanto a la navegación por interiores, \textit{BlindSquare}\footnote{\url{https://www.youtube.com/watch?v=9jH-Bdjmgb4}} emplea un sistema de balizas bluetooth, llamadas \textit{beacons}, (y ¿¿VPS??) para solventar el problema del posicionamiento. Por lo demás, incluye las mismas posibilidades y funcionalidades que la navegación por exteriores, con la única limitación de que el edificio debe estar provisto de dichos sistemas de posicionamiento.
+En cuanto a la navegación por interiores, \textit{BlindSquare}\footnote{\url{https://www.youtube.com/watch?v=9jH-Bdjmgb4}} emplea un sistema de balizas bluetooth, llamadas \textit{beacons}, que colocan es sitios estratégicos de los edificios, para solventar el problema del posicionamiento. Por lo demás, incluye las mismas posibilidades y funcionalidades que la navegación por exteriores, con la única limitación de que el edificio debe estar provisto de dichos sistemas de posicionamiento.
 %SOLUCIONAR VPS Y AÑADIR COMO EMPLEAN LOS BEACONS.
+
+En su web encontramos un ejemplo de la utilización de los \textit{beacons} en un campus \footnote{\url{https://www.blindsquare.com/2019/11/01/blindsquares-getting-straight-as-on-campus/}}: una vez que entras en el edificio, uno de los \textit{beacons} se dará cuenta de tu aplicación BlindSquare y te hará saber dónde te encuentras y cómo llegar a tu destino, indicándote los ascensores, escaleras e intersecciones más cercanas. Integrar en el campus servicios como estos promueve tanto a visitantes como a estudiantes con discapacidad visual moverse por el entorno con total autonomía y seguridad.
 
 Entre los puntos fuertes de esta aplicación destacamos los siguientes:
 \begin{itemize}
@@ -68,6 +75,9 @@ Entre los puntos fuertes de esta aplicación destacamos los siguientes:
 \end{itemize}
 
 Su principal punto negativo es el precio, ya que cuesta 40 libras.
+
+Al contrario que la aplicación anterior, esta sí es una aplicación diseñada para personas con discapacidad visual. Las diferencias saltan a la vista: el modo de dar las indicaciones, avisos constantes para indicarte si vas por el camino correcto, permite más autonomía; gracias a la comunicación constante que ofrece permite llevar las manos libres, entre otras. Parece imposible pensar que el interior de un edificio pueda resultar menos seguro que una gran avenida, lo cierto es, que para personas con discapacidad visual, muchas veces es así. El interior de un gran centro comercial o una biblioteca resultan un laberinto cuando se va por primera vez, más aún si tenemos algún tipo de dificultad para leer las indicaciones que, normalmente, suelen estar en lugares altos y no adaptadas para personas con discapacidad visual. Lo que se pretende con esta aplicación es mantener la autonomía del usuario tanto dentro como fuera de un edificio \footnote{\url{https://www.blindsquare.com/2019/10/24/independence-on-both-sides-of-the-door/}}.
+
 
 %CONCLUSIÓN DE POR QUÉ TODO ESTO ES BUENO PARA LOS CIEGOS.
 
