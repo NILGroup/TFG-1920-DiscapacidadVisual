@@ -1,7 +1,6 @@
 INVESTIGAR NOSOTRAS (Para el lunes-ambas):
 -Cálculo de la ruta.
 -Acelerómetro.
--Investigar como añadir sonidos en nuestras apps para que cuando te acerques al destino pite.
 
 REUNIÓN TFG INFORMÁTICA:
 
