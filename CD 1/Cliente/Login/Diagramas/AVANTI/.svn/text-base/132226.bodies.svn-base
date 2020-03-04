@@ -1,0 +1,29 @@
+class DialogController
+!!!140674.java!!!	DialogController()
+		
+!!!140930.java!!!	showInformDialog(inout context : Context, in message : String) : void
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage(message);
+		
+		builder.setPositiveButton("Aceptar", new OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				clickAccept();
+			}
+		});
+		
+		builder.setCancelable(false);
+		AlertDialog alert = builder.create();
+		alert.show();
+!!!141058.java!!!	createInformDialog(inout context : Context, in message : String) : void
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage(message);
+		
+		builder.setPositiveButton("Aceptar", new OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.dismiss();
+			}
+		});
+		
+		builder.setCancelable(false);
+		AlertDialog alert = builder.create();
+		alert.show();

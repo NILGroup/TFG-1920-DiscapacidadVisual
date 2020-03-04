@@ -1,0 +1,53 @@
+class Coordenada
+!!!168706.java!!!	Coordenada()
+		x = 0;
+		y = 0;
+		z = 0;
+		mac = "";
+		strength = 0;
+!!!168834.java!!!	Coordenada(in x : double, in y : double, in z : double, in mac : String, in strength : int)
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.mac = mac;
+		this.strength = strength;
+!!!168962.java!!!	getX() : double
+		return x;
+!!!169090.java!!!	setX(in x : double) : void
+		this.x = x;
+!!!169218.java!!!	getY() : double
+		return y;
+!!!169346.java!!!	setY(in y : double) : void
+		this.y = y;
+!!!169474.java!!!	getZ() : double
+		return z;
+!!!169602.java!!!	setZ(in z : double) : void
+		this.z = z;
+!!!169730.java!!!	getMac() : String
+		return mac;
+!!!169858.java!!!	setMac(in mac : String) : void
+		this.mac = mac;
+!!!169986.java!!!	getStrength() : int
+		return strength;
+!!!170114.java!!!	setStrength(in strength : int) : void
+		this.strength = strength;
+!!!170242.java!!!	setDistanciaAlmacenada(in distanciaAlmacenada : double) : void
+		this.distanciaAlmacenada = distanciaAlmacenada;
+!!!170370.java!!!	getDistanciaAlmacenada() : double
+		return distanciaAlmacenada;
+!!!170498.java!!!	equals(inout o : Object) : boolean
+		Coordenada c = (Coordenada)o;
+		if(this.x == c.getX() && y == c.getY() && z == c.getZ()/* && mac.equals(c.getMac())*/){
+			return true;
+		}else{
+			return false;
+		}
+!!!170626.java!!!	clone() : Coordenada
+		Coordenada c = new Coordenada();
+		c.setDistanciaAlmacenada(distanciaAlmacenada);
+		c.setMac(new String(mac));
+		c.setStrength(strength);
+		c.setX(x);
+		c.setY(y);
+		c.setZ(z);
+		return c;

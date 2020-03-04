@@ -1,0 +1,584 @@
+package com.avanti.activities;
+
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.microedition.khronos.opengles.GL10;
+
+import com.avanti.camera.Preview;
+import com.avanti.dialogs.DialogController;
+
+import com.avanti.graphics.GameView;
+
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Paint;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLU;
+
+import com.avanti.graphics.*;
+import com.avanti.graphics.Texture.TextureFilter;
+import com.avanti.graphics.Texture.TextureWrap;
+import com.avanti.graphics.Mesh.PrimitiveType;
+import com.avanti.position.Mapa;
+import com.avanti.routes.Fire;
+import com.avanti.routes.FireList;
+import com.avanti.routes.ListaCuadrantes;
+import com.avanti.tests.labelmaker.LabelMaker;
+import com.avanti.wps.Coordenada;
+import com.avanti.wps.ThreadDatos;
+import com.avanti.wps.ThreadFuegos;
+import com.avanti.wps.ThreadUbicacion;
+
+
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.ViewGroup.LayoutParams;
+
+/**
+ * Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view
+ * that uses OpenGL drawing into a dedicated surface.
+ */
+public class GLSurfaceViewActivity extends PositionActivity implements ViewListener{
+	
+	private Preview mPreview;
+	private GameView gameView;
+	public ThreadUbicacion thread;
+	public ThreadFuegos threadFuegos;
+	private ProgressDialog pd;
+	private Thread comprobar;
+	private ListaCuadrantes cuadrantes;
+	
+	/**
+	 * Factor de zoom sobre el objeto 3D
+	 */
+	private float zoomFactor = 1.0f;
+	private Mesh mesh;
+    private Texture texture;
+    private float angle;
+	
+    private boolean translate;
+    private float eyeY = 2.5f;
+    private ArrayList<Fire> fuegosMostrados;
+    
+    /*private View texto;
+    private String textoGiro;
+    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);*/
+    
+    private LabelMaker mLabels;
+    private Paint mLabelPaint;
+    private ArrayList<Integer> labels =  new ArrayList<Integer>();
+    /*private int mLabelA;
+    private int mLabelB;
+    private int mLabelC;*/
+    
+	public static float alturaMedia = 1.6f;
+	public final static int colorBlanco = -1025;
+	public static float distanciaFoco = 50;
+    
+	public static float centerX;
+	public static float centerY;
+	public static float centerZ;
+	
+	
+	protected void onCreate(Bundle savedInstanceState) {
+    	
+    	super.onCreate( savedInstanceState );
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); 
+
+        // Create our Preview view and set it as the content of our activity.
+        mPreview = new Preview(this);        
+        
+        gameView = new GameView(this);
+        gameView.setViewListener(this);     
+        gameView.setOnTouchListener(gameView);
+        setContentView(gameView);        
+        
+        addContentView(mPreview, new LayoutParams
+  			  (LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+     
+        pd = ProgressDialog.show(this, "", "Cargando datos...");
+        
+        
+        fuegosMostrados = new ArrayList<Fire>();
+                
+        cuadrantes = new ListaCuadrantes();
+		comprobar = new Thread(){
+			public void run(){
+				comprobar();
+			}
+		};
+		comprobar.start();
+		
+		
+    }
+    
+    private void comprobar(){
+		if(MainMenu.thread.getEstado() == ThreadDatos.ESTADO_ERROR){
+			pd.dismiss();
+			DialogController.createInformDialog(this, "Ha ocurido un error mientras se recuperaban los datos.");
+		}else if(MainMenu.thread.getEstado() == ThreadDatos.ESTADO_EJECUCION){
+			SystemClock.sleep(2000);
+			comprobar();
+		}else if(MainMenu.thread.getEstado() == ThreadDatos.ESTADO_EXITO){
+			
+			if(thread == null){
+				thread = new ThreadUbicacion(this);
+				threadFuegos = new ThreadFuegos(this);
+				
+				thread.setCuadrantes(cuadrantes);
+				thread.start();
+				threadFuegos.start();
+				
+				
+			}
+			
+		}
+	}
+   
+    
+    protected void onResume() {
+        // Ideally a game should implement onResume() and onPause()
+        // to take appropriate action when the activity looses focus
+        super.onResume();
+        gameView.onResume();
+        
+        
+    }
+
+    protected void onPause() {
+        // Ideally a game should implement onResume() and onPause()
+        // to take appropriate action when the activity looses focus
+        super.onPause();
+        gameView.onPause();
+       
+    }
+
+    /**
+     * Instrucciones a realizar en cada frame de la animación del objeto 3D
+     */
+	public void mainLoopIteration(GameView activity, GL10 gl, float x, float y) {
+		//texto.postInvalidate();
+		
+		
+		gl.glClear( GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT );
+		gl.glViewport( 0, 0, activity.getViewportWidth(), activity.getViewportHeight() );
+		
+		
+		gl.glEnable( GL10.GL_DEPTH_TEST );
+		
+		gl.glMatrixMode( GL10.GL_PROJECTION );
+		gl.glLoadIdentity();
+		float aspectRatio = (float)activity.getViewportWidth() / activity.getViewportHeight();
+		//for(int i = 0; i < fuegosMostrados.size();i++){
+		
+			GLU.gluPerspective( gl, /*Preview._vision_angle*/25.f*zoomFactor, aspectRatio, 0.1f, 50f );
+		//}
+			
+		
+		gl.glMatrixMode( GL10.GL_MODELVIEW );
+		//gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
+		gl.glLoadIdentity();
+		//gl.glScalef(0.1f, 0.1f, 0.1f);
+		
+		if(translate){
+			eyeY++;
+		}
+		//Cuanto más aumenta  centerY más baja en la pantalla la imagen
+		//Cuanto más aumenta centerX más se desplaza hacia la izquierda el modelo
+		
+		//+GLU.gluLookAt( gl, (float)thread.getC().getY(), 0, (float)-thread.getC().getX(), (float)thread.getC().getY(), 0, (float)-thread.getC().getX()-10, 0, 1, 0 );
+		//eye.render(gl);
+		
+		//GLU.gluLookAt( gl, 4, 2, 1, 2, 4, -3, 0, 1, 0);
+		//GLU.gluLookAt( gl, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+		//GLU.gluLookAt( gl, 1, 2, 2, x, y, 0, 0, 1, 0 );
+		
+		gl.glEnable( GL10.GL_LIGHTING );
+		gl.glEnable( GL10.GL_LIGHT0 );		
+		float[] direction = { 0, 0.5f, 1, 0 };
+		gl.glLightfv( GL10.GL_LIGHT0, GL10.GL_POSITION, direction, 0 );
+		gl.glEnable( GL10.GL_COLOR_MATERIAL );		
+		
+		gl.glEnable( GL10.GL_TEXTURE_2D );
+		
+		texture.bind();
+		
+		if(thread!=null){
+			Coordenada c = thread.getC();
+			if(c!=null){
+				boolean hePintado = false;
+				long time = System.nanoTime();
+				if(c!=null){
+					if(ThreadFuegos.giroValido){
+						this.comprobarFuegos(c);
+						GLU.gluLookAt( gl, (float)c.getY(), alturaMedia, (float)-c.getX(), centerY, alturaMedia +  centerZ, -centerX, 0, 1, 0 );
+						
+					
+						if(translate){
+							translate = false;
+						}
+						
+						
+						Fire f;
+						
+						synchronized(FireList.list){
+							for(int i = 0; i < FireList.list.size();i++){
+								//gl.glLoadIdentity();
+								f = FireList.list.get(i);
+								if(f.isMostradoPantalla()){
+									//gl.glLoadIdentity();
+									gl.glTranslatef((float)f.getY(), 0,(float)-f.getX() );
+									gl.glRotatef(f.getAngleX(), 0, 1.0f, 0);
+									gl.glRotatef(-ThreadFuegos.giroSobreX, 0, 0, 1.0f);
+									mesh.render( PrimitiveType.Triangles );
+									
+								}
+							}
+						}
+						
+						
+					}else{
+						 mLabels = new LabelMaker(true, 256, 64);
+						mLabels.initialize(gl);
+						mLabels.beginAdding(gl);
+						String texto = "Orientación incorrecta";
+						
+						labels.clear();
+						for(int i = 0; i < texto.length(); i++){
+							labels.add(mLabels.add(gl,"" + texto.charAt(i),mLabelPaint));
+						}
+						hePintado = true;
+						mLabels.endAdding(gl);			
+						mLabels.beginDrawing(gl,(float)activity.getViewportWidth(),(float)activity.getViewportHeight());
+						
+						//float height;// = mLabels.getHeight(labelId);
+					    //float width;// = mLabels.getWidth(labelId);
+						int x2 = 0;
+					    for(int i = 0; i < labels.size(); i++){
+					    	mLabels.draw(gl, x2 + 17*i,100, labels.get(i));
+					    }
+					}
+				}
+				
+				angle+= activity.getDeltaTime() * 180; // giramos 180 grados por segundo
+				if( angle > 360 )
+					angle = 0;
+				
+				if(!hePintado){
+					 mLabels = new LabelMaker(true, 256, 64);
+					mLabels.initialize(gl);
+					mLabels.beginAdding(gl);
+					String texto = "" + ThreadFuegos.giroSobreZ;
+					if(texto.indexOf(".")!=-1){
+						texto = texto.substring(0, texto.indexOf("."));
+					}
+					labels.clear();
+					for(int i = 0; i < texto.length(); i++){
+						labels.add(mLabels.add(gl,"" + texto.charAt(i),mLabelPaint));
+					}
+					
+					mLabels.endAdding(gl);
+			       
+					
+					mLabels.beginDrawing(gl, /*mWidth, mHeight*/(float)activity.getViewportWidth(),(float)activity.getViewportHeight());
+					
+					
+					int x2 = 0;
+				    for(int i = 0; i < labels.size(); i++){
+				    	mLabels.draw(gl, x2 + 20*i,0, labels.get(i));
+				    }
+				}
+				long time2 = System.nanoTime() - time;
+				if(time2 < 0.3*(Math.pow(10,9))){
+					SystemClock.sleep((long) ((0.3*(Math.pow(10,9))-time2)*Math.pow(10, -6)));
+				}
+			}
+		}
+		
+	}
+	
+	/**
+	 * Comprueba los fuegos que están visibles desde el terminal en este momento.
+	 * @param c
+	 */
+	public void comprobarFuegos(Coordenada c){
+		
+		
+		float gamma;
+		if(ThreadFuegos.giroSobreZ>=0 && ThreadFuegos.giroSobreZ <90){
+			gamma = 90 - ThreadFuegos.giroSobreZ;
+		}else if(ThreadFuegos.giroSobreZ>=90 && ThreadFuegos.giroSobreZ <=180){
+			//gamma = 90- (180 - giroSobreZ);
+			gamma = 90 + (180 - ThreadFuegos.giroSobreZ);
+		}else if(ThreadFuegos.giroSobreZ>=-180 && ThreadFuegos.giroSobreZ<-90){
+			gamma = 90 - (180 + ThreadFuegos.giroSobreZ);
+		}else{
+			gamma = Math.abs(ThreadFuegos.giroSobreZ) + 90;
+			//gamma = 90 + giroSobreZ;
+		}
+		
+		float pendienteGamma;
+		if(gamma == 90){
+			pendienteGamma = Float.MAX_VALUE;
+		}else{
+			pendienteGamma = (float) Math.tan(Math.toRadians(gamma));
+		}
+		
+		float aEc = (float) (1 + Math.pow(pendienteGamma,2));
+		float bEc = (float) (-2*Math.pow(pendienteGamma, 2)*c.getX() - 2*c.getX());
+		float cEc = (float) (Math.pow(c.getX(), 2) * (Math.pow(pendienteGamma,2)+1) - Math.pow(distanciaFoco, 2));
+		
+		float xPos = (float) ((-bEc + Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		if(ThreadFuegos.giroSobreZ>=0 && ThreadFuegos.giroSobreZ<=180){
+			centerX = xPos;
+		}else{
+			xPos = (float) ((-bEc - Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		}
+		float yPos = (float) (-pendienteGamma*(xPos - c.getX()) + c.getY());
+		centerX = xPos;
+		centerY = yPos;
+		
+		float inclinacion;
+		if(ThreadFuegos.giroSobreY>-90 && ThreadFuegos.giroSobreY < 0){
+			inclinacion = - ThreadFuegos.giroSobreY; 
+		}else{
+			inclinacion = 180 - ThreadFuegos.giroSobreY;
+		}
+		
+		float pendienteInclinacion;
+		if(inclinacion == 90){
+			pendienteInclinacion = Float.MAX_VALUE;
+		}else{
+			pendienteInclinacion = (float) Math.tan(Math.toRadians(inclinacion));
+		}
+		
+		aEc = (float) (1 + Math.pow(pendienteInclinacion,2));
+		bEc = 0;
+		cEc = (float)  -Math.pow(distanciaFoco,2);
+		xPos = (float) ((-bEc + Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		yPos = (float) (pendienteInclinacion*(xPos - c.getX()) + c.getY());
+		centerZ = yPos;
+		
+		
+		
+		double distancia;
+		//Fire f;
+		double distanciaMin = Double.MAX_VALUE;
+		
+		float angleX;
+		float distancia_a_bisectriz;
+		
+		
+		synchronized(FireList.list){
+			for(int i = 0; i < FireList.list.size(); i++){
+				distancia = Math.sqrt(Math.pow(FireList.list.get(i).getX()-c.getX(),2) + Math.pow(FireList.list.get(i).getY()-c.getY(),2));
+				if(distancia < 50){
+					if(comprobarObstaculos(c.getX(),c.getY(),FireList.list.get(i).getX(), FireList.list.get(i).getY())){
+						
+						FireList.list.get(i).setMostradoPantalla(true);
+						
+						if(gamma == Float.MAX_VALUE){
+							distancia_a_bisectriz = (float) Math.abs(c.getX()- FireList.list.get(i).getX());
+						}else{
+							distancia_a_bisectriz = (float) (Math.abs(pendienteGamma*FireList.list.get(i).getX() - FireList.list.get(i).getY() + (-pendienteGamma*c.getX() + c.getY()))/Math.sqrt(Math.pow(pendienteGamma, 2)+1));
+						}
+						
+						
+						angleX = (float) Math.toDegrees(Math.asin(distancia_a_bisectriz/distancia));
+						FireList.list.get(i).setAngleX(angleX);
+						
+					}else{
+						FireList.list.get(i).setMostradoPantalla(false);
+					}
+					if(distancia<distanciaMin){
+						distanciaMin = distancia;
+					}
+				}else{
+					FireList.list.get(i).setMostradoPantalla(false);
+				}
+			}
+		}
+		distanciaFoco = (float) distanciaMin;
+		
+	}
+	
+	/**
+	 * Comprueba si la recta desde (x_old1,y_old1) a (x_new1,y_new1) atraviesa alguna pared, en cuyo caso se
+	 * devuelve <code>false</code> 
+	 * @param x_old1
+	 * @param y_old1
+	 * @param x_new1
+	 * @param y_new1
+	 * @return
+	 */
+	private boolean comprobarObstaculos(double x_old1, double y_old1, double x_new1, double y_new1){
+		long x_old = Math.round(x_old1 * Mapa.escalaMetro + Mapa.POSX_0_MAPA);
+		long x_new = Math.round(x_new1 * Mapa.escalaMetro + Mapa.POSX_0_MAPA);
+		long y_old = Math.round(y_old1 * Mapa.escalaMetro + Mapa.POSY_0_MAPA);
+		long y_new = Math.round(y_new1 * Mapa.escalaMetro + Mapa.POSY_0_MAPA);
+		
+		long incX = Math.abs(x_new - x_old);
+		boolean positivoX = x_new >= x_old;
+		boolean positivoY = y_new >= y_old;
+		long incY = Math.abs(y_new - y_old);
+		
+		double rel;
+		long xPincel = x_old;
+		long yPincel = y_old;
+		//double dist_hipotenusa = Math.sqrt(Math.pow(incX,2) + Math.pow(incY, 2));
+		double acc = 0;
+		boolean flag = false;
+		boolean fin = false;
+		
+		
+		if(incX>incY){
+			if(incX!=0){
+				rel = (double)incY/(double)incX;
+			}else{
+				rel = 0;
+			}
+			while(!fin && !flag){
+				if(xPincel==x_new){
+					if(positivoY){
+						yPincel = yPincel + 1;
+					}else{
+						yPincel = yPincel - 1;
+					}
+				}else{
+					if(positivoX) xPincel = xPincel + 1;
+					else xPincel = xPincel - 1;
+					acc = acc + rel;
+					if(acc>=1){
+						if(positivoY){
+							yPincel = yPincel + 1;
+							acc = acc - 1;
+						}
+						else{
+							yPincel = yPincel - 1;
+							acc = acc - 1;
+						}
+					}
+				}
+				
+				if(ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel) != colorBlanco){
+					flag = true;
+				}
+				if(xPincel==x_new && yPincel==y_new) fin = true;
+			}
+		}else{
+			if(incY!=0){
+				rel = (double)incX/(double)incY;
+			}else{
+				rel = 0;
+			}
+			while(!fin && !flag){
+				if(yPincel==y_new){
+					if(positivoX){
+						xPincel = xPincel + 1;
+					}else{
+						xPincel = xPincel - 1;
+					}
+				}else{
+					if(positivoY) yPincel = yPincel + 1;
+					else yPincel = yPincel - 1;
+					acc = acc + rel;
+					if(acc>=1){
+						if(positivoX){
+							xPincel = xPincel + 1;
+							acc = acc - 1;
+						}
+						else{
+							xPincel = xPincel - 1;
+							acc = acc - 1;
+						}
+					}
+				}
+				
+				if(ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel) != colorBlanco){
+					flag = true;
+				}
+				if(xPincel==x_new && yPincel==y_new) fin = true;
+			}
+		}
+		if(flag) return false;
+		else return true;		
+	}
+	
+	
+	public void setup(GameView activity, GL10 gl) {
+		try {
+			mesh = MeshLoader.loadObj( gl, getAssets().open( "fuego.obj" ) );
+			Bitmap bitmap = BitmapFactory.decodeStream( getAssets().open( "fuego.png" ) );
+			texture = new Texture( gl, bitmap, TextureFilter.MipMap, TextureFilter.MipMap, TextureWrap.Wrap, TextureWrap.Wrap );
+			bitmap = BitmapFactory.decodeStream( getAssets().open( "fuego.png" ) );
+			texture.draw(bitmap, 0, 0);
+			bitmap.recycle();
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RuntimeException( "Couldn't load mesh" );
+		}
+		mLabelPaint = new Paint();
+        mLabelPaint.setTextSize(26);
+        mLabelPaint.setAntiAlias(true);
+        mLabelPaint.setARGB(0xff, 0xff, 0xff, 0xff);
+        
+        pd.dismiss();
+        
+		float[] lightColor = { 1, 1, 1, 1 };
+		float[] ambientLightColor = {0.0f, 0.0f, 0.0f, 1 };		
+		gl.glLightfv( GL10.GL_LIGHT0, GL10.GL_AMBIENT, ambientLightColor, 0 );
+		gl.glLightfv( GL10.GL_LIGHT0, GL10.GL_DIFFUSE, lightColor, 0 );
+		gl.glLightfv( GL10.GL_LIGHT0, GL10.GL_SPECULAR, lightColor, 0 );
+		
+	}
+	
+	public void setZoomFactor(float zoomFactor) {
+		this.zoomFactor = zoomFactor;
+	}
+
+	public float getZoomFactor() {
+		return zoomFactor;
+	}
+
+
+	public void setTranslate(boolean translate) {
+		this.translate = translate;
+	}
+
+
+	public boolean isTranslate() {
+		return translate;
+	}
+
+
+	public void setEyeY(float eyeY) {
+		this.eyeY = eyeY;
+	}
+
+
+	public float getEyeY() {
+		return eyeY;
+	}
+
+	public void refresh(double x, double y, int idCuadrante) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setFuegosMostrados(ArrayList<Fire> fuegosMostrados) {
+		this.fuegosMostrados = fuegosMostrados;
+	}
+
+	public ArrayList<Fire> getFuegosMostrados() {
+		return fuegosMostrados;
+	}
+	
+
+}

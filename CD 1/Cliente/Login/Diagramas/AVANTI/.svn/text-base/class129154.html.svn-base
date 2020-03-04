@@ -1,0 +1,46 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class MainMenu</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class MainMenu</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass129154"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class MainMenu extends <a href="class129282.html#refclass129282"><b>ListActivity</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact128642"><b>MainMenu</b></a></p>
+<div class="sub">
+<a name="refattribute128770"></a>
+<table><tr><td><div class="element">Attribute <b>mResources</b></div></td></tr></table>
+<p>static private TabHost mTabHost;<br /></p><p>Declaration :</p><ul><li>Uml : - mResources : Resources</li><li>Java : private Resources mResources</li></ul><a name="refattribute128898"></a>
+<table><tr><td><div class="element">Attribute <b>activeActivity</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + activeActivity : Activity =  null</li><li>Java : public static Activity activeActivity</li></ul><a name="refrelation129410"></a>
+<table><tr><td><div class="element">Relation <b>thread (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : static, + thread : <a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></li><li>Java : public static <a href="class129410.html#refclass129410"><b>ThreadDatos</b></a> thread</li></ul><a name="refattribute129026"></a>
+<table><tr><td><div class="element">Attribute <b>MENU_QUIT</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + MENU_QUIT : int =  0, read only</li><li>Java : public static final int MENU_QUIT</li></ul><a name="refattribute129154"></a>
+<table><tr><td><div class="element">Attribute <b>username</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - username : String</li><li>Java : private String username</li></ul><a name="refattribute129282"></a>
+<table><tr><td><div class="element">Attribute <b>password</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - password : String</li><li>Java : private String password</li></ul><table><tr><td><div class="element">Class <b><a href="class129538.html#refclass129538"><b>IconAndText</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></b></div></td></tr></table>
+<a name="refoperation132994"></a>
+<table><tr><td><div class="element">Operation <b>onCreate</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onCreate(inout savedInstanceState : Bundle) : void</li><li>Java : public void onCreate(Bundle savedInstanceState)</li></ul><a name="refoperation133122"></a>
+<table><tr><td><div class="element">Operation <b>createAndStartThread</b></div></td></tr></table><p>Crea un hilo para recuperar los datos de las posiciones de la BD en segundo plano<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + createAndStartThread() : <a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></li><li>Java : public <a href="class129410.html#refclass129410"><b>ThreadDatos</b></a> createAndStartThread()</li></ul><a name="refoperation133250"></a>
+<table><tr><td><div class="element">Operation <b>onListItemClick</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onListItemClick(inout l : ListView, inout v : View, in position : int, in id : long) : void</li><li>Java : protected void onListItemClick(ListView l, View v, int position, long id)</li></ul><a name="refoperation133378"></a>
+<table><tr><td><div class="element">Operation <b>logout</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + logout(in user : String, in password : String) : void</li><li>Java : public void logout(String user, String password)</li></ul><a name="refoperation133506"></a>
+<table><tr><td><div class="element">Operation <b>getUsername</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getUsername() : String</li><li>Java : public String getUsername()</li></ul><a name="refoperation133634"></a>
+<table><tr><td><div class="element">Operation <b>getPassword</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getPassword() : String</li><li>Java : public String getPassword()</li></ul><a name="refoperation133762"></a>
+<table><tr><td><div class="element">Operation <b>setUsername</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setUsername(in u : String) : void</li><li>Java : public void setUsername(String u)</li></ul><a name="refoperation133890"></a>
+<table><tr><td><div class="element">Operation <b>setPassword</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPassword(in p : String) : void</li><li>Java : public void setPassword(String p)</li></ul></div>
+<p>All public operations : <a href="class129154.html#refoperation133122"><b>createAndStartThread</b></a> , <a href="class129154.html#refoperation133634"><b>getPassword</b></a> , <a href="class129154.html#refoperation133506"><b>getUsername</b></a> , <a href="class129154.html#refoperation133378"><b>logout</b></a> , <a href="class129154.html#refoperation132994"><b>onCreate</b></a> , <a href="class129154.html#refoperation133890"><b>setPassword</b></a> , <a href="class129154.html#refoperation133762"><b>setUsername</b></a> </p>
+</body>
+</html>

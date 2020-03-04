@@ -1,0 +1,38 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class ColladaLoader</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class ColladaLoader</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass133378"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class ColladaLoader extends <a href="class128130.html#refclass128130"><b>Activity</b></a> implements <a href="class132610.html#refclass132610"><b>Renderer</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact130818"><b>ColladaLoader</b></a></p>
+<div class="sub">
+<a name="refattribute134146"></a>
+<table><tr><td><div class="element">Attribute <b>glView</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - glView : GLSurfaceView</li><li>Java : private GLSurfaceView glView</li></ul><a name="refattribute134274"></a>
+<table><tr><td><div class="element">Attribute <b>assetMgr</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - assetMgr : AssetManager</li><li>Java : private AssetManager assetMgr</li></ul><a name="refrelation132866"></a>
+<table><tr><td><div class="element">Relation <b>model (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - model : <a href="class133506.html#refclass133506"><b>ColladaObject</b></a></li><li>Java : private <a href="class133506.html#refclass133506"><b>ColladaObject</b></a> model</li></ul><a name="refattribute134402"></a>
+<table><tr><td><div class="element">Attribute <b>angle</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - angle : float =  0.0f</li><li>Java : private float angle</li></ul><a name="refoperation144898"></a>
+<table><tr><td><div class="element">Operation <b>onCreate</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onCreate(inout savedInstanceState : Bundle) : void</li><li>Java : public void onCreate(Bundle savedInstanceState)</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation145026"></a>
+<table><tr><td><div class="element">Operation <b>onResume</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onResume() : void</li><li>Java : protected void onResume()</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation145154"></a>
+<table><tr><td><div class="element">Operation <b>onPause</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onPause() : void</li><li>Java : protected void onPause()</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation145282"></a>
+<table><tr><td><div class="element">Operation <b>onDrawFrame</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onDrawFrame(inout gl : GL10) : void</li><li>Java : public void onDrawFrame(GL10 gl)</li></ul><a name="refoperation145410"></a>
+<table><tr><td><div class="element">Operation <b>onSurfaceChanged</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onSurfaceChanged(inout gl : GL10, in width : int, in height : int) : void</li><li>Java : public void onSurfaceChanged(GL10 gl, int width, int height)</li></ul><a name="refoperation145538"></a>
+<table><tr><td><div class="element">Operation <b>onSurfaceCreated</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onSurfaceCreated(inout gl : GL10, inout config : EGLConfig) : void</li><li>Java : public void onSurfaceCreated(GL10 gl, EGLConfig config)</li></ul></div>
+<p>All public operations : <a href="class133378.html#refoperation144898"><b>onCreate</b></a> , <a href="class133378.html#refoperation145282"><b>onDrawFrame</b></a> , <a href="class133378.html#refoperation145410"><b>onSurfaceChanged</b></a> , <a href="class133378.html#refoperation145538"><b>onSurfaceCreated</b></a> </p>
+</body>
+</html>

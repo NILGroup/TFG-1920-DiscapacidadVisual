@@ -1,0 +1,43 @@
+window_sizes 1280 750 300 900 533 82
+diagrams
+  classdiagram_ref 135170 // Graphics Diagram
+    775 475 100 4 0 0
+  classdiagram_ref 128002 // Activities Diagram
+    775 475 100 4 11 0
+  active  classdiagram_ref 135298 // Graphics Diagram 2
+    974 594 100 4 0 0
+  classdiagram_ref 128130 // Camera Diagram
+    775 475 100 4 0 0
+  classdiagram_ref 141826 // Wps Diagram
+    775 475 100 4 0 0
+  classdiagram_ref 141954 // Position diagram
+    775 475 100 4 41 0
+  classdiagram_ref 142082 // ComputerVision diagram
+    775 475 100 4 0 0
+  classdiagram_ref 142210 // GEO diagram
+    775 475 100 4 0 0
+  classdiagram_ref 142338 // Dialogs diagram
+    775 475 100 4 0 0
+  classdiagram_ref 142466 // Menu diagram
+    775 475 100 4 0 0
+  classdiagram_ref 128258 // Sensor Diagram
+    775 475 100 4 0 0
+  classdiagram_ref 142594 // Service diagram
+    775 475 100 4 0 0
+  classdiagram_ref 142722 // Sockets diagram
+    775 475 100 4 0 0
+end
+show_stereotypes
+selected 
+  package_ref 128770 // graphics
+open
+  classview_ref 128002 // activities
+  
+  package_ref 128898 // wps
+  
+  package_ref 129410 // computerVision
+  
+  package_ref 129538 // dialogs
+  classview_ref 129922 // service
+end
+end

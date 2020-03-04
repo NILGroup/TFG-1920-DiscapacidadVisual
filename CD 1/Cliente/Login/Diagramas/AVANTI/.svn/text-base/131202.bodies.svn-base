@@ -1,0 +1,12 @@
+class WPS
+!!!175490.java!!!	WPS(inout context : Context)
+		manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+!!!175618.java!!!	scanAndShow() : List<ScanResult>
+
+		if(manager.isWifiEnabled()){
+			manager.startScan();
+			SystemClock.sleep(500);
+			return manager.getScanResults();
+		}else{
+			throw new WPSException("El dispositivo WIFI está desactivado.");
+		}

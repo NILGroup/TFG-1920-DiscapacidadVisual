@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0" 
+    package="com.avanti.activities">
+      
+    <!-- used to communicate with Skyhook's servers -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	
+	<!-- enables WiFi, if disabled, for the duration of a location request -->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	
+	<!-- used to obtain information about the WiFi environment -->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	
+	<!-- used to obtain cell tower ID -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	
+	<!-- used to access GPS location, for XPS functionality -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
+    <uses-sdk android:minSdkVersion="7"  android:targetSdkVersion="17" /> 
+	<uses-permission android:name="android.permission.CAMERA"></uses-permission>
+	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+   
+<application 
+	android:label="@string/app_name" 
+	android:icon="@drawable/icon_fire_peq" 
+	android:allowBackup="true">
+    <activity 
+		android:name="com.avanti.activities.Login" 
+		android:label="@string/login" 
+		android:screenOrientation="portrait">
+     	<intent-filter>
+        	<action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+	</activity>
+   	<activity 
+   	    android:name="com.avanti.activities.Main"
+   		android:screenOrientation="portrait" 
+   		android:label="@string/main">
+   	</activity>
+   	<activity
+   	     android:name="com.avanti.graphics.ParticleRokon"
+		 android:screenOrientation="portrait" 
+	 	 android:label="@string/ParticleRokon">
+   	</activity>
+    <activity 
+        android:name="com.avanti.activities.MainMenu"
+        android:label="@string/app_name" android:screenOrientation="portrait">
+    </activity>
+    <activity 
+        android:name="com.avanti.activities.WPSActivity"
+        android:label="@string/WPSScanResult">
+    </activity>
+    <activity 
+        android:name="com.avanti.activities.Medir"
+        android:label="@string/WPSScanResult">
+    </activity>
+    <activity 
+        android:name="com.avanti.sensor.AccelerometerReader"
+        android:label="@string/accelerometerreader">
+    </activity>
+    <activity 
+        android:name="com.avanti.activities.EvacuationProtocol"
+        android:label="@string/evacuation">
+    </activity> 
+    <activity 
+        android:name="com.avanti.activities.CameraActivity"
+        android:screenOrientation="landscape"
+        android:label="@string/cameraactivity">
+    </activity> 
+    <activity 
+        android:name="com.avanti.activities.VoicePlaybackSystem"
+        android:label="@string/VoicePlaybackSystem">
+    </activity>
+
+    <activity 
+        android:name="com.avanti.graphics.ParticleAnimation"
+     	android:screenOrientation="landscape"
+        android:label="@string/particleanimation">
+    </activity> 
+	<service android:name="com.avanti.service.PositionTracker"></service>
+	<activity 
+	    android:name="com.avanti.activities.ScanResultActivity" 
+	    android:label="@string/WPSScanResult">
+	</activity>
+	<activity 
+	    android:name="com.avanti.activities.Register" 
+	    android:label="@string/Register" 
+	    android:screenOrientation="portrait">
+	</activity>
+	<activity 
+	    android:name="com.avanti.activities.Position" 
+	    android:label="@string/Position" 
+	    android:screenOrientation="landscape">
+	</activity>
+	<activity 
+	    android:name="com.avanti.activities.TestAccelerometer" 
+	    android:label="@string/TestAccelerometer"
+	    android:screenOrientation="portrait">
+	</activity>
+	<activity android:name="com.avanti.tests.ColladaLoader"></activity>
+	<activity android:name="com.avanti.tests.ModelViewer"></activity>
+	<activity android:name="com.avanti.tests.labelmaker.SpriteTextActivity"></activity>
+</application>
+</manifest> 

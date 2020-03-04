@@ -1,0 +1,37 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class CameraIF</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class CameraIF</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass131970"></a>
+<p>Declaration :</p><ul>
+<li>Java : public interface CameraIF </li></ul><p>Artifact : <a href="index.html#refartifact129794"><b>CameraIF</b></a></p>
+<p>Stereotype: interface</p>
+<div class="sub">
+<a name="refoperation139138"></a>
+<table><tr><td><div class="element">Operation <b>setPreviewCallback</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPreviewCallback(inout cb : PreviewCallback) : void</li><li>Java : public void setPreviewCallback(PreviewCallback cb)</li></ul><a name="refoperation139266"></a>
+<table><tr><td><div class="element">Operation <b>setParameters</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setParameters(inout params : Parameters) : void</li><li>Java : public void setParameters(Parameters params)</li></ul><a name="refoperation139394"></a>
+<table><tr><td><div class="element">Operation <b>getParameters</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getParameters() : Parameters</li><li>Java : public Parameters getParameters()</li></ul><a name="refoperation139522"></a>
+<table><tr><td><div class="element">Operation <b>resetPreviewSize</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + resetPreviewSize(in width : int, in height : int) : void</li><li>Java : public void resetPreviewSize(int width, int height)</li></ul><a name="refoperation139650"></a>
+<table><tr><td><div class="element">Operation <b>onStart</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onStart() : void</li><li>Java : public void onStart()</li></ul><a name="refoperation139778"></a>
+<table><tr><td><div class="element">Operation <b>onResume</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onResume() : void</li><li>Java : public void onResume()</li></ul><a name="refoperation139906"></a>
+<table><tr><td><div class="element">Operation <b>onStop</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onStop() : void</li><li>Java : public void onStop()</li></ul><a name="refoperation140034"></a>
+<table><tr><td><div class="element">Operation <b>onPause</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onPause() : void</li><li>Java : public void onPause()</li></ul><a name="refoperation140162"></a>
+<table><tr><td><div class="element">Operation <b>onDestroy</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onDestroy() : void</li><li>Java : public void onDestroy()</li></ul><a name="refoperation140290"></a>
+<table><tr><td><div class="element">Operation <b>takePicture</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + takePicture() : void</li><li>Java : public void takePicture()</li></ul><a name="refoperation140418"></a>
+<table><tr><td><div class="element">Operation <b>handleMessage</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + handleMessage(inout msg : Message) : void</li><li>Java : public void handleMessage(Message msg)</li></ul></div>
+<p>All public operations : <a href="class131970.html#refoperation139394"><b>getParameters</b></a> , <a href="class131970.html#refoperation140418"><b>handleMessage</b></a> , <a href="class131970.html#refoperation140162"><b>onDestroy</b></a> , <a href="class131970.html#refoperation140034"><b>onPause</b></a> , <a href="class131970.html#refoperation139778"><b>onResume</b></a> , <a href="class131970.html#refoperation139650"><b>onStart</b></a> , <a href="class131970.html#refoperation139906"><b>onStop</b></a> , <a href="class131970.html#refoperation139522"><b>resetPreviewSize</b></a> , <a href="class131970.html#refoperation139266"><b>setParameters</b></a> , <a href="class131970.html#refoperation139138"><b>setPreviewCallback</b></a> , <a href="class131970.html#refoperation140290"><b>takePicture</b></a> </p>
+</body>
+</html>
