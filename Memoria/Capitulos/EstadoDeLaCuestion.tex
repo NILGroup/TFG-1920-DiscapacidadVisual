@@ -86,18 +86,18 @@ Al contrario que la aplicación anterior, esta sí es una aplicación diseñada 
 
 La guía por exteriores se basa en la misma idea que \textit{BlindSquare}, y por ende funciona de manera similar. Entre sus características destacan: la posibilidad de ejecutar ciertas acciones poniendo el móvil en distintas posiciones, como por ejemplo, inclinarlo verticalmente para que funcione como una brújula; y, la capacidad de filtrar la información de modo que ésta se adapte completamente a las necesidades del usuario. Entre la información que \textit{Nearby Explorer} puede proporcionar a sus usuarios encontramos los lugares cercanos a la ubicación actual, los nombres de las calles por las que pasa, los números de los bloques de las calles por las que pasa, la distancia que hay al destino desde un punto de referencia (como casa, trabajo...), etc. Además de la posibilidad de filtrar la información deseada, las indicaciones por audio pueden ser pausadas en cualquier momento de modo que no interfieran con otras señales auditivas (como las paradas en un autobús, por ejemplo). Otra gran funcionalidad con la que cuenta \textit{Nearby Explorer} es la de explorar una ruta por adelantado, sin tener que estar físicamente en el sitio, pudiendo incrementar o decrementar el radio de exploración.
 
-Por otro lado, vemos que la navegación por interiores puede ser configurada de dos maneras: \textit{ad hoc} y \textit{mapeo completo}. Ambas utilizan los sistemas de \textit{beacons} para geolocalizar el dispositivo en interiores (zonas a las que no llega el \textit{GPS}) y así, poder proprocionar una guía por dicho espacio.
+Por otro lado, vemos que la navegación por interiores se basa en un sistema de \textit{beacons} que sustituye a las señales GPS y se encarga de solventar el problema del posicionamiento en interiores. Pueden configurarse de dos maneras: \textit{ad hoc} y \textit{mapeo completo}.
 
-En el caso de la configuración \textit{ad hoc} aparecen los siguientes problemas:
+En el caso de la configuración \textit{ad hoc}, cuenta con la ventaja de que tiene una instalación muy sencilla pero aparecen los siguientes problemas:
 \begin{itemize}
-	\item No se puede determinar la ubicación de un \textit{beacon}.
+	\item No se puede determinar la ubicación exacta de un \textit{beacon}.
 	\item No se puede obtener información del entorno a menos que te encuentres dentro del radio de detección de un \textit{beacon}.
 	\item Tienes que habilitar cierto soporte para detectar los \textit{beacons} (no se detectan de manera automática).
 \end{itemize}
 
-Sin embargo, el \textit{mapeo completo} sí nos proporciona una localización precisa. Tiene un comportamiento similar al de otras aplicaciones.
+Por el contrario, el \textit{mapeo completo} es más robusto por lo que su instalación es más compleja pero a cambio nos proporciona una localización precisa del dispositivo por lo que tiene un comportamiento similar al de otras aplicaciones.
 
-%REFLEXIÓN
+Desde el punto de vista de la navegación por exteriores es una aplicación completa y fácil de utilizar, que incluye una interfaz sencilla y trata de adaptarse siempre a las distintas necesidades o situaciones del usuario mediante un opciones configurables. Además, cuenta con una versión gratuita (algo poco común en aplicaciones de tal categoria) que aunque no incluye todas las funcionalidades de la versión de pago te permite probarla y familiarizarte con ella antes de tomar una decisión final. Por otro lado, la funcionalidad de navegación \textit{indoors} no está tan desarrollada y su uso está supeditado exclusivamente a aquellos lugares que cuenten con la instalación necesaria y hayan incluido sus datos en OpenStreetMap, configurando el espacio en nodos, aristas y relaciones. Esta tarea es tediosa y a menudo parte de cero por lo que son pocos los edificios que actualmente están mapeados y pueden aprovechar la app.
 
 \subsection{Lazarillo}
 Lazarillo \citep{lazarilloOnline} es una aplicación que actualmente solo proporciona guía para exteriores. Inicialmente la idea era cubrir también la navegación por interiores pero su desarrollo no fue posible por problemas de financiación.
