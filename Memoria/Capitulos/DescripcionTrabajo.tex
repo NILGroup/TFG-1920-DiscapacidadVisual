@@ -1,7 +1,7 @@
 \chapter{Descripción del Trabajo}
 \label{cap:descripcionTrabajo}
 
-En este capítulo abordaremos los aspectos tanto de diseño como de implementación de nuestra aplicación...TO BE CONTINUED
+%En este capítulo abordaremos los aspectos tanto de diseño como de implementación de nuestra aplicación...TO BE CONTINUED
 
 \section{Reunión en el Centro de Tiflotecnología e Innovación de la ONCE}
 
@@ -105,19 +105,21 @@ Tras el debate, algunas de las conclusiones que sacamos de la visita al CTI son:
 
 \section{Estudio de precisión de los beacons}
 
-Antes de ponernos manos a la obra con la aplicación debíamos conocer cómo se comportaban los beacons en cuanto a distancias. La propia SDK de \textit{Kontakt} nos permite conocer qué beacons están en nuestro rango en un momento determinado y actualizar esa lectura cada cierto tiempo. Además tiene implementado un sistema de categorías en función de cómo de cerca o lejos esté el dispositivo. Las categorías son las siguientes:
+Antes de comenzar con el código de la aplicación nos familiarizaremos con la API de los \textit{beacons} con el fin de estudiar el comportamiento de la señal desde distintas distancias.
+
+La propia SDK (Kit de Desarrollo Software) de \textit{Kontakt} nos proporciona las herramientas necesarias para conocer qué \textit{beacons} están en nuestro rango de detección en un momento determinado, y actualiza esa lectura cada cierto tiempo. Una vez que nuestro dispositivo capta la señal de las balizas, atendiendo a la intensidad determina la distancia a la que se encuentra y la clasifica dentro de unas categorías que tiene predefinidas. Las categorías son las siguientes:
 
 \begin{itemize}
-	\item IMMEDIATE: Si el dispositivo se encuentra a menos de 0,5m.
-	\item NEAR: Si el dispositivo se encuentra entre los 0,5m y los 3m.
-	\item FAR: Si el dispositivo se encuentra a más de 3m.
-	\item UNKNOWN:The Unknown pone en la documentación...!!!!! ?
+	\item \textit{IMMEDIATE}: Si el dispositivo se encuentra a menos de 0,5m.
+	\item \textit{NEAR}: Si el dispositivo se encuentra entre 0,5m y 3m.
+	\item \textit{FAR}: Si el dispositivo se encuentra a más de 3m.
+	\item \textit{UNKNOWN}:The Unknown pone en la documentación...!!!!! ?
 \end{itemize}
 
-Para comprobar la fiabilidad y exactitud de estas medidas hicimos uso de pequeñas y simples aplicaciones que nos permitieron de manera rápida y visual ir comprobando las medidas leídas con las reales tanto dentro de la facultad como dentro de otros edificios (nuestras propias casas).
+Para comprobar la fiabilidad y precisión de las medidas resultantes de los algoritmos procedentes de la API vamos a hacer uso de pequeñas aplicaciones que nos permitirán comparar de manera rápida y visual, las medidas leídas con las reales en distintos espacios de la Facultad de Informática para así hacer un estudio del error.
 
-\subsection{Aplicación miniapp}
-Esta aplicación fue la primera toma de contacto con los beacons, queríamos una aplicación sencilla y visual que nos indicara la categoría de proximidad de los beacons. Como podemos ver en la Figura \ref{fig:miniapp}, los beacons considerados se encuentran debajo del panel de categorías y la categoría se resalta en verde. La lectura que se hace de los beacons se va actualizando cada $x$ tiempo establecido. 
+\subsection{Aplicación ``miniapp''}
+Esta aplicación constituye la primera toma de contacto con los \textit{beacons}, es una aplicación sencilla y visual que nos indica la categoría de proximidad de los \textit{beacons}. En la Figura \ref{fig:miniapp} vemos que sobre el identificador de las balizas detectadas aparece un panel con el nombre de las categorías mencionadas y que cada categoría (respectivamente) se resalta en verde cuando corresponde. La lectura que se hace de los \textit{beacons} se va actualizando cada $x$ tiempo establecido. 
 
 La idea de esta aplicación fue la de establecer el grado de confianza que podíamos tener en las categorías ofrecidas por la SDK de \textit{Kontakt}. El resultado fue muy positivo puesto que, a pesar de que las distancias fluctuaban, la categoría se asignaba correctamente sin grandes fluctuaciones. 
 
