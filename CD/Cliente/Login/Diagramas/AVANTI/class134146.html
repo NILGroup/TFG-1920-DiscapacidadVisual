@@ -1,0 +1,39 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class HttpServices</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class HttpServices</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass134146"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class HttpServices </li></ul><p>Artifact : <a href="index.html#refartifact131842"><b>HttpServices</b></a></p>
+<div class="sub">
+<a name="refattribute140802"></a>
+<table><tr><td><div class="element">Attribute <b>host</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + host : String =  "80.33.213.133"</li><li>Java : public static String host</li></ul><a name="refattribute140930"></a>
+<table><tr><td><div class="element">Attribute <b>port</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + port : int =  10000</li><li>Java : public static int port</li></ul><a name="refattribute141058"></a>
+<table><tr><td><div class="element">Attribute <b>urlServer</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + urlServer : String =  "http://80.33.213.133:10000/avanti/"</li><li>Java : public static String urlServer</li></ul><a name="refoperation150274"></a>
+<table><tr><td><div class="element">Operation <b>HttpServices</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + HttpServices() : </li><li>Java : public HttpServices()</li></ul><a name="refoperation150402"></a>
+<table><tr><td><div class="element">Operation <b>ping</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + ping() : boolean,  exceptions : UnknownHostException, IOException, SecurityException</li><li>Java : public boolean ping() throws UnknownHostException, IOException, SecurityException</li></ul><a name="refoperation150530"></a>
+<table><tr><td><div class="element">Operation <b>login</b></div></td></tr></table><p>Método que logea a un usuario en el sistema<br />@param user<br />@param password<br />@return<br />@throws ClientProtocolException<br />@throws IOException<br /></p><p>Declaration :</p><ul><li>Uml : + login(in user : String, in password : String) : String,  exceptions : ClientProtocolException, IOException</li><li>Java : public String login(String user, String password) throws ClientProtocolException, IOException</li></ul><a name="refoperation150658"></a>
+<table><tr><td><div class="element">Operation <b>logout</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + logout(in user : String, in password : String) : String,  exceptions : ClientProtocolException, IOException</li><li>Java : public String logout(String user, String password) throws ClientProtocolException, IOException</li></ul><a name="refoperation150786"></a>
+<table><tr><td><div class="element">Operation <b>register</b></div></td></tr></table><p>Método que registra a un usuario en el sistema<br />@param user<br />@param password<br />@param name<br />@param surname<br />@return &lt;code&gt;"CORRECTO"&lt;/code&gt; si lo consigue, &lt;code&gt;"ERROR"&lt;/code&gt; en caso de error e información<br />de la excepción en otro caso <br />@throws ClientProtocolException<br />@throws IOException<br /></p><p>Declaration :</p><ul><li>Uml : + register(in user : String, in password : String, in name : String, in surname : String) : String,  exceptions : ClientProtocolException, IOException</li><li>Java : public String register(String user, String password, String name, String surname) throws ClientProtocolException, IOException</li></ul><a name="refoperation150914"></a>
+<table><tr><td><div class="element">Operation <b>insertCoorDatabase</b></div></td></tr></table><p>Método que inserta unos datos para unas coordenadas en la Base de Datos<br />@param x<br />@param y<br />@param z<br />@param mac<br />@param strength<br />@param sobreescribir<br />@return "" si tiene éxito, la información del error en caso de fallo.<br />@throws ClientProtocolException<br />@throws IOException<br /></p><p>Declaration :</p><ul><li>Uml : + insertCoorDatabase(in x : double, in y : double, in z : double, in mac : String, in strength : int) : String,  exceptions : ClientProtocolException, IOException</li><li>Java : public String insertCoorDatabase(double x, double y, double z, String mac, int strength) throws ClientProtocolException, IOException</li></ul><a name="refoperation151042"></a>
+<table><tr><td><div class="element">Operation <b>getCoordenadas</b></div></td></tr></table><p>Recupera todas las coordenadas almacenadas en la BD<br />@return<br />@throws HttpServicesException<br /></p><p>Declaration :</p><ul><li>Uml : + getCoordenadas() : JSONArray,  exceptions : <a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></li><li>Java : public JSONArray getCoordenadas() throws <a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></li></ul><a name="refoperation151170"></a>
+<table><tr><td><div class="element">Operation <b>getFires</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getFires() : JSONArray,  exceptions : <a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></li><li>Java : public JSONArray getFires() throws <a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></li></ul></div>
+<p>All public operations : <a href="class134146.html#refoperation151042"><b>getCoordenadas</b></a> , <a href="class134146.html#refoperation151170"><b>getFires</b></a> , <a href="class134146.html#refoperation150914"><b>insertCoorDatabase</b></a> , <a href="class134146.html#refoperation150530"><b>login</b></a> , <a href="class134146.html#refoperation150658"><b>logout</b></a> , <a href="class134146.html#refoperation150402"><b>ping</b></a> , <a href="class134146.html#refoperation150786"><b>register</b></a> </p>
+</body>
+</html>

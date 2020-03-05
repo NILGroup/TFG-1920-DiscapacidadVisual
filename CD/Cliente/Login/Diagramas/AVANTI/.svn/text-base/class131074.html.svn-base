@@ -1,0 +1,43 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class WPSActivity</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class WPSActivity</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass131074"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class WPSActivity extends <a href="class129282.html#refclass129282"><b>ListActivity</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact129282"><b>WPSActivity</b></a></p>
+<div class="sub">
+<a name="refrelation131074"></a>
+<table><tr><td><div class="element">Relation <b>wps (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - wps : <a href="class131202.html#refclass131202"><b>WPS</b></a></li><li>Java : private <a href="class131202.html#refclass131202"><b>WPS</b></a> wps</li></ul><a name="refattribute131074"></a>
+<table><tr><td><div class="element">Attribute <b>resultados</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + resultados : ScanResult</li><li>Java : public static List&lt;ScanResult&gt; resultados</li></ul><p>Stereotype: List</p>
+<a name="refattribute131202"></a>
+<table><tr><td><div class="element">Attribute <b>elementoSelec</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + elementoSelec : int</li><li>Java : public static int elementoSelec</li></ul><a name="refattribute131330"></a>
+<table><tr><td><div class="element">Attribute <b>MENU_REFRESH</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + MENU_REFRESH : int =  1, read only</li><li>Java : public static final int MENU_REFRESH</li></ul><a name="refattribute131458"></a>
+<table><tr><td><div class="element">Attribute <b>MENU_INSERT</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + MENU_INSERT : int =  2, read only</li><li>Java : public static final int MENU_INSERT</li></ul><a name="refoperation135938"></a>
+<table><tr><td><div class="element">Operation <b>onCreate</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onCreate(in savedInstanceState : Bundle) : void</li><li>Java : public void onCreate(final Bundle savedInstanceState)</li></ul><a name="refoperation136066"></a>
+<table><tr><td><div class="element">Operation <b>onListItemClick</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onListItemClick(inout l : ListView, inout v : View, in position : int, in id : long) : void</li><li>Java : protected void onListItemClick(ListView l, View v, int position, long id)</li></ul><a name="refoperation136194"></a>
+<table><tr><td><div class="element">Operation <b>cargarDatos</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - cargarDatos() : void</li><li>Java : private void cargarDatos()</li></ul><a name="refoperation136322"></a>
+<table><tr><td><div class="element">Operation <b>refresh</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - refresh() : void</li><li>Java : private void refresh()</li></ul><a name="refoperation136450"></a>
+<table><tr><td><div class="element">Operation <b>onCreateOptionsMenu</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onCreateOptionsMenu(inout menu : Menu) : boolean</li><li>Java : public boolean onCreateOptionsMenu(Menu menu)</li></ul><a name="refoperation136578"></a>
+<table><tr><td><div class="element">Operation <b>onOptionsItemSelected</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onOptionsItemSelected(inout item : MenuItem) : boolean</li><li>Java : public boolean onOptionsItemSelected(MenuItem item)</li></ul><a name="refoperation136706"></a>
+<table><tr><td><div class="element">Operation <b>getContext</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getContext() : Activity</li><li>Java : public Activity getContext()</li></ul><a name="refoperation136834"></a>
+<table><tr><td><div class="element">Operation <b>createInsertDialog</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - createInsertDialog() : void</li><li>Java : private void createInsertDialog()</li></ul></div>
+<p>All public operations : <a href="class131074.html#refoperation136706"><b>getContext</b></a> , <a href="class131074.html#refoperation135938"><b>onCreate</b></a> , <a href="class131074.html#refoperation136450"><b>onCreateOptionsMenu</b></a> , <a href="class131074.html#refoperation136578"><b>onOptionsItemSelected</b></a> </p>
+</body>
+</html>

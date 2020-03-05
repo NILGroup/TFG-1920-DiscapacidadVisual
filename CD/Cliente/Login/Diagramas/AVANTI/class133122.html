@@ -1,0 +1,43 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class ColladaHandler</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class ColladaHandler</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass133122"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class ColladaHandler extends <a href="class133250.html#refclass133250"><b>DefaultHandler</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact130690"><b>ColladaHandler</b></a></p>
+<div class="sub">
+<a name="refattribute133506"></a>
+<table><tr><td><div class="element">Attribute <b>vertices</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - vertices : float, multiplicity : []</li><li>Java : private float[] vertices</li></ul><a name="refattribute133634"></a>
+<table><tr><td><div class="element">Attribute <b>indices</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - indices : byte, multiplicity : []</li><li>Java : private byte[] indices</li></ul><a name="refattribute133762"></a>
+<table><tr><td><div class="element">Attribute <b>inVertices</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - inVertices : boolean =  false</li><li>Java : private boolean inVertices</li></ul><a name="refattribute133890"></a>
+<table><tr><td><div class="element">Attribute <b>inTriangles</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - inTriangles : boolean =  false</li><li>Java : private boolean inTriangles</li></ul><a name="refattribute134018"></a>
+<table><tr><td><div class="element">Attribute <b>inP</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - inP : boolean =  false</li><li>Java : private boolean inP</li></ul><a name="refoperation143874"></a>
+<table><tr><td><div class="element">Operation <b>ColladaHandler</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + ColladaHandler() : </li><li>Java : public ColladaHandler()</li></ul><a name="refoperation144002"></a>
+<table><tr><td><div class="element">Operation <b>startDocument</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + startDocument() : void,  exceptions : SAXException</li><li>Java : public void startDocument() throws SAXException</li></ul><a name="refoperation144130"></a>
+<table><tr><td><div class="element">Operation <b>startElement</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + startElement(in uri : String, in localName : String, in name : String, inout atts : Attributes) : void,  exceptions : SAXException</li><li>Java : public void startElement(String uri, String localName, String name, Attributes atts) throws SAXException</li></ul><a name="refoperation144258"></a>
+<table><tr><td><div class="element">Operation <b>endElement</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + endElement(in uri : String, in localName : String, in name : String) : void,  exceptions : SAXException</li><li>Java : public void endElement(String uri, String localName, String name) throws SAXException</li></ul><a name="refoperation144386"></a>
+<table><tr><td><div class="element">Operation <b>characters</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + characters(inout ch : char, in start : int, in length : int) : void,  exceptions : SAXException</li><li>Java : public void characters(char[] ch, int start, int length) throws SAXException</li></ul><a name="refoperation144514"></a>
+<table><tr><td><div class="element">Operation <b>parseFile</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + parseFile(inout input : InputStream) : void</li><li>Java : public void parseFile(InputStream input)</li></ul><a name="refoperation144642"></a>
+<table><tr><td><div class="element">Operation <b>getVertices</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getVertices() : float</li><li>Java : public float[] getVertices()</li></ul><a name="refoperation144770"></a>
+<table><tr><td><div class="element">Operation <b>getIndices</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getIndices() : byte</li><li>Java : public byte[] getIndices()</li></ul></div>
+<p>All public operations : <a href="class133122.html#refoperation144386"><b>characters</b></a> , <a href="class133122.html#refoperation144258"><b>endElement</b></a> , <a href="class133122.html#refoperation144770"><b>getIndices</b></a> , <a href="class133122.html#refoperation144642"><b>getVertices</b></a> , <a href="class133122.html#refoperation144514"><b>parseFile</b></a> , <a href="class133122.html#refoperation144002"><b>startDocument</b></a> , <a href="class133122.html#refoperation144130"><b>startElement</b></a> </p>
+</body>
+</html>

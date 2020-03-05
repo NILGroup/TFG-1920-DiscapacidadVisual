@@ -1,0 +1,139 @@
+package com.avanti.routes;
+
+public class Fire {
+
+	private int ID;
+	private double x;
+	private double y;
+	private double z;
+	
+	private boolean mostradoPantalla;
+	private float xPerspectiva;
+	private float zPerspectiva;
+	private float yPerspectiva;
+	private float angleY;
+	private float angleX;
+	private float angleZ;
+	//private float perspectivaPantalla;
+	
+	public Fire(){
+		
+	}
+	
+	public Fire(int id, double posX, double posY, int posZ){
+		this.ID = id;
+		this.x = posX;
+		this.y = posY;
+		this.z = posZ;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int id) {
+		ID = id;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public double getZ() {
+		return z;
+	}
+
+	public void setZ(double z) {
+		this.z = z;
+	}
+
+	public void setMostradoPantalla(boolean mostradoPantalla) {
+		this.mostradoPantalla = mostradoPantalla;
+	}
+
+	public boolean isMostradoPantalla() {
+		return mostradoPantalla;
+	}
+
+	public void setxPerspectiva(float xPerspectiva) {
+		this.xPerspectiva = xPerspectiva;
+	}
+
+	public float getxPerspectiva() {
+		return xPerspectiva;
+	}
+
+	public void setzPerspectiva(float zPerspectiva) {
+		this.zPerspectiva = zPerspectiva;
+	}
+
+	public float getzPerspectiva() {
+		return zPerspectiva;
+	}
+
+	/*public void setPerspectivaPantalla(float perspectivaPantalla) {
+		this.perspectivaPantalla = perspectivaPantalla;
+	}
+
+	public float getPerspectivaPantalla() {
+		return perspectivaPantalla;
+	}*/
+	
+	public boolean equals(Object o){
+		if(o instanceof Fire){
+			Fire f = (Fire)o;
+			if(f.getX()== getX() && f.getY()== getY() && f.getZ() == getZ() && f.getID()== getID()){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+
+	public void setyPerspectiva(float yPerspectiva) {
+		this.yPerspectiva = yPerspectiva;
+	}
+
+	public float getyPerspectiva() {
+		return yPerspectiva;
+	}
+
+	public void setAngleY(float angleY) {
+		this.angleY = angleY;
+	}
+
+	public float getAngleY() {
+		return angleY;
+	}
+
+	public void setAngleX(float angleX) {
+		this.angleX = angleX;
+	}
+
+	public float getAngleX() {
+		return angleX;
+	}
+
+	public void setAngleZ(float angleZ) {
+		this.angleZ = angleZ;
+	}
+
+	public float getAngleZ() {
+		return angleZ;
+	}
+	
+}

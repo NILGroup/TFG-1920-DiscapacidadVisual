@@ -1,0 +1,34 @@
+class FireList
+!!!158978.java!!!	FireList()
+		list = new ArrayList<Fire>();
+		loadFires();
+!!!159106.java!!!	loadFires() : void
+		
+		HttpServices service = new HttpServices();
+		try {
+			JSONArray fires = service.getFires();
+			for (int i = 0; i<fires.length(); i++){
+				JSONArray aux = fires.getJSONArray(i);
+				int id = aux.getInt(0);
+				int x = aux.getInt(1);
+				int y = aux.getInt(2);
+				int z = aux.getInt(3);
+				Fire f = new Fire(id,x,y,z);
+				list.add(f);
+			}
+		}catch (JSONException e) {
+			e.printStackTrace();
+		}catch (HttpServicesException e) {
+			e.printStackTrace();
+		}
+!!!159234.java!!!	size() : int
+		return list.size();
+!!!159362.java!!!	getFire(in pos : int) : Fire
+		if ( (0<=pos) && (pos<list.size()) ){
+			return list.get(pos);
+		}
+		else return null;
+!!!159490.java!!!	getList() : Fire
+		return list;
+!!!159618.java!!!	setList(inout list : ArrayList<Fire>) : void
+		this.list = list;

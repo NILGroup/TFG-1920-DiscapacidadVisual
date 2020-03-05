@@ -1,0 +1,104 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>O</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">O</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<table>
+<tr bgcolor=#f0f0f0><td align=center><b>Name</b></td><td align=center><b>Kind</b></td><td align=center><b>Description</b></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation141954" target = "projectFrame"><b>onAccuracyChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation166786" target = "projectFrame"><b>onAccuracyChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation135682" target = "projectFrame"><b>onAccuracyChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation167810" target = "projectFrame"><b>onBind</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation166914" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td>Initialization of the Activity after it is first created.  Must at least<br />call {@link android.app.Activity#setContentView setContentView()} to<br />describe what is to be displayed in the screen.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation144898" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128002" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128130" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation177154" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation129154" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation130946" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation132994" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation148994" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149634" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation134018" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation134914" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation135426" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation135554" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation135938" target = "projectFrame"><b>onCreate</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128514" target = "projectFrame"><b>onCreateOptionsMenu</b></a></td><td>operation</td><td>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation176770" target = "projectFrame"><b>onCreateOptionsMenu</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation129666" target = "projectFrame"><b>onCreateOptionsMenu</b></a></td><td>operation</td><td>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation136450" target = "projectFrame"><b>onCreateOptionsMenu</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation140162" target = "projectFrame"><b>onDestroy</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation137730" target = "projectFrame"><b>onDraw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation166530" target = "projectFrame"><b>onDraw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation151682" target = "projectFrame"><b>onDraw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation170882" target = "projectFrame"><b>onDraw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation142466" target = "projectFrame"><b>onDrawFrame</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145282" target = "projectFrame"><b>onDrawFrame</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation141570" target = "projectFrame"><b>onDrawFrame</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation146818" target = "projectFrame"><b>onDrawFrame</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation147714" target = "projectFrame"><b>onDrawFrame</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149378" target = "projectFrame"><b>onGameLoop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation150018" target = "projectFrame"><b>onGameLoop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation133250" target = "projectFrame"><b>onListItemClick</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation136066" target = "projectFrame"><b>onListItemClick</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149122" target = "projectFrame"><b>onLoad</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149762" target = "projectFrame"><b>onLoad</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149250" target = "projectFrame"><b>onLoadComplete</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149890" target = "projectFrame"><b>onLoadComplete</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation167938" target = "projectFrame"><b>onLocationChanged</b></a></td><td>operation</td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128642" target = "projectFrame"><b>onMenuItemSelected</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation177282" target = "projectFrame"><b>onMenuItemSelected</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation129794" target = "projectFrame"><b>onMenuItemSelected</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation136578" target = "projectFrame"><b>onOptionsItemSelected</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation140034" target = "projectFrame"><b>onPause</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145154" target = "projectFrame"><b>onPause</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128386" target = "projectFrame"><b>onPause</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation168066" target = "projectFrame"><b>onProviderDisabled</b></a></td><td>operation</td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation168194" target = "projectFrame"><b>onProviderEnabled</b></a></td><td>operation</td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation149506" target = "projectFrame"><b>onRestart</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation150146" target = "projectFrame"><b>onRestart</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation167042" target = "projectFrame"><b>onResume</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation139778" target = "projectFrame"><b>onResume</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145026" target = "projectFrame"><b>onResume</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation128258" target = "projectFrame"><b>onResume</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation142082" target = "projectFrame"><b>onSensorChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation166658" target = "projectFrame"><b>onSensorChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation135810" target = "projectFrame"><b>onSensorChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation166402" target = "projectFrame"><b>onSizeChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation139650" target = "projectFrame"><b>onStart</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation168322" target = "projectFrame"><b>onStatusChanged</b></a></td><td>operation</td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation167170" target = "projectFrame"><b>onStop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation139906" target = "projectFrame"><b>onStop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation142594" target = "projectFrame"><b>onSurfaceChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145410" target = "projectFrame"><b>onSurfaceChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation141698" target = "projectFrame"><b>onSurfaceChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation146946" target = "projectFrame"><b>onSurfaceChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation147842" target = "projectFrame"><b>onSurfaceChanged</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation142722" target = "projectFrame"><b>onSurfaceCreated</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145538" target = "projectFrame"><b>onSurfaceCreated</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation141826" target = "projectFrame"><b>onSurfaceCreated</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation147074" target = "projectFrame"><b>onSurfaceCreated</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation147970" target = "projectFrame"><b>onSurfaceCreated</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute152706" target = "projectFrame"><b>OPCION_1</b></a></td><td>attribute</td><td> Called when the activity is first created. </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute152834" target = "projectFrame"><b>OPCION_2</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refartifact129922" target = "projectFrame"><b>OpenCV</b></a></td><td>artifact</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132098.html#refclass132098" target = "projectFrame"><b>OpenCV</b></a></td><td>class</td><td>OpenCV for Android NDK<br />Copyright (c) 2006-2009 SIProp Project http://www.siprop.org/<br /><br />This software is provided 'as-is', without any express or implied warranty.<br />In no event will the authors be held liable for any damages arising from the use of this software.<br />Permission is granted to anyone to use this software for any purpose,<br />including commercial applications, and to alter it and redistribute it freely,<br />subject to the following restrictions:<br /><br />1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.<br />2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.<br />3. This notice may not be removed or altered from any source distribution.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refrelation128386" target = "projectFrame"><b>openGLPreview</b></a></td><td>relation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation154882" target = "projectFrame"><b>opuesto</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute142850" target = "projectFrame"><b>origen</b></a></td><td>attribute</td><td></td></tr>
+</table>
+</body>
+</html>

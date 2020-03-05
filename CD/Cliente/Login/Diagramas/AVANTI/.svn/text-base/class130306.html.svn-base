@@ -1,0 +1,74 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Mapa</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Mapa</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass130306"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class Mapa extends <a href="class131842.html#refclass131842"><b>View</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact132226"><b>Mapa</b></a></p>
+<div class="sub">
+<a name="refattribute141314"></a>
+<table><tr><td><div class="element">Attribute <b>x</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - x : float</li><li>Java : private float x</li></ul><a name="refattribute141442"></a>
+<table><tr><td><div class="element">Attribute <b>y</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - y : float</li><li>Java : private float y</li></ul><a name="refattribute141570"></a>
+<table><tr><td><div class="element">Attribute <b>mPaint</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mPaint : Paint =  new Paint(Paint.ANTI_ALIAS_FLAG)</li><li>Java : private Paint mPaint</li></ul><a name="refattribute141698"></a>
+<table><tr><td><div class="element">Attribute <b>img</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - img : ImageView</li><li>Java : private ImageView img</li></ul><a name="refattribute141826"></a>
+<table><tr><td><div class="element">Attribute <b>image</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - image : Bitmap</li><li>Java : private Bitmap image</li></ul><a name="refattribute141954"></a>
+<table><tr><td><div class="element">Attribute <b>posX</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - posX : double =  Double.MAX_VALUE</li><li>Java : private double posX</li></ul><a name="refattribute142082"></a>
+<table><tr><td><div class="element">Attribute <b>posY</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - posY : double =  Double.MAX_VALUE</li><li>Java : private double posY</li></ul><a name="refattribute142210"></a>
+<table><tr><td><div class="element">Attribute <b>cuadrante</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - cuadrante : int</li><li>Java : private int cuadrante</li></ul><a name="refrelation134018"></a>
+<table><tr><td><div class="element">Relation <b>listaCuadrantes (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - listaCuadrantes : <a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></li><li>Java : private <a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a> listaCuadrantes</li></ul><a name="refrelation134146"></a>
+<table><tr><td><div class="element">Relation <b>fireList (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - fireList : <a href="class134658.html#refclass134658"><b>FireList</b></a> =  new FireList()</li><li>Java : private <a href="class134658.html#refclass134658"><b>FireList</b></a> fireList</li></ul><a name="refattribute142338"></a>
+<table><tr><td><div class="element">Attribute <b>mPaint2</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mPaint2 : Paint =  new Paint(Paint.ANTI_ALIAS_FLAG)</li><li>Java : private Paint mPaint2</li></ul><a name="refattribute142466"></a>
+<table><tr><td><div class="element">Attribute <b>POSX_0_MAPA</b></div></td></tr></table>
+<p>Coordenada X dentro del mapa que es en la BD la coordenadaX = 0;<br /><br /></p><p>Declaration :</p><ul><li>Uml : static, + POSX_0_MAPA : int =  42, read only</li><li>Java : public static final int POSX_0_MAPA</li></ul><a name="refattribute142594"></a>
+<table><tr><td><div class="element">Attribute <b>POSY_0_MAPA</b></div></td></tr></table>
+<p>Coordenada Y dentro del mapa que es en la BD la coordenadaY = 0;<br /><br /></p><p>Declaration :</p><ul><li>Uml : static, + POSY_0_MAPA : int =  198, read only</li><li>Java : public static final int POSY_0_MAPA</li></ul><a name="refattribute142722"></a>
+<table><tr><td><div class="element">Attribute <b>escalaMetro</b></div></td></tr></table>
+<p>Distancia en píxeles en el mapa de un metro en la realidad<br /><br /></p><p>Declaration :</p><ul><li>Uml : static, + escalaMetro : double =  10.904225532, read only</li><li>Java : public static final double escalaMetro</li></ul><a name="refoperation151554"></a>
+<table><tr><td><div class="element">Operation <b>Mapa</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Mapa(inout father : Activity) : </li><li>Java : public Mapa(Activity father)</li></ul><a name="refoperation151682"></a>
+<table><tr><td><div class="element">Operation <b>onDraw</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onDraw(inout canvas : Canvas) : void</li><li>Java : protected void onDraw(Canvas canvas)</li></ul><a name="refoperation151810"></a>
+<table><tr><td><div class="element">Operation <b>pintarFuegos</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + pintarFuegos(inout canvas : Canvas) : void</li><li>Java : public void pintarFuegos(Canvas canvas)</li></ul><a name="refoperation151938"></a>
+<table><tr><td><div class="element">Operation <b>pintarCuadrantes</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + pintarCuadrantes(inout canvas : Canvas) : void</li><li>Java : public void pintarCuadrantes(Canvas canvas)</li></ul><a name="refoperation152066"></a>
+<table><tr><td><div class="element">Operation <b>rutaEscape</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + rutaEscape(inout camino : ArrayList&lt;Integer&gt;, inout canvas : Canvas) : void</li><li>Java : public void rutaEscape(ArrayList&lt;Integer&gt; camino, Canvas canvas)</li></ul><a name="refoperation152194"></a>
+<table><tr><td><div class="element">Operation <b>pintarRecorrido</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarRecorrido(inout ruta : ArrayList&lt;Cuadrante&gt;, inout canvas : Canvas) : void</li><li>Java : private void pintarRecorrido(ArrayList&lt;Cuadrante&gt; ruta, Canvas canvas)</li></ul><a name="refoperation152322"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlecha</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlecha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlecha(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation152450"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaArriba</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaArriba(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaArriba(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation152578"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaArribaDcha</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaArribaDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaArribaDcha(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation152706"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaDcha</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaDcha(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation152834"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaAbajoDcha</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaAbajoDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaAbajoDcha(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation152962"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaAbajo</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaAbajo(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaAbajo(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation153090"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaAbajoIzda</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaAbajoIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaAbajoIzda(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation153218"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaIzda</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaIzda(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation153346"></a>
+<table><tr><td><div class="element">Operation <b>pintarFlechaArribaIzda</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - pintarFlechaArribaIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarFlechaArribaIzda(int idOrigen, int idDestino, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation153474"></a>
+<table><tr><td><div class="element">Operation <b>pintarLinea</b></div></td></tr></table><p>Método auxiliar para pintar las líneas, aplicando la escala.<br />@param xIni<br />@param yIni<br />@param xFin<br />@param yFin<br />@param canvas<br />@param p<br /></p><p>Declaration :</p><ul><li>Uml : - pintarLinea(in xIni : double, in yIni : double, in xFin : double, in yFin : double, in dir : int, inout canvas : Canvas, inout p : Paint) : void</li><li>Java : private void pintarLinea(double xIni, double yIni, double xFin, double yFin, int dir, Canvas canvas, Paint p)</li></ul><a name="refoperation153602"></a>
+<table><tr><td><div class="element">Operation <b>setPosX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPosX(in posX : double) : void</li><li>Java : public void setPosX(double posX)</li></ul><a name="refoperation153730"></a>
+<table><tr><td><div class="element">Operation <b>getPosX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getPosX() : double</li><li>Java : public double getPosX()</li></ul><a name="refoperation153858"></a>
+<table><tr><td><div class="element">Operation <b>setPosY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPosY(in posY : double) : void</li><li>Java : public void setPosY(double posY)</li></ul><a name="refoperation153986"></a>
+<table><tr><td><div class="element">Operation <b>getPosY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getPosY() : double</li><li>Java : public double getPosY()</li></ul><a name="refoperation154114"></a>
+<table><tr><td><div class="element">Operation <b>getCuadrante</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getCuadrante() : int</li><li>Java : public int getCuadrante()</li></ul><a name="refoperation154242"></a>
+<table><tr><td><div class="element">Operation <b>setCuadrante</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setCuadrante(in c : int) : void</li><li>Java : public void setCuadrante(int c)</li></ul><a name="refoperation154370"></a>
+<table><tr><td><div class="element">Operation <b>setListaCuadrantes</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setListaCuadrantes(inout l : <a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a>) : void</li><li>Java : public void setListaCuadrantes(<a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a> l)</li></ul></div>
+<p>All public operations : <a href="class130306.html#refoperation154114"><b>getCuadrante</b></a> , <a href="class130306.html#refoperation153730"><b>getPosX</b></a> , <a href="class130306.html#refoperation153986"><b>getPosY</b></a> , <a href="class130306.html#refoperation151938"><b>pintarCuadrantes</b></a> , <a href="class130306.html#refoperation151810"><b>pintarFuegos</b></a> , <a href="class130306.html#refoperation152066"><b>rutaEscape</b></a> , <a href="class130306.html#refoperation154242"><b>setCuadrante</b></a> , <a href="class130306.html#refoperation154370"><b>setListaCuadrantes</b></a> , <a href="class130306.html#refoperation153602"><b>setPosX</b></a> , <a href="class130306.html#refoperation153858"><b>setPosY</b></a> </p>
+</body>
+</html>

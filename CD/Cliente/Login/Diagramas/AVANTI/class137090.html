@@ -1,0 +1,45 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class ParticleFilter</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class ParticleFilter</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass137090"></a>
+<p>Clase que implementa el filtro de partículas<br />@author Javier<br /><br /></p>
+<p>Declaration :</p><ul>
+<li>Java : public class ParticleFilter </li></ul><p>Artifact : <a href="index.html#refartifact134146"><b>ParticleFilter</b></a></p>
+<div class="sub">
+<a name="refattribute150658"></a>
+<table><tr><td><div class="element">Attribute <b>numParticulas</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, - numParticulas : int =  50, read only</li><li>Java : private static final int numParticulas</li></ul><a name="refattribute150786"></a>
+<table><tr><td><div class="element">Attribute <b>sigma</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, - sigma : double =  0.5, read only</li><li>Java : private static final double sigma</li></ul><a name="refrelation136066"></a>
+<table><tr><td><div class="element">Relation <b>particulas (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - particulas : <a href="class136962.html#refclass136962"><b>Particle</b></a></li><li>Java : private ArrayList&lt;<a href="class136962.html#refclass136962"><b>Particle</b></a>&gt; particulas</li></ul><p>Stereotype: ArrayList</p>
+<a name="refattribute150914"></a>
+<table><tr><td><div class="element">Attribute <b>mapaMascara</b></div></td></tr></table>
+<p>Mapa con las zonas permitidas en blanco<br /><br /></p><p>Declaration :</p><ul><li>Uml : - mapaMascara : Bitmap</li><li>Java : private Bitmap mapaMascara</li></ul><a name="refattribute151042"></a>
+<table><tr><td><div class="element">Attribute <b>time</b></div></td></tr></table>
+<p>Tiempo actual<br /><br /></p><p>Declaration :</p><ul><li>Uml : - time : double</li><li>Java : private double time</li></ul><a name="refoperation173186"></a>
+<table><tr><td><div class="element">Operation <b>ParticleFilter</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + ParticleFilter(in x : long, in y : long, inout context : Context) : </li><li>Java : public ParticleFilter(long x, long y, Context context)</li></ul><a name="refoperation173314"></a>
+<table><tr><td><div class="element">Operation <b>prediction</b></div></td></tr></table><p>Método que realiza el paso de predicción, es decir, predice la nueva posición y velocidad de las partículas<br />@param accX aceleración del terminal en las coordenadas X del mapa, dado por el acelerómetro <br />@param accY aceleración del terminal en las coordenadas Y del mapa, dado por el acelerómetro <br /></p><p>Declaration :</p><ul><li>Uml : + prediction(in accX : double, in accY : double, in time : double) : void</li><li>Java : public void prediction(double accX, double accY, double time)</li></ul><a name="refoperation173442"></a>
+<table><tr><td><div class="element">Operation <b>correction</b></div></td></tr></table><p>Método que corrije las probabilidades de las partículas que definen la probabilidad<br />de que esté en la posición dada por el algoritmo k-closest neibourghs. <br />@param c posición devuelta por el algoritmos de posicionamiento estándar<br /></p><p>Declaration :</p><ul><li>Uml : + correction(inout c : <a href="class136706.html#refclass136706"><b>Coordenada</b></a>) : void</li><li>Java : public void correction(<a href="class136706.html#refclass136706"><b>Coordenada</b></a> c)</li></ul><a name="refoperation173570"></a>
+<table><tr><td><div class="element">Operation <b>particleUpdate</b></div></td></tr></table><p>Actualiza los pesos de las partículas dependiendo de las probabilidades anteriormente calculadas<br /></p><p>Declaration :</p><ul><li>Uml : + particleUpdate() : void</li><li>Java : public void particleUpdate()</li></ul><a name="refoperation173698"></a>
+<table><tr><td><div class="element">Operation <b>resampling</b></div></td></tr></table><p>Remuestrea las partículas en el caso de que hayan perdido mucho peso.<br /></p><p>Declaration :</p><ul><li>Uml : + resampling() : void</li><li>Java : public void resampling()</li></ul><a name="refoperation173826"></a>
+<table><tr><td><div class="element">Operation <b>quicksort</b></div></td></tr></table><p>Ordena el vector de partículas por peso.<br />@param primero<br />@param ultimo<br /></p><p>Declaration :</p><ul><li>Uml : + quicksort(in primero : int, in ultimo : int) : void</li><li>Java : public void quicksort(int primero, int ultimo)</li></ul><a name="refoperation173954"></a>
+<table><tr><td><div class="element">Operation <b>getP_Xk_Xk1</b></div></td></tr></table><p>Calcula la probabilidad P de que la particula esté en una nueva posición a partir de la anterior.<br />Si atraviesa una pared le asigna una probabilidad de 0, si no de 1<br />@param x_old píxel de la x antigua;<br />@param y_old píxel de la y antigua;<br />@param x_new píxel de la x nueva;<br />@param y_new píxel de la y nueva;<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + getP_Xk_Xk1(in x_old : long, in y_old : long, in x_new : long, in y_new : long) : int</li><li>Java : public int getP_Xk_Xk1(long x_old, long y_old, long x_new, long y_new)</li></ul><a name="refoperation174082"></a>
+<table><tr><td><div class="element">Operation <b>setParticulas</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setParticulas(inout particulas : ArrayList&lt;Particle&gt;) : void</li><li>Java : public void setParticulas(ArrayList&lt;Particle&gt; particulas)</li></ul><a name="refoperation174210"></a>
+<table><tr><td><div class="element">Operation <b>getParticulas</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getParticulas() : <a href="class136962.html#refclass136962"><b>Particle</b></a></li><li>Java : public ArrayList&lt;<a href="class136962.html#refclass136962"><b>Particle</b></a>&gt; getParticulas()</li></ul></div>
+<p>All public operations : <a href="class137090.html#refoperation173442"><b>correction</b></a> , <a href="class137090.html#refoperation173954"><b>getP_Xk_Xk1</b></a> , <a href="class137090.html#refoperation174210"><b>getParticulas</b></a> , <a href="class137090.html#refoperation173570"><b>particleUpdate</b></a> , <a href="class137090.html#refoperation173314"><b>prediction</b></a> , <a href="class137090.html#refoperation173826"><b>quicksort</b></a> , <a href="class137090.html#refoperation173698"><b>resampling</b></a> , <a href="class137090.html#refoperation174082"><b>setParticulas</b></a> </p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+class IconifiedTextListAdapter
+!!!131842.java!!!	IconifiedTextListAdapter(inout context : Context)
+             mContext = context;
+!!!131970.java!!!	addItem(inout it : IconAndText) : void
+ mItems.add(it);
+!!!132098.java!!!	setListItems(inout lit : List<IconAndText>) : void
+ mItems = lit;
+!!!132226.java!!!	getCount() : int
+ return mItems.size();
+!!!132354.java!!!	getItem(in position : int) : Object
+ return mItems.get(position);
+!!!132482.java!!!	areAllItemsSelectable() : boolean
+ return false;
+!!!132610.java!!!	isSelectable(in position : int) : boolean
+             try{
+                  return mItems.get(position).isSelectable();
+             }catch (IndexOutOfBoundsException aioobe){
+                  return false;
+             }
+!!!132738.java!!!	getItemId(in position : int) : long
+             return position;
+!!!132866.java!!!	getView(in position : int, inout convertView : View, inout parent : ViewGroup) : View
+             IconAndText btv;
+             if (convertView == null) {
+                  btv = new IconAndText(mContext, mItems.get(position).getIcon().getDrawable(), mItems.get(position).getText(), mItems.get(position).isSelectable());
+             } else { 
+                  btv = (IconAndText) convertView;
+                  btv.setText(mItems.get(position).getText());
+                  btv.setIcon(mItems.get(position).getIcon().getDrawable());
+             }
+             return btv;
