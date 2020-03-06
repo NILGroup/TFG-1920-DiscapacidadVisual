@@ -1,0 +1,54 @@
+class Arista
+!!!154498.java!!!	Arista()
+		origen = 0;
+		destino = 0;
+		direccion = 0;
+!!!154626.java!!!	Arista(in o : int, in d : int, in dir : int)
+		this.origen = o;
+		this.destino = d;
+		this.direccion = dir;
+!!!154754.java!!!	Arista(inout a : Arista)
+		this.origen = a.origen;
+		this.destino = a.destino;
+		this.direccion = a.direccion;
+!!!154882.java!!!	opuesto(in direccion : int) : int
+		int dirOpuesta = 0;
+		switch(direccion){
+		case Arista.UP:
+			dirOpuesta= Arista.DOWN;
+			break;
+		case Arista.UP_RIGHT:
+			dirOpuesta = Arista.DOWN_LEFT;
+			break;
+		case Arista.RIGHT:
+			dirOpuesta = Arista.LEFT;
+			break;
+		case Arista.DOWN_RIGHT:
+			dirOpuesta = Arista.UP_LEFT;
+			break;
+		case Arista.DOWN:
+			dirOpuesta = Arista.UP;
+			break;
+		case Arista.DOWN_LEFT:
+			dirOpuesta = Arista.UP_RIGHT;
+			break;
+		case Arista.LEFT:
+			dirOpuesta = Arista.RIGHT;
+			break;
+		case Arista.UP_LEFT:
+			dirOpuesta = Arista.DOWN_RIGHT;
+			break;
+		}
+		return dirOpuesta;
+!!!155010.java!!!	getOrigen() : int
+		return origen;
+!!!155138.java!!!	setOrigen(in o : int) : void
+		origen = o;
+!!!155266.java!!!	getDestino() : int
+		return destino;
+!!!155394.java!!!	setDestino(in d : int) : void
+		destino = d;
+!!!155522.java!!!	getDireccion() : int
+		return direccion;
+!!!155650.java!!!	setDireccion(in dir : int) : void
+		direccion= dir;

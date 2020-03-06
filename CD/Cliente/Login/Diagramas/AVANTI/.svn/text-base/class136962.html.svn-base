@@ -1,0 +1,56 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Particle</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Particle</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass136962"></a>
+<p>Clase que respresenta una partícula que explorará el espacio cercano al terminal para determinar<br />mejor su posición.<br /><br />@author Javier<br /><br /></p>
+<p>Declaration :</p><ul>
+<li>Java : public class Particle </li></ul><p>Artifact : <a href="index.html#refartifact134018"><b>Particle</b></a></p>
+<div class="sub">
+<a name="refattribute149762"></a>
+<table><tr><td><div class="element">Attribute <b>x</b></div></td></tr></table>
+<p>En píxeles<br /><br /></p><p>Declaration :</p><ul><li>Uml : - x : long</li><li>Java : private long x</li></ul><a name="refattribute149890"></a>
+<table><tr><td><div class="element">Attribute <b>y</b></div></td></tr></table>
+<p>En píxeles<br /><br /></p><p>Declaration :</p><ul><li>Uml : - y : long</li><li>Java : private long y</li></ul><a name="refattribute150018"></a>
+<table><tr><td><div class="element">Attribute <b>velocityX</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - velocityX : double</li><li>Java : private double velocityX</li></ul><a name="refattribute150146"></a>
+<table><tr><td><div class="element">Attribute <b>velocityY</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - velocityY : double</li><li>Java : private double velocityY</li></ul><a name="refattribute150274"></a>
+<table><tr><td><div class="element">Attribute <b>weight</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - weight : double</li><li>Java : private double weight</li></ul><a name="refattribute150402"></a>
+<table><tr><td><div class="element">Attribute <b>prob_Zk_Xk</b></div></td></tr></table>
+<p>Probabilidad de Zk dado Xk (posición de la particula en el momento K)<br /><br /></p><p>Declaration :</p><ul><li>Uml : - prob_Zk_Xk : double</li><li>Java : private double prob_Zk_Xk</li></ul><a name="refattribute150530"></a>
+<table><tr><td><div class="element">Attribute <b>prob_Xk_Xk1</b></div></td></tr></table>
+<p>Probabilidad de que la particula esté en Xk dado Xk-1<br /><br /></p><p>Declaration :</p><ul><li>Uml : - prob_Xk_Xk1 : double</li><li>Java : private double prob_Xk_Xk1</li></ul><a name="refoperation171138"></a>
+<table><tr><td><div class="element">Operation <b>Particle</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Particle() : </li><li>Java : public Particle()</li></ul><a name="refoperation171266"></a>
+<table><tr><td><div class="element">Operation <b>getX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getX() : long</li><li>Java : public long getX()</li></ul><a name="refoperation171394"></a>
+<table><tr><td><div class="element">Operation <b>setX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setX(in x : long) : void</li><li>Java : public void setX(long x)</li></ul><a name="refoperation171522"></a>
+<table><tr><td><div class="element">Operation <b>getY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getY() : long</li><li>Java : public long getY()</li></ul><a name="refoperation171650"></a>
+<table><tr><td><div class="element">Operation <b>setY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setY(in y : long) : void</li><li>Java : public void setY(long y)</li></ul><a name="refoperation171778"></a>
+<table><tr><td><div class="element">Operation <b>getVelocityX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getVelocityX() : double</li><li>Java : public double getVelocityX()</li></ul><a name="refoperation171906"></a>
+<table><tr><td><div class="element">Operation <b>setVelocityX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setVelocityX(in velocityX : double) : void</li><li>Java : public void setVelocityX(double velocityX)</li></ul><a name="refoperation172034"></a>
+<table><tr><td><div class="element">Operation <b>getVelocityY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getVelocityY() : double</li><li>Java : public double getVelocityY()</li></ul><a name="refoperation172162"></a>
+<table><tr><td><div class="element">Operation <b>setVelocityY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setVelocityY(in velocityY : double) : void</li><li>Java : public void setVelocityY(double velocityY)</li></ul><a name="refoperation172290"></a>
+<table><tr><td><div class="element">Operation <b>getWeight</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getWeight() : double</li><li>Java : public double getWeight()</li></ul><a name="refoperation172418"></a>
+<table><tr><td><div class="element">Operation <b>setWeight</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setWeight(in weight : double) : void</li><li>Java : public void setWeight(double weight)</li></ul><a name="refoperation172546"></a>
+<table><tr><td><div class="element">Operation <b>getProb_Zk_Xk</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getProb_Zk_Xk() : double</li><li>Java : public double getProb_Zk_Xk()</li></ul><a name="refoperation172674"></a>
+<table><tr><td><div class="element">Operation <b>setProb_Zk_Xk</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setProb_Zk_Xk(in prob_Zk_Xk : double) : void</li><li>Java : public void setProb_Zk_Xk(double prob_Zk_Xk)</li></ul><a name="refoperation172802"></a>
+<table><tr><td><div class="element">Operation <b>getProb_Xk_Xk1</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getProb_Xk_Xk1() : double</li><li>Java : public double getProb_Xk_Xk1()</li></ul><a name="refoperation172930"></a>
+<table><tr><td><div class="element">Operation <b>setProb_Xk_Xk1</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setProb_Xk_Xk1(in prob_Xk_Xk1 : double) : void</li><li>Java : public void setProb_Xk_Xk1(double prob_Xk_Xk1)</li></ul><a name="refoperation173058"></a>
+<table><tr><td><div class="element">Operation <b>clone</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + clone() : <a href="class136962.html#refclass136962"><b>Particle</b></a></li><li>Java : public <a href="class136962.html#refclass136962"><b>Particle</b></a> clone()</li></ul></div>
+<p>All public operations : <a href="class136962.html#refoperation173058"><b>clone</b></a> , <a href="class136962.html#refoperation172802"><b>getProb_Xk_Xk1</b></a> , <a href="class136962.html#refoperation172546"><b>getProb_Zk_Xk</b></a> , <a href="class136962.html#refoperation171778"><b>getVelocityX</b></a> , <a href="class136962.html#refoperation172034"><b>getVelocityY</b></a> , <a href="class136962.html#refoperation172290"><b>getWeight</b></a> , <a href="class136962.html#refoperation171266"><b>getX</b></a> , <a href="class136962.html#refoperation171522"><b>getY</b></a> , <a href="class136962.html#refoperation172930"><b>setProb_Xk_Xk1</b></a> , <a href="class136962.html#refoperation172674"><b>setProb_Zk_Xk</b></a> , <a href="class136962.html#refoperation171906"><b>setVelocityX</b></a> , <a href="class136962.html#refoperation172162"><b>setVelocityY</b></a> , <a href="class136962.html#refoperation172418"><b>setWeight</b></a> , <a href="class136962.html#refoperation171394"><b>setX</b></a> , <a href="class136962.html#refoperation171650"><b>setY</b></a> </p>
+</body>
+</html>

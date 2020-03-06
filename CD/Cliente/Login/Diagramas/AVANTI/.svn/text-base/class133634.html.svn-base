@@ -1,0 +1,34 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Cube</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Cube</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass133634"></a>
+<p>A vertex shaded cube.<br /></p>
+<p>Declaration :</p><ul>
+<li>Java : package class Cube </li></ul><p>Artifact : <a href="index.html#refartifact131074"><b>Cube</b></a></p>
+<div class="sub">
+<a name="refoperation146434"></a>
+<table><tr><td><div class="element">Operation <b>Cube</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Cube() : </li><li>Java : public Cube()</li></ul><a name="refoperation146562"></a>
+<table><tr><td><div class="element">Operation <b>draw</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + draw(inout gl : GL10) : void</li><li>Java : public void draw(GL10 gl)</li></ul><a name="refattribute135042"></a>
+<table><tr><td><div class="element">Attribute <b>mVertexBuffer</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mVertexBuffer : IntBuffer</li><li>Java : private IntBuffer mVertexBuffer</li></ul><a name="refattribute135170"></a>
+<table><tr><td><div class="element">Attribute <b>mColorBuffer</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mColorBuffer : IntBuffer</li><li>Java : private IntBuffer mColorBuffer</li></ul><a name="refattribute135298"></a>
+<table><tr><td><div class="element">Attribute <b>mIndexBuffer</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mIndexBuffer : ByteBuffer</li><li>Java : private ByteBuffer mIndexBuffer</li></ul></div>
+<p>All public operations : <a href="class133634.html#refoperation146562"><b>draw</b></a> </p>
+</body>
+</html>

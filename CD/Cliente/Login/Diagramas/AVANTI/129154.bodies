@@ -1,0 +1,81 @@
+class MainMenu
+!!!132994.java!!!	onCreate(inout savedInstanceState : Bundle) : void
+       super.onCreate(savedInstanceState);
+       
+       if(thread==null){
+    	   thread = createAndStartThread(); //Comienza a recuperar los datos de BD
+       }
+       
+       mResources = getResources();
+       //Obtengo los datos del usuario logueado.
+       username = Login.getUsername();
+       password = Login.getPassword();
+        
+       IconifiedTextListAdapter adapter = new IconifiedTextListAdapter(this);
+       IconAndText aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_gallery), "Ver actividad WiFi",true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_agenda), "Posicióname en el mapa!",true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_compass), "Aplicaci—n real",true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_camera ), "Prueba animaci—n",true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_directions), "Prueba del acelerómetro",true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_mapmode), "Prueba de modelos en OpenGL", true);
+       adapter.addItem(aux);
+       aux = new IconAndText(this,mResources.getDrawable(android.R.drawable.ic_menu_close_clear_cancel), "Logout", true);
+       adapter.addItem(aux);
+       this.setListAdapter(adapter);       
+!!!133122.java!!!	createAndStartThread() : ThreadDatos
+ 		ThreadDatos t = new ThreadDatos();
+ 		t.start();
+ 		return t;
+!!!133250.java!!!	onListItemClick(inout l : ListView, inout v : View, in position : int, in id : long) : void
+ 		 if(position==0){
+ 			Intent intent = new Intent(this, WPSActivity.class);
+ 			startActivity(intent);
+ 		 }else if(position == 1){
+ 			Intent intent = new Intent(this, Position.class);
+ 			startActivity(intent);
+ 		 }else if(position == 2){
+ 		//	Intent intent = new Intent(this, GLSurfaceViewActivity.class);
+ 		//	 startActivity(intent);
+ 			 Intent intent = new Intent(this, ParticleRokon.class);
+ 	        startActivity(intent);
+ 		 } else if(position == 3){
+ 			Intent intent = new Intent(this, ParticleAnimation.class);
+ 			startActivity(intent);
+ 		 }else if(position == 4){
+ 			Intent intent = new Intent(this, TestAccelerometer.class);
+ 			startActivity(intent);
+ 		 }else if (position == 5){
+ 			 Intent intent = new Intent(this, GLSurfaceViewActivity.class);
+ 			 startActivity(intent);
+ 		 }else if (position == 6){
+ 			 logout(username, password);
+ 			 finish();
+ 		 }
+!!!133378.java!!!	logout(in user : String, in password : String) : void
+ 		HttpServices service = new HttpServices();
+ 		try {
+			if(service.logout(user, password).equals("")){
+				
+			}else{
+				DialogController.createInformDialog(this, "Error en el logout");
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+			DialogController.createInformDialog(this, "Excepción: " + e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			DialogController.createInformDialog(this, "Excepción: " + e.getMessage());
+		}
+!!!133506.java!!!	getUsername() : String
+		 return username;
+!!!133634.java!!!	getPassword() : String
+		 return password;
+!!!133762.java!!!	setUsername(in u : String) : void
+ 		 username = u;
+!!!133890.java!!!	setPassword(in p : String) : void
+ 		 password = p;

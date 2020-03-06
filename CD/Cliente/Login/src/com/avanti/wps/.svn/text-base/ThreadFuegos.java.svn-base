@@ -1,0 +1,635 @@
+package com.avanti.wps;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+
+import com.avanti.activities.GLSurfaceViewActivity;
+import com.avanti.activities.MainMenu;
+import com.avanti.camera.Preview;
+import com.avanti.position.Mapa;
+import com.avanti.routes.Fire;
+import com.avanti.routes.FireList;
+
+public class ThreadFuegos extends Thread{
+	
+	private static int ARRIBA= 0;
+	private static int ABAJO = 1;
+	private static int COINCIDE = 2;
+	private static int IZQUIERDA = 3;
+	private static int DERECHA = 4;
+	private static int NODEF = 5;
+	
+	private GLSurfaceViewActivity father;
+	/*private float[] magnetic_angles;
+	private float[] accelerations;*/	
+	public static boolean giroValido;
+	public static float giroSobreZ = 0;
+	public static float giroSobreY = 0;
+	public static float giroSobreX = 0;
+	
+	/**
+	 * Distancia en píxeles del mapa de la distancia minima para que un fuego 
+	 * tenga su base en la base de la pantalla del movil 
+	 */
+	public static float xBaseFuego = (float) (3.4236);// * Mapa.escalaMetro);
+	
+	/**
+	 * Altura media en píxeles del mapa a la que un usuario llevará el móvil
+	 * (161,95 cm)
+	 */
+	public static float yBaseFuego = (float) (1.6195);// * Mapa.escalaMetro);
+	
+	public final static int colorBlanco = -1025;
+
+	public static float distanciaFoco = 50;
+	
+	public static float centerX;
+	public static float centerY;
+	public static float centerZ;
+	
+	public ThreadFuegos(GLSurfaceViewActivity father){
+		this.father = father;
+		this.setName("ThreadFuegos");
+	
+		/*mSensorManager = (SensorManager) father.getSystemService(Context.SENSOR_SERVICE);
+		Sensor s = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
+		Sensor s2 = mSensorManager.getSensorList(Sensor.TYPE_MAGNETIC_FIELD).get(0);
+		
+		SensorEventListener magneticAnglesListener = new SensorEventListener(){
+
+			public void onAccuracyChanged(Sensor sensor, int accuracy) {
+								
+			}
+
+			public void onSensorChanged(SensorEvent event) {
+				magnetic_angles = event.values;
+			}
+			
+		};
+		
+		SensorEventListener accelerationsListener = new SensorEventListener(){
+
+			public void onAccuracyChanged(Sensor sensor, int accuracy) {
+								
+			}
+
+			public void onSensorChanged(SensorEvent event) {
+				accelerations = event.values;
+			}
+			
+		};
+		
+		mSensorManager.registerListener(accelerationsListener, s, SensorManager.SENSOR_DELAY_NORMAL);
+		mSensorManager.registerListener(magneticAnglesListener, s2, SensorManager.SENSOR_DELAY_NORMAL);*/
+	}
+	
+	public void run(){
+		boolean error = false;
+		float[] result;
+		float[] R;
+		float[] I;
+		while(!error){
+			result = new float[3];
+			R = new float[9];
+			I = new float[9];
+			if(father.thread.accelerations !=null && father.thread.magnetic_angles!=null){
+				if(SensorManager.getRotationMatrix(R, I, father.thread.accelerations, father.thread.magnetic_angles)){
+					//float inclination = (float)((SensorManager.getInclination(I)*180)/Math.PI);
+					//accZNorm.setText("" + inclination);
+					//SensorManager.remapCoordinateSystem(R, SensorManager.AXIS_X, SensorManager.AXIS_Y, R2);
+					SensorManager.getOrientation(R, result);
+					giroSobreX = (float) Math.toDegrees(result[1]);
+					giroSobreY = (float) Math.toDegrees(result[2]) + 90;
+					giroSobreZ = (float) Math.toDegrees(result[0]) + 90 - 180;
+					if(giroSobreZ < -180) giroSobreZ = giroSobreZ + 360;
+							
+					//father.setTexto("" + giroSobreZ);
+					//Calculo si la posición del móvil es válida
+					
+					if((giroSobreX>=-20 && giroSobreX<=20) && (giroSobreY<=40 && giroSobreY>=-40)){
+						setGiroValido(true);
+					}else{
+						setGiroValido(false);
+					}
+					//if(isGiroValido()){
+						
+						
+						//Calculo la aceleración en el eje Z combinando los giros de X e Y
+						
+						/*if(giroSobreY<=0 && giroSobreY>=-90){
+							newAngle = -giroSobreY;
+						}else{
+							newAngle = 180 - Math.abs(giroSobreY);
+						}*/
+						/*double radiansY = Math.toRadians(newAngle);
+						double accAux;
+						if(accelerations[2]>0){
+							accAux = accelerations[2] - Math.cos(radiansY)* SensorManager.STANDARD_GRAVITY;
+							
+						}else{
+							accAux = accelerations[2] +  Math.cos(radiansY)* SensorManager.STANDARD_GRAVITY;
+						}*/
+						
+						//Redirijo el ángulo de Z por el giro del móvil en modo landscape
+						//if(giroSobreZ>=0 && giroSobreZ<=180){
+						//giroSobreZ = giroSobreZ + 90;
+						//giroSobreY = giroSobreY + 90;
+						//}else{
+							//giroSobreZ = 
+						//}
+						//if(giroSobreZ > 180) giroSobreZ = giroSobreZ - 360;
+						//En el caso de que la aceleración sea negativa invierto su dirección
+						/*if(accAux<0){
+							if(giroSobreZ<0){
+								giroSobreZ = giroSobreZ + 180;
+							}else {
+								giroSobreZ = giroSobreZ - 180;
+							}
+							accAux = -accAux;
+						}*/
+						
+						/*if(father.thread.getC()!=null){
+							comprobarFuegos(father.thread.getC(), giroSobreZ, giroSobreY);
+						}*/
+					/*}
+				}else{
+					error = true;
+				}*/
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Comprueba los fuegos que están visibles desde el terminal en este momento.
+	 * @param c
+	 * @param azimuth
+	 */
+	public void comprobarFuegos(Coordenada c, float giroSobreZ, float giroSobreY){
+		//ArrayList<Fire> lista = MainMenu.thread.listaFuegos.getList();
+		//ArrayList<Fire> lista2 = new ArrayList<Fire>();
+		double distancia;
+		//Fire f;
+		double distanciaMin = Double.MAX_VALUE;
+		
+		synchronized(FireList.list){
+			for(int i = 0; i < FireList.list.size(); i++){
+				distancia = Math.sqrt(Math.pow(FireList.list.get(i).getX()-c.getX(),2) + Math.pow(FireList.list.get(i).getY()-c.getY(),2));
+				if(distancia < 50){
+					if(comprobarObstaculos(c.getX(),c.getY(),FireList.list.get(i).getX(), FireList.list.get(i).getY())){
+						//lista2.add(FireList.list.get(i));
+						FireList.list.get(i).setMostradoPantalla(true);
+					}else{
+						FireList.list.get(i).setMostradoPantalla(false);
+					}
+					if(distancia<distanciaMin){
+						distanciaMin = distancia;
+					}
+				}else{
+					FireList.list.get(i).setMostradoPantalla(false);
+				}
+			}
+		}
+		distanciaFoco = (float) distanciaMin;
+		/**
+		 * Sólo funcionará si el ángulo de visión de la cámara es menor que 90º
+		 */
+		/*float alfa = Preview._vision_angle/2;//Ángulo de la recta a la izquierda del av respecto al eje x;
+		float giro;
+		//if(giroSobreZ>=0 && giroSobreZ <= 180){
+		giro = giroSobreZ - alfa;
+		//}else{
+			//giro = giroSobreZ - alfa;
+		//}
+	
+		float beta;//Ángulo de la recta a la derecha del av respecto al eje x;
+		float gamma;//Ángulo de la recta bisectriz de av
+		float inclinacion; //ángulo de la recta central del ángulo de visión respecto al suelo.
+		
+		if(giro<-180) giro = giro + 360;
+				
+		if(giro>=0 && giro <90){//Primer cuadrante
+			alfa = 90 - giro;
+			if(giro + Preview._vision_angle > 90){
+				//beta = 180 - (giro + Preview._vision_angle - 90);
+				beta = 90 + (180 - (giro+ Preview._vision_angle));
+			}else if(giro + Preview._vision_angle < 90){
+				beta = alfa - Preview._vision_angle;
+			}else{
+				beta = 0;
+			}
+			//if(beta>90) beta = 180 - (beta - 90);
+			//beta = 180 - beta;
+		}else if(giro>=90 && giro <=180){//Segundo cuadrante
+			//alfa = 180 - (giro - 90);
+			alfa = 90 + (180 - giro);
+			//beta = (giro + Preview._vision_angle) - 90;
+			if(giro + Preview._vision_angle > 180){
+				beta = 90 - ((giro + Preview._vision_angle) - 180);
+			}else if(giro + Preview._vision_angle < 180){
+				beta = 90 + (180 - (giro + Preview._vision_angle));
+			}else{
+				beta = 90;
+			}
+			//beta = alfa - Preview._vision_angle;
+		}else if(giro>=-180 && giro<-90){//Tercer cuadrante 
+			alfa = 90 - (180 + giro);
+			if(giro + Preview._vision_angle>-90){
+				beta = 180 - (90 + (giro + Preview._vision_angle));
+			}else if(giro + Preview._vision_angle<-90){
+				beta = -((giro + Preview._vision_angle) + 90);
+			}else{
+				beta = 0;
+			}
+			//beta = alfa + Preview._vision_angle;
+			//if(beta>90)	beta = beta - 90;
+		}else{//Cuarto cuadrante
+			alfa = 180 - (90 + giro);
+			if(giro + Preview._vision_angle<0){
+				beta = 90 + Math.abs(giro + Preview._vision_angle);
+			}else if(giro + Preview._vision_angle>0){
+				beta = 90 - (giro + Preview._vision_angle);
+			}else{
+				beta = 90;
+			}
+			//beta = alfa + Preview._vision_angle;
+			//if(beta>90)	beta = beta - 90;
+		}
+		//if(beta>90) beta = beta - 90;
+		*/
+		float gamma;
+		if(giroSobreZ>=0 && giroSobreZ <90){
+			gamma = 90 - giroSobreZ;
+		}else if(giroSobreZ>=90 && giroSobreZ <=180){
+			//gamma = 90- (180 - giroSobreZ);
+			gamma = 90 + (180 - giroSobreZ);
+		}else if(giroSobreZ>=-180 && giroSobreZ<-90){
+			gamma = 90 - (180 + giroSobreZ);
+		}else{
+			gamma = Math.abs(giroSobreZ) + 90;
+			//gamma = 90 + giroSobreZ;
+		}
+		
+		float pendienteGamma;
+		if(gamma == 90){
+			pendienteGamma = Float.MAX_VALUE;
+		}else{
+			pendienteGamma = (float) Math.tan(Math.toRadians(gamma));
+		}
+		
+		float aEc = (float) (1 + Math.pow(pendienteGamma,2));
+		float bEc = (float) (-2*Math.pow(pendienteGamma, 2)*c.getX() - 2*c.getX());
+		float cEc = (float) (Math.pow(c.getX(), 2) * (Math.pow(pendienteGamma,2)+1) - Math.pow(distanciaFoco, 2));
+		
+		float xPos = (float) ((-bEc + Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		if(giroSobreZ>=0 && giroSobreZ<=180){
+			centerX = xPos;
+		}else{
+			xPos = (float) ((-bEc - Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		}
+		float yPos = (float) (-pendienteGamma*(xPos - c.getX()) + c.getY());
+		centerX = xPos;
+		centerY = yPos;
+		
+		float inclinacion;
+		if(giroSobreY>-90 && giroSobreY < 0){
+			inclinacion = - giroSobreY; 
+		}else{
+			inclinacion = 180 - giroSobreY;
+		}
+		
+		float pendienteInclinacion;
+		if(inclinacion == 90){
+			pendienteInclinacion = Float.MAX_VALUE;
+		}else{
+			pendienteInclinacion = (float) Math.tan(Math.toRadians(inclinacion));
+		}
+		
+		aEc = (float) (1 + Math.pow(pendienteInclinacion,2));
+		bEc = 0;
+		cEc = (float)  -Math.pow(distanciaFoco,2);
+		xPos = (float) ((-bEc + Math.sqrt(Math.pow(bEc, 2)-4*aEc*cEc))/2*aEc);
+		yPos = (float) (pendienteInclinacion*(xPos - c.getX()) + c.getY());
+		centerZ = yPos;
+		/*
+		float pendienteAlfa;
+		float pendienteBeta;
+		float pendienteGamma;
+		float pendienteInclinacion;*/
+		/**
+		 * Calculo las pendientes de las rectas
+		 */
+		/*
+		if(alfa==90){
+			pendienteAlfa = Float.MAX_VALUE;
+		}else{
+			pendienteAlfa = (float) Math.tan(Math.toRadians(alfa));
+		}
+		if(beta==90){
+			pendienteBeta = Float.MAX_VALUE;
+		}else{
+			pendienteBeta = (float) Math.tan(Math.toRadians(beta));
+		}
+		
+		if(gamma == 90){
+			pendienteGamma = Float.MAX_VALUE;
+		}else{
+			pendienteGamma = (float) Math.tan(Math.toRadians(gamma));
+		}
+		
+		if(inclinacion == 90){
+			pendienteInclinacion = Float.MAX_VALUE;
+		}else{
+			pendienteInclinacion = (float) Math.tan(Math.toRadians(inclinacion));
+		}
+		
+		int res1[];
+		int res2[];
+		//int res3[];
+		
+		//Fire f;
+		float distanciaA;
+		float distanciaB;
+		float distancia_a_bisectriz;
+		float distancia_en_z;
+		float distancia_a_y;
+		float angleX;
+		float angleY;
+		float angleZ;
+		boolean valido;
+		
+		synchronized(FireList.list){
+			for(int i = 0; i < lista2.size(); i++){
+				
+				f = lista2.get(i);
+				
+				res1 = calcularPuntoEnRecta(pendienteAlfa, c.getX(), c.getY(), f.getX(), f.getY());
+				res2 = calcularPuntoEnRecta(pendienteBeta, c.getX(), c.getY(), f.getX(), f.getY());
+				//res3 = calcularPuntoEnRecta(pendienteInclinacion, 0, 0, xBaseFuego, yBaseFuego);
+				
+				if( res1[0] == COINCIDE || res1[1] == COINCIDE || res2[0] == COINCIDE || res2[1] == COINCIDE){
+					if(f.isMostradoPantalla()){
+						father.getFuegosMostrados().remove(f);
+					}
+					f.setMostradoPantalla(false);				
+				}else{
+					//A la derecha
+					if(res1[0] == DERECHA && res2[0] == DERECHA && res1[1] == ABAJO && res2[1] == ARRIBA && giro>=0 && (giro + Preview._vision_angle)<=180){
+						valido = true;
+					}//A la izquierda
+					else if(res1[0] == IZQUIERDA && res2[0] == IZQUIERDA && res1[1] == ARRIBA && res2[1] == ABAJO && giro >=-180 && (giro + Preview._vision_angle) < 0){
+						valido = true;
+					}//Arriba
+					else if(res1[1] == ARRIBA && res2[1] == ARRIBA && res1[0] == DERECHA && res2[0] == IZQUIERDA && giro >= -90 && (giro + Preview._vision_angle)<=90){
+						valido = true;
+					}//Abajo
+					else if(res1[1] == ABAJO && res2[1] == ABAJO && res1[0] == IZQUIERDA && res2[0] == DERECHA && giro <= 90 &&(giro + Preview._vision_angle) <= 90){
+						valido = true;
+					}else{
+						valido = false;
+					}
+					if(valido){
+						if(!father.getFuegosMostrados().contains(f)){
+							father.getFuegosMostrados().add(f);
+						}
+						if(pendienteAlfa == Float.MAX_VALUE){
+							distanciaA = (float) Math.abs(c.getY()- f.getY());
+						}else{
+							distanciaA = (float) (Math.abs(pendienteAlfa*f.getX() - f.getY() + (-pendienteAlfa*c.getX() + c.getY()))/Math.sqrt(Math.pow(pendienteAlfa, 2)+1));
+						}
+						
+						if(pendienteBeta == Float.MAX_VALUE){
+							distanciaB = (float) Math.abs(c.getX()- f.getX());
+						}else{
+							distanciaB = (float) (Math.abs(pendienteBeta*f.getX() - f.getY() + (-pendienteBeta*c.getX() + c.getY()))/Math.sqrt(Math.pow(pendienteBeta, 2)+1));
+						}
+						if(gamma == Float.MAX_VALUE){
+							distancia_a_bisectriz = (float) Math.abs(c.getX()- f.getX());
+						}else{
+							distancia_a_bisectriz = (float) (Math.abs(pendienteGamma*f.getX() - f.getY() + (-pendienteGamma*c.getX() + c.getY()))/Math.sqrt(Math.pow(pendienteGamma, 2)+1));
+						}
+						distancia = Math.sqrt(Math.pow(f.getX()-c.getX(),2) + Math.pow(f.getY()-c.getY(),2));
+						distancia_en_z = (float) Math.sqrt(Math.pow(distancia,2) - Math.pow(distancia_a_bisectriz,2));
+						
+						f.setMostradoPantalla(true);
+						f.setzPerspectiva(distancia_en_z);
+						angleX = (float) Math.toDegrees(Math.asin(distancia_a_bisectriz/distancia));
+						if(distanciaA > distanciaB){
+							f.setxPerspectiva(distancia_a_bisectriz);
+							f.setAngleX(-angleX);
+						}else if(distanciaA < distanciaB){
+							f.setxPerspectiva(-distancia_a_bisectriz);
+							f.setAngleX(angleX);
+						}else{
+							f.setxPerspectiva(0);
+							f.setAngleX(0);
+						}
+						
+						
+						
+						if(pendienteInclinacion == Float.MAX_VALUE){
+							distancia_a_y = Float.MAX_VALUE;
+						}else{
+							//distancia_a_y = (float) (Math.abs(pendienteInclinacion*xBaseFuego - yBaseFuego)/Math.sqrt(Math.pow(pendienteInclinacion,2) + 1)) - yBaseFuego;
+							distancia_a_y = (-pendienteInclinacion * xBaseFuego) - yBaseFuego;
+						}
+						if(res3[1] == ARRIBA){
+							distancia_a_y = -distancia_a_y;
+						}
+						f.setyPerspectiva(distancia_a_y);
+						
+						f.setxPantalla(0);
+						f.setyPantalla(0);
+						f.setPerspectivaPantalla(1.0f);
+					}else{
+						if(f.isMostradoPantalla()){
+							father.getFuegosMostrados().remove(f);
+						}
+						f.setMostradoPantalla(false);
+					}
+				}
+			}
+		}*/
+	}
+	
+	/**
+	 * Calcula la posición de un punto respecto a una recta pasada cómo parámetros
+	 * @param pendiente pendiente de la recta
+	 * @param x1 posición x de un punto de la recta
+	 * @param y1 posición y de un punto de la recta
+	 * @param xPunto posición x del punto a comprobar
+	 * @param yPunto posición y del punto a comprobar
+	 * @return un vector <code>res</code> con dos posicones: <code>res[0]</code>
+	 * indica si la primera componente está a la izquierda, derecha o coincide con la recta y
+	 * <code>res[1]</code> indica si la segunda componente está arriba, abajo o coincide con la recta
+	 */
+	private int[] calcularPuntoEnRecta(float pendiente, double x1, double y1, double xPunto, double yPunto){
+		double y;
+		double x;
+		int[] res = new int[2];
+		if(pendiente==0){//Recta horizontal
+			res[0] = NODEF;
+			if(yPunto> y1){
+				res[1] = ARRIBA;
+			}else if(yPunto < y1){
+				res[1] = ABAJO;
+			}else{
+				res[1] = COINCIDE;
+			}
+		}else if(pendiente == Float.MAX_VALUE){//Recta vertical
+			res[1] = NODEF;
+			if(xPunto>x1){
+				res[0] = DERECHA;
+			}else if(xPunto < x1){
+				res[0] = IZQUIERDA;
+			}else{
+				res[0] = COINCIDE;
+			}
+		}else{
+			y = -pendiente*(xPunto - x1) + y1;
+			x = (yPunto - y1)/pendiente + x1;
+			if(yPunto<y){
+				res[1] = ARRIBA;
+			}else if(yPunto>y){
+				res[1] = ABAJO;
+			}else{
+				res[1] = COINCIDE;
+			}
+			
+			if(xPunto>x){
+				res[0] = DERECHA;
+			}else if(xPunto<x){
+				res[0] = IZQUIERDA;
+			}else{
+				res[0] = COINCIDE;
+			}
+		}
+		return res;
+	}
+	
+	/**
+	 * Comprueba si la recta desde (x_old1,y_old1) a (x_new1,y_new1) atraviesa alguna pared, en cuyo caso se
+	 * devuelve <code>false</code> 
+	 * @param x_old1
+	 * @param y_old1
+	 * @param x_new1
+	 * @param y_new1
+	 * @return
+	 */
+	private boolean comprobarObstaculos(double x_old1, double y_old1, double x_new1, double y_new1){
+		long x_old = Math.round(x_old1 * Mapa.escalaMetro + Mapa.POSX_0_MAPA);
+		long x_new = Math.round(x_new1 * Mapa.escalaMetro + Mapa.POSX_0_MAPA);
+		long y_old = Math.round(y_old1 * Mapa.escalaMetro + Mapa.POSY_0_MAPA);
+		long y_new = Math.round(y_new1 * Mapa.escalaMetro + Mapa.POSY_0_MAPA);
+		
+		long incX = Math.abs(x_new - x_old);
+		boolean positivoX = x_new >= x_old;
+		boolean positivoY = y_new >= y_old;
+		long incY = Math.abs(y_new - y_old);
+		
+		double rel;
+		long xPincel = x_old;
+		long yPincel = y_old;
+		//double dist_hipotenusa = Math.sqrt(Math.pow(incX,2) + Math.pow(incY, 2));
+		double acc = 0;
+		boolean flag = false;
+		int color;
+		boolean fin = false;
+		int blue;
+		int red;
+		int green;
+		
+		if(incX>incY){
+			if(incX!=0){
+				rel = (double)incY/(double)incX;
+			}else{
+				rel = 0;
+			}
+			while(!fin && !flag){
+				if(xPincel==x_new){
+					if(positivoY){
+						yPincel = yPincel + 1;
+					}else{
+						yPincel = yPincel - 1;
+					}
+				}else{
+					if(positivoX) xPincel = xPincel + 1;
+					else xPincel = xPincel - 1;
+					acc = acc + rel;
+					if(acc>=1){
+						if(positivoY){
+							yPincel = yPincel + 1;
+							acc = acc - 1;
+						}
+						else{
+							yPincel = yPincel - 1;
+							acc = acc - 1;
+						}
+					}
+				}
+				color = ThreadUbicacion.mapaMascara.getPixel(60,220);
+				color = ThreadUbicacion.mapaMascara.getPixel(124,187);
+				color = ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel);
+				blue = Color.blue(color);
+				red = Color.red(color);
+				green = Color.green(color);
+				if(ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel) != colorBlanco){
+					flag = true;
+				}
+				if(xPincel==x_new && yPincel==y_new) fin = true;
+			}
+		}else{
+			if(incY!=0){
+				rel = (double)incX/(double)incY;
+			}else{
+				rel = 0;
+			}
+			while(!fin && !flag){
+				if(yPincel==y_new){
+					if(positivoX){
+						xPincel = xPincel + 1;
+					}else{
+						xPincel = xPincel - 1;
+					}
+				}else{
+					if(positivoY) yPincel = yPincel + 1;
+					else yPincel = yPincel - 1;
+					acc = acc + rel;
+					if(acc>=1){
+						if(positivoX){
+							xPincel = xPincel + 1;
+							acc = acc - 1;
+						}
+						else{
+							xPincel = xPincel - 1;
+							acc = acc - 1;
+						}
+					}
+				}
+				color = ThreadUbicacion.mapaMascara.getPixel(60,220);
+				color = ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel);
+				if(ThreadUbicacion.mapaMascara.getPixel((int)xPincel, (int)yPincel) != colorBlanco){
+					flag = true;
+				}
+				if(xPincel==x_new && yPincel==y_new) fin = true;
+			}
+		}
+		if(flag) return false;
+		else return true;		
+	}
+	
+	public boolean isGiroValido() {
+		return giroValido;
+	}
+
+	public void setGiroValido(boolean giroValido) {
+		this.giroValido = giroValido;
+	}
+	
+}

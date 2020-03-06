@@ -1,0 +1,630 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>AVANTI
+Documentation</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">AVANTI<br />Documentation</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refpackage129"></a>
+<p>Properties:<ul>
+<li>check-out-cmd:<br /><div class="sub">specify the command containing %file and %dir or %dironly</div></p></li>
+<li>html dir:<br /><div class="sub">e:/2009-2010/Sistemas Informaticos (verano)/Android/AVANTI/Diagramas/AVANTI/</div></p></li>
+</ul></p>
+<a name="refpackage128002"></a>
+<h1 class ="package">1 Package src</h1>
+<div class="sub">
+<a name="refpackage128130"></a>
+<h2 class ="package">1.1 Package com</h2>
+<p></p><ul><li>Java package : com</li>
+</ul>
+<div class="sub">
+<a name="refpackage128258"></a>
+<h3 class ="package">1.1.1 Package avanti</h3>
+<p></p><ul><li>Java package : com.avanti</li>
+</ul>
+<div class="sub">
+<a name="refpackage128386"></a>
+<h4 class ="package">1.1.1.1 Package activities</h4>
+<p></p><ul><li>Java package : com.avanti.activities</li>
+</ul>
+<div class="sub">
+<a name="refclass view128002"></a>
+<h4 class ="view">1.1.1.1.1 Class View activities</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class128002.html#refclass128002"><b>About</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class128258.html#refclass128258"><b>EvacuationProtocol</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class128898.html#refclass128898"><b>Login</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129026.html#refclass129026"><b>Main</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129154.html#refclass129154"><b>MainMenu</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130050.html#refclass130050"><b>Position</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130562.html#refclass130562"><b>Register</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130690.html#refclass130690"><b>ScanResultActivity</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130818.html#refclass130818"><b>TestAccelerometer</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131074.html#refclass131074"><b>WPSActivity</b></a></b></div></td></tr></table>
+<a name="refclass diagram128002"></a>
+<p align="center"><img src="fig128002.png" alt="" /></p>
+ <p align="center"><b>Activities Diagram1</b></p><p><br /></p><p><br /></p>
+<a name="refclass diagram149250"></a>
+<p align="center"><img src="fig149250.png" alt="" /></p>
+ <p align="center"><b>Activities Diagram2</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128002"></a>
+<h4 class ="view">1.1.1.1.2 Deployment View activities</h4>
+<div class="sub">
+<a name="refartifact128002"></a>
+<table><tr><td><div class="element">Artifact <b>About</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128002.html#refclass128002"><b>About</b></a></p>
+<a name="refartifact128130"></a>
+<table><tr><td><div class="element">Artifact <b>EvacuationProtocol</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128258.html#refclass128258"><b>EvacuationProtocol</b></a></p>
+<a name="refartifact128258"></a>
+<table><tr><td><div class="element">Artifact <b>GLSurfaceViewActivity</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></p>
+<a name="refartifact128386"></a>
+<table><tr><td><div class="element">Artifact <b>Login</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128898.html#refclass128898"><b>Login</b></a></p>
+<a name="refartifact128514"></a>
+<table><tr><td><div class="element">Artifact <b>Main</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class129026.html#refclass129026"><b>Main</b></a></p>
+<a name="refartifact128642"></a>
+<table><tr><td><div class="element">Artifact <b>MainMenu</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class129154.html#refclass129154"><b>MainMenu</b></a></p>
+<a name="refartifact128770"></a>
+<table><tr><td><div class="element">Artifact <b>Position</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130050.html#refclass130050"><b>Position</b></a></p>
+<a name="refartifact128898"></a>
+<table><tr><td><div class="element">Artifact <b>Register</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130562.html#refclass130562"><b>Register</b></a></p>
+<a name="refartifact129026"></a>
+<table><tr><td><div class="element">Artifact <b>ScanResultActivity</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130690.html#refclass130690"><b>ScanResultActivity</b></a></p>
+<a name="refartifact129154"></a>
+<table><tr><td><div class="element">Artifact <b>TestAccelerometer</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130818.html#refclass130818"><b>TestAccelerometer</b></a></p>
+<a name="refartifact129282"></a>
+<table><tr><td><div class="element">Artifact <b>WPSActivity</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class131074.html#refclass131074"><b>WPSActivity</b></a></p>
+</div>
+</div>
+<a name="refpackage128642"></a>
+<h4 class ="package">1.1.1.2 Package camera</h4>
+<p></p><ul><li>Java package : com.avanti.camera</li>
+</ul>
+<div class="sub">
+<a name="refclass view128258"></a>
+<h4 class ="view">1.1.1.2.1 Class View camera</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class128386.html#refclass128386"><b>Preview</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></b></div></td></tr></table>
+<a name="refclass diagram128130"></a>
+<p align="center"><img src="fig128130.png" alt="" /></p>
+ <p align="center"><b>Camera Diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128130"></a>
+<h4 class ="view">1.1.1.2.2 Deployment View camera</h4>
+<div class="sub">
+<a name="refartifact129410"></a>
+<table><tr><td><div class="element">Artifact <b>CustomCameraView</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></p>
+<a name="refartifact129538"></a>
+<table><tr><td><div class="element">Artifact <b>DrawOnTop</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></p>
+<a name="refartifact129666"></a>
+<table><tr><td><div class="element">Artifact <b>Preview</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128386.html#refclass128386"><b>Preview</b></a></p>
+</div>
+</div>
+<a name="refpackage128770"></a>
+<h4 class ="package">1.1.1.3 Package graphics</h4>
+<p></p><ul><li>Java package : com.avanti.graphics</li>
+</ul>
+<div class="sub">
+<a name="refclass view128386"></a>
+<h4 class ="view">1.1.1.3.1 Class View graphics</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class132866.html#refclass132866"><b>CVertex</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133634.html#refclass133634"><b>Cube</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></b></div></td></tr></table>
+<a name="refclass diagram135170"></a>
+<p align="center"><img src="fig135170.png" alt="" /></p>
+ <p align="center"><b>Graphics Diagram</b></p><p><br /></p><p><br /></p>
+<a name="refclass diagram135298"></a>
+<p align="center"><img src="fig135298.png" alt="" /></p>
+ <p align="center"><b>Graphics Diagram 2</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128642"></a>
+<h4 class ="view">1.1.1.3.2 Deployment View graphics</h4>
+<div class="sub">
+<a name="refartifact130434"></a>
+<table><tr><td><div class="element">Artifact <b>BillboardRenderer</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></p>
+<a name="refartifact130562"></a>
+<table><tr><td><div class="element">Artifact <b>ColladaCollection</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i></p>
+<a name="refartifact130690"></a>
+<table><tr><td><div class="element">Artifact <b>ColladaHandler</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></p>
+<a name="refartifact130818"></a>
+<table><tr><td><div class="element">Artifact <b>ColladaLoader</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></p>
+<a name="refartifact130946"></a>
+<table><tr><td><div class="element">Artifact <b>ColladaObject</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class133506.html#refclass133506"><b>ColladaObject</b></a></p>
+<a name="refartifact131074"></a>
+<table><tr><td><div class="element">Artifact <b>Cube</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class133634.html#refclass133634"><b>Cube</b></a></p>
+<a name="refartifact131202"></a>
+<table><tr><td><div class="element">Artifact <b>CubeRenderer</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></p>
+<a name="refartifact131330"></a>
+<table><tr><td><div class="element">Artifact <b>CVertex</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132866.html#refclass132866"><b>CVertex</b></a></p>
+<a name="refartifact131458"></a>
+<table><tr><td><div class="element">Artifact <b>FlameRenderer</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></p>
+<a name="refartifact131586"></a>
+<table><tr><td><div class="element">Artifact <b>ParticleAnimation</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></p>
+<a name="refartifact131714"></a>
+<table><tr><td><div class="element">Artifact <b>ParticleRokon</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></p>
+</div>
+</div>
+<a name="refpackage128898"></a>
+<h4 class ="package">1.1.1.4 Package wps</h4>
+<p></p><ul><li>Java package : com.avanti.wps</li>
+</ul>
+<div class="sub">
+<a name="refclass view128514"></a>
+<h4 class ="view">1.1.1.4.1 Class View wps</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131202.html#refclass131202"><b>WPS</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136706.html#refclass136706"><b>Coordenada</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136834.html#refclass136834"><b>Mapa</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136962.html#refclass136962"><b>Particle</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class137474.html#refclass137474"><b>WPSException</b></a></b></div></td></tr></table>
+<a name="refclass diagram141826"></a>
+<p align="center"><img src="fig141826.png" alt="" /></p>
+ <p align="center"><b>Wps Diagram</b></p><p><br /></p><p><br /></p>
+<a name="refclass diagram149378"></a>
+<p align="center"><img src="fig149378.png" alt="" /></p>
+ <p align="center"><b>Wps diagram2</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129666"></a>
+<h4 class ="view">1.1.1.4.2 Deployment View wps</h4>
+<div class="sub">
+<a name="refartifact133762"></a>
+<table><tr><td><div class="element">Artifact <b>Coordenada</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class136706.html#refclass136706"><b>Coordenada</b></a></p>
+<a name="refartifact133890"></a>
+<table><tr><td><div class="element">Artifact <b>Mapa</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class136834.html#refclass136834"><b>Mapa</b></a></p>
+<a name="refartifact134018"></a>
+<table><tr><td><div class="element">Artifact <b>Particle</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class136962.html#refclass136962"><b>Particle</b></a></p>
+<a name="refartifact134146"></a>
+<table><tr><td><div class="element">Artifact <b>ParticleFilter</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></p>
+<a name="refartifact134274"></a>
+<table><tr><td><div class="element">Artifact <b>ThreadDatos</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></p>
+<a name="refartifact134402"></a>
+<table><tr><td><div class="element">Artifact <b>ThreadUbicacion</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></p>
+<a name="refartifact134530"></a>
+<table><tr><td><div class="element">Artifact <b>WPS</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class131202.html#refclass131202"><b>WPS</b></a></p>
+<a name="refartifact134658"></a>
+<table><tr><td><div class="element">Artifact <b>WPSDatabase</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></p>
+<a name="refartifact134786"></a>
+<table><tr><td><div class="element">Artifact <b>WPSException</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class137474.html#refclass137474"><b>WPSException</b></a></p>
+</div>
+</div>
+<a name="refpackage129026"></a>
+<h4 class ="package">1.1.1.5 Package position</h4>
+<p></p><ul><li>Java package : com.avanti.position</li>
+</ul>
+<div class="sub">
+<a name="refclass view128642"></a>
+<h4 class ="view">1.1.1.5.1 Class View position</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class130306.html#refclass130306"><b>Mapa</b></a></b></div></td></tr></table>
+<a name="refclass diagram141954"></a>
+<p align="center"><img src="fig141954.png" alt="" /></p>
+ <p align="center"><b>Position diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129026"></a>
+<h4 class ="view">1.1.1.5.2 Deployment View position</h4>
+<div class="sub">
+<a name="refartifact132226"></a>
+<table><tr><td><div class="element">Artifact <b>Mapa</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130306.html#refclass130306"><b>Mapa</b></a></p>
+</div>
+</div>
+<a name="refpackage129154"></a>
+<h4 class ="package">1.1.1.6 Package routes</h4>
+<p></p><ul><li>Java package : com.avanti.routes</li>
+</ul>
+<div class="sub">
+<a name="refclass view128770"></a>
+<h4 class ="view">1.1.1.6.1 Class View routes</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134658.html#refclass134658"><b>FireList</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134786.html#refclass134786"><b>Arista</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class135042.html#refclass135042"><b>Posicion</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class135170.html#refclass135170"><b>Fire</b></a></b></div></td></tr></table>
+<a name="refclass diagram128514"></a>
+<p align="center"><img src="fig128514.png" alt="" /></p>
+ <p align="center"><b>Routes Diagram</b></p><p><br /></p><p><br /></p>
+<a name="refclass diagram149506"></a>
+<p align="center"><img src="fig149506.png" alt="" /></p>
+ <p align="center"><b>Routes diagram2</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129154"></a>
+<h4 class ="view">1.1.1.6.2 Deployment View routes</h4>
+<div class="sub">
+<a name="refartifact132354"></a>
+<table><tr><td><div class="element">Artifact <b>Arista</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134786.html#refclass134786"><b>Arista</b></a></p>
+<a name="refartifact132482"></a>
+<table><tr><td><div class="element">Artifact <b>Cuadrante</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134914.html#refclass134914"><b>Cuadrante</b></a></p>
+<a name="refartifact132610"></a>
+<table><tr><td><div class="element">Artifact <b>Fire</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class135170.html#refclass135170"><b>Fire</b></a></p>
+<a name="refartifact132738"></a>
+<table><tr><td><div class="element">Artifact <b>FireList</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134658.html#refclass134658"><b>FireList</b></a></p>
+<a name="refartifact132866"></a>
+<table><tr><td><div class="element">Artifact <b>ListaCuadrantes</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></p>
+<a name="refartifact132994"></a>
+<table><tr><td><div class="element">Artifact <b>Posicion</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class135042.html#refclass135042"><b>Posicion</b></a></p>
+</div>
+</div>
+<a name="refpackage129410"></a>
+<h4 class ="package">1.1.1.7 Package computerVision</h4>
+<p></p><ul><li>Java package : com.avanti.computerVision</li>
+</ul>
+<div class="sub">
+<a name="refclass view129026"></a>
+<h4 class ="view">1.1.1.7.1 Class View computerVision</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class131970.html#refclass131970"><b>CameraIF</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class132098.html#refclass132098"><b>OpenCV</b></a></b></div></td></tr></table>
+<a name="refclass diagram142082"></a>
+<p align="center"><img src="fig142082.png" alt="" /></p>
+ <p align="center"><b>ComputerVision diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128258"></a>
+<h4 class ="view">1.1.1.7.2 Deployment View computerVision</h4>
+<div class="sub">
+<a name="refartifact129794"></a>
+<table><tr><td><div class="element">Artifact <b>CameraIF</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class131970.html#refclass131970"><b>CameraIF</b></a></p>
+<a name="refartifact129922"></a>
+<table><tr><td><div class="element">Artifact <b>OpenCV</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132098.html#refclass132098"><b>OpenCV</b></a></p>
+</div>
+</div>
+<a name="refpackage129538"></a>
+<h4 class ="package">1.1.1.8 Package dialogs</h4>
+<p></p><ul><li>Java package : com.avanti.dialogs</li>
+</ul>
+<div class="sub">
+<a name="refclass view129154"></a>
+<h4 class ="view">1.1.1.8.1 Class View dialogs</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class132226.html#refclass132226"><b>DialogController</b></a></b></div></td></tr></table>
+<a name="refclass diagram142338"></a>
+<p align="center"><img src="fig142338.png" alt="" /></p>
+ <p align="center"><b>Dialogs diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128386"></a>
+<h4 class ="view">1.1.1.8.2 Deployment View dialogs</h4>
+<div class="sub">
+<a name="refartifact130050"></a>
+<table><tr><td><div class="element">Artifact <b>DialogController</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132226.html#refclass132226"><b>DialogController</b></a></p>
+</div>
+</div>
+<a name="refpackage129666"></a>
+<h4 class ="package">1.1.1.9 Package GEO</h4>
+<p></p><ul><li>Java package : com.avanti.GEO</li>
+</ul>
+<div class="sub">
+<a name="refclass view129282"></a>
+<h4 class ="view">1.1.1.9.1 Class View GEO</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class132354.html#refclass132354"><b>Compass</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></b></div></td></tr></table>
+<a name="refclass diagram142210"></a>
+<p align="center"><img src="fig142210.png" alt="" /></p>
+ <p align="center"><b>GEO diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128514"></a>
+<h4 class ="view">1.1.1.9.2 Deployment View GEO</h4>
+<div class="sub">
+<a name="refartifact130178"></a>
+<table><tr><td><div class="element">Artifact <b>Compass</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132354.html#refclass132354"><b>Compass</b></a></p>
+<a name="refartifact130306"></a>
+<table><tr><td><div class="element">Artifact <b>CompassRenderer</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></p>
+</div>
+</div>
+<a name="refpackage129922"></a>
+<h4 class ="package">1.1.1.10 Package http</h4>
+<p></p><ul><li>Java package : com.avanti.http</li>
+</ul>
+<div class="sub">
+<a name="refclass view129538"></a>
+<h4 class ="view">1.1.1.10.1 Class View http</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class134146.html#refclass134146"><b>HttpServices</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></b></div></td></tr></table>
+<a name="refclass diagram128642"></a>
+<p align="center"><img src="fig128642.png" alt="" /></p>
+ <p align="center"><b>Http Diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128770"></a>
+<h4 class ="view">1.1.1.10.2 Deployment View http</h4>
+<div class="sub">
+<a name="refartifact131842"></a>
+<table><tr><td><div class="element">Artifact <b>HttpServices</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134146.html#refclass134146"><b>HttpServices</b></a></p>
+<a name="refartifact131970"></a>
+<table><tr><td><div class="element">Artifact <b>HttpServicesException</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></p>
+</div>
+</div>
+<a name="refpackage130050"></a>
+<h4 class ="package">1.1.1.11 Package menu</h4>
+<p></p><ul><li>Java package : com.avanti.menu</li>
+</ul>
+<div class="sub">
+<a name="refclass view129666"></a>
+<h4 class ="view">1.1.1.11.1 Class View menu</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class134530.html#refclass134530"><b>Menu</b></a></b></div></td></tr></table>
+<a name="refclass diagram142466"></a>
+<p align="center"><img src="fig142466.png" alt="" /></p>
+ <p align="center"><b>Menu diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view128898"></a>
+<h4 class ="view">1.1.1.11.2 Deployment View menu</h4>
+<div class="sub">
+<a name="refartifact132098"></a>
+<table><tr><td><div class="element">Artifact <b>Menu</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class134530.html#refclass134530"><b>Menu</b></a></p>
+</div>
+</div>
+<a name="refpackage130178"></a>
+<h4 class ="package">1.1.1.12 Package sensor</h4>
+<p></p><ul><li>Java package : com.avanti.sensor</li>
+</ul>
+<div class="sub">
+<a name="refclass view129794"></a>
+<h4 class ="view">1.1.1.12.1 Class View sensor</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class135298.html#refclass135298"><b>AccelerometerReader</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></b></div></td></tr></table>
+<a name="refclass diagram128258"></a>
+<p align="center"><img src="fig128258.png" alt="" /></p>
+ <p align="center"><b>Sensor Diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129282"></a>
+<h4 class ="view">1.1.1.12.2 Deployment View sensor</h4>
+<div class="sub">
+<a name="refartifact133122"></a>
+<table><tr><td><div class="element">Artifact <b>AccelerometerReader</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class135298.html#refclass135298"><b>AccelerometerReader</b></a></p>
+<a name="refartifact133250"></a>
+<table><tr><td><div class="element">Artifact <b>SensorManagerAVANTI</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></p>
+</div>
+</div>
+<a name="refpackage130306"></a>
+<h4 class ="package">1.1.1.13 Package service</h4>
+<p></p><ul><li>Java package : com.avanti.service</li>
+</ul>
+<div class="sub">
+<a name="refclass view129922"></a>
+<h4 class ="view">1.1.1.13.1 Class View service</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class135810.html#refclass135810"><b>PositionTracker</b></a></b></div></td></tr></table>
+<a name="refclass diagram142594"></a>
+<p align="center"><img src="fig142594.png" alt="" /></p>
+ <p align="center"><b>Service diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129410"></a>
+<h4 class ="view">1.1.1.13.2 Deployment View service</h4>
+<div class="sub">
+<a name="refartifact133378"></a>
+<table><tr><td><div class="element">Artifact <b>PositionTracker</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class135810.html#refclass135810"><b>PositionTracker</b></a></p>
+</div>
+</div>
+<a name="refpackage130434"></a>
+<h4 class ="package">1.1.1.14 Package sockets</h4>
+<p></p><ul><li>Java package : com.avanti.sockets</li>
+</ul>
+<div class="sub">
+<a name="refclass view130050"></a>
+<h4 class ="view">1.1.1.14.1 Class View sockets</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class136322.html#refclass136322"><b>Client</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136578.html#refclass136578"><b>Server</b></a></b></div></td></tr></table>
+<a name="refclass diagram142722"></a>
+<p align="center"><img src="fig142722.png" alt="" /></p>
+ <p align="center"><b>Sockets diagram</b></p><p><br /></p><p><br /></p>
+</div>
+<a name="refdeployment view129538"></a>
+<h4 class ="view">1.1.1.14.2 Deployment View sockets</h4>
+<div class="sub">
+<a name="refartifact133506"></a>
+<table><tr><td><div class="element">Artifact <b>Client</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class136322.html#refclass136322"><b>Client</b></a></p>
+<a name="refartifact133634"></a>
+<table><tr><td><div class="element">Artifact <b>Server</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class136578.html#refclass136578"><b>Server</b></a></p>
+</div>
+</div>
+</div>
+<a name="refpackage130562"></a>
+<h3 class ="package">1.1.2 Package example</h3>
+<p></p><ul><li>Java package : com.example</li>
+</ul>
+<div class="sub">
+<a name="refpackage130690"></a>
+<h4 class ="package">1.1.2.1 Package helloandroid</h4>
+<p></p><ul><li>Java package : com.example.helloandroid</li>
+</ul>
+<div class="sub">
+<a name="refclass view130178"></a>
+<h4 class ="view">1.1.2.1.1 Class View helloandroid</h4>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></b></div></td></tr></table>
+</div>
+<a name="refdeployment view129794"></a>
+<h4 class ="view">1.1.2.1.2 Deployment View helloandroid</h4>
+<div class="sub">
+<a name="refartifact134914"></a>
+<table><tr><td><div class="element">Artifact <b>HelloAndroid</b></div></td></tr></table>
+<p>Stereotype: source</p>
+<p>Artifact <i>source</i> associated with : <a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a name="refpackage128514"></a>
+<h1 class ="package">2 Package unknown</h1>
+<div class="sub">
+<a name="refclass view128130"></a>
+<h2 class ="view">2.1 Class View unknown</h2>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class128130.html#refclass128130"><b>Activity</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129282.html#refclass129282"><b>ListActivity</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129666.html#refclass129666"><b>LinearLayout</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class129922.html#refclass129922"><b>BaseAdapter</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class130946.html#refclass130946"><b>SensorEventListener</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131458.html#refclass131458"><b>SurfaceView</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class131842.html#refclass131842"><b>View</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133250.html#refclass133250"><b>DefaultHandler</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class133890.html#refclass133890"><b>RokonActivity</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class134402.html#refclass134402"><b>Exception</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class135554.html#refclass135554"><b>SensorListener</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class135938.html#refclass135938"><b>Service</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136194.html#refclass136194"><b>LocationListener</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class136450.html#refclass136450"><b>Runnable</b></a></b></div></td></tr></table>
+<table><tr><td><div class="element">Class <b><a href="class137218.html#refclass137218"><b>Thread</b></a></b></div></td></tr></table>
+</div>
+<a name="refpackage129282"></a>
+<h2 class ="package">2.2 Package SurfaceHolder</h2>
+<p></p><ul><li>Java package : SurfaceHolder</li>
+</ul>
+<div class="sub">
+<a name="refclass view128898"></a>
+<h3 class ="view">2.2.1 Class View SurfaceHolder</h3>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class131586.html#refclass131586"><b>Callback</b></a></b></div></td></tr></table>
+</div>
+</div>
+<a name="refpackage129794"></a>
+<h2 class ="package">2.3 Package GLSurfaceView</h2>
+<p></p><ul><li>Java package : GLSurfaceView</li>
+</ul>
+<div class="sub">
+<a name="refclass view129410"></a>
+<h3 class ="view">2.3.1 Class View GLSurfaceView</h3>
+<div class="sub">
+<table><tr><td><div class="element">Class <b><a href="class132610.html#refclass132610"><b>Renderer</b></a></b></div></td></tr></table>
+</div>
+</div>
+</div>
+</body>
+</html>

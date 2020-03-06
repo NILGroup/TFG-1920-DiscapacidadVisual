@@ -1,0 +1,30 @@
+class IconAndText
+!!!131074.java!!!	IconAndText(inout context : Context, inout icon : Drawable, in text : String, inout isSelectable : boolean)
+			super(context);
+			this.setOrientation(HORIZONTAL);
+			this.isSelectable = isSelectable;
+	          mIcon = new ImageView(context);
+	          mIcon.setImageDrawable(icon);
+	         
+	          mIcon.setPadding(0, 2, 5, 0);
+	          
+	          
+	          addView(mIcon,  new LinearLayout.LayoutParams(
+	                    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	          
+	          mText = new TextView(context);
+	          mText.setText(text);
+	          mText.setEms(20);
+	          mText.setBackgroundColor(android.R.color.white);
+	          addView(mText, new LinearLayout.LayoutParams(
+	                    LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+!!!131202.java!!!	isSelectable() : boolean
+			return isSelectable;
+!!!131330.java!!!	getIcon() : ImageView
+			return mIcon;
+!!!131458.java!!!	getText() : String
+			return (String) mText.getText();
+!!!131586.java!!!	setText(in text : String) : void
+			 mText.setText(text); 
+!!!131714.java!!!	setIcon(inout bullet : Drawable) : void
+			mIcon.setImageDrawable(bullet); 

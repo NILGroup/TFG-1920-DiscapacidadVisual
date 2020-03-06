@@ -1,0 +1,73 @@
+package com.avanti.routes;
+
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import com.avanti.http.HttpServices;
+import com.avanti.http.HttpServicesException;
+import com.avanti.position.Mapa;
+
+public class FireList {
+
+	public static ArrayList<Fire> list;
+	
+	public FireList(){
+		list = new ArrayList<Fire>();
+		//loadFires();
+	}
+	
+	public void loadFires(){		
+		HttpServices service = new HttpServices();
+		try {
+			Fire f;
+			int id;
+			double x;
+			double y;
+			int z;
+			JSONArray fires = service.getFires();
+			JSONArray aux;
+			synchronized(list){
+				for (int i = 0; i<fires.length(); i++){
+					aux = fires.getJSONArray(i);
+					id = aux.getInt(0);
+					x = (aux.getInt(1) - Mapa.POSX_0_MAPA)/ Mapa.escalaMetro;
+					y = (aux.getInt(2) - Mapa.POSY_0_MAPA)/ Mapa.escalaMetro;
+					z = aux.getInt(3);
+					f = new Fire(id,x,y,z);
+					if(!list.contains(f)){
+						list.add(f);
+					}
+				}
+			}
+						
+		}catch (JSONException e) {
+			e.printStackTrace();
+		}catch (HttpServicesException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public int size(){
+		return list.size();
+	}
+
+	public Fire getFire(int pos){
+		if ( (0<=pos) && (pos<list.size()) ){
+			return list.get(pos);
+		}
+		else return null;
+	}
+	
+	public ArrayList<Fire> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Fire> list) {
+		FireList.list = list;
+	}
+	
+	
+}

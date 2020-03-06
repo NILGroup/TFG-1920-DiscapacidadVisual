@@ -1,0 +1,344 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Public Operations Index</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Public Operations Index</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<table>
+<tr bgcolor=#f0f0f0><td align=center><b>Operation</b></td><td align=center><b>Class</b></td><td align=center><b>Description</b></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation131970"><b>addItem</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132482"><b>areAllItemsSelectable</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation154754"><b>Arista</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation154626"><b>Arista</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation154498"><b>Arista</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142210"><b>BillboardRenderer</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142338"><b>BillboardRenderer</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164226"><b>bloquearCuadrante</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130306"><b>borrarDatosUsuario</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td>Elimina los datos del usuario</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation143362"><b>calculateBillboard</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation176514"><b>calculatePosition</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td>Método que recupera los vecinos más cercanos con sus distancias euclideas y calcula&lt;br&gt;<br />la estimación de posición del terminal<br />@param coordenadas<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation177026"><b>camera</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144386"><b>characters</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refoperation140802"><b>clickAccept</b></a></td><td><a href="class132226.html#refclass132226"><b>DialogController</b></a></td><td>Método para definir la acción de pulsar el botón aceptar</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation170626"><b>clone</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156290"><b>clone</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation173058"><b>clone</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165378"><b>clone</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation143874"><b>ColladaHandler</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation145666"><b>ColladaObject</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132354.html#refoperation141186"><b>Compass</b></a></td><td><a href="class132354.html#refclass132354"><b>Compass</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation141442"><b>CompassRenderer</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130562.html#refoperation135298"><b>comprobarDatos</b></a></td><td><a href="class130562.html#refclass130562"><b>Register</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation168834"><b>Coordenada</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation168706"><b>Coordenada</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173442"><b>correction</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Método que corrije las probabilidades de las partículas que definen la probabilidad<br />de que esté en la posición dada por el algoritmo k-closest neibourghs. <br />@param c posición devuelta por el algoritmos de posicionamiento estándar</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133122"><b>createAndStartThread</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td>Crea un hilo para recuperar los datos de las posiciones de la BD en segundo plano<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refoperation141058"><b>createInformDialog</b></a></td><td><a href="class132226.html#refclass132226"><b>DialogController</b></a></td><td>Crea un dialog que muestra un mensaje al usuario y un botón de "Aceptar"<br />@param context la Activity sobre la que se quiere mostrar el dialog<br />@param message el mensaje a mostrar</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156034"><b>Cuadrante</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation155778"><b>Cuadrante</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation155906"><b>Cuadrante</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133634.html#refoperation146434"><b>Cube</b></a></td><td><a href="class133634.html#refclass133634"><b>Cube</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation146690"><b>CubeRenderer</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131330.html#refoperation136962"><b>CustomCameraView</b></a></td><td><a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132866.html#refoperation147458"><b>CVertex</b></a></td><td><a href="class132866.html#refclass132866"><b>CVertex</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164354"><b>desbloquearCuadrante</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refoperation140674"><b>DialogController</b></a></td><td><a href="class132226.html#refclass132226"><b>DialogController</b></a></td><td>&lt;b&gt;Ejemplo:&lt;/b&gt;&lt;br&gt;&lt;br&gt;<br /><br />String s = "HOLA";&lt;br&gt;<br />DialogController d = new DialogController(){&lt;br&gt;<br />public void clickAccept() {&lt;br&gt;<br />finish();&lt;br&gt;				<br />}&lt;br&gt;<br />};&lt;br&gt;<br />d.showInformDialog(this, s);&lt;br&gt; </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation145794"><b>draw</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132354.html#refoperation141314"><b>draw</b></a></td><td><a href="class132354.html#refclass132354"><b>Compass</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133634.html#refoperation146562"><b>draw</b></a></td><td><a href="class133634.html#refclass133634"><b>Cube</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refoperation137602"><b>DrawOnTop</b></a></td><td><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refoperation137474"><b>DrawOnTop</b></a></td><td><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refoperation138498"><b>drawPerson</b></a></td><td><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136834.html#refoperation171010"><b>drawUser</b></a></td><td><a href="class136834.html#refclass136834"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144258"><b>endElement</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation170498"><b>equals</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156162"><b>equals</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165506"><b>equals</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refoperation128770"><b>f_salir</b></a></td><td><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation176898"><b>f_salir</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129922"><b>f_salir</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134530.html#refoperation151426"><b>f_salir</b></a></td><td><a href="class134530.html#refclass134530"><b>Menu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation147330"><b>finalize</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132098.html#refoperation140546"><b>findContours</b></a></td><td><a href="class132098.html#refclass132098"><b>OpenCV</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation157826"><b>Fire</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation157698"><b>Fire</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refoperation158978"><b>FireList</b></a></td><td><a href="class134658.html#refclass134658"><b>FireList</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation147586"><b>FlameRenderer</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129538"><b>getActivity</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130562.html#refoperation135170"><b>getActivity</b></a></td><td><a href="class130562.html#refclass130562"><b>Register</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation177410"><b>getContext</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129410"><b>getContext</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131074.html#refoperation136706"><b>getContext</b></a></td><td><a href="class131074.html#refclass131074"><b>WPSActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation151042"><b>getCoordenadas</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td>Recupera todas las coordenadas almacenadas en la BD<br />@return<br />@throws HttpServicesException</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation176258"><b>getCoordenadasRegistradasPunto</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td>Recupera todas la coordenadas almacenadas que tienen el BBSID del punto pasado cómo parámetro<br />@param punto<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132226"><b>getCount</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation163458"><b>getCuadrante</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation154114"><b>getCuadrante</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134530"><b>getCuadrantes</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130178.html#refoperation175234"><b>getCuadrantes</b></a></td><td><a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129410.html#refoperation174594"><b>getDatabase</b></a></td><td><a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155266"><b>getDestino</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation163586"><b>getDirArista</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td>Devuelve la dirección de una arista a partir de su origen y destino.<br />@param origen<br />@param destino<br />@return Dirección de la arista o -1 si no existe la arista con esos datos.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155522"><b>getDireccion</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135682.html#refoperation167426"><b>getDirection</b></a></td><td><a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation170370"><b>getDistanciaAlmacenada</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129410.html#refoperation174722"><b>getEstado</b></a></td><td><a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation176130"><b>getEuclideanDistance</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td>Calcula la distancia entre el resultado del escaneado pos1 y la coordenada definida por x,y y z<br />@param pos1<br />@param x<br />@param y<br />@param z<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refoperation159362"><b>getFire</b></a></td><td><a href="class134658.html#refclass134658"><b>FireList</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation151170"><b>getFires</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refoperation129026"><b>getFlames</b></a></td><td><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refoperation128898"><b>getGLSurfaceViewActivity</b></a></td><td><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131330"><b>getIcon</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156674"><b>getID</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation157954"><b>getID</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144770"><b>getIndices</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation146306"><b>getIndices</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132354"><b>getItem</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132738"><b>getItemId</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refoperation159490"><b>getList</b></a></td><td><a href="class134658.html#refclass134658"><b>FireList</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164482"><b>getLista</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169730"><b>getMac</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134786"><b>getMapa</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164738"><b>getMatrizAdyacencia</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation146050"><b>getMIndexBuffer</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation143234"><b>getmTranslucentBackground</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation145922"><b>getMVertexBuffer</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155010"><b>getOrigen</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173954"><b>getP_Xk_Xk1</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Calcula la probabilidad P de que la particula esté en una nueva posición a partir de la anterior.<br />Si atraviesa una pared le asigna una probabilidad de 0, si no de 1<br />@param x_old píxel de la x antigua;<br />@param y_old píxel de la y antigua;<br />@param x_new píxel de la x nueva;<br />@param y_new píxel de la y nueva;<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139394"><b>getParameters</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation174210"><b>getParticulas</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130690"><b>getPassword</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133634"><b>getPassword</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refoperation138370"><b>getPersona</b></a></td><td><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156930"><b>getPosNW</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation157186"><b>getPosSE</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation153730"><b>getPosX</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation153986"><b>getPosY</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172802"><b>getProb_Xk_Xk1</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172546"><b>getProb_Zk_Xk</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165762"><b>getPX</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165890"><b>getPY</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148482"><b>getScreenHeight</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148738"><b>getScreenWidth</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169986"><b>getStrength</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131458"><b>getText</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130434"><b>getUsername</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133506"><b>getUsername</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171778"><b>getVelocityX</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172034"><b>getVelocityY</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142978"><b>getVertices</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144642"><b>getVertices</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refoperation146178"><b>getVertices</b></a></td><td><a href="class133506.html#refclass133506"><b>ColladaObject</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132866"><b>getView</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td> @param convertView The old view to overwrite, if one is passed<br />@returns a IconifiedTextView that holds wraps around an IconifiedText </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172290"><b>getWeight</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation168962"><b>getX</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158210"><b>getX</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171266"><b>getX</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135682.html#refoperation167554"><b>getxMovement</b></a></td><td><a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169218"><b>getY</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158466"><b>getY</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171522"><b>getY</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135682.html#refoperation167682"><b>getyMovement</b></a></td><td><a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169474"><b>getZ</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158722"><b>getZ</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135426.html#refoperation166274"><b>GraphView</b></a></td><td><a href="class135426.html#refclass135426"><b>GraphView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130050"><b>guardarDatosUsuario</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td>Almacena los datos del usuario en el archivo "user.txt" para poder ser recuperados más tarde<br />@param user<br />@param password</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation140418"><b>handleMessage</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation163074"><b>hayArista</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150274"><b>HttpServices</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134274.html#refoperation151298"><b>HttpServicesException</b></a></td><td><a href="class134274.html#refclass134274"><b>HttpServicesException</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131074"><b>IconAndText</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation131842"><b>IconifiedTextListAdapter</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation160002"><b>iniciarLista</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150914"><b>insertCoorDatabase</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td>Método que inserta unos datos para unas coordenadas en la Base de Datos<br />@param x<br />@param y<br />@param z<br />@param mac<br />@param strength<br />@param sobreescribir<br />@return "" si tiene éxito, la información del error en caso de fallo.<br />@throws ClientProtocolException<br />@throws IOException</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation175874"><b>insertCoordenates</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td>Inserta las coordenadas en la BD<br />@param datos<br />@throws JSONException </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation176386"><b>isMacRegistered</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td>Comprueba si una mac está registrada en una posicion<br />@param mac<br />@param coord<br />@return</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation157442"><b>isNodoSalida</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148354"><b>isScreenTouch</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131202"><b>isSelectable</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132610"><b>isSelectable</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation162306"><b>listaAdyacentes</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation162434"><b>listaAdyacentes</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation159874"><b>ListaCuadrantes</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation159746"><b>ListaCuadrantes</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150530"><b>login</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td>Método que logea a un usuario en el sistema<br />@param user<br />@param password<br />@return<br />@throws ClientProtocolException<br />@throws IOException</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129282"><b>login</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150658"><b>logout</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133378"><b>logout</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation151554"><b>Mapa</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136834.html#refoperation170754"><b>Mapa</b></a></td><td><a href="class136834.html#refclass136834"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165634"><b>modificar</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation163202"><b>numCuadrante</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation163330"><b>numCuadrante</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation141954"><b>onAccuracyChanged</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135426.html#refoperation166786"><b>onAccuracyChanged</b></a></td><td><a href="class135426.html#refclass135426"><b>GraphView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130818.html#refoperation135682"><b>onAccuracyChanged</b></a></td><td><a href="class130818.html#refclass130818"><b>TestAccelerometer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135810.html#refoperation167810"><b>onBind</b></a></td><td><a href="class135810.html#refclass135810"><b>PositionTracker</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133378.html#refoperation144898"><b>onCreate</b></a></td><td><a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation177154"><b>onCreate</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129154"><b>onCreate</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129026.html#refoperation130946"><b>onCreate</b></a></td><td><a href="class129026.html#refclass129026"><b>Main</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation132994"><b>onCreate</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refoperation148994"><b>onCreate</b></a></td><td><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refoperation149634"><b>onCreate</b></a></td><td><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134018"><b>onCreate</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130562.html#refoperation134914"><b>onCreate</b></a></td><td><a href="class130562.html#refclass130562"><b>Register</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130690.html#refoperation135426"><b>onCreate</b></a></td><td><a href="class130690.html#refclass130690"><b>ScanResultActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130818.html#refoperation135554"><b>onCreate</b></a></td><td><a href="class130818.html#refclass130818"><b>TestAccelerometer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131074.html#refoperation135938"><b>onCreate</b></a></td><td><a href="class131074.html#refclass131074"><b>WPSActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refoperation128514"><b>onCreateOptionsMenu</b></a></td><td><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></td><td>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation176770"><b>onCreateOptionsMenu</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129666"><b>onCreateOptionsMenu</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131074.html#refoperation136450"><b>onCreateOptionsMenu</b></a></td><td><a href="class131074.html#refclass131074"><b>WPSActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation140162"><b>onDestroy</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142466"><b>onDrawFrame</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133378.html#refoperation145282"><b>onDrawFrame</b></a></td><td><a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation141570"><b>onDrawFrame</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation146818"><b>onDrawFrame</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation147714"><b>onDrawFrame</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refoperation149378"><b>onGameLoop</b></a></td><td><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refoperation150018"><b>onGameLoop</b></a></td><td><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refoperation149122"><b>onLoad</b></a></td><td><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refoperation149762"><b>onLoad</b></a></td><td><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refoperation149250"><b>onLoadComplete</b></a></td><td><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refoperation149890"><b>onLoadComplete</b></a></td><td><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136066.html#refoperation167938"><b>onLocationChanged</b></a></td><td><a href="class136066.html#refclass136066"><b>MyLocationListener</b></a></td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refoperation128642"><b>onMenuItemSelected</b></a></td><td><a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refoperation177282"><b>onMenuItemSelected</b></a></td><td><a href="class137602.html#refclass137602"><b>HelloAndroid</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation129794"><b>onMenuItemSelected</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131074.html#refoperation136578"><b>onOptionsItemSelected</b></a></td><td><a href="class131074.html#refclass131074"><b>WPSActivity</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation140034"><b>onPause</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136066.html#refoperation168066"><b>onProviderDisabled</b></a></td><td><a href="class136066.html#refclass136066"><b>MyLocationListener</b></a></td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136066.html#refoperation168194"><b>onProviderEnabled</b></a></td><td><a href="class136066.html#refclass136066"><b>MyLocationListener</b></a></td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refoperation149506"><b>onRestart</b></a></td><td><a href="class133762.html#refclass133762"><b>ParticleAnimation</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refoperation150146"><b>onRestart</b></a></td><td><a href="class134018.html#refclass134018"><b>ParticleRokon</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139778"><b>onResume</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation142082"><b>onSensorChanged</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135426.html#refoperation166658"><b>onSensorChanged</b></a></td><td><a href="class135426.html#refclass135426"><b>GraphView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130818.html#refoperation135810"><b>onSensorChanged</b></a></td><td><a href="class130818.html#refclass130818"><b>TestAccelerometer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139650"><b>onStart</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136066.html#refoperation168322"><b>onStatusChanged</b></a></td><td><a href="class136066.html#refclass136066"><b>MyLocationListener</b></a></td><td>@Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139906"><b>onStop</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142594"><b>onSurfaceChanged</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133378.html#refoperation145410"><b>onSurfaceChanged</b></a></td><td><a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation141698"><b>onSurfaceChanged</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation146946"><b>onSurfaceChanged</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation147842"><b>onSurfaceChanged</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142722"><b>onSurfaceCreated</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133378.html#refoperation145538"><b>onSurfaceCreated</b></a></td><td><a href="class133378.html#refclass133378"><b>ColladaLoader</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refoperation141826"><b>onSurfaceCreated</b></a></td><td><a href="class132482.html#refclass132482"><b>CompassRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation147074"><b>onSurfaceCreated</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation147970"><b>onSurfaceCreated</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation154882"><b>opuesto</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144514"><b>parseFile</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171138"><b>Particle</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173186"><b>ParticleFilter</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173570"><b>particleUpdate</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Actualiza los pesos de las partículas dependiendo de las probabilidades anteriormente calculadas</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156418"><b>pertenece</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td>Compureba si una posición forma parte del cuadrante.<br />@param p Posición<br />@return True si la posición p está dentro del cuadrante.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156546"><b>pertenece</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150402"><b>ping</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation151938"><b>pintarCuadrantes</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation151810"><b>pintarFuegos</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134402"><b>pintarPosicion</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165122"><b>Posicion</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation165250"><b>Posicion</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation164994"><b>Posicion</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173314"><b>prediction</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Método que realiza el paso de predicción, es decir, predice la nueva posición y velocidad de las partículas<br />@param accX aceleración del terminal en las coordenadas X del mapa, dado por el acelerómetro <br />@param accY aceleración del terminal en las coordenadas Y del mapa, dado por el acelerómetro </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128386.html#refoperation138626"><b>Preview</b></a></td><td><a href="class128386.html#refclass128386"><b>Preview</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173826"><b>quicksort</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Ordena el vector de partículas por peso.<br />@param primero<br />@param ultimo</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130178"><b>recuperarDatosUsuario</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td>Recupera los datos del usuario si han sido guardados anteriormente con la opción "Recordarme"<br />@return &lt;code&gt;null&lt;/code&gt; si no ha sido recuperado el usuario, los datos en otro caso</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134274"><b>refresh</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refoperation150786"><b>register</b></a></td><td><a href="class134146.html#refclass134146"><b>HttpServices</b></a></td><td>Método que registra a un usuario en el sistema<br />@param user<br />@param password<br />@param name<br />@param surname<br />@return &lt;code&gt;"CORRECTO"&lt;/code&gt; si lo consigue, &lt;code&gt;"ERROR"&lt;/code&gt; en caso de error e información<br />de la excepción en otro caso <br />@throws ClientProtocolException<br />@throws IOException</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation173698"><b>resampling</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td>Remuestrea las partículas en el caso de que hayan perdido mucho peso.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139522"><b>resetPreviewSize</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136322.html#refoperation168450"><b>run</b></a></td><td><a href="class136322.html#refclass136322"><b>Client</b></a></td><td> @Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136578.html#refoperation168578"><b>run</b></a></td><td><a href="class136578.html#refclass136578"><b>Server</b></a></td><td> @Override</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129410.html#refoperation174466"><b>run</b></a></td><td><a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130178.html#refoperation174978"><b>run</b></a></td><td><a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation152066"><b>rutaEscape</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation162562"><b>rutaMasCorta</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131202.html#refoperation175618"><b>scanAndShow</b></a></td><td><a href="class131202.html#refclass131202"><b>WPS</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135682.html#refoperation167298"><b>SensorManagerAVANTI</b></a></td><td><a href="class135682.html#refclass135682"><b>SensorManagerAVANTI</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refoperation147202"><b>setAngle</b></a></td><td><a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation154242"><b>setCuadrante</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refoperation134658"><b>setCuadrantes</b></a></td><td><a href="class130050.html#refclass130050"><b>Position</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130178.html#refoperation175362"><b>setCuadrantes</b></a></td><td><a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155394"><b>setDestino</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155650"><b>setDireccion</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation170242"><b>setDistanciaAlmacenada</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131714"><b>setIcon</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation156802"><b>setID</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158082"><b>setID</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refoperation159618"><b>setList</b></a></td><td><a href="class134658.html#refclass134658"><b>FireList</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164610"><b>setLista</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation154370"><b>setListaCuadrantes</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refoperation132098"><b>setListItems</b></a></td><td><a href="class129794.html#refclass129794"><b>IconifiedTextListAdapter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169858"><b>setMac</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refoperation164866"><b>setMatrizAdyacencia</b></a></td><td><a href="class130434.html#refclass130434"><b>ListaCuadrantes</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation143106"><b>setmTranslucentBackground</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation157570"><b>setNodoSalida</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refoperation155138"><b>setOrigen</b></a></td><td><a href="class134786.html#refclass134786"><b>Arista</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139266"><b>setParameters</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refoperation174082"><b>setParticulas</b></a></td><td><a href="class137090.html#refclass137090"><b>ParticleFilter</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130818"><b>setPassword</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133890"><b>setPassword</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refoperation138242"><b>setPersona</b></a></td><td><a href="class131714.html#refclass131714"><b>DrawOnTop</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148098"><b>setPosition</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation157058"><b>setPosNW</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refoperation157314"><b>setPosSE</b></a></td><td><a href="class134914.html#refclass134914"><b>Cuadrante</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation153602"><b>setPosX</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refoperation153858"><b>setPosY</b></a></td><td><a href="class130306.html#refclass130306"><b>Mapa</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation139138"><b>setPreviewCallback</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172930"><b>setProb_Xk_Xk1</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172674"><b>setProb_Zk_Xk</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation166018"><b>setPX</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refoperation166146"><b>setPY</b></a></td><td><a href="class135042.html#refclass135042"><b>Posicion</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148610"><b>setScreenHeight</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148226"><b>setScreenTouch</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refoperation148866"><b>setScreenWidth</b></a></td><td><a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation170114"><b>setStrength</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refoperation131586"><b>setText</b></a></td><td><a href="class129538.html#refclass129538"><b>IconAndText</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refoperation130562"><b>setUsername</b></a></td><td><a href="class128898.html#refclass128898"><b>Login</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refoperation133762"><b>setUsername</b></a></td><td><a href="class129154.html#refclass129154"><b>MainMenu</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171906"><b>setVelocityX</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172162"><b>setVelocityY</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refoperation142850"><b>setVertices</b></a></td><td><a href="class132738.html#refclass132738"><b>BillboardRenderer</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation172418"><b>setWeight</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169090"><b>setX</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158338"><b>setX</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171394"><b>setX</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169346"><b>setY</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158594"><b>setY</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refoperation171650"><b>setY</b></a></td><td><a href="class136962.html#refclass136962"><b>Particle</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refoperation169602"><b>setZ</b></a></td><td><a href="class136706.html#refclass136706"><b>Coordenada</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refoperation158850"><b>setZ</b></a></td><td><a href="class135170.html#refclass135170"><b>Fire</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refoperation140930"><b>showInformDialog</b></a></td><td><a href="class132226.html#refclass132226"><b>DialogController</b></a></td><td>Método que genera un InformDialog con un texto y un botón de Aceptar.<br />La acción del botón Aceptar debe haberse definido en el método<br />&lt;b&gt;clickAccept()&lt;/b&gt;<br />@param context<br />@param message</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refoperation159234"><b>size</b></a></td><td><a href="class134658.html#refclass134658"><b>FireList</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144002"><b>startDocument</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refoperation144130"><b>startElement</b></a></td><td><a href="class133122.html#refclass133122"><b>ColladaHandler</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131330.html#refoperation137346"><b>surfaceChanged</b></a></td><td><a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128386.html#refoperation139010"><b>surfaceChanged</b></a></td><td><a href="class128386.html#refclass128386"><b>Preview</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131330.html#refoperation137090"><b>surfaceCreated</b></a></td><td><a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128386.html#refoperation138754"><b>surfaceCreated</b></a></td><td><a href="class128386.html#refclass128386"><b>Preview</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131330.html#refoperation137218"><b>surfaceDestroyed</b></a></td><td><a href="class131330.html#refclass131330"><b>CustomCameraView</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128386.html#refoperation138882"><b>surfaceDestroyed</b></a></td><td><a href="class128386.html#refclass128386"><b>Preview</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refoperation140290"><b>takePicture</b></a></td><td><a href="class131970.html#refclass131970"><b>CameraIF</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129410.html#refoperation174338"><b>ThreadDatos</b></a></td><td><a href="class129410.html#refclass129410"><b>ThreadDatos</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130178.html#refoperation174850"><b>ThreadUbicacion</b></a></td><td><a href="class130178.html#refclass130178"><b>ThreadUbicacion</b></a></td><td>Constructora<br />@param activity la actividad Position que tiene el mapa pintado</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131202.html#refoperation175490"><b>WPS</b></a></td><td><a href="class131202.html#refclass131202"><b>WPS</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refoperation175746"><b>WPSDatabase</b></a></td><td><a href="class137346.html#refclass137346"><b>WPSDatabase</b></a></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137474.html#refoperation176642"><b>WPSException</b></a></td><td><a href="class137474.html#refclass137474"><b>WPSException</b></a></td><td></td></tr>
+</table>
+</body>
+</html>

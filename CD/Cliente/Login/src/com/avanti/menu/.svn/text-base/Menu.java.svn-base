@@ -1,0 +1,12 @@
+package com.avanti.menu;
+
+import android.app.Activity;
+
+public class Menu {
+
+    public void f_salir()
+    {
+    	
+    } 
+    
+}

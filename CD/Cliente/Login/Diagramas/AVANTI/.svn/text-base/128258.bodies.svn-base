@@ -1,0 +1,18 @@
+class EvacuationProtocol
+!!!128002.java!!!	onCreate(inout savedInstanceState : Bundle) : void
+		 MainMenu.activeActivity = this;
+	super.onCreate(savedInstanceState);
+
+	// Hide the window title.
+	requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+	// Create our Preview view and set it as the content of our
+	mPreview = new Preview(this);
+	DrawOnTop mDraw = new DrawOnTop(this);
+	setContentView(mPreview);
+	addContentView(mDraw, new LayoutParams
+			  (LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	
+	
+	 
+	

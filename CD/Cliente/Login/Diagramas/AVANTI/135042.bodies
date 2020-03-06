@@ -1,0 +1,31 @@
+class Posicion
+!!!164994.java!!!	Posicion()
+		pX = 0;
+		pY = 0;
+!!!165122.java!!!	Posicion(in x : double, in y : double)
+		pX = x;
+		pY = y;
+!!!165250.java!!!	Posicion(inout p : Posicion)
+		pX = p.pX;
+		pY = p.pY;
+!!!165378.java!!!	clone() : Posicion
+		Posicion p = new Posicion();
+		p.setPX(pX);
+		p.setPY(pY);
+		return p;
+!!!165506.java!!!	equals(inout o : Object) : boolean
+		Posicion p = (Posicion)o;
+		if ( (this.pX==p.getPX()) && (this.pY==p.getPY()) )
+			return true;
+		else return false;
+!!!165634.java!!!	modificar(in pX : double, in pY : double) : void
+		this.pX = pX;
+		this.pY = pY;
+!!!165762.java!!!	getPX() : double
+		return pX;
+!!!165890.java!!!	getPY() : double
+		return pY;
+!!!166018.java!!!	setPX(in x : double) : void
+		pX = x;
+!!!166146.java!!!	setPY(in y : double) : void
+		pY = y;

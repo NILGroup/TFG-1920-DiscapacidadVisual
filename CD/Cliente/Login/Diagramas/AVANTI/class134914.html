@@ -1,0 +1,47 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Cuadrante</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Cuadrante</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass134914"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class Cuadrante </li></ul><p>Artifact : <a href="index.html#refartifact132482"><b>Cuadrante</b></a></p>
+<div class="sub">
+<a name="refattribute144258"></a>
+<table><tr><td><div class="element">Attribute <b>ID</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - ID : int</li><li>Java : private int ID</li></ul><a name="refrelation134274"></a>
+<table><tr><td><div class="element">Relation <b>posNW (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - posNW : <a href="class135042.html#refclass135042"><b>Posicion</b></a></li><li>Java : private <a href="class135042.html#refclass135042"><b>Posicion</b></a> posNW</li></ul><a name="refrelation134402"></a>
+<table><tr><td><div class="element">Relation <b>posSE (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - posSE : <a href="class135042.html#refclass135042"><b>Posicion</b></a></li><li>Java : private <a href="class135042.html#refclass135042"><b>Posicion</b></a> posSE</li></ul><a name="refattribute144386"></a>
+<table><tr><td><div class="element">Attribute <b>nodoSalida</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - nodoSalida : boolean</li><li>Java : private boolean nodoSalida</li></ul><a name="refoperation155778"></a>
+<table><tr><td><div class="element">Operation <b>Cuadrante</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Cuadrante() : </li><li>Java : public Cuadrante()</li></ul><a name="refoperation155906"></a>
+<table><tr><td><div class="element">Operation <b>Cuadrante</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Cuadrante(in id : int, inout nw : <a href="class135042.html#refclass135042"><b>Posicion</b></a>, inout se : <a href="class135042.html#refclass135042"><b>Posicion</b></a>, inout b : boolean) : </li><li>Java : public Cuadrante(int id, <a href="class135042.html#refclass135042"><b>Posicion</b></a> nw, <a href="class135042.html#refclass135042"><b>Posicion</b></a> se, boolean b)</li></ul><a name="refoperation156034"></a>
+<table><tr><td><div class="element">Operation <b>Cuadrante</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Cuadrante(inout c : <a href="class134914.html#refclass134914"><b>Cuadrante</b></a>) : </li><li>Java : public Cuadrante(<a href="class134914.html#refclass134914"><b>Cuadrante</b></a> c)</li></ul><a name="refoperation156162"></a>
+<table><tr><td><div class="element">Operation <b>equals</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + equals(inout o : Object) : boolean</li><li>Java : public boolean equals(Object o)</li></ul><a name="refoperation156290"></a>
+<table><tr><td><div class="element">Operation <b>clone</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + clone() : <a href="class134914.html#refclass134914"><b>Cuadrante</b></a></li><li>Java : public <a href="class134914.html#refclass134914"><b>Cuadrante</b></a> clone()</li></ul><a name="refoperation156418"></a>
+<table><tr><td><div class="element">Operation <b>pertenece</b></div></td></tr></table><p>Compureba si una posición forma parte del cuadrante.<br />@param p Posición<br />@return True si la posición p está dentro del cuadrante.<br /></p><p>Declaration :</p><ul><li>Uml : + pertenece(inout p : <a href="class135042.html#refclass135042"><b>Posicion</b></a>) : boolean</li><li>Java : public boolean pertenece(<a href="class135042.html#refclass135042"><b>Posicion</b></a> p)</li></ul><a name="refoperation156546"></a>
+<table><tr><td><div class="element">Operation <b>pertenece</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + pertenece(in pX : double, in pY : double) : boolean</li><li>Java : public boolean pertenece(double pX, double pY)</li></ul><a name="refoperation156674"></a>
+<table><tr><td><div class="element">Operation <b>getID</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getID() : int</li><li>Java : public int getID()</li></ul><a name="refoperation156802"></a>
+<table><tr><td><div class="element">Operation <b>setID</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setID(in id : int) : void</li><li>Java : public void setID(int id)</li></ul><a name="refoperation156930"></a>
+<table><tr><td><div class="element">Operation <b>getPosNW</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getPosNW() : <a href="class135042.html#refclass135042"><b>Posicion</b></a></li><li>Java : public <a href="class135042.html#refclass135042"><b>Posicion</b></a> getPosNW()</li></ul><a name="refoperation157058"></a>
+<table><tr><td><div class="element">Operation <b>setPosNW</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPosNW(inout posNW : <a href="class135042.html#refclass135042"><b>Posicion</b></a>) : void</li><li>Java : public void setPosNW(<a href="class135042.html#refclass135042"><b>Posicion</b></a> posNW)</li></ul><a name="refoperation157186"></a>
+<table><tr><td><div class="element">Operation <b>getPosSE</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getPosSE() : <a href="class135042.html#refclass135042"><b>Posicion</b></a></li><li>Java : public <a href="class135042.html#refclass135042"><b>Posicion</b></a> getPosSE()</li></ul><a name="refoperation157314"></a>
+<table><tr><td><div class="element">Operation <b>setPosSE</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPosSE(inout posSE : <a href="class135042.html#refclass135042"><b>Posicion</b></a>) : void</li><li>Java : public void setPosSE(<a href="class135042.html#refclass135042"><b>Posicion</b></a> posSE)</li></ul><a name="refoperation157442"></a>
+<table><tr><td><div class="element">Operation <b>isNodoSalida</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + isNodoSalida() : boolean</li><li>Java : public boolean isNodoSalida()</li></ul><a name="refoperation157570"></a>
+<table><tr><td><div class="element">Operation <b>setNodoSalida</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setNodoSalida(inout nodoSalida : boolean) : void</li><li>Java : public void setNodoSalida(boolean nodoSalida)</li></ul><a name="refrelation137218"></a>
+<table><tr><td><div class="element">Relation <b>&lt;unidirectional association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class135042.html#refclass135042"><b>Posicion</b></a></li><li>Java : private <a href="class135042.html#refclass135042"><b>Posicion</b></a> </li></ul></div>
+<p>All public operations : <a href="class134914.html#refoperation156290"><b>clone</b></a> , <a href="class134914.html#refoperation156162"><b>equals</b></a> , <a href="class134914.html#refoperation156674"><b>getID</b></a> , <a href="class134914.html#refoperation156930"><b>getPosNW</b></a> , <a href="class134914.html#refoperation157186"><b>getPosSE</b></a> , <a href="class134914.html#refoperation157442"><b>isNodoSalida</b></a> , <a href="class134914.html#refoperation156546"><b>pertenece</b></a> , <a href="class134914.html#refoperation156418"><b>pertenece</b></a> , <a href="class134914.html#refoperation156802"><b>setID</b></a> , <a href="class134914.html#refoperation157570"><b>setNodoSalida</b></a> , <a href="class134914.html#refoperation157058"><b>setPosNW</b></a> , <a href="class134914.html#refoperation157314"><b>setPosSE</b></a> </p>
+</body>
+</html>

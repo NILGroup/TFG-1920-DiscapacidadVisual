@@ -1,0 +1,43 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Fire</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Fire</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass135170"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class Fire </li></ul><p>Artifact : <a href="index.html#refartifact132610"><b>Fire</b></a></p>
+<div class="sub">
+<a name="refattribute144514"></a>
+<table><tr><td><div class="element">Attribute <b>ID</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - ID : int</li><li>Java : private int ID</li></ul><a name="refattribute144642"></a>
+<table><tr><td><div class="element">Attribute <b>x</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - x : double</li><li>Java : private double x</li></ul><a name="refattribute144770"></a>
+<table><tr><td><div class="element">Attribute <b>y</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - y : double</li><li>Java : private double y</li></ul><a name="refattribute144898"></a>
+<table><tr><td><div class="element">Attribute <b>z</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - z : double</li><li>Java : private double z</li></ul><a name="refoperation157698"></a>
+<table><tr><td><div class="element">Operation <b>Fire</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Fire() : </li><li>Java : public Fire()</li></ul><a name="refoperation157826"></a>
+<table><tr><td><div class="element">Operation <b>Fire</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + Fire(in id : int, in posX : int, in posY : int, in posZ : int) : </li><li>Java : public Fire(int id, int posX, int posY, int posZ)</li></ul><a name="refoperation157954"></a>
+<table><tr><td><div class="element">Operation <b>getID</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getID() : int</li><li>Java : public int getID()</li></ul><a name="refoperation158082"></a>
+<table><tr><td><div class="element">Operation <b>setID</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setID(in id : int) : void</li><li>Java : public void setID(int id)</li></ul><a name="refoperation158210"></a>
+<table><tr><td><div class="element">Operation <b>getX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getX() : double</li><li>Java : public double getX()</li></ul><a name="refoperation158338"></a>
+<table><tr><td><div class="element">Operation <b>setX</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setX(in x : double) : void</li><li>Java : public void setX(double x)</li></ul><a name="refoperation158466"></a>
+<table><tr><td><div class="element">Operation <b>getY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getY() : double</li><li>Java : public double getY()</li></ul><a name="refoperation158594"></a>
+<table><tr><td><div class="element">Operation <b>setY</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setY(in y : double) : void</li><li>Java : public void setY(double y)</li></ul><a name="refoperation158722"></a>
+<table><tr><td><div class="element">Operation <b>getZ</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getZ() : double</li><li>Java : public double getZ()</li></ul><a name="refoperation158850"></a>
+<table><tr><td><div class="element">Operation <b>setZ</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setZ(in z : double) : void</li><li>Java : public void setZ(double z)</li></ul></div>
+<p>All public operations : <a href="class135170.html#refoperation157954"><b>getID</b></a> , <a href="class135170.html#refoperation158210"><b>getX</b></a> , <a href="class135170.html#refoperation158466"><b>getY</b></a> , <a href="class135170.html#refoperation158722"><b>getZ</b></a> , <a href="class135170.html#refoperation158082"><b>setID</b></a> , <a href="class135170.html#refoperation158338"><b>setX</b></a> , <a href="class135170.html#refoperation158594"><b>setY</b></a> , <a href="class135170.html#refoperation158850"><b>setZ</b></a> </p>
+</body>
+</html>

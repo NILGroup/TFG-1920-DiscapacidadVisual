@@ -1,0 +1,60 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class GraphView</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class GraphView</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass135426"></a>
+<p>Declaration :</p><ul>
+<li>Java : private class GraphView extends <a href="class131842.html#refclass131842"><b>View</b></a> implements <a href="class135554.html#refclass135554"><b>SensorListener</b></a> </li></ul><p>nested in <a href="class135298.html#refclass135298"><b>AccelerometerReader</b></a></p>
+<div class="sub">
+<a name="refattribute145922"></a>
+<table><tr><td><div class="element">Attribute <b>mBitmap</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mBitmap : Bitmap</li><li>Java : private Bitmap mBitmap</li></ul><a name="refattribute146050"></a>
+<table><tr><td><div class="element">Attribute <b>mPaint</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mPaint : Paint =  new Paint()</li><li>Java : private Paint mPaint</li></ul><a name="refattribute146178"></a>
+<table><tr><td><div class="element">Attribute <b>mCanvas</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mCanvas : Canvas =  new Canvas()</li><li>Java : private Canvas mCanvas</li></ul><a name="refattribute146306"></a>
+<table><tr><td><div class="element">Attribute <b>mPath</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mPath : Path =  new Path()</li><li>Java : private Path mPath</li></ul><a name="refattribute146434"></a>
+<table><tr><td><div class="element">Attribute <b>mRect</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mRect : RectF =  new RectF()</li><li>Java : private RectF mRect</li></ul><a name="refattribute146562"></a>
+<table><tr><td><div class="element">Attribute <b>mLastValues</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mLastValues : float =  new float[3*2], multiplicity : []</li><li>Java : private float[] mLastValues</li></ul><a name="refattribute146690"></a>
+<table><tr><td><div class="element">Attribute <b>mOrientationValues</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mOrientationValues : float =  new float[3], multiplicity : []</li><li>Java : private float[] mOrientationValues</li></ul><a name="refattribute146818"></a>
+<table><tr><td><div class="element">Attribute <b>mColors</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mColors : int =  new int[3*2], multiplicity : []</li><li>Java : private int[] mColors</li></ul><a name="refattribute146946"></a>
+<table><tr><td><div class="element">Attribute <b>mLastX</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mLastX : float</li><li>Java : private float mLastX</li></ul><a name="refattribute147074"></a>
+<table><tr><td><div class="element">Attribute <b>mScale</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mScale : float =  new float[2], multiplicity : []</li><li>Java : private float[] mScale</li></ul><a name="refattribute147202"></a>
+<table><tr><td><div class="element">Attribute <b>mYOffset</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mYOffset : float</li><li>Java : private float mYOffset</li></ul><a name="refattribute147330"></a>
+<table><tr><td><div class="element">Attribute <b>mMaxX</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mMaxX : float</li><li>Java : private float mMaxX</li></ul><a name="refattribute147458"></a>
+<table><tr><td><div class="element">Attribute <b>mSpeed</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mSpeed : float =  1.0f</li><li>Java : private float mSpeed</li></ul><a name="refattribute147586"></a>
+<table><tr><td><div class="element">Attribute <b>mWidth</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mWidth : float</li><li>Java : private float mWidth</li></ul><a name="refattribute147714"></a>
+<table><tr><td><div class="element">Attribute <b>mHeight</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mHeight : float</li><li>Java : private float mHeight</li></ul><a name="refoperation166274"></a>
+<table><tr><td><div class="element">Operation <b>GraphView</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + GraphView(inout context : Context) : </li><li>Java : public GraphView(Context context)</li></ul><a name="refoperation166402"></a>
+<table><tr><td><div class="element">Operation <b>onSizeChanged</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onSizeChanged(in w : int, in h : int, in oldw : int, in oldh : int) : void</li><li>Java : protected void onSizeChanged(int w, int h, int oldw, int oldh)</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation166530"></a>
+<table><tr><td><div class="element">Operation <b>onDraw</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onDraw(inout canvas : Canvas) : void</li><li>Java : protected void onDraw(Canvas canvas)</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation166658"></a>
+<table><tr><td><div class="element">Operation <b>onSensorChanged</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onSensorChanged(in sensor : int, inout values : float) : void</li><li>Java : public void onSensorChanged(int sensor, float[] values)</li></ul><a name="refoperation166786"></a>
+<table><tr><td><div class="element">Operation <b>onAccuracyChanged</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onAccuracyChanged(in sensor : int, in accuracy : int) : void</li><li>Java : public void onAccuracyChanged(int sensor, int accuracy)</li></ul></div>
+<p>All public operations : <a href="class135426.html#refoperation166786"><b>onAccuracyChanged</b></a> , <a href="class135426.html#refoperation166658"><b>onSensorChanged</b></a> </p>
+</body>
+</html>

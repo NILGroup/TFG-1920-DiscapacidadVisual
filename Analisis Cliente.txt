@@ -1,0 +1,21 @@
+En src -> 
+	sockets -> cliente
+		Función doInBackground: se va conectando al servidor y mandándole info (Origen, Actual y Destino).
+		Lee lo que le da el servidor: la ruta y el cuadrante clave, principalmente.
+		La clase Server no sé muy bien, parece que se encarga de recibir un paquete.
+		
+	service -> positionTracker
+		Hace un lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, ...) -> https://developer.android.com/reference/android/location/LocationManager
+		onLocationChanged -> https://developer.android.com/reference/android/location/LocationListener
+	
+	activities -> positionActivity
+		Hace un refresh(double x, double y, double z, int idCuadrante);
+	
+	activities -> posicion
+		Desde la función de comprobar lanza los threads
+				thread = new ThreadUbicacion(this);
+				thread.setCuadrantes(cuadrantes);
+				thread.start();
+				
+	activities -> EvacuationProtocol
+		Es la que llama al main
