@@ -1,0 +1,3 @@
+class HttpServicesException
+!!!151298.java!!!	HttpServicesException(in message : String)
+		super(message);

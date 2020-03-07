@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+  <tabla nombre="Datos">
+    <campo>
+      <nombre>id</nombre>
+      <tipo>integer</tipo>
+      <valor>1</valor>
+    </campo>
+    <campo>
+      <nombre>dato</nombre>
+      <tipo>char</tipo>
+      <valor>@</valor>
+    </campo>
+  </tabla>
+  <tabla nombre="Tabla2">
+    <campo>
+      <nombre>campo</nombre>
+      <tipo>varchar</tipo>
+      <valor>pato</valor>
+    </campo>
+  </tabla>
+</tables>

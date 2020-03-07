@@ -1,0 +1,35 @@
+class Preview
+!!!138626.java!!!	Preview(inout context : Context)
+	super(context);
+
+	// Install a SurfaceHolder.Callback so we get notified when
+	// underlying surface is created and destroyed.
+	mHolder = getHolder();
+	mHolder.addCallback(this);
+	mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+!!!138754.java!!!	surfaceCreated(inout holder : SurfaceHolder) : void
+	// The Surface has been created, acquire the camera and tell
+	// to draw.
+		
+		
+	
+	try {
+		mCamera.setPreviewDisplay(holder);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+!!!138882.java!!!	surfaceDestroyed(inout holder : SurfaceHolder) : void
+	// Surface will be destroyed when we return, so stop the
+	// Because the CameraDevice object is not a shared resource,
+	// important to release it when the activity is paused.
+	mCamera.stopPreview();
+	mCamera.release();
+	mCamera = null;
+!!!139010.java!!!	surfaceChanged(inout holder : SurfaceHolder, in format : int, in w : int, in h : int) : void
+	// Now that the size is known, set up the camera parameters
+	// the preview.
+	Camera.Parameters parameters = mCamera.getParameters();
+	parameters.setPreviewSize(w, h);
+	mCamera.setParameters(parameters);
+	mCamera.startPreview();

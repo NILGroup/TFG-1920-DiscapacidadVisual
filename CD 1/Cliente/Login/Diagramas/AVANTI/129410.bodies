@@ -1,0 +1,38 @@
+class ThreadDatos
+!!!174338.java!!!	ThreadDatos()
+		super("HiloDatos");
+		estado = ESTADO_EJECUCION;
+		
+!!!174466.java!!!	run() : void
+		try {
+			estado = ESTADO_EJECUCION;
+			db = new WPSDatabase();
+			HttpServices service = new HttpServices();
+			try {
+				db.insertCoordenates(service.getCoordenadas());
+				estado = ESTADO_EXITO;
+			} catch (HttpServicesException e) {
+				e.printStackTrace();
+				estado = ESTADO_ERROR;
+			} catch (JSONException e) {
+				e.printStackTrace();
+				estado = ESTADO_ERROR;
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+			estado = ESTADO_ERROR;
+		}
+		
+!!!174594.java!!!	getDatabase() : WPSDatabase
+		if(db == null){
+			throw new WPSException("La base de datos está sin inicializar");
+		}else{
+			if(estado == ESTADO_ERROR){
+				throw new WPSException("Ha ocurrido un error mientras se intentaba crear la BBDD");
+			}else if(estado == ESTADO_EJECUCION){
+				throw new WPSException("Se están recuperando los datos...");
+			}
+			return db;
+		}
+!!!174722.java!!!	getEstado() : int
+		return estado;

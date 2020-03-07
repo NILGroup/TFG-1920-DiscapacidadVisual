@@ -1,0 +1,4 @@
+La diferencia es que nosotras no mandaremos las coordenadas x,y,z. Pero eso solo lo necesita el servidor para determinar en qué cuadrante está el cliente. Entonces cuando leamos el beacon más cercano, la primera aproximación será que asignaremos la posición en el cuadrante del beacon y veremos como funciona el generar ruta.
+Otra opción es lo de mandar al ciego al beacon (gallinita ciega). En otro momento tb veremos si captando otros beacons puedes aproximar mejor.
+
+La primera idea es utilizar el mapeo tal cual y poner beacons en algunos cuadrantes (puntos de decisión) y en otros no. OJO: importante estudiar que se pille algún beacon para poder determinar la posición.

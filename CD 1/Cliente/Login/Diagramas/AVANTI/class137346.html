@@ -1,0 +1,36 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class WPSDatabase</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class WPSDatabase</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass137346"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class WPSDatabase </li></ul><p>Artifact : <a href="index.html#refartifact134658"><b>WPSDatabase</b></a></p>
+<div class="sub">
+<a name="refattribute152322"></a>
+<table><tr><td><div class="element">Attribute <b>database</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + database : SQLiteDatabase</li><li>Java : public SQLiteDatabase database</li></ul><a name="refattribute152450"></a>
+<table><tr><td><div class="element">Attribute <b>NUMERO_RESULTADOS_FINGERPRINT</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, + NUMERO_RESULTADOS_FINGERPRINT : int =  10, read only</li><li>Java : public static final int NUMERO_RESULTADOS_FINGERPRINT</li></ul><a name="refoperation175746"></a>
+<table><tr><td><div class="element">Operation <b>WPSDatabase</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + WPSDatabase() : ,  exceptions : SQLException</li><li>Java : public WPSDatabase() throws SQLException</li></ul><a name="refoperation175874"></a>
+<table><tr><td><div class="element">Operation <b>insertCoordenates</b></div></td></tr></table><p>Inserta las coordenadas en la BD<br />@param datos<br />@throws JSONException <br /></p><p>Declaration :</p><ul><li>Uml : + insertCoordenates(inout datos : JSONArray) : void,  exceptions : JSONException</li><li>Java : public void insertCoordenates(JSONArray datos) throws JSONException</li></ul><a name="refoperation176002"></a>
+<table><tr><td><div class="element">Operation <b>getClosestNeighbors</b></div></td></tr></table><p>Devuelve las coordenadas más cercanas con la distancia al punto de referencia&lt;br&gt;<br />ya calculada<br />@param macs<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : - getClosestNeighbors(inout macs : List&lt;ScanResult&gt;) : <a href="class136706.html#refclass136706"><b>Coordenada</b></a></li><li>Java : private ArrayList&lt;<a href="class136706.html#refclass136706"><b>Coordenada</b></a>&gt; getClosestNeighbors(List&lt;ScanResult&gt; macs)</li></ul><a name="refoperation176130"></a>
+<table><tr><td><div class="element">Operation <b>getEuclideanDistance</b></div></td></tr></table><p>Calcula la distancia entre el resultado del escaneado pos1 y la coordenada definida por x,y y z<br />@param pos1<br />@param x<br />@param y<br />@param z<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + getEuclideanDistance(inout pos1 : ScanResult, in x : double, in y : double, in z : double) : int</li><li>Java : public int getEuclideanDistance(ScanResult pos1, double x, double y, double z)</li></ul><a name="refoperation176258"></a>
+<table><tr><td><div class="element">Operation <b>getCoordenadasRegistradasPunto</b></div></td></tr></table><p>Recupera todas la coordenadas almacenadas que tienen el BBSID del punto pasado cómo parámetro<br />@param punto<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + getCoordenadasRegistradasPunto(inout punto : ScanResult) : <a href="class136706.html#refclass136706"><b>Coordenada</b></a></li><li>Java : public ArrayList&lt;<a href="class136706.html#refclass136706"><b>Coordenada</b></a>&gt; getCoordenadasRegistradasPunto(ScanResult punto)</li></ul><a name="refoperation176386"></a>
+<table><tr><td><div class="element">Operation <b>isMacRegistered</b></div></td></tr></table><p>Comprueba si una mac está registrada en una posicion<br />@param mac<br />@param coord<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + isMacRegistered(in mac : String, inout coord : <a href="class136706.html#refclass136706"><b>Coordenada</b></a>) : boolean</li><li>Java : public boolean isMacRegistered(String mac, <a href="class136706.html#refclass136706"><b>Coordenada</b></a> coord)</li></ul><a name="refoperation176514"></a>
+<table><tr><td><div class="element">Operation <b>calculatePosition</b></div></td></tr></table><p>Método que recupera los vecinos más cercanos con sus distancias euclideas y calcula&lt;br&gt;<br />la estimación de posición del terminal<br />@param coordenadas<br />@return<br /></p><p>Declaration :</p><ul><li>Uml : + calculatePosition(inout macs : List&lt;ScanResult&gt;) : <a href="class136706.html#refclass136706"><b>Coordenada</b></a></li><li>Java : public <a href="class136706.html#refclass136706"><b>Coordenada</b></a> calculatePosition(List&lt;ScanResult&gt; macs)</li></ul></div>
+<p>All public operations : <a href="class137346.html#refoperation176514"><b>calculatePosition</b></a> , <a href="class137346.html#refoperation176258"><b>getCoordenadasRegistradasPunto</b></a> , <a href="class137346.html#refoperation176130"><b>getEuclideanDistance</b></a> , <a href="class137346.html#refoperation175874"><b>insertCoordenates</b></a> , <a href="class137346.html#refoperation176386"><b>isMacRegistered</b></a> </p>
+</body>
+</html>

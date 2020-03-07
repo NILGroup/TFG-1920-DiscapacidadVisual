@@ -1,0 +1,52 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>D</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">D</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<table>
+<tr bgcolor=#f0f0f0><td align=center><b>Name</b></td><td align=center><b>Kind</b></td><td align=center><b>Description</b></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute152322" target = "projectFrame"><b>database</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refrelation136322" target = "projectFrame"><b>db</b></a></td><td>relation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133250.html#refclass133250" target = "projectFrame"><b>DefaultHandler</b></a></td><td>class</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation164354" target = "projectFrame"><b>desbloquearCuadrante</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute142978" target = "projectFrame"><b>destino</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation140674" target = "projectFrame"><b>DialogController</b></a></td><td>operation</td><td>&lt;b&gt;Ejemplo:&lt;/b&gt;&lt;br&gt;&lt;br&gt;<br /><br />String s = "HOLA";&lt;br&gt;<br />DialogController d = new DialogController(){&lt;br&gt;<br />public void clickAccept() {&lt;br&gt;<br />finish();&lt;br&gt;				<br />}&lt;br&gt;<br />};&lt;br&gt;<br />d.showInformDialog(this, s);&lt;br&gt; </td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refclass132226" target = "projectFrame"><b>DialogController</b></a></td><td>class</td><td>Clase para manejar la construcción de dialogs de manera más sencilla<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refartifact130050" target = "projectFrame"><b>DialogController</b></a></td><td>artifact</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refpackage129538" target = "projectFrame"><b>dialogs</b></a></td><td>package</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refclass view129154" target = "projectFrame"><b>dialogs</b></a></td><td>class view</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refdeployment view128386" target = "projectFrame"><b>dialogs</b></a></td><td>deployment view</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refclass diagram142338" target = "projectFrame"><b>Dialogs diagram</b></a></td><td>class diagram</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute143106" target = "projectFrame"><b>direccion</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute147842" target = "projectFrame"><b>direction</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute149378" target = "projectFrame"><b>distanciaAlmacenada</b></a></td><td>attribute</td><td>Atributo que sirve para almacenar la distancia a otro punto de referencia.<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute143746" target = "projectFrame"><b>DOWN</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute143874" target = "projectFrame"><b>DOWN_LEFT</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refattribute143618" target = "projectFrame"><b>DOWN_RIGHT</b></a></td><td>attribute</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation145794" target = "projectFrame"><b>draw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation141314" target = "projectFrame"><b>draw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation146562" target = "projectFrame"><b>draw</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation137858" target = "projectFrame"><b>drawCircle</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation138114" target = "projectFrame"><b>drawNet</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refartifact129538" target = "projectFrame"><b>DrawOnTop</b></a></td><td>artifact</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refclass131714" target = "projectFrame"><b>DrawOnTop</b></a></td><td>class</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation137474" target = "projectFrame"><b>DrawOnTop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation137602" target = "projectFrame"><b>DrawOnTop</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation138498" target = "projectFrame"><b>drawPerson</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation137986" target = "projectFrame"><b>drawText</b></a></td><td>operation</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="index.html#refoperation171010" target = "projectFrame"><b>drawUser</b></a></td><td>operation</td><td></td></tr>
+</table>
+</body>
+</html>

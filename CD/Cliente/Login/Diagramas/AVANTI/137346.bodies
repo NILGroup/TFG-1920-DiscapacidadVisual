@@ -1,0 +1,194 @@
+class WPSDatabase
+!!!175746.java!!!	WPSDatabase()
+		database = SQLiteDatabase.create(null);
+		String query = "CREATE TABLE `repository` (" +
+				  "`MAC` varchar(17) NOT NULL," +
+				  "`x` double NOT NULL,"+
+				  "`y` double NOT NULL,"+
+				  "`z` double NOT NULL,"+
+				  "`strength` int(11) NOT NULL,"+
+				  "PRIMARY KEY (`MAC`,`x`,`y`,`z`))"; 
+		database.execSQL(query);
+!!!175874.java!!!	insertCoordenates(inout datos : JSONArray) : void
+		JSONArray dato;
+		
+		if(datos.length()>0){
+			String query = "";
+			for(int i = 0; i < datos.length(); i++){	
+				dato = datos.getJSONArray(i);
+				query = "INSERT INTO repository VALUES ('";
+				query = query + dato.getString(0) + "',";
+				query = query + dato.getDouble(1) + ",";
+				query = query + dato.getDouble(2) + ",";
+				query = query + dato.getDouble(3) + ",";
+				query = query + dato.getInt(4) + ");";
+				database.execSQL(query);
+			}
+		}
+		
+!!!176002.java!!!	getClosestNeighbors(inout macs : List<ScanResult>) : Coordenada
+		
+		ArrayList<ArrayList<Coordenada>> coordenadas = new ArrayList<ArrayList<Coordenada>>();
+		/**
+		 * Guardo las coordenadas de las macs registradas con sus distancias eculideas almacenadas
+		 */
+		ArrayList<Coordenada> arrAux = new ArrayList<Coordenada>();
+		
+		for(int i = 0; i < macs.size(); i++){
+			coordenadas.add(this.getCoordenadasRegistradasPunto(macs.get(i)));
+		}
+		
+		
+		double suma = 0;
+		ArrayList<Coordenada> result = new ArrayList<Coordenada>();
+		
+		
+		String[] columns = new String[3];
+		columns[0] = "x";
+		columns[1] = "y";
+		columns[2] = "z";
+		String groupBy = "x,y,z";
+		
+		Cursor c = database.query("repository", columns, null,null, groupBy, null, null);
+		
+		Coordenada coordActual;
+		double distancia;
+		double aux;
+			
+		c.moveToFirst();
+		int j = 0;
+		boolean fin = false;
+		int h= 0;
+		int index;
+		while(j < c.getCount() && !fin){
+			coordActual = new Coordenada();
+			coordActual.setX(c.getDouble(0));
+			coordActual.setY(c.getDouble(1));
+			coordActual.setZ(c.getDouble(2));
+			suma = 0;
+			ScanResult l;
+			
+			for(int i = 0; i < macs.size(); i++){
+				index = coordenadas.get(i).indexOf(coordActual);
+				if(index!=-1){	
+					l = macs.get(i);
+					h = l.level - coordenadas.get(i).get(index).getStrength();
+					suma+= Math.pow(h,2);
+				}
+			}
+			aux = ((double)1/macs.size());
+			distancia = (aux)*Math.sqrt(suma);
+			coordActual.setDistanciaAlmacenada(distancia);
+			arrAux.add(coordActual);
+			fin = !c.moveToNext();
+			
+		}
+		c.close();
+		
+		int position;
+		double min;
+		fin = (arrAux.size()==0);
+		while((result.size() < WPSDatabase.NUMERO_RESULTADOS_FINGERPRINT) && !fin){
+			position = 0;
+			min = Double.MAX_VALUE;
+			for(int k = 0; k < arrAux.size(); k++){
+				if(min > arrAux.get(k).getDistanciaAlmacenada()){
+					min = arrAux.get(k).getDistanciaAlmacenada();
+					position = k;
+				}
+			}
+			result.add(arrAux.get(position));
+			arrAux.remove(position);
+			if(arrAux.size()==0) fin = true;
+		}
+		
+		return result;
+!!!176130.java!!!	getEuclideanDistance(inout pos1 : ScanResult, in x : double, in y : double, in z : double) : int
+		
+		String[] columns = new String[1];
+		columns[0] = "strength";
+		String selection = "x = ? AND y = ? AND z = ? AND MAC = ?;";//'" + pos1.BSSID + "'";
+		String selectionArgs[] = new String[4];
+		selectionArgs[0] = "" + x;
+		selectionArgs[1] = "" + y;
+		selectionArgs[2] = "" + z;
+		selectionArgs[3] = pos1.BSSID;
+	
+		Cursor c = database.query("repository", columns, selection, selectionArgs, null, null, null);
+		c.moveToFirst();
+		int result;
+		if(c!=null){
+			//result = (100 - pos1.level) - (100 - c.getInt(0));
+			result = (pos1.level) - (c.getInt(0));
+			c.close();
+		}else{
+			result = 0;
+		}
+		return result;
+!!!176258.java!!!	getCoordenadasRegistradasPunto(inout punto : ScanResult) : Coordenada
+		
+		String[] columns = new String[4];
+		columns[0] = "x";
+		columns[1] = "y";
+		columns[2] = "z";
+		columns[3] = "strength";
+		String selection = "MAC = ?;";
+		String selectionArgs[] = new String[1];
+		selectionArgs[0] = punto.BSSID;
+		//String groupBy = "x,y,z";
+		Cursor c = database.query("repository", columns, selection, selectionArgs, null, null, null);
+		c.moveToFirst();
+		ArrayList<Coordenada> result = new ArrayList<Coordenada>();
+		Coordenada coord;
+		for(int i = 0; i < c.getCount(); i++){
+			coord = new Coordenada();
+			coord.setMac(punto.BSSID);
+			coord.setX(c.getDouble(0));
+			coord.setY(c.getDouble(1));
+			coord.setZ(c.getDouble(2));
+			coord.setStrength(c.getInt(3));
+			result.add(coord);
+			c.moveToNext();
+		}
+		c.close();
+		return result;
+!!!176386.java!!!	isMacRegistered(in mac : String, inout coord : Coordenada) : boolean
+		String[] columns = new String[1];
+		columns[0] = "MAC";
+		//String selection = "x = "+ coord.getX() + " AND y = " + coord.getY() + " AND z = " + coord.getZ() + " AND MAC =" + coord.getMac() + ";";
+		String selection = "x = ? AND y = ? AND z = ? AND MAC = ?;";
+		String selectionArgs[] = new String[4];
+		selectionArgs[0] = "" + coord.getX();
+		selectionArgs[1] = "" + coord.getY();
+		selectionArgs[2] = "" + coord.getZ();
+		selectionArgs[3] = mac;
+		Cursor c = database.query("repository", columns, selection, selectionArgs, null, null,null);
+		int rows = c.getCount();
+		c.close();
+		if(rows>0){
+			return true;
+		}else{
+			return false;
+		}
+!!!176514.java!!!	calculatePosition(inout macs : List<ScanResult>) : Coordenada
+		ArrayList<Coordenada> coordenadas = this.getClosestNeighbors(macs);
+		
+		double sumaX = 0;
+		double sumaY = 0;
+		double aux = 0;
+		if(coordenadas.size()>0){
+			for(int i = 0; i < coordenadas.size(); i++){
+				sumaX +=((1/coordenadas.get(i).getDistanciaAlmacenada())*coordenadas.get(i).getX());
+				sumaY +=((1/coordenadas.get(i).getDistanciaAlmacenada())*coordenadas.get(i).getY());
+				aux += (1/coordenadas.get(i).getDistanciaAlmacenada());
+			}
+			sumaX = sumaX / aux;
+			sumaY = sumaY / aux;
+		}else{
+			sumaX = Double.MAX_VALUE;
+			sumaY = Double.MAX_VALUE;
+		}
+		Coordenada c = new Coordenada();
+		c.setX(sumaX);
+		c.setY(sumaY);
+		return c;

@@ -1,0 +1,173 @@
+class Compass
+!!!141186.java!!!	Compass()
+             int one = 0x10000;
+
+             int colorLines[] = {
+                     0,  one,    0,  one,
+                     0,  one,    0,  one,
+               };
+            
+             int colorLetters[] = {
+                             //North
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     // South
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     // East
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     // West
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+                     one,  one,    0,  one,
+             };
+
+             // Buffers to be passed to gl*Pointer() functions
+             // must be direct, i.e., they must be placed on the
+             // native heap where the garbage collector cannot
+             // move them.
+             //
+             // Buffers with multi-byte datatypes (e.g., short, int, float)
+             // must have their byte order set to native order
+
+             // (( vertices_per_compass_line * coords_per_vertex * lines_number)
+             // + north_vertices * coords_per_vertex + south_vertices * coords_per_vertex
+             // + east_vertices * coords_per_vertex + west_vertices * coords_per_vertex)
+             // * bytes_per_float
+             ByteBuffer vbb = ByteBuffer.allocateDirect(((2 * 3 * 16) + (6 * 3) + (10 * 3) + (8 * 3) + (8 * 3)) * 4);
+             vbb.order(ByteOrder.nativeOrder());
+             mVertexBuffer = vbb.asFloatBuffer();
+
+             // ((total_compass_vertices * coords_per_color) +
+             // (north_vertices * coords_per_color)  + (south_vertices * coords_per_color))
+             // * bytes_per_int
+             ByteBuffer cbb = ByteBuffer.allocateDirect(((32 * 4) + (6 * 4) + (10 * 4) + (8 * 4) + (8 * 4)) * 4);
+             cbb.order(ByteOrder.nativeOrder());
+             mColorBuffer = cbb.asIntBuffer();
+
+             mIndexBuffer = ByteBuffer.allocateDirect(32 + 6 + 10 + 8 + 8);
+             float x;
+             float y;
+             float z;
+             for (int i = 0; i < 16; i++)
+             {
+                     if (i % 2 == 0)
+                             if (i % 4 == 0)
+                                     z = 6.0f;
+                             else
+                                     z = 4.0f;
+                     else
+                             z = 2.0f;
+                    
+                     x = (float)(Math.sin(((double)i / 16) * 2 * Math.PI) * 32);
+                     y = (float)(Math.cos(((double)i / 16) * 2 * Math.PI) * 32);
+                     mVertexBuffer.put(x);
+                     mVertexBuffer.put(y);
+                     mVertexBuffer.put(-z);
+                     mIndexBuffer.put((byte)(2 * i));
+
+                     mVertexBuffer.put(x);
+                     mVertexBuffer.put(y);
+                     mVertexBuffer.put(z);
+                     mIndexBuffer.put((byte)(2 * i + 1));
+
+                     mColorBuffer.put(colorLines);
+             }
+            
+             float north[] = {
+                     -2.0f, 32.0f, 7.0f,
+                     -2.0f, 32.0f, 11.0f,
+                     -2.0f, 32.0f, 11.0f,
+                     2.0f, 32.0f, 7.0f,
+                     2.0f, 32.0f, 7.0f,
+                     2.0f, 32.0f, 11.0f,
+             };
+             mVertexBuffer.put(north);
+             byte indices[] = {
+                     32, 33, 34, 35, 36, 37,
+             };
+             mIndexBuffer.put(indices);
+            
+             float south[] = {
+                     2.0f, -32.0f, 7.0f,
+                     -2.0f, -32.0f, 7.0f,
+                     -2.0f, -32.0f, 7.0f,
+                     -2.0f, -32.0f, 9.0f,
+                     -2.0f, -32.0f, 9.0f,
+                     2.0f, -32.0f, 9.0f,
+                     2.0f, -32.0f, 9.0f,
+                     2.0f, -32.0f, 11.0f,
+                     2.0f, -32.0f, 11.0f,
+                     -2.0f, -32.0f, 11.0f,
+             };
+             mVertexBuffer.put(south);
+             indices = new byte[]{
+                     38, 39, 40, 41, 42, 43, 44, 45, 46, 47,
+             };
+             mIndexBuffer.put(indices);
+
+             float east[] = {
+                             32.0f, -2.0f, 7.0f,
+                             32.0f, 2.0f, 7.0f,
+                             32.0f, -2.0f, 9.0f,
+                             32.0f, 2.0f, 9.0f,
+                             32.0f, -2.0f, 11.0f,
+                             32.0f, 2.0f, 11.0f,
+                             32.0f, 2.0f, 7.0f,
+                             32.0f, 2.0f, 11.0f,
+             };
+             mVertexBuffer.put(east);
+             indices = new byte[]{
+                     48, 49, 50, 51, 52, 53, 54, 55,
+             };
+             mIndexBuffer.put(indices);
+            
+             float west[] = {
+                             -32.0f, 2.0f, 11.0f,
+                             -32.0f, 1.0f, 7.0f,
+                             -32.0f, 1.0f, 7.0f,
+                             -32.0f, 0, 9.0f,
+                             -32.0f, 0, 9.0f,
+                             -32.0f, -1.0f, 7.0f,
+                             -32.0f, -1.0f, 7.0f,
+                             -32.0f, -2.0f, 11.0f,
+             };
+             mVertexBuffer.put(west);
+             indices = new byte[]{
+                     56, 57, 58, 59, 60, 61, 62, 63,
+             };
+             mIndexBuffer.put(indices);
+            
+             mColorBuffer.put(colorLetters);
+            
+             mColorBuffer.position(0);
+             mVertexBuffer.position(0);
+             mIndexBuffer.position(0);
+!!!141314.java!!!	draw(inout gl : GL10) : void
+             gl.glVertexPointer(3, GL10.GL_FLOAT, 0, mVertexBuffer);
+             gl.glColorPointer(4, GL10.GL_FIXED, 0, mColorBuffer);
+             gl.glDrawElements(GL10.GL_LINES, 32 + 6 + 10 + 8 + 8, GL10.GL_UNSIGNED_BYTE, mIndexBuffer);

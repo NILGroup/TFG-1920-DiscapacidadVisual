@@ -1,0 +1,24 @@
+class Fire
+!!!157698.java!!!	Fire()
+		
+!!!157826.java!!!	Fire(in id : int, in posX : int, in posY : int, in posZ : int)
+		this.ID = id;
+		this.x = posX;
+		this.y = posY;
+		this.z = posZ;
+!!!157954.java!!!	getID() : int
+		return ID;
+!!!158082.java!!!	setID(in id : int) : void
+		ID = id;
+!!!158210.java!!!	getX() : double
+		return x;
+!!!158338.java!!!	setX(in x : double) : void
+		this.x = x;
+!!!158466.java!!!	getY() : double
+		return y;
+!!!158594.java!!!	setY(in y : double) : void
+		this.y = y;
+!!!158722.java!!!	getZ() : double
+		return z;
+!!!158850.java!!!	setZ(in z : double) : void
+		this.z = z;

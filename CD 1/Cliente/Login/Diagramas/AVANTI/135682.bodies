@@ -1,0 +1,36 @@
+class SensorManagerAVANTI
+!!!167298.java!!!	SensorManagerAVANTI(inout ctx : Context)
+		
+		SensorEventListener listener = new SensorEventListener(){
+
+			   public void onAccuracyChanged(Sensor arg0, int direction)
+			   {
+			//	   arg0.
+				   
+			   }
+
+			   public void onSensorChanged(SensorEvent evt)
+			   {
+			      float vals[] = evt.values;   
+			      
+			      direction = vals[0];
+			      xMovement = vals[1];
+			      yMovement = vals[2];
+			      
+			    
+			   }
+			};
+			
+		final SensorManager sensorMan;
+		sensorMan = (SensorManager)ctx.getSystemService(Context.SENSOR_SERVICE);
+		      sensorMan.registerListener(
+		         listener, 
+		         sensorMan.getDefaultSensor(
+		        		 SensorManager.SENSOR_ORIENTATION), 
+		        	     SensorManager.SENSOR_DELAY_FASTEST);
+!!!167426.java!!!	getDirection() : float
+		return direction;
+!!!167554.java!!!	getxMovement() : float
+		return xMovement;
+!!!167682.java!!!	getyMovement() : float
+		return yMovement;

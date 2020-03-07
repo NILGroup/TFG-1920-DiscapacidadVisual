@@ -1,0 +1,96 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Classes Index</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Classes Index</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<table>
+<tr bgcolor=#f0f0f0><td><a href="class128002.html#refclass128002" target = "projectFrame"><b>About</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135298.html#refclass135298" target = "projectFrame"><b>AccelerometerReader</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128130.html#refclass128130" target = "projectFrame"><b>Activity</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134786.html#refclass134786" target = "projectFrame"><b>Arista</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129922.html#refclass129922" target = "projectFrame"><b>BaseAdapter</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132738.html#refclass132738" target = "projectFrame"><b>BillboardRenderer</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131586.html#refclass131586" target = "projectFrame"><b>Callback</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131970.html#refclass131970" target = "projectFrame"><b>CameraIF</b></a></td><td>interface</td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136322.html#refclass136322" target = "projectFrame"><b>Client</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133122.html#refclass133122" target = "projectFrame"><b>ColladaHandler</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133378.html#refclass133378" target = "projectFrame"><b>ColladaLoader</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133506.html#refclass133506" target = "projectFrame"><b>ColladaObject</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132354.html#refclass132354" target = "projectFrame"><b>Compass</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132482.html#refclass132482" target = "projectFrame"><b>CompassRenderer</b></a></td><td></td><td>Render a compass.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136706.html#refclass136706" target = "projectFrame"><b>Coordenada</b></a></td><td></td><td>No me deja subir!<br /><br />Objeto que se utiliza para guardar las coordenadas (x,y,z), la MAC y la fuerza de la señal<br /><br />@version 1.0<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134914.html#refclass134914" target = "projectFrame"><b>Cuadrante</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133634.html#refclass133634" target = "projectFrame"><b>Cube</b></a></td><td></td><td>A vertex shaded cube.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128642.html#refclass128642" target = "projectFrame"><b>CubeRenderer</b></a></td><td></td><td>Render a pair of tumbling cubes.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131330.html#refclass131330" target = "projectFrame"><b>CustomCameraView</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132866.html#refclass132866" target = "projectFrame"><b>CVertex</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133250.html#refclass133250" target = "projectFrame"><b>DefaultHandler</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132226.html#refclass132226" target = "projectFrame"><b>DialogController</b></a></td><td></td><td>Clase para manejar la construcción de dialogs de manera más sencilla<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131714.html#refclass131714" target = "projectFrame"><b>DrawOnTop</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128258.html#refclass128258" target = "projectFrame"><b>EvacuationProtocol</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134402.html#refclass134402" target = "projectFrame"><b>Exception</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135170.html#refclass135170" target = "projectFrame"><b>Fire</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134658.html#refclass134658" target = "projectFrame"><b>FireList</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128770.html#refclass128770" target = "projectFrame"><b>FlameRenderer</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128514.html#refclass128514" target = "projectFrame"><b>GLSurfaceViewActivity</b></a></td><td></td><td>Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view<br />that uses OpenGL drawing into a dedicated surface.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135426.html#refclass135426" target = "projectFrame"><b>GraphView</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137602.html#refclass137602" target = "projectFrame"><b>HelloAndroid</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134146.html#refclass134146" target = "projectFrame"><b>HttpServices</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134274.html#refclass134274" target = "projectFrame"><b>HttpServicesException</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129538.html#refclass129538" target = "projectFrame"><b>IconAndText</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129794.html#refclass129794" target = "projectFrame"><b>IconifiedTextListAdapter</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129666.html#refclass129666" target = "projectFrame"><b>LinearLayout</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129282.html#refclass129282" target = "projectFrame"><b>ListActivity</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130434.html#refclass130434" target = "projectFrame"><b>ListaCuadrantes</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136194.html#refclass136194" target = "projectFrame"><b>LocationListener</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128898.html#refclass128898" target = "projectFrame"><b>Login</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129026.html#refclass129026" target = "projectFrame"><b>Main</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129154.html#refclass129154" target = "projectFrame"><b>MainMenu</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130306.html#refclass130306" target = "projectFrame"><b>Mapa</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136834.html#refclass136834" target = "projectFrame"><b>Mapa</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134530.html#refclass134530" target = "projectFrame"><b>Menu</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136066.html#refclass136066" target = "projectFrame"><b>MyLocationListener</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132098.html#refclass132098" target = "projectFrame"><b>OpenCV</b></a></td><td></td><td>OpenCV for Android NDK<br />Copyright (c) 2006-2009 SIProp Project http://www.siprop.org/<br /><br />This software is provided 'as-is', without any express or implied warranty.<br />In no event will the authors be held liable for any damages arising from the use of this software.<br />Permission is granted to anyone to use this software for any purpose,<br />including commercial applications, and to alter it and redistribute it freely,<br />subject to the following restrictions:<br /><br />1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.<br />2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.<br />3. This notice may not be removed or altered from any source distribution.</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136962.html#refclass136962" target = "projectFrame"><b>Particle</b></a></td><td></td><td>Clase que respresenta una partícula que explorará el espacio cercano al terminal para determinar<br />mejor su posición.<br /><br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133762.html#refclass133762" target = "projectFrame"><b>ParticleAnimation</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137090.html#refclass137090" target = "projectFrame"><b>ParticleFilter</b></a></td><td></td><td>Clase que implementa el filtro de partículas<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class134018.html#refclass134018" target = "projectFrame"><b>ParticleRokon</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135042.html#refclass135042" target = "projectFrame"><b>Posicion</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130050.html#refclass130050" target = "projectFrame"><b>Position</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135810.html#refclass135810" target = "projectFrame"><b>PositionTracker</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class128386.html#refclass128386" target = "projectFrame"><b>Preview</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130562.html#refclass130562" target = "projectFrame"><b>Register</b></a></td><td></td><td>Actividad que representa la pantalla de registro en la aplicación<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class132610.html#refclass132610" target = "projectFrame"><b>Renderer</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class133890.html#refclass133890" target = "projectFrame"><b>RokonActivity</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136450.html#refclass136450" target = "projectFrame"><b>Runnable</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130690.html#refclass130690" target = "projectFrame"><b>ScanResultActivity</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130946.html#refclass130946" target = "projectFrame"><b>SensorEventListener</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135554.html#refclass135554" target = "projectFrame"><b>SensorListener</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135682.html#refclass135682" target = "projectFrame"><b>SensorManagerAVANTI</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class136578.html#refclass136578" target = "projectFrame"><b>Server</b></a></td><td></td><td>&lt;p&gt;Title: Server.java &lt;/p&gt;<br /><br />&lt;p&gt;Description: Clase que recibe la petici—n del servidor. &lt;/p&gt;<br /><br />&lt;p&gt;Copyright: Enrique Lopez Manas &lt;/p&gt;<br /><br />@author Enrique Lopez Manas<br />@version 1.0<br />@see Client.java</td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class135938.html#refclass135938" target = "projectFrame"><b>Service</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131458.html#refclass131458" target = "projectFrame"><b>SurfaceView</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130818.html#refclass130818" target = "projectFrame"><b>TestAccelerometer</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137218.html#refclass137218" target = "projectFrame"><b>Thread</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class129410.html#refclass129410" target = "projectFrame"><b>ThreadDatos</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class130178.html#refclass130178" target = "projectFrame"><b>ThreadUbicacion</b></a></td><td></td><td>Hilo de ejecución que se encarga de ubicar al usuario en el mapa.<br />@author Javier<br /></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131842.html#refclass131842" target = "projectFrame"><b>View</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131202.html#refclass131202" target = "projectFrame"><b>WPS</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class131074.html#refclass131074" target = "projectFrame"><b>WPSActivity</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137346.html#refclass137346" target = "projectFrame"><b>WPSDatabase</b></a></td><td></td><td></td></tr>
+<tr bgcolor=#f0f0f0><td><a href="class137474.html#refclass137474" target = "projectFrame"><b>WPSException</b></a></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

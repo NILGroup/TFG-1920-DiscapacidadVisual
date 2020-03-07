@@ -1,0 +1,309 @@
+class Mapa
+!!!151554.java!!!	Mapa(inout father : Activity)
+		super(father);
+		//listaCuadrantes = ((Position)father).getCuadrantes();
+		mPaint.setColor(Color.BLACK);
+		mPaint.setTextSize(20);
+		mPaint2.setColor(Color.BLACK);
+		mPaint.setTextSize(16);
+		this.setClickable(true);
+		
+		this.setOnTouchListener(new OnTouchListener(){
+			
+			float xTouch = 0;
+			float yTouch = 0;
+			float xInicial = 0;
+			float yInicial = 0;
+			//int xImageView = 0;
+			//int yImageView = 0;
+			
+			
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				
+				if(arg1.getEdgeFlags() == 0){
+					int action = arg1.getAction();
+					switch(action){
+						case MotionEvent.ACTION_DOWN:
+							xTouch = arg1.getX();
+							yTouch = arg1.getY();
+						break;
+						
+						case MotionEvent.ACTION_MOVE:
+							float xActual = arg1.getX();
+							float yActual = arg1.getY();
+							if((xActual!=xTouch) || (yActual!=yTouch)){
+								
+								float x1 = xInicial - (xTouch - xActual);
+								float y1 = yInicial - (yTouch - yActual);
+								//if(x1 <= 10){ //&& x1 >= (image.getWidth())){
+									x = x1;
+								//}
+								//if(y1 <= 10){ //&& y1 >= (image.getHeight())){
+									y = y1;
+								//}
+								
+								//AbsoluteLayout.LayoutParams layout = new AbsoluteLayout.LayoutParams(params.width,params.height,x1,y1);
+								//img.setLayoutParams(layout);
+								((Mapa)arg0).invalidate();
+							}
+						break;
+						case MotionEvent.ACTION_UP:
+							xInicial = x;
+							yInicial = y;
+						break;
+					}
+				}
+				
+				return false;
+			}
+			
+		});
+		img = new ImageView(father);
+		img.setImageResource(R.drawable.mapajpg);
+		image = BitmapFactory.decodeResource(img.getResources(), R.drawable.mapajpg);
+		
+!!!151682.java!!!	onDraw(inout canvas : Canvas) : void
+		super.onDraw(canvas);
+		canvas.drawBitmap(image, x, y, mPaint);
+		//pintarCuadrantes(canvas);
+		pintarFuegos(canvas);
+		if(posX==Double.MAX_VALUE && posY==Double.MAX_VALUE){
+			canvas.drawText("x: INACCESIBLE" , 30, 260, mPaint);
+			canvas.drawText("y: INACCESIBLE" , 30, 290, mPaint);
+			canvas.drawText("Cuadrante: INACCESIBLE", 30, 320, mPaint);
+			
+		}else{
+			canvas.drawText("x:" + posX , 30, 260, mPaint);
+			canvas.drawText("y:" + posY, 30, 290, mPaint);
+			canvas.drawText("Cuadrante: " + cuadrante,30, 320, mPaint);
+			mPaint.setColor(Color.RED);
+			
+			canvas.drawCircle(((float)(posX*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x, ((float)(posY*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y, 5, mPaint);
+			mPaint.setColor(Color.BLACK);
+			int origen = listaCuadrantes.numCuadrante(posX, posY);
+			
+			ArrayList<Integer> ruta = listaCuadrantes.rutaMasCorta(20);
+			rutaEscape(ruta, canvas);
+		}		
+!!!151810.java!!!	pintarFuegos(inout canvas : Canvas) : void
+		//obtener el conjunto de fuegos.
+		Paint mPaintAux = new Paint(Paint.ANTI_ALIAS_FLAG);
+		mPaintAux.setColor(Color.BLUE);
+		for (int i = 0; i<fireList.size(); i++){
+			Fire f = fireList.getFire(i);
+			float posX = ((float)(f.getX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+			float posY = ((float)(f.getY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+			canvas.drawCircle(posX, posY, 7, mPaintAux);
+		}
+!!!151938.java!!!	pintarCuadrantes(inout canvas : Canvas) : void
+		mPaint.setColor(Color.BLACK);
+		ArrayList<Cuadrante> l = listaCuadrantes.getLista();
+		for (int i= 0; i<l.size(); i++){
+			Cuadrante c = l.get(i);
+			float upX = ((float)(c.getPosNW().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+			float upY = ((float)(c.getPosNW().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+			float downX = ((float)(c.getPosSE().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+			float downY = ((float)(c.getPosSE().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+			mPaint2.setStyle(Paint.Style.STROKE);
+			canvas.drawRect(upX, upY, downX, downY, mPaint2);
+			float mX = (upX + downX)/2;
+			float mY = (upY + downY)/2;
+			canvas.drawText(String.valueOf(c.getID()), mX-5, mY, mPaint2);
+		}
+!!!152066.java!!!	rutaEscape(inout camino : ArrayList<Integer>, inout canvas : Canvas) : void
+		ArrayList<Cuadrante> ruta = new ArrayList<Cuadrante>();
+		for (int i = camino.size()-1; i>=0; i--){
+			int id = camino.get(i);
+			ruta.add(listaCuadrantes.getCuadrante(id));
+		}
+		pintarRecorrido(ruta,canvas);
+!!!152194.java!!!	pintarRecorrido(inout ruta : ArrayList<Cuadrante>, inout canvas : Canvas) : void
+		int idOrigen;
+		int idDestino;
+		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+		p.setColor(Color.GREEN);
+		for (int i= 0; i<ruta.size()-1; i++){
+			idOrigen = ruta.get(i).getID();
+			idDestino = ruta.get(i+1).getID();
+			int dir = listaCuadrantes.getDirArista(idOrigen, idDestino);
+			if (dir!=-1){
+				pintarFlecha(idOrigen,idDestino,dir,canvas,p);
+			}
+		}
+!!!152322.java!!!	pintarFlecha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		switch (dir){
+		case Arista.UP:
+			pintarFlechaArriba(idOrigen,idDestino,dir,canvas,p);
+			break;
+		case Arista.UP_RIGHT:
+			pintarFlechaArribaDcha(idOrigen,idDestino,dir,canvas,p);
+			break;
+		case Arista.RIGHT:
+			pintarFlechaDcha(idOrigen,idDestino,dir,canvas,p);
+			break;
+		case Arista.DOWN_RIGHT:
+			pintarFlechaAbajoDcha(idOrigen,idDestino,dir,canvas,p);
+			break;		
+		case Arista.DOWN:
+			pintarFlechaAbajo(idOrigen,idDestino,dir,canvas,p);
+			break;
+		case Arista.DOWN_LEFT:
+			pintarFlechaAbajoIzda(idOrigen,idDestino,dir,canvas,p);
+			break;			
+		case Arista.LEFT:
+			pintarFlechaIzda(idOrigen,idDestino,dir,canvas,p);
+			break;
+		case Arista.UP_LEFT:
+			pintarFlechaArribaIzda(idOrigen,idDestino,dir,canvas,p);
+			break;
+		}
+!!!152450.java!!!	pintarFlechaArriba(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		float left = ((float)(cO.getPosNW().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float right = ((float)(cO.getPosSE().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float pY = ((float)(cO.getPosNW().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float mX = (left + right)/2;
+		
+		canvas.drawLine(mX, pY+7, mX, pY-7, p);
+		canvas.drawLine(mX, pY-7, mX-3, pY-4, p);
+		canvas.drawLine(mX, pY-7, mX+3, pY-4, p);
+!!!152578.java!!!	pintarFlechaArribaDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		double left1 = cO.getPosNW().getPX();
+		double right1 = cO.getPosSE().getPX();
+		double up1 = cO.getPosNW().getPY();
+		double down1 = cO.getPosSE().getPY();
+		double left2 = cD.getPosNW().getPX();
+		double right2 = cD.getPosSE().getPX();
+		double up2 = cD.getPosNW().getPY();
+		double down2 = cD.getPosSE().getPY();
+		
+		double posXIni = left1 + 0.7*(right1-left1);
+		double posYIni = up1 + 0.3*(down1-up1);
+		double posXFin = left2 + 0.3*(right2-left2);
+		double posYFin = up2 + 0.7*(down2-up2);
+		
+		pintarLinea(posXIni, posYIni, posXFin, posYFin, dir, canvas, p);
+!!!152706.java!!!	pintarFlechaDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		float up = ((float)(cO.getPosNW().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float down = ((float)(cO.getPosSE().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float pX = ((float)(cD.getPosNW().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float mY = (up + down)/2;
+		
+		canvas.drawLine(pX-10, mY, pX+10, mY, p);
+		canvas.drawLine(pX+10, mY, pX+7, mY-3, p);
+		canvas.drawLine(pX+10, mY, pX+7, mY+3, p);
+!!!152834.java!!!	pintarFlechaAbajoDcha(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		double left1 = cO.getPosNW().getPX();
+		double right1 = cO.getPosSE().getPX();
+		double up1 = cO.getPosNW().getPY();
+		double down1 = cO.getPosSE().getPY();
+		double left2 = cD.getPosNW().getPX();
+		double right2 = cD.getPosSE().getPX();
+		double up2 = cD.getPosNW().getPY();
+		double down2 = cD.getPosSE().getPY();
+		
+		double posXIni = left1 + 0.7*(right1-left1);
+		double posYIni = up1 + 0.7*(down1-up1);
+		double posXFin = left2 + 0.3*(right2-left2);
+		double posYFin = up2 + 0.3*(down2-up2);
+		
+		pintarLinea(posXIni, posYIni, posXFin, posYFin, dir, canvas, p);	
+!!!152962.java!!!	pintarFlechaAbajo(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		float left = ((float)(cO.getPosNW().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float right = ((float)(cO.getPosSE().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float pY = ((float)(cD.getPosNW().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float mX = (left + right)/2;
+		
+		canvas.drawLine(mX, pY-7, mX, pY+7, p);
+		canvas.drawLine(mX, pY+7, mX-3, pY+4, p);
+		canvas.drawLine(mX, pY+7, mX+3, pY+4, p);
+!!!153090.java!!!	pintarFlechaAbajoIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		double left1 = cO.getPosNW().getPX();
+		double right1 = cO.getPosSE().getPX();
+		double up1 = cO.getPosNW().getPY();
+		double down1 = cO.getPosSE().getPY();
+		double left2 = cD.getPosNW().getPX();
+		double right2 = cD.getPosSE().getPX();
+		double up2 = cD.getPosNW().getPY();
+		double down2 = cD.getPosSE().getPY();
+		
+		double posXIni = left1 + 0.3*(right1-left1);
+		double posYIni = up1 + 0.7*(down1-up1);
+		double posXFin = left2 + 0.7*(right2-left2);
+		double posYFin = up2 + 0.3*(down2-up2);
+		
+		pintarLinea(posXIni, posYIni, posXFin, posYFin, dir,canvas, p);
+!!!153218.java!!!	pintarFlechaIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		float up = ((float)(cO.getPosNW().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float down = ((float)(cO.getPosSE().getPY()*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float pX = ((float)(cO.getPosNW().getPX()*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float mY = (up + down)/2;
+		
+		canvas.drawLine(pX+10, mY, pX-10, mY, p);
+		canvas.drawLine(pX-10, mY, pX-7, mY-3, p);
+		canvas.drawLine(pX-10, mY, pX-7, mY+3, p);
+!!!153346.java!!!	pintarFlechaArribaIzda(in idOrigen : int, in idDestino : int, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		Cuadrante cO = listaCuadrantes.getCuadrante(idOrigen);
+		Cuadrante cD = listaCuadrantes.getCuadrante(idDestino);
+		
+		double left1 = cO.getPosNW().getPX();
+		double right1 = cO.getPosSE().getPX();
+		double up1 = cO.getPosNW().getPY();
+		double down1 = cO.getPosSE().getPY();
+		double left2 = cD.getPosNW().getPX();
+		double right2 = cD.getPosSE().getPX();
+		double up2 = cD.getPosNW().getPY();
+		double down2 = cD.getPosSE().getPY();
+		
+		double posXIni = left1 + 0.2*(right1-left1);
+		double posYIni = up1 + 0.2*(down1-up1);
+		double posXFin = left2 + 0.4*(right2-left2);
+		double posYFin = up2 + 0.4*(down2-up2);
+		
+		pintarLinea(posXIni, posYIni, posXFin, posYFin, dir, canvas, p);
+!!!153474.java!!!	pintarLinea(in xIni : double, in yIni : double, in xFin : double, in yFin : double, in dir : int, inout canvas : Canvas, inout p : Paint) : void
+		float xO = ((float)(xIni*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float yO = ((float)(yIni*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		float xD = ((float)(xFin*Mapa.escalaMetro) + Mapa.POSX_0_MAPA) + x;
+		float yD = ((float)(yFin*Mapa.escalaMetro) + Mapa.POSY_0_MAPA) + y;
+		canvas.drawLine(xO, yO, xD, yD,p);
+		switch(dir){
+		case Arista.UP_RIGHT:
+			canvas.drawLine(xD, yD, xD-7, yD+4, p);
+			canvas.drawLine(xD, yD, xD+7, yD+4, p);
+			break;
+		}
+!!!153602.java!!!	setPosX(in posX : double) : void
+		this.posX = posX;
+!!!153730.java!!!	getPosX() : double
+		return posX;
+!!!153858.java!!!	setPosY(in posY : double) : void
+		this.posY = posY;
+!!!153986.java!!!	getPosY() : double
+		return posY;
+!!!154114.java!!!	getCuadrante() : int
+		return cuadrante;
+!!!154242.java!!!	setCuadrante(in c : int) : void
+		this.cuadrante = c;
+!!!154370.java!!!	setListaCuadrantes(inout l : ListaCuadrantes) : void
+		listaCuadrantes = l;

@@ -1,0 +1,53 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class FlameRenderer</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class FlameRenderer</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass128770"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class FlameRenderer extends <a href="class132610.html#refclass132610"><b>Renderer</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact131458"><b>FlameRenderer</b></a></p>
+<div class="sub">
+<a name="refrelation133378"></a>
+<table><tr><td><div class="element">Relation <b>model (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - model : <a href="class133506.html#refclass133506"><b>ColladaObject</b></a></li><li>Java : private <a href="class133506.html#refclass133506"><b>ColladaObject</b></a> model</li></ul><a name="refattribute139138"></a>
+<table><tr><td><div class="element">Attribute <b>assetMgr</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - assetMgr : AssetManager</li><li>Java : private AssetManager assetMgr</li></ul><a name="refattribute139266"></a>
+<table><tr><td><div class="element">Attribute <b>screenTouch</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - screenTouch : boolean =  false</li><li>Java : private boolean screenTouch</li></ul><a name="refattribute139394"></a>
+<table><tr><td><div class="element">Attribute <b>screenWidth</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - screenWidth : int</li><li>Java : private int screenWidth</li></ul><a name="refattribute139522"></a>
+<table><tr><td><div class="element">Attribute <b>screenHeight</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - screenHeight : int</li><li>Java : private int screenHeight</li></ul><a name="refattribute139650"></a>
+<table><tr><td><div class="element">Attribute <b>angle</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - angle : float =  0.0f</li><li>Java : private float angle</li></ul><a name="refattribute139778"></a>
+<table><tr><td><div class="element">Attribute <b>x</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - x : float</li><li>Java : private float x</li></ul><a name="refattribute139906"></a>
+<table><tr><td><div class="element">Attribute <b>y</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - y : float</li><li>Java : private float y</li></ul><a name="refattribute140034"></a>
+<table><tr><td><div class="element">Attribute <b>veces</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : ~ veces : float =  0</li><li>Java : package float veces</li></ul><a name="refoperation147586"></a>
+<table><tr><td><div class="element">Operation <b>FlameRenderer</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + FlameRenderer(inout aMgr : AssetManager, in width : int, in height : int) : </li><li>Java : public FlameRenderer(AssetManager aMgr, int width, int height)</li></ul><a name="refoperation147714"></a>
+<table><tr><td><div class="element">Operation <b>onDrawFrame</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onDrawFrame(inout gl : GL10) : void</li><li>Java : public void onDrawFrame(GL10 gl)</li></ul><a name="refoperation147842"></a>
+<table><tr><td><div class="element">Operation <b>onSurfaceChanged</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onSurfaceChanged(inout gl : GL10, in width : int, in height : int) : void</li><li>Java : public void onSurfaceChanged(GL10 gl, int width, int height)</li></ul><a name="refoperation147970"></a>
+<table><tr><td><div class="element">Operation <b>onSurfaceCreated</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onSurfaceCreated(inout gl : GL10, inout config : EGLConfig) : void</li><li>Java : public void onSurfaceCreated(GL10 gl, EGLConfig config)</li></ul><a name="refoperation148098"></a>
+<table><tr><td><div class="element">Operation <b>setPosition</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPosition(in x : float, in y : float) : void</li><li>Java : public void setPosition(float x, float y)</li></ul><a name="refoperation148226"></a>
+<table><tr><td><div class="element">Operation <b>setScreenTouch</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setScreenTouch(inout b : boolean) : void</li><li>Java : public void setScreenTouch(boolean b)</li></ul><a name="refoperation148354"></a>
+<table><tr><td><div class="element">Operation <b>isScreenTouch</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + isScreenTouch() : boolean</li><li>Java : public boolean isScreenTouch()</li></ul><a name="refoperation148482"></a>
+<table><tr><td><div class="element">Operation <b>getScreenHeight</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getScreenHeight() : int</li><li>Java : public int getScreenHeight()</li></ul><a name="refoperation148610"></a>
+<table><tr><td><div class="element">Operation <b>setScreenHeight</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setScreenHeight(in screenHeight : int) : void</li><li>Java : public void setScreenHeight(int screenHeight)</li></ul><a name="refoperation148738"></a>
+<table><tr><td><div class="element">Operation <b>getScreenWidth</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getScreenWidth() : int</li><li>Java : public int getScreenWidth()</li></ul><a name="refoperation148866"></a>
+<table><tr><td><div class="element">Operation <b>setScreenWidth</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setScreenWidth(in screenWidth : int) : void</li><li>Java : public void setScreenWidth(int screenWidth)</li></ul></div>
+<p>All public operations : <a href="class128770.html#refoperation148482"><b>getScreenHeight</b></a> , <a href="class128770.html#refoperation148738"><b>getScreenWidth</b></a> , <a href="class128770.html#refoperation148354"><b>isScreenTouch</b></a> , <a href="class128770.html#refoperation147714"><b>onDrawFrame</b></a> , <a href="class128770.html#refoperation147842"><b>onSurfaceChanged</b></a> , <a href="class128770.html#refoperation147970"><b>onSurfaceCreated</b></a> , <a href="class128770.html#refoperation148098"><b>setPosition</b></a> , <a href="class128770.html#refoperation148610"><b>setScreenHeight</b></a> , <a href="class128770.html#refoperation148226"><b>setScreenTouch</b></a> , <a href="class128770.html#refoperation148866"><b>setScreenWidth</b></a> </p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+class TestAccelerometer
+!!!135554.java!!!	onCreate(in savedInstanceState : Bundle) : void
+		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.testaccelerometrer);
+		accX = (TextView) findViewById(R.id.txtAccX);
+		accY = (TextView) findViewById(R.id.txtAccY);
+		accZ = (TextView) findViewById(R.id.txtAccZ);
+		giroX = (TextView) findViewById(R.id.txtGiroX);
+		giroY = (TextView) findViewById(R.id.txtGiroY);
+		giroZ = (TextView) findViewById(R.id.txtGiroZ);
+		giroValido = (TextView) findViewById(R.id.txtGiroValido);
+		
+		SensorManager mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+		Sensor s = mSensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
+		Sensor s2 = mSensorManager.getSensorList(Sensor.TYPE_ORIENTATION).get(0);
+		
+		SensorEventListener giroscopio = new SensorEventListener(){
+
+			public void onAccuracyChanged(Sensor sensor, int accuracy) {
+								
+			}
+
+			public void onSensorChanged(SensorEvent event) {
+				giroX.setText("" + event.values[1]);
+				giroY.setText("" + event.values[2]);
+				giroZ.setText("" + event.values[0]);
+				if(event.values[2]>40 && ((event.values[1] <40 || event.values[1]>-40) ||(event.values[1] <10 || event.values[1]>170))){
+					giroValido.setText("SI");
+				}else{
+					giroValido.setText("NO");
+				}
+			}
+			
+		};
+		
+		mSensorManager.registerListener(this, s, SensorManager.SENSOR_DELAY_NORMAL);
+		mSensorManager.registerListener(giroscopio, s2, SensorManager.SENSOR_DELAY_NORMAL);
+!!!135682.java!!!	onAccuracyChanged(inout sensor : Sensor, in accuracy : int) : void
+		// TODO Auto-generated method stub
+		
+!!!135810.java!!!	onSensorChanged(inout event : SensorEvent) : void
+		accX.setText("" + event.values[0]);
+		accY.setText("" + event.values[1]);
+		accZ.setText("" + event.values[2]);
+		

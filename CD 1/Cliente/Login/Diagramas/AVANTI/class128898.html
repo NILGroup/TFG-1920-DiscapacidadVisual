@@ -1,0 +1,43 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Login</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Login</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass128898"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class Login extends <a href="class128130.html#refclass128130"><b>Activity</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact128386"><b>Login</b></a></p>
+<div class="sub">
+<a name="refattribute128514"></a>
+<table><tr><td><div class="element">Attribute <b>username</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, - username : String</li><li>Java : private static String username</li></ul><a name="refattribute128642"></a>
+<table><tr><td><div class="element">Attribute <b>password</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, - password : String</li><li>Java : private static String password</li></ul><a name="refoperation129154"></a>
+<table><tr><td><div class="element">Operation <b>onCreate</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onCreate(in savedInstanceState : Bundle) : void</li><li>Java : public void onCreate(final Bundle savedInstanceState)</li></ul><a name="refoperation129282"></a>
+<table><tr><td><div class="element">Operation <b>login</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + login(in user : String, in password : String) : void</li><li>Java : public void login(String user, String password)</li></ul><a name="refoperation129410"></a>
+<table><tr><td><div class="element">Operation <b>getContext</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getContext() : Context</li><li>Java : public Context getContext()</li></ul><a name="refoperation129538"></a>
+<table><tr><td><div class="element">Operation <b>getActivity</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getActivity() : Activity</li><li>Java : public Activity getActivity()</li></ul><a name="refoperation129666"></a>
+<table><tr><td><div class="element">Operation <b>onCreateOptionsMenu</b></div></td></tr></table><p>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades<br /></p><p>Declaration :</p><ul><li>Uml : + onCreateOptionsMenu(inout menu : Menu) : boolean</li><li>Java : public boolean onCreateOptionsMenu(Menu menu)</li></ul><a name="refoperation129794"></a>
+<table><tr><td><div class="element">Operation <b>onMenuItemSelected</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onMenuItemSelected(in featureId : int, inout item : MenuItem) : boolean</li><li>Java : public boolean onMenuItemSelected(int featureId, MenuItem item)</li></ul><a name="refoperation129922"></a>
+<table><tr><td><div class="element">Operation <b>f_salir</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + f_salir() : void</li><li>Java : public void f_salir()</li></ul><a name="refoperation130050"></a>
+<table><tr><td><div class="element">Operation <b>guardarDatosUsuario</b></div></td></tr></table><p>Almacena los datos del usuario en el archivo "user.txt" para poder ser recuperados más tarde<br />@param user<br />@param password<br /></p><p>Declaration :</p><ul><li>Uml : + guardarDatosUsuario(in user : String, in password : String) : void</li><li>Java : public void guardarDatosUsuario(String user, String password)</li></ul><a name="refoperation130178"></a>
+<table><tr><td><div class="element">Operation <b>recuperarDatosUsuario</b></div></td></tr></table><p>Recupera los datos del usuario si han sido guardados anteriormente con la opción "Recordarme"<br />@return &lt;code&gt;null&lt;/code&gt; si no ha sido recuperado el usuario, los datos en otro caso<br /></p><p>Declaration :</p><ul><li>Uml : + recuperarDatosUsuario() : ArrayList&lt;String&gt;</li><li>Java : public ArrayList&lt;String&gt; recuperarDatosUsuario()</li></ul><a name="refoperation130306"></a>
+<table><tr><td><div class="element">Operation <b>borrarDatosUsuario</b></div></td></tr></table><p>Elimina los datos del usuario<br /></p><p>Declaration :</p><ul><li>Uml : + borrarDatosUsuario() : void</li><li>Java : public void borrarDatosUsuario()</li></ul><a name="refoperation130434"></a>
+<table><tr><td><div class="element">Operation <b>getUsername</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : static, + getUsername() : String</li><li>Java : public static String getUsername()</li></ul><a name="refoperation130562"></a>
+<table><tr><td><div class="element">Operation <b>setUsername</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setUsername(in username : String) : void</li><li>Java : public void setUsername(String username)</li></ul><a name="refoperation130690"></a>
+<table><tr><td><div class="element">Operation <b>getPassword</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : static, + getPassword() : String</li><li>Java : public static String getPassword()</li></ul><a name="refoperation130818"></a>
+<table><tr><td><div class="element">Operation <b>setPassword</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + setPassword(in password : String) : void</li><li>Java : public void setPassword(String password)</li></ul></div>
+<p>All public operations : <a href="class128898.html#refoperation130306"><b>borrarDatosUsuario</b></a> , <a href="class128898.html#refoperation129922"><b>f_salir</b></a> , <a href="class128898.html#refoperation129538"><b>getActivity</b></a> , <a href="class128898.html#refoperation129410"><b>getContext</b></a> , <a href="class128898.html#refoperation130690"><b>getPassword</b></a> , <a href="class128898.html#refoperation130434"><b>getUsername</b></a> , <a href="class128898.html#refoperation130050"><b>guardarDatosUsuario</b></a> , <a href="class128898.html#refoperation129282"><b>login</b></a> , <a href="class128898.html#refoperation129154"><b>onCreate</b></a> , <a href="class128898.html#refoperation129666"><b>onCreateOptionsMenu</b></a> , <a href="class128898.html#refoperation129794"><b>onMenuItemSelected</b></a> , <a href="class128898.html#refoperation130178"><b>recuperarDatosUsuario</b></a> , <a href="class128898.html#refoperation130818"><b>setPassword</b></a> , <a href="class128898.html#refoperation130562"><b>setUsername</b></a> </p>
+</body>
+</html>

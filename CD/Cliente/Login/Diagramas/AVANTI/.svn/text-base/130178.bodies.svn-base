@@ -1,0 +1,69 @@
+class ThreadUbicacion
+!!!174850.java!!!	ThreadUbicacion(inout activity : Position)
+		fatherActivity = activity;
+		estado = ESTADO_EJECUCION;
+!!!174978.java!!!	run() : void
+		lista = new WPS(fatherActivity);
+		//cuadrantes = new ListaCuadrantes();
+		//fatherActivity.setCuadrantes(cuadrantes);
+		while(estado != ESTADO_ERROR){
+			if(estado == ESTADO_EJECUCION){
+				WifiManager manager = (WifiManager) fatherActivity.getSystemService(Context.WIFI_SERVICE);
+				if(!manager.isWifiEnabled()){
+					estado = ESTADO_PARADO;
+					activateWifi();
+				}else{
+					try {
+						Coordenada c = MainMenu.thread.getDatabase().calculatePosition(lista.scanAndShow());
+						int id= cuadrantes.numCuadrante(c.getX(), c.getY());
+						//fatherActivity.getMapa().setListaCuadrantes(cuadrantes);
+						
+						if(MainMenu.activeActivity == fatherActivity){
+							fatherActivity.refresh(c.getX(),c.getY(),id);
+						}
+					}catch (WPSException e) {
+						Log.e("ThreadUbicacion", e.getMessage());
+						estado = ESTADO_PARADO;
+						activateWifi();
+					}
+				}
+			}
+		}
+		
+		DialogController.createInformDialog(fatherActivity, "Se ha superado el tiempo de espera de activación de la antena WIFI. Se cancela el posicionamiento.");
+!!!175106.java!!!	activateWifi() : void
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(fatherActivity);
+		builder.setMessage("El dispositivo WiFi está desactivado.");
+		builder.setPositiveButton("Activar", new android.content.DialogInterface.OnClickListener(){
+
+			public void onClick(DialogInterface arg0, int arg1) {
+				WifiManager manager = (WifiManager) fatherActivity.getSystemService(Context.WIFI_SERVICE);
+				manager.setWifiEnabled(true);
+				int i = 0;
+				boolean b = false;
+				while(!b && i < 10){
+					b = manager.isWifiEnabled();
+					i++;
+					try {
+						SystemClock.sleep(1000);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				if(manager.isWifiEnabled()){
+					estado = ESTADO_EJECUCION;
+				}else{
+					estado = ESTADO_ERROR;
+				}
+			}
+			
+		});
+		
+		builder.setCancelable(false);
+		AlertDialog alert = builder.create();
+		alert.show();
+!!!175234.java!!!	getCuadrantes() : ListaCuadrantes
+		return cuadrantes;
+!!!175362.java!!!	setCuadrantes(inout l : ListaCuadrantes) : void
+		cuadrantes = l;

@@ -1,0 +1,101 @@
+class HelloAndroid
+!!!176770.java!!!	onCreateOptionsMenu(inout menu : Menu) : boolean
+        super.onCreateOptionsMenu(menu);
+        menu.add(Menu.NONE, OPCION_1, 0, "Menœ");
+        menu.add(Menu.NONE, OPCION_2, 1, "Sobre...");
+        menu.add(Menu.NONE, SALIR, 2, "Salir");
+        return true;
+!!!176898.java!!!	f_salir() : void
+        setResult(RESULT_OK);
+        finish();
+!!!177026.java!!!	camera(inout savedInstanceState : Bundle) : void
+    	   try{
+    		      super.onCreate(savedInstanceState);
+    		   /* 
+    		    * Ejemplo: para poder pintar objetos (pertenecientes a la clase View)
+    		    *  
+    		      CustomCameraView cv = new CustomCameraView( this.getApplicationContext() ); 
+    		      FrameLayout rl = new FrameLayout( this.getApplicationContext() );
+    		      setContentView(rl);
+    		      rl.addView(cv);
+    		    */
+    		      
+    		        
+    		  //   Ejemplo: para poder pintar objetos sobre Canvas (Texto e im‡genes)
+    		      
+    		        CustomCameraView cv = new CustomCameraView( this.getApplicationContext() );
+    		        DrawOnTop mDraw = new DrawOnTop(this);
+    		        setContentView(cv);
+    		        addContentView(mDraw, new LayoutParams
+    				(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
+    		      
+    	
+
+    		      
+    		      
+    		   } catch(Exception e){}
+
+!!!177154.java!!!	onCreate(in savedInstanceState : Bundle) : void
+	  
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.main);
+	        //this.setC
+	        
+	        
+	    //    final LinearLayout layout = (LinearLayout)findViewById(R.layout.main);
+	        //this.setContentView(layout);
+	        
+	        /*Button primeraOpcion = (Button)findViewById(R.id.Button01);
+	        
+	        primeraOpcion.setOnClickListener(new OnClickListener(){
+
+				public void onClick(View v) {
+					try{
+					PopupWindow popup = new PopupWindow(getContext());
+					WPS wps = new WPS(getContext());
+					wps.scanAndShow();
+					popup.setContentView(wps);
+					//popup.showAtLocation(layout, Gravity.NO_GRAVITY, 0, 0);
+					popup.showAsDropDown(v);
+					}catch(Exception e){
+						int k = 0;
+					}
+				}
+	        	
+	        });
+	        
+	        Button salir = (Button) findViewById(R.id.ButtonSalir);
+	        
+	        
+	        
+	        salir.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View view) {
+	                f_salir();
+	            }
+	        });
+	        
+	        
+	        Button camera = (Button) findViewById(R.id.ButtonCamera);
+	        
+	        
+	        
+	        camera.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View view) {
+	            	camera(savedInstanceState);
+	            }
+	        });*/
+!!!177282.java!!!	onMenuItemSelected(in featureId : int, inout item : MenuItem) : boolean
+			super.onMenuItemSelected(featureId, item);
+	        switch(item.getItemId()) {
+	        case CAMERA:
+	          //  camera(savedInstanceState);
+	            break;
+	  
+	      case SALIR:
+	    	   
+	            f_salir();
+	            break;
+	        }
+	        return true;
+!!!177410.java!!!	getContext() : Context
+			return this.getApplicationContext();

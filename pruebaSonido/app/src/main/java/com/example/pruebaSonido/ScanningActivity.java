@@ -56,7 +56,7 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
     public static final int sound_1 = R.raw.confirm;
     private static SoundPool soundPool;
-    private static HashMap soundPoolMap;
+    //private static HashMap soundPoolMap;
     boolean loaded = false;
     boolean closest_found = false;
 
@@ -194,16 +194,20 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 }
+                editText.setText(editText.getText() + "El beacon más cercano tiene id: " + closest_id +"\n");
 
                 if(eddystones.get(pos_closest_id).getUniqueId() == closest_id){
                     if(eddystones.get(pos_closest_id).getProximity() == Proximity.FAR){
-                        reproduceSonido(1); //pasando los parametros de frecuencia
+                        editText.setText(editText.getText() + closest_id + " está LEJOS" +"\n");
+                        reproduceSonido(0.3f); //pasando los parametros de frecuencia
                     }
                     else if(eddystones.get(pos_closest_id).getProximity() == Proximity.NEAR){
-                        reproduceSonido(2); //pasando los parametros de frecuencia
+                        editText.setText(editText.getText() + closest_id + " está CERCA" +"\n");
+                        reproduceSonido(1f); //pasando los parametros de frecuencia
                     }
                     else {
-                        reproduceSonido(4); //pasando los parametros de frecuencia
+                        editText.setText(editText.getText() + closest_id + " está INMEDIATO" +"\n");
+                        reproduceSonido(2f); //pasando los parametros de frecuencia
                     }
                 }
 
@@ -248,9 +252,9 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
         });
     }*/
 
-    public void reproduceSonido(int frec){
+    public void reproduceSonido(float frec){
 
-        editText.setText(editText.getText() + "Debería estar reproduciendo" + "\n");
+        //editText.setText(editText.getText() + "Debería estar reproduciendo" + "\n");
 
         AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         float actualVolume = (float) audioManager
@@ -261,15 +265,9 @@ public class ScanningActivity extends AppCompatActivity implements View.OnClickL
 
 
         // Is the sound loaded already?
-        if (loaded) {
-            if(frec == 1)
-                soundPool.play(soundID, volume, volume, 1, 3, 1f);
-            else if(frec == 2)
-                soundPool.play(soundID, volume, volume, 1, 3, 2f);
-            else
-                soundPool.play(soundID, volume, volume, 1, 3, 4f);
-
-            editText.setText(editText.getText() + "Debería haber cargado" + "\n");
+        if(loaded){
+            soundPool.play(soundID, volume, volume, 1, 10, frec);
+            //editText.setText(editText.getText() + "Debería haber cargado" + "\n");
         }
 
     }

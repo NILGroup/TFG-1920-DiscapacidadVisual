@@ -1,0 +1,45 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class GLSurfaceViewActivity</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class GLSurfaceViewActivity</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass128514"></a>
+<p>Wrapper activity demonstrating the use of {@link GLSurfaceView}, a view<br />that uses OpenGL drawing into a dedicated surface.<br /></p>
+<p>Declaration :</p><ul>
+<li>Java : public class GLSurfaceViewActivity extends <a href="class128130.html#refclass128130"><b>Activity</b></a> </li></ul><p>Artifact : <a href="index.html#refartifact128258"><b>GLSurfaceViewActivity</b></a></p>
+<div class="sub">
+<a name="refrelation128642"></a>
+<table><tr><td><div class="element">Relation <b>mPreview (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - mPreview : <a href="class128386.html#refclass128386"><b>Preview</b></a></li><li>Java : private <a href="class128386.html#refclass128386"><b>Preview</b></a> mPreview</li></ul><a name="refrelation128770"></a>
+<table><tr><td><div class="element">Relation <b>cube (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : ~ cube : <a href="class128642.html#refclass128642"><b>CubeRenderer</b></a></li><li>Java : package <a href="class128642.html#refclass128642"><b>CubeRenderer</b></a> cube</li></ul><a name="refrelation128898"></a>
+<table><tr><td><div class="element">Relation <b>flames (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : ~ flames : <a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></li><li>Java : package <a href="class128770.html#refclass128770"><b>FlameRenderer</b></a> flames</li></ul><a name="refattribute128002"></a>
+<table><tr><td><div class="element">Attribute <b>TAG</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : static, - TAG : String =  "Compass", read only</li><li>Java : private static final String TAG</li></ul><a name="refattribute128130"></a>
+<table><tr><td><div class="element">Attribute <b>mSensorManager</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mSensorManager : SensorManager</li><li>Java : private SensorManager mSensorManager</li></ul><a name="refoperation128130"></a>
+<table><tr><td><div class="element">Operation <b>onCreate</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onCreate(inout savedInstanceState : Bundle) : void</li><li>Java : protected void onCreate(Bundle savedInstanceState)</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refattribute128258"></a>
+<table><tr><td><div class="element">Attribute <b>sensorListener</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - sensorListener : SensorListener =  new SensorListener() {<br /><br />  	  public void onSensorChanged(int sensor, float[] values) {<br />  	//	 float vals[] = values;   <br />	//	   		 cube.setAngle(vals);<br />  	  }<br /><br />        public void onAccuracyChanged(int sensor, int accuracy) {}<br /><br />  	}, read only</li><li>Java : private final SensorListener sensorListener</li></ul><a name="refoperation128258"></a>
+<table><tr><td><div class="element">Operation <b>onResume</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onResume() : void</li><li>Java : protected void onResume()</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation128386"></a>
+<table><tr><td><div class="element">Operation <b>onPause</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : # onPause() : void</li><li>Java : protected void onPause()</li></ul><p> Java annotation(s) :<ul>@Override<br /></ul><a name="refoperation128514"></a>
+<table><tr><td><div class="element">Operation <b>onCreateOptionsMenu</b></div></td></tr></table><p>De aqu’ hasta el pr—ximo comentario TODO tiene que estar en TODAS las actividades<br /></p><p>Declaration :</p><ul><li>Uml : + onCreateOptionsMenu(inout menu : Menu) : boolean</li><li>Java : public boolean onCreateOptionsMenu(Menu menu)</li></ul><a name="refoperation128642"></a>
+<table><tr><td><div class="element">Operation <b>onMenuItemSelected</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + onMenuItemSelected(in featureId : int, inout item : MenuItem) : boolean</li><li>Java : public boolean onMenuItemSelected(int featureId, MenuItem item)</li></ul><a name="refoperation128770"></a>
+<table><tr><td><div class="element">Operation <b>f_salir</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + f_salir() : void</li><li>Java : public void f_salir()</li></ul><a name="refattribute128386"></a>
+<table><tr><td><div class="element">Attribute <b>mGLSurfaceView</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - mGLSurfaceView : GLSurfaceView</li><li>Java : private GLSurfaceView mGLSurfaceView</li></ul><a name="refoperation128898"></a>
+<table><tr><td><div class="element">Operation <b>getGLSurfaceViewActivity</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getGLSurfaceViewActivity() : <a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a></li><li>Java : public <a href="class128514.html#refclass128514"><b>GLSurfaceViewActivity</b></a> getGLSurfaceViewActivity()</li></ul><a name="refoperation129026"></a>
+<table><tr><td><div class="element">Operation <b>getFlames</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getFlames() : <a href="class128770.html#refclass128770"><b>FlameRenderer</b></a></li><li>Java : public <a href="class128770.html#refclass128770"><b>FlameRenderer</b></a> getFlames()</li></ul></div>
+<p>All public operations : <a href="class128514.html#refoperation128770"><b>f_salir</b></a> , <a href="class128514.html#refoperation129026"><b>getFlames</b></a> , <a href="class128514.html#refoperation128898"><b>getGLSurfaceViewActivity</b></a> , <a href="class128514.html#refoperation128514"><b>onCreateOptionsMenu</b></a> , <a href="class128514.html#refoperation128642"><b>onMenuItemSelected</b></a> </p>
+</body>
+</html>

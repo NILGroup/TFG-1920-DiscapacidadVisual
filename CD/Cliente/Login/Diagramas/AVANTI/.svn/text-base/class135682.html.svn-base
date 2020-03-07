@@ -1,0 +1,35 @@
+<!-- Documentation produced by the Html generator of Bouml (http://bouml.free.fr) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class SensorManagerAVANTI</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class SensorManagerAVANTI</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="refclass135682"></a>
+<p>Declaration :</p><ul>
+<li>Java : public class SensorManagerAVANTI </li></ul><p>Artifact : <a href="index.html#refartifact133250"><b>SensorManagerAVANTI</b></a></p>
+<div class="sub">
+<a name="refattribute147842"></a>
+<table><tr><td><div class="element">Attribute <b>direction</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - direction : float</li><li>Java : private float direction</li></ul><a name="refattribute147970"></a>
+<table><tr><td><div class="element">Attribute <b>xMovement</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - xMovement : float</li><li>Java : private float xMovement</li></ul><a name="refattribute148098"></a>
+<table><tr><td><div class="element">Attribute <b>yMovement</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - yMovement : float</li><li>Java : private float yMovement</li></ul><a name="refoperation167298"></a>
+<table><tr><td><div class="element">Operation <b>SensorManagerAVANTI</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + SensorManagerAVANTI(inout ctx : Context) : </li><li>Java : public SensorManagerAVANTI(Context ctx)</li></ul><a name="refoperation167426"></a>
+<table><tr><td><div class="element">Operation <b>getDirection</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getDirection() : float</li><li>Java : public float getDirection()</li></ul><a name="refoperation167554"></a>
+<table><tr><td><div class="element">Operation <b>getxMovement</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getxMovement() : float</li><li>Java : public float getxMovement()</li></ul><a name="refoperation167682"></a>
+<table><tr><td><div class="element">Operation <b>getyMovement</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + getyMovement() : float</li><li>Java : public float getyMovement()</li></ul></div>
+<p>All public operations : <a href="class135682.html#refoperation167426"><b>getDirection</b></a> , <a href="class135682.html#refoperation167554"><b>getxMovement</b></a> , <a href="class135682.html#refoperation167682"><b>getyMovement</b></a> </p>
+</body>
+</html>

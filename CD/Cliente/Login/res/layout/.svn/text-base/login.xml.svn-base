@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" 
+    android:layout_width="fill_parent"
+    
+    android:background="#FFFFFF">
+    	<ImageView 
+    		android:src="@drawable/avanti_logo"
+    		android:paddingBottom="15px"
+    		android:paddingTop="5px"
+    	/>
+    <TableRow> 
+        <TextView 
+            android:text="Usuario:"
+            android:width ="120px"
+            android:textStyle="bold"
+            android:padding="10px"
+            android:textSize="18sp"
+            android:textColor="#001111"
+            />
+        <EditText 
+            android:id="@+id/txtUserName" 
+            android:width="200px" />
+    </TableRow> 
+    <TableRow>
+        <TextView
+            android:text="Password:"
+            android:textStyle="bold"
+            android:padding="10px"
+            android:textSize="18sp"
+            android:textColor="#001111"
+            />
+        <EditText 
+            android:id="@+id/txtPassword" 
+            android:password="true" 
+            />
+    </TableRow>
+    <TableRow>
+        <TextView />
+        <CheckBox android:id="@+id/chkRememberPassword"
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content"
+            android:text="Remember Password"
+            android:textColor="#001111"
+            />   
+    </TableRow>
+    <TableRow>
+        <Button 
+            android:id="@+id/buttonSignIn" 
+            android:text="Entrar" />
+    </TableRow>
+    <TableRow>
+        <Button 
+            android:id="@+id/buttonRegFromLogin" 
+            android:text="Registrarse" />
+    </TableRow>
+</TableLayout>

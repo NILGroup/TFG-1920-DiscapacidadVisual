@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  <TableLayout android:id="@+id/TableLayoutInsertDialog" android:layout_width="wrap_content" android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">-->
+<AbsoluteLayout android:id="@+id/insertDialog" android:layout_width="260px" android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">-->
+	<!--<TableRow>-->
+		<TextView android:layout_x="20px" android:layout_y="20px" android:text="X:" android:id="@+id/TextViewX" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:padding="10px" android:textSize="18sp"></TextView>
+		<EditText android:layout_x="80px" android:layout_y="20px" android:text="" android:id="@+id/XInsertDialog" android:layout_width="150px" android:layout_height="wrap_content" android:maxLength="20" android:maxLines="1" android:maxWidth="150px" android:inputType="numberDecimal" ></EditText>
+	<!--</TableRow>-->
+	<!--<TableRow>-->
+		<TextView android:layout_x="20px" android:layout_y="80px" android:text="Y:" android:id="@+id/TextViewY" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:padding="10px" android:textSize="18sp"></TextView>
+		<EditText android:layout_x="80px" android:layout_y="80px" android:text="" android:id="@+id/YInsertDialog" android:layout_width="150px" android:layout_height="wrap_content" android:maxLength="20" android:maxLines="1" android:maxWidth="150px" android:inputType="numberDecimal"></EditText>
+	<!--</TableRow>-->
+	<!--<TableRow>-->
+		<TextView android:layout_x="20px" android:layout_y="140px" android:text="Z:" android:id="@+id/TextViewZ" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:padding="10px" android:textSize="18sp"></TextView>
+		<EditText android:layout_x="80px" android:layout_y="140px" android:text="" android:id="@+id/ZInsertDialog" android:layout_width="150px" android:layout_height="wrap_content" android:maxLength="20" android:maxLines="1" android:maxWidth="150px" android:inputType="numberDecimal"></EditText>
+	<!--</TableRow>-->
+	<Button android:id="@+id/AceptarInsertDialog" android:layout_x="20px" android:layout_y="200px" android:layout_width="100px" android:layout_height="wrap_content" android:text="Aceptar" ></Button>
+	<Button android:id="@+id/CancelarInsertDialog" android:layout_x="130px" android:layout_y="200px" android:layout_width="100px" android:layout_height="wrap_content" android:text="Cancelar"></Button>
+</AbsoluteLayout>	
+<!--</TableLayout>-->
+
+	
+
+
+
+
