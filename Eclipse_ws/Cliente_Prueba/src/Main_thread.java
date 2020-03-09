@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main_thread extends Thread{
 	
-	String addressServer ="192.168.1.38"; 
+	String addressServer = "147.96.102.4";//"192.168.1.37";//"192.168.1.38"; 
 
     int PORT = 2222;
     Socket socket = null;

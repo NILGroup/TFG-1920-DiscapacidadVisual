@@ -134,6 +134,45 @@ public class ListaCuadrantes {
 		
 	}*/
 	
+	public static int numCuadranteBeacon(String beaconActual, ArrayList<Cuadrante> aCuadrantes) {
+		int cuadrante;
+		
+		switch(beaconActual) {
+		  case "eAaw":
+		    cuadrante = 15;
+		    break;
+		  case "ZxPh":
+		    cuadrante = 8;
+		    break;
+		  case "CPne":
+			 cuadrante = 19;
+			 break;
+		  default:
+			  cuadrante = 0;
+		}
+		return cuadrante;
+	}
+	
+	public static String idBeaconCuadrante(int cuadrante, ArrayList<Cuadrante> aCuadrantes) {
+		String beacon;
+		
+		switch(cuadrante) {
+		  case 15:
+			  beacon = "eAaw";
+		    break;
+		  case 8:
+			  beacon = "ZxPh";
+		    break;
+		  case 19:
+			  beacon = "CPne";
+			 break;
+		  default:
+			  beacon = "unknown";
+		}
+		return beacon;
+	}
+	
+	
 	public Cuadrante getCuadrante(int id) {
 		
 		for (int i= 0; i<lista.size(); i++) {

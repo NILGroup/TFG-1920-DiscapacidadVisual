@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">app_guia_v1</string>
+    <string name="button_start_searching">Iniciar ruta</string>
+    <string name="start_scan_button">START SCANNING</string>
+    <string name="stop_scan_button">STOP SCANNING</string>
+
+    <string name="beacon_text">Beacons encontrados:\n</string>
+    <string name="aula_6_button">Aula 6</string>
+    <string name="aula_13_button">Aula 13</string>
+    <string name="cuad_19_button">Cuad_19</string>
+    <string name="lab_button">lab</string>
+
+</resources>
