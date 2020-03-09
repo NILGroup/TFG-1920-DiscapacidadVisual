@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/sockets/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/service/PositionTracker.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Servidor/CalculaRuta/src/principal/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="37" column="37" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -43,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/sensor/AccelerometerReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2740">
+            <state relative-caret-position="2329">
               <caret line="149" column="66" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="66" />
             </state>
           </provider>
@@ -91,9 +91,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="633" />
-    <option name="width" value="654" />
-    <option name="height" value="991" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -101,7 +102,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,63 +175,51 @@
           <expand>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="principal" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sockets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="C:\Users\Belen\Documents\Belen\ucm\5\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="PhpServer" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../app_guia_v1" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -260,11 +248,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.37010393" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15333775" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -309,13 +296,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Servidor/CalculaRuta/xml/planta1.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Servidor/CalculaRuta/src/principal/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2500">
-          <caret line="138" column="65" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Servidor/CalculaRuta/bin/routes/GenerarRuta.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -505,8 +485,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/service/PositionTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
+        <state relative-caret-position="493">
           <caret line="37" column="37" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/sockets/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -515,7 +505,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/sensor/AccelerometerReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2740">
+        <state relative-caret-position="2329">
           <caret line="149" column="66" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="66" />
         </state>
       </provider>
@@ -529,22 +519,19 @@
     <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/GEO/Compass.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Cliente/Login/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/activities/Main.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/activities/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cliente/Login/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cliente/Login/src/com/avanti/sockets/Client.java">
+    <entry file="file://$PROJECT_DIR$/Servidor/CalculaRuta/src/principal/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
         </state>
       </provider>
     </entry>
