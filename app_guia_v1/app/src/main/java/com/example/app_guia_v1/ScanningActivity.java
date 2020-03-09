@@ -121,37 +121,55 @@ public class ScanningActivity extends AppCompatActivity  {
             public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
                 //Buscamos el beacon que está más cerca
                 beacon_mas_cerca = encuentraElMasCercano(eddystones);
+                String [] results = new String[3];
                 if(!hayRuta){ //Es la primera vez que se llama al servidor
+                    hayRuta = true;
                     //Hay que saber el origen
                     origen = beacon_mas_cerca;
 
                     Cliente c = new Cliente(destino, beacon_mas_cerca, origen);
                     //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                    c.socketConnect();
+                    results = c.socketConnect().clone();
 
-                    beaconClave = c.getBeaconClave();
-                    ruta = c.getRuta();
-                    listaCuadrantes = c.getListaCuadrantes();
+                    listaCuadrantes = results[0];
+                    ruta = results[1];
+                    beaconClave = results[2];
+
+                    editText.setText(editText.getText()+ "______________\n");
+                    editText.setText(editText.getText()+ ruta +"\n");
+                    editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
+                    editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
+                    editText.setText(editText.getText()+ "______________\n");
+
 
                 }
                 else{//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                     hayRuta = true;
-
-                    if(beacon_mas_cerca == beaconClave){
+                    editText.setText(editText.getText()+ "En el else\n");
+                    if(beacon_mas_cerca.equals(beaconClave)){
+                        editText.setText(editText.getText()+ "En el if\n");
                         Cliente c = new Cliente(destino, beacon_mas_cerca, origen);
                         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                        c.socketConnect();
+                        results = c.socketConnect().clone();
 
-                        beaconClave = c.getBeaconClave();
-                        ruta = c.getRuta();
-                        listaCuadrantes = c.getListaCuadrantes();
+                        listaCuadrantes = results[0];
+                        ruta = results[1];
+                        beaconClave = results[2];
+
+                        editText.setText(editText.getText()+ "______________\n");
+                        editText.setText(editText.getText()+ ruta +"\n");
+                        editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
+                        editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
+                        editText.setText(editText.getText()+ "______________\n");
                     }
+
                 }
 
-                editText.setText(editText.getText()+ "______________\n");
-                editText.setText(editText.getText()+ ruta +"\n");
+                editText.setText(editText.getText()+ "------\n");
+                editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
+                editText.setText(editText.getText()+ "Hay ruta: " + hayRuta +"\n");
                 editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
-                editText.setText(editText.getText()+ "______________\n");
+                editText.setText(editText.getText()+ "------\n");
 
                 //para que haga scroll
                 if (editText.getLayout() != null) {

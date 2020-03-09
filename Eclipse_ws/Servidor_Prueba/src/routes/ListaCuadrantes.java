@@ -138,17 +138,17 @@ public class ListaCuadrantes {
 		int cuadrante;
 		
 		switch(beaconActual) {
-		  case "eAaw":
+		  case "dtf4":
 		    cuadrante = 15;
 		    break;
-		  case "ZxPh":
+		  case "Wsxj":
 		    cuadrante = 8;
 		    break;
-		  case "CPne":
+		  case "3wxd":
 			 cuadrante = 19;
 			 break;
 		  default:
-			  cuadrante = 0;
+			  cuadrante = 3;
 		}
 		return cuadrante;
 	}
@@ -158,16 +158,16 @@ public class ListaCuadrantes {
 		
 		switch(cuadrante) {
 		  case 15:
-			  beacon = "eAaw";
+			  beacon = "dtf4";
 		    break;
 		  case 8:
-			  beacon = "ZxPh";
+			  beacon = "Wsxj";
 		    break;
 		  case 19:
-			  beacon = "CPne";
+			  beacon = "3wxd";
 			 break;
 		  default:
-			  beacon = "unknown";
+			  beacon = "Wsxj";
 		}
 		return beacon;
 	}

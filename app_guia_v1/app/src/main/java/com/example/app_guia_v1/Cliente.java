@@ -15,13 +15,16 @@ public class Cliente {
 
     public static final String TAG = "Client_socket";
 
-    String addressServer ="147.96.102.4"; //"147.96.96.209";//"172.20.10.6";//"192.168.1.43";//"192.168.1.34"; //"147.96.102.38";// cambiar a tu IP
+    String addressServer ="192.168.1.37"; //"147.96.96.209";//"172.20.10.6";//"192.168.1.43";//"192.168.1.34"; //"147.96.102.38";// cambiar a tu IP
 
     private int PORT = 2222;
     private Socket socket = null;
 
-    private String dest, b_mas_cerca, origen, listaCuadrantes, ruta, beaconClave;
+    private String dest, b_mas_cerca, origen;
+    //String listaCuadrantes, ruta, beaconClave;
     private int cuadranteClave;
+
+    final String [] results = new  String[3];
 
     public Cliente(String destino, String beaconMasCercano, String ori){
         dest = destino;
@@ -29,7 +32,7 @@ public class Cliente {
         origen = ori;
     }
 
-    protected Long socketConnect() {
+    protected String [] socketConnect() {
         Log.i(TAG, " ***********En socketConnect: \n");
 
         final Handler handler = new Handler();
@@ -61,16 +64,24 @@ public class Cliente {
                     out.writeUTF(b_mas_cerca);
 
                     //Leemos del servidor la ruta de cuadrantes que tenemos que hacer
-                    listaCuadrantes = in.readUTF();
+                    String listaCuadrantes = in.readUTF();
 
                     //Leemos del servidor la instrucción
-                    ruta = in.readUTF();
+                    String ruta = in.readUTF();
 
                     //Leemos del servidor el cuadrante clave
                     cuadranteClave = in.readInt();
 
                     //Leemos del servidor el beacon clave
-                    beaconClave = in.readUTF();
+                    String beaconClave = in.readUTF();
+                    Log.i(TAG, "ruta: " + ruta + " \n");
+                    Log.i(TAG, "beacon clave: " + beaconClave + " \n");
+
+                    results[0] = listaCuadrantes;
+                    results[1] = ruta;
+                    results[2] = beaconClave;
+
+                    Log.i(TAG, "ruta: en el thread... " + results[1] + " \n");
 
                     in.close();
                     out.close();
@@ -90,17 +101,26 @@ public class Cliente {
                     //e.printStackTrace();
                     Log.i(TAG, " IOExc \n" + e);
                 }
+
             }
         });
         thread.start();
         Log.i(TAG, " ***********En socketConnect al final: \n");
-        return null;
+        Log.i(TAG, "ruta: fuera del thread... " + results[1] + " \n");
+
+        try{thread.join();}
+        catch (InterruptedException e) {
+        // TODO Auto-generated catch block
+        //e.printStackTrace();
+        Log.i(TAG, " IOExc \n" + e);
+    }
+        return results;
     }
 
     public int getCuadranteClave() {
         return cuadranteClave;
     }
-    public String getListaCuadrantes() {
+    /*public String getListaCuadrantes() {
         return listaCuadrantes;
     }
     public String getRuta(){
@@ -111,5 +131,5 @@ public class Cliente {
     }
     public int cuadranteClave() {
         return cuadranteClave;
-    }
+    }*/
 }
