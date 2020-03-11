@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main_thread extends Thread{
 	
-	String addressServer = "147.96.102.4";//"192.168.1.37";//"192.168.1.38"; 
+	String addressServer = "192.168.1.38";//"192.168.1.38"; 
 
     int PORT = 2222;
     Socket socket = null;
@@ -22,7 +22,7 @@ public class Main_thread extends Thread{
     static String origenY = "15";
     static String origenZ = "1";
 	
-    static String destino = "aula 13";
+    static String destino = "aula x";
 	
     static String posActualX = "1";
     static String posActualY = "15";
@@ -233,6 +233,23 @@ public class Main_thread extends Thread{
 		Main_thread thread2 = new Main_thread();
 		thread2.start();
 		
+		
+		//Suponemos que hemos llegado al cuadrante 3
+		try {
+			TimeUnit.SECONDS.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		posActualX = "10";
+		posActualY = "15";
+		posActualZ = "1";
+	
+		Main_thread thread3 = new Main_thread();
+		thread3.start();
+		
+		
 		//Suponemos que hemos llegado al cuadrante 17
 		try {
 			TimeUnit.SECONDS.sleep(10);
@@ -245,8 +262,8 @@ public class Main_thread extends Thread{
 		posActualY = "17";
 		posActualZ = "1";
 	
-		Main_thread thread3 = new Main_thread();
-		thread3.start();
+		Main_thread thread5 = new Main_thread();
+		thread5.start();
 		
 	    
 	}

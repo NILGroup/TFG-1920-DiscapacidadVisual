@@ -149,10 +149,11 @@ public class GenerarRuta {
 		} 
 		} else if (c1.getZ() > c2.getZ()) 
 			return "Baja a la planta inferior.";
-		else 
+		else if(c2.getZ() > c1.getZ())
 			return "Sube a la planta superior.";
-		
-		return null;
+		else
+			return "Cambio de estancia";
+		return "NO SE LA RUTA";
 	}
 
 	public int getCuadranteClave() {

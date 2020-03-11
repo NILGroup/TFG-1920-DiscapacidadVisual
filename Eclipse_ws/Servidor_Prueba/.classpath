@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Belen/Documents/Belen/ucm/5/TFG-1920-DiscapacidadVisual/Eclipse_ws/Servidor_Prueba/lib/jdom-2.0.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Belen/Documents/Belen/ucm/5/TFG-1920-DiscapacidadVisual/Eclipse_ws/Servidor_Prueba/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/MRS/Documents/Belen/ucm/5/TFG infor/git/TFG-1920-DiscapacidadVisual/Eclipse_ws/Servidor_Prueba/lib/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/MRS/Documents/Belen/ucm/5/TFG infor/git/TFG-1920-DiscapacidadVisual/Eclipse_ws/Servidor_Prueba/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

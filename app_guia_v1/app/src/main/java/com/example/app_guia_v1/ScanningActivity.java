@@ -145,9 +145,9 @@ public class ScanningActivity extends AppCompatActivity  {
                 }
                 else{//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                     hayRuta = true;
-                    editText.setText(editText.getText()+ "En el else\n");
+                    //editText.setText(editText.getText()+ "En el else\n");
                     if(beacon_mas_cerca.equals(beaconClave)){
-                        editText.setText(editText.getText()+ "En el if\n");
+                        //editText.setText(editText.getText()+ "En el if\n");
                         Cliente c = new Cliente(destino, beacon_mas_cerca, origen);
                         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
                         results = c.socketConnect().clone();
@@ -165,11 +165,11 @@ public class ScanningActivity extends AppCompatActivity  {
 
                 }
 
-                editText.setText(editText.getText()+ "------\n");
-                editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
-                editText.setText(editText.getText()+ "Hay ruta: " + hayRuta +"\n");
-                editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
-                editText.setText(editText.getText()+ "------\n");
+               // editText.setText(editText.getText()+ "------\n");
+               // editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
+               // editText.setText(editText.getText()+ "Hay ruta: " + hayRuta +"\n");
+               // editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
+               // editText.setText(editText.getText()+ "------\n");
 
                 //para que haga scroll
                 if (editText.getLayout() != null) {

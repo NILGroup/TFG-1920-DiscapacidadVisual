@@ -15,7 +15,7 @@ public class Cliente {
 
     public static final String TAG = "Client_socket";
 
-    String addressServer ="192.168.1.37"; //"147.96.96.209";//"172.20.10.6";//"192.168.1.43";//"192.168.1.34"; //"147.96.102.38";// cambiar a tu IP
+    String addressServer ="192.168.1.38"; //"147.96.96.209";//"172.20.10.6";//"192.168.1.43";//"192.168.1.34"; //"147.96.102.38";// cambiar a tu IP
 
     private int PORT = 2222;
     private Socket socket = null;

@@ -276,6 +276,11 @@
 				</conectado>
 				<objeto>dato15</objeto>
 			</cuadrante>
+		</cuadrantes>
+	</estancia>
+	<estancia id="pasillo2">
+		<tipo>PASILLO</tipo>
+		<cuadrantes>
 			<cuadrante idc="16">
 				<SE>
 					<X>9</X>

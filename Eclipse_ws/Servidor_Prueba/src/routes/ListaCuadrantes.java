@@ -138,17 +138,23 @@ public class ListaCuadrantes {
 		int cuadrante;
 		
 		switch(beaconActual) {
-		  case "dtf4":
+		  case "cmSc":
+			 cuadrante = 3;
+			 break;
+		  case "CPne":
+			 cuadrante = 7;
+			 break;
+		  case "Wsxj":
 		    cuadrante = 15;
 		    break;
-		  case "Wsxj":
-		    cuadrante = 8;
-		    break;
-		  case "3wxd":
+		  case "z3bD":
+			 cuadrante = 17;
+			 break;
+		  case "7rd7":
 			 cuadrante = 19;
 			 break;
 		  default:
-			  cuadrante = 3;
+			  cuadrante = 7;
 		}
 		return cuadrante;
 	}
@@ -157,17 +163,23 @@ public class ListaCuadrantes {
 		String beacon;
 		
 		switch(cuadrante) {
+		  case 3:
+			  beacon = "cmSc";
+		    break;
+		  case 7:
+			  beacon = "CPne";
+		    break;
 		  case 15:
-			  beacon = "dtf4";
-		    break;
-		  case 8:
 			  beacon = "Wsxj";
-		    break;
+			 break;
+		  case 17:
+			  beacon = "z3bD";
+			 break;
 		  case 19:
-			  beacon = "3wxd";
+			  beacon = "7rd7";
 			 break;
 		  default:
-			  beacon = "Wsxj";
+			  beacon = "CPne";
 		}
 		return beacon;
 	}
