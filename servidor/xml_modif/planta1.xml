@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <planta>
-   <Z>1</Z>
+  	<Z>1</Z>
 	<estancia id="pasillo1">
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
@@ -93,7 +93,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="8">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -126,7 +126,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="11">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -134,10 +134,10 @@
 					<oeste>10</oeste>
 				</conectado>
 				<objeto>dato11</objeto>
-				<info>aula 10</info>
+				<info>aula10</info>
 			</cuadrante>
 			<cuadrante idc="12">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -159,7 +159,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="14">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -178,7 +178,7 @@
 					<oeste>14</oeste>
 				</conectado>
 				<objeto>dato15</objeto>
-				<info>intersección</info>
+				<info>interseccion</info>
 			</cuadrante>
 			<cuadrante idc="16">
 				<beacon>CPne</beacon>
@@ -225,7 +225,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="20">
-   				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -247,7 +247,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="22">
-				<beacon>beacon</beacon> 
+				<beacon>si</beacon> 
 				<conectado>
 					<norte>-1</norte>
 					<sur>19</sur>
@@ -255,7 +255,7 @@
 					<oeste>21</oeste>
 				</conectado>
 				<objeto>dato22</objeto>
-				<info>interseccion</info> 
+				<info>intersección</info> 
 			</cuadrante>
 			<cuadrante idc="23">
   				<beacon>non</beacon>
@@ -269,7 +269,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="24">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -280,7 +280,7 @@
 				<info>saladegrados</info>
 			</cuadrante>
 			<cuadrante idc="25">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -302,7 +302,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="27">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -324,7 +324,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="29">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -357,7 +357,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="32">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -379,7 +379,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="34">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>35</sur>
@@ -401,7 +401,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="36">
-				<beacon>beacon</beacon>
+				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>38</sur>
