@@ -16,7 +16,7 @@
 				<info>info 1</info>
 			</cuadrante>
 			<cuadrante idc="21">
-				<beacon>b</beacon>
+				<beacon>non</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -24,7 +24,7 @@
 					<oeste>0</oeste>
 				</conectado>
 				<objeto>dato1</objeto>
-				<info>info2</info>
+				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="22">
 				<beacon>c</beacon>
