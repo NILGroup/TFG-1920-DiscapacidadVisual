@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <planta>
   	<Z>1</Z>
 	<estancia id="pasillo1">
@@ -255,7 +255,7 @@
 					<oeste>21</oeste>
 				</conectado>
 				<objeto>dato22</objeto>
-				<info>intersección</info> 
+				<info>interseccion</info> 
 			</cuadrante>
 			<cuadrante idc="23">
   				<beacon>non</beacon>

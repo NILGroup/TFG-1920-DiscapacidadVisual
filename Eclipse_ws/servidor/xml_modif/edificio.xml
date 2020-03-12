@@ -4,7 +4,7 @@
 		<archivo>nada</archivo>
 	</planta>
 	<planta nombre="planta1principal">
-		<archivo>nada</archivo>
+		<archivo>planta1</archivo>
 	</planta>
 	<planta nombre="planta2principal">
 		<archivo>planta2</archivo>
