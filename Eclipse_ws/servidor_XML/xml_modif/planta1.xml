@@ -204,7 +204,7 @@
 					<este>17</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<objeto>dato12</objeto>
+				<objeto>dato16</objeto>
 				<info>ascensor</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -223,19 +223,19 @@
 			<cuadrante idc="18">
    				<beacon>non</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>21</norte>
 					<sur>16</sur>
 					<este>19</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<objeto>dato12</objeto>
+				<objeto>dato18</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="19">
   				<beacon>7rd7</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>22</norte>
 					<sur>17</sur>
 					<este>-1</este>
 					<oeste>18</oeste>
