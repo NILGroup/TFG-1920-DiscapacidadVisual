@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planta>
+  	<Z>0</Z>
+	<estancia id="pasillo0">
+		<tipo>PASILLO</tipo>
+		<cuadrantes>
+			<cuadrante idc="40">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>41</este>
+					<oeste>75</oeste>
+				</conectado>
+				<objeto>dato40</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="41">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>42</este>
+					<oeste>40</oeste>
+				</conectado>
+				<objeto>dato41</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="42">
+				<beacon>aAaw</beacon>
+				<conectado>
+					<norte>56</norte>
+					<sur>-1</sur>
+					<este>43</este>
+					<oeste>41</oeste>
+				</conectado>
+				<objeto>dato42</objeto>
+				<info>aula 1</info>
+			</cuadrante>
+			<cuadrante idc="43">
+				<beacon>dtf4</beacon>
+				<conectado>
+					<norte>57</norte>
+					<sur>-1</sur>
+					<este>44</este>
+					<oeste>42</oeste>
+				</conectado>
+				<objeto>dato43</objeto>
+				<info>interseccion</info>
+			</cuadrante>
+			<cuadrante idc="44">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>45</este>
+					<oeste>43</oeste>
+				</conectado>
+				<objeto>dato44</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="45">
+				<beacon>3wxd</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>46</este>
+					<oeste>44</oeste>
+				</conectado>
+				<objeto>dato45</objeto>
+				<info>aula 2</info>
+			</cuadrante>
+			<cuadrante idc="46">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>47</este>
+					<oeste>45</oeste>
+				</conectado>
+				<objeto>dato46</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="47">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>48</este>
+					<oeste>46</oeste>
+				</conectado>
+				<objeto>dato47</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="48">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>49</este>
+					<oeste>47</oeste>
+				</conectado>
+				<objeto>dato48</objeto>
+				<info>aula 3</info>
+			</cuadrante>
+			<cuadrante idc="49">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>50</este>
+					<oeste>48</oeste>
+				</conectado>
+				<objeto>dato49</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="50">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>51</este>
+					<oeste>49</oeste>
+				</conectado>
+				<objeto>dato50</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="51">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>52</este>
+					<oeste>50</oeste>
+				</conectado>
+				<objeto>dato51</objeto>
+				<info>aula 4</info>
+			</cuadrante>
+			<cuadrante idc="52">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>53</este>
+					<oeste>51</oeste>
+				</conectado>
+				<objeto>dato52</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="53">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>54</este>
+					<oeste>52</oeste>
+				</conectado>
+				<objeto>dato53</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="54">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>55</este>
+					<oeste>53</oeste>
+				</conectado>
+				<objeto>dato54</objeto>
+				<info>aula 5</info>
+			</cuadrante>
+			<cuadrante idc="55">
+				<beacon>Wsxj</beacon>
+				<conectado>
+					<norte>68</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>54</oeste>
+				</conectado>
+				<objeto>dato55</objeto>
+				<info>puerta lateral e interseccion</info>
+			</cuadrante>
+			<cuadrante idc="56">
+				<beacon>CPne</beacon>
+				<conectado>
+					<norte>58</norte>
+					<sur>42</sur>
+					<este>57</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato56</objeto>
+				<info>ascensor</info>
+			</cuadrante>
+			<cuadrante idc="57">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>59</norte>
+					<sur>43</sur>
+					<este>-1</este>
+					<oeste>56</oeste>
+				</conectado>
+				<objeto>dato57</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="58">
+   				<beacon>non</beacon>
+				<conectado>
+					<norte>62</norte>
+					<sur>56</sur>
+					<este>59</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato58</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="59">
+  				<beacon>non</beacon>
+				<conectado>
+					<norte>63</norte>
+					<sur>57</sur>
+					<este>-1</este>
+					<oeste>58</oeste>
+				</conectado>
+				<objeto>dato59</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="60">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>61</este>
+					<oeste>73</oeste>
+				</conectado>
+				<objeto>dato60</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="61">
+  				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>62</este>
+					<oeste>60</oeste>
+				</conectado>
+				<objeto>dato61</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="62">
+				<beacon>non</beacon> 
+				<conectado>
+					<norte>-1</norte>
+					<sur>58</sur>
+					<este>63</este>
+					<oeste>61</oeste>
+				</conectado>
+				<objeto>dato62</objeto>
+				<info>non</info> 
+			</cuadrante>
+			<cuadrante idc="63">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>59</sur>
+					<este>64</este>
+					<oeste>62</oeste>
+				</conectado>
+				<objeto>dato63</objeto>
+				<info>interseccion</info>
+			</cuadrante>
+			<cuadrante idc="64">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>65</este>
+					<oeste>63</oeste>
+				</conectado>
+				<objeto>dato64</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="65">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>64</oeste>
+				</conectado>
+				<objeto>dato65</objeto>
+				<info>cafeteria</info>
+			</cuadrante>
+			<cuadrante idc="66">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>67</sur>
+					<este>69</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato66</objeto>
+				<info>ascensor</info>
+			</cuadrante>
+			<cuadrante idc="67">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>66</norte>
+					<sur>-1</sur>
+					<este>68</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato67</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="68">
+  				<beacon>non</beacon>
+				<conectado>
+					<norte>69</norte>
+					<sur>55</sur>
+					<este>-1</este>
+					<oeste>67</oeste>
+				</conectado>
+				<objeto>dato68</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="69">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>70</norte>
+					<sur>68</sur>
+					<este>-1</este>
+					<oeste>66</oeste>
+				</conectado>
+				<objeto>dato69</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="70">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>69</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato70</objeto>
+				<info>cafe</info>
+			</cuadrante>
+			<cuadrante idc="71">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>72</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato71</objeto>
+				<info>puerta principal</info>
+			</cuadrante>
+			<cuadrante idc="72">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>71</norte>
+					<sur>73</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato72</objeto>
+				<info>secretaria</info>
+			</cuadrante>
+			<cuadrante idc="73">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>72</norte>
+					<sur>74</sur>
+					<este>60</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato73</objeto>
+				<info>interseccion</info>
+			</cuadrante>
+			<cuadrante idc="74">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>73</norte>
+					<sur>75</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato74</objeto>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="75">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>74</norte>
+					<sur>-1</sur>
+					<este>40</este>
+					<oeste>76</oeste>
+				</conectado>
+				<objeto>dato75</objeto>
+				<info>interseccion</info>
+			</cuadrante>
+			<cuadrante idc="76">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>74</norte>
+					<sur>77</sur>
+					<este>75</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato76</objeto>
+				<info>salon de actos</info>
+			</cuadrante>
+			<cuadrante idc="77">
+				<beacon>si</beacon>
+				<conectado>
+					<norte>76</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>78</oeste>
+				</conectado>
+				<objeto>dato77</objeto>
+				<info>puerta trasera</info>
+			</cuadrante>
+			<cuadrante idc="78">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>77</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato78</objeto>
+				<info>biblioteca</info>
+			</cuadrante>
+		</cuadrantes>
+	</estancia>
+</planta>
+

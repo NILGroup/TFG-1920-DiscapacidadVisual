@@ -172,7 +172,7 @@
 			<cuadrante idc="15">
 				<beacon>Wsxj</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>37</norte>
 					<sur>-1</sur>
 					<este>-1</este>
 					<oeste>14</oeste>
@@ -188,7 +188,7 @@
 					<este>17</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<objeto>dato12</objeto>
+				<objeto>dato16</objeto>
 				<info>ascensor</info>
 			</cuadrante>
 			<cuadrante idc="17">
@@ -196,27 +196,27 @@
 				<conectado>
 					<norte>19</norte>
 					<sur>3</sur>
-					<este>37</este>
+					<este>-1</este>
 					<oeste>16</oeste>
 				</conectado>
-				<objeto>dato</objeto>
+				<objeto>dato17</objeto>
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="18">
    				<beacon>non</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>21</norte>
 					<sur>16</sur>
 					<este>19</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<objeto>dato12</objeto>
+				<objeto>dato18</objeto>
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="19">
   				<beacon>non</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>22</norte>
 					<sur>17</sur>
 					<este>-1</este>
 					<oeste>18</oeste>
