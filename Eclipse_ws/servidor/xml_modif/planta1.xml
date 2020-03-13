@@ -255,7 +255,7 @@
 					<oeste>21</oeste>
 				</conectado>
 				<objeto>dato22</objeto>
-				<info>intersección</info> 
+				<info>interseccion</info> 
 			</cuadrante>
 			<cuadrante idc="23">
   				<beacon>non</beacon>
