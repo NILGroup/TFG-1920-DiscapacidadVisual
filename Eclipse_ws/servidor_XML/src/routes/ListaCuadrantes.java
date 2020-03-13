@@ -140,6 +140,8 @@ public class ListaCuadrantes {
 			
 			Cuadrante c = aCuadrantes.get(i);
 			
+			String bea = c.getBeacon(); 
+			
 			if (c.getBeacon().equals(beaconActual))//en principio no hace falta comprobar la z
 				return c.getID();
 		}

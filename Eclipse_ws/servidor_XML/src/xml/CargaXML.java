@@ -56,6 +56,7 @@ public class CargaXML {
 		            Element cuadrante = (Element) lista_cuadrantes.get(indexCuadrante);//Se obtiene el elemento 'cuadrante'
 	            	String idCuadrante = cuadrante.getAttributeValue("idc");//Se obtiene el atribullo 'idc'
 	            	String beacon = cuadrante.getChildTextTrim("beacon");
+	            	
 	            	/*Element NW = cuadrante.getChild("NW"); //el elemento NW con sus coordenadas
 	 	            String NWX = NW.getChildText("X");
 	 	            String NWY = NW.getChildText("Y");
@@ -75,9 +76,10 @@ public class CargaXML {
 	 	            aO.add(objeto);
 	 	            
 	 	            String info = cuadrante.getChildTextTrim("info"); 
-	 	            ArrayList<String> aI = new ArrayList<String>();
-	 	            aI.add(info);
-	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, /*new Posicion(Double.parseDouble(NWX),Double.parseDouble(NWY)), new Posicion(Double.parseDouble(SEX),Double.parseDouble(SEY)),*/ Integer.parseInt(planta), new String[]{norte,sur,este,oeste}, aO, aI);
+	 	            
+	 	            String m = cuadrante.getChildTextTrim("metros");
+	 	            float metros = Float.parseFloat(m);
+	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, /*new Posicion(Double.parseDouble(NWX),Double.parseDouble(NWY)), new Posicion(Double.parseDouble(SEX),Double.parseDouble(SEY)),*/ Integer.parseInt(planta), new String[]{norte,sur,este,oeste}, aO, info, metros);
 	 	            aCuadrantes.add(c);
 	 	            e.add(c);
 		 	        		 	            	 

@@ -93,10 +93,10 @@ public class Main_thread extends Thread{
 
        }
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-	    /*Main_thread thread = new Main_thread();
+	    Main_thread thread = new Main_thread();
 	    
 	    
 	    //Inicio en el cuadrante 0. Aula 6
@@ -202,7 +202,7 @@ public class Main_thread extends Thread{
 		
 		//Vamos del 0 al 19
 		
-		Main_thread thread = new Main_thread();
+		/*Main_thread thread = new Main_thread();
 	    
 	    
 	    //Inicio en el cuadrante 15. Aula 6
@@ -266,7 +266,7 @@ public class Main_thread extends Thread{
 		thread5.start();
 		
 	    
-	}
+	}*/
 
 
 

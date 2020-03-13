@@ -38,7 +38,7 @@
 				<info>aula7</info>
 			</cuadrante>
 			<cuadrante idc="3">
-				<beacon>dtf4</beacon>
+				<beacon>cmSc</beacon>
 				<conectado>
 					<norte>17</norte>
 					<sur>-1</sur>
@@ -82,7 +82,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="7">
-   				<beacon>non</beacon>
+   				<beacon>CPne</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -192,7 +192,7 @@
 				<info>ascensor</info>
 			</cuadrante>
 			<cuadrante idc="17">
-				<beacon>non</beacon>
+				<beacon>z3bD</beacon>
 				<conectado>
 					<norte>19</norte>
 					<sur>3</sur>
@@ -214,7 +214,7 @@
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="19">
-  				<beacon>non</beacon>
+  				<beacon>7rd7</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>17</sur>

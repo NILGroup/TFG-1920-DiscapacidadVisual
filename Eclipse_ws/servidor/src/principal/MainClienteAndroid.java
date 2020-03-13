@@ -40,7 +40,6 @@ public class MainClienteAndroid {
 		aEstancias = edificio.getEstancias();
 		aCuadrantes = edificio.getCuadrantes();
 		
-	
 
 		while (true) {
 			try {
