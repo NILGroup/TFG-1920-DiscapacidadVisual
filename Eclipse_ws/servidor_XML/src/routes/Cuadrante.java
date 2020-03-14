@@ -29,19 +29,17 @@ public class Cuadrante {
 	 * conectado[3] = oeste
 	 */
 	String[] conectado = new String[4];
-	ArrayList<String> objetos;
+	//ArrayList<String> objetos;
 	String info;
 	
 	
-	public Cuadrante(int id, String beac,/*Posicion nw, Posicion se,*/ int z, String[] conexiones, ArrayList<String> objs, String informacion, float longi){
+	public Cuadrante(int id, String beac, int z, String[] conexiones, /*ArrayList<String> objs,*/ String informacion, float longi){
 		
 		ID = id;
 		info = informacion;
 		beacon = beac;
-		//posNW = nw;
-		//posSE = se;
 		conectado = conexiones;
-		objetos = objs;
+		//objetos = objs;
 		Z = z;
 		metros = longi;
 		
@@ -51,8 +49,6 @@ public class Cuadrante {
 		
 		Cuadrante c = (Cuadrante)o;
 		
-		//if ((this.ID==c.getID()) && (posNW.equals(c.getPosNW())) && (posSE.equals(c.getPosSE())))
-			//return true;
 		if(ID==c.getID() && beacon.equals(c.getBeacon())) 
 			return true;
 		else
@@ -62,52 +58,9 @@ public class Cuadrante {
 	
 	public Cuadrante clone(){
 		
-		return new Cuadrante(this.ID, this.beacon,/*this.posNW, this.posSE,*/this.Z, this.conectado, this.objetos, this.info, this.metros);
+		return new Cuadrante(this.ID, this.beacon, this.Z, this.conectado, /*this.objetos,*/ this.info, this.metros);
 		
 	}
-	
-	/**
-	 * Compureba si una posición forma parte del cuadrante.
-	 * @param p Posición
-	 * @return True si la posición p está dentro del cuadrante.
-	 */
-	/*public boolean pertenece(Posicion p) {
-		
-		double xIzq = posNW.getPX();
-		double xDcha = posSE.getPX();
-		double ySup = posNW.getPY();
-	    double yInf = posSE.getPY();
-	    
-		if ((xIzq<=p.getPX())&&(p.getPX()<xDcha)&&(ySup<=p.getPY())&&(p.getPY()<yInf))
-			return true;
-		else
-			return false;
-		
-	}
-	
-	public boolean pertenece(Posicion p, double pZ) {
-		
-		double xIzq = posNW.getPX();
-		double xDcha = posSE.getPX();
-		double ySup = posNW.getPY();
-	    double yInf = posSE.getPY();
-	    int miZ = (int) pZ;
-	  //  return true;
-		//if ((xIzq<=p.getPX())&&(p.getPX()<xDcha)&&(ySup<=p.getPY())&&(p.getPY()<yInf) && (Z == pZ) )
-	    if ((xIzq<=p.getPX())&&(p.getPX()<xDcha)&&(ySup>=p.getPY())&&(p.getPY()>yInf) && (Z == miZ) )
-			return true;
-		else
-			return false;
-		
-	}*/
-	
-	/*public boolean pertenece(double pX, double pY) {
-		
-		Posicion p = new Posicion(pX, pY);
-		
-		return pertenece(p);
-		
-	}*/
 	
 	public int getID() {
 		return ID;
@@ -119,22 +72,6 @@ public class Cuadrante {
 	public void setID(int id) {
 		ID = id;
 	}
-
-	/*public Posicion getPosNW() {
-		return posNW;
-	}
-
-	public void setPosNW(Posicion posNW) {
-		this.posNW = posNW;
-	}
-
-	public Posicion getPosSE() {
-		return posSE;
-	}
-
-	public void setPosSE(Posicion posSE) {
-		this.posSE = posSE;
-	}*/
 
 	public String getDireccion(Cuadrante c2) {
 
@@ -159,10 +96,6 @@ public class Cuadrante {
 		
 		return "No conectado";
 		
-	}
-
-	public String getObjeto() {
-		return objetos.get(0);
 	}
 
 	public String getDireccion(Integer indice) {

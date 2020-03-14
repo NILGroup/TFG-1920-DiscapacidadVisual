@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/MRS/Documents/Belen/ucm/5/TFG infor/git/TFG-1920-DiscapacidadVisual/Eclipse_ws/servidor_XML/lib/jdom-2.0.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/MRS/Documents/Belen/ucm/5/TFG infor/git/TFG-1920-DiscapacidadVisual/Eclipse_ws/servidor_XML/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/clara/Documents/GitHub/TFG-1920-DiscapacidadVisual/Eclipse_ws/servidor_XML/lib/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/clara/Documents/GitHub/TFG-1920-DiscapacidadVisual/Eclipse_ws/servidor_XML/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

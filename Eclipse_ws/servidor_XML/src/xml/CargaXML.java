@@ -56,30 +56,22 @@ public class CargaXML {
 		            Element cuadrante = (Element) lista_cuadrantes.get(indexCuadrante);//Se obtiene el elemento 'cuadrante'
 	            	String idCuadrante = cuadrante.getAttributeValue("idc");//Se obtiene el atribullo 'idc'
 	            	String beacon = cuadrante.getChildTextTrim("beacon");
-	            	
-	            	/*Element NW = cuadrante.getChild("NW"); //el elemento NW con sus coordenadas
-	 	            String NWX = NW.getChildText("X");
-	 	            String NWY = NW.getChildText("Y");
-	 	            	 	
-	 	            Element SE = cuadrante.getChild("SE");//el elemento SE con sus coordenadas
-	 	            String SEX = SE.getChildText("X");
-	 	            String SEY = SE.getChildText("Y");*/
-	 		            	 
+	            	 
  		            Element conectado = cuadrante.getChild("conectado");
  		            String norte = conectado.getChildText("norte");
  		            String sur = conectado.getChildText("sur");
  		            String este = conectado.getChildText("este");
  		            String oeste = conectado.getChildText("oeste");
 	
-	 	            String objeto = cuadrante.getChildTextTrim("objeto"); 
+	 	            /*String objeto = cuadrante.getChildTextTrim("objeto"); 
 	 	            ArrayList<String> aO = new ArrayList<String>();
-	 	            aO.add(objeto);
+	 	            aO.add(objeto);*/
 	 	            
 	 	            String info = cuadrante.getChildTextTrim("info"); 
 	 	            
 	 	            String m = cuadrante.getChildTextTrim("metros");
 	 	            float metros = Float.parseFloat(m);
-	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, /*new Posicion(Double.parseDouble(NWX),Double.parseDouble(NWY)), new Posicion(Double.parseDouble(SEX),Double.parseDouble(SEY)),*/ Integer.parseInt(planta), new String[]{norte,sur,este,oeste}, aO, info, metros);
+	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, Integer.parseInt(planta), new String[]{norte,sur,este,oeste},/* aO,*/ info, metros);
 	 	            aCuadrantes.add(c);
 	 	            e.add(c);
 		 	        		 	            	 
