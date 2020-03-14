@@ -52,44 +52,27 @@ public class GenerarRuta {
 		
 		int ultimoCuadrante = primerCuadrante + 1; //Indice en la lista de cuadrantes
 		
-		//Iterator<Estancia> itEst = aEstancias.iterator();
-		//boolean estan = false;
-		//Estancia est = null;
-		
-		
-		/*while (itEst.hasNext() && !estan) {
-			
-			est = itEst.next();
-			estan = est.estan(lCuadrantes.get(primerCuadrante), lCuadrantes.get(ultimoCuadrante));
-			
-		}*/
-		
 		//Cogemos los cuadrantes de la lista general
 		Cuadrante c1 , c2;
 		c1 = aCuadrantes.get(lCuadrantes.get(primerCuadrante));
 		c2 = aCuadrantes.get(lCuadrantes.get(ultimoCuadrante));
 		
-		
+		//Hay que poner aquí las condiciones teniendo en cuenta que hay 3 plantas!!
 		if (c1.getZ() > c2.getZ()) 
 			return "Baja a la planta inferior.";
 		else if(c2.getZ() > c1.getZ())
 			return "Sube a la planta superior.";
 		else {
 			
-		//Si están en la misma estancia
-		//if (estan) {
-			
-			//c1 = est.getCuadrante(lCuadrantes.get(primerCuadrante));
-			//c2 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
 			Estancia est = null;
 			if(c1.getZ() == 1) {
 				est = aEstancias.get(0);
 			}
-			else if(c1.getZ() == 2) {
+			else if(c1.getZ() == 0) {
 				est = aEstancias.get(1);
 			}
 			else {
-				//planta baja
+				//segunda planta
 			}
 			
 			String direccionPrincipal = c1.getDireccion(c2);
@@ -103,6 +86,7 @@ public class GenerarRuta {
 			}
 			
 			int cont = 1; //Contador de cuadrantes. Al 8 paramos
+			float metros = c1.getMetros();
 			
 			while(direccion == direccionPrincipal && lCuadrantes.get(ultimoCuadrante) != posDest
 					&& cont < 8) {
@@ -114,6 +98,7 @@ public class GenerarRuta {
 					c2 = c3;
 					cont++;
 					direccion = direccionSig;
+					metros += c2.getMetros();
 				}
 				else {
 					break;
@@ -125,27 +110,17 @@ public class GenerarRuta {
 			//if (c2.getZ() == c1.getZ())  {
 				
 				if(direccion.equals(dirDeLaQueVengo)) {
-					s = "Continua recto " + Float.toString(c2.getMetros()) +" metros.";
+					s = "Continua recto " + Float.toString(metros) +" metros.";
 					direccion = direccionSig;
 					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
 				}
 				else {
 					direccion = direccionSig;
 					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
-					s += "Continua recto " + Float.toString(c2.getMetros()) +" metros.";
+					s += "Continua recto " + Float.toString(metros) +" metros.";
 					
 				}
 				cuadranteClave = c2.getID();
-			
-			//return s;
-			
-		//} 
-		/*} else if (c1.getZ() > c2.getZ()) 
-			return "Baja a la planta inferior.";
-		else if(c2.getZ() > c1.getZ())
-			return "Sube a la planta superior.";
-		else
-			return "Cambio de estancia";*/
 		}
 		return s;
 	}

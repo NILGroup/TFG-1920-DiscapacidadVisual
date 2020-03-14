@@ -79,7 +79,7 @@ public class CargaXML {
 	 	            
 	 	            String m = cuadrante.getChildTextTrim("metros");
 	 	            float metros = Float.parseFloat(m);
-	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, /*new Posicion(Double.parseDouble(NWX),Double.parseDouble(NWY)), new Posicion(Double.parseDouble(SEX),Double.parseDouble(SEY)),*/ Integer.parseInt(planta), new String[]{norte,sur,este,oeste}, aO, info, metros);
+	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, Integer.parseInt(planta), new String[]{norte,sur,este,oeste}, aO, info, metros);
 	 	            aCuadrantes.add(c);
 	 	            e.add(c);
 		 	        		 	            	 
