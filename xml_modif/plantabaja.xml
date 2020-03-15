@@ -4,6 +4,18 @@
 	<estancia id="pasillo0">
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
+            <cuadrante idc="39">
+  				<beacon>si</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>76</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<objeto>dato78</objeto>
+				<info>biblioteca, antes era el 78</info>
+				<metros>5</metros>
+			</cuadrante>
 			<cuadrante idc="40">
    				<beacon>si</beacon>
 				<conectado>
@@ -38,7 +50,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="43">
-				<beacon>dtf4</beacon>
+				<beacon>beacon43</beacon>
 				<conectado>
 					<norte>57</norte>
 					<sur>-1</sur>
@@ -126,7 +138,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="51">
-				<beacon>si</beacon>
+				<beacon>beacon51</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -170,7 +182,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="55">
-				<beacon>Wsxj</beacon>
+				<beacon>beacon55</beacon>
 				<conectado>
 					<norte>68</norte>
 					<sur>-1</sur>
@@ -222,6 +234,7 @@
 					<oeste>58</oeste>
 				</conectado>
 				<info>non</info>
+                <metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="60">
 				<beacon>non</beacon>
@@ -257,7 +270,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="63">
-  				<beacon>si</beacon>
+  				<beacon>beacon63</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>59</sur>
@@ -290,7 +303,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="66">
-  				<beacon>si</beacon>
+  				<beacon>beacon66</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>67</sur>
@@ -312,18 +325,18 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="68">
-  				<beacon>non</beacon>
+  				<beacon>beacon68</beacon>
 				<conectado>
 					<norte>69</norte>
 					<sur>55</sur>
 					<este>-1</este>
 					<oeste>67</oeste>
 				</conectado>
-				<info>non</info>
+				<info>no tenia beacon este</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="69">
-				<beacon>si</beacon>
+				<beacon>beacon69</beacon>
 				<conectado>
 					<norte>70</norte>
 					<sur>68</sur>
@@ -392,20 +405,20 @@
   				<beacon>si</beacon>
 				<conectado>
 					<norte>74</norte>
-					<sur>77</sur>
+					<sur>76</sur>
 					<este>40</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>salón de actos</info>
+				<info>salon de actos</info>
 				<metros>7</metros>
 			</cuadrante>
-			<cuadrante idc="77">
+			<cuadrante idc="76">
 				<beacon>si</beacon>
 				<conectado>
 					<norte>75</norte>
 					<sur>-1</sur>
 					<este>-1</este>
-					<oeste>78</oeste>
+					<oeste>39</oeste>
 				</conectado>
 				<info>puerta trasera</info>
 				<metros>7</metros>
@@ -421,6 +434,12 @@
 				<info>biblioteca</info>
 				<metros>5</metros>
 			</cuadrante>
+=======
+				<objeto>dato76</objeto>
+				<info>puerta trasera, antes era el 77</info>
+				<metros>7</metros>
+			</cuadrante>
+>>>>>>> f5f1c38584d1dca468b8975db38914c920bfc206
 		</cuadrantes>
 	</estancia>
 </planta>

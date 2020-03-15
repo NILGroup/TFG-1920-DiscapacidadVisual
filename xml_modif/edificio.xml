@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <edificio>
-	<planta nombre="plantabaja">
-		<archivo>nada</archivo>
-	</planta>
 	<planta nombre="planta1principal">
 		<archivo>planta1</archivo>
+	</planta>
+	<planta nombre="plantabaja">
+		<archivo>plantabaja</archivo>
 	</planta>
 	<planta nombre="planta2principal">
 		<archivo>nada</archivo>

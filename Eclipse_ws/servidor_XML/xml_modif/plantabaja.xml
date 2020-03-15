@@ -332,12 +332,7 @@
 					<este>-1</este>
 					<oeste>67</oeste>
 				</conectado>
-<<<<<<< HEAD
-				<info>non</info>
-=======
-				<objeto>dato68</objeto>
 				<info>no tenia beacon este</info>
->>>>>>> f5f1c38584d1dca468b8975db38914c920bfc206
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="69">
@@ -414,12 +409,7 @@
 					<este>40</este>
 					<oeste>-1</oeste>
 				</conectado>
-<<<<<<< HEAD
-				<info>salón de actos</info>
-=======
-				<objeto>dato75</objeto>
 				<info>salon de actos</info>
->>>>>>> f5f1c38584d1dca468b8975db38914c920bfc206
 				<metros>7</metros>
 			</cuadrante>
 			<cuadrante idc="76">
@@ -430,7 +420,6 @@
 					<este>-1</este>
 					<oeste>39</oeste>
 				</conectado>
-<<<<<<< HEAD
 				<info>puerta trasera</info>
 				<metros>7</metros>
 			</cuadrante>
