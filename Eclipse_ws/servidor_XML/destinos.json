@@ -68,6 +68,10 @@
 "cuadrante": "16",
 }
 {
+"lugar": "Aula 1",
+"cuadrante": "40",
+}
+{
 "lugar": "Aula 2",
 "cuadrante": "45",
 }
@@ -90,6 +94,10 @@
 {
 "lugar": "Secretaria",
 "cuadrante": "72",
+}
+{
+"lugar": "Conserjeria",
+"cuadrante": "73",
 }
 {
 "lugar": "Salon de actos",
