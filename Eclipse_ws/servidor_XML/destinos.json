@@ -1,18 +1,58 @@
 [
 {
-"lugar": "sala de juntas",
-"cuadrante": "14",
+"lugar": "Sala de juntas",
+"cuadrante": "20",
 },
 {
-"lugar": "aula 13",
-"cuadrante": "15",
+"lugar": "Aula 6",
+"cuadrante": "0",
 }
 {
-"lugar": "aula 7",
+"lugar": "Aula 7",
 "cuadrante": "2",
 }
 {
-"lugar": "aula x",
+"lugar": "Aula 8",
+"cuadrante": "5",
+}
+{
+"lugar": "Aula 9",
+"cuadrante": "8",
+}
+{
+"lugar": "Aula 10",
+"cuadrante": "11",
+}
+{
+"lugar": "Aula 11",
+"cuadrante": "12",
+}
+{
+"lugar": "Aula 12",
+"cuadrante": "14",
+}
+{
+"lugar": "Aula 13",
+"cuadrante": "32",
+}
+{
+"lugar": "Aula 14",
+"cuadrante": "29",
+}
+{
+"lugar": "Aula 15",
+"cuadrante": "27",
+}
+{
+"lugar": "Aula 16",
+"cuadrante": "25",
+}
+{
+"lugar": "sala de grados",
+"cuadrante": "24",
+}
+{
+"lugar": "Escaleras",
 "cuadrante": "19",
 }
 {
@@ -28,11 +68,47 @@
 "cuadrante": "16",
 }
 {
-"lugar": "cuad 24",
-"cuadrante": "24",
+"lugar": "Aula 1",
+"cuadrante": "40",
 }
 {
-"lugar": "cuad 54",
+"lugar": "Aula 2",
+"cuadrante": "45",
+}
+{
+"lugar": "Aula 3",
+"cuadrante": "48",
+}
+{
+"lugar": "Aula 4",
+"cuadrante": "51",
+}
+{
+"lugar": "Aula 5",
 "cuadrante": "54",
+}
+{
+"lugar": "Cafeteria",
+"cuadrante": "65",
+}
+{
+"lugar": "Secretaria",
+"cuadrante": "72",
+}
+{
+"lugar": "Conserjeria",
+"cuadrante": "73",
+}
+{
+"lugar": "Salon de actos",
+"cuadrante": "75",
+}
+{
+"lugar": "Biblioteca",
+"cuadrante": "39",
+}
+{
+"lugar": "puerta principal",
+"cuadrante": "71",
 }
 ]

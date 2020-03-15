@@ -456,7 +456,10 @@
 					<este>-1</este>
 					<oeste>39</oeste>
 				</conectado>
+<<<<<<< HEAD
 				<objeto>dato76</objeto>
+=======
+>>>>>>> 254661b70dc2fcb80e33c68b789b4616278fbc4c
 				<info>puerta trasera, antes era el 77</info>
 				<metros>7</metros>
 			</cuadrante>
