@@ -23,6 +23,7 @@
 					<este>41</este>
 					<oeste>75</oeste>
 				</conectado>
+				<objeto>dato40</objeto>
 				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -34,6 +35,7 @@
 					<este>42</este>
 					<oeste>40</oeste>
 				</conectado>
+				<objeto>dato41</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -45,6 +47,7 @@
 					<este>43</este>
 					<oeste>41</oeste>
 				</conectado>
+				<objeto>dato42</objeto>
 				<info>aula 1</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -56,6 +59,7 @@
 					<este>44</este>
 					<oeste>42</oeste>
 				</conectado>
+				<objeto>dato43</objeto>
 				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -67,6 +71,7 @@
 					<este>45</este>
 					<oeste>43</oeste>
 				</conectado>
+				<objeto>dato44</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -78,6 +83,7 @@
 					<este>46</este>
 					<oeste>44</oeste>
 				</conectado>
+				<objeto>dato45</objeto>
 				<info>aula 2</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -89,6 +95,7 @@
 					<este>47</este>
 					<oeste>45</oeste>
 				</conectado>
+				<objeto>dato46</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -100,6 +107,7 @@
 					<este>48</este>
 					<oeste>46</oeste>
 				</conectado>
+				<objeto>dato47</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -111,6 +119,7 @@
 					<este>49</este>
 					<oeste>47</oeste>
 				</conectado>
+				<objeto>dato48</objeto>
 				<info>aula 3</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -122,6 +131,7 @@
 					<este>50</este>
 					<oeste>48</oeste>
 				</conectado>
+				<objeto>dato49</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -133,6 +143,7 @@
 					<este>51</este>
 					<oeste>49</oeste>
 				</conectado>
+				<objeto>dato50</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -144,6 +155,7 @@
 					<este>52</este>
 					<oeste>50</oeste>
 				</conectado>
+				<objeto>dato51</objeto>
 				<info>aula 4</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -155,6 +167,7 @@
 					<este>53</este>
 					<oeste>51</oeste>
 				</conectado>
+				<objeto>dato52</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -166,6 +179,7 @@
 					<este>54</este>
 					<oeste>52</oeste>
 				</conectado>
+				<objeto>dato53</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -177,6 +191,7 @@
 					<este>55</este>
 					<oeste>53</oeste>
 				</conectado>
+				<objeto>dato54</objeto>
 				<info>aula 5</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -188,17 +203,19 @@
 					<este>-1</este>
 					<oeste>54</oeste>
 				</conectado>
+				<objeto>dato55</objeto>
 				<info>puerta lateral e interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="56">
-				<beacon>CPne</beacon>
+				<beacon>beacon56</beacon>
 				<conectado>
 					<norte>58</norte>
 					<sur>42</sur>
 					<este>57</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato56</objeto>
 				<info>ascensor</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -210,6 +227,7 @@
 					<este>-1</este>
 					<oeste>56</oeste>
 				</conectado>
+				<objeto>dato57</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -221,6 +239,7 @@
 					<este>59</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato58</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -232,6 +251,7 @@
 					<este>-1</este>
 					<oeste>58</oeste>
 				</conectado>
+				<objeto>dato59</objeto>
 				<info>non</info>
                 <metros>5</metros>
 			</cuadrante>
@@ -243,6 +263,7 @@
 					<este>61</este>
 					<oeste>73</oeste>
 				</conectado>
+				<objeto>dato60</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -254,6 +275,7 @@
 					<este>62</este>
 					<oeste>60</oeste>
 				</conectado>
+				<objeto>dato61</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -265,6 +287,7 @@
 					<este>63</este>
 					<oeste>61</oeste>
 				</conectado>
+				<objeto>dato62</objeto>
 				<info>non</info> 
 				<metros>5</metros>
 			</cuadrante>
@@ -276,6 +299,7 @@
 					<este>64</este>
 					<oeste>62</oeste>
 				</conectado>
+				<objeto>dato63</objeto>
 				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -287,6 +311,7 @@
 					<este>65</este>
 					<oeste>63</oeste>
 				</conectado>
+				<objeto>dato64</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -298,6 +323,7 @@
 					<este>-1</este>
 					<oeste>64</oeste>
 				</conectado>
+				<objeto>dato65</objeto>
 				<info>cafeteria</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -309,6 +335,7 @@
 					<este>69</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato66</objeto>
 				<info>ascensor</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -320,6 +347,7 @@
 					<este>68</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato67</objeto>
 				<info>non</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -331,6 +359,7 @@
 					<este>-1</este>
 					<oeste>67</oeste>
 				</conectado>
+				<objeto>dato68</objeto>
 				<info>no tenia beacon este</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -342,6 +371,7 @@
 					<este>-1</este>
 					<oeste>66</oeste>
 				</conectado>
+				<objeto>dato69</objeto>
 				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -353,6 +383,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato70</objeto>
 				<info>cafe</info>
 				<metros>5</metros>
 			</cuadrante>
@@ -364,6 +395,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato71</objeto>
 				<info>puerta principal</info>
 				<metros>7</metros>
 			</cuadrante>
@@ -375,6 +407,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato72</objeto>
 				<info>secretaria</info>
 				<metros>7</metros>
 			</cuadrante>
@@ -386,6 +419,7 @@
 					<este>60</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato73</objeto>
 				<info>interseccion</info>
 				<metros>7</metros>
 			</cuadrante>
@@ -397,6 +431,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato74</objeto>
 				<info>non</info>
 				<metros>9</metros>
 			</cuadrante>
@@ -408,6 +443,7 @@
 					<este>40</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato75</objeto>
 				<info>salon de actos</info>
 				<metros>7</metros>
 			</cuadrante>
@@ -419,6 +455,7 @@
 					<este>-1</este>
 					<oeste>39</oeste>
 				</conectado>
+				<objeto>dato76</objeto>
 				<info>puerta trasera, antes era el 77</info>
 				<metros>7</metros>
 			</cuadrante>

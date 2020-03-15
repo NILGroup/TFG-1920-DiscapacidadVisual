@@ -85,109 +85,16 @@ public class MainAndroid extends Thread {
 		MainAndroid thread = new MainAndroid();
 	    
 	    
-	    //Inicio en el cuadrante 24, destino 54
-		beaconOrigen = "beacon24";
-		destino = "cuad 54";
-		beaconActual = "beacon24";
+		beaconOrigen = "beacon56";
+		destino = "Aula 5";
+		beaconActual = "beacon56";
 		
-	    thread.start();
+		thread.start();
 		
-	  //Suponemos que hemos llegado al cuadrante 32
-	    try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon32";
-		
-	    MainAndroid thread2 = new MainAndroid();
-		thread2.start();
-		
-		//Suponemos que hemos llegado al cuadrante 34
-	    try {
-			TimeUnit.SECONDS.sleep(4);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon34";
-		
-	    MainAndroid thread3 = new MainAndroid();
-		thread3.start();
-		
-		
-		//Suponemos que hemos llegado al cuadrante 35
-	    try {
-			TimeUnit.SECONDS.sleep(6);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon35";
-		
-	    MainAndroid thread4 = new MainAndroid();
-		thread4.start();
-		
-		//Suponemos que hemos llegado al cuadrante 36
-	    try {
-			TimeUnit.SECONDS.sleep(8);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon36";
-		
-	    MainAndroid thread5 = new MainAndroid();
-		thread5.start();
-		
-		//Suponemos que hemos llegado al cuadrante 67
-	    try {
-			TimeUnit.SECONDS.sleep(9);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon67";
-		
-	    MainAndroid thread8 = new MainAndroid();
-		thread8.start();
-		
-		//Suponemos que hemos llegado al cuadrante 68
-	    try {
-			TimeUnit.SECONDS.sleep(10);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon68";
-		
-	    MainAndroid thread6 = new MainAndroid();
-		thread6.start();
-		
-		
-		//Suponemos que hemos llegado al cuadrante 55
-	    try {
-			TimeUnit.SECONDS.sleep(12);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	    beaconActual = "beacon55";
-		
-	    MainAndroid thread7 = new MainAndroid();
-		thread7.start();
 		
 		//Suponemos que hemos llegado al cuadrante 54
 	    try {
-			TimeUnit.SECONDS.sleep(12);
+			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

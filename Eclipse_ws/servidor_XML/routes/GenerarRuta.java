@@ -30,8 +30,7 @@ public class GenerarRuta {
 	
 	public String generar(int posAct, int posDest){
 		
-		if (posAct == posDest)
-			return "Recorrido finalizado";
+		
 		
 		Iterator<Integer> it = lCuadrantes.iterator();
 		String s = "";
@@ -55,6 +54,30 @@ public class GenerarRuta {
 		//Cogemos los cuadrantes de la lista general
 		Cuadrante c1 , c2;
 		c1 = aCuadrantes.get(lCuadrantes.get(primerCuadrante));
+		
+		
+		if (posAct == posDest) { //Si hemos llegado al destino
+			if(primerCuadrante > 0) {
+				String rutaFinal = "";
+				if((posDest >= 0 && posDest <= 15) || (posDest >= 40 && posDest <= 54) ) { //El destino es un aula
+					
+					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este")) { //La direccion en la que vas es oeste
+						rutaFinal = "Su destino está a la izquierda. El recorrido ha finalizado.";
+					}
+					else { //Vas en direcion este
+						rutaFinal = "Su destino está a la derecha. El recorrido ha finalizado.";
+					}
+				}
+				else { //El destino no es un aula
+					rutaFinal = "Su destino está delante. El recorrido ha finalizado.";
+				}
+				return rutaFinal;
+			}
+			else {
+				return "Te encuentras en el destino";
+			}
+		}
+		
 		c2 = aCuadrantes.get(lCuadrantes.get(ultimoCuadrante));
 		
 		//Hay que poner aquí las condiciones teniendo en cuenta que hay 3 plantas!!
