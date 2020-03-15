@@ -12,6 +12,7 @@
 					<este>1</este>
 					<oeste>-1</oeste>
 				</conectado>
+				<objeto>dato0</objeto>
 				<info>info 1</info>
 			</cuadrante>
 			<cuadrante idc="21">
@@ -22,6 +23,7 @@
 					<este>2</este>
 					<oeste>0</oeste>
 				</conectado>
+				<objeto>dato1</objeto>
 				<info>non</info>
 			</cuadrante>
 			<cuadrante idc="22">
@@ -32,6 +34,7 @@
 					<este>3</este>
 					<oeste>1</oeste>
 				</conectado>
+				<objeto>dato2</objeto>
 				<info>info3</info>
 			</cuadrante>
 		</cuadrantes>

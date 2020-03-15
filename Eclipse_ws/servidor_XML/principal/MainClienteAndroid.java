@@ -114,7 +114,6 @@ public class MainClienteAndroid {
 					out.writeUTF(ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes));
 
 				} else {
-
 					out.writeInt(2);
 					out.writeUTF("Destino inexistente, no ha sido posible calcular la ruta");
 					System.out.print("Destino inexistente, no ha sido posible calcular la ruta");
