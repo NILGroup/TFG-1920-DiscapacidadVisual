@@ -1,0 +1,256 @@
+//Simulamos la ruta que va del 15 al 19
+		
+		/*MainAndroid thread = new MainAndroid();
+	    
+	    
+	    //Inicio en el cuadrante 15
+		beaconOrigen = "Wsxj";
+		destino = "aula x";
+		beaconActual = "Wsxj";
+		
+	    thread.start();
+	    
+	  //Suponemos que hemos llegado al cuadrante 7
+	    try {
+			TimeUnit.SECONDS.sleep(4);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "CPne";
+		
+	    MainAndroid thread2 = new MainAndroid();
+		thread2.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 3
+		try {
+			TimeUnit.SECONDS.sleep(7);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		beaconActual = "cmSc";
+	
+		MainAndroid thread3 = new MainAndroid();
+		thread3.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 17
+		try {
+			TimeUnit.SECONDS.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//Cuadrante 17
+		
+		beaconActual = "z3bD";
+	
+		MainAndroid thread5 = new MainAndroid();
+		thread5.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 19
+		try {
+			TimeUnit.SECONDS.sleep(13);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "7rd7";
+	
+		MainAndroid thread6 = new MainAndroid();
+		thread6.start();
+		*/
+		
+		
+		
+		//--------------------------------------------------------
+		
+		
+		//Simulamos la ruta que va del 19 al 36
+		/*MainAndroid thread = new MainAndroid();
+	    
+	    
+	    //Inicio en el cuadrante 19
+		//beaconOrigen = "7rd7";
+		//destino = "ascensor 1";
+		//beaconActual = "7rd7";
+		
+	    //thread.start();
+	        
+	  //Suponemos que hemos llegado al cuadrante 17
+  		/*try {
+  			TimeUnit.SECONDS.sleep(10);
+  		} catch (InterruptedException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}
+  		
+  		//Cuadrante 17
+  		beaconOrigen = "z3bD";
+  		beaconActual = "z3bD";
+  		destino = "ascensor 1";
+  		
+  	
+  		MainAndroid thread5 = new MainAndroid();
+  		thread5.start();
+	    
+  		
+		//Suponemos que hemos llegado al cuadrante 3
+		try {
+			TimeUnit.SECONDS.sleep(7);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		beaconActual = "cmSc";
+	
+		MainAndroid thread3 = new MainAndroid();
+		thread3.start();
+  		
+	    
+	  //Suponemos que hemos llegado al cuadrante 7
+	    try {
+			TimeUnit.SECONDS.sleep(4);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "CPne";
+		
+	    MainAndroid thread2 = new MainAndroid();
+		thread2.start();
+		
+	
+		//Suponemos que hemos llegado al cuadrante 15
+		try {
+			TimeUnit.SECONDS.sleep(13);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "Wsxj";
+	
+		MainAndroid thread6 = new MainAndroid();
+		thread6.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 35
+		try {
+			TimeUnit.SECONDS.sleep(16);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "beacon35";
+	
+		MainAndroid thread7 = new MainAndroid();
+		thread7.start();
+
+		//Suponemos que hemos llegado al cuadrante 36
+		try {
+			TimeUnit.SECONDS.sleep(19);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "beacon36";
+	
+		MainAndroid thread8 = new MainAndroid();
+		thread8.start();
+		*/
+		
+		//------------------------------------------------------
+		
+		//Ruta del 63 al 66
+		
+		MainAndroid thread = new MainAndroid();
+	    
+	    //Inicio en el cuadrante 63
+		beaconOrigen = "beacon63";
+		destino = "cuad 66";
+		beaconActual = "beacon63";
+		
+		thread.start();
+	        
+		//Suponemos que hemos llegado al cuadrante 43
+  		try {
+  			TimeUnit.SECONDS.sleep(3);
+  		} catch (InterruptedException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}
+  		
+  		//Cuadrante 43
+  		beaconActual = "beacon43";
+  		
+  	
+  		MainAndroid thread5 = new MainAndroid();
+  		thread5.start();
+	    
+  		
+		//Suponemos que hemos llegado al cuadrante 51
+		try {
+			TimeUnit.SECONDS.sleep(7);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		beaconActual = "beacon51";
+	
+		MainAndroid thread3 = new MainAndroid();
+		thread3.start();
+  		
+	    
+	  //Suponemos que hemos llegado al cuadrante 55
+	    try {
+			TimeUnit.SECONDS.sleep(9);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon55";
+		
+	    MainAndroid thread2 = new MainAndroid();
+		thread2.start();
+		
+	
+		//Suponemos que hemos llegado al cuadrante 68
+		try {
+			TimeUnit.SECONDS.sleep(13);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "beacon68";
+	
+		MainAndroid thread6 = new MainAndroid();
+		thread6.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 66
+		try {
+			TimeUnit.SECONDS.sleep(16);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		beaconActual = "beacon66";
+	
+		MainAndroid thread7 = new MainAndroid();
+		thread7.start();

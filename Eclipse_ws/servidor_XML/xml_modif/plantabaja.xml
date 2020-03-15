@@ -185,7 +185,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="54">
-				<beacon>si</beacon>
+				<beacon>beacon54</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -329,7 +329,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="66">
-  				<beacon>beacon66</beacon>
+  				<beacon>non</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>67</sur>
@@ -341,10 +341,10 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="67">
-				<beacon>non</beacon>
+				<beacon>beacon67</beacon>
 				<conectado>
 					<norte>66</norte>
-					<sur>-1</sur>
+					<sur>36</sur>
 					<este>68</este>
 					<oeste>-1</oeste>
 				</conectado>

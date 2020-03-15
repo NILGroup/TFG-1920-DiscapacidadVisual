@@ -1,0 +1,48 @@
+-------------------------------------------
+Estoy en el beacon: beacon54
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Continua recto 5.0 metros.Gira a la izquierda.
+Cuadrante clave: 55
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon55
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Gira a la izquierda.Continua recto 5.0 metros.
+Cuadrante clave: 68
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon67
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Sube a la planta superior.
+Cuadrante clave: 36
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon36
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Continua recto 5.0 metros.
+Cuadrante clave: 35
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon35
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Gira a la izquierda.Continua recto 5.0 metros.
+Cuadrante clave: 34
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon34
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Gira a la izquierda.Continua recto 40.0 metros.
+Cuadrante clave: 26
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon29
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Continua recto 25.0 metros.Has llegado a tu destino.
+Cuadrante clave: 24
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon24
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 34 33 32 31 30 29 28 27 26 25 24
+Ruta: Recorrido finalizado
+Cuadrante clave: 0
+-------------------------------------------

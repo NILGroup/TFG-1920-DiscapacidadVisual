@@ -1,0 +1,54 @@
+-------------------------------------------
+Estoy en el beacon: beacon54
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Continua recto 5.0 metros.Gira a la izquierda.
+Cuadrante clave: 55
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon55
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Gira a la izquierda.Continua recto 5.0 metros.
+Cuadrante clave: 68
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon67
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Sube a la planta superior.
+Cuadrante clave: 36
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon36
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Continua recto 5.0 metros.
+Cuadrante clave: 0
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon35
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Gira a la derecha.Continua recto 10.0 metros.
+Cuadrante clave: 15
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon15
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Gira a la derecha.Continua recto 40.0 metros.
+Cuadrante clave: 7
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon7
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Continua recto 25.0 metros.Gira a la derecha.
+Cuadrante clave: 2
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon2
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Gira a la derecha.Continua recto 5.0 metros.
+Cuadrante clave: 16
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon16
+Lista de cuadrantes de la ruta:  54 55 68 67 36 35 37 15 14 13 12 11 10 9 8 7 6 5 4 3 2 16
+Ruta: Recorrido finalizado
+Cuadrante clave: 0
+-------------------------------------------

@@ -29,7 +29,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="2">
-				<beacon>aAaw</beacon>
+				<beacon>beacon2</beacon>
 				<conectado>
 					<norte>16</norte>
 					<sur>-1</sur>
@@ -89,7 +89,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="7">
-   				<beacon>non</beacon>
+   				<beacon>beacon7</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -185,7 +185,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="15">
-				<beacon>Wsxj</beacon>
+				<beacon>beacon15</beacon>
 				<conectado>
 					<norte>37</norte>
 					<sur>-1</sur>
@@ -197,7 +197,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="16">
-				<beacon>si</beacon>
+				<beacon>beacon16</beacon>
 				<conectado>
 					<norte>18</norte>
 					<sur>2</sur>
@@ -293,7 +293,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="24">
-				<beacon>si</beacon>
+				<beacon>beacon24</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -353,7 +353,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="29">
-				<beacon>si</beacon>
+				<beacon>beacon29</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -389,7 +389,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="32">
-				<beacon>si</beacon>
+				<beacon>beacon32</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -413,7 +413,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="34">
-				<beacon>si</beacon>
+				<beacon>beacon34</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>35</sur>
@@ -439,7 +439,7 @@
 			<cuadrante idc="36">
 				<beacon>beacon36</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>67</norte>
 					<sur>38</sur>
 					<este>35</este>
 					<oeste>-1</oeste>
@@ -461,7 +461,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="38">
-  				<beacon>non</beacon>
+  				<beacon>beacon38</beacon>
 				<conectado>
 					<norte>36</norte>
 					<sur>-1</sur>
