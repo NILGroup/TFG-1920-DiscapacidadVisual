@@ -420,26 +420,9 @@
 					<este>-1</este>
 					<oeste>39</oeste>
 				</conectado>
-				<info>puerta trasera</info>
-				<metros>7</metros>
-			</cuadrante>
-			<cuadrante idc="78">
-  				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>77</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>biblioteca</info>
-				<metros>5</metros>
-			</cuadrante>
-=======
-				<objeto>dato76</objeto>
 				<info>puerta trasera, antes era el 77</info>
 				<metros>7</metros>
 			</cuadrante>
->>>>>>> f5f1c38584d1dca468b8975db38914c920bfc206
 		</cuadrantes>
 	</estancia>
 </planta>
