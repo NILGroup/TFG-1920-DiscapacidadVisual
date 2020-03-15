@@ -36,6 +36,7 @@ public class ListaCuadrantes {
 	
 	public void iniciarLista(){
 		
+		int size = lista.size();
 		unirCuadrantes(lista.size());
 		matrizOriginal = matrizAdy.clone();
 		
