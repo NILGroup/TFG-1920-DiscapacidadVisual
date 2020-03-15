@@ -9,7 +9,7 @@
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>76</este>
+					<este>68</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<objeto>dato78</objeto>
@@ -22,7 +22,7 @@
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>41</este>
-					<oeste>75</oeste>
+					<oeste>69</oeste>
 				</conectado>
 				<info>interseccion</info>
 				<metros>5</metros>
@@ -184,7 +184,7 @@
 			<cuadrante idc="55">
 				<beacon>beacon55</beacon>
 				<conectado>
-					<norte>68</norte>
+					<norte>67</norte>
 					<sur>-1</sur>
 					<este>-1</este>
 					<oeste>54</oeste>
@@ -306,51 +306,51 @@
   				<beacon>beacon66</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>67</sur>
-					<este>69</este>
+					<sur>-1</sur>
+					<este>67</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>ascensor</info>
-				<metros>5</metros>
+				<info>hemos juntado el antiguo 66 y 67 (ascensor)</info>
+				<metros>10</metros>
 			</cuadrante>
 			<cuadrante idc="67">
-				<beacon>non</beacon>
-				<conectado>
-					<norte>66</norte>
-					<sur>-1</sur>
-					<este>68</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="68">
-  				<beacon>beacon68</beacon>
-				<conectado>
-					<norte>69</norte>
-					<sur>55</sur>
-					<este>-1</este>
-					<oeste>67</oeste>
-				</conectado>
-				<info>no tenia beacon este</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="69">
-				<beacon>beacon69</beacon>
+  				<beacon>beacon67</beacon>
 				<conectado>
 					<norte>70</norte>
-					<sur>68</sur>
+					<sur>55</sur>
 					<este>-1</este>
 					<oeste>66</oeste>
 				</conectado>
-				<info>interseccion</info>
-				<metros>5</metros>
+				<info>hemos juntado el antiguo 69 y 68</info>
+				<metros>10</metros>
+			</cuadrante>
+			<cuadrante idc="68">
+				<beacon>beacon68</beacon>
+				<conectado>
+					<norte>69</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>39</oeste>
+				</conectado>
+				<info>puerta trasera, antes era el 76</info>
+				<metros>7</metros>
+			</cuadrante>
+			<cuadrante idc="69">
+  				<beacon>beacon69</beacon>
+				<conectado>
+					<norte>74</norte>
+					<sur>68</sur>
+					<este>40</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<info>salon de actos, antes 75</info>
+				<metros>7</metros>
 			</cuadrante>
 			<cuadrante idc="70">
   				<beacon>si</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>69</sur>
+					<sur>67</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
@@ -394,52 +394,13 @@
 				<beacon>non</beacon>
 				<conectado>
 					<norte>73</norte>
-					<sur>75</sur>
+					<sur>69</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>non</info>
 				<metros>9</metros>
 			</cuadrante>
-			<cuadrante idc="75">
-  				<beacon>si</beacon>
-				<conectado>
-					<norte>74</norte>
-					<sur>76</sur>
-					<este>40</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>salon de actos</info>
-				<metros>7</metros>
-			</cuadrante>
-			<cuadrante idc="76">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>75</norte>
-					<sur>-1</sur>
-					<este>-1</este>
-					<oeste>39</oeste>
-				</conectado>
-				<info>puerta trasera</info>
-				<metros>7</metros>
-			</cuadrante>
-			<cuadrante idc="78">
-  				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>77</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>biblioteca</info>
-				<metros>5</metros>
-			</cuadrante>
-=======
-				<objeto>dato76</objeto>
-				<info>puerta trasera, antes era el 77</info>
-				<metros>7</metros>
-			</cuadrante>
->>>>>>> f5f1c38584d1dca468b8975db38914c920bfc206
 		</cuadrantes>
 	</estancia>
 </planta>
