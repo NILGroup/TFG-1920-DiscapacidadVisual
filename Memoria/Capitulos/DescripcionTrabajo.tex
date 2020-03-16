@@ -105,21 +105,23 @@ Tras el debate, algunas de las conclusiones que sacamos de la visita al CTI son:
 
 \section{Estudio de precisión de los beacons}
 
-Antes de comenzar con el código de la aplicación nos familiarizaremos con la API de los \textit{beacons} con el fin de estudiar el comportamiento de la señal desde distintas distancias.
+Antes de ponernos manos a la obra con la aplicación debíamos conocer cómo se comportaban los beacons en cuanto a distancias. Ya conocíamos que esta tecnología era una de las más usadas para el posicionamiento en interiores pero necesitábamos saber los aspectos más tecnológicos: cuánto rango tenía la señal \textit{bluetooth} de estos aparatos, si la intensidad de esta señal era suficiente para poder determinar a qué distancia estaban y, lo más importante, cómo afectaba a todo ello el espacio en el que se iban a colocar; el pasillo, una esquina, una puerta, etc. Puesto que las investigaciones que habíamos realizado ya avisaban de que la intensidad de los beacons era muy dependiente del lugar y el material sobre el que estos se colocaran. REFERENCIA AL PDF DE WAYFNDER.
 
-La propia SDK (Kit de Desarrollo Software) de \textit{Kontakt} nos proporciona las herramientas necesarias para conocer qué \textit{beacons} están en nuestro rango de detección en un momento determinado, y actualiza esa lectura cada cierto tiempo. Una vez que nuestro dispositivo capta la señal de las balizas, atendiendo a la intensidad determina la distancia a la que se encuentra y la clasifica dentro de unas categorías que tiene predefinidas. Las categorías son las siguientes:
+Para comenzar esta investigación nos ayudamos en la propia SDK de \textit{Kontakt}, la marca de nuestros beacons. Esta permite conocer qué beacons están en nuestro rango en un momento determinado y actualizar esa lectura cada cierto tiempo. Además tiene implementado un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
 
 \begin{itemize}
-	\item \textit{IMMEDIATE}: Si el dispositivo se encuentra a menos de 0,5m.
-	\item \textit{NEAR}: Si el dispositivo se encuentra entre 0,5m y 3m.
-	\item \textit{FAR}: Si el dispositivo se encuentra a más de 3m.
-	\item \textit{UNKNOWN}:The Unknown pone en la documentación...!!!!! ?
+	\item IMMEDIATE: Si el dispositivo se encuentra a menos de 0,5m.
+	\item NEAR: Si el dispositivo se encuentra entre los 0,5m y los 3m.
+	\item FAR: Si el dispositivo se encuentra a más de 3m.
+	\item UNKNOWN: Si se ha perdido la señal del dispositivo.
 \end{itemize}
 
-Para comprobar la fiabilidad y precisión de las medidas resultantes de los algoritmos procedentes de la API vamos a hacer uso de pequeñas aplicaciones que nos permitirán comparar de manera rápida y visual, las medidas leídas con las reales en distintos espacios de la Facultad de Informática para así hacer un estudio del error.
+Gracias a estas funciones ya implementadas en la SDK desarrollamos en poco tiempo pequeñas y simples aplicaciones que nos permitieron de manera muy visual comprobar las medidas leídas con las medidas reales a las que estaban los beacons. Estas medidas se realizaron tanto en la propia Facultad de Informática como en nuestras propias casas.
 
-\subsection{Aplicación ``miniapp''}
-Esta aplicación constituye la primera toma de contacto con los \textit{beacons}, es una aplicación sencilla y visual que nos indica la categoría de proximidad de los \textit{beacons}. En la Figura \ref{fig:miniapp} vemos que sobre el identificador de las balizas detectadas aparece un panel con el nombre de las categorías mencionadas y que cada categoría (respectivamente) se resalta en verde cuando corresponde. La lectura que se hace de los \textit{beacons} se va actualizando cada $x$ tiempo establecido. 
+A continuación presentamos las herramientas desarrolladas para medir la fiabilidad y exactitud de nuestros beacons.
+
+\subsection{Aplicación miniapp}
+Esta aplicación fue la primera toma de contacto con los beacons, queríamos una aplicación visual que nos indicara la categoría de proximidad de los beacons. El tomar la categoría como aproximación de la distancia fue nuestra primera idea, puesto que teníamos en mente que la señal de los beacons no era muy estable. En la Figura \ref{fig:miniapp} vemos la interfaz principal de la aplicación, con ella podíamos medir la categoría de hasta tres beacons. Los beacons considerados se encuentran debajo del panel de categorías y la categoría en la que se encuentran se resalta en verde. La lectura que se hace de los beacons se va actualizando cada $x$ tiempo establecido. 
 
 La idea de esta aplicación fue la de establecer el grado de confianza que podíamos tener en las categorías ofrecidas por la SDK de \textit{Kontakt}. El resultado fue muy positivo puesto que, a pesar de que las distancias fluctuaban, la categoría se asignaba correctamente sin grandes fluctuaciones. 
 
@@ -131,9 +133,9 @@ La idea de esta aplicación fue la de establecer el grado de confianza que podí
 \end{figure}
 
 \subsection{Aplicación cuadrantes v1}
-En la Figura \ref{fig:cuadrantesv1} vemos la interfaz principal de la aplicación \textit{cuadrantes v1}, esta fue diseñada, en inicio, para saber a qué distancia debían estar los beacons y poder así dividir las distintas plantas de la facultad en cuadrantes, de esta manera podríamos construir un grafo cuyos nodos fueran estos cuadrantes y, que representara el mapa de la facultad.
+En la Figura \ref{fig:cuadrantesv1} vemos la interfaz principal de la aplicación \textit{cuadrantes v1}, esta fue diseñada, en inicio, para saber a qué distancia debían estar los beacons y poder así dividir las distintas plantas de la facultad en cuadrantes (de ahí su nombre), de esta manera podríamos construir un grafo cuyos nodos fueran estos cuadrantes y, que representara el mapa de la facultad.
 
-Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en la figura lo hace cada dos segundos, la señal de los beacons que están a su alcance, mostrar la categoría de su distancia y la distancia a la que se encuentran en metros. La razón por la que llevamos un registro de qué está en el rango cada cierto tiempo es que notamos que las distancias fluctuaban, notoriamente en algunos casos, y quisimos hacer un estudio previo al desarrollo de la aplicación.
+Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en la figura lo hace cada dos segundos, la señal de los beacons que están a su alcance, mostrar la categoría de su distancia y la distancia estimada en metros. La razón por la que llevamos un registro de qué está en el rango cada cierto tiempo es que notamos que las distancias fluctuaban, notoriamente en algunos casos, y quisimos hacer un estudio previo al desarrollo de la aplicación.
 
 \begin{figure}[t]
 	\centering
@@ -145,9 +147,11 @@ Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en
 
 \subsection{Resultados}
 
-A continuación presentamos los resultados de las distintas mediciones realizadas. Veamos primero los gráficos, en los que podemos ver cómo se comportan los beacons si comparamos la medida real con la dada por la aplicación. 
+A continuación presentamos los resultados de las distintas mediciones realizadas. Veamos primero  aquellas recogidas en gráficas: en ellas podemos ver cómo se comportan los beacons si comparamos la medida real con la estimada por la aplicación. 
 
-En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicación \textit{cuadrantes v1} cuando hemos leído las distancias del beacon con identificador CPne. De esta gráfica destacamos que a grandes distancias, en este caso 5m, la distancia comienza a no ser muy fiable, a la par que muy fluctuante. Sin embargo, podemos ver cómo la medida a dos metros de distancia es la bastante exacta, fluctúa en menos de un metro a lo largo de casi toda la medición. Por último, la medición a menos de un metro, que se corresponde con la línea amarilla presenta fluctuaciones muy pequeñas, poco relevantes para nuestra aplicación. 
+En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicación \textit{cuadrantes v1} cuando hemos leído las distancias del beacon con identificador CPne. Las diferentes lecturas corresponden a las medidas estimadas cuando el beacon estaba a dos metros (azul), alrededor de dos metros y medio (naranja), cinco metros (gris) y a sesenta y cuatro centímetros (amarillo).
+
+De esta gráfica destacamos que a grandes distancias, en este caso cinco metros, la medida estimada comienza a no ser muy fiable, a la par que muy fluctuante. Sin embargo, podemos ver cómo la medida a dos metros de distancia es la bastante exacta, fluctúa en menos de un metro a lo largo de casi toda la medición. Por último, la medición a menos de un metro, que se corresponde con la línea amarilla presenta fluctuaciones muy pequeñas, poco relevantes para nuestra aplicación. Como conclusión sacamos que cuanto mayor es la distancia a la que está el beacon menor es la fiabilidad  que podemos depositar en la estimación de la medida obtenida. 
 
 \begin{figure}[t]
 	\centering
@@ -156,7 +160,7 @@ En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicaci�
 	\label{fig:dist_CPne}
 \end{figure}
 
-En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pesar de que tenemos un par de picos importantes en los primeros segundos de medición. La Figura \ref{fig:dist_8v2c} recoge tres mediciones distintas para una misma distancia, cada una de ellas recoge unos valores distintos y bastante bajos, lejos de los aproximadamente 4 metros reales. Una posible explicación a este fenómeno nos lo puede dar la Figura \ref{fig:dist_conjunto}, que recoge la medición de dos beacons situados a la misma distancia y uno encima del otro. Como vemos, la medición del beacon situado abajo es bastante más baja, en comparación. Esto nos advierte de que la señal bluetooth es bastante dependiente de los obstáculos, el entorno, ¡hasta las condiciones meteorológicas!. 
+En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pesar de que tenemos un par de picos importantes en los primeros segundos de medición, el valor medio que obtenemos es el de una distancia estimada de un metro para un beacon que realmente está situado a medio metro. La Figura \ref{fig:dist_8v2c} recoge tres mediciones distintas para una misma distancia, cada una de ellas recoge unos valores distintos y bastante bajos, lejos de los aproximadamente 4 metros reales. Una posible explicación a este fenómeno nos lo puede dar la Figura \ref{fig:dist_conjunto}, que recoge la medición de dos beacons situados a la misma distancia y uno encima del otro. Como vemos, la medición del beacon situado abajo es bastante más baja, en comparación. Esto nos advierte de que la señal \textit{bluetooth} es bastante dependiente de los obstáculos, el entorno, ¡hasta las condiciones meteorológicas!. 
 
 
 \begin{figure}[t]
@@ -184,6 +188,18 @@ En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pes
 
 \subsection{Mediciones en puntos clave de la facultad}
 
-También se realizaron mediciones sobre posibles posiciones reales de los beacons dentro de la facultad. Para ello se colocaron estos beacons en lugares clave, como las puertas de la calle, de las aulas, delegación de alumnos, o secretaría, y, con ayuda de nuestra app \textit{cuadrantes v1} se recogieron los datos medidos, que se muestran a continuación: 
+Una vez que tuvimos una idea más clara del funcionamiento y el comportamiento de los beacons fue hora de abordar el problema desde el punto de vista del posicionamiento. La idea inicial fue la de colocar beacons en puntos clave, de tal manera que al encontrarnos con uno de ellos nos avisara de una intersección, un aula o cualquier otro destino o punto de interés. 
 
-LOS DATOS QUE VIENEN ESTÁN EN EL ARCHIVO medicionesFacltad.txt QUIERO PREGUNTAR CÓMO METER ESTO Y SI METERLO TODO, en cualquier caso creo que habría que poner el mapa y donde están los beacons y todo eso.
+En este caso los beacons tenían una posición muy concreta y los puntos desde los que se medía también. En la Figura \ref{fig:medidasPBaja} se puede ver en qué puntos se colocaron los beacons (punto rojo) y en qué puntos se midieron las distancias (cruz verde). Lo primordial era conocer la ubicación óptima de los beacons en los lugares más complicados, como son las intersecciones, los puntos donde se acumulan varios lugares de interés (como puede ser el caso de la puerta de entrada, delegación de alumnos y el aula cinco), así como aquellos espacios más grandes (como el \textit{hall} de entrada). En el ANEXO se pueden ver los resultados de estas mediciones. A continuación exponemos las conclusiones recogidas:
+
+\begin{itemize}
+	\item Los beacons no deben situarse demasiado cerca, esto altera las mediciones y hace que no sepamos distinguir cuál es el beacon más cercano. 
+	\item En lugares diáfanos, como el \textit{hall}, la señal de los beacons fluye con mayor libertad. Es por ello que podemos situarlos a mayor distancia sin que queden puntos ciegos en lugares importantes. Uno de los inconvenientes de esto surgió a la hora de introducir un beacon en la puerta del salón de actos 
+\end{itemize}
+
+\begin{figure}[t]
+
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/medidasPlanoPBaja}
+	\caption{Mapa de la planta baja de la Facultad de Informática con la ubicación de los beacons (rojo) y los puntos de medición (verde). }
+	\label{fig:medidasPBaja}
+\end{figure}
