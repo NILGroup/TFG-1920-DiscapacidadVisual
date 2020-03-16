@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planta>
+       <Z>2</Z>
+	<estancia id="pasillo5">
+		<tipo>PASILLO</tipo>
+		<cuadrantes>
+			<cuadrante idc="20">
+				<beacon>aA</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<info>info 1</info>
+			</cuadrante>
+			<cuadrante idc="21">
+				<beacon>non</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>2</este>
+					<oeste>0</oeste>
+				</conectado>
+				<info>non</info>
+			</cuadrante>
+			<cuadrante idc="22">
+				<beacon>c</beacon>
+				<conectado>
+					<norte>16</norte>
+					<sur>-1</sur>
+					<este>3</este>
+					<oeste>1</oeste>
+				</conectado>
+				<info>info3</info>
+			</cuadrante>
+		</cuadrantes>
+	</estancia>
+</planta>
+

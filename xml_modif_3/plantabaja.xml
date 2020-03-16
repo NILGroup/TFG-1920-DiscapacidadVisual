@@ -189,7 +189,7 @@
 					<este>-1</este>
 					<oeste>54</oeste>
 				</conectado>
-				<info>puerta lateral e interseccion</info>
+				<info>puerta lateral, interseccion y hay baños</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="56">
@@ -299,7 +299,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>cafe, antes 70</info>
+				<info>cafe y baños, antes 70</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="66">
