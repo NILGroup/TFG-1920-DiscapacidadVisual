@@ -1,0 +1,48 @@
+-------------------------------------------
+Estoy en el beacon: beacon49
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: Continua recto 10.0 metros, luego gira a la derecha,
+Cuadrante clave: 46
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon47
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: Continua recto 5.0 metros, luego gira a la derecha,
+Cuadrante clave: 46
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon46
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: gira a la derecha, luego continua recto 25.0 metros.
+Cuadrante clave: 41
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon45
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: Continua recto 20.0 metros, luego gira a la derecha,
+Cuadrante clave: 41
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon41
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: gira a la derecha, luego continua recto 10.0 metros.
+Cuadrante clave: 51
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon51
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: gira a la izquierda, luego continua recto 5.0 metros.
+Cuadrante clave: 55
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon55
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: gira a la derecha, luego continua recto 10.0 metros.
+Cuadrante clave: 53
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon53
+Lista de cuadrantes de la ruta:  49 47 46 45 44 43 42 41 50 51 55 54 53
+Ruta: Su destino está a la derecha. El recorrido ha finalizado.
+Cuadrante clave: 0
+-------------------------------------------

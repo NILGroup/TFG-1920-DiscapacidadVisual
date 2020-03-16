@@ -61,7 +61,7 @@ public class GenerarRuta {
 				String rutaFinal = "";
 				if((posDest >= 0 && posDest <= 15) || (posDest >= 40 && posDest <= 54) ) { //El destino es un aula
 					
-					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este")) { //La direccion en la que vas es oeste
+					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este") || posDest == 49) { //La direccion en la que vas es oeste
 						rutaFinal = "Su destino está a la izquierda. El recorrido ha finalizado.";
 					}
 					else { //Vas en direcion este
@@ -120,24 +120,38 @@ public class GenerarRuta {
 			
 			int cont = 1; //Contador de cuadrantes. Al 8 paramos
 			float metros = c1.getMetros();
+			int contHastaCambioDir = 1;
+			Cuadrante aux = null;
 			
 			while(direccion == direccionPrincipal && lCuadrantes.get(ultimoCuadrante) != posDest
-					&& cont < 8) {
-				
-				ultimoCuadrante++;
-				Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
-				if(c3 == null) {break;} //El siguiente cuadrante es de otra planta
-				direccionSig = c2.getDireccion(c3);
-				if(direccionSig == direccionPrincipal) {
-					c2 = c3;
-					cont++;
-					direccion = direccionSig;
-					metros += c2.getMetros();
+					&& /*cont < 2*/ contHastaCambioDir < 8) {
+				if(cont < 2) {
+					ultimoCuadrante++;
+					Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
+					if(c3 == null) {break;} //El siguiente cuadrante es de otra planta
+					direccionSig = c2.getDireccion(c3);
+					if(direccionSig == direccionPrincipal) {
+						c2 = c3;
+						cont++;
+						direccion = direccionSig;
+						metros += c2.getMetros();
+						aux = c2.clone();					}
+					else {
+						break;
+					}
 				}
 				else {
-					break;
+					ultimoCuadrante++;
+					Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
+					if(c3 == null) {break;} //El siguiente cuadrante es de otra planta
+					String direccionAux = aux.getDireccion(c3);
+					if(direccionAux == direccionPrincipal) {
+						aux = c3;
+						metros += aux.getMetros();
+					}
+					else {break;}
 				}
-				
+				contHastaCambioDir++;
 			} //Al salir, tenemos en c2 el cuadrante clave
 			
 				
@@ -147,7 +161,9 @@ public class GenerarRuta {
 					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
 				}
 				else {
-					direccion = direccionSig;
+					if(!dirDeLaQueVengo.equals(direccionSig)) {
+						direccion = direccionSig;
+					}
 					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
 					
@@ -227,7 +243,7 @@ public class GenerarRuta {
 					s += ("izquierda,");
 			}
 			
-		} else if (cont == 8) {//Medio del pasillo
+		} else if (cont == 2) {//Medio del pasillo
 		
 			s += ("espera a la siguiente indicación.");
 		

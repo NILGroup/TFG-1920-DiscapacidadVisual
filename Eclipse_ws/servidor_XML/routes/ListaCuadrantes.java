@@ -60,8 +60,12 @@ public class ListaCuadrantes {
 			try {
 			
 				int norte = Integer.parseInt(conectado[0]);
-				if (norte >= 0)
-				matrizAdy[i][norte] = 1;
+				if (norte >= 0) {
+					matrizAdy[i][norte] = 1;
+					if(norte == 51 || norte == 50) {//Conexion 50-51 y 50-41
+						matrizAdy[i][norte] = 5;
+					}
+				}
 				
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -70,8 +74,12 @@ public class ListaCuadrantes {
 			try {
 				
 				int sur = Integer.parseInt(conectado[1]);
-				if (sur >= 0)
-				matrizAdy[i][sur] = 1;
+				if (sur >= 0) {
+					matrizAdy[i][sur] = 1;
+					if(sur == 50 || sur == 41) {//Conexion 50-51 y 50-41
+						matrizAdy[i][sur] = 5;
+					}
+				}
 				
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -81,7 +89,7 @@ public class ListaCuadrantes {
 				
 				int este = Integer.parseInt(conectado[2]);
 				if (este >= 0)
-				matrizAdy[i][este] = 1;
+					matrizAdy[i][este] = 1;
 				
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -91,7 +99,7 @@ public class ListaCuadrantes {
 				
 				int oeste = Integer.parseInt(conectado[3]);
 				if (oeste >= 0)
-				matrizAdy[i][oeste] = 1;
+					matrizAdy[i][oeste] = 1;
 				
 			} catch (NumberFormatException e) {
 				e.printStackTrace();

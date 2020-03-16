@@ -1,0 +1,22 @@
+Tareas que hacer:
+	
+	*Clara
+		-Acabar el xml de la planta 1 juntando cuadrantes y uniendo la planta 1 y 0.
+		-Añadir estos cambios a la memoria, con la justificacón de por qué se han unido
+		 los cuadrantes, la locaclización de los beacons...etc
+
+	*Belen
+		-Hacer pruebas y más pruebas de la ruta, comprobando todas aquellas que se nos ocurran.
+		-Limpiar un poco el código de esta función genera para que no de tanto asco. 
+		-Completar en la memoria la parte de mediciones que empecé pero que ahí sigue. 
+		-Añadir los cambios que se han hecho en la función de genera ruta (hasta donde llevamos) con
+		 la justificación de por qué se han hecho.
+
+Idea de cómo poner esto en la memoria:
+
+	-Para el tema de las mediciones: seguir donde estábamos.
+	-Para los cuadrantes, xml,...: hacer una nueva sección dentro del capítulo de nuestro trabajo
+	 (creo que es el 3) "Mapeo del edificio".
+	-Para el tema del servidor: dentro de este capítulo 3 otra sección de "Aplicación" y ahí subsecciones
+	 con "servidor" y "cliente". 
+	-Todo esto es opcional, solo era una idea de cómo hacerlo para ir las dos en la misma dirección.

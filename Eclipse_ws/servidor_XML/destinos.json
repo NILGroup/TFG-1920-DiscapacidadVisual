@@ -60,10 +60,6 @@
 "cuadrante": "36",
 }
 {
-"lugar": "cuad 66",
-"cuadrante": "66",
-}
-{
 "lugar": "cuad 16",
 "cuadrante": "16",
 }
@@ -73,42 +69,46 @@
 }
 {
 "lugar": "Aula 2",
-"cuadrante": "45",
+"cuadrante": "42",
 }
 {
 "lugar": "Aula 3",
-"cuadrante": "48",
+"cuadrante": "43",
 }
 {
 "lugar": "Aula 4",
-"cuadrante": "51",
+"cuadrante": "44",
 }
 {
 "lugar": "Aula 5",
-"cuadrante": "54",
+"cuadrante": "45",
 }
 {
 "lugar": "Cafeteria",
-"cuadrante": "65",
+"cuadrante": "52",
 }
 {
 "lugar": "Secretaria",
-"cuadrante": "72",
+"cuadrante": "54",
 }
 {
 "lugar": "Conserjeria",
-"cuadrante": "73",
+"cuadrante": "55",
 }
 {
 "lugar": "Salon de actos",
-"cuadrante": "75",
-}
-{
-"lugar": "Biblioteca",
 "cuadrante": "39",
 }
 {
+"lugar": "Biblioteca",
+"cuadrante": "58",
+}
+{
 "lugar": "puerta principal",
-"cuadrante": "71",
+"cuadrante": "53",
+}
+{
+"lugar": "Cafeteria2",
+"cuadrante": "49",
 }
 ]

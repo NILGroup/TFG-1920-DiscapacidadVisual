@@ -21,7 +21,7 @@
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>41</este>
-					<oeste>69</oeste>
+					<oeste>43</oeste>
 				</conectado>
 				<info>interseccion y aula 1</info>
 				<metros>5</metros>
@@ -38,7 +38,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="42">
-				<beacon>aAaw</beacon>
+				<beacon>beacon42</beacon>
 				<conectado>
 					<norte>56</norte>
 					<sur>-1</sur>
@@ -104,7 +104,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="48">
-				<beacon>si</beacon>
+				<beacon>beacon48</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -170,7 +170,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="54">
-				<beacon>si</beacon>
+				<beacon>beacon54</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -188,11 +188,11 @@
 					<este>-1</este>
 					<oeste>54</oeste>
 				</conectado>
-				<info>puerta lateral, interseccion y hay baños</info>
+				<info>puerta lateral, interseccion y hay banios</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="56">
-				<beacon>CPne</beacon>
+				<beacon>beacon56</beacon>
 				<conectado>
 					<norte>62</norte>
 					<sur>42</sur>
@@ -298,7 +298,7 @@
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>cafe y baños, antes 70</info>
+				<info>cafe y banios, antes 70</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="66">
@@ -326,7 +326,7 @@
 			<cuadrante idc="68">
 				<beacon>beacon68</beacon>
 				<conectado>
-					<norte>69</norte>
+					<norte>43</norte>
 					<sur>-1</sur>
 					<este>-1</este>
 					<oeste>39</oeste>
