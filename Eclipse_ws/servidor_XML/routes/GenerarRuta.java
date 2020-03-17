@@ -59,9 +59,16 @@ public class GenerarRuta {
 		if (posAct == posDest) { //Si hemos llegado al destino
 			if(primerCuadrante > 0) {
 				String rutaFinal = "";
-				if((posDest >= 0 && posDest <= 15) || (posDest >= 40 && posDest <= 54) ) { //El destino es un aula
+				Cuadrante cuadAnt = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
+				if((posDest >= 0 && posDest <= 7) || (posDest >= 21 && posDest <= 26) || 
+						(posDest >= 12 && posDest <= 16) || posDest == 30 || posDest == 36 
+						|| posDest == 35) { //El destino es un aula
 					
-					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este") || posDest == 49) { //La direccion en la que vas es oeste
+					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este") || posDest == 30
+							|| (c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("oeste") && 
+							(posDest >= 12 && posDest <= 16) ) || 
+							(posDest == 36 && (cuadAnt.getID() == 32 || cuadAnt.getID() == 35))
+							|| (posDest == 35 && cuadAnt.getID() == 34)) { //La direccion en la que vas es oeste
 						rutaFinal = "Su destino está a la izquierda. El recorrido ha finalizado.";
 					}
 					else { //Vas en direcion este
@@ -74,20 +81,39 @@ public class GenerarRuta {
 				return rutaFinal;
 			}
 			else {
-				return "Te encuentras en el destino";
+				return "Ya te encuentras en el destino";
 			}
 		}
 		
 		c2 = aCuadrantes.get(lCuadrantes.get(ultimoCuadrante));
 		
-		//Hay que poner aquí las condiciones teniendo en cuenta que hay 3 plantas!!
+		//Condiciones si hay un cambio de planta
+		Cuadrante cuadAnt = c1.clone();
+		if(primerCuadrante > 0) {
+			cuadAnt = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
+		}
+		//Suponemos que no va a iniciar la ruta en el ascensor!!!
 		if (c1.getZ() > c2.getZ()) {
 			cuadranteClave = c2.getID();
-			return "Baja a la planta cero.";
+			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22)
+				return "Los ascensores están a tu izquierda. Baja a la planta cero.";
+			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
+				return "Los ascensores están a tu derecha. Baja a la planta cero.";
+			}
+			else {
+				return "El ascensor está delante. Baja a la planta cero.";
+			}
 		}
 		else if(c2.getZ() > c1.getZ()) {
 			cuadranteClave = c2.getID();
-			return "Sube a la primera planta.";
+			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22)
+				return "Los ascensores están a tu izquierda. Sube a la primera planta.";
+			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
+				return "Los ascensores están a tu derecha. Sube a la primera planta.";
+			}
+			else {
+				return "El ascensor está delante. Sube a la primera planta.";
+			}
 		}
 		else {
 			
@@ -110,9 +136,17 @@ public class GenerarRuta {
 			if(primerCuadrante > 0) { //Ya estamos en ruta
 				cuadAnterior = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
 				if(cuadAnterior.getZ() != c1.getZ()) { //Acabamos de subir o bajar una planta
-					if(c1.getID() == 36 || c1.getID() == 66 || c1.getID() == 67) {
+					if(c1.getID() == 29 || c1.getID() == 10) {
 						cuadranteClave = c2.getID();
 						return "Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
+					}
+					else if(c1.getID() == 31) {
+						cuadranteClave = c2.getID();
+						if(c2.getID() == 32) {
+							return "Gira a la izquierda y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
+						}
+						else 
+							return "Gira a la derecha y avanza " + Float.toString(c1.getMetros()) + "metros. Espera la siguiente indicación.";
 					}
 				}
 				dirDeLaQueVengo = cuadAnterior.getDireccion(c1);

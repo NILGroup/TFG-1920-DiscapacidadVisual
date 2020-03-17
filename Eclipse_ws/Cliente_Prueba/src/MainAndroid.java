@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainAndroid extends Thread {
 
-	String addressServer = "192.168.1.37";//"192.168.1.38"; 
+	String addressServer = "192.168.1.38";//"192.168.1.38"; 
 
     int PORT = 2222;
     Socket socket = null;
@@ -85,29 +85,29 @@ public class MainAndroid extends Thread {
 MainAndroid thread = new MainAndroid();
 	    
 	    
-		beaconOrigen = "beacon53";
-		destino = "Cafeteria2"; //El 49
-		beaconActual = "beacon53";
+		beaconOrigen = "beacon39";
+		destino = "Sala de juntas"; 
+		beaconActual = "beacon39";
 		
 		thread.start();
 		
 		
-		//Suponemos que hemos llegado al cuadrante 55
+		//Suponemos que hemos llegado al cuadrante 38
 	   
-	   try {
+		try {
 			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon55";
+	    beaconActual = "beacon38";
 		
 	    MainAndroid thread9 = new MainAndroid();
 		thread9.start();
 		
 	
-		//Suponemos que hemos llegado al cuadrante 39
+		//Suponemos que hemos llegado al cuadrante 20
 	    try {
 			TimeUnit.SECONDS.sleep(4);
 		} catch (InterruptedException e) {
@@ -115,13 +115,13 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon39";
+	    beaconActual = "beacon20";
 		
 	    MainAndroid thread3 = new MainAndroid();
 		thread3.start();
 		
 		
-		//Suponemos que hemos llegado al cuadrante 40
+		//Suponemos que hemos llegado al cuadrante 22
 	    try {
 			TimeUnit.SECONDS.sleep(6);
 		} catch (InterruptedException e) {
@@ -129,13 +129,13 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon40";
+	    beaconActual = "beacon22";
 		
 	    MainAndroid thread5 = new MainAndroid();
 		thread5.start();
 		
 		
-		//Suponemos que hemos llegado al cuadrante 41
+		//Suponemos que hemos llegado al cuadrante 31
 	    try {
 			TimeUnit.SECONDS.sleep(6);
 		} catch (InterruptedException e) {
@@ -143,12 +143,12 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon41";
+	    beaconActual = "beacon31";
 		
 	    MainAndroid thread10 = new MainAndroid();
 		thread10.start();
 		
-		//Suponemos que hemos llegado al cuadrante 45
+		//Suponemos que hemos llegado al cuadrante 18
 	    try {
 			TimeUnit.SECONDS.sleep(8);
 		} catch (InterruptedException e) {
@@ -156,12 +156,12 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon45";
+	    beaconActual = "beacon18";
 		
 	    MainAndroid thread11 = new MainAndroid();
 		thread11.start();
 		
-		//Suponemos que hemos llegado al cuadrante 46
+		//Suponemos que hemos llegado al cuadrante 17
 	    try {
 			TimeUnit.SECONDS.sleep(10);
 		} catch (InterruptedException e) {
@@ -169,12 +169,12 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon46";
+	    beaconActual = "beacon17";
 		
 	    MainAndroid thread6 = new MainAndroid();
 		thread6.start();
 		
-		//Suponemos que hemos llegado al cuadrante 49
+		//Suponemos que hemos llegado al cuadrante 19
 	    try {
 			TimeUnit.SECONDS.sleep(12);
 		} catch (InterruptedException e) {
@@ -182,11 +182,49 @@ MainAndroid thread = new MainAndroid();
 			e.printStackTrace();
 		}
 
-	    beaconActual = "beacon49";
+	    beaconActual = "beacon19";
 		
 	    MainAndroid thread7 = new MainAndroid();
 		thread7.start();
+		
+		//Suponemos que hemos llegado al cuadrante 21
+	    /*try {
+			TimeUnit.SECONDS.sleep(12);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+	    beaconActual = "beacon21";
+		
+	    MainAndroid thread20 = new MainAndroid();
+		thread20.start();
+
+		//Suponemos que hemos llegado al cuadrante 20
+	    try {
+			TimeUnit.SECONDS.sleep(14);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon20";
+		
+	    MainAndroid thread21 = new MainAndroid();
+		thread21.start();
+		
+		//Suponemos que hemos llegado al cuadrante 36
+	    try {
+			TimeUnit.SECONDS.sleep(16);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon36";
+		
+	    MainAndroid thread22 = new MainAndroid();
+		thread22.start();*/
 	}
 
 }

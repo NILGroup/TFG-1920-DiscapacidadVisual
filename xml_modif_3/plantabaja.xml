@@ -38,7 +38,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="23">
-				<beacon>aAaw</beacon>
+				<beacon>beacon23</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -71,7 +71,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="26">
-				<beacon>3wxd</beacon>
+				<beacon>beacon26</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -107,7 +107,7 @@
 				<beacon>beacon29</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>-1</sur>
+					<sur>10</sur>
 					<este>28</este>
 					<oeste>-1</oeste>
 				</conectado>
@@ -130,7 +130,7 @@
 				<conectado>
 					<norte>32</norte>
 					<sur>22</sur>
-					<este>-1</este>
+					<este>18</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>ascensores a un lado, escaleras al otro (cuadrado)</info>
