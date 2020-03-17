@@ -211,7 +211,7 @@ En la sección que sigue veremos en qué se tradujeron todos estos resultados. C
 
 
 \section{Mapeo del edificio}
-
+\label{sec:mapeo}
 Cosas que contar:
 
 \begin{itemize}
@@ -226,3 +226,42 @@ Cosas que contar:
 
 Hacer intro de esta sección, supongo que cuando esté algo más hecho será más fácil hacerla.
 
+La aplicación se planteó como un modelo cliente-servidor, de esta manera nuestro dispositivo móvil (cliente) no tendría que hacer cálculos tediosos ni gastar demasiada batería en ello. Veamos qué funciones tenía cada parte de la aplicación.
+
+
+\subsection{Servidor}
+El servidor se diseñó de tal manera que este realizara las tareas pesadas. Las principales son: posicionamiento del usuario según la lectura que este había hecho de sus beacons, cálculo de la ruta desde el origen al destino y actualización de la misma siguiendo su posición actual.  
+
+Buena parte del código que conforma el servidor está tomado de trabajos anteriores, en concreto de \cite{TFGguia}. Sin embargo se han introducido cambios notorios para el desarrollo de esta aplicación: 
+
+\subsection{Posicionamiento con beacons}
+
+A diferencia de todos los trabajos previos de guía que se han hecho en la Facultad de Informática (comenzando por AVANTI, PONER REFERENCIA), el nuestro introduce una tecnología nueva y en pleno auge: los ya conocidos beacons. Esto cambia por completo la manera que se tenía de hacer el posicionamiento, antes se hacía mediante la triangularización de señales Wi-Fi y ahora usaremos las señales \textit{bluetooth} que emiten los beacons.
+
+Pese a que con los beacons también era posible desarrollar un sistema de triangularización preferimos optar por un posicionamiento basado en el beacon más cercano, que veremos con detalle más adelante. Las razones por las que optamos por esta técnica se pueden resumir en:
+
+\begin{itemize}
+	\item Necesitábamos una cantidad de beacons mayor, puesto que no podíamos tener ningún punto ciego con menos de las señales necesarias para hacer la triangularización (tres, generalmente). 
+	
+	\item El esfuerzo que iba a conllevar esta práctica nos restaría demasiado tiempo, apenas dejando hueco al verdadero problema que se intenta resolver: la adaptabilidad. 
+	
+	\item La mayoría de las aplicaciones de guía estudiadas (ver Capítulo \ref{cap:estadoDeLaCuestion}) utilizaban ya el posicionamiento por beacon más cercano.
+	
+	\item Más tarde surgió el problema del cierre de la Facultad por cuestiones sanitarias, lo que nos hubiera impedido, de manera física, realizar una triangularización exhaustiva dentro del edificio.
+\end{itemize} 
+
+Así las cosas nuestro servidor recibe información solo del beacon más próximo al cliente y, en función de ese dato, determina el cuadrante en el que se encuentra y qué movimientos debe hacer el usuario.  Veamos, de manera general, el funcionamiento del servidor cada vez que llega un nuevo cliente:
+
+\begin{enumerate}
+	\item El servidor recibe el beacon más cercano que tiene el cliente y el destino al que quiere ir.
+	
+	\item Calcula la ruta óptima (en lo que sigue veremos a qué nos referimos con esto) que debe seguir el cliente desde el origen o posición actual del cliente para llegar al destino. 
+\end{enumerate}
+
+El cliente va llamando al servidor cuando actualiza su posición actual, de esta manera el servidor puede ir actualizando también las instrucciones. Una vez que la ruta ha finalizado, el servidor se lo indica al cliente con una instrucción de finalización. Por ejemplo, \textit{su destino se encuentra a la derecha, el recorrido ha finalizado}.
+
+\subsection{Cálculo de la ruta óptima e instrucciones de guía}
+
+Una vez que ya teníamos listo el mapeo del edificio y el posicionamiento del usuario era hora de comenzar a trabajar en la guía. El mapeo que hemos visto en la Sección \ref{sec:mapeo}, ya nos proporcionaba un grafo, pues pasar de los cuadrantes a esta estructura de grafo era algo relativamente fácil con el uso de una matriz de adyacencia. De esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reducía a uno de los tantos problemas similares que hemos visto durante nuestros años en la Facultad, vimos claro que el algoritmo de \textit{ Dijkstra} nos sería de gran ayuda, y así se implementó.
+
+Sin embargo, no debíamos olvidar que nuestra aplicación tenía un usuario final muy concreto: las personas con discapacidad visual. Es por ello que la ruta debía ser la más fácil para ellos, no la más corta necesariamente. Nos dimos cuenta al hacer pruebas de distintas rutas, concretamente una que salía desde la puerta principal de la facultad y terminaba en la puerta trasera de la cafetería. El algoritmo de \textit{Dijkstra} nos sugirió que el camino más corto era pasando por detrás de conserjería (ver cuadrante 32 en PONER REFERENCIA DE LA FOTO DE LOS CUADRANTES) y no se equivocaba, es la ruta más corta en cuanto a cuadrantes pero no la óptima para una persona con discapacidad visual, pues ese pasillo es más estrecho y la gente se suele aglomerar, (están los ascensores, la gente continúa su camino a la cafetería o a la calle por ahí, etc) además de que el usuario tiene que hacer más giros. Mucho más conveniente sería continuar la ruta por delante de Secretaría y luego girar a la izquierda. Para lograrlo, simplemente añadimos más peso en nuestra matriz de adyacencia a aquellas conexiones que creímos más complicadas, en este caso a las conexiones entre los cuadrantes 31-32 y 32-22.
