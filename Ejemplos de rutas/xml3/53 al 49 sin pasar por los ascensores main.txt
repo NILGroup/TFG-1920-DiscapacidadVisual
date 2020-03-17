@@ -1,0 +1,101 @@
+beaconOrigen = "beacon53";
+		destino = "Cafeteria2"; //El 49
+		beaconActual = "beacon53";
+		
+		thread.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 55
+	   
+	   try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon55";
+		
+	    MainAndroid thread9 = new MainAndroid();
+		thread9.start();
+		
+	
+		//Suponemos que hemos llegado al cuadrante 39
+	    try {
+			TimeUnit.SECONDS.sleep(4);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon39";
+		
+	    MainAndroid thread3 = new MainAndroid();
+		thread3.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 40
+	    try {
+			TimeUnit.SECONDS.sleep(6);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon40";
+		
+	    MainAndroid thread5 = new MainAndroid();
+		thread5.start();
+		
+		
+		//Suponemos que hemos llegado al cuadrante 41
+	    try {
+			TimeUnit.SECONDS.sleep(6);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon41";
+		
+	    MainAndroid thread10 = new MainAndroid();
+		thread10.start();
+		
+		//Suponemos que hemos llegado al cuadrante 45
+	    try {
+			TimeUnit.SECONDS.sleep(8);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon45";
+		
+	    MainAndroid thread11 = new MainAndroid();
+		thread11.start();
+		
+		//Suponemos que hemos llegado al cuadrante 46
+	    try {
+			TimeUnit.SECONDS.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon46";
+		
+	    MainAndroid thread6 = new MainAndroid();
+		thread6.start();
+		
+		//Suponemos que hemos llegado al cuadrante 49
+	    try {
+			TimeUnit.SECONDS.sleep(12);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	    beaconActual = "beacon49";
+		
+	    MainAndroid thread7 = new MainAndroid();
+		thread7.start();
