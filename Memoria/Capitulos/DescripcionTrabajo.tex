@@ -103,7 +103,7 @@ Tras el debate, algunas de las conclusiones que sacamos de la visita al CTI son:
 \end{itemize}
 
 
-\section{Estudio de precisión de los beacons}
+\section{Estudio de la precisión de los beacons}
 
 Antes de ponernos manos a la obra con la aplicación debíamos conocer cómo se comportaban los beacons en cuanto a distancias. Ya conocíamos que esta tecnología era una de las más usadas para el posicionamiento en interiores pero necesitábamos saber los aspectos más tecnológicos: cuánto rango tenía la señal \textit{bluetooth} de estos aparatos, si la intensidad de esta señal era suficiente para poder determinar a qué distancia estaban y, lo más importante, cómo afectaba a todo ello el espacio en el que se iban a colocar; el pasillo, una esquina, una puerta, etc. Puesto que las investigaciones que habíamos realizado ya avisaban de que la intensidad de los beacons era muy dependiente del lugar y el material sobre el que estos se colocaran. REFERENCIA AL PDF DE WAYFNDER.
 
@@ -149,9 +149,7 @@ Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en
 
 A continuación presentamos los resultados de las distintas mediciones realizadas. Veamos primero  aquellas recogidas en gráficas: en ellas podemos ver cómo se comportan los beacons si comparamos la medida real con la estimada por la aplicación. 
 
-En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicación \textit{cuadrantes v1} cuando hemos leído las distancias del beacon con identificador CPne. Las diferentes lecturas corresponden a las medidas estimadas cuando el beacon estaba a dos metros (azul), alrededor de dos metros y medio (naranja), cinco metros (gris) y a sesenta y cuatro centímetros (amarillo).
-
-De esta gráfica destacamos que a grandes distancias, en este caso cinco metros, la medida estimada comienza a no ser muy fiable, a la par que muy fluctuante. Sin embargo, podemos ver cómo la medida a dos metros de distancia es la bastante exacta, fluctúa en menos de un metro a lo largo de casi toda la medición. Por último, la medición a menos de un metro, que se corresponde con la línea amarilla presenta fluctuaciones muy pequeñas, poco relevantes para nuestra aplicación. Como conclusión sacamos que cuanto mayor es la distancia a la que está el beacon menor es la fiabilidad  que podemos depositar en la estimación de la medida obtenida. 
+En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicación \textit{cuadrantes v1} cuando hemos leído las distancias del beacon con identificador CPne. Las diferentes lecturas corresponden a las medidas estimadas cuando el beacon estaba a dos metros (azul), alrededor de dos metros y medio (naranja), cinco metros (gris) y a sesenta y cuatro centímetros (amarillo). De esta gráfica destacamos que, a grandes distancias, en este caso cinco metros, la medida estimada comienza a no ser muy fiable, a la par que muy fluctuante. Sin embargo, podemos ver cómo la medida a dos metros de distancia es la bastante exacta, fluctúa en menos de un metro a lo largo de casi toda la medición. Por último, la medición a menos de un metro, que se corresponde con la línea amarilla presenta fluctuaciones muy pequeñas, poco relevantes para nuestra aplicación. Como conclusión sacamos que cuanto mayor es la distancia a la que está el beacon menor es la fiabilidad  que podemos depositar en la estimación de la medida obtenida. 
 
 \begin{figure}[t]
 	\centering
@@ -160,7 +158,7 @@ De esta gráfica destacamos que a grandes distancias, en este caso cinco metros,
 	\label{fig:dist_CPne}
 \end{figure}
 
-En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pesar de que tenemos un par de picos importantes en los primeros segundos de medición, el valor medio que obtenemos es el de una distancia estimada de un metro para un beacon que realmente está situado a medio metro. La Figura \ref{fig:dist_8v2c} recoge tres mediciones distintas para una misma distancia, cada una de ellas recoge unos valores distintos y bastante bajos, lejos de los aproximadamente 4 metros reales. Una posible explicación a este fenómeno nos lo puede dar la Figura \ref{fig:dist_conjunto}, que recoge la medición de dos beacons situados a la misma distancia y uno encima del otro. Como vemos, la medición del beacon situado abajo es bastante más baja, en comparación. Esto nos advierte de que la señal \textit{bluetooth} es bastante dependiente de los obstáculos, el entorno, ¡hasta las condiciones meteorológicas!. 
+En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pesar de que tenemos un par de picos importantes en los primeros segundos de medición, el valor medio que obtenemos es el de una distancia estimada de un metro para un beacon que realmente está situado a medio metro, un error que podríamos considerar como tolerable. La Figura \ref{fig:dist_8v2c} recoge tres mediciones distintas para una misma distancia, cada una de ellas recoge unos valores diversos y bastante bajos, lejos de los aproximadamente 4 metros reales. Una posible explicación a este fenómeno nos lo puede dar la Figura \ref{fig:dist_conjunto}, que recoge la medición de dos beacons situados a la misma distancia y uno encima del otro. Como vemos, la medición del beacon situado abajo es bastante más baja, en comparación. Esto nos advierte de que la señal \textit{bluetooth} es bastante dependiente de los obstáculos, el entorno, ¡hasta las condiciones meteorológicas!. 
 
 
 \begin{figure}[t]
@@ -188,18 +186,43 @@ En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pes
 
 \subsection{Mediciones en puntos clave de la facultad}
 
-Una vez que tuvimos una idea más clara del funcionamiento y el comportamiento de los beacons fue hora de abordar el problema desde el punto de vista del posicionamiento. La idea inicial fue la de colocar beacons en puntos clave, de tal manera que al encontrarnos con uno de ellos nos avisara de una intersección, un aula o cualquier otro destino o punto de interés. 
+Una vez que tuvimos una idea más clara del funcionamiento y el comportamiento de los beacons y habíamos superado la primera batalla tecnológica fue hora de abordar el problema desde el punto de vista del posicionamiento. La idea inicial fue la de colocar beacons en puntos clave, de tal manera que al encontrarnos con uno de ellos nos avisara de una intersección, un aula o cualquier otro destino o punto de interés. 
 
 En este caso los beacons tenían una posición muy concreta y los puntos desde los que se medía también. En la Figura \ref{fig:medidasPBaja} se puede ver en qué puntos se colocaron los beacons (punto rojo) y en qué puntos se midieron las distancias (cruz verde). Lo primordial era conocer la ubicación óptima de los beacons en los lugares más complicados, como son las intersecciones, los puntos donde se acumulan varios lugares de interés (como puede ser el caso de la puerta de entrada, delegación de alumnos y el aula cinco), así como aquellos espacios más grandes (como el \textit{hall} de entrada). En el ANEXO se pueden ver los resultados de estas mediciones. A continuación exponemos las conclusiones recogidas:
 
 \begin{itemize}
 	\item Los beacons no deben situarse demasiado cerca, esto altera las mediciones y hace que no sepamos distinguir cuál es el beacon más cercano. 
-	\item En lugares diáfanos, como el \textit{hall}, la señal de los beacons fluye con mayor libertad. Es por ello que podemos situarlos a mayor distancia sin que queden puntos ciegos en lugares importantes. Uno de los inconvenientes de esto surgió a la hora de introducir un beacon en la puerta del salón de actos 
+	
+	\item En lugares diáfanos, como el \textit{hall}, la señal de los beacons fluye con mayor libertad. Es por ello que podemos situarlos a mayor distancia sin que queden puntos ciegos en lugares importantes. Uno de los inconvenientes de esto surgió a la hora de introducir un beacon en la puerta del salón de actos y otro en la esquina que forma la unión de la pared que da comienzo a las aulas y la que sale de la puerta de entrada al edificio situada al lado de la biblioteca. Desde la cruz verde próxima a este punto era prácticamente imposible hacer una distinción del beacon más cercano debido a la fluctuación de su señal.
+	
+	\item Se hicieron pruebas con los becons sobre distintas superficies. En el caso de las mediciones en la puerta de entrada al edificio situada al lado de Delegación de alumnos (a la izquierda del mapa) el beacon CPne se colocó justo encima de la puerta, en un bisel que sobresale. El resultado fue que la señal de ese beacon se proyectaba con mayor intensidad, dando lugar a que la distancia estimada de ese beacon fuera menor. Es decir, la aplicación nos sugería que CPne estaba más cerca de lo que en realidad estaba. Tras esto, decidimos que lo mejor sería poner los beacons en las mismas condiciones (o todos en el suelo, o todos sobre la pared, etc.) siempre que fuera posible. 
+	
+	\item Otra puntualización que salió a partir de estas mediciones fue la de colocar los beacons de las intersecciones en lugares lo más neutros posibles. Esto quiere decir que había que tener en cuenta que a una intersección se puede llegar desde, al menos, dos puntos distintos y el beacon debía estar colocado de tal forma que desde todos ellos la situación fuera análoga. 
 \end{itemize}
 
 \begin{figure}[t]
-
+	\centering
 	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/medidasPlanoPBaja}
 	\caption{Mapa de la planta baja de la Facultad de Informática con la ubicación de los beacons (rojo) y los puntos de medición (verde). }
 	\label{fig:medidasPBaja}
 \end{figure}
+
+En la sección que sigue veremos en qué se tradujeron todos estos resultados. Cómo se hizo la disposición final de los beacons y el mapeo del edificio.
+
+
+\section{Mapeo del edificio}
+
+Cosas que contar:
+
+\begin{itemize}
+	\item Contar el mapeo diciendo que nos apoyamos en el TFG "Generador interactivo de instrucciones
+	de guía sobre plataformas móviles".
+	\item El por qué de los cuadrantes así y de la ubicación de los beacons (si enlazas con cosas de la sección anterior dabutis)
+	\item Imágenes de los mapas, claro.
+	\item Contar que se han enlazado las dos plantas (cosa que en el otro no estaba). En general resaltar las cosas que en el otro no había, como la planta baja.
+\end{itemize}
+
+\section{Nuestra aplicación (ponerle nombre)}
+
+Hacer intro de esta sección, supongo que cuando esté algo más hecho será más fácil hacerla.
+
