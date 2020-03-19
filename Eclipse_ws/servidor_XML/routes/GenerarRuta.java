@@ -28,7 +28,7 @@ public class GenerarRuta {
 		
 	}
 	
-	public String generar(int posAct, int posDest){
+	public String generar(int posAct, int posDest, boolean verbose){
 		
 		
 		
@@ -152,13 +152,14 @@ public class GenerarRuta {
 				dirDeLaQueVengo = cuadAnterior.getDireccion(c1);
 			}
 			
-			int cont = 1; //Contador de cuadrantes. Al 8 paramos
+			int cont = 1; //Contador de cuadrantes que avanzamos sin instrucción
 			float metros = c1.getMetros();
 			int contHastaCambioDir = 1;
 			Cuadrante aux = null;
 			
+			
 			while(direccion == direccionPrincipal && lCuadrantes.get(ultimoCuadrante) != posDest
-					&& /*cont < 2*/ contHastaCambioDir < 8) {
+					&& /*cont < 2*/ contHastaCambioDir < 8 && !verbose) {
 				if(cont < 2) {
 					ultimoCuadrante++;
 					Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
@@ -200,9 +201,10 @@ public class GenerarRuta {
 					}
 					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
-					
 				}
 				cuadranteClave = c2.getID();
+				//Añadimos información sobre el siguiente cuadrante
+				if(verbose) s += "Info: " + c2.getInfo();
 		}
 		return s;
 	}

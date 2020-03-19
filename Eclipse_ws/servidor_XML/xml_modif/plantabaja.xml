@@ -23,7 +23,7 @@
 					<este>22</este>
 					<oeste>20</oeste>
 				</conectado>
-				<info>interseccion,aula 1 y hay banios (medida largo)</info>
+				<info>interseccion,aula 1 y hay banios (medida largo). Hay dos pequenios escalones</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="22">
@@ -144,7 +144,7 @@
 					<este>33</este>
 					<oeste>36</oeste>
 				</conectado>
-				<info>interseccion (necesitara medida de ancho y largo)</info>
+				<info>interseccion (necesitara medida de ancho y largo). Hay dos pequenios escalones</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="33">
