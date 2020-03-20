@@ -1,0 +1,45 @@
+\chapter{Diseño e implementación}
+\label{cap:diseñoeimplementación}
+
+%Hacer intro de esta sección, supongo que cuando esté algo más hecho será más fácil hacerla.
+
+Hemos planteado la aplicación como un modelo cliente-servidor, en la que el servidor se encargará de ejecutar el programa que lleve a cabo todos los cálculos y se los proporcionará al cliente (dispositivo móvil) cuando este lo solicite. De esta manera, nuestro programa estará mejor organizado, será mas rápido y evitaremos que nuestro dispositivo móvil se quede sin batería en el cálculo de datos. A continuación detallaremos el diseño y la implementación tanto del cliente como del servidor.
+
+
+\section{Servidor}
+El servidor es una parte indispensable del proyecto ya que se encarga de realizar los cálculos más pesados para no sobrecargar al dispositivo móvil. Las principales tareas de las que se encarga son:
+\begin{itemize}
+	\item Permanecer a la escucha de cualquier cliente que solicite conexión.
+	\item Solventar el posicionamiento del cliente conectado.
+	\item Generar la mejor ruta (más corta y mejor adaptada) desde la posición actual hasta el destino indicado.
+	\item Enviar la siguiente instruacción al cliente.	
+\end{itemize} 
+
+La aplicación servidor se divide en código java y los archivos .xml en los que se encuentra la información del edificio. Buena parte del código que los conforma ha sido reutilizado de trabajos anteriores, en concreto del proyecto BLABLABLA \cite{TFGguia} y del de MARIANA. Sin embargo se han introducido cambios notorios para el desarrollo de esta aplicación que comentaremos a continuación.
+\subsection{Archivos XML}
+-completar
+\subsection{Código java}
+-completar: Meter un poco sobre las distintas clases y ahí meter lo del posicionamiento y en la clase genera ruta meter lo de genera ruta.
+
+
+
+
+\subsection{Detalles técnicos del posicionamiento}
+
+A diferencia de todos los trabajos previos de guía que se han hecho en la Facultad de Informática (comenzando por AVANTI, PONER REFERENCIA), el nuestro introduce una tecnología nueva y en pleno auge: los ya conocidos \textit{beacons}. Esto supone un gran cambio en el sistema de posicionamiento.
+
+Por tanto, nuestro servidor recibe información solo del beacon más próximo al cliente y, en función de ese dato, determina el cuadrante en el que se encuentra y qué movimientos debe hacer el usuario.  Veamos, de manera general, el funcionamiento del servidor cada vez que llega un nuevo cliente:
+
+\begin{enumerate}
+	\item El servidor recibe el beacon más cercano que tiene el cliente y el destino al que quiere ir.
+	
+	\item Calcula la ruta óptima (en lo que sigue veremos a qué nos referimos con esto) que debe seguir el cliente desde el origen o posición actual del cliente para llegar al destino. 
+\end{enumerate}
+
+El cliente va llamando al servidor cuando actualiza su posición actual, de esta manera el servidor puede ir actualizando también las instrucciones. Una vez que la ruta ha finalizado, el servidor se lo indica al cliente con una instrucción de finalización. Por ejemplo, \textit{su destino se encuentra a la derecha, el recorrido ha finalizado}.
+
+\subsection{Cálculo de la ruta óptima e instrucciones de guía}
+
+Una vez que ya teníamos listo el mapeo del edificio y el posicionamiento del usuario era hora de comenzar a trabajar en la guía. El mapeo que hemos visto en la Sección \ref{sec:mapeo}, ya nos proporcionaba un grafo, pues pasar de los cuadrantes a esta estructura de grafo era algo relativamente fácil con el uso de una matriz de adyacencia. De esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reducía a uno de los tantos problemas similares que hemos visto durante nuestros años en la Facultad, vimos claro que el algoritmo de \textit{ Dijkstra} nos sería de gran ayuda, y así se implementó.
+
+Sin embargo, no debíamos olvidar que nuestra aplicación tenía un usuario final muy concreto: las personas con discapacidad visual. Es por ello que la ruta debía ser la más fácil para ellos, no la más corta necesariamente. Nos dimos cuenta al hacer pruebas de distintas rutas, concretamente una que salía desde la puerta principal de la facultad y terminaba en la puerta trasera de la cafetería. El algoritmo de \textit{Dijkstra} nos sugirió que el camino más corto era pasando por detrás de conserjería (ver cuadrante 32 en PONER REFERENCIA DE LA FOTO DE LOS CUADRANTES) y no se equivocaba, es la ruta más corta en cuanto a cuadrantes pero no la óptima para una persona con discapacidad visual, pues ese pasillo es más estrecho y la gente se suele aglomerar, (están los ascensores, la gente continúa su camino a la cafetería o a la calle por ahí, etc) además de que el usuario tiene que hacer más giros. Mucho más conveniente sería continuar la ruta por delante de Secretaría y luego girar a la izquierda. Para lograrlo, simplemente añadimos más peso en nuestra matriz de adyacencia a aquellas conexiones que creímos más complicadas, en este caso a las conexiones entre los cuadrantes 31-32 y 32-22.

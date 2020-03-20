@@ -5,9 +5,9 @@
 
 \section{Reunión en el Centro de Tiflotecnología e Innovación de la ONCE}
 
-La idea de este TFG surgió de la necesidad de resolver problemas reales para gente real, concretamente para personas con discapacidad visual. Por ello, como no podía ser de otra manera, comenzamos nuestro camino por lo más importante: conocer las necesidades de los usuarios finales. Con este fin y gracias a la oportunidad que nos  brindó la Universidad Complutense de Madrid con la profesora María Guijarro al frente, pudimos reunirnos y entrevistar a personas especializadas en el campo de las tecnologías que sufren discapacidad visual.
+La idea de este TFG surge de la necesidad de resolver problemas reales para gente real, concretamente para personas con discapacidad visual. De esta manera, empezamos nuestro camino por lo más importante: conocer las necesidades de los usuarios finales. Con este fin y gracias a la oportunidad que nos ha brindado la Universidad Complutense de Madrid con la profesora María Guijarro al frente, hemos podido reunirnos y entrevistar a personas especializadas en el campo de las tecnologías que sufren discapacidad visual.
 
-En este documento recogemos las notas que tomamos durante la reunión el día 11 de octubre de 2019 en el CTI (Centro de Tiflotecnología e Innovación) de la ONCE.
+En este documento recogemos las notas que tomamos durante la reunión el pasado 11 de octubre de 2019 en el CTI (Centro de Tiflotecnología e Innovación) de la ONCE.
 	
 
 %PRIMERA SECCIÓN
@@ -105,25 +105,23 @@ Tras el debate, algunas de las conclusiones que sacamos de la visita al CTI son:
 
 \section{Estudio de la precisión de los beacons}
 
-Antes de ponernos manos a la obra con la aplicación debíamos conocer cómo se comportaban los beacons en cuanto a distancias. Ya conocíamos que esta tecnología era una de las más usadas para el posicionamiento en interiores pero necesitábamos saber los aspectos más tecnológicos: cuánto rango tenía la señal \textit{bluetooth} de estos aparatos, si la intensidad de esta señal era suficiente para poder determinar a qué distancia estaban y, lo más importante, cómo afectaba a todo ello el espacio en el que se iban a colocar; el pasillo, una esquina, una puerta, etc. Puesto que las investigaciones que habíamos realizado ya avisaban de que la intensidad de los beacons era muy dependiente del lugar y el material sobre el que estos se colocaran. REFERENCIA AL PDF DE WAYFNDER.
+Antes de embarcarnos en el diseño de la aplicación vamos a hacer un estudio más en profundidad de los \textit{beacons} con el fin de comprender por completo su funcionamiento y cómo se comportan a la hora de medir distancias, es decir, cuánto rango tiene la señal \textit{bluetooth}, con ayuda de qué función podemos recibir esta señal e interpretarla para determinar la distancia, qué margen de error presenta, en qué lugares es más aconsejable establecer las balizas para recibir mejor la señal y por tanto reducir el error, etc. % REFERENCIA AL PDF DE WAYFNDER.
 
-Para comenzar esta investigación nos ayudamos en la propia SDK de \textit{Kontakt}, la marca de nuestros beacons. Esta permite conocer qué beacons están en nuestro rango en un momento determinado y actualizar esa lectura cada cierto tiempo. Además tiene implementado un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
+Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de Desarrollo Software) propia de su marca (\textit{Kontakt}) en la que incluyen funciones ya implementadas que nos permiten conocer qué \textit{beacons} están en nuestro rango en un momento determinado y a cuántos metros están, y se va actualizando cada cierto tiempo. También incluye un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
 
 \begin{itemize}
-	\item IMMEDIATE: Si el dispositivo se encuentra a menos de 0,5m.
-	\item NEAR: Si el dispositivo se encuentra entre los 0,5m y los 3m.
-	\item FAR: Si el dispositivo se encuentra a más de 3m.
-	\item UNKNOWN: Si se ha perdido la señal del dispositivo.
+	\item \textit{IMMEDIATE:} Si el dispositivo se encuentra a menos de $0,5$ metros.
+	\item \textit{NEAR:} Si el dispositivo se encuentra entre $0,5$ y $3$ metros.
+	\item \textit{FAR:} Si el dispositivo se encuentra a más de $3$ metros.
+	\item \textit{UNKNOWN:} Si se ha perdido la señal del dispositivo.
 \end{itemize}
 
-Gracias a estas funciones ya implementadas en la SDK desarrollamos en poco tiempo pequeñas y simples aplicaciones que nos permitieron de manera muy visual comprobar las medidas leídas con las medidas reales a las que estaban los beacons. Estas medidas se realizaron tanto en la propia Facultad de Informática como en nuestras propias casas.
+Gracias a estas funciones hemos desarrollado una serie de aplicaciones que nos han servido para tener una primera toma de contacto con el lenguaje de programación Android, lenguaje que como veremos más adelante hemos escogido para el desarrollo de la aplicación, y para contrastar de manera visual el error existente entre la distancia real a la que se encuentran las balizas y la distancia leída mediante la interpretación de las señales bluetooth. Las aplicaciones son las siguientes:
 
-A continuación presentamos las herramientas desarrolladas para medir la fiabilidad y exactitud de nuestros beacons.
+\subsection{Aplicación ``miniapp''}
+Esta aplicación constituye la primera toma de contacto con los \textit{beacons} y con el código de la SDK. Presenta una interfaz sencilla en la que aparece una tabla con las distintas categorías de proximidad para 3 balizas y debajo, el hueco para indicar el identificador correspondiente. En el cuadro inferior aparecen dos botones muy intuitivos con los que el usuario puede interactuar con la app: Stop Scanning y Start Scanning. De esta manera, una vez que empieza el escaneo y las balizas se encuentran en el radio de detección, se incluyen los identificadores en cuestión y se colorea en verde la categoría de proximidad estimada en cada caso según corresponda. La lectura de los \textit{beacons} se actualiza cada 2 segundos, tiempo establecido de antemano. En la Figura \ref{fig:miniapp} podemos ver la interfaz descrita.
 
-\subsection{Aplicación miniapp}
-Esta aplicación fue la primera toma de contacto con los beacons, queríamos una aplicación visual que nos indicara la categoría de proximidad de los beacons. El tomar la categoría como aproximación de la distancia fue nuestra primera idea, puesto que teníamos en mente que la señal de los beacons no era muy estable. En la Figura \ref{fig:miniapp} vemos la interfaz principal de la aplicación, con ella podíamos medir la categoría de hasta tres beacons. Los beacons considerados se encuentran debajo del panel de categorías y la categoría en la que se encuentran se resalta en verde. La lectura que se hace de los beacons se va actualizando cada $x$ tiempo establecido. 
-
-La idea de esta aplicación fue la de establecer el grado de confianza que podíamos tener en las categorías ofrecidas por la SDK de \textit{Kontakt}. El resultado fue muy positivo puesto que, a pesar de que las distancias fluctuaban, la categoría se asignaba correctamente sin grandes fluctuaciones. 
+La idea subyacente para desarrollar esta aplicación es la de establecer el grado de confianza que podemos tener en las categorías ofrecidas por la SDK de \textit{Kontakt} y así, ver si podemos reutilizarlas para dar ciertas instrucciones al usuario cuando este se encuentre en un cierto rango. %El resultado ha sido muy positivo puesto que, a pesar de que las distancias en metros sí fluctuan, la categoría asignada se corresponde en líneas generales con la real. 
 
 \begin{figure}[t]
 	\centering
@@ -132,10 +130,10 @@ La idea de esta aplicación fue la de establecer el grado de confianza que podí
 	\label{fig:miniapp}
 \end{figure}
 
-\subsection{Aplicación cuadrantes v1}
-En la Figura \ref{fig:cuadrantesv1} vemos la interfaz principal de la aplicación \textit{cuadrantes v1}, esta fue diseñada, en inicio, para saber a qué distancia debían estar los beacons y poder así dividir las distintas plantas de la facultad en cuadrantes (de ahí su nombre), de esta manera podríamos construir un grafo cuyos nodos fueran estos cuadrantes y, que representara el mapa de la facultad.
+\subsection{Aplicación ``cuadrantes v1''}
+Tras la aplicación ``miniapp'', hemos desarrollado una segunda, llamada ``cuadrantes v1'', capaz de captar los \textit{beacons} al paso e indicar la categoría de proximidad y los metros exactos a los que lee las balizas. Esta información se actualiza cada 2 segundos (tiempo configurable). La Figura \ref{fig:cuadrantesv1} muestra la interfaz principal de la aplicación.
 
-Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en la figura lo hace cada dos segundos, la señal de los beacons que están a su alcance, mostrar la categoría de su distancia y la distancia estimada en metros. La razón por la que llevamos un registro de qué está en el rango cada cierto tiempo es que notamos que las distancias fluctuaban, notoriamente en algunos casos, y quisimos hacer un estudio previo al desarrollo de la aplicación.
+La idea por la cual hemos creado la app ``cuadrantes v1'' es la de obtener más información sobre el error cometido a la hora de determinar la distancia en metros a la que se encuentran los \textit{beacons} y ver qué factores le afectan para poder empezar a pensar los puntos claves en los que colocar las balizas y abordar tras ello, el mapeo de la edificio. De ahí el nombre de la aplicación ya que, como veremos, los cuadrantes serán una pieza fundamental en el mapeo.
 
 \begin{figure}[t]
 	\centering
@@ -147,9 +145,9 @@ Es una aplicación muy sencilla, cuya función es recoger cada cierto tiempo, en
 
 \subsection{Resultados}
 
-A continuación presentamos los resultados de las distintas mediciones realizadas. Veamos primero  aquellas recogidas en gráficas: en ellas podemos ver cómo se comportan los beacons si comparamos la medida real con la estimada por la aplicación. 
+A continuación presentaremos algunos de los resultados obtenidos en las distintas mediciones realizadas. Para ello, hemos creado unas gráficas que muestran cómo se comportan los \textit{beacons} si comparamos la medida real con la estimada por la aplicación. 
 
-En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicación \textit{cuadrantes v1} cuando hemos leído las distancias del beacon con identificador CPne. Las diferentes lecturas corresponden a las medidas estimadas cuando el beacon estaba a dos metros (azul), alrededor de dos metros y medio (naranja), cinco metros (gris) y a sesenta y cuatro centímetros (amarillo). De esta gráfica destacamos que, a grandes distancias, en este caso cinco metros, la medida estimada comienza a no ser muy fiable, a la par que muy fluctuante. Sin embargo, podemos ver cómo la medida a dos metros de distancia es la bastante exacta, fluctúa en menos de un metro a lo largo de casi toda la medición. Por último, la medición a menos de un metro, que se corresponde con la línea amarilla presenta fluctuaciones muy pequeñas, poco relevantes para nuestra aplicación. Como conclusión sacamos que cuanto mayor es la distancia a la que está el beacon menor es la fiabilidad  que podemos depositar en la estimación de la medida obtenida. 
+En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha proporcionado la aplicación ``cuadrantes v1'' del \textit{beacon} con identificador CPne. En este caso, hemos realizado 4 estudios independientes marcados con distintos colores: azul -\textit{beacon} a 2m-, naranja -\textit{beacon} a 2,5m aproximadamente-, gris -\textit{beacon} a 5 metros- y amarillo -\textit{beacon} a 64cm-. De esta gráfica concluimos que cuanto mayor es la distancia a la que se encuentra la baliza, véase la función grisácea (5m), más fluctúa la medida estimada convirtiéndose en un dato poco fiable. Correlativamente, a menor distancia menor error. Podemos ver que la función azul (2m) es bastante fiel a la realidad, fluctúa en un intervalo de un metro a lo largo de toda la medición. Por último, el resultado de la gráfica amarilla (64cm) es bastante preciso, presenta un error despreciable durante toda la medición.
 
 \begin{figure}[t]
 	\centering
@@ -158,7 +156,11 @@ En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha dado la aplicaci�
 	\label{fig:dist_CPne}
 \end{figure}
 
-En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pesar de que tenemos un par de picos importantes en los primeros segundos de medición, el valor medio que obtenemos es el de una distancia estimada de un metro para un beacon que realmente está situado a medio metro, un error que podríamos considerar como tolerable. La Figura \ref{fig:dist_8v2c} recoge tres mediciones distintas para una misma distancia, cada una de ellas recoge unos valores diversos y bastante bajos, lejos de los aproximadamente 4 metros reales. Una posible explicación a este fenómeno nos lo puede dar la Figura \ref{fig:dist_conjunto}, que recoge la medición de dos beacons situados a la misma distancia y uno encima del otro. Como vemos, la medición del beacon situado abajo es bastante más baja, en comparación. Esto nos advierte de que la señal \textit{bluetooth} es bastante dependiente de los obstáculos, el entorno, ¡hasta las condiciones meteorológicas!. 
+En el caso de la Figura \ref{fig:dist_eAaw}, en la que se estima la distancia para el \textit{beacon} eAaw, el comportamiento es similar. En líneas generales, el valor medio estimado se corresponde con la distancia real a la que se encuentran las balizas. Sin embargo, en esta medición hemos contemplado una novedad que se ha repetido en numerosas ocasiones convirtiéndose en un patrón de comportamiento y es que durante los primeros segundos en los que arranca la aplicación, las estimaciones son menos precisas, dando lugar a picos importantes que más tarde se suavizan. 
+
+La Figura \ref{fig:dist_8v2c} recoge cuatro mediciones para el \textit{beacon} 8v2c, tres de ellas tomadas para una misma distancia (4m) y una a 64 cm. Observamos de nuevo que el error es despreciable cuando la baliza se encuentra muy próxima. Por el contrario, los valores que recogen las gráficas en las que el dispositivo se encuentra a 4m están muy por debajo de lo esperado, solo una de ellas alcanza el valor real. Este factor común revela una alteración considerable de la intensidad de la señal provocada por algún factor del entorno que la debilita. Es por esto que la última gráfica plasmada en la Figura \ref{fig:dist_conjunto}, hace referencia a una situación particular. Se trata de dos \textit{beacons} diferentes situados a la misma distancia uno encima del otro. El objetivo de este estudio era ver si uno de los factores que podía alterar la intensidad de señal era la presencia de otras balizas, y efectivamente como podemos observar, la intensidad de ambas señales es bastante más baja de lo esperado, prácticamente en ningún momento alcanzan el valor real. En este caso particular, el error es tolerable ya que los \textit{beacons} están situados a muy poca distancia pero sí nos advierte de que la señal bluetooth es sensible a interferencias provocadas por otros \textit{beacons} del entorno. En el siguiente apartado estudiaremos qué otros posibles factores pueden ser los desencadenantes de alteraciones en la señal. 
+
+Cabe destacar que aunque en determinados casos los datos son muy fluctuantes y poco precisos, las categorías de proximidad, con los rangos establecidos, se mantienen en su mayoría fieles a la realidad.
 
 
 \begin{figure}[t]
@@ -179,25 +181,42 @@ En el caso de la Figura \ref{fig:dist_eAaw} el comportamiento es similiar, a pes
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/dist_conjunto}
-	\caption{Gráfico con las distancias medidas conjuntas de los beacons 8v2c y CPne, estando uno sobre otro. }
+	\caption{Gráfico de los beacons 8v2c y CPne superpuestos. }
 	\label{fig:dist_conjunto}
 \end{figure}
 
+\subsection{Interferencias en la señal bluetooth}
+
+Los \textit{beacons} son dispositivos que se pueden colocar tanto en interiores como en exteriores pero hay que tener en cuenta qué lugares son más aptos para su establecimiento de manera que la señal no sufra interferencias, algunas recomendaciones son:
+\begin{itemize}
+	\item Lugares altos (alrededor de 2,5m) para evitar las interferencias provocadas por los cuerpos de las personas ya que estos absorben parte de la señal.
+	\item Lugares alejados a un metro aproximadamente de elementos que pueden alterar la intensidad de la señal como elementos metálicos, conductos de electricidad, iluminación, otras balizas, etc.
+	\item En pasillos de menos de 4m de ancho, colocar la baliza en el medio para que cubra el espacio por igual. Si por el contrario, el ancho es mayor se deberán usar varias balizas.
+	\item Colocar las balizas aproximadamente 1m antes de los lugares de interés (\textit{landmarks}) en los que las personas necesitarán la siguiente instrucción. Ejemplo: puertas, ascensores, escaleras, esquinas, etc.
+	\item Considerar la orientación adecuada de la antena direccional del \textit{beacon}, esta depende por completo del fabricante. En ocasiones la baliza no emite una señal simétrica por completo sino que emite una señal en forma elíptica.
+\end{itemize}
+
+Otros factores difíciles de controlar que también afectan a la señal son las condiciones meteorológicas, la señal Wi-Fi, las señales bluetooth de otros dispositivos...
+
+%BIBLIOGRAFIA http://www.wayfindr.net/wp-content/uploads/2018/07/Wayfindr-Open-Standard-Rec-2.0.pdf?version=recommendation-2
 
 \subsection{Mediciones en puntos clave de la facultad}
+\label{sec:medicionesbeacons}
 
-Una vez que tuvimos una idea más clara del funcionamiento y el comportamiento de los beacons y habíamos superado la primera batalla tecnológica fue hora de abordar el problema desde el punto de vista del posicionamiento. La idea inicial fue la de colocar beacons en puntos clave, de tal manera que al encontrarnos con uno de ellos nos avisara de una intersección, un aula o cualquier otro destino o punto de interés. 
+Ahora que hemos superado la primera barrera tecnológica y tenemos una idea más clara del funcionamiento y el comportamiento de los \textit{beacons}, nos disponemos a dar el siguiente paso hacia la resolución del problema del posicionamiento. Para ello, estudiaremos los planos de la Facultad de Informática, determinaremos cuales podrían ser, a priori, los puntos de decisión y haremos mediciones para comprobar si las señales de los \textit{beacons} se reciben correctamente y no sufren interferencias en dichos puntos.
 
-En este caso los beacons tenían una posición muy concreta y los puntos desde los que se medía también. En la Figura \ref{fig:medidasPBaja} se puede ver en qué puntos se colocaron los beacons (punto rojo) y en qué puntos se midieron las distancias (cruz verde). Lo primordial era conocer la ubicación óptima de los beacons en los lugares más complicados, como son las intersecciones, los puntos donde se acumulan varios lugares de interés (como puede ser el caso de la puerta de entrada, delegación de alumnos y el aula cinco), así como aquellos espacios más grandes (como el \textit{hall} de entrada). En el ANEXO se pueden ver los resultados de estas mediciones. A continuación exponemos las conclusiones recogidas:
+Los puntos de decisión son aquellos lugares de interés para el usuario o aquellos puntos en los que se requerirá la siguiente instrucción a seguir en la ruta. Los puntos de decisión que hemos considerado son: los destinos (aulas, cafetería, biblioteca, conserjería, secretaría, salón de actos, sala de juntas, sala de grados, etc.), las intersecciones (esquinas), los ascensores y escaleras, y las puertas de entrada al edificio.
+
+En las Figuras \ref{fig:medidasPBaja} y MEDIDASPLANTA1 mostramos visualmente algunos de los puntos en los que hemos probado a colocar los \textit{beacons} (puntos rojos) y desde donde hemos llevado a cabo las mediciones correspondientes (cruces verdes). El objetivo de este estudio es conocer la ubicación óptima de los \textit{beacons} para que a nuestro paso cerca de ellos, la distancia registrada sea lo más precisa posible, especialmente en los lugares más complicados como las intersecciones o las zonas en las que se acumulan varios puntos de interés (como el \textit{hall} de entrada). ¿En el ANEXO se pueden ver los resultados de estas mediciones? (HABRÁ QUE AÑADIR MÁS MEDICIONES-COMPLETAR). A continuación exponemos algunas de las conclusiones recogidas:
 
 \begin{itemize}
-	\item Los beacons no deben situarse demasiado cerca, esto altera las mediciones y hace que no sepamos distinguir cuál es el beacon más cercano. 
+	\item Los \textit{beacons} no deben situarse demasiado cerca ya que las señales interfieren entre sí y alteran las distancias no pudiendo distinguir cuál es el \textit{beacon} más cercano. Por este motivo, hemos acordado no poner, por el momento, balizas en los baños ya que, tanto en la planta 1 como en la planta baja, se encuentran en zonas repletas de puntos de interés.
 	
-	\item En lugares diáfanos, como el \textit{hall}, la señal de los beacons fluye con mayor libertad. Es por ello que podemos situarlos a mayor distancia sin que queden puntos ciegos en lugares importantes. Uno de los inconvenientes de esto surgió a la hora de introducir un beacon en la puerta del salón de actos y otro en la esquina que forma la unión de la pared que da comienzo a las aulas y la que sale de la puerta de entrada al edificio situada al lado de la biblioteca. Desde la cruz verde próxima a este punto era prácticamente imposible hacer una distinción del beacon más cercano debido a la fluctuación de su señal.
+	\item En lugares diáfanos, como el \textit{hall}, la señal de los \textit{beacons} fluye con mayor libertad ya que no se encuentra con obstáculos. Es por esto, que deben situarse a mayor distancia entre sí. Uno de los problemas que se ha derivado de este hecho es cómo cubrir dicho espacio. Inicialmente colocamos una baliza en conserjería, otra en la intersección superior con el pasillo principal, otra en la intersección inferior con el pasillo que conduce a cafetería y otra enfrente para indicar la entrada al salón de actos (ver Figura FIGURAMAPAPLANTABAJA). Tras numerosas mediciones, la solución que proponemos es colocar las balizas de modo que una pueda servir para cubrir dos o más puntos de interés. Consecuentemente, hemos suprimido el \textit{beacon} de conserjería y hemos dejado exclusivamente el de las intersecciones ya que la inferior está muy próxima a la ventanilla de conserjería y puede reutilizarse para los dos puntos clave, y hemos desplazado un poco hacia arriba el \textit{beacon} del salón de actos para que sirva tanto para marcar dicho destino como para marcar la esquina superior que conduce hacia la biblioteca. En la Figura FIGURANUEVA se puede ver el resultado final.
 	
-	\item Se hicieron pruebas con los becons sobre distintas superficies. En el caso de las mediciones en la puerta de entrada al edificio situada al lado de Delegación de alumnos (a la izquierda del mapa) el beacon CPne se colocó justo encima de la puerta, en un bisel que sobresale. El resultado fue que la señal de ese beacon se proyectaba con mayor intensidad, dando lugar a que la distancia estimada de ese beacon fuera menor. Es decir, la aplicación nos sugería que CPne estaba más cerca de lo que en realidad estaba. Tras esto, decidimos que lo mejor sería poner los beacons en las mismas condiciones (o todos en el suelo, o todos sobre la pared, etc.) siempre que fuera posible. 
+	\item Hemos hecho pruebas con los \textit{beacons} sobre distintas superficies y hemos comprobado que efectivamente el material puede alterar la señal. Particularmente, en el caso de las mediciones de la puerta lateral del edificio (lado izquierdo del mapa) hemos colocado el \textit{beacon} CPne justo encima de la puerta, en un bisel metálico que sobresale. El resultado ha sido que la señal de la baliza se proyecta con mayor intensidad, dando lugar a que la distancia estimada sea menor. Es decir, la aplicación sugiere que CPne está más cerca de lo que en realidad está. Tras esto, hemos concluido que lo óptimo es poner los \textit{beacons} sobre las mismas superficies, a ser posible no metálicas, y a la misma altura para que estén en igualdad de condiciones. 
 	
-	\item Otra puntualización que salió a partir de estas mediciones fue la de colocar los beacons de las intersecciones en lugares lo más neutros posibles. Esto quiere decir que había que tener en cuenta que a una intersección se puede llegar desde, al menos, dos puntos distintos y el beacon debía estar colocado de tal forma que desde todos ellos la situación fuera análoga. 
+	\item La última puntualización que hemos hecho tras las mediciones es que los \textit{beacons} de las intersecciones deben situarse en un punto lo más neutro posible ya que, al menos, se puede llegar desde dos puntos distintos y la señal se debe recibir de manera simétrica. 
 \end{itemize}
 
 \begin{figure}[t]
@@ -207,61 +226,43 @@ En este caso los beacons tenían una posición muy concreta y los puntos desde l
 	\label{fig:medidasPBaja}
 \end{figure}
 
-En la sección que sigue veremos en qué se tradujeron todos estos resultados. Cómo se hizo la disposición final de los beacons y el mapeo del edificio.
+En la próxima sección veremos en qué se traducen todos estos resultados, cómo resulta la disposición final de los \textit{beacons} y cómo dividiremos los planos para llevar a cabo el mapeo del edificio.
 
 
 \section{Mapeo del edificio}
 \label{sec:mapeo}
-Cosas que contar:
+Para el mapeo de la Facultad de Informática nos hemos apoyado en el proyecto ``Generador interactivo de instrucciones de guía sobre plataformas móviles'' realizado por Víctor Gutiérrez Rodríguez, Juan Diego Lozano Martín y Vítctor Manuel Pose Murga \citep{TFGguia}. De este, hemos reutilizado el sistema de estructuración basado en cuadrantes que contienen un identificador único (para diferenciar más fácilmente en qué planta estamos), y hemos prescindido de las posiciones sureste y noroeste ya que al emplear un sistema de posicionamiento basado en puntos de decisión no vamos a triangular la posición exacta del usuario y, por tanto, no necesitamos conocer las coordenadas (x,y) concretas de los cuadrantes. En su lugar hemos incluido el identificador (único) del \textit{beacon} asociado a dicho cuadrante. Por este mismo motivo, aquellos cuadrantes que no tienen asociada una baliza bluetooth carecen de interés ya que el programa te sitúa en el cuadrante con el \textit{beacon} más cercano desde tu posición. Es por esto que hemos aunado los cuadrantes formando unos nuevos más grandes. En la Figura \ref{fig:cuadrantesP1_v1} mostramos la planta 1 con los cuadrantes originales (en rojo) , su identificador (en verde) y la posición final de los \textit{beacons} (en amarillo) según lo que acordamos en la Sección \ref{sec:medicionesbeacons}, mientras que en la Figura \ref{fig:cuadrantesP1_v3} encontramos la versión final, en la que solo permanecen los cuadrantes con baliza. Además podemos observar que hemos suprimido los cuadrantes de las aulas, sala de juntas, etc. esto se debe a que nuestra aplicación no te guía dentro de estas estancias sino que funciona como guía de puerta a puerta.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplanta1_cuadrantes}
+	\caption{Primera versión del mapeo de la planta 1 de la Facultad de Informática.}
+	\label{fig:cuadrantesP1_v1}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplanta1_cuadrantes3}
+	\caption{Versión final del mapeo de la planta 1 de la Facultad de Informática.}
+	\label{fig:cuadrantesP1_v3}
+\end{figure}
+
+Para poder establecer una red de cuadrantes que nos permita generar una ruta válida pasando a través de ellos, hemos mantenido la información de conectados con cada cuadrante por los puntos cardinales (norte, sur, este y oeste).
+
+Esta estructura, junto con la información sobre la planta (coordenada z) en la que te encuentras, queda guardada en unos ficheros .xml almacenados en el servidor en una carpeta llamada xml-modif que se encuentra en el mismo directorio de la aplicación compilada del servidor .jar. Estos ficheros son:
 
 \begin{itemize}
-	\item Contar el mapeo diciendo que nos apoyamos en el TFG "Generador interactivo de instrucciones
-	de guía sobre plataformas móviles".
-	\item El por qué de los cuadrantes así y de la ubicación de los beacons (si enlazas con cosas de la sección anterior dabutis)
-	\item Imágenes de los mapas, claro.
-	\item Contar que se han enlazado las dos plantas (cosa que en el otro no estaba). En general resaltar las cosas que en el otro no había, como la planta baja.
+	\item edificio.xml: Archivo principal, recuperado del proyecto mencionado, que indexa las diferentes plantas del edificio.
+	\item plantaX.xml: Archivo que representa una planta del edificio.	
 \end{itemize}
 
-\section{Nuestra aplicación (ponerle nombre)}
+Otras novedades que hemos incluido en los archivos plantaX.xml son: añadir los metros que ocupan los cuadrantes para poder dar una instrucción más precisa, y añadir un apartado \textit{info} para poder informar al usuario, si lo desea, de qué hay a su paso por la ruta, esta idea la tuvimos tras investigar distintas aplicaciones de guía para personas con discapacidad visual y tras la reunión con la ONCE, en la que nos acercamos mucho a las necesidades de nuestros usuarios. Por otro lado, como podemos ver en la Figura \ref{fig:cuadrantesPbaja} hemos incluido el mapeo de la planta baja y hemos conectado las distintas plantas para incluir rutas de una a otra (novedad con respecto a los trabajos predecesores).
 
-Hacer intro de esta sección, supongo que cuando esté algo más hecho será más fácil hacerla.
+%HAY QUE CAMBIAR LA IMAGEN CUANDO CAMBIE EL CUADRANTE SIN BEACON!!
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplantabaja_cuadrantes3}
+	\caption{Mapeo de la planta baja de la Facultad de Informática.}
+	\label{fig:cuadrantesPbaja}
+\end{figure}
 
-La aplicación se planteó como un modelo cliente-servidor, de esta manera nuestro dispositivo móvil (cliente) no tendría que hacer cálculos tediosos ni gastar demasiada batería en ello. Veamos qué funciones tenía cada parte de la aplicación.
-
-
-\subsection{Servidor}
-El servidor se diseñó de tal manera que este realizara las tareas pesadas. Las principales son: posicionamiento del usuario según la lectura que este había hecho de sus beacons, cálculo de la ruta desde el origen al destino y actualización de la misma siguiendo su posición actual.  
-
-Buena parte del código que conforma el servidor está tomado de trabajos anteriores, en concreto de \cite{TFGguia}. Sin embargo se han introducido cambios notorios para el desarrollo de esta aplicación: 
-
-\subsection{Posicionamiento con beacons}
-
-A diferencia de todos los trabajos previos de guía que se han hecho en la Facultad de Informática (comenzando por AVANTI, PONER REFERENCIA), el nuestro introduce una tecnología nueva y en pleno auge: los ya conocidos beacons. Esto cambia por completo la manera que se tenía de hacer el posicionamiento, antes se hacía mediante la triangularización de señales Wi-Fi y ahora usaremos las señales \textit{bluetooth} que emiten los beacons.
-
-Pese a que con los beacons también era posible desarrollar un sistema de triangularización preferimos optar por un posicionamiento basado en el beacon más cercano, que veremos con detalle más adelante. Las razones por las que optamos por esta técnica se pueden resumir en:
-
-\begin{itemize}
-	\item Necesitábamos una cantidad de beacons mayor, puesto que no podíamos tener ningún punto ciego con menos de las señales necesarias para hacer la triangularización (tres, generalmente). 
-	
-	\item El esfuerzo que iba a conllevar esta práctica nos restaría demasiado tiempo, apenas dejando hueco al verdadero problema que se intenta resolver: la adaptabilidad. 
-	
-	\item La mayoría de las aplicaciones de guía estudiadas (ver Capítulo \ref{cap:estadoDeLaCuestion}) utilizaban ya el posicionamiento por beacon más cercano.
-	
-	\item Más tarde surgió el problema del cierre de la Facultad por cuestiones sanitarias, lo que nos hubiera impedido, de manera física, realizar una triangularización exhaustiva dentro del edificio.
-\end{itemize} 
-
-Así las cosas nuestro servidor recibe información solo del beacon más próximo al cliente y, en función de ese dato, determina el cuadrante en el que se encuentra y qué movimientos debe hacer el usuario.  Veamos, de manera general, el funcionamiento del servidor cada vez que llega un nuevo cliente:
-
-\begin{enumerate}
-	\item El servidor recibe el beacon más cercano que tiene el cliente y el destino al que quiere ir.
-	
-	\item Calcula la ruta óptima (en lo que sigue veremos a qué nos referimos con esto) que debe seguir el cliente desde el origen o posición actual del cliente para llegar al destino. 
-\end{enumerate}
-
-El cliente va llamando al servidor cuando actualiza su posición actual, de esta manera el servidor puede ir actualizando también las instrucciones. Una vez que la ruta ha finalizado, el servidor se lo indica al cliente con una instrucción de finalización. Por ejemplo, \textit{su destino se encuentra a la derecha, el recorrido ha finalizado}.
-
-\subsection{Cálculo de la ruta óptima e instrucciones de guía}
-
-Una vez que ya teníamos listo el mapeo del edificio y el posicionamiento del usuario era hora de comenzar a trabajar en la guía. El mapeo que hemos visto en la Sección \ref{sec:mapeo}, ya nos proporcionaba un grafo, pues pasar de los cuadrantes a esta estructura de grafo era algo relativamente fácil con el uso de una matriz de adyacencia. De esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reducía a uno de los tantos problemas similares que hemos visto durante nuestros años en la Facultad, vimos claro que el algoritmo de \textit{ Dijkstra} nos sería de gran ayuda, y así se implementó.
-
-Sin embargo, no debíamos olvidar que nuestra aplicación tenía un usuario final muy concreto: las personas con discapacidad visual. Es por ello que la ruta debía ser la más fácil para ellos, no la más corta necesariamente. Nos dimos cuenta al hacer pruebas de distintas rutas, concretamente una que salía desde la puerta principal de la facultad y terminaba en la puerta trasera de la cafetería. El algoritmo de \textit{Dijkstra} nos sugirió que el camino más corto era pasando por detrás de conserjería (ver cuadrante 32 en PONER REFERENCIA DE LA FOTO DE LOS CUADRANTES) y no se equivocaba, es la ruta más corta en cuanto a cuadrantes pero no la óptima para una persona con discapacidad visual, pues ese pasillo es más estrecho y la gente se suele aglomerar, (están los ascensores, la gente continúa su camino a la cafetería o a la calle por ahí, etc) además de que el usuario tiene que hacer más giros. Mucho más conveniente sería continuar la ruta por delante de Secretaría y luego girar a la izquierda. Para lograrlo, simplemente añadimos más peso en nuestra matriz de adyacencia a aquellas conexiones que creímos más complicadas, en este caso a las conexiones entre los cuadrantes 31-32 y 32-22.
