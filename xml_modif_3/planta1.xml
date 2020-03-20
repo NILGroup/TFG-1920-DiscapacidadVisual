@@ -5,7 +5,7 @@
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
 			<cuadrante idc="0">
-   				<beacon>ZxPh</beacon>
+   				<beacon>beacon0</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -27,7 +27,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="2">
-				<beacon>aAaw</beacon>
+				<beacon>beacon2</beacon>
 				<conectado>
 					<norte>18</norte>
 					<sur>-1</sur>
@@ -38,7 +38,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="3">
-				<beacon>cmSc</beacon>
+				<beacon>beacon3</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -60,7 +60,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="5">
-				<beacon>3wxd</beacon>
+				<beacon>beacon5</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -117,7 +117,7 @@
 			<cuadrante idc="10">
    				<beacon>beacon10</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>29</norte>
 					<sur>-1</sur>
 					<este>9</este>
 					<oeste>-1</oeste>
@@ -170,7 +170,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="15">
-				<beacon>Wsxj</beacon>
+				<beacon>beacon15</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -208,7 +208,7 @@
 					<norte>17</norte>
 					<sur>2</sur>
 					<este>-1</este>
-					<oeste>-1</oeste>
+					<oeste>31</oeste>
 				</conectado>
 				<info>ascensores a un lado escaleras al otro</info>
 				<metros>5</metros>
@@ -221,7 +221,7 @@
 					<este>17</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>sala de juntas, hay banios para hombres?</info>
+				<info>sala de juntas, hay banios para hombres</info>
 				<metros>5</metros>
 			</cuadrante>
 		</cuadrantes>

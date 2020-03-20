@@ -4,221 +4,221 @@
 	<estancia id="pasillo0">
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
-            <cuadrante idc="39">
-  				<beacon>beacon39</beacon>
+            <cuadrante idc="20">
+  				<beacon>beacon20</beacon>
 				<conectado>
-					<norte>56</norte>
-					<sur>57</sur>
-					<este>40</este>
+					<norte>37</norte>
+					<sur>38</sur>
+					<este>21</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>salon de actos (necesitara medida de ancho y largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="40">
-   				<beacon>beacon40</beacon>
+			<cuadrante idc="21">
+   				<beacon>beacon21</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>41</este>
-					<oeste>39</oeste>
+					<este>22</este>
+					<oeste>20</oeste>
 				</conectado>
-				<info>interseccion,aula 1 y hay banios (medida largo)</info>
+				<info>interseccion,aula 1 y hay banios (medida largo). Hay dos pequenios escalones</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="41">
-				<beacon>beacon41</beacon>
+			<cuadrante idc="22">
+				<beacon>beacon22</beacon>
 				<conectado>
-					<norte>50</norte>
+					<norte>31</norte>
 					<sur>-1</sur>
-					<este>42</este>
-					<oeste>40</oeste>
+					<este>23</este>
+					<oeste>21</oeste>
 				</conectado>
 				<info>interseccion (medida de largo y ancho)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="42">
-				<beacon>beacon42</beacon>
+			<cuadrante idc="23">
+				<beacon>beacon23</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>43</este>
-					<oeste>41</oeste>
+					<este>24</este>
+					<oeste>22</oeste>
 				</conectado>
 				<info>aula 2</info>
 				<metros>5</metros>
 			</cuadrante>
-				<cuadrante idc="43">
-  				<beacon>beacon43</beacon>
+				<cuadrante idc="24">
+  				<beacon>beacon24</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>44</este>
-					<oeste>42</oeste>
+					<este>25</este>
+					<oeste>23</oeste>
 				</conectado>
 				<info>aula 3</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="44">
-   				<beacon>beacon44</beacon>
+			<cuadrante idc="25">
+   				<beacon>beacon25</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>45</este>
-					<oeste>43</oeste>
+					<este>26</este>
+					<oeste>24</oeste>
 				</conectado>
 				<info>aula 4</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="45">
-				<beacon>beacon45</beacon>
+			<cuadrante idc="26">
+				<beacon>beacon26</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>46</este>
-					<oeste>44</oeste>
+					<este>27</este>
+					<oeste>25</oeste>
 				</conectado>
 				<info>aula 5</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="46">
-   				<beacon>beacon46</beacon>
+			<cuadrante idc="27">
+   				<beacon>beacon27</beacon>
 				<conectado>
-					<norte>47</norte>
+					<norte>28</norte>
 					<sur>-1</sur>
 					<este>-1</este>
-					<oeste>45</oeste>
+					<oeste>26</oeste>
 				</conectado>
 				<info>puerta lateral y hay banios (es un cuadrado, medida unica)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="47">
-   				<beacon>beacon47</beacon>
+			<cuadrante idc="28">
+   				<beacon>beacon28</beacon>
 				<conectado>
-					<norte>49</norte>
-					<sur>46</sur>
+					<norte>30</norte>
+					<sur>27</sur>
 					<este>-1</este>
-					<oeste>48</oeste>
+					<oeste>29</oeste>
 				</conectado>
 				<info>interseccion con ascensores (necesitara medida de ancho y largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="48">
-				<beacon>beacon48</beacon>
+			<cuadrante idc="29">
+				<beacon>beacon29</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>47</este>
+					<sur>10</sur>
+					<este>28</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>ascensor y escalera (medida ancho)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="49">
-   				<beacon>beacon49</beacon>
+			<cuadrante idc="30">
+   				<beacon>beacon30</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>47</sur>
+					<sur>28</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>cefeteria y hay banios(es un cuadrado)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="50">
-   				<beacon>beacon50</beacon>
+			<cuadrante idc="31">
+   				<beacon>beacon31</beacon>
 				<conectado>
-					<norte>51</norte>
-					<sur>41</sur>
-					<este>-1</este>
+					<norte>32</norte>
+					<sur>22</sur>
+					<este>18</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>ascensores a un lado, escaleras al otro (cuadrado)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="51">
-				<beacon>beacon51</beacon>
+			<cuadrante idc="32">
+				<beacon>beacon32</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>50</sur>
-					<este>52</este>
-					<oeste>55</oeste>
+					<sur>31</sur>
+					<este>33</este>
+					<oeste>36</oeste>
 				</conectado>
-				<info>interseccion (necesitara medida de ancho y largo)</info>
+				<info>interseccion (necesitara medida de ancho y largo). Hay dos pequenios escalones</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="52">
-				<beacon>beacon52</beacon>
+			<cuadrante idc="33">
+				<beacon>beacon33</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>-1</este>
-					<oeste>51</oeste>
+					<oeste>32</oeste>
 				</conectado>
 				<info>cafeteria (medida largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="53">
-   				<beacon>beacon53</beacon>
+			<cuadrante idc="34">
+   				<beacon>beacon34</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>54</sur>
+					<sur>35</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>puerta principal (medida ancho)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="54">
-				<beacon>beacon54</beacon>
+			<cuadrante idc="35">
+				<beacon>beacon35</beacon>
 				<conectado>
-					<norte>53</norte>
-					<sur>55</sur>
+					<norte>34</norte>
+					<sur>36</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>secretaria (medida ancho)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="55">
-				<beacon>beacon55</beacon>
+			<cuadrante idc="36">
+				<beacon>beacon36</beacon>
 				<conectado>
-					<norte>54</norte>
-					<sur>56</sur>
-					<este>51</este>
+					<norte>35</norte>
+					<sur>37</sur>
+					<este>32</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>interseccion y conserjeria (necesitara medida de ancho y de largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="56">
+			<cuadrante idc="37">
 				<beacon>non</beacon>
 				<conectado>
-					<norte>55</norte>
-					<sur>39</sur>
+					<norte>36</norte>
+					<sur>20</sur>
 					<este>-1</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>cuadrante indeciso</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="57">
-				<beacon>beacon57</beacon>
+			<cuadrante idc="38">
+				<beacon>beacon38</beacon>
 				<conectado>
-					<norte>39</norte>
+					<norte>20</norte>
 					<sur>-1</sur>
 					<este>-1</este>
-					<oeste>58</oeste>
+					<oeste>39</oeste>
 				</conectado>
 				<info>puerta trasera (necesitara medida de ancho y de largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="58">
-  				<beacon>beacon58</beacon>
+			<cuadrante idc="39">
+  				<beacon>beacon39</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>57</este>
+					<este>38</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>biblioteca (medida ancho)</info>

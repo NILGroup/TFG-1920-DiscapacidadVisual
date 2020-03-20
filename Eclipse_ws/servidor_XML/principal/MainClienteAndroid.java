@@ -107,7 +107,9 @@ public class MainClienteAndroid {
 					out.writeUTF(lista);
 
 					GenerarRuta gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
-					String ruta = gr.generar(posAct, posDestino);
+					
+					//Pedir al cliente el modo verbose
+					String ruta = gr.generar(posAct, posDestino,true);
 					out.writeUTF(ruta);
 					out.writeInt(gr.getCuadranteClave());
 					//escribir beacon clave

@@ -1,114 +1,103 @@
 [
 {
-"lugar": "Sala de juntas",
-"cuadrante": "20",
-},
-{
 "lugar": "Aula 6",
 "cuadrante": "0",
 }
 {
 "lugar": "Aula 7",
-"cuadrante": "2",
+"cuadrante": "1",
 }
 {
 "lugar": "Aula 8",
-"cuadrante": "5",
+"cuadrante": "3",
 }
 {
 "lugar": "Aula 9",
-"cuadrante": "8",
+"cuadrante": "4",
 }
 {
 "lugar": "Aula 10",
-"cuadrante": "11",
+"cuadrante": "5",
 }
 {
 "lugar": "Aula 11",
-"cuadrante": "12",
+"cuadrante": "6",
 }
 {
 "lugar": "Aula 12",
-"cuadrante": "14",
+"cuadrante": "7",
 }
 {
 "lugar": "Aula 13",
-"cuadrante": "32",
+"cuadrante": "12",
 }
 {
 "lugar": "Aula 14",
-"cuadrante": "29",
+"cuadrante": "13",
 }
 {
 "lugar": "Aula 15",
-"cuadrante": "27",
+"cuadrante": "14",
 }
 {
 "lugar": "Aula 16",
-"cuadrante": "25",
+"cuadrante": "15",
 }
 {
-"lugar": "sala de grados",
-"cuadrante": "24",
-}
-{
-"lugar": "Escaleras",
-"cuadrante": "19",
-}
-{
-"lugar": "ascensor 1",
-"cuadrante": "36",
-}
-{
-"lugar": "cuad 16",
+"lugar": "Sala de grados",
 "cuadrante": "16",
 }
 {
+"lugar": "Sala de juntas",
+"cuadrante": "19",
+}
+{
 "lugar": "Aula 1",
-"cuadrante": "40",
+"cuadrante": "21",
 }
 {
 "lugar": "Aula 2",
-"cuadrante": "42",
+"cuadrante": "23",
 }
 {
 "lugar": "Aula 3",
-"cuadrante": "43",
+"cuadrante": "24",
 }
 {
 "lugar": "Aula 4",
-"cuadrante": "44",
+"cuadrante": "25",
 }
 {
 "lugar": "Aula 5",
-"cuadrante": "45",
-}
-{
-"lugar": "Cafeteria",
-"cuadrante": "52",
-}
-{
-"lugar": "Secretaria",
-"cuadrante": "54",
-}
-{
-"lugar": "Conserjeria",
-"cuadrante": "55",
+"cuadrante": "26",
 }
 {
 "lugar": "Salon de actos",
-"cuadrante": "39",
-}
-{
-"lugar": "Biblioteca",
-"cuadrante": "58",
-}
-{
-"lugar": "puerta principal",
-"cuadrante": "53",
+"cuadrante": "20",
 }
 {
 "lugar": "Cafeteria2",
-"cuadrante": "49",
+"cuadrante": "30",
 }
+{
+"lugar": "Cafeteria",
+"cuadrante": "33",
+}
+{
+"lugar": "Puerta principal",
+"cuadrante": "34",
+}
+{
+"lugar": "Secretaria",
+"cuadrante": "35",
+}
+{
+"lugar": "Conserjeria",
+"cuadrante": "36",
+}
+{
+"lugar": "Biblioteca",
+"cuadrante": "39",
+}
+
 ]

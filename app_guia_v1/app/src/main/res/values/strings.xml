@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">app_guia_v1</string>
+    <string name="app_name">app_guia_v2</string>
     <string name="button_start_searching">Iniciar ruta</string>
     <string name="start_scan_button">START SCANNING</string>
     <string name="stop_scan_button">STOP SCANNING</string>

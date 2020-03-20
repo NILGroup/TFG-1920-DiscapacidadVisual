@@ -138,5 +138,9 @@ public class Cuadrante {
 	public float getMetros() {
 		return metros;
 	}
+	
+	public String getInfo() {
+		return info;
+	}
 		
 }

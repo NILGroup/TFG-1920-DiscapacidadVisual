@@ -1,0 +1,48 @@
+-------------------------------------------
+Estoy en el beacon: beacon34
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Continua recto 20.0 metros, luego espera a la siguiente indicación.
+Cuadrante clave: 36
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon36
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Continua recto 10.0 metros, luego espera a la siguiente indicación.
+Cuadrante clave: 20
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon20
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: gira a la izquierda, luego continua recto 35.0 metros.
+Cuadrante clave: 22
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon22
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Continua recto 25.0 metros, luego espera a la siguiente indicación.
+Cuadrante clave: 24
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon23
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Continua recto 20.0 metros, luego espera a la siguiente indicación.
+Cuadrante clave: 25
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon26
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Continua recto 5.0 metros, luego gira a la izquierda,
+Cuadrante clave: 27
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon27
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: gira a la izquierda, luego continua recto 10.0 metros.
+Cuadrante clave: 30
+-------------------------------------------
+-------------------------------------------
+Estoy en el beacon: beacon30
+Lista de cuadrantes de la ruta:  34 35 36 37 20 21 22 23 24 25 26 27 28 30
+Ruta: Su destino está a la izquierda. El recorrido ha finalizado.
+Cuadrante clave: 0
+-------------------------------------------

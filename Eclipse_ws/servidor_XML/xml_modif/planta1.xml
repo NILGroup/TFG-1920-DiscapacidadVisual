@@ -5,7 +5,7 @@
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
 			<cuadrante idc="0">
-   				<beacon>ZxPh</beacon>
+   				<beacon>beacon0</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
@@ -16,421 +16,212 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="1">
-				<beacon>non</beacon>
+				<beacon>beacon1</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>2</este>
 					<oeste>0</oeste>
 				</conectado>
-				<info>non</info>
+				<info>aula 7, hay banios para mujeres</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="2">
-				<beacon>aAaw</beacon>
+				<beacon>beacon2</beacon>
 				<conectado>
-					<norte>16</norte>
+					<norte>18</norte>
 					<sur>-1</sur>
 					<este>3</este>
 					<oeste>1</oeste>
 				</conectado>
-				<info>aula 7</info>
+				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="3">
-				<beacon>cmSc</beacon>
+				<beacon>beacon3</beacon>
 				<conectado>
-					<norte>17</norte>
+					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>4</este>
 					<oeste>2</oeste>
 				</conectado>
-				<info>interseccion</info>
+				<info>aula 8</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="4">
-   				<beacon>non</beacon>
+   				<beacon>beacon4</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>5</este>
 					<oeste>3</oeste>
 				</conectado>
-				<info>non</info>
+				<info>aula 9</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="5">
-				<beacon>3wxd</beacon>
+				<beacon>beacon5</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>6</este>
 					<oeste>4</oeste>
 				</conectado>
-				<info>aula 8</info>
+				<info>aula 10</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="6">
-   				<beacon>non</beacon>
+   				<beacon>beacon6</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>7</este>
 					<oeste>5</oeste>
 				</conectado>
-				<info>non</info>
+				<info>aula 11</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="7">
-   				<beacon>non</beacon>
+   				<beacon>beacon7</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>8</este>
 					<oeste>6</oeste>
 				</conectado>
-				<info>non</info>
+				<info>aula 12</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="8">
-				<beacon>si</beacon>
+				<beacon>beacon8</beacon>
 				<conectado>
-					<norte>-1</norte>
+					<norte>9</norte>
 					<sur>-1</sur>
-					<este>9</este>
+					<este>-1</este>
 					<oeste>7</oeste>
 				</conectado>
-				<info>aula 9</info>
+				<info>interseccion, hay banios</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="9">
-   				<beacon>non</beacon>
+   				<beacon>beacon9</beacon>
 				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>10</este>
-					<oeste>8</oeste>
+					<norte>11</norte>
+					<sur>8</sur>
+					<este>-1</este>
+					<oeste>10</oeste>
 				</conectado>
-				<info>non</info>
+				<info>interseccion ascensores</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="10">
-   				<beacon>non</beacon>
+   				<beacon>beacon10</beacon>
+				<conectado>
+					<norte>29</norte>
+					<sur>-1</sur>
+					<este>9</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<info>ascensores y escaleras</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="11">
+				<beacon>beacon11</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>9</sur>
+					<este>-1</este>
+					<oeste>12</oeste>
+				</conectado>
+				<info>interseccion, hay banios</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="12">
+				<beacon>beacon12</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
 					<este>11</este>
-					<oeste>9</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="11">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>12</este>
-					<oeste>10</oeste>
-				</conectado>
-				<info>aula 10</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="12">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>13</este>
-					<oeste>11</oeste>
-				</conectado>
-				<info>aula 11</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="13">
-   				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>14</este>
-					<oeste>12</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="14">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>15</este>
 					<oeste>13</oeste>
-				</conectado>
-				<info>aula 12</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="15">
-				<beacon>Wsxj</beacon>
-				<conectado>
-					<norte>37</norte>
-					<sur>-1</sur>
-					<este>-1</este>
-					<oeste>14</oeste>
-				</conectado>
-				<info>interseccion</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="16">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>18</norte>
-					<sur>2</sur>
-					<este>17</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>ascensor</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="17">
-				<beacon>non</beacon>
-				<conectado>
-					<norte>19</norte>
-					<sur>3</sur>
-					<este>-1</este>
-					<oeste>16</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="18">
-   				<beacon>non</beacon>
-				<conectado>
-					<norte>21</norte>
-					<sur>16</sur>
-					<este>19</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="19">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>22</norte>
-					<sur>17</sur>
-					<este>-1</este>
-					<oeste>18</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="20">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>21</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>sala de juntas</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="21">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>18</sur>
-					<este>22</este>
-					<oeste>20</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="22">
-				<beacon>si</beacon> 
-				<conectado>
-					<norte>-1</norte>
-					<sur>19</sur>
-					<este>23</este>
-					<oeste>21</oeste>
-				</conectado>
-				<info>interseccion</info> 
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="23">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>24</este>
-					<oeste>22</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="24">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>25</este>
-					<oeste>23</oeste>
-				</conectado>
-				<info>sala de grados</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="25">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>26</este>
-					<oeste>24</oeste>
-				</conectado>
-				<info>aula 16</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="26">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>27</este>
-					<oeste>25</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="27">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>28</este>
-					<oeste>26</oeste>
-				</conectado>
-				<info>aula 15</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="28">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>29</este>
-					<oeste>27</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="29">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>30</este>
-					<oeste>28</oeste>
-				</conectado>
-				<info>aula 14</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="30">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>31</este>
-					<oeste>29</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="31">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>32</este>
-					<oeste>30</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="32">
-				<beacon>si</beacon>
-				<conectado>
-					<norte>-1</norte>
-					<sur>-1</sur>
-					<este>33</este>
-					<oeste>31</oeste>
 				</conectado>
 				<info>aula 13</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="33">
-  				<beacon>non</beacon>
+			<cuadrante idc="13">
+   				<beacon>beacon13</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>34</este>
-					<oeste>32</oeste>
+					<este>12</este>
+					<oeste>14</oeste>
 				</conectado>
-				<info>non</info>
+				<info>aula14</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="34">
-				<beacon>si</beacon>
+			<cuadrante idc="14">
+				<beacon>beacon14</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>35</sur>
-					<este>-1</este>
-					<oeste>33</oeste>
+					<sur>-1</sur>
+					<este>13</este>
+					<oeste>15</oeste>
+				</conectado>
+				<info>aula 15</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="15">
+				<beacon>beacon15</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>14</este>
+					<oeste>16</oeste>
+				</conectado>
+				<info>aula 16</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="16">
+				<beacon>beacon16</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>15</este>
+					<oeste>17</oeste>
+				</conectado>
+				<info>sala de grados</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="17">
+				<beacon>beacon17</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>18</sur>
+					<este>16</este>
+					<oeste>19</oeste>
 				</conectado>
 				<info>interseccion</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="35">
-  				<beacon>beacon35</beacon>
+			<cuadrante idc="18">
+   				<beacon>beacon18</beacon>
 				<conectado>
-					<norte>34</norte>
-					<sur>37</sur>
+					<norte>17</norte>
+					<sur>2</sur>
 					<este>-1</este>
-					<oeste>36</oeste>
+					<oeste>31</oeste>
 				</conectado>
-				<info>interseccion</info>
+				<info>ascensores a un lado escaleras al otro</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="36">
-				<beacon>beacon36</beacon>
+			<cuadrante idc="19">
+  				<beacon>beacon19</beacon>
 				<conectado>
 					<norte>-1</norte>
-					<sur>38</sur>
-					<este>35</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>ascensor</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="37">
-				<beacon>non</beacon>
-				<conectado>
-					<norte>35</norte>
-					<sur>15</sur>
-					<este>-1</este>
-					<oeste>38</oeste>
-				</conectado>
-				<info>non</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="38">
-  				<beacon>non</beacon>
-				<conectado>
-					<norte>36</norte>
 					<sur>-1</sur>
-					<este>37</este>
+					<este>17</este>
 					<oeste>-1</oeste>
 				</conectado>
-				<info>non</info>
+				<info>sala de juntas, hay banios para hombres</info>
 				<metros>5</metros>
 			</cuadrante>
 		</cuadrantes>

@@ -62,7 +62,7 @@ public class ListaCuadrantes {
 				int norte = Integer.parseInt(conectado[0]);
 				if (norte >= 0) {
 					matrizAdy[i][norte] = 1;
-					if(norte == 51 || norte == 50) {//Conexion 50-51 y 50-41
+					if(norte == 31 || norte == 32) {//Conexion 22-31, 31-32
 						matrizAdy[i][norte] = 5;
 					}
 				}
@@ -76,7 +76,7 @@ public class ListaCuadrantes {
 				int sur = Integer.parseInt(conectado[1]);
 				if (sur >= 0) {
 					matrizAdy[i][sur] = 1;
-					if(sur == 50 || sur == 41) {//Conexion 50-51 y 50-41
+					if(sur == 31 || sur == 22) {//Conexion 32-31, 31-22
 						matrizAdy[i][sur] = 5;
 					}
 				}
@@ -100,7 +100,7 @@ public class ListaCuadrantes {
 				int oeste = Integer.parseInt(conectado[3]);
 				if (oeste >= 0)
 					matrizAdy[i][oeste] = 1;
-				
+									
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			}
