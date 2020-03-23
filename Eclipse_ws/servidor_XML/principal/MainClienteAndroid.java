@@ -92,7 +92,7 @@ public class MainClienteAndroid {
 				String beaconActual = in.readUTF();
 
 				int posAct = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
-;
+
 				System.out.println("Beacon Actual: " + beaconActual);
 				System.out.println("Cuadrante Actual: " + posAct);
 

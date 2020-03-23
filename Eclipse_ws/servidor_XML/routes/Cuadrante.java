@@ -16,8 +16,6 @@ public class Cuadrante {
 	private int ID;
 	private String beacon;
 	private float metros;
-	//private Posicion posNW;
-	//private Posicion posSE;
 	private int Z;
 	/**	
 	 * conectado[0] = norte
@@ -26,7 +24,7 @@ public class Cuadrante {
 	 * conectado[3] = oeste
 	 */
 	String[] conectado = new String[4];
-	//ArrayList<String> objetos;
+
 	String info;
 	
 	
@@ -36,7 +34,6 @@ public class Cuadrante {
 		info = informacion;
 		beacon = beac;
 		conectado = conexiones;
-		//objetos = objs;
 		Z = z;
 		metros = longi;
 		
