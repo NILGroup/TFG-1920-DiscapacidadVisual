@@ -18,8 +18,8 @@ import xml.Edificio;
 public class MainClienteAndroid {
 	
 	private static ArrayList<Integer> lCuadrantes = new ArrayList<Integer>();
-	private static ArrayList<Estancia> aEstancias;
-	private static ArrayList<Cuadrante> aCuadrantes;
+	private static ArrayList<Estancia> aEstancias; //todas las estancias del edificio
+	private static ArrayList<Cuadrante> aCuadrantes; //todos los cuadrantes del edificio
 	private static Edificio edificio;
 
 	public static void main(String[] args) {

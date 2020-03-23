@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * 
- * Esta clase servirá para almacenar estancias como pasillos, aulas y similares.
+ * Esta clase servirá para almacenar las distintas plantas del edificio.
  * Contendrá el tipo, un identificador y una lista de los cuadrantes que 
  * lo componen.
  * 

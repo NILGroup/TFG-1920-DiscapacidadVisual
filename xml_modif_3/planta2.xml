@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <planta>
        <Z>2</Z>
-	<estancia id="pasillo5">
+	<estancia id="planta2">
 		<tipo>PASILLO</tipo>
 		<cuadrantes>
 			<cuadrante idc="20">

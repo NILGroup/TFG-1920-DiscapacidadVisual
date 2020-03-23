@@ -207,14 +207,14 @@ Otros factores difíciles de controlar que también afectan a la señal son las 
 
 Ahora que hemos superado la primera barrera tecnológica y tenemos una idea más clara del funcionamiento y el comportamiento de los \textit{beacons}, nos disponemos a dar el siguiente paso hacia la resolución del problema del posicionamiento. Para ello, estudiaremos los planos de la Facultad de Informática, determinaremos cuales podrían ser, a priori, los puntos de decisión y haremos mediciones para comprobar si las señales de los \textit{beacons} se reciben correctamente y no sufren interferencias en dichos puntos.
 
-Los puntos de decisión son aquellos lugares de interés para el usuario o aquellos puntos en los que se requerirá la siguiente instrucción a seguir en la ruta. Los puntos de decisión que hemos considerado son: los destinos (aulas, cafetería, biblioteca, conserjería, secretaría, salón de actos, sala de juntas, sala de grados, etc.), las intersecciones (esquinas), los ascensores y escaleras, y las puertas de entrada al edificio.
+Los puntos de decisión son aquellos lugares de considerados de interés para el usuario o bien aquellos puntos en los que se requerirá la siguiente instrucción a seguir en la ruta. Los puntos de decisión que hemos considerado son: los destinos (aulas, cafetería, biblioteca, conserjería, secretaría, salón de actos, sala de juntas, sala de grados, etc.), las intersecciones (esquinas), los ascensores y escaleras, y las puertas de entrada al edificio.
 
-En las Figuras \ref{fig:medidasPBaja} y MEDIDASPLANTA1 mostramos visualmente algunos de los puntos en los que hemos probado a colocar los \textit{beacons} (puntos rojos) y desde donde hemos llevado a cabo las mediciones correspondientes (cruces verdes). El objetivo de este estudio es conocer la ubicación óptima de los \textit{beacons} para que a nuestro paso cerca de ellos, la distancia registrada sea lo más precisa posible, especialmente en los lugares más complicados como las intersecciones o las zonas en las que se acumulan varios puntos de interés (como el \textit{hall} de entrada). En el ANEXO se pueden ver los resultados de estas mediciones (HABRÁ QUE AÑADIR MÁS MEDICIONES-COMPLETAR). A continuación exponemos algunas de las conclusiones recogidas:
+En las Figuras \ref{fig:medidasPBaja} y \ref{fig:medidasPPrimera} mostramos visualmente algunos de los puntos en los que hemos colocado los \textit{beacons} (círculos rojos) y los puntos desde los cuales hemos llevado a cabo las mediciones correspondientes (cruces verdes). El objetivo de este estudio es conocer la ubicación óptima de los \textit{beacons} para que a nuestro paso cerca de ellos, la distancia registrada sea lo más precisa posible, especialmente en los lugares más complicados como las intersecciones o las zonas en las que se acumulan varios puntos de interés (como el \textit{hall} de entrada). En el ANEXO se pueden ver los resultados de estas mediciones (HABRÁ QUE AÑADIR MÁS MEDICIONES-COMPLETAR). A continuación exponemos algunas de las conclusiones recogidas:
 
 \begin{itemize}
-	\item Los \textit{beacons} no deben situarse demasiado cerca ya que las señales interfieren entre sí y alteran las distancias no pudiendo distinguir cuál es el \textit{beacon} más cercano. Por este motivo, hemos acordado no poner, por el momento, balizas en los baños ya que, tanto en la planta 1 como en la planta baja, se encuentran en zonas repletas de puntos de interés.
+	\item Los \textit{beacons} no deben situarse demasiado cerca ya que las señales interfieren entre sí y alteran las distancias no pudiendo distinguir cuál es el \textit{beacon} más cercano. Por este motivo, hemos acordado no poner, por el momento, balizas en los baños ya que, tanto en la primera planta como en la planta baja, se encuentran en zonas repletas de puntos de interés.
 	
-	\item En lugares diáfanos, como el \textit{hall}, la señal de los \textit{beacons} fluye con mayor libertad ya que no se encuentra con obstáculos. Es por esto, que deben situarse a mayor distancia entre sí. Uno de los problemas que se ha derivado de este hecho es cómo cubrir dicho espacio. Inicialmente colocamos una baliza en conserjería, otra en la intersección superior con el pasillo principal, otra en la intersección inferior con el pasillo que conduce a cafetería y otra enfrente para indicar la entrada al salón de actos (ver Figura FIGURAMAPAPLANTABAJA). Tras numerosas mediciones, la solución que proponemos es colocar las balizas de modo que una pueda servir para cubrir dos o más puntos de interés. Consecuentemente, hemos suprimido el \textit{beacon} de conserjería y hemos dejado exclusivamente el de las intersecciones ya que la inferior está muy próxima a la ventanilla de conserjería y puede reutilizarse para los dos puntos clave, y hemos desplazado un poco hacia arriba el \textit{beacon} del salón de actos para que sirva tanto para marcar dicho destino como para marcar la esquina superior que conduce hacia la biblioteca. En la Figura FIGURANUEVA se puede ver el resultado final.
+	\item En lugares diáfanos, como el \textit{hall}, la señal de los \textit{beacons} fluye con mayor libertad ya que no se encuentra con obstáculos. Es por esto, que deben situarse a mayor distancia entre sí. Uno de los problemas que se ha derivado de este hecho es cómo cubrir dicho espacio. Inicialmente colocamos una baliza en conserjería, otra en la intersección superior con el pasillo principal, otra en la intersección inferior con el pasillo que conduce a cafetería y otra enfrente para indicar la entrada al salón de actos (ver Figura \ref{fig:medidasPBaja}). Tras numerosas mediciones, la solución que proponemos es colocar las balizas de modo que una pueda servir para cubrir dos o más puntos de interés. Consecuentemente, hemos suprimido el \textit{beacon} de conserjería y hemos dejado exclusivamente el de las intersecciones ya que la inferior está muy próxima a la ventanilla de conserjería y puede reutilizarse para los dos puntos clave, y hemos desplazado un poco hacia arriba el \textit{beacon} del salón de actos para que sirva tanto para marcar dicho destino como para marcar la esquina superior que conduce hacia la biblioteca. En la Figura \ref{fig:beaconsPBaja} se puede ver el resultado final.
 	
 	\item Hemos hecho pruebas con los \textit{beacons} sobre distintas superficies y hemos comprobado que efectivamente el material puede alterar la señal. Particularmente, en el caso de las mediciones de la puerta lateral del edificio (lado izquierdo del mapa) hemos colocado el \textit{beacon} CPne justo encima de la puerta, en un bisel metálico que sobresale. El resultado ha sido que la señal de la baliza se proyecta con mayor intensidad, dando lugar a que la distancia estimada sea menor. Es decir, la aplicación sugiere que CPne está más cerca de lo que en realidad está. Tras esto, hemos concluido que lo óptimo es poner los \textit{beacons} sobre las mismas superficies, a ser posible no metálicas, y a la misma altura para que estén en igualdad de condiciones. 
 	
@@ -223,9 +223,23 @@ En las Figuras \ref{fig:medidasPBaja} y MEDIDASPLANTA1 mostramos visualmente alg
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/medidasPlanoPBaja}
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapa_mediciones_plantabaja}
 	\caption{Mapa de la planta baja de la Facultad de Informática con la ubicación de los beacons (rojo) y los puntos de medición (verde). }
 	\label{fig:medidasPBaja}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapa_mediciones_planta1}
+	\caption{Mapa de la primera planta de la Facultad de Informática con la ubicación de los beacons (rojo) y los puntos de medición (verde). }
+	\label{fig:medidasPPrimera}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/beacons_plantabaja_final}
+	\caption{Mapa de la planta baja de la Facultad de Informática con la ubicación definitiva de los beacons (rojo) en el hall. }
+	\label{fig:beaconsPBaja}
 \end{figure}
 
 En la próxima sección veremos en qué se traducen todos estos resultados, cómo resulta la disposición final de los \textit{beacons} y cómo dividiremos los planos para llevar a cabo el mapeo del edificio.
@@ -238,14 +252,14 @@ Para el mapeo de la Facultad de Informática nos hemos apoyado en el proyecto \t
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplanta1_cuadrantes}
-	\caption{Primera versión del mapeo de la planta 1 de la Facultad de Informática.}
+	\caption{Primera versión del mapeo de la primera planta de la Facultad de Informática.}
 	\label{fig:cuadrantesP1_v1}
 \end{figure}
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplanta1_cuadrantes3}
-	\caption{Versión final del mapeo de la planta 1 de la Facultad de Informática.}
+	\caption{Versión final del mapeo de la primera planta de la Facultad de Informática.}
 	\label{fig:cuadrantesP1_v3}
 \end{figure}
 

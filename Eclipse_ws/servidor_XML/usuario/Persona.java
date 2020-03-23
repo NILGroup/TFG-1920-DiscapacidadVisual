@@ -27,7 +27,6 @@ public class Persona {
 		
 		l = new ListaCuadrantes(aCuadrantes);
 		//Ruta de distancia mínima de cuadrantes
-		//camino = l.bfs(actual,destino);
 		camino = l.caminoConDijkstra(actual, destino);
 		matrizAdy = l.getMatrizAdyacencia();
 	}

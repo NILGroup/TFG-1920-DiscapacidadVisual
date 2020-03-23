@@ -6,10 +6,9 @@ import java.util.ArrayList;
  * 
  * En esta clase almacenaremos la información referente a los cuadrantes que componen el mapeado del
  * edificio. Cada cuadrante tendrá un identificador ID, un valor que indicará su planta Z, un String 
- * que contendrá el identificador del beacon asociado a dicho cuadrante, un array de String
- * que indicarán el ID del cuadrante con el que esté conectado según el esquema indicado y dos ArrayList
- * de String, uno que contendrá los objetos identificativos del cuadrante y otro que contendrála información
- * del cuadrante.
+ * que contendrá el identificador del beacon asociado a dicho cuadrante, un array de String que indicarán
+ * el ID del cuadrante con el que esté conectado según el esquema indicado, un valor que indicará la 
+ * longitud en metros que ocupa y un ArrayList de String que contendrá la información relevante del cuadrante.
  * 
  * 26/05/2014 - Revisado y limpiado
  *
