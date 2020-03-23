@@ -32,7 +32,7 @@ public class Persona {
 		matrizAdy = l.getMatrizAdyacencia();
 	}
 	
-	public String convertirDir(int dir){
+	/*public String convertirDir(int dir){
 		switch(dir){
 		
 			case 1: return "Norte";
@@ -45,7 +45,7 @@ public class Persona {
 			case 8: return "Noroeste";
 			default: return "No hay conexión";
 		}
-	}
+	}*/
 	
 	public ArrayList<Integer> getCamino() {
 		return camino;

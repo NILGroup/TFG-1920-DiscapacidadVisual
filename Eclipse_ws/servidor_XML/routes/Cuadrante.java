@@ -1,7 +1,5 @@
 package routes;
 
-import java.util.ArrayList;
-
 /**
  * 
  * En esta clase almacenaremos la información referente a los cuadrantes que componen el mapeado del

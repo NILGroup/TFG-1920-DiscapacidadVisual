@@ -194,13 +194,13 @@ public class ListaCuadrantes {
 		this.matrizAdy = matrizAdyacencia;
 	}
 
-	/**
+	/*
 	 * Método de búsqueda en anchura para el cálculo de la ruta
 	 * @param ini Cuadrante inicial
 	 * @param fin Cuadrante final
 	 * @return ArrayList de enteros con el recorrido
 	 */
-	public ArrayList<Integer> bfs(int ini, int fin) {
+	/*public ArrayList<Integer> bfs(int ini, int fin) {
 		
 		int pasos = 0, actual;
 		boolean visitado[ ] = new boolean[ MAX ];
@@ -240,7 +240,7 @@ public class ListaCuadrantes {
 			 camino.add(prev[i]);
 		
 		return camino;
-	}
+	}*/
 	
 	public ArrayList<Integer> caminoConDijkstra(int ini, int fin) {
 		
