@@ -5,12 +5,13 @@ import java.util.Iterator;
 
 /**
  * 
- * En esta clase, tomaremos la lista de cuadrantes de la ruta a recorrer y generaremos la ruta con strings. La idea
- * es comprobar dónde estamos, a dónde queremos movernos y qué hay en medio. Si no se encuentran en la misma estancia
- * quiere decir que estamos al lado de los ascensores/escaleras y el siguiente cuadrante clave está en otro piso.
- * Si están en la misma estancia, comprobamos i hay que girar. Si no, indicamos la mitad del recorrido.
+ * En esta clase, tomaremos la lista de cuadrantes de la ruta a recorrer y generaremos la ruta con strings. 
+ * La idea es comprobar dónde estamos, a dónde queremos movernos y qué hay en medio. Si no se encuentran 
+ * en la misma estancia quiere decir que estamos al lado de los ascensores/escaleras y el siguiente 
+ * cuadrante clave está en otro piso. Si están en la misma estancia, comprobamos i hay que girar.
+ * Si no, indicamos el siguiente punto clave.
  * 
- * 26/05/2014 - Revisado y limpiado
+ * 23/03/2020 - Revisado y limpiado
  *
  */
 public class GenerarRuta {

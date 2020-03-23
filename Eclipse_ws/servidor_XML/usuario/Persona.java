@@ -6,11 +6,10 @@ import routes.ListaCuadrantes;
 
 /**
  * Clase que se encarga de generar la ruta a seguir por el usuario. Inicialmente se calcula la ruta en 
- * CUADRANTES, como un camino mínimo.
+ * CUADRANTES, como un camino mínimo utilizando el algoritmo de Dijkstra.
  * Obtenida la ruta de cuadrantes, se genera la ruta teniendo en cuenta las direcciones que comunican los
  * cuadrantes y la distancia que se debe recorrer, de forma que se generar instrucciones por tramos.
  * 
- * @author Mariana
  *
  *26/05/2014 - Revisado y limpiado
  */
@@ -27,25 +26,9 @@ public class Persona {
 		
 		l = new ListaCuadrantes(aCuadrantes);
 		//Ruta de distancia mínima de cuadrantes
-		//camino = l.bfs(actual,destino);
 		camino = l.caminoConDijkstra(actual, destino);
 		matrizAdy = l.getMatrizAdyacencia();
 	}
-	
-	/*public String convertirDir(int dir){
-		switch(dir){
-		
-			case 1: return "Norte";
-			case 2: return "Noreste";
-			case 3: return "Este";
-			case 4: return "Sureste";
-			case 5: return "Sur";
-			case 6: return "Suroeste";
-			case 7: return "Oeste";
-			case 8: return "Noroeste";
-			default: return "No hay conexión";
-		}
-	}*/
 	
 	public ArrayList<Integer> getCamino() {
 		return camino;

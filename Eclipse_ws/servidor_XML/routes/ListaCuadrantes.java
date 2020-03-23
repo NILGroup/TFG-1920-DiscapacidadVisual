@@ -42,7 +42,6 @@ public class ListaCuadrantes {
 		
 	}
 	
-
 	private void unirCuadrantes(int size){
 		
 		matrizAdy = new int[size][size];
@@ -109,40 +108,6 @@ public class ListaCuadrantes {
 	}
 	
 	
-	/*public int numCuadrante(Posicion p) {
-		
-		for (int i= 0; i<lista.size(); i++) {
-			
-			Cuadrante c = lista.get(i);
-			
-			if (c.pertenece(p))
-				return c.getID();
-		}
-		
-		return -1;
-	}*/
-	
-	
-	/*public static int numCuadrante(Posicion p, double pZ, ArrayList<Cuadrante> aCuadrantes) {
-		
-		for (int i= 0; i<aCuadrantes.size(); i++) {
-			
-			Cuadrante c = aCuadrantes.get(i);
-			
-			if (c.pertenece(p,pZ))
-				return c.getID();
-		}
-		
-		return -1;
-	}*/
-	
-	/*public int numCuadrante(double pX, double pY) {
-		
-		Posicion p = new Posicion(pX, pY);
-		return numCuadrante(p);
-		
-	}*/
-	
 	public static int numCuadrante(String beaconActual, ArrayList<Cuadrante> aCuadrantes) {
 		
 		for (int i= 0; i<aCuadrantes.size(); i++) {
@@ -193,54 +158,6 @@ public class ListaCuadrantes {
 	public void setMatrizAdyacencia(int[][] matrizAdyacencia) {
 		this.matrizAdy = matrizAdyacencia;
 	}
-
-	/*
-	 * Método de búsqueda en anchura para el cálculo de la ruta
-	 * @param ini Cuadrante inicial
-	 * @param fin Cuadrante final
-	 * @return ArrayList de enteros con el recorrido
-	 */
-	/*public ArrayList<Integer> bfs(int ini, int fin) {
-		
-		int pasos = 0, actual;
-		boolean visitado[ ] = new boolean[ MAX ];
-		Arrays.fill( visitado , false );
-		ArrayList<Integer> camino = new ArrayList<Integer>();
-		prev = new int[ MAX ];
-
-		prev[ ini ] = -1;
-
-		Queue<Integer> Q = new LinkedList<Integer>();
-		Q.add(ini);
-		
-		while (!Q.isEmpty()) {
-		
-			actual = Q.remove();
-			pasos++;
-
-			if(actual == fin) break;						//si se llego al destino
-
-			visitado[actual] = true;
-
-			for (int i = 0 ; i < lista.size() ; ++i) {//vemos adyacentes a nodo actual
-				
-				int v = matrizAdy[actual][i];
-				
-				//if (v != 0 && !visitado[i]) { //no visitado agregamos a cola
-				if (v != MAX && !visitado[i]) { //no visitado agregamos a cola
-					
-					prev[i] = actual; //para ver recorrido de nodo inicio a fin
-					Q.add( i );
-					
-				}
-			}
-		}
-
-		for (int i=0;i<prev.length;i++)
-			 camino.add(prev[i]);
-		
-		return camino;
-	}*/
 	
 	public ArrayList<Integer> caminoConDijkstra(int ini, int fin) {
 		
@@ -265,7 +182,7 @@ public class ListaCuadrantes {
 		
 		daCamino(parents[dest], parents, camino); 
 		camino.add(dest);
-		//System.out.print(dest + " "); 
+		
 	} 
 	
 }
