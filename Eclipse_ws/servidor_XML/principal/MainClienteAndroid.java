@@ -15,6 +15,18 @@ import routes.ListaCuadrantes;
 import usuario.Persona;
 import xml.Edificio;
 
+/**
+ * 
+ * En esta clase nos encargamos de la conexión directa con el cliente. Constituye el servidor de 
+ * la aplicación, queda a la espera de clientes y cuando uno llega le atiende leyendo el origen de
+ * su ruta, el destino al que quiere ir y su beacon más cercano. A partir de esa información genera 
+ * la siguiente instrucción del cliente y vuelve a quedar a la espera de que el cliente vuelva a 
+ * conectar una vez haya actualizado su posición actual.
+ * 
+ * 23/03/2020 - Revisado y limpiado
+ *
+ */
+
 public class MainClienteAndroid {
 	
 	private static ArrayList<Integer> lCuadrantes = new ArrayList<Integer>();
@@ -77,14 +89,10 @@ public class MainClienteAndroid {
 				
 				System.out.println(posDestino);
 
-				/** FUNCIONA **/
 				String beaconActual = in.readUTF();
 
 				int posAct = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
 
-
-				// String actual =in.readUTF();
-				// int posAct = Integer.parseInt(actual);
 				System.out.println("Beacon Actual: " + beaconActual);
 				System.out.println("Cuadrante Actual: " + posAct);
 

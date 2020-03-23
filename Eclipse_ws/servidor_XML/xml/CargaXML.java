@@ -10,13 +10,12 @@ import org.jdom2.input.SAXBuilder; // |
 
 import routes.Cuadrante;
 import routes.Estancia;
-import routes.Posicion;
+
 
 /**
  * 
  * Clase útil para la carga de los diferentes XML.
  * 
- * 26/05/2014 - Revisado y limpiado
  *
  */
 public class CargaXML {
@@ -62,11 +61,7 @@ public class CargaXML {
  		            String sur = conectado.getChildText("sur");
  		            String este = conectado.getChildText("este");
  		            String oeste = conectado.getChildText("oeste");
-	
-	 	            /*String objeto = cuadrante.getChildTextTrim("objeto"); 
-	 	            ArrayList<String> aO = new ArrayList<String>();
-	 	            aO.add(objeto);*/
-	 	            
+	           
 	 	            String info = cuadrante.getChildTextTrim("info"); 
 	 	            
 	 	            String m = cuadrante.getChildTextTrim("metros");

@@ -1,7 +1,5 @@
 package routes;
 
-import java.util.ArrayList;
-
 /**
  * 
  * En esta clase almacenaremos la información referente a los cuadrantes que componen el mapeado del
@@ -9,8 +7,7 @@ import java.util.ArrayList;
  * que contendrá el identificador del beacon asociado a dicho cuadrante, un array de String que indicarán
  * el ID del cuadrante con el que esté conectado según el esquema indicado, un valor que indicará la 
  * longitud en metros que ocupa y un ArrayList de String que contendrá la información relevante del cuadrante.
- * 
- * 26/05/2014 - Revisado y limpiado
+ * 23/03/2020 - Revisado y limpiado
  *
  */
 public class Cuadrante {
@@ -18,8 +15,6 @@ public class Cuadrante {
 	private int ID;
 	private String beacon;
 	private float metros;
-	//private Posicion posNW;
-	//private Posicion posSE;
 	private int Z;
 	/**	
 	 * conectado[0] = norte
@@ -28,7 +23,7 @@ public class Cuadrante {
 	 * conectado[3] = oeste
 	 */
 	String[] conectado = new String[4];
-	//ArrayList<String> objetos;
+
 	String info;
 	
 	
@@ -38,7 +33,6 @@ public class Cuadrante {
 		info = informacion;
 		beacon = beac;
 		conectado = conexiones;
-		//objetos = objs;
 		Z = z;
 		metros = longi;
 		

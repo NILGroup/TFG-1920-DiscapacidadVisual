@@ -18,7 +18,6 @@ import routes.Estancia;
  * Clase de carga los xml que representan el edificio completo. En el archivo "edificio.xml" se encuentran
  * los diferentes archivos a cargar.
  * 
- * 26/05/2014 - Revisado y limpiado
  *
  */
 public class Edificio {
