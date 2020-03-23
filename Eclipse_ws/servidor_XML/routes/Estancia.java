@@ -15,21 +15,20 @@ import java.util.Iterator;
 
 public class Estancia {
 
-	private String tipo;
+	//private String tipo;
 	private String id;
 	private ArrayList<Cuadrante> listaCuadrantes;
 	
 	/**
 	 * Constructora de de la clase estancia. La lista de cuadrantes se creará vacía.
 	 * 
-	 * @param t: tipo de estancia (mirar clase enumerada Tipo)
 	 * @param i: identificador único para la estancia
 	 * 
-	 * Ejemplo: Estancia(Tipo.AULA, "Aula 12")
+	 * Ejemplo: Estancia("plantabaja")
 	 */
-	public Estancia(String t, String i) {
+	public Estancia(String i) {
 		
-		tipo = t;
+		//tipo = t;
 		id = i;
 		listaCuadrantes = new ArrayList<Cuadrante>();
 		
@@ -41,7 +40,7 @@ public class Estancia {
 		
 	}
 	
-	public String getTipo() {
+	/*public String getTipo() {
 		
 		return tipo;
 		
@@ -51,7 +50,7 @@ public class Estancia {
 		
 		return tipo.toString();
 		
-	}
+	}*/
 	
 	public String getId() {
 		

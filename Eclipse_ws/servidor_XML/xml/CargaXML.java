@@ -42,13 +42,13 @@ public class CargaXML {
 	        {
 	            Element estancia = (Element) lista_estancias.get(indexEstancia);//Se obtiene el elemento 'estancia'
 	            String idEstancia = estancia.getAttributeValue("id");//Se obtiene el atribullo 'id'
-	            String tipo = estancia.getChildText("tipo");
+	            //String tipo = estancia.getChildText("tipo");
 	            
 	            
 	            Element cuadrantes = estancia.getChild("cuadrantes");//Obtener el elemento 'cuadrantes'
             	 List lista_cuadrantes = cuadrantes.getChildren(); //Cogemos la lista de hijos de un cuadrante
 	            
-	            Estancia e = new Estancia(tipo, idEstancia);
+	            Estancia e = new Estancia(idEstancia);
 	            
 	            for ( int indexCuadrante = 0; indexCuadrante < lista_cuadrantes.size(); indexCuadrante++ ) //Se recorre la lista de 'cuadrantes'
 	            {

@@ -2,7 +2,6 @@
 <planta>
   	<Z>1</Z>
 	<estancia id="planta1">
-		<tipo>PASILLO</tipo>
 		<cuadrantes>
 			<cuadrante idc="0">
    				<beacon>beacon0</beacon>

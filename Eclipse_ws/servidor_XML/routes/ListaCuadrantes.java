@@ -1,9 +1,6 @@
 package routes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 import xml.Edificio;
 
 /**
@@ -19,7 +16,7 @@ public class ListaCuadrantes {
 	public static final int MAX = 9999;
 	private static final int NO_PARENT = -1;
 
-	private static int[] prev;
+	//private static int[] prev;
 		
 	private ArrayList<Cuadrante> lista;
 	private int[][] matrizAdy;
@@ -28,7 +25,7 @@ public class ListaCuadrantes {
 		
 	public ListaCuadrantes(ArrayList<Cuadrante> aCuadrantes){
 
-		Edificio xml = new Edificio();
+		//Edificio xml = new Edificio();
 		lista = aCuadrantes;
 		iniciarLista();
 		
@@ -36,7 +33,6 @@ public class ListaCuadrantes {
 	
 	public void iniciarLista(){
 		
-		int size = lista.size();
 		unirCuadrantes(lista.size());
 		matrizOriginal = matrizAdy.clone();
 		
@@ -113,8 +109,6 @@ public class ListaCuadrantes {
 		for (int i= 0; i<aCuadrantes.size(); i++) {
 			
 			Cuadrante c = aCuadrantes.get(i);
-			
-			String bea = c.getBeacon(); 
 			
 			if (c.getBeacon().equals(beaconActual))//en principio no hace falta comprobar la z
 				return c.getID();
