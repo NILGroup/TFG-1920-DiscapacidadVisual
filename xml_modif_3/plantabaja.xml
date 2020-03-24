@@ -6,8 +6,8 @@
             <cuadrante idc="20">
   				<beacon>beacon20</beacon>
 				<conectado>
-					<norte>37</norte>
-					<sur>38</sur>
+					<norte>36</norte>
+					<sur>37</sur>
 					<este>21</este>
 					<oeste>-1</oeste>
 				</conectado>
@@ -183,41 +183,30 @@
 				<beacon>beacon36</beacon>
 				<conectado>
 					<norte>35</norte>
-					<sur>37</sur>
+					<sur>20</sur>
 					<este>32</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>interseccion y conserjeria (necesitara medida de ancho y de largo)</info>
-				<metros>5</metros>
+				<metros>10</metros>
 			</cuadrante>
 			<cuadrante idc="37">
-				<beacon>non</beacon>
-				<conectado>
-					<norte>36</norte>
-					<sur>20</sur>
-					<este>-1</este>
-					<oeste>-1</oeste>
-				</conectado>
-				<info>cuadrante indeciso</info>
-				<metros>5</metros>
-			</cuadrante>
-			<cuadrante idc="38">
-				<beacon>beacon38</beacon>
+				<beacon>beacon37</beacon>
 				<conectado>
 					<norte>20</norte>
 					<sur>-1</sur>
 					<este>-1</este>
-					<oeste>39</oeste>
+					<oeste>38</oeste>
 				</conectado>
 				<info>puerta trasera (necesitara medida de ancho y de largo)</info>
 				<metros>5</metros>
 			</cuadrante>
-			<cuadrante idc="39">
-  				<beacon>beacon39</beacon>
+			<cuadrante idc="38">
+  				<beacon>beacon38</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>38</este>
+					<este>37</este>
 					<oeste>-1</oeste>
 				</conectado>
 				<info>biblioteca (medida ancho)</info>
