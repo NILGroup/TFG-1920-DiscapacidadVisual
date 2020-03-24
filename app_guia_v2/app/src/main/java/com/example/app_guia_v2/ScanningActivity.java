@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 //import com.example.app_guia_v2.routes.Cuadrante;
@@ -22,15 +25,19 @@ import com.kontakt.sdk.android.ble.manager.listeners.EddystoneListener;
 import com.kontakt.sdk.android.common.profile.IEddystoneDevice;
 import com.kontakt.sdk.android.common.profile.IEddystoneNamespace;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.MenuItemCompat;
+
 import android.widget.EditText;
 
 import 	android.text.method.ScrollingMovementMethod;
 
 public class ScanningActivity extends AppCompatActivity  {
+
 
     private ProximityManager proximityManager;
 
@@ -223,5 +230,7 @@ public class ScanningActivity extends AppCompatActivity  {
         proximityManager.disconnect();
         super.onDestroy();
     }
+
+
 
 }
