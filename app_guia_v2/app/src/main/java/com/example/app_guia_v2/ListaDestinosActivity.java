@@ -19,6 +19,7 @@ import android.speech.RecognizerIntent;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.*;
 
 
 public class ListaDestinosActivity extends AppCompatActivity implements View.OnClickListener{
@@ -29,6 +30,10 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
     TextView textgraba;
+    ArrayList<String> listaDestinos = new ArrayList<String>(
+            Arrays.asList("Geeks",
+                    "for",
+                    "Geeks"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,9 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         Button aula_6_button =  findViewById(R.id.aula_13_button);
         Button lab_button =  findViewById(R.id.lab_button);
         Button aula_x_button =  findViewById(R.id.cuad_19_button);
-        //ImageButton mic =  findViewById(R.id.img_btn_hablar);
         textgraba = findViewById(R.id.txtGrabarVoz);
+
+        listaDestinos = [];
 
         aula_13_button.setOnClickListener(this);
         aula_6_button.setOnClickListener(this);
@@ -61,8 +67,15 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> speech = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String strSpeech2Text = speech.get(0);
+                    //Tomamos el texto en minuscula
+                    String strSpeech2Text = speech.get(0).toLowerCase();
                     textgraba.setText(strSpeech2Text);
+                    //Comprobar que es un destino valido
+                    if(validDest(strSpeech2Text)){
+                        //llamamos al servidor con ese destino
+                        startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
+                    }
+
                 }
                 break;
             default:
@@ -70,6 +83,25 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    public boolean validDest(String dest){
+
+        switch (dest) {
+            case "aula 6":
+                startActivity(ScanningActivity.createIntent(this, "aula 6"));
+                break;
+            case "aula 13":
+                startActivity(ScanningActivity.createIntent(this, "aula 13"));
+                break;
+            case "lab":
+                break;
+            case "aula 7":
+                startActivity(ScanningActivity.createIntent(this, "aula x"));
+                break;
+        }
+
+
+        return true;
+    }
 
     public void onClickImgBtnHablar(View v) {
         Intent intentActionRecognizeSpeech = new Intent(
