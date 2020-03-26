@@ -38,9 +38,9 @@ Los ficheros xml en los que queda almacenada la información del edificio utiliz
 \begin{itemize}
 	\item \textit{Z:} Indica el número de planta. En el ejemplo le hemos dado el valor \textit{X}.
 	\item \textit{id:} Se corresponde con el nombre de la planta en la que nos encontramos. En el ejemplo la hemos llamado \textit{plantaX}.
-	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor \textit{0}.
+	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $0$.
 	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon0}.
-	\item \textit{conectado:} Indica los identificadores de los \textit{beacons} colindantes por los cuatro puntos cardinales. El valor \textit{-1} representa la pared.
+	\item \textit{conectado:} Indica los identificadores de los \textit{beacons} colindantes por los cuatro puntos cardinales. El valor $-1$ representa la pared.
 	\item \textit{info:} Este campo contiene la información relevante del cuadrante. En el ejemplo le hemos dado el valor \textit{info0}.
 	
 \end{itemize}
@@ -86,7 +86,7 @@ Para entender mejor la estructura de nuestro servidor, veamos las principales cl
 
 Una vez que el mapeo del edificio y el posicionamiento del usuario están resueltos es hora de comenzar a trabajar en la obtención de la ruta más adecuada. El mapeo que hemos visto en la Sección \ref{sec:mapeo} nos proporciona un grafo, en el que los cuadrantes son los nodos y las conexiones entre ellos, las aristas. Para su representación hemos empleado una matriz de adyacencia y de esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reduce al algoritmo de \textit{Dijkstra}.
 
-Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final muy concreto: personas con discapacidad visual. Es por ello que la ruta debe ser lo más sencilla posible, libre de obstáculos y otros elementos que puedan entorpecerles, por lo que en ocasiones la ruta óptima no coincide con la más corta. Tras hacer numerosas pruebas de distintas rutas, hemos detectado un ejemplo de ello: al comenzar en la puerta principal de la facultad y terminar en la puerta trasera de la cafetería, el algoritmo de \textit{Dijkstra} sugiere que el camino óptimo es acortar por detrás de conserjería (cuadrante 32) ya que es la ruta más corta pero no la óptima para una persona con discapacidad visual pues ese pasillo es más estrecho, la gente se suele aglomerar (están los ascensores, la gente continúa su camino a la cafetería, etc.) y cuenta con más giros. Por ello, hemos considerado que es más conveniente continuar la ruta por delante de Conserjería y luego girar a la izquierda. Para lograrlo hemos modificado la matriz de adyacencia, añadiendo más peso en aquellas conexiones que hemos considerado menos adecuadas. En este caso particular, a las conexiones entre los cuadrantes 31-32 y 32-22. De esta manera hacemos que el paso por el pasillo de los ascensores se limite únicamente al caso en el es estrictamente necesario pasar por allí, es decir, cuando se va a hacer un cambio de planta.
+Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final muy concreto: personas con discapacidad visual. Es por ello que la ruta debe ser lo más sencilla posible, libre de obstáculos y otros elementos que puedan entorpecerles, por lo que en ocasiones la ruta óptima no coincide con la más corta. Tras hacer numerosas pruebas de distintas rutas, hemos detectado un ejemplo de ello: al comenzar en la puerta principal de la facultad y terminar en la puerta trasera de la cafetería, el algoritmo de \textit{Dijkstra} sugiere que el camino óptimo es acortar por detrás de conserjería (cuadrante 32) ya que es la ruta más corta pero no la óptima para una persona con discapacidad visual pues ese pasillo es más estrecho, la gente se suele aglomerar (están los ascensores, la gente continúa su camino a la cafetería, etc.) y cuenta con más giros. Por ello, hemos considerado que es más conveniente continuar la ruta por delante de Conserjería (cuadrantes 35-36-20) y luego girar a la izquierda (cuadrante 21). Para lograrlo hemos modificado la matriz de adyacencia, añadiendo más peso en aquellas conexiones que hemos considerado menos adecuadas. En este caso particular, a las conexiones entre los cuadrantes 31-32 y 32-22. De esta manera hacemos que el paso por el pasillo de los ascensores se limite únicamente al caso en el es estrictamente necesario pasar por allí, es decir, cuando se va a hacer un cambio de planta.
 
 
 \subsection{Detalles técnicos del posicionamiento}
@@ -100,7 +100,7 @@ A diferencia de todos los proyectos previos de guía por la Facultad de Informá
 
 %	\item Calcula la ruta óptima (en lo que sigue veremos a qué nos referimos con esto) que debe seguir el cliente desde el origen o posición actual del cliente para llegar al destino. 
 %\end{enumerate}
-
+CUANDO ESTE EL CLINTE COMPLETAMOS!!:
 El cliente va llamando al servidor cuando actualiza su posición actual, de esta manera el servidor actualiza la ruta y genera la nueva instrucción. Una vez que la ruta ha finalizado, el servidor se lo indica al cliente con una instrucción de finalización. Véase, ``Su destino se encuentra a la derecha, el recorrido ha finalizado''.
 
 \section{Cliente}

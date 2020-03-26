@@ -105,7 +105,7 @@ Tras el debate, algunas de las conclusiones que sacamos de la visita al CTI son:
 
 \section{Estudio de la precisión de los beacons}
 
-Antes de embarcarnos en el diseño de la aplicación vamos a hacer un estudio más en profundidad de los \textit{beacons} con el fin de comprender por completo su funcionamiento y cómo se comportan a la hora de medir distancias, es decir, cuánto rango tiene la señal \textit{bluetooth}, con ayuda de qué función podemos recibir esta señal e interpretarla para determinar la distancia, qué margen de error presenta, en qué lugares es más aconsejable establecer las balizas para recibir mejor la señal y por tanto reducir el error, etc. % REFERENCIA AL PDF DE WAYFNDER.
+Antes de embarcarnos en el diseño de la aplicación vamos a hacer un estudio más en profundidad de los \textit{beacons} con el fin de comprender por completo su funcionamiento y cómo se comportan a la hora de medir distancias, es decir, cuánto rango tiene la señal \textit{bluetooth}, con ayuda de qué función podemos recibir esta señal e interpretarla para determinar la distancia, qué margen de error presenta, en qué lugares es más aconsejable establecer las balizas para recibir mejor la señal y por tanto reducir el error, etc. 
 
 Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de Desarrollo Software) propia de su marca (\textit{Kontakt}) en la que incluyen funciones ya implementadas que nos permiten conocer qué \textit{beacons} están en nuestro rango en un momento determinado y a cuántos metros están, y se va actualizando cada cierto tiempo. También incluye un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
 
@@ -117,8 +117,6 @@ Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de D
 \end{itemize}
 
 Gracias a estas funciones hemos desarrollado una serie de aplicaciones que nos han servido para tener una primera toma de contacto con el entorno de programación que hemos escogido, Android Studio, y para contrastar de manera visual el error existente entre la distancia real a la que se encuentran las balizas y la distancia leída mediante la interpretación de las señales bluetooth. Las aplicaciones son las siguientes:
-
-%Android no es un lenguaje de programación, es el SO. He puesto el entorno Android Studio, si no te cuadra podemos poner otra cosa
 
 \subsection{Aplicación \textit{miniapp}}
 Esta aplicación constituye la primera toma de contacto con los \textit{beacons} y con el código de la SDK. Presenta una interfaz sencilla en la que aparece una tabla con las distintas categorías de proximidad para 3 balizas y, debajo, el hueco para indicar el identificador correspondiente. En el cuadro inferior aparecen dos botones muy intuitivos con los que el usuario puede interactuar con la app: Stop Scanning y Start Scanning. De esta manera, una vez que empieza el escaneo y las balizas se encuentran en el radio de detección, se incluyen los identificadores en cuestión y se colorea en verde la categoría de proximidad estimada en cada caso según corresponda. La lectura de los \textit{beacons} se actualiza cada 2 segundos, tiempo establecido de antemano. En la Figura \ref{fig:miniapp} podemos ver la interfaz descrita.
@@ -198,9 +196,7 @@ Los \textit{beacons} son dispositivos que se pueden colocar tanto en interiores 
 	\item Considerar la orientación adecuada de la antena direccional del \textit{beacon}, esta depende por completo del fabricante. En ocasiones la baliza no emite una señal simétrica por completo sino que emite una señal en forma elíptica.
 \end{itemize}
 
-Otros factores difíciles de controlar que también afectan a la señal son las condiciones meteorológicas, la señal Wi-Fi, las señales bluetooth de otros dispositivos...
-
-%BIBLIOGRAFIA http://www.wayfindr.net/wp-content/uploads/2018/07/Wayfindr-Open-Standard-Rec-2.0.pdf?version=recommendation-2
+Otros factores difíciles de controlar que también afectan a la señal son las condiciones meteorológicas, la señal Wi-Fi, las señales bluetooth de otros dispositivos \citep{beaconsinterferences}...
 
 \subsection{Mediciones en puntos clave de la facultad}
 \label{sec:medicionesbeacons}
@@ -274,7 +270,6 @@ Esta estructura, junto con la información sobre la planta (coordenada z) en la 
 
 Otras novedades que hemos incluido en los archivos plantaX.xml son: añadir los metros que ocupan los cuadrantes para poder dar una instrucción más precisa, y añadir un apartado \textit{info} para poder informar al usuario, si lo desea, de qué hay a su paso por la ruta, esta idea la tuvimos tras investigar distintas aplicaciones de guía para personas con discapacidad visual y tras la reunión con la ONCE, en la que nos acercamos mucho a las necesidades de nuestros usuarios. Por otro lado, como podemos ver en la Figura \ref{fig:cuadrantesPbaja} hemos incluido el mapeo de la planta baja y hemos conectado las distintas plantas para incluir rutas de una a otra (novedad con respecto a los trabajos predecesores).
 
-%HAY QUE CAMBIAR LA IMAGEN CUANDO CAMBIE EL CUADRANTE SIN BEACON!!
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplantabaja_cuadrantes3}
