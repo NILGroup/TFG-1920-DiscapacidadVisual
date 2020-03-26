@@ -59,7 +59,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cliente/Login/bin/classes/com/avanti/sensor/AccelerometerReader.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180" />
+            <state relative-caret-position="-1560" />
           </provider>
         </entry>
       </file>
@@ -89,7 +89,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="124" />
     <option name="y" value="71" />
     <option name="width" value="979" />
@@ -101,269 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name=".settings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Backup BD" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="activities" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sensor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sockets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="labelmaker" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="wps" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="gen" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="avanti" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="activities" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="res" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Cliente" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="principal" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="usuario" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CalculaRuta" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="xml" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Servidor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="PhpServer" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -433,6 +170,17 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="CD" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\MRS\Documents\Belen\ucm\5\TFG infor\git\TFG-1920-DiscapacidadVisual\CD" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,11 +215,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="124" y="71" width="979" height="1044" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.43683085" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15427658" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -744,7 +491,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cliente/Login/bin/classes/com/avanti/sensor/AccelerometerReader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180" />
+        <state relative-caret-position="-1560" />
       </provider>
     </entry>
   </component>
