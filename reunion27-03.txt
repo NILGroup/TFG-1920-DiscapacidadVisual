@@ -1,0 +1,7 @@
+TAREAS:
+
+-Cuando arrancas el tomcat, se runea todo lo que tengas en webapps (tutorial para ver donde tienes que colocar las cosas). No hacerlo desde Eclipse. Una vez funcione desde local y ya sepamos como se hace, lo probamos en el servidor ficticio.
+
+-Cliente: VISTOS BUENOS.
+
+-Servidor: La idea es que con la primera llamada al servidor este le de toda la ruta y que únicamente vuelva a ser llamado si vemos que el beacon más cercano que pasa el cliente al servidor no cuadra con el beacon clave, lo que querrá decir que se ha perdido. Entonces se volvería a generar la ruta para redirigir al usuario.
