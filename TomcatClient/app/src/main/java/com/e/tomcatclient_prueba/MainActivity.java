@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         URI uri;
         try {
             // Connect to local host
-            uri = new URI("ws://88.18.203.7:8080/WebSocketServerExample/websocketendpoint");
+            uri = new URI("ws://holstein.fdi.ucm.es:80/tfg-disvis/WebSocketServerExample/websocketendpoint");
         }
         catch (URISyntaxException e) {
             e.printStackTrace();
