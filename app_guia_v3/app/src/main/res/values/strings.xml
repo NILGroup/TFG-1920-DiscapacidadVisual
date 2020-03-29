@@ -11,17 +11,37 @@
     <string name="stop_scan_button">STOP SCANNING</string>
 
     <string name="beacon_text">Beacons encontrados:\n</string>
-    <string name="aula_6_button">Aula 6</string>
-    <string name="aula_13_button">Aula 13</string>
-    <string name="cuad_19_button">Cuad_19</string>
-    <string name="lab_button">lab</string>
+
+    <string name="config_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
+
     <string name="conserjeria_button">Conserjeria</string>
+    <string name="aulas_button">Aulas</string>
     <string name="secretaria_button">Secretaria</string>
     <string name="sala_grados_button">Sala de grados</string>
+    <string name="sala_juntas_button">Sala de juntas</string>
     <string name="cafeteria_button">Cafeteria</string>
+    <string name="biblioteca_button">Biblioteca</string>
     <string name="salon_actos_button">Salon de actos</string>
     <string name="puerta_principal_button">Puerta principal</string>
+
+    <string name="aula_1_button">Aula 1</string>
+    <string name="aula_2_button">Aula 2</string>
+    <string name="aula_3_button">Aula 3</string>
+    <string name="aula_4_button">Aula 4</string>
+    <string name="aula_5_button">Aula 5</string>
+    <string name="aula_6_button">Aula 6</string>
     <string name="aula_7_button">Aula 7</string>
-    <string name="aula_8_principal_button">Aula 8</string>
+    <string name="aula_8_button">Aula 8</string>
+    <string name="aula_9_button">Aula 9</string>
+    <string name="aula_10_button">Aula 10</string>
+    <string name="aula_11_button">Aula 11</string>
+    <string name="aula_12_button">Aula 12</string>
+    <string name="aula_13_button">Aula 13</string>
+    <string name="aula_14_button">Aula 14</string>
+    <string name="aula_15_button">Aula 15</string>
+    <string name="aula_16_button">Aula 16</string>
+
+
+
 
 </resources>
