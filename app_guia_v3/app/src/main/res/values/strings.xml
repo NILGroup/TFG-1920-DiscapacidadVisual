@@ -5,18 +5,27 @@
     <string name="instructions_button">Modo de uso</string>
     <string name="logo_image">Logo de la aplicación</string>
 
+    <!-- CONFIGURACION -->
+    <string name="volumen_button">Volumen</string>
+    <string name="verbose_switch">MODO VERBOSE</string>
 
-
+    <!-- CLIENTE -->
     <string name="start_scan_button">START SCANNING</string>
     <string name="stop_scan_button">STOP SCANNING</string>
 
     <string name="beacon_text">Beacons encontrados:\n</string>
 
-    <string name="config_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
+    <string name="repetir_button">Repetir instrucción</string>
+    <string name="parar_button">Parar ruta</string>
+    <string name="verbose_ruta_button">Modo verbose</string>
 
-    <string name="conserjeria_button">Conserjeria</string>
+    <!-- MODO DE USO -->
+    <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
+
+    <!-- LISTA DESTINOS -->
+    <string name="conserjeria_button">Conserjeria\n</string>
     <string name="aulas_button">Aulas</string>
-    <string name="secretaria_button">Secretaria</string>
+    <string name="secretaria_button">Secretaria\n</string>
     <string name="sala_grados_button">Sala de grados</string>
     <string name="sala_juntas_button">Sala de juntas</string>
     <string name="cafeteria_button">Cafeteria</string>
@@ -24,6 +33,7 @@
     <string name="salon_actos_button">Salon de actos</string>
     <string name="puerta_principal_button">Puerta principal</string>
 
+    <!-- LISTA AULAS -->
     <string name="aula_1_button">Aula 1</string>
     <string name="aula_2_button">Aula 2</string>
     <string name="aula_3_button">Aula 3</string>
@@ -40,8 +50,6 @@
     <string name="aula_14_button">Aula 14</string>
     <string name="aula_15_button">Aula 15</string>
     <string name="aula_16_button">Aula 16</string>
-
-
 
 
 </resources>

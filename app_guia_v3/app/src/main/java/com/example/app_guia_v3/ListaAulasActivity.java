@@ -32,7 +32,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                     "aula 16"
             ));
 
-    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

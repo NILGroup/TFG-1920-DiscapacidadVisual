@@ -92,6 +92,13 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/conserjeria_button"
+                android:layout_width="110dp"
+                android:layout_height="103dp"
+                android:text="@string/conserjeria_button"
+                android:textSize="13" />
+
+            <Button
                 android:id="@+id/puerta_principal_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
@@ -99,15 +106,9 @@
 
             <Button
                 android:id="@+id/secretaria_button"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="103dp"
                 android:text="@string/secretaria_button" />
-
-            <Button
-                android:id="@+id/conserjeria_button"
-                android:layout_width="110dp"
-                android:layout_height="103dp"
-                android:text="@string/conserjeria_button" />
         </TableRow>
 
     </TableLayout>
@@ -123,6 +124,8 @@
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </SearchView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
