@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.Button;
 import android.content.ActivityNotFoundException;
 import android.speech.RecognizerIntent;
 
@@ -50,10 +50,17 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
     }
 
     private void setupButtons() {
-        /*Button aula_13_button =  findViewById(R.id.aula_6_button);
-        Button aula_6_button =  findViewById(R.id.aula_13_button);
-        Button lab_button =  findViewById(R.id.lab_button);
-        Button aula_x_button =  findViewById(R.id.cuad_19_button);*/
+
+        final Button aulas_button =  findViewById(R.id.aulas_button);
+        final Button cafeteria_button =  findViewById(R.id.cafeteria_button);
+        final Button biblioteca_button =  findViewById(R.id.biblioteca_button);
+        final Button secretaria_button =  findViewById(R.id.secretaria_button);
+        final Button conserjeria_button =  findViewById(R.id.conserjeria_button);
+        final Button puerta_principal_button =  findViewById(R.id.puerta_principal_button);
+        final Button sala_juntas_button =  findViewById(R.id.sala_juntas_button);
+        final Button salon_actos_button =  findViewById(R.id.salon_actos_button);
+        final Button sala_grados_button =  findViewById(R.id.sala_grados_button);
+
         /*textgraba = findViewById(R.id.txtGrabarVoz);
         recyclerView = (RecyclerView) findViewById(R.id.rvDestinos);*/
 
@@ -70,10 +77,15 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         //Agregamos el adaptador al recycler
         recyclerView.setAdapter(recyclerAdaptador);*/
 
-        /*aula_13_button.setOnClickListener(this);
-        aula_6_button.setOnClickListener(this);
-        lab_button.setOnClickListener(this);
-        aula_x_button.setOnClickListener(this);*/
+        aulas_button.setOnClickListener(this);
+        cafeteria_button.setOnClickListener(this);
+        biblioteca_button.setOnClickListener(this);
+        secretaria_button.setOnClickListener(this);
+        conserjeria_button.setOnClickListener(this);
+        puerta_principal_button.setOnClickListener(this);
+        sala_juntas_button.setOnClickListener(this);
+        salon_actos_button.setOnClickListener(this);
+        sala_grados_button.setOnClickListener(this);
 
     }
 
@@ -114,6 +126,7 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         return false;
     }
 
+    //Reconocedor de voz
     public void onClickImgBtnHablar(View v) {
         Intent intentActionRecognizeSpeech = new Intent(
                 RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -131,20 +144,36 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
     }
 
     @Override
-    public void onClick(View view) {
-       /* switch (view.getId()) {
-            case R.id.aula_6_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 6"));
+    public void onClick(View view) { //botones normales
+        switch (view.getId()) {
+            case R.id.aulas_button:
+                startActivity(ListaAulasActivity.createIntent(this));
                 break;
-            case R.id.aula_13_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 13"));
+            case R.id.secretaria_button:
+                startActivity(ScanningActivity.createIntent(this, "secretaria"));
                 break;
-            case R.id.lab_button:
+            case R.id.conserjeria_button:
+                startActivity(ScanningActivity.createIntent(this, "conserjeria"));
                 break;
-            case R.id.cuad_19_button:
-                startActivity(ScanningActivity.createIntent(this, "aula x"));
+            case R.id.biblioteca_button:
+                startActivity(ScanningActivity.createIntent(this, "biblioteca"));
                 break;
-        }*/
+            case R.id.puerta_principal_button:
+                startActivity(ScanningActivity.createIntent(this, "puerta principal"));
+                break;
+            case R.id.sala_grados_button:
+                startActivity(ScanningActivity.createIntent(this, "sala de grados"));
+                break;
+            case R.id.sala_juntas_button:
+                startActivity(ScanningActivity.createIntent(this, "sala de juntas"));
+                break;
+            case R.id.salon_actos_button:
+                startActivity(ScanningActivity.createIntent(this, "salon de actos"));
+                break;
+            case R.id.cafeteria_button:
+                startActivity(ScanningActivity.createIntent(this, "cafeteria"));
+                break;
+        }
     }
     @Override
     protected void onStop() {
