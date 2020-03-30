@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_start_searching:
+
                 startActivity(ListaDestinosActivity.createIntent(this));
                 break;
             case R.id.config_button:

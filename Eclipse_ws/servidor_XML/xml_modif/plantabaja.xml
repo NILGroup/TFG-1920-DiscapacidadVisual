@@ -125,7 +125,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="31">
-   				<beacon>beacon31</beacon>
+   				<beacon>Wsxj</beacon>
 				<conectado>
 					<norte>32</norte>
 					<sur>22</sur>
@@ -136,7 +136,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="32">
-				<beacon>beacon32</beacon>
+				<beacon>7rd7</beacon>
 				<conectado>
 					<norte>-1</norte>
 					<sur>31</sur>
@@ -180,7 +180,7 @@
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="36">
-				<beacon>beacon36</beacon>
+				<beacon>0yDx</beacon>
 				<conectado>
 					<norte>35</norte>
 					<sur>20</sur>

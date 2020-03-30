@@ -29,7 +29,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
         modo_verb_switch = (Switch) findViewById(R.id.modo_verb_switch);
 
         //set the initial state of verbose
-        modo_verb_switch.setChecked(false);
+        //modo_verb_switch.setChecked(false);
 
         volume_button.setOnClickListener(this);
         modo_verb_switch.setOnClickListener(this);

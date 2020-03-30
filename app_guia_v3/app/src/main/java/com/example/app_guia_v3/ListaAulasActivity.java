@@ -112,7 +112,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                         Toast.makeText(getApplicationContext(),
                                 strSpeech2Text,
                                 Toast.LENGTH_SHORT).show();
-                        //startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
+                        startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
                     else{ //Mensaje con destino no valido, habrá que hacerlo por voz
                         Toast.makeText(getApplicationContext(),
@@ -224,7 +224,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(),
                     dest,
                     Toast.LENGTH_SHORT).show();
-            //startActivity(ScanningActivity.createIntent(this, dest));
+            startActivity(ScanningActivity.createIntent(this, dest));
         }
         else{ //Mensaje con destino no valido, habrá que hacerlo por voz
             Toast.makeText(getApplicationContext(),

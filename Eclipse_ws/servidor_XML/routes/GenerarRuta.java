@@ -194,13 +194,13 @@ public class GenerarRuta {
 				if(direccion.equals(dirDeLaQueVengo)) {
 					s = "Continua recto " + Float.toString(metros) +" metros, luego ";
 					direccion = direccionSig;
-					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo, verbose);
 				}
 				else {
 					if(!dirDeLaQueVengo.equals(direccionSig)) {
 						direccion = direccionSig;
 					}
-					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo, verbose);
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
 				}
 				cuadranteClave = c2.getID();
@@ -210,7 +210,8 @@ public class GenerarRuta {
 		return s;
 	}
 	
-	public String generaInstruccion(int cont, String direccionPrincipal, String direccion, String dirDeLaQueVengo) {
+	public String generaInstruccion(int cont, String direccionPrincipal, String direccion,
+			String dirDeLaQueVengo, boolean verbose) {
 		String s = "";
 		
 		if (!direccion.equals(direccionPrincipal)) { //Giramos
@@ -280,7 +281,26 @@ public class GenerarRuta {
 					s += ("izquierda,");
 			}
 			
-		} else if (cont == 2) {//Medio del pasillo
+		} else {//No cambio de dirección
+			
+			if(verbose) {
+				s += ("espera a la siguiente indicación.");
+			}else {
+				
+				if (cont == 2) {//Medio del pasillo
+					
+					s += ("espera a la siguiente indicación.");
+				
+				} else {
+					
+					s += ("habrás llegado a tu destino.");
+				}
+			
+			}
+		}
+		return s;
+		
+		/*else if (cont == 2) {//Medio del pasillo
 		
 			s += ("espera a la siguiente indicación.");
 		
@@ -288,9 +308,9 @@ public class GenerarRuta {
 			
 			s += ("habrás llegado a tu destino.");
 			
-		}
+		}*/
 		
-		return s;
+
 	}
 
 	public int getCuadranteClave() {

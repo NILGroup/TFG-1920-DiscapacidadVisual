@@ -23,15 +23,18 @@
     <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
 
     <!-- LISTA DESTINOS -->
-    <string name="conserjeria_button">Conserjeria\n</string>
+    <string name="conserjeria_button">Conserjería\n</string>
     <string name="aulas_button">Aulas</string>
-    <string name="secretaria_button">Secretaria\n</string>
+    <string name="secretaria_button">Secretaría\n</string>
     <string name="sala_grados_button">Sala de grados</string>
     <string name="sala_juntas_button">Sala de juntas</string>
-    <string name="cafeteria_button">Cafeteria</string>
+    <string name="cafeteria_button">Cafetería</string>
     <string name="biblioteca_button">Biblioteca</string>
-    <string name="salon_actos_button">Salon de actos</string>
+    <string name="salon_actos_button">Salón de actos</string>
     <string name="puerta_principal_button">Puerta principal</string>
+
+    <string name="microfono_descripcion">Micrófono</string>
+    <string name="microfono_descripcion_aulas">Micrófono</string>
 
     <!-- LISTA AULAS -->
     <string name="aula_1_button">Aula 1</string>

@@ -85,16 +85,16 @@ public class MainAndroid extends Thread {
 MainAndroid thread = new MainAndroid();
 	    
 	    
-		beaconOrigen = "beacon39";
-		destino = "Sala de juntas"; 
-		beaconActual = "beacon39";
+		beaconOrigen = "0yDx";
+		destino = "aula 8"; 
+		beaconActual = "0yDx";
 		
 		thread.start();
 		
 		
 		//Suponemos que hemos llegado al cuadrante 38
 	   
-		try {
+		/*try {
 			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

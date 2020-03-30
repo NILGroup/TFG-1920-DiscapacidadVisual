@@ -104,7 +104,7 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                         Toast.makeText(getApplicationContext(),
                                 strSpeech2Text,
                                 Toast.LENGTH_SHORT).show();
-                        //startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
+                        startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
                     else{ //Mensaje con destino no valido, habrá que hacerlo por voz
                         Toast.makeText(getApplicationContext(),
@@ -193,7 +193,7 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
             Toast.makeText(getApplicationContext(),
                     dest,
                     Toast.LENGTH_SHORT).show();
-            //startActivity(ScanningActivity.createIntent(this, dest));
+            startActivity(ScanningActivity.createIntent(this, dest));
         }
         else{ //Mensaje con destino no valido, habrá que hacerlo por voz
             Toast.makeText(getApplicationContext(),

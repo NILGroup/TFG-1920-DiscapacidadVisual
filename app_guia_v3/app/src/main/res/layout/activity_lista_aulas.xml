@@ -152,7 +152,7 @@
         android:layout_marginRight="144dp"
         android:layout_marginBottom="60dp"
         android:background="@android:drawable/presence_audio_online"
-        android:contentDescription="@string/app_name"
+        android:contentDescription="@string/microfono_descripcion_aulas"
         android:onClick="onClickImgBtnHablar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

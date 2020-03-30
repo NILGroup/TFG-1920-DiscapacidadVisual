@@ -245,11 +245,17 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
+                editText.setText(editText.getText()+ "Modo Verb\n");
                 if(verbose) verbose = false;
                 else verbose = true;
-                ConfigActivity.getModo_verb_switch().setChecked(verbose); //con esto se hace bien? el cambio de boton
-                Toast.makeText(getApplicationContext(),"prueba verbose scanning:" + toString(verbose),Toast.LENGTH_SHORT);
-                Toast.makeText(getApplicationContext(),"prueba verbose config:" + toString(ConfigActivity.getModo_verb_switch().isChecked()),Toast.LENGTH_SHORT);
+                if (ConfigActivity.getModo_verb_switch() != null) {
+                    ConfigActivity.getModo_verb_switch().setChecked(verbose); //con esto se hace bien? el cambio de boton
+                    editText.setText(editText.getText()+ "Config: " +toString(ConfigActivity.getModo_verb_switch().isChecked())+ "\n");
+                }
+                editText.setText(editText.getText()+ "Scanning: " + toString(verbose) +"\n");
+
+                //Toast.makeText(getApplicationContext(),"prueba verbose scanning:" + toString(verbose),Toast.LENGTH_SHORT);
+                //Toast.makeText(getApplicationContext(),"prueba verbose config:" + toString(ConfigActivity.getModo_verb_switch().isChecked()),Toast.LENGTH_SHORT);
                 break;
 
             case R.id.parar_button:
