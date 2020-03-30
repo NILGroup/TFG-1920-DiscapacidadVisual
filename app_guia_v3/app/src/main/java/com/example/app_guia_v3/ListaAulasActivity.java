@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,19 +18,30 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ListaAulasActivity extends AppCompatActivity implements View.OnClickListener{
+public class ListaAulasActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener{
 
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ListaAulasActivity.class);
     }
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
-    TextView textgraba;
-    ArrayList<String> listaAulas = new ArrayList<String>(
+
+    private SearchView barra_busqueda = null;
+
+    private static final String ORIGINAL = "áéíóú";
+    private static final String REPLACEMENT = "aeiou";
+
+    private static ArrayList<String> listaDestinos = new ArrayList<String>(
             Arrays.asList(
                     "aula 1", "aula 2", "aula 3", "aula 4", "aula 5",
                     "aula 6", "aula 7", "aula 8", "aula 9", "aula 10",
                     "aula 11", "aula 12", "aula 13", "aula 14", "aula 15",
-                    "aula 16"
+                    "aula 16", "sala de grados", "sala de juntas",
+                    "salon de actos",
+                    "cafeteria",
+                    "cafeteria trasera", "puerta principal",
+                    "secretaria",
+                    "conserjeria",
+                    "biblioteca"
             ));
 
 
@@ -59,6 +71,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         final Button aula15_button =  findViewById(R.id.aula_15_button);
         final Button aula16_button =  findViewById(R.id.aula_16_button);
 
+        barra_busqueda = (SearchView) findViewById(R.id.aulas_searchView);
 
         aula1_button.setOnClickListener(this);
         aula2_button.setOnClickListener(this);
@@ -77,7 +90,8 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         aula15_button.setOnClickListener(this);
         aula16_button.setOnClickListener(this);
 
-
+        barra_busqueda.setOnQueryTextListener(this);
+        barra_busqueda.setQueryHint("Introduce el destino");
     }
 
 
@@ -90,12 +104,15 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                     ArrayList<String> speech = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     //Tomamos el texto en minuscula
-                    String strSpeech2Text = speech.get(0).toLowerCase();
-                    textgraba.setText(strSpeech2Text);
+                    String strSpeech2Text = cleanString(speech.get(0));
+
                     //Comprobar que es un destino valido
-                    if(validDest(strSpeech2Text)){
+                    if(listaDestinos.contains(strSpeech2Text)){
                         //llamamos al servidor con ese destino
-                        startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
+                        Toast.makeText(getApplicationContext(),
+                                strSpeech2Text,
+                                Toast.LENGTH_SHORT).show();
+                        //startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
                     else{ //Mensaje con destino no valido, habrá que hacerlo por voz
                         Toast.makeText(getApplicationContext(),
@@ -109,13 +126,6 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public boolean validDest(String dest){
-
-        if(listaAulas.contains(dest))
-            return true;
-
-        return false;
-    }
 
     //Reconocedor de voz
     public void onClickImgBtnHablar(View v) {
@@ -132,6 +142,22 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                     "Tú dispositivo no soporta el reconocimiento por voz",
                     Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //Quita tildes y mayúsculas
+    public String cleanString(String str){
+
+        String str_clean = new String(str).toLowerCase();
+
+        //quitamos las tildes
+        char[] array = str_clean.toCharArray();
+        for (int index = 0; index < array.length; index++) {
+            int pos = ORIGINAL.indexOf(array[index]);
+            if (pos > -1) {
+                array[index] = REPLACEMENT.charAt(pos);
+            }
+        }
+        return new String(array);
     }
 
     @Override
@@ -187,6 +213,34 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
+
+
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        String dest = cleanString(query);
+        if(listaDestinos.contains(dest)){
+            //llamamos al servidor con ese destino
+            Toast.makeText(getApplicationContext(),
+                    dest,
+                    Toast.LENGTH_SHORT).show();
+            //startActivity(ScanningActivity.createIntent(this, dest));
+        }
+        else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+            Toast.makeText(getApplicationContext(),
+                    "El destino introducido no es valido",
+                    Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        /*String text = newText;
+        adapter.filter(text);*/
+        return false;
+    }
+
     @Override
     protected void onStop() {
         //Stop scanning when leaving screen.

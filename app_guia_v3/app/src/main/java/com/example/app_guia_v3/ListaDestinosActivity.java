@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
@@ -20,25 +18,33 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.*;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListaDestinosActivity extends AppCompatActivity implements View.OnClickListener{
+public class ListaDestinosActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener{
 
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ListaDestinosActivity.class);
     }
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
-    TextView textgraba;
-    SearchView barra_busqueda = null;
-    ArrayList<String> listaDestinos = new ArrayList<String>(
+
+    private SearchView barra_busqueda = null;
+    private static final String ORIGINAL = "áéíóú";
+    private static final String REPLACEMENT = "aeiou";
+
+
+    private static ArrayList<String> listaDestinos = new ArrayList<String>(
             Arrays.asList(
                     "aula 1", "aula 2", "aula 3", "aula 4", "aula 5",
                     "aula 6", "aula 7", "aula 8", "aula 9", "aula 10",
                     "aula 11", "aula 12", "aula 13", "aula 14", "aula 15",
-                    "aula 16", "sala de grados", "sala de juntas", "salon de actos", "cafeteria",
-                    "cafeteria trasera", "puerta principal", "secretaria", "conserjeria", "biblioteca"
+                    "aula 16", "sala de grados", "sala de juntas",
+                    "salon de actos",
+                    "cafeteria",
+                    "cafeteria trasera", "puerta principal",
+                    "secretaria",
+                    "conserjeria",
+                    "biblioteca"
                     ));
 
     RecyclerView recyclerView;
@@ -63,23 +69,7 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         final Button salon_actos_button =  findViewById(R.id.salon_actos_button);
         final Button sala_grados_button =  findViewById(R.id.sala_grados_button);
 
-        barra_busqueda = (SearchView) findViewById(R.id.searchView2);
-
-        /*textgraba = findViewById(R.id.txtGrabarVoz);
-        recyclerView = (RecyclerView) findViewById(R.id.rvDestinos);*/
-
-        //recyclerView.setLayoutManager( new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL,false));
-
-        //creamos el adaptador del recycler agregamos la lista de notas y el onIntemClickListener
-        /*recyclerAdaptador = new RecyclerAdaptor(listaDestinos, new RecyclerAdaptor.OnItemClickListener() {
-            @Override
-            //Obtenemos la posicion
-            public void onItemClick(final int position) {
-                Toast.makeText(getApplicationContext(),"posiciòn "+position,Toast.LENGTH_LONG).show();
-            }
-        });
-        //Agregamos el adaptador al recycler
-        recyclerView.setAdapter(recyclerAdaptador);*/
+        barra_busqueda = (SearchView) findViewById(R.id.destinos_searchView);
 
         aulas_button.setOnClickListener(this);
         cafeteria_button.setOnClickListener(this);
@@ -90,6 +80,9 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         sala_juntas_button.setOnClickListener(this);
         salon_actos_button.setOnClickListener(this);
         sala_grados_button.setOnClickListener(this);
+
+        barra_busqueda.setOnQueryTextListener(this);
+        barra_busqueda.setQueryHint("Introduce el destino");
 
     }
 
@@ -103,12 +96,15 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                     ArrayList<String> speech = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     //Tomamos el texto en minuscula
-                    String strSpeech2Text = speech.get(0).toLowerCase();
-                    textgraba.setText(strSpeech2Text);
+                    String strSpeech2Text = cleanString(speech.get(0));
+
                     //Comprobar que es un destino valido
-                    if(validDest(strSpeech2Text)){
+                    if(listaDestinos.contains(strSpeech2Text)){
                         //llamamos al servidor con ese destino
-                        startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
+                        Toast.makeText(getApplicationContext(),
+                                strSpeech2Text,
+                                Toast.LENGTH_SHORT).show();
+                        //startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
                     else{ //Mensaje con destino no valido, habrá que hacerlo por voz
                         Toast.makeText(getApplicationContext(),
@@ -122,12 +118,21 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public boolean validDest(String dest){
 
-        if(listaDestinos.contains(dest))
-            return true;
+    //Quita tildes y mayúsculas
+    public String cleanString(String str){
 
-        return false;
+        String str_clean = new String(str).toLowerCase();
+
+        //quitamos las tildes
+        char[] array = str_clean.toCharArray();
+        for (int index = 0; index < array.length; index++) {
+            int pos = ORIGINAL.indexOf(array[index]);
+            if (pos > -1) {
+                array[index] = REPLACEMENT.charAt(pos);
+            }
+        }
+        return new String(array);
     }
 
     //Reconocedor de voz
@@ -179,6 +184,32 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                 break;
         }
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        String dest = cleanString(query);
+        if(listaDestinos.contains(dest)){
+            //llamamos al servidor con ese destino
+            Toast.makeText(getApplicationContext(),
+                    dest,
+                    Toast.LENGTH_SHORT).show();
+            //startActivity(ScanningActivity.createIntent(this, dest));
+        }
+        else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+            Toast.makeText(getApplicationContext(),
+                    "El destino introducido no es valido",
+                    Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        /*String text = newText;
+        adapter.filter(text);*/
+        return false;
+    }
+
     @Override
     protected void onStop() {
         //Stop scanning when leaving screen.
