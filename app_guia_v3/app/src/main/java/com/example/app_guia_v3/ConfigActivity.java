@@ -11,12 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ConfigActivity extends AppCompatActivity implements View.OnClickListener {
-
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ConfigActivity.class);
     }
 
-    Switch modo_verb_switch = null;
+    private static Switch modo_verb_switch = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +29,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
         modo_verb_switch = (Switch) findViewById(R.id.modo_verb_switch);
 
         //set the initial state of verbose
-        modo_verb_switch.setChecked(true);
+        modo_verb_switch.setChecked(false);
 
         volume_button.setOnClickListener(this);
         modo_verb_switch.setOnClickListener(this);
@@ -43,14 +42,12 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
                 //startActivity(ScanningActivity.createIntent(this, "aula 1"));
                 break;
             case R.id.modo_verb_switch:
-                if(modo_verb_switch.isChecked()){
-
-                }
-                else{
-
-                }
-                //startActivity(ScanningActivity.createIntent(this, "aula 2"));
+                ScanningActivity.setVerbose(modo_verb_switch.isChecked());
                 break;
         }
+    }
+
+    public static Switch getModo_verb_switch() {
+        return modo_verb_switch;
     }
 }

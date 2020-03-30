@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 
 //import Cuadrante;
@@ -29,7 +32,7 @@ import android.widget.EditText;
 
 import 	android.text.method.ScrollingMovementMethod;
 
-public class ScanningActivity extends AppCompatActivity  {
+public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener {
 
 
     private ProximityManager proximityManager;
@@ -45,7 +48,7 @@ public class ScanningActivity extends AppCompatActivity  {
     private boolean hayRuta = false;
     private String origen, beaconClave, listaCuadrantes, ruta;
     private String beacon_mas_cerca;
-
+    private static boolean verbose = false; //Por defecto esta a false
     public static Intent createIntent(@NonNull Context context, String dest) {
         destino = dest;
         return new Intent(context, ScanningActivity.class);
@@ -67,6 +70,15 @@ public class ScanningActivity extends AppCompatActivity  {
     private void setupButtons() {
         editText = findViewById(R.id.beacon_text);
         editText.setMovementMethod(new ScrollingMovementMethod());
+
+        Button modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
+        modo_verb_button.setOnClickListener(this);
+
+        Button stop_button = (Button) findViewById(R.id.parar_button);
+        stop_button.setOnClickListener(this);
+
+        Button repet_button = (Button) findViewById(R.id.repetir_button);
+        repet_button.setOnClickListener(this);
     }
 
     private void setupProximityManager() {
@@ -127,7 +139,7 @@ public class ScanningActivity extends AppCompatActivity  {
                     //Hay que saber el origen
                     origen = beacon_mas_cerca;
 
-                    Cliente c = new Cliente(destino, beacon_mas_cerca, origen);
+                    Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
                     //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
                     results = c.socketConnect().clone();
 
@@ -148,7 +160,7 @@ public class ScanningActivity extends AppCompatActivity  {
                     //editText.setText(editText.getText()+ "En el else\n");
                     if(beacon_mas_cerca.equals(beaconClave)){
                         //editText.setText(editText.getText()+ "En el if\n");
-                        Cliente c = new Cliente(destino, beacon_mas_cerca, origen);
+                        Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
                         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
                         results = c.socketConnect().clone();
 
@@ -224,6 +236,37 @@ public class ScanningActivity extends AppCompatActivity  {
         super.onDestroy();
     }
 
+    public static void setVerbose(boolean verb){
+        verbose = verb;
+    }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) { //cambiar el de config
+            case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
+                if(verbose) verbose = false;
+                else verbose = true;
+                ConfigActivity.getModo_verb_switch().setChecked(verbose); //con esto se hace bien? el cambio de boton
+                Toast.makeText(getApplicationContext(),"prueba verbose scanning:" + toString(verbose),Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(),"prueba verbose config:" + toString(ConfigActivity.getModo_verb_switch().isChecked()),Toast.LENGTH_SHORT);
+                break;
+
+            case R.id.parar_button:
+                this.onStop();
+                break;
+
+            case R.id.repetir_button:
+                editText.setText(editText.getText()+ "______________\n");
+                editText.setText(editText.getText()+ "Ruta repetida:" + ruta +"\n");
+                editText.setText(editText.getText()+ "______________\n");
+                break;
+        }
+
+    }
+
+    public String toString(boolean verb){
+        if(verb) return "true";
+        else return "false";
+    }
 }

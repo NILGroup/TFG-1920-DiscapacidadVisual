@@ -23,13 +23,15 @@ public class Cliente {
     private String dest, b_mas_cerca, origen;
     //String listaCuadrantes, ruta, beaconClave;
     private int cuadranteClave;
+    private boolean verbose;
 
     final String [] results = new  String[3];
 
-    public Cliente(String destino, String beaconMasCercano, String ori){
+    public Cliente(String destino, String beaconMasCercano, String ori, boolean verb){
         dest = destino;
         b_mas_cerca = beaconMasCercano;
         origen = ori;
+        verbose = verb;
     }
 
     protected String [] socketConnect() {
@@ -62,6 +64,9 @@ public class Cliente {
 
                     //Mandamos al servidor nuestro beacon más cercano actual
                     out.writeUTF(b_mas_cerca);
+
+                    //Mandamos el modo verbose a true o false;
+                    out.writeBoolean(verbose);
 
                     //Leemos del servidor la ruta de cuadrantes que tenemos que hacer
                     String listaCuadrantes = in.readUTF();
