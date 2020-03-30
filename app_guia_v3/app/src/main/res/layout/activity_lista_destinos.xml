@@ -96,7 +96,7 @@
                 android:layout_width="110dp"
                 android:layout_height="103dp"
                 android:text="@string/conserjeria_button"
-                android:textSize="13" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/puerta_principal_button"

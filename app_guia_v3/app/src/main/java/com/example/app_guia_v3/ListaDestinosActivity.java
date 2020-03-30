@@ -10,10 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.content.ActivityNotFoundException;
 import android.speech.RecognizerIntent;
 
-import android.widget.SearchView;
+
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
     TextView textgraba;
+    SearchView barra_busqueda = null;
     ArrayList<String> listaDestinos = new ArrayList<String>(
             Arrays.asList(
                     "aula 1", "aula 2", "aula 3", "aula 4", "aula 5",
@@ -60,6 +62,8 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
         final Button sala_juntas_button =  findViewById(R.id.sala_juntas_button);
         final Button salon_actos_button =  findViewById(R.id.salon_actos_button);
         final Button sala_grados_button =  findViewById(R.id.sala_grados_button);
+
+        barra_busqueda = (SearchView) findViewById(R.id.searchView2);
 
         /*textgraba = findViewById(R.id.txtGrabarVoz);
         recyclerView = (RecyclerView) findViewById(R.id.rvDestinos);*/
