@@ -260,6 +260,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
             case R.id.parar_button:
                 this.onStop();
+                startActivity(ListaDestinosActivity.createIntent(this));
                 break;
 
             case R.id.repetir_button:

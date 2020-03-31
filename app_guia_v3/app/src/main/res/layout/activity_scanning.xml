@@ -50,19 +50,24 @@
             android:id="@+id/modo_verb_ruta_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
             android:text="@string/verbose_ruta_button" />
-
-        <Button
-            android:id="@+id/parar_button"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/parar_button" />
 
         <Button
             android:id="@+id/repetir_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_media_play"
             android:text="@string/repetir_button" />
+
+        <Button
+            android:id="@+id/parar_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+            android:text="@string/parar_button" />
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
