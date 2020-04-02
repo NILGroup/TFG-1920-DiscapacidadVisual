@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         URI uri;
         try {
             // Connect to local host
-            uri = new URI("ws://holstein.fdi.ucm.es:80/tfg-disvis/WebSocketServerExample/websocketendpoint");
+            uri = new URI("ws://147.96.217.241:8080/servidorTomcat/websocketendpoint");
         }
         catch (URISyntaxException e) {
             e.printStackTrace();
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onOpen() {
                 Log.i("WebSocket", "Session is starting");
-                webSocketClient.send("Hello World!");
+                webSocketClient.send("origen:|beacon0");
             }
             @Override
             public void onTextReceived(String s) {
@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void sendMessage() {
         Log.i("WebSocket", "Button was clicked");
         // Send button id string to WebSocket Server
-        webSocketClient.send("hola servidor, soy el cliente");
+        webSocketClient.send("destino:|beacon2");
+
     }
 
     @Override
