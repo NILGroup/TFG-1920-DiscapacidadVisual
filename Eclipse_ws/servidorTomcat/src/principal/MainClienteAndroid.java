@@ -1,11 +1,6 @@
 package principal;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+
 import java.util.ArrayList;
 
 import routes.Cuadrante;
@@ -78,17 +73,49 @@ public class MainClienteAndroid {
     	String echoMsg="Error";
     	List<String> splittedMessage = Arrays.asList(message.split(Pattern.quote("|")));
     	
-    	  switch (splittedMessage.get(0)) {
+    	System.out.println("beaconOrigen: " + splittedMessage.get(0));
+    	System.out.println("beaconDestino: " + splittedMessage.get(1));
+    	System.out.println("beaconActual: " + splittedMessage.get(2));
+    	
+    	beaconOrigen = splittedMessage.get(0);
+    	destino = splittedMessage.get(1);
+    	beaconActual = splittedMessage.get(2);
+    	
+    	//Calculamos los cuadrantes origen y destino
+		cuadOrigen = ListaCuadrantes.numCuadrante(beaconOrigen, aCuadrantes);
+		cuadDestino = lectorDest.buscarDestino(destino);
+		
+		System.out.println("Origen: " + cuadOrigen + " Destino: " + cuadDestino);
+		echoMsg = calculaRuta(cuadOrigen, cuadDestino) + "|";
+		
+		//Gerenamos las instrucciones
+		gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
+    	int cuadActual = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
+    	
+    	echoMsg = echoMsg + gr.generar(cuadActual, cuadDestino,true) + "|";
+    	
+    	//Escribir beacon clave
+    	if(cuadActual == cuadDestino) {
+    		echoMsg = echoMsg + "FINAL";
+    	}
+    	else {
+    		echoMsg = echoMsg + ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes);
+    	}
+    	
+    	  /*switch (splittedMessage.get(0)) {
     	    case "origen:":
     	    	beaconOrigen = splittedMessage.get(1);
+    	    	System.out.println("beaconOrigen: " + beaconOrigen);
     	    	echoMsg = splittedMessage.get(1);
     	      break;
     	    case "destino:":
     	    	destino = splittedMessage.get(1);
+    	    	System.out.println("Destino: " + destino);
     	    	echoMsg = splittedMessage.get(1);
     	    	break;
     	    case "actual:":
 	    	    beaconActual = splittedMessage.get(1);
+	    	    System.out.println("beaconActual: " + beaconActual);
 		    	echoMsg = splittedMessage.get(1);
 		    	break;
     	    case "listaCuad:":
@@ -104,18 +131,19 @@ public class MainClienteAndroid {
     	    	int cuadActual = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
     	    	
     	    	//Pedir al cliente el modo verbose
-    	    	if(cuadActual == cuadDestino) {
+    	    	/*if(cuadActual == cuadDestino) {
     	    		echoMsg = "instruccionFinal:|" + gr.generar(cuadActual, cuadDestino,true);
     	    	}
     	    	else {
     	    		echoMsg = "instruccion:|" + gr.generar(cuadActual, cuadDestino,true);
-    	    	}
+    	    	}//cerrar comentario
+    	    	echoMsg = "instruccion:|" + gr.generar(cuadActual, cuadDestino,true);
 				break;
     	    case "beaconClave:":
     	    	//escribir beacon clave
 				echoMsg = "beaconClave:|" + ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes);
     	    	break;
-    	  }
+    	  }*/
        
         return echoMsg;
     }
