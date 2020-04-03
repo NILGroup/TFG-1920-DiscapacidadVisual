@@ -11,7 +11,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import tech.gusavila92.websocketclient.WebSocketClient;
 
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

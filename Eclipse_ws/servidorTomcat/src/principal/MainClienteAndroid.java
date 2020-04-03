@@ -52,9 +52,10 @@ public class MainClienteAndroid {
 	private static ArrayList<Estancia> aEstancias; //todas las estancias del edificio
 	private static ArrayList<Cuadrante> aCuadrantes; //todos los cuadrantes del edificio
 	private static Edificio edificio;
-	private String beaconOrigen = "no", destino = "no";
+	private String beaconOrigen = "no", destino = "no", beaconActual = "no";
 	private LectorDestino lectorDest = null;
-	
+	private int cuadOrigen, cuadDestino;
+	private GenerarRuta gr;
 	
 
 	@OnOpen
@@ -80,24 +81,40 @@ public class MainClienteAndroid {
     	  switch (splittedMessage.get(0)) {
     	    case "origen:":
     	    	beaconOrigen = splittedMessage.get(1);
-    	    	echoMsg = splittedMessage.get(1) + " de parte del servidor1";
+    	    	echoMsg = splittedMessage.get(1);
     	      break;
     	    case "destino:":
     	    	destino = splittedMessage.get(1);
-    	    	echoMsg = splittedMessage.get(1) + " de parte del servidor2";
-    	    	if(!beaconOrigen.equals("no") && !destino.equals("no")) {//Ya hay origen y destino:
-    	    		
-    	    		//Calculamos los cuadrantes origen y destino
-    	    		int cuadOrigen = ListaCuadrantes.numCuadrante(beaconOrigen, aCuadrantes);
-    	    		int cuadDestino = lectorDest.buscarDestino(destino);
-    	    		
-    	    		System.out.println("Origen: " + cuadOrigen + " Destino: " + cuadDestino);
-    	    		System.out.println("El cuad del aula 7, otra vez:" + lectorDest.buscarDestino("aula 7"));
-    	    		echoMsg = calculaRuta(cuadOrigen, cuadDestino);
-    	    		
-    	    		beaconOrigen="no"; destino="no";
+    	    	echoMsg = splittedMessage.get(1);
+    	    	break;
+    	    case "actual:":
+	    	    beaconActual = splittedMessage.get(1);
+		    	echoMsg = splittedMessage.get(1);
+		    	break;
+    	    case "listaCuad:":
+    	    	//Calculamos los cuadrantes origen y destino
+	    		cuadOrigen = ListaCuadrantes.numCuadrante(beaconOrigen, aCuadrantes);
+	    		cuadDestino = lectorDest.buscarDestino(destino);
+	    		
+	    		System.out.println("Origen: " + cuadOrigen + " Destino: " + cuadDestino);
+	    		echoMsg = "listaCuad:|" + calculaRuta(cuadOrigen, cuadDestino);
+	    		break;
+    	    case "instruccion:":
+    	    	gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
+    	    	int cuadActual = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
+    	    	
+    	    	//Pedir al cliente el modo verbose
+    	    	if(cuadActual == cuadDestino) {
+    	    		echoMsg = "instruccionFinal:|" + gr.generar(cuadActual, cuadDestino,true);
     	    	}
-    	      break;
+    	    	else {
+    	    		echoMsg = "instruccion:|" + gr.generar(cuadActual, cuadDestino,true);
+    	    	}
+				break;
+    	    case "beaconClave:":
+    	    	//escribir beacon clave
+				echoMsg = "beaconClave:|" + ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes);
+    	    	break;
     	  }
        
         return echoMsg;
@@ -126,9 +143,8 @@ public class MainClienteAndroid {
 				lista += " ";
 				lista += lCuadrantes.get(i);
 			}
-			//out.writeUTF(lista);
-			System.out.println("Lista Cuadrantes ruta: " + lista);
 			
+			System.out.println("Lista Cuadrantes ruta: " + lista);
     	}
     	return lista;
     }
