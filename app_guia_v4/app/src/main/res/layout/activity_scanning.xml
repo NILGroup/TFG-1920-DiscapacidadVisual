@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.app_guia_v4.ScanningActivity">
+
+    <EditText
+        android:id="@+id/beacon_text"
+        android:layout_width="324dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fadeScrollbars="true"
+        android:hint="@string/beacon_text"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:text="@string/beacon_text"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="294dp"
+        android:layout_height="309dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/modo_verb_ruta_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
+            android:text="@string/verbose_ruta_button" />
+
+        <Button
+            android:id="@+id/repetir_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_media_play"
+            android:text="@string/repetir_button" />
+
+        <Button
+            android:id="@+id/parar_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+            android:text="@string/parar_button" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

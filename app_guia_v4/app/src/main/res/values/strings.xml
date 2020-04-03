@@ -1,0 +1,64 @@
+<resources>
+
+    <string name="app_name">app_guia_v4</string>
+    <string name="ventana_instruc">Instrucciones</string>
+    <string name="ventana_config"> Ajustes</string>
+    <string name="ventana_ruta">Ruta</string>
+    <string name="ventana_destinos">Lista de destinos</string>
+    <string name="ventana_aulas">Lista de aulas</string>
+    <string name="button_start_searching">Iniciar ruta</string>
+    <string name="config_button">Ajustes</string>
+    <string name="instructions_button">Instrucciones</string>
+    <string name="logo_image">Logo de la aplicación</string>
+
+    <!-- CONFIGURACION -->
+    <string name="volumen_button">Volumen</string>
+    <string name="verbose_switch">MODO VERBOSE</string>
+
+    <!-- CLIENTE -->
+    <string name="start_scan_button">START SCANNING</string>
+    <string name="stop_scan_button">STOP SCANNING</string>
+
+    <string name="beacon_text">Beacons encontrados:\n</string>
+
+    <string name="repetir_button">Repetir instrucción</string>
+    <string name="parar_button">Finalizar ruta</string>
+    <string name="verbose_ruta_button">Modo verbose</string>
+
+    <!-- MODO DE USO -->
+    <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
+
+    <!-- LISTA DESTINOS -->
+    <string name="conserjeria_button">Conserjería\n</string>
+    <string name="aulas_button">Aulas</string>
+    <string name="secretaria_button">Secretaría\n</string>
+    <string name="sala_grados_button">Sala de grados</string>
+    <string name="sala_juntas_button">Sala de juntas</string>
+    <string name="cafeteria_button">Cafetería</string>
+    <string name="biblioteca_button">Biblioteca</string>
+    <string name="salon_actos_button">Salón de actos</string>
+    <string name="puerta_principal_button">Puerta principal</string>
+
+    <string name="microfono_descripcion">Micrófono</string>
+    <string name="microfono_descripcion_aulas">Micrófono</string>
+
+    <!-- LISTA AULAS -->
+    <string name="aula_1_button">Aula 1</string>
+    <string name="aula_2_button">Aula 2</string>
+    <string name="aula_3_button">Aula 3</string>
+    <string name="aula_4_button">Aula 4</string>
+    <string name="aula_5_button">Aula 5</string>
+    <string name="aula_6_button">Aula 6</string>
+    <string name="aula_7_button">Aula 7</string>
+    <string name="aula_8_button">Aula 8</string>
+    <string name="aula_9_button">Aula 9</string>
+    <string name="aula_10_button">Aula 10</string>
+    <string name="aula_11_button">Aula 11</string>
+    <string name="aula_12_button">Aula 12</string>
+    <string name="aula_13_button">Aula 13</string>
+    <string name="aula_14_button">Aula 14</string>
+    <string name="aula_15_button">Aula 15</string>
+    <string name="aula_16_button">Aula 16</string>
+
+
+</resources>

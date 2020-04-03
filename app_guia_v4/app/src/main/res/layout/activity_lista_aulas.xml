@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.app_guia_v4.ListaDestinosActivity">
+
+
+    <TableLayout
+        android:layout_width="358dp"
+        android:layout_height="282dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_btn_hablar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aulas_searchView">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="76dp">
+
+            <Button
+                android:id="@+id/aula_1_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_1_button" />
+
+            <Button
+                android:id="@+id/aula_2_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_2_button" />
+
+            <Button
+                android:id="@+id/aula_3_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_3_button" />
+
+            <Button
+                android:id="@+id/aula_4_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_4_button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/aula_5_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_5_button" />
+
+            <Button
+                android:id="@+id/aula_6_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_6_button" />
+
+            <Button
+                android:id="@+id/aula_7_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_7_button" />
+
+            <Button
+                android:id="@+id/aula_8_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_8_button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/aula_9_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_9_button" />
+
+            <Button
+                android:id="@+id/aula_10_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_10_button" />
+
+            <Button
+                android:id="@+id/aula_11_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_11_button" />
+
+            <Button
+                android:id="@+id/aula_12_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_12_button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="84dp">
+
+            <Button
+                android:id="@+id/aula_13_button"
+                android:layout_width="47dp"
+                android:layout_height="70dp"
+                android:text="@string/aula_13_button" />
+
+            <Button
+                android:id="@+id/aula_14_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_14_button" />
+
+            <Button
+                android:id="@+id/aula_15_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_15_button" />
+
+            <Button
+                android:id="@+id/aula_16_button"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="@string/aula_16_button" />
+        </TableRow>
+
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/img_btn_hablar"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginRight="144dp"
+        android:layout_marginBottom="60dp"
+        android:background="@android:drawable/presence_audio_online"
+        android:contentDescription="@string/microfono_descripcion_aulas"
+        android:onClick="onClickImgBtnHablar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <SearchView
+        android:id="@+id/aulas_searchView"
+        android:layout_width="325dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
