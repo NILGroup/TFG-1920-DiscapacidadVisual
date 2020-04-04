@@ -13,13 +13,14 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import tech.gusavila92.websocketclient.WebSocketClient;
 
+
 public class Cliente {
 
     private WebSocketClient webSocketClient;
 
 
     private String dest, b_mas_cerca, origen;
-    String listaCuadrantes, ruta, rutaFinal, beaconClave = null;
+    String listaCuadrantes, ruta, rutaFinal, beaconClave = "NO";
     private int cuadranteClave;
     private boolean verbose;
     final String [] results = new  String[4];
@@ -31,17 +32,8 @@ public class Cliente {
         verbose = verb;
     }
 
-    protected void esperaDatos(){
-        //while(beaconClave == null){}
-        try{Thread.sleep(5000);}
-        catch(Exception e){
-            Log.i("WebSocket", "Problemas en sleep de esperaDatos");
-        }
-        Log.i("WebSocket", "Salimos de esperaDatos");
-    }
-
     protected String[] createWebSocketClient() {
-        URI uri;
+        final URI uri;
 
         try {
             // Connect to local host
@@ -52,14 +44,12 @@ public class Cliente {
             return null;
         }
         Log.i("WebSocket", "Antes de webSocket");
+
+
         webSocketClient = new WebSocketClient(uri) {
             @Override
             public void onOpen() {
                 Log.i("WebSocket", "Session is starting");
-                /*webSocketClient.send("origen:|"+origen);
-                webSocketClient.send("destino:|"+dest);
-                webSocketClient.send("actual:|"+b_mas_cerca);
-                webSocketClient.send("listaCuad:|");*/
                 webSocketClient.send(origen + "|" + dest + "|" + b_mas_cerca);
             }
             @Override
@@ -76,51 +66,10 @@ public class Cliente {
                 beaconClave = splittedMessage.get(2);
                 results[3] = beaconClave;
 
-                /*switch (splittedMessage.get(0)) {
-                    case "origen:": //ha recibido origen y envio el destino
-                        //webSocketClient.send("destino:|"+dest);
-                        break;
-
-                    case "destino:": //ha recibido el destino y envio el beacon actual
-                        //webSocketClient.send("actual:|"+b_mas_cerca);
-                        break;
-
-                    case "actual:": //ha recibido el beacon actual y solicito la lista de cuadrantes
-                        //webSocketClient.send("listaCuad:|");
-                        break;
-
-                    case "listaCuad:": //me envia la lista de cuadrantes
-                        listaCuadrantes= splittedMessage.get(1);
-                        results[0] = listaCuadrantes;
-                        Log.i("WebSocket", "ListaCuad: " + results[0]);
-                        //solicito la instruccion
-                        webSocketClient.send("instruccion:|");
-                        break;
-
-                    case "instruccion:": //me envia la instr
-                        ruta = splittedMessage.get(1);
-                        results[1] = ruta;
-                        Log.i("WebSocket", "ruta: " + ruta + " \n");
-                        //solicito el beacon clave
-                        webSocketClient.send("beaconClave:|");
-                        break;
-                    case "instruccionFinal:": //me envia la instr final
-                        rutaFinal = splittedMessage.get(1);
-                        results[2] = rutaFinal;
-                        Log.i("WebSocket", "rutaFinal: " + rutaFinal + " \n");
-                        //solicito el beacon clave
-                        webSocketClient.send("beaconClave:|");
-                        break;
-
-                    case "beaconClave:": //me envia el beacon clave
-                        beaconClave= splittedMessage.get(1);
-                        results[3] = beaconClave;
-                        Log.i("WebSocket", "beacon clave: " + beaconClave + " \n");
-                        break;
-                }*/
-
+                synchronized(webSocketClient) {
+                    webSocketClient.notifyAll();
+                }
             }
-
 
             @Override
             public void onBinaryReceived(byte[] data) {
@@ -145,9 +94,17 @@ public class Cliente {
         webSocketClient.enableAutomaticReconnection(5000);
         webSocketClient.connect();
 
-        esperaDatos();
-
-        webSocketClient.close();
+        synchronized (webSocketClient){
+            try {
+                if(beaconClave.equals("NO")) {
+                    Log.i("WebSocket", "Vamos a esperar a los datos");
+                    webSocketClient.wait();
+                }
+                webSocketClient.close();
+            } catch (InterruptedException e) {
+                //when the object is interrupted
+            }
+        }
 
         return results;
     }

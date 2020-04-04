@@ -113,6 +113,8 @@ public class Cliente {
         Log.i(TAG, " ***********En socketConnect al final: \n");
         Log.i(TAG, "ruta: fuera del thread... " + results[1] + " \n");
 
+
+
         try{thread.join();}
         catch (InterruptedException e) {
         // TODO Auto-generated catch block
