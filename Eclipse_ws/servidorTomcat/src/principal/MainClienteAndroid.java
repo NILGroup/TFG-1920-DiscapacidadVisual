@@ -101,50 +101,7 @@ public class MainClienteAndroid {
     	else {
     		echoMsg = echoMsg + ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes);
     	}
-    	
-    	  /*switch (splittedMessage.get(0)) {
-    	    case "origen:":
-    	    	beaconOrigen = splittedMessage.get(1);
-    	    	System.out.println("beaconOrigen: " + beaconOrigen);
-    	    	echoMsg = splittedMessage.get(1);
-    	      break;
-    	    case "destino:":
-    	    	destino = splittedMessage.get(1);
-    	    	System.out.println("Destino: " + destino);
-    	    	echoMsg = splittedMessage.get(1);
-    	    	break;
-    	    case "actual:":
-	    	    beaconActual = splittedMessage.get(1);
-	    	    System.out.println("beaconActual: " + beaconActual);
-		    	echoMsg = splittedMessage.get(1);
-		    	break;
-    	    case "listaCuad:":
-    	    	//Calculamos los cuadrantes origen y destino
-	    		cuadOrigen = ListaCuadrantes.numCuadrante(beaconOrigen, aCuadrantes);
-	    		cuadDestino = lectorDest.buscarDestino(destino);
-	    		
-	    		System.out.println("Origen: " + cuadOrigen + " Destino: " + cuadDestino);
-	    		echoMsg = "listaCuad:|" + calculaRuta(cuadOrigen, cuadDestino);
-	    		break;
-    	    case "instruccion:":
-    	    	gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
-    	    	int cuadActual = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
-    	    	
-    	    	//Pedir al cliente el modo verbose
-    	    	/*if(cuadActual == cuadDestino) {
-    	    		echoMsg = "instruccionFinal:|" + gr.generar(cuadActual, cuadDestino,true);
-    	    	}
-    	    	else {
-    	    		echoMsg = "instruccion:|" + gr.generar(cuadActual, cuadDestino,true);
-    	    	}//cerrar comentario
-    	    	echoMsg = "instruccion:|" + gr.generar(cuadActual, cuadDestino,true);
-				break;
-    	    case "beaconClave:":
-    	    	//escribir beacon clave
-				echoMsg = "beaconClave:|" + ListaCuadrantes.idBeacon(gr.getCuadranteClave(), aCuadrantes);
-    	    	break;
-    	  }*/
-       
+    	      
         return echoMsg;
     }
     
