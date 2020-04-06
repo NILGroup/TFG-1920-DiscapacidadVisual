@@ -19,6 +19,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
+        <Switch
+            android:id="@+id/modo_verb_switch"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:text="@string/verbose_switch"
+            android:textSize="30sp" />
         <Button
             android:id="@+id/volumen_button"
             android:layout_width="match_parent"
@@ -26,13 +33,6 @@
             android:background="@android:color/background_light"
             android:gravity="center|left"
             android:text="@string/volumen_button"
-            android:textSize="30sp" />
-
-        <Switch
-            android:id="@+id/modo_verb_switch"
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:text="@string/verbose_switch"
             android:textSize="30sp" />
 
     </LinearLayout>
