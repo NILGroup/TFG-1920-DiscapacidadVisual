@@ -10,7 +10,6 @@ import android.os.Bundle;
 import com.example.app_guia_v4.R;
 
 public class ModoDeUsoActivity extends AppCompatActivity {
-
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ModoDeUsoActivity.class);
     }
@@ -18,6 +17,7 @@ public class ModoDeUsoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modo_de_uso);
+
     }
 
 }

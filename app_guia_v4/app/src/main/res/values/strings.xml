@@ -20,6 +20,7 @@
     <string name="stop_scan_button">STOP SCANNING</string>
 
     <string name="beacon_text">Beacons encontrados:\n</string>
+    <string name="inst_text">Instrucciones encontrados:\n</string>
 
     <string name="repetir_button">Repetir instrucción</string>
     <string name="parar_button">Finalizar ruta</string>

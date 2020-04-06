@@ -36,10 +36,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
 
     private ProximityManager proximityManager;
-
     public static final String TAG = "ProximityManager";
 
     private EditText editText;
+    private TTSManager ttsManager=null;
 
     private int scanSeg = 0;
 
@@ -59,6 +59,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanning);
+        //Inicializamos el objeto de la clase TTSManager
+        ttsManager = new TTSManager();
+        ttsManager.init(this);
         //Setup buttons
         setupButtons();
         //Initialize and configure proximity manager
@@ -155,6 +158,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                         editText.setText(editText.getText() + "______________\n");
                         editText.setText(editText.getText() + ruta + "\n");
+                        ttsManager.initQueue(ruta);
                         editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
                         editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
                         editText.setText(editText.getText() + "______________\n");
@@ -179,18 +183,16 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                             editText.setText(editText.getText() + "______________\n");
                             editText.setText(editText.getText() + ruta + "\n");
+                            ttsManager.initQueue(ruta);
                             editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
                             editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
                             editText.setText(editText.getText() + "______________\n");
                         }
 
                     }
-
-                    // editText.setText(editText.getText()+ "------\n");
-                    // editText.setText(editText.getText()+ "Beacon más cercano: " + beacon_mas_cerca +"\n");
-                    // editText.setText(editText.getText()+ "Hay ruta: " + hayRuta +"\n");
-                    // editText.setText(editText.getText()+ "Beacon clave: " + beaconClave +"\n");
-                    // editText.setText(editText.getText()+ "------\n");
+                    if(beaconClave.equals("FINAL")){
+                        stopScanning();
+                    }
                 }
                 //para que haga scroll
                 if (editText.getLayout() != null) {
@@ -242,6 +244,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     protected void onDestroy() {
         //Remember to disconnect when finished.
         proximityManager.disconnect();
+        ttsManager.shutDown();
         super.onDestroy();
     }
 
@@ -275,6 +278,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             case R.id.repetir_button:
                 editText.setText(editText.getText()+ "______________\n");
                 editText.setText(editText.getText()+ "Ruta repetida:" + ruta +"\n");
+                ttsManager.initQueue(ruta);
                 editText.setText(editText.getText()+ "______________\n");
                 break;
         }

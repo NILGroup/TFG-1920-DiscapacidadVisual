@@ -3,6 +3,7 @@ package com.example.app_guia_v4;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Button;
@@ -10,9 +11,11 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.app_guia_v4.R;
+import java.util.Locale;
+
 
 public class ConfigActivity extends AppCompatActivity implements View.OnClickListener {
+    private TTSManager ttsManager;
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ConfigActivity.class);
     }
@@ -21,9 +24,14 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config);
 
+        //Inicializamos el objeto de la clase TTSManager
+        ttsManager = new TTSManager();
+        ttsManager.init(this);
+
+        setContentView(R.layout.activity_config);
         setupButtons();
+
     }
 
     private void setupButtons(){
@@ -41,15 +49,20 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) { //switches
         switch (view.getId()) {
             case R.id.volumen_button:
-                //startActivity(ScanningActivity.createIntent(this, "aula 1"));
+                ttsManager.initQueue("HELLO WORLD");
                 break;
             case R.id.modo_verb_switch:
                 ScanningActivity.setVerbose(modo_verb_switch.isChecked());
                 break;
         }
     }
-
     public static Switch getModo_verb_switch() {
         return modo_verb_switch;
+    }
+
+    @Override
+    protected void onDestroy() {
+       ttsManager.shutDown();
+        super.onDestroy();
     }
 }
