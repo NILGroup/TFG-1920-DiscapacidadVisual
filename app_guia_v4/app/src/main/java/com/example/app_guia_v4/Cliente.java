@@ -1,11 +1,6 @@
 package com.example.app_guia_v4;
 
 import android.util.Log;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-
-
-import android.widget.TextView;
 import java.util.regex.Pattern;
 import java.util.Arrays;
 import java.util.List;
@@ -20,10 +15,9 @@ public class Cliente {
 
 
     private String dest, b_mas_cerca, origen;
-    String listaCuadrantes, ruta, rutaFinal, beaconClave = "NO";
-    private int cuadranteClave;
+    String listaCuadrantes, ruta, beaconClave = "NO";
     private boolean verbose;
-    final String [] results = new  String[4];
+    final String [] results = new  String[3];
 
     public Cliente(String destino, String beaconMasCercano, String ori, boolean verb){
         dest = destino;
@@ -64,7 +58,7 @@ public class Cliente {
                 results[1] = ruta;
 
                 beaconClave = splittedMessage.get(2);
-                results[3] = beaconClave;
+                results[2] = beaconClave;
 
                 synchronized(webSocketClient) {
                     webSocketClient.notifyAll();

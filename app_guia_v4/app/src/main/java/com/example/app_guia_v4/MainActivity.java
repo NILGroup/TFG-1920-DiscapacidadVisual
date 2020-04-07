@@ -16,8 +16,6 @@ import androidx.core.app.ActivityCompat;
 
 import androidx.annotation.NonNull;
 
-import com.example.app_guia_v4.R;
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

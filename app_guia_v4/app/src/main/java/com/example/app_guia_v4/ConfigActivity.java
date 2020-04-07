@@ -2,8 +2,10 @@ package com.example.app_guia_v4;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
+
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Button;
@@ -11,11 +13,14 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
 
 
 public class ConfigActivity extends AppCompatActivity implements View.OnClickListener {
+
     private TTSManager ttsManager;
+    MediaPlayer mp;
+    Vibrator vibrator;
+
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ConfigActivity.class);
     }
@@ -28,6 +33,9 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
         //Inicializamos el objeto de la clase TTSManager
         ttsManager = new TTSManager();
         ttsManager.init(this);
+
+        mp= MediaPlayer.create(this, R.raw.acierto);
+        vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
 
         setContentView(R.layout.activity_config);
         setupButtons();
@@ -49,7 +57,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) { //switches
         switch (view.getId()) {
             case R.id.volumen_button:
-                ttsManager.initQueue("Hola Clara, a mí sí me funciona el idioma español");
+                vibrator.vibrate(1000);
                 break;
             case R.id.modo_verb_switch:
                 ScanningActivity.setVerbose(modo_verb_switch.isChecked());

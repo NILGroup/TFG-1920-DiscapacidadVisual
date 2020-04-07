@@ -5,15 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
-//import Cuadrante;
-//import Edificio;
-import com.example.app_guia_v4.R;
 import com.kontakt.sdk.android.ble.configuration.ScanMode;
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
 import com.kontakt.sdk.android.ble.connection.OnServiceReadyListener;
@@ -39,14 +37,16 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public static final String TAG = "ProximityManager";
 
     private EditText editText;
-    private TTSManager ttsManager=null;
+    private TTSManager ttsManager = null;
+    private MediaPlayer mp;
+    Vibrator vibrator;
 
     private int scanSeg = 0;
 
     private static String destino;
 
     private boolean hayRuta = false;
-    private String origen, beaconClave, listaCuadrantes, ruta, rutaFinal;
+    private String origen, beaconClave, listaCuadrantes, ruta;
     private String beacon_mas_cerca;
     private static boolean verbose = true; //Por defecto esta a true
 
@@ -62,6 +62,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         //Inicializamos el objeto de la clase TTSManager
         ttsManager = new TTSManager();
         ttsManager.init(this);
+        //Inicializamos el sonido MediaPlayer
+        mp = MediaPlayer.create(this, R.raw.acierto);
+        //Inicializamos la vibración
+        vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         //Setup buttons
         setupButtons();
         //Initialize and configure proximity manager
@@ -138,8 +142,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 //Buscamos el beacon que está más cerca
                 beacon_mas_cerca = encuentraElMasCercano(eddystones);
                 Log.i(TAG, "Despues de buscar el mas cercano");
-                if(!beacon_mas_cerca.equals("NO")) {
-                    String[] results = new String[4];
+                if (!beacon_mas_cerca.equals("NO")) {
+                    String[] results = new String[3];
                     if (!hayRuta) { //Es la primera vez que se llama al servidor
                         Log.i(TAG, "Si no hay ruta ya");
                         hayRuta = true;
@@ -152,9 +156,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                         results = c.createWebSocketClient().clone(); //ANTES HABIA UN CLONE
                         Log.i(TAG, "Si no hay ruta ya, despues de llamar a createWebSocketClient");
                         listaCuadrantes = results[0];
-                        ruta = results[1]; //OJO QUE UNO DE LOS DOS ES NULL
-                        rutaFinal = results[2]; //OJO QUE UNO DE LOS DOS ES NULL
-                        beaconClave = results[3];
+                        ruta = results[1];
+                        beaconClave = results[2];
 
                         editText.setText(editText.getText() + "______________\n");
                         editText.setText(editText.getText() + ruta + "\n");
@@ -166,20 +169,18 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                     } else {//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                         Log.i(TAG, "Si hay ruta ya");
-                        hayRuta = true;
-                        //editText.setText(editText.getText()+ "En el else\n");
                         if (beacon_mas_cerca.equals(beaconClave)) {
+                            //como ha llegado al beaconClave salta el sonido de acierto
+                            mp.start();
                             Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
-                            //editText.setText(editText.getText()+ "En el if\n");
                             Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
                             //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
                             results = c.createWebSocketClient().clone(); //ANTES HABIA UN CLONE
 
                             Log.i(TAG, "Si hay ruta ya, despues de llamar a createWebSocketClient");
                             listaCuadrantes = results[0];
-                            ruta = results[1]; //OJO QUE UNO DE LOS DOS ES NULL
-                            rutaFinal = results[2]; //OJO QUE UNO DE LOS DOS ES NULL
-                            beaconClave = results[3];
+                            ruta = results[1];
+                            beaconClave = results[2];
 
                             editText.setText(editText.getText() + "______________\n");
                             editText.setText(editText.getText() + ruta + "\n");
@@ -190,7 +191,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                         }
 
                     }
-                    if(beaconClave.equals("FINAL")){
+                    if (beaconClave.equals("FINAL")) {
+                        vibrator.vibrate(1000);
                         stopScanning();
                     }
                 }
@@ -213,15 +215,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         };
     }
 
-    public String encuentraElMasCercano(List<IEddystoneDevice> eddystones){
+    public String encuentraElMasCercano(List<IEddystoneDevice> eddystones) {
         String masCercano = "NO";
         double distMin = 20;
 
-        for(int i=0; i < eddystones.size();i++){
+        for (int i = 0; i < eddystones.size(); i++) {
             //double distance = (double)Math.round(eddystones.get(i).getDistance() * 1000d) / 1000d;
             double distance = eddystones.get(i).getDistance();
 
-            if (distance < distMin){
+            if (distance < distMin) {
                 distMin = distance;
                 masCercano = eddystones.get(i).getUniqueId();
             }
@@ -229,7 +231,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         return masCercano;
     }
 
-    public void escribeResultados(){
+    public void escribeResultados() {
         Log.i(TAG, editText.getText().toString() + "\n");
     }
 
@@ -248,7 +250,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         super.onDestroy();
     }
 
-    public static void setVerbose(boolean verb){
+    public static void setVerbose(boolean verb) {
         verbose = verb;
     }
 
@@ -257,17 +259,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
-                editText.setText(editText.getText()+ "Modo Verb\n");
-                if(verbose) verbose = false;
+                editText.setText(editText.getText() + "Modo Verb\n");
+                if (verbose) verbose = false;
                 else verbose = true;
                 if (ConfigActivity.getModo_verb_switch() != null) {
-                    ConfigActivity.getModo_verb_switch().setChecked(verbose); //con esto se hace bien? el cambio de boton
-                    editText.setText(editText.getText()+ "Config: " +toString(ConfigActivity.getModo_verb_switch().isChecked())+ "\n");
+                    ConfigActivity.getModo_verb_switch().setChecked(verbose);
+                    editText.setText(editText.getText() + "Config: " + toString(ConfigActivity.getModo_verb_switch().isChecked()) + "\n");
                 }
-                editText.setText(editText.getText()+ "Scanning: " + toString(verbose) +"\n");
+                editText.setText(editText.getText() + "Scanning: " + toString(verbose) + "\n");
 
-                //Toast.makeText(getApplicationContext(),"prueba verbose scanning:" + toString(verbose),Toast.LENGTH_SHORT);
-                //Toast.makeText(getApplicationContext(),"prueba verbose config:" + toString(ConfigActivity.getModo_verb_switch().isChecked()),Toast.LENGTH_SHORT);
                 break;
 
             case R.id.parar_button:
@@ -276,17 +276,68 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 break;
 
             case R.id.repetir_button:
-                editText.setText(editText.getText()+ "______________\n");
-                editText.setText(editText.getText()+ "Ruta repetida:" + ruta +"\n");
+                editText.setText(editText.getText() + "______________\n");
+                editText.setText(editText.getText() + "Ruta repetida:" + ruta + "\n");
                 ttsManager.initQueue(ruta);
-                editText.setText(editText.getText()+ "______________\n");
+                editText.setText(editText.getText() + "______________\n");
                 break;
         }
 
     }
 
-    public String toString(boolean verb){
-        if(verb) return "true";
+    public String toString(boolean verb) {
+        if (verb) return "true";
         else return "false";
     }
 }
+   /* public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
+        //Buscamos el beacon que está más cerca
+        beacon_mas_cerca = encuentraElMasCercano(eddystones);
+        Log.i(TAG, "Despues de buscar el mas cercano");
+        if (!beacon_mas_cerca.equals("NO")) {
+            String[] results = new String[3];
+            if (!hayRuta || beacon_mas_cerca.equals(beaconClave)) {
+                if (!hayRuta) {
+                    Log.i(TAG, "Si no hay ruta ya");
+                    origen = beacon_mas_cerca;
+                    Log.i(TAG, "Si no hay ruta ya, antes de llamar a cliente");
+                    hayRuta = true;
+                } else {
+                    Log.i(TAG, "Beacon mas cerca igual a beacon clave");
+                    mp.start(); //ha superado la instruccion anterior
+                    Log.i(TAG, "Si beacon mas cerca igual a beacon clave antes de llamar a cliente");
+                }
+                Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
+                Log.i(TAG, "Despues de llamar al cliente");
+                //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
+                results = c.createWebSocketClient().clone();
+                Log.i(TAG, "Despues de llamar a createWebSocketClient");
+                listaCuadrantes = results[0];
+                ruta = results[1];
+                beaconClave = results[2];
+
+                editText.setText(editText.getText() + "______________\n");
+                editText.setText(editText.getText() + ruta + "\n");
+                ttsManager.initQueue(ruta);
+                editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
+                editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
+                editText.setText(editText.getText() + "______________\n");
+            }
+
+            if (beaconClave.equals("FINAL")) {
+                vibrator.vibrate(1000);
+                stopScanning();
+            }
+        }
+
+        //para que haga scroll
+        if (editText.getLayout() != null) {
+            final int scrollAmount = editText.getLayout().getLineTop(editText.getLineCount()) - editText.getHeight();
+            // if there is no need to scroll, scrollAmount will be <=0
+            if (scrollAmount > 0)
+                editText.scrollTo(0, scrollAmount);
+            else
+                editText.scrollTo(0, 0);
+        }
+}
+*/
