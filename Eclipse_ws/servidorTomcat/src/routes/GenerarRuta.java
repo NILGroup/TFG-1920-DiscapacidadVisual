@@ -93,7 +93,7 @@ public class GenerarRuta {
 		if(primerCuadrante > 0) {
 			cuadAnt = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
 		}
-		//Suponemos que no va a iniciar la ruta en el ascensor!!!
+		//Suponemos que no va a iniciar la ruta en el ascensor
 		if (c1.getZ() > c2.getZ()) {
 			cuadranteClave = c2.getID();
 			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22)
@@ -158,10 +158,11 @@ public class GenerarRuta {
 			int contHastaCambioDir = 1;
 			Cuadrante aux = null;
 			
+			cuadranteClave = c2.getID(); //El cuadrante clave siempre es el siguiente
 			
 			while(direccion == direccionPrincipal && lCuadrantes.get(ultimoCuadrante) != posDest
-					&& /*cont < 2*/ contHastaCambioDir < 8 && !verbose) {
-				if(cont < 2) {
+					&& /*cont < 2*/ contHastaCambioDir < 8) {
+				//if(cont < 2) {
 					ultimoCuadrante++;
 					Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
 					if(c3 == null) {break;} //El siguiente cuadrante es de otra planta
@@ -175,8 +176,8 @@ public class GenerarRuta {
 					else {
 						break;
 					}
-				}
-				else {
+				//}
+				/*else {
 					ultimoCuadrante++;
 					Cuadrante c3 = est.getCuadrante(lCuadrantes.get(ultimoCuadrante));
 					if(c3 == null) {break;} //El siguiente cuadrante es de otra planta
@@ -186,9 +187,9 @@ public class GenerarRuta {
 						metros += aux.getMetros();
 					}
 					else {break;}
-				}
+				}*/
 				contHastaCambioDir++;
-			} //Al salir, tenemos en c2 el cuadrante clave
+			} //Al salir, tenemos en c2 el cuadrante clave (ya no, el cuadranteClave es siempre el siguiente)
 			
 				
 				if(direccion.equals(dirDeLaQueVengo)) {
@@ -203,9 +204,9 @@ public class GenerarRuta {
 					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo, verbose);
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
 				}
-				cuadranteClave = c2.getID();
+				//cuadranteClave = c2.getID(); SE PONE ANTES PARA QUE VAYA UNO POR UNO!
 				
-				//Añadimos información sobre el siguiente cuadrante
+				//Añadimos información sobre el siguiente cuadrante si está el modo verbose activado
 				if(verbose) s += "Información adicional: " + c2.getInfo();
 		}
 		return s;
@@ -284,7 +285,7 @@ public class GenerarRuta {
 			
 		} else {//No cambio de dirección
 			
-			if(verbose) {
+			/*if(verbose) {
 				s += ("espera a la siguiente indicación.");
 			}else {
 				
@@ -297,7 +298,8 @@ public class GenerarRuta {
 					s += ("habrás llegado a tu destino.");
 				}
 			
-			}
+			}*/
+			s += ("espera a la siguiente indicación.");
 		}
 		return s;
 		

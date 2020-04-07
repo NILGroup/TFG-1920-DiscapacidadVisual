@@ -1,0 +1,2 @@
+beacon4|aula 4|beacon4|true
+beacon4|aula 4|beacon4|false

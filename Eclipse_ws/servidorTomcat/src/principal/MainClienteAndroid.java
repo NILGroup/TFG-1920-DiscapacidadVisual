@@ -75,8 +75,9 @@ public class MainClienteAndroid {
     	List<String> splittedMessage = Arrays.asList(message.split(Pattern.quote("|")));
     	
     	System.out.println("beaconOrigen: " + splittedMessage.get(0));
-    	System.out.println("beaconDestino: " + splittedMessage.get(1));
+    	System.out.println("Destino: " + splittedMessage.get(1));
     	System.out.println("beaconActual: " + splittedMessage.get(2));
+    	System.out.println("verbose: " + splittedMessage.get(3));
     	
     	beaconOrigen = splittedMessage.get(0);
     	destino = splittedMessage.get(1);
