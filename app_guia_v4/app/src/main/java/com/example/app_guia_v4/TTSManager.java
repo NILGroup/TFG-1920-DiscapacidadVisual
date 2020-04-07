@@ -30,7 +30,8 @@ public class TTSManager {
             //VARIABLE PARA USAR EL LENGUAJE ESPAÑOL
             Locale spanish = new Locale("es", "ES");
             if (status == TextToSpeech.SUCCESS) {
-                int result = mTts.setLanguage(Locale.ENGLISH);
+                //int result = mTts.setLanguage(Locale.ENGLISH);
+                int result = mTts.setLanguage(spanish);
                 isLoaded = true;
 
                 if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {

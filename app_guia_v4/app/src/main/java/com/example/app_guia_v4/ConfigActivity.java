@@ -49,7 +49,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) { //switches
         switch (view.getId()) {
             case R.id.volumen_button:
-                ttsManager.initQueue("HELLO WORLD");
+                ttsManager.initQueue("Hola Clara, a mí sí me funciona el idioma español");
                 break;
             case R.id.modo_verb_switch:
                 ScanningActivity.setVerbose(modo_verb_switch.isChecked());
