@@ -51,6 +51,7 @@ public class MainClienteAndroid {
 	private LectorDestino lectorDest = null;
 	private int cuadOrigen, cuadDestino;
 	private GenerarRuta gr;
+	private String verbose;
 	
 
 	@OnOpen
@@ -64,7 +65,7 @@ public class MainClienteAndroid {
     	
     	//Cargamos los destinos
     	lectorDest = new LectorDestino();
-    	System.out.println("El cuad del aula 7:" + lectorDest.buscarDestino("aula 7"));
+    	
     }
 	
      
@@ -80,6 +81,7 @@ public class MainClienteAndroid {
     	beaconOrigen = splittedMessage.get(0);
     	destino = splittedMessage.get(1);
     	beaconActual = splittedMessage.get(2);
+    	verbose = splittedMessage.get(3);
     	
     	//Calculamos los cuadrantes origen y destino
 		cuadOrigen = ListaCuadrantes.numCuadrante(beaconOrigen, aCuadrantes);
@@ -92,7 +94,10 @@ public class MainClienteAndroid {
 		gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
     	int cuadActual = ListaCuadrantes.numCuadrante(beaconActual, aCuadrantes);
     	
-    	echoMsg = echoMsg + gr.generar(cuadActual, cuadDestino,true) + "|";
+    	if(verbose.equals("true"))
+    		echoMsg = echoMsg + gr.generar(cuadActual, cuadDestino, true) + "|";
+    	else
+    		echoMsg = echoMsg + gr.generar(cuadActual, cuadDestino, false) + "|";
     	
     	//Escribir beacon clave
     	if(cuadActual == cuadDestino) {

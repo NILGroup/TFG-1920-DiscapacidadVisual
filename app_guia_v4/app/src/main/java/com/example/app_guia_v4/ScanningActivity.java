@@ -71,13 +71,16 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         //Initialize and configure proximity manager
         setupProximityManager();
         //Start scanning beacons
-        startScanning();
+        //startScanning();
     }
 
 
     private void setupButtons() {
         editText = findViewById(R.id.beacon_text);
         editText.setMovementMethod(new ScrollingMovementMethod());
+
+        Button iniciar_button = (Button) findViewById(R.id.iniciar_button);
+        iniciar_button.setOnClickListener(this);
 
         Button modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
         modo_verb_button.setOnClickListener(this);
@@ -113,11 +116,11 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             public void onServiceReady() {
                 //Check if proximity manager is already scanning
                 if (proximityManager.isScanning()) {
-                    Toast.makeText(ScanningActivity.this, "Already scanning", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ScanningActivity.this, "Already scanning", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 proximityManager.startScanning();
-                Toast.makeText(ScanningActivity.this, "Scanning started", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ScanningActivity.this, "Scanning started", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -126,7 +129,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         //Stop scanning if scanning is in progress
         if (proximityManager.isScanning()) {
             proximityManager.stopScanning();
-            Toast.makeText(this, "Scanning stopped", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Scanning stopped", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -153,19 +156,22 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                         Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
                         Log.i(TAG, "Si no hay ruta ya, despues de llamar a cliente");
                         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                        results = c.createWebSocketClient().clone(); //ANTES HABIA UN CLONE
+                        results = c.createWebSocketClient().clone();
                         Log.i(TAG, "Si no hay ruta ya, despues de llamar a createWebSocketClient");
                         listaCuadrantes = results[0];
                         ruta = results[1];
                         beaconClave = results[2];
 
+                        ttsManager.initQueue(ruta);
+
                         editText.setText(editText.getText() + "______________\n");
                         editText.setText(editText.getText() + ruta + "\n");
-                        ttsManager.initQueue(ruta);
                         editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
                         editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
                         editText.setText(editText.getText() + "______________\n");
 
+                        /*try{Thread.sleep(3000); }
+                        catch (Exception e){}*/
 
                     } else {//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                         Log.i(TAG, "Si hay ruta ya");
@@ -175,16 +181,17 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                             Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
                             Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
                             //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                            results = c.createWebSocketClient().clone(); //ANTES HABIA UN CLONE
+                            results = c.createWebSocketClient().clone();
 
                             Log.i(TAG, "Si hay ruta ya, despues de llamar a createWebSocketClient");
                             listaCuadrantes = results[0];
                             ruta = results[1];
                             beaconClave = results[2];
 
+                            ttsManager.initQueue(ruta);
+
                             editText.setText(editText.getText() + "______________\n");
                             editText.setText(editText.getText() + ruta + "\n");
-                            ttsManager.initQueue(ruta);
                             editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
                             editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
                             editText.setText(editText.getText() + "______________\n");
@@ -258,21 +265,23 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
+            case R.id.iniciar_button:
+                startScanning();
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
-                editText.setText(editText.getText() + "Modo Verb\n");
+                //editText.setText(editText.getText() + "Modo Verb\n");
                 if (verbose) verbose = false;
                 else verbose = true;
-                if (ConfigActivity.getModo_verb_switch() != null) {
+                /*if (ConfigActivity.getModo_verb_switch() != null) {
                     ConfigActivity.getModo_verb_switch().setChecked(verbose);
                     editText.setText(editText.getText() + "Config: " + toString(ConfigActivity.getModo_verb_switch().isChecked()) + "\n");
                 }
-                editText.setText(editText.getText() + "Scanning: " + toString(verbose) + "\n");
+                editText.setText(editText.getText() + "Scanning: " + toString(verbose) + "\n");*/
 
                 break;
 
             case R.id.parar_button:
-                this.onStop();
-                startActivity(ListaDestinosActivity.createIntent(this));
+                onStop();
+                //startActivity(ListaDestinosActivity.createIntent(this));
                 break;
 
             case R.id.repetir_button:

@@ -204,8 +204,9 @@ public class GenerarRuta {
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
 				}
 				cuadranteClave = c2.getID();
+				
 				//Añadimos información sobre el siguiente cuadrante
-				if(verbose) s += "Info: " + c2.getInfo();
+				if(verbose) s += "Información adicional: " + c2.getInfo();
 		}
 		return s;
 	}

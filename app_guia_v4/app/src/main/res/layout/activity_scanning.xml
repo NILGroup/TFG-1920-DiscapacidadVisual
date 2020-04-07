@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/beacon_text"
-        android:layout_width="324dp"
-        android:layout_height="247dp"
+        android:layout_width="334dp"
+        android:layout_height="134dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
@@ -20,6 +20,7 @@
         android:ems="10"
         android:fadeScrollbars="true"
         android:hint="@string/inst_text"
+        android:importantForAccessibility="no"
         android:isScrollContainer="true"
         android:overScrollMode="always"
         android:scrollbarAlwaysDrawHorizontalTrack="false"
@@ -34,8 +35,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="294dp"
-        android:layout_height="309dp"
+        android:layout_width="312dp"
+        android:layout_height="391dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
@@ -47,6 +48,21 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/iniciar_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/holo_green_dark"
+            android:drawableLeft="@android:drawable/ic_media_play"
+            android:text="@string/iniciar_button" />
+
+        <Button
+            android:id="@+id/repetir_button"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@android:drawable/ic_menu_rotate"
+            android:text="@string/repetir_button" />
+
+        <Button
             android:id="@+id/modo_verb_ruta_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -54,16 +70,10 @@
             android:text="@string/verbose_ruta_button" />
 
         <Button
-            android:id="@+id/repetir_button"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:drawableLeft="@android:drawable/ic_media_play"
-            android:text="@string/repetir_button" />
-
-        <Button
             android:id="@+id/parar_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="?attr/colorControlActivated"
             android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
             android:text="@string/parar_button" />
 

@@ -57,6 +57,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) { //switches
         switch (view.getId()) {
             case R.id.volumen_button:
+                mp.start();
                 vibrator.vibrate(1000);
                 break;
             case R.id.modo_verb_switch:
