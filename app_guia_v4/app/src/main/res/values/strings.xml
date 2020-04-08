@@ -25,7 +25,7 @@
     <string name="iniciar_button">Iniciar ruta</string>
     <string name="repetir_button">Repetir instrucción</string>
     <string name="parar_button">Finalizar ruta</string>
-    <string name="verbose_ruta_button">Modo verbose</string>
+    <string name="verbose_ruta_button">Instrucciones detalladas</string>
 
     <!-- MODO DE USO -->
     <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>

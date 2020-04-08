@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -47,8 +48,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     private boolean hayRuta = false;
     private String origen, beaconClave, listaCuadrantes, ruta;
-    private String beacon_mas_cerca;
+    private String beacon_mas_cerca, hayGiro;
     private static boolean verbose = true; //Por defecto esta a true
+    private Button iniciar_button, modo_verb_button, stop_button, repet_button;
 
     public static Intent createIntent(@NonNull Context context, String dest) {
         destino = dest;
@@ -79,16 +81,18 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         editText = findViewById(R.id.beacon_text);
         editText.setMovementMethod(new ScrollingMovementMethod());
 
-        Button iniciar_button = (Button) findViewById(R.id.iniciar_button);
+        iniciar_button = (Button) findViewById(R.id.iniciar_button);
+        iniciar_button.setBackgroundColor(Color.parseColor("#68EC07"));
         iniciar_button.setOnClickListener(this);
 
-        Button modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
+        modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
+        modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
         modo_verb_button.setOnClickListener(this);
 
-        Button stop_button = (Button) findViewById(R.id.parar_button);
+        stop_button = (Button) findViewById(R.id.parar_button);
         stop_button.setOnClickListener(this);
 
-        Button repet_button = (Button) findViewById(R.id.repetir_button);
+        repet_button = (Button) findViewById(R.id.repetir_button);
         repet_button.setOnClickListener(this);
     }
 
@@ -146,32 +150,16 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 beacon_mas_cerca = encuentraElMasCercano(eddystones);
                 Log.i(TAG, "Despues de buscar el mas cercano");
                 if (!beacon_mas_cerca.equals("NO")) {
-                    String[] results = new String[3];
+                    String[] results = new String[4];
                     if (!hayRuta) { //Es la primera vez que se llama al servidor
                         Log.i(TAG, "Si no hay ruta ya");
                         hayRuta = true;
                         //Hay que saber el origen
                         origen = beacon_mas_cerca;
                         Log.i(TAG, "Si no hay ruta ya, antes de llamar a cliente");
-                        Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
-                        Log.i(TAG, "Si no hay ruta ya, despues de llamar a cliente");
-                        //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                        results = c.createWebSocketClient().clone();
-                        Log.i(TAG, "Si no hay ruta ya, despues de llamar a createWebSocketClient");
-                        listaCuadrantes = results[0];
-                        ruta = results[1];
-                        beaconClave = results[2];
+                        conectaCliente();
 
                         ttsManager.initQueue(ruta);
-
-                        editText.setText(editText.getText() + "______________\n");
-                        editText.setText(editText.getText() + ruta + "\n");
-                        editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
-                        editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-                        editText.setText(editText.getText() + "______________\n");
-
-                        /*try{Thread.sleep(3000); }
-                        catch (Exception e){}*/
 
                     } else {//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                         Log.i(TAG, "Si hay ruta ya");
@@ -179,27 +167,25 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                             //como ha llegado al beaconClave salta el sonido de acierto
                             mp.start();
                             Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
-                            Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
-                            //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                            results = c.createWebSocketClient().clone();
-
-                            Log.i(TAG, "Si hay ruta ya, despues de llamar a createWebSocketClient");
-                            listaCuadrantes = results[0];
-                            ruta = results[1];
-                            beaconClave = results[2];
-
+                            conectaCliente();
                             ttsManager.initQueue(ruta);
-
-                            editText.setText(editText.getText() + "______________\n");
-                            editText.setText(editText.getText() + ruta + "\n");
-                            editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-                            editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
-                            editText.setText(editText.getText() + "______________\n");
                         }
 
                     }
-                    if (beaconClave.equals("FINAL")) {
+
+                    editText.setText(editText.getText() + "______________\n");
+                    editText.setText(editText.getText() + ruta + "\n");
+                    editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
+                    editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
+                    editText.setText(editText.getText() + "______________\n");
+
+                    if(hayGiro.equals("si")){
                         vibrator.vibrate(1000);
+                        hayGiro = "no";
+                    }
+
+                    if (beaconClave.equals("FINAL")){
+                        //vibrator.vibrate(1000); Pensar qué poner aquí
                         stopScanning();
                     }
                 }
@@ -220,6 +206,19 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 Log.i(TAG, "onEddystoneLost: " + eddystone.toString());
             }
         };
+    }
+
+    private void conectaCliente(){
+        String[] results = new String[4];
+        //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
+        Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
+        results = c.createWebSocketClient().clone();
+
+        //Log.i(TAG, "Si hay ruta ya, despues de llamar a createWebSocketClient");
+        listaCuadrantes = results[0];
+        ruta = results[1];
+        hayGiro = results[2];
+        beaconClave = results[3];
     }
 
     public String encuentraElMasCercano(List<IEddystoneDevice> eddystones) {
@@ -266,28 +265,33 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
             case R.id.iniciar_button:
+                iniciar_button.setBackgroundColor(Color.parseColor("#49A605"));
                 startScanning();
+                break;
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
-                //editText.setText(editText.getText() + "Modo Verb\n");
-                if (verbose) verbose = false;
-                else verbose = true;
-                /*if (ConfigActivity.getModo_verb_switch() != null) {
-                    ConfigActivity.getModo_verb_switch().setChecked(verbose);
-                    editText.setText(editText.getText() + "Config: " + toString(ConfigActivity.getModo_verb_switch().isChecked()) + "\n");
+                if (verbose) {
+                    verbose = false;
+                    modo_verb_button.setBackgroundColor(Color.GRAY);
+                    ttsManager.initQueue("Funcionalidad instrucciones detalladas desactivada");
                 }
-                editText.setText(editText.getText() + "Scanning: " + toString(verbose) + "\n");*/
+                else {
+                    verbose = true;
+                    modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
+                    ttsManager.initQueue("Funcionalidad instrucciones detalladas activada");
 
+                }
                 break;
 
             case R.id.parar_button:
                 onStop();
+                ttsManager.initQueue("Se ha detenido la ruta");
                 //startActivity(ListaDestinosActivity.createIntent(this));
                 break;
 
             case R.id.repetir_button:
+                ttsManager.initQueue(ruta);
                 editText.setText(editText.getText() + "______________\n");
                 editText.setText(editText.getText() + "Ruta repetida:" + ruta + "\n");
-                ttsManager.initQueue(ruta);
                 editText.setText(editText.getText() + "______________\n");
                 break;
         }

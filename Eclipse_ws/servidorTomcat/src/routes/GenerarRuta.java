@@ -29,12 +29,14 @@ public class GenerarRuta {
 		
 	}
 	
-	public String generar(int posAct, int posDest, boolean verbose){
+	public String[] generar(int posAct, int posDest, boolean verbose){
 		
 		
 		
 		Iterator<Integer> it = lCuadrantes.iterator();
 		String s = "";
+		String [] res = new String[2]; //res[0] = ruta; res[1] = si hay giro o no;
+		res[1] = "no";
 		
 		int primerCuadrante=0; //Indice en la lista de cuadrantes
 		boolean encontrado = false;
@@ -79,10 +81,14 @@ public class GenerarRuta {
 				else { //El destino no es un aula
 					rutaFinal = "Su destino está delante. El recorrido ha finalizado.";
 				}
-				return rutaFinal;
+				res[0] = rutaFinal;
+				//return rutaFinal;
+				return res;
 			}
 			else {
-				return "Ya te encuentras en el destino";
+				res[0] = "Ya te encuentras en el destino";
+				//return "Ya te encuentras en el destino";
+				return res;
 			}
 		}
 		
@@ -96,24 +102,38 @@ public class GenerarRuta {
 		//Suponemos que no va a iniciar la ruta en el ascensor
 		if (c1.getZ() > c2.getZ()) {
 			cuadranteClave = c2.getID();
-			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22)
-				return "Los ascensores están a tu izquierda. Baja a la planta cero.";
+			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22) {
+				res[0] = "Los ascensores están a tu izquierda. Baja a la planta cero.";
+				return res;
+			}
+				//return "Los ascensores están a tu izquierda. Baja a la planta cero.";
 			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
-				return "Los ascensores están a tu derecha. Baja a la planta cero.";
+				res[0] = "Los ascensores están a tu derecha. Baja a la planta cero.";
+				return res;
+				//return "Los ascensores están a tu derecha. Baja a la planta cero.";
 			}
 			else {
-				return "El ascensor está delante. Baja a la planta cero.";
+				res[0] = "El ascensor está delante. Baja a la planta cero.";
+				return res;
+				//return "El ascensor está delante. Baja a la planta cero.";
 			}
 		}
 		else if(c2.getZ() > c1.getZ()) {
 			cuadranteClave = c2.getID();
-			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22)
-				return "Los ascensores están a tu izquierda. Sube a la primera planta.";
+			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22) {
+				res[0] = "Los ascensores están a tu izquierda. Sube a la primera planta.";
+				return res;
+				//return "Los ascensores están a tu izquierda. Sube a la primera planta.";
+			}
 			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
-				return "Los ascensores están a tu derecha. Sube a la primera planta.";
+				res[0] = "Los ascensores están a tu derecha. Sube a la primera planta.";
+				return res;
+				//return "Los ascensores están a tu derecha. Sube a la primera planta.";
 			}
 			else {
-				return "El ascensor está delante. Sube a la primera planta.";
+				res[0] = "El ascensor está delante. Sube a la primera planta.";
+				return res;
+				//return "El ascensor está delante. Sube a la primera planta.";
 			}
 		}
 		else {
@@ -139,15 +159,24 @@ public class GenerarRuta {
 				if(cuadAnterior.getZ() != c1.getZ()) { //Acabamos de subir o bajar una planta
 					if(c1.getID() == 29 || c1.getID() == 10) {
 						cuadranteClave = c2.getID();
-						return "Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
+						res[0] ="Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
+						//return "Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
+						return res;
 					}
 					else if(c1.getID() == 31) {
 						cuadranteClave = c2.getID();
 						if(c2.getID() == 32) {
-							return "Gira a la izquierda y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
+							res[0] = "Gira a la izquierda y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
+							res[1] = "si";
+							return res;
+							//return "Gira a la izquierda y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
 						}
-						else 
-							return "Gira a la derecha y avanza " + Float.toString(c1.getMetros()) + "metros. Espera la siguiente indicación.";
+						else {
+							res[0] = "Gira a la derecha y avanza " + Float.toString(c1.getMetros()) + "metros. Espera la siguiente indicación.";
+							res[1] = "si";
+							return res;
+							//return "Gira a la derecha y avanza " + Float.toString(c1.getMetros()) + "metros. Espera la siguiente indicación.";
+						}
 					}
 				}
 				dirDeLaQueVengo = cuadAnterior.getDireccion(c1);
@@ -156,7 +185,7 @@ public class GenerarRuta {
 			int cont = 1; //Contador de cuadrantes que avanzamos sin instrucción
 			float metros = c1.getMetros();
 			int contHastaCambioDir = 1;
-			Cuadrante aux = null;
+			//Cuadrante aux = null;
 			
 			cuadranteClave = c2.getID(); //El cuadrante clave siempre es el siguiente
 			
@@ -172,8 +201,9 @@ public class GenerarRuta {
 						cont++;
 						direccion = direccionSig;
 						metros += c2.getMetros();
-						aux = c2.clone();					}
-					else {
+						//aux = c2.clone();					
+						}
+					else {//hay que girar
 						break;
 					}
 				//}
@@ -191,33 +221,44 @@ public class GenerarRuta {
 				contHastaCambioDir++;
 			} //Al salir, tenemos en c2 el cuadrante clave (ya no, el cuadranteClave es siempre el siguiente)
 			
-				
+				//String[] resAux = new String[2];
 				if(direccion.equals(dirDeLaQueVengo)) {
 					s = "Continua recto " + Float.toString(metros) +" metros, luego ";
-					direccion = direccionSig;
-					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo, verbose);
+					direccion = direccionSig;	
+					s += generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					
+					//resAux = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					
 				}
 				else {
 					if(!dirDeLaQueVengo.equals(direccionSig)) {
 						direccion = direccionSig;
 					}
-					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo, verbose);
+					//resAux = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					s = generaInstruccion(cont, direccionPrincipal, direccion, dirDeLaQueVengo);
+					//s = resAux[0];
 					s += " luego continua recto " + Float.toString(metros) +" metros.";
+					res[1]="si";
 				}
 				//cuadranteClave = c2.getID(); SE PONE ANTES PARA QUE VAYA UNO POR UNO!
-				
+				//res[1] = resAux[1];
 				//Añadimos información sobre el siguiente cuadrante si está el modo verbose activado
 				if(verbose) s += "Información adicional: " + c2.getInfo();
 		}
-		return s;
+		
+		res[0] = s;
+		return res;
+		//return s;
 	}
 	
 	public String generaInstruccion(int cont, String direccionPrincipal, String direccion,
-			String dirDeLaQueVengo, boolean verbose) {
+			String dirDeLaQueVengo) {
 		String s = "";
+		//String [] res = new String[2];
+		//res[1] = "no";
 		
 		if (!direccion.equals(direccionPrincipal)) { //Giramos
-			
+			//res[1] = "si";
 			s += ("gira a la ");
 			
 			if (direccionPrincipal == "norte" ) {
@@ -251,7 +292,7 @@ public class GenerarRuta {
 			}
 			
 		}else if (!direccion.equals(dirDeLaQueVengo) ) { //Giramos
-			
+			//res[1]= "si";
 			s += ("gira a la ");
 			
 			if (dirDeLaQueVengo == "norte") {
@@ -301,6 +342,8 @@ public class GenerarRuta {
 			}*/
 			s += ("espera a la siguiente indicación.");
 		}
+		//res[0] = s;
+		//return res;
 		return s;
 		
 		/*else if (cont == 2) {//Medio del pasillo

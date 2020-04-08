@@ -35,8 +35,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="312dp"
-        android:layout_height="391dp"
+        android:layout_width="311dp"
+        android:layout_height="410dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
@@ -51,31 +51,34 @@
             android:id="@+id/iniciar_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="#93DD3C"
             android:drawableLeft="@android:drawable/ic_media_play"
-            android:text="@string/iniciar_button" />
+            android:text="@string/iniciar_button"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/repetir_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:drawableLeft="@android:drawable/ic_menu_rotate"
-            android:text="@string/repetir_button" />
+            android:text="@string/repetir_button"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/modo_verb_ruta_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
-            android:text="@string/verbose_ruta_button" />
+            android:text="@string/verbose_ruta_button"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/parar_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="?attr/colorControlActivated"
             android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
-            android:text="@string/parar_button" />
+            android:text="@string/parar_button"
+            android:textSize="24sp" />
 
 
     </LinearLayout>

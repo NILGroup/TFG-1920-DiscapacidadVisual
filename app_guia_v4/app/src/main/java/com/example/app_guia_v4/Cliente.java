@@ -15,9 +15,9 @@ public class Cliente {
 
 
     private String dest, b_mas_cerca, origen;
-    String listaCuadrantes, ruta, beaconClave = "NO";
+    String listaCuadrantes, ruta, beaconClave = "NO", hayGiro;
     private boolean verbose;
-    final String [] results = new  String[3];
+    final String [] results = new  String[4];
 
     public Cliente(String destino, String beaconMasCercano, String ori, boolean verb){
         dest = destino;
@@ -44,7 +44,7 @@ public class Cliente {
             @Override
             public void onOpen() {
                 Log.i("WebSocket", "Session is starting");
-                webSocketClient.send(origen + "|" + dest + "|" + b_mas_cerca);
+                webSocketClient.send(origen + "|" + dest + "|" + b_mas_cerca + "|" + String.valueOf(verbose));
             }
             @Override
             public void onTextReceived(String message) {
@@ -57,10 +57,13 @@ public class Cliente {
                 ruta = splittedMessage.get(1);
                 results[1] = ruta;
 
-                beaconClave = splittedMessage.get(2);
-                results[2] = beaconClave;
+                hayGiro = splittedMessage.get(2);
+                results[2] = hayGiro;
 
-                synchronized(webSocketClient) {
+                beaconClave = splittedMessage.get(3);
+                results[3] = beaconClave;
+
+                synchronized(webSocketClient) {//Ya tenemos toda la información
                     webSocketClient.notifyAll();
                 }
             }
@@ -101,6 +104,11 @@ public class Cliente {
         }
 
         return results;
+    }
+
+    public String toString(boolean verb) {
+        if (verb) return "true";
+        else return "false";
     }
 
 }

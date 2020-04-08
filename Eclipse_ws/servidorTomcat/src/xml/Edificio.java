@@ -45,7 +45,7 @@ public class Edificio {
 		        for ( int indexPlanta = 0; indexPlanta < lista_plantas.size(); indexPlanta++ )//Se recorre la lista de 'plantas'
 		        {
 		            Element planta = (Element) lista_plantas.get(indexPlanta);//Se obtiene el elemento 'planta'
-		            String nombre = planta.getAttributeValue("nombre");//Se obtiene el atribullo 'idp'
+		            //String nombre = planta.getAttributeValue("nombre");//Se obtiene el atribullo 'idp'
 		            
 		           
 		           String archivo = planta.getChildText("archivo");
