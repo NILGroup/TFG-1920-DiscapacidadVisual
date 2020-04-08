@@ -33,7 +33,6 @@ import 	android.text.method.ScrollingMovementMethod;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener {
 
-
     private ProximityManager proximityManager;
     public static final String TAG = "ProximityManager";
 
@@ -168,9 +167,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                             mp.start();
                             Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
                             conectaCliente();
+
                             ttsManager.initQueue(ruta);
                         }
-
                     }
 
                     editText.setText(editText.getText() + "______________\n");
@@ -214,7 +213,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
         results = c.createWebSocketClient().clone();
 
-        //Log.i(TAG, "Si hay ruta ya, despues de llamar a createWebSocketClient");
         listaCuadrantes = results[0];
         ruta = results[1];
         hayGiro = results[2];
@@ -278,7 +276,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     verbose = true;
                     modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
                     ttsManager.initQueue("Funcionalidad instrucciones detalladas activada");
-
                 }
                 break;
 
@@ -295,12 +292,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 editText.setText(editText.getText() + "______________\n");
                 break;
         }
-
-    }
-
-    public String toString(boolean verb) {
-        if (verb) return "true";
-        else return "false";
     }
 }
    /* public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
