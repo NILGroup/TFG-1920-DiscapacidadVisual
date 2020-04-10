@@ -2,3 +2,6 @@ beacon4|aula 4|beacon4|true
 beacon4|aula 4|beacon4|false
 
 beacon4|aula 4|beacon5|true
+
+
+beacon4|aula 5
