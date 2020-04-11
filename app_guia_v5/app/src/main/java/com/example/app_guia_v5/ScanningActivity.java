@@ -49,12 +49,12 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     private static String destino;
 
-    private boolean hayRuta = false;
+    private boolean hayRuta = false, hayServ = false;
     private String origen;
     private String beacon_mas_cerca;
 
     private List<String> listaInstrucciones, listaBeacons, listaCuadrantes, listaGiros, listaInfoAdicional;
-    private Integer indiceRuta = 0;
+    private Integer indiceRuta = 0, numPasosPerdidos = 0;
     private static boolean verbose = true; //Por defecto esta a true
     private Button iniciar_button, modo_verb_button, stop_button, repet_button;
 
@@ -78,8 +78,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setupButtons();
         //Initialize and configure proximity manager
         setupProximityManager();
-        //Start scanning beacons
-        //startScanning();
     }
 
 
@@ -115,7 +113,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 .deviceUpdateCallbackInterval(TimeUnit.SECONDS.toMillis(2));
 
         //Setting up iBeacon and Eddystone listeners
-        //proximityManager.setIBeaconListener(createIBeaconListener());
         proximityManager.setEddystoneListener(createEddystoneListener());
     }
 
@@ -159,56 +156,82 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     String[] results = new String[4];
                     if (!hayRuta) { //Es la primera vez que se llama al servidor
                         Log.i(TAG, "Si no hay ruta ya");
-                        hayRuta = true;
+                        //hayRuta = true;
                         //Hay que saber el origen
                         origen = beacon_mas_cerca;
-                        Log.i(TAG, "Si no hay ruta ya, antes de llamar a cliente");
+
+                        //Preguntamos al cliente la info de la ruta
                         conectaCliente();
 
-                        ttsManager.initQueue(listaInstrucciones.get(indiceRuta));
-                        if(verbose){
-                            if(!listaInfoAdicional.get(indiceRuta).equals("no")) {
-                                ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
+                        if(hayServ) {//Si no ha habido ningún problema con el servidor
+                            hayRuta = true;
+                            Log.i("WebSocket en Scanning", "si hay serv");
+                            ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
+                            if (verbose) {
+                                if (!listaInfoAdicional.get(indiceRuta).equals("no")) {
+                                    ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
+                                }
                             }
+                            if (listaGiros.get(indiceRuta).equals("si")) {
+                                vibrator.vibrate(1000);
+                            }
+                            escribeEditText();
+                            indiceRuta++;
                         }
-                        indiceRuta++;
-                        //LLamamos al temporizador por si se pierde
-                        //temporizadorUsuarioPerdido();
+                        Log.i("WebSocket en Scanning", "despues de si hay serv");
                     } else {//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
                         Log.i(TAG, "Si hay ruta ya");
                         if (beacon_mas_cerca.equals(listaBeacons.get(indiceRuta))) {
+                            numPasosPerdidos = 0; //Ha encontrado el siguiente paso
                             //como ha llegado al beaconClave salta el sonido de acierto
                             mp.start();
                             Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
-                            conectaCliente();
 
-                            ttsManager.initQueue(listaInstrucciones.get(indiceRuta));
+                            ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
                             if(verbose){
                                 if(!listaInfoAdicional.get(indiceRuta).equals("no")) {
                                     ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
                                 }
                             }
+                            if(listaGiros.get(indiceRuta).equals("si")){
+                                vibrator.vibrate(1000);
+                            }
+                            escribeEditText();
                             indiceRuta++;
+                        }
+                        else{//No estamos en el beacon clave
+                            numPasosPerdidos++;
                         }
                     }
 
-                    editText.setText(editText.getText() + "______________\n");
-                    editText.setText(editText.getText() + ruta + "\n");
-                    editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-                    editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
-                    editText.setText(editText.getText() + "______________\n");
-
-                    if(hayGiro.equals("si")){
-                        vibrator.vibrate(1000);
-                        hayGiro = "no";
+                    if(hayServ && numPasosPerdidos >= 10){//Consideramos que el usuario se ha perdido
+                        numPasosPerdidos = 0;
+                        int indiceBmasCerca = indiceBeacon(beacon_mas_cerca);
+                        if( indiceBmasCerca != -1 && indiceBmasCerca >= indiceRuta){//El usuario sigue en la ruta
+                            //Volvemos a conectar con el servidor para que nos de las instrucciones
+                            //de por donde vamos. El usuario va en la dirección correcta.
+                            hayRuta = false;
+                            hayServ = false;
+                        }
+                        else{//El usuario se ha salido de la ruta
+                            ttsManager.addQueue("La dirección tomada no ha sido la correcta. " +
+                                    "Vuelve sobre tus pasos, la nueva ruta comenzará cuando pulses " +
+                                    "iniciar ruta." );
+                            hayRuta = false;
+                            hayServ = false;
+                            //Se para de escanear y se espera a que el usuario vuelva a iniciar la ruta
+                            stopScanning();
+                            iniciar_button.setBackgroundColor(Color.parseColor("#68EC07"));
+                        }
                     }
 
-                    if (beaconClave.equals("FINAL")){
+                    if (hayServ && listaBeacons.get(indiceRuta).equals("FINAL")){
+                        indiceRuta--; //Nos quedamos en la última instrucción
                         //Hacer una vibración distinta
-                        vibrator.vibrate(500);
                         vibrator.vibrate(500);
                         stopScanning();
                     }
+
                 }
                 //para que haga scroll
                 if (editText.getLayout() != null) {
@@ -219,9 +242,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     else
                         editText.scrollTo(0, 0);
                 }
-
             }
-
             @Override
             public void onEddystoneLost(IEddystoneDevice eddystone, IEddystoneNamespace namespace) {
                 Log.i(TAG, "onEddystoneLost: " + eddystone.toString());
@@ -229,25 +250,24 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         };
     }
 
-    /*private void temporizadorUsuarioPerdido(){
-
-        TimerTask timerTask = new TimerTask()
-        {
-            public void run()
-            {
-                // Aquí el código que queremos ejecutar.
-                if(!beacon_mas_cerca.equals(beaconClave)){
-                    //El usuario se ha perdido
-                    ttsManager.initQueue("El usuario se ha perdido");
-                }
+    private int indiceBeacon(String beacon){
+        int index = 0;
+        for(String b: listaBeacons){
+            if(b.equals(beacon)){
+                return index;
             }
-        };
+            index++;
+        }
+        return -1;
+    }
 
-        // Aquí se pone en marcha el timer cada segundo.
-        Timer timer = new Timer();
-        // Dentro de 0 milisegundos avísame cada 3000 milisegundos
-        timer.scheduleAtFixedRate(timerTask, 0, 3000);
-    }*/
+    private void escribeEditText(){
+        editText.setText(editText.getText() + "______________\n");
+        editText.setText(editText.getText() + listaInstrucciones.get(indiceRuta) + "\n");
+        editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
+        editText.setText(editText.getText() + "Beacon clave: " + listaBeacons.get(indiceRuta+1) + "\n");
+        editText.setText(editText.getText() + "______________\n");
+    }
 
     private void conectaCliente(){
         String[] results = new String[4];
@@ -255,23 +275,19 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         Cliente c = new Cliente(destino, origen);
         results = c.createWebSocketClient().clone();
 
-        /*results[0] = splittedMessage.get(0); //Lista de cuadrantes
-
-        results[1] = splittedMessage.get(1); //Lista de beacons
-
-        results[2] = splittedMessage.get(2); //Lista de instrucciones
-
-        results[3] = splittedMessage.get(3); //Lista de giros
-
-        results[4] = splittedMessage.get(4); //Lista de info adicional*/
-
-        //listaInstrucciones, listaBeacons, listaCuadrantes, listaGiros, listaInfoAdicional
-
-        listaCuadrantes = Arrays.asList(results[0].split(Pattern.quote(" ")));
-        listaBeacons = Arrays.asList(results[1].split(Pattern.quote(" ")));
-        listaInstrucciones = Arrays.asList(results[2].split(Pattern.quote("@")));
-        listaGiros = Arrays.asList(results[3].split(Pattern.quote("@")));
-        listaInfoAdicional = Arrays.asList(results[4].split(Pattern.quote("@")));
+        if(results[0].equals("noInfo")){
+            ttsManager.initQueue("No se ha podido conectar con el servidor");
+            hayServ = false;
+            onStop();
+        }
+        else {
+            hayServ = true;
+            listaCuadrantes = Arrays.asList(results[0].split(Pattern.quote(" ")));
+            listaBeacons = Arrays.asList(results[1].split(Pattern.quote(" ")));
+            listaInstrucciones = Arrays.asList(results[2].split(Pattern.quote("@")));
+            listaGiros = Arrays.asList(results[3].split(Pattern.quote("@")));
+            listaInfoAdicional = Arrays.asList(results[4].split(Pattern.quote("@")));
+        }
     }
 
     public String encuentraElMasCercano(List<IEddystoneDevice> eddystones) {
@@ -318,85 +334,38 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
             case R.id.iniciar_button:
-                iniciar_button.setBackgroundColor(Color.parseColor("#49A605"));
+                //iniciar_button.setBackgroundColor(Color.parseColor("#49A605"));
+                iniciar_button.setBackgroundColor(Color.GRAY);
                 startScanning();
                 break;
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
                 if (verbose) {
                     verbose = false;
                     modo_verb_button.setBackgroundColor(Color.GRAY);
-                    ttsManager.initQueue("Funcionalidad instrucciones detalladas desactivada");
+                    ttsManager.addQueue("Funcionalidad instrucciones detalladas desactivada");
                 }
                 else {
                     verbose = true;
                     modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
-                    ttsManager.initQueue("Funcionalidad instrucciones detalladas activada");
+                    ttsManager.addQueue("Funcionalidad instrucciones detalladas activada");
                 }
                 break;
 
             case R.id.parar_button:
                 onStop();
-                ttsManager.initQueue("Se ha detenido la ruta");
+                //ttsManager.initQueue("Se ha detenido la ruta");
+                onBackPressed();
                 //startActivity(ListaDestinosActivity.createIntent(this));
                 break;
 
             case R.id.repetir_button:
-                ttsManager.initQueue(ruta);
-                editText.setText(editText.getText() + "______________\n");
-                editText.setText(editText.getText() + "Ruta repetida:" + ruta + "\n");
-                editText.setText(editText.getText() + "______________\n");
+                if(hayServ) {
+                    ttsManager.initQueue(listaInstrucciones.get(indiceRuta));
+                    editText.setText(editText.getText() + "______________\n");
+                    editText.setText(editText.getText() + "Ruta repetida:" + listaInstrucciones.get(indiceRuta) + "\n");
+                    editText.setText(editText.getText() + "______________\n");
+                }
                 break;
         }
     }
 }
-   /* public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
-        //Buscamos el beacon que está más cerca
-        beacon_mas_cerca = encuentraElMasCercano(eddystones);
-        Log.i(TAG, "Despues de buscar el mas cercano");
-        if (!beacon_mas_cerca.equals("NO")) {
-            String[] results = new String[3];
-            if (!hayRuta || beacon_mas_cerca.equals(beaconClave)) {
-                if (!hayRuta) {
-                    Log.i(TAG, "Si no hay ruta ya");
-                    origen = beacon_mas_cerca;
-                    Log.i(TAG, "Si no hay ruta ya, antes de llamar a cliente");
-                    hayRuta = true;
-                } else {
-                    Log.i(TAG, "Beacon mas cerca igual a beacon clave");
-                    mp.start(); //ha superado la instruccion anterior
-                    Log.i(TAG, "Si beacon mas cerca igual a beacon clave antes de llamar a cliente");
-                }
-                Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
-                Log.i(TAG, "Despues de llamar al cliente");
-                //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                results = c.createWebSocketClient().clone();
-                Log.i(TAG, "Despues de llamar a createWebSocketClient");
-                listaCuadrantes = results[0];
-                ruta = results[1];
-                beaconClave = results[2];
-
-                editText.setText(editText.getText() + "______________\n");
-                editText.setText(editText.getText() + ruta + "\n");
-                ttsManager.initQueue(ruta);
-                editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
-                editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-                editText.setText(editText.getText() + "______________\n");
-            }
-
-            if (beaconClave.equals("FINAL")) {
-                vibrator.vibrate(1000);
-                stopScanning();
-            }
-        }
-
-        //para que haga scroll
-        if (editText.getLayout() != null) {
-            final int scrollAmount = editText.getLayout().getLineTop(editText.getLineCount()) - editText.getHeight();
-            // if there is no need to scroll, scrollAmount will be <=0
-            if (scrollAmount > 0)
-                editText.scrollTo(0, scrollAmount);
-            else
-                editText.scrollTo(0, 0);
-        }
-}
-*/

@@ -64,7 +64,7 @@ public class MainClienteAndroid {
     	lectorDest = new LectorDestino();
     	
     	
-    	System.out.println(aCuadrantes.get(4).getBeacon());
+    	System.out.println(aCuadrantes.get(0).getBeacon());
     	System.out.println("Datos cargados ...");
     }
 	
