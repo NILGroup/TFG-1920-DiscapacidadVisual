@@ -1,7 +1,7 @@
 \chapter{Estado de la Cuestión}
 \label{cap:estadoDeLaCuestion}
 
-Este capítulo le dedicaremos a estudiar el contexto sobre el que se sustenta nuestro trabajo. Antes de comenzar debemos conocer los trabajos previos que se han realizado en la navegación y cómo se han abordado desde el punto de vista tecnológico. Nos interesaremos, especialmente, en aquellos enfocados a la navegación por interiores y, en concreto, aquellos cuyo usuario final es una persona con discapacidad visual. 
+Este capítulo lo dedicaremos a estudiar el contexto sobre el que se sustenta nuestro trabajo. Antes de comenzar debemos conocer los trabajos previos que se han realizado en la navegación y cómo se han abordado desde el punto de vista tecnológico. Nos interesaremos, especialmente, en aquellos enfocados a la navegación por interiores y, en concreto, aquellos cuyo usuario final es una persona con discapacidad visual. 
 
 En la Sección \ref{sec:appGuia} se exponen distintas aplicaciones de navegación. De ellas extraemos sus puntos más fuertes y, sobre todo, sus carencias, pues serán esos puntos donde nuestro trabajo tratará de incidir en mayor medida. En la Sección \ref{sec:sisPos} veremos la tecnología necesaria para el posicionamiento, comparando las tres principales vertientes: GPS, Wi-Fi y bluetooth.
 
@@ -178,8 +178,6 @@ Otro método que también se utiliza es el denominado \textit{fingerprint}. Este
 
 Una de las grandes ventajas de la tecnología Wi-Fi es que prácticamente la totalidad de las casas, colegios y edificios en general están equipados con una red Wi-Fi.
 
-%Otras de las muchas utilidades de esta señal Wi-Fi pueden ser el análisis del flujo de personas y las rutas que toman o la medición de la ocupación de un cierto espacio, como una oficina. En el siguiente apartado haremos una pequeña comparativa entre esta tecnología y la ofrecida por las balizas bluetooth.
-
 
 \subsection{Balizas Bluetooth}
 
@@ -199,10 +197,24 @@ Esta tecnología se hizo muy popular en 2013 cuando Apple introdujo el estándar
 
 Por todo esto, consideramos que utilizar el protocolo Eddystone es más ventajoso para nuestra aplicación, debido a la comodidad y facilidad que nos proporcionan las APIs 
 
-Por otro lado, de cara a establecer la posición exacta de un dispositivo receptor hay dos alternativas, una de ellas es triangular la posición a partir de la distancia obtenida por la señal de los tres \textit{beacons} más cercanos. El inconveniente de este método es que se requiere un número muy alto de balizas para poder cubrir por completo todo el espacio, por lo que los costes de la instalación se elevan. Además, cualquier cambio en la estructura del edificio puede afectar a la posición de los \textit{beacons} y, por ende, al algoritmo de triangulación. El otro método consiste en establecer los \textit{beacons} en puntos de decisión (\textit{landmarks}) donde los usuarios esperan recibir instrucciones. Algunos de estos puntos son las puertas, escaleras, intersecciones, etc. El número de balizas necesario es mucho más reducido por lo que los costes derivados de la instalación también. No obstante, hay que tener en cuenta que es muy importante decidir con cuidado la disposición exacta de los \textit{beacons}. 
+Por otro lado, de cara a establecer la posición exacta de un dispositivo receptor hay dos alternativas, una de ellas es triangular la posición a partir de la distancia obtenida por la señal de los tres \textit{beacons} más cercanos. El inconveniente de este método es que se requiere un número muy alto de balizas para poder cubrir por completo todo el espacio, por lo que los costes de la instalación se elevan. Además, cualquier cambio en la estructura del edificio puede afectar a la posición de los \textit{beacons} y, por ende, al algoritmo de triangulación. El otro método consiste en establecer los \textit{beacons} en puntos de decisión (\textit{landmarks}) donde los usuarios esperan recibir instrucciones. Algunos de estos puntos son las puertas, escaleras, intersecciones, etc. El número de balizas necesario es mucho más reducido por lo que los costes derivados de la instalación también. No obstante, hay que tener en cuenta que es muy importante decidir con cuidado la disposición exacta de los \textit{beacons} para que estén lo menos expuestos posible a interferencias. 
+
+\subsubsection{Interferencias en la señal bluetooth}
+\label{sec:Interferencias}
+Los \textit{beacons} son dispositivos que se pueden colocar tanto en interiores como en exteriores pero hay que tener en cuenta qué lugares son más aptos para su establecimiento de manera que la señal no sufra interferencias. Algunas recomendaciones son:
+\begin{itemize}
+	\item Lugares altos (alrededor de 2,5m) para evitar las interferencias provocadas por los cuerpos de las personas ya que estos absorben parte de la señal.
+	\item Lugares alejados a un metro aproximadamente de elementos que pueden alterar la intensidad de la señal como elementos metálicos, conductos de electricidad, iluminación, otras balizas, etc.
+	\item En pasillos de menos de 4m de ancho, colocar la baliza en el medio para que cubra el espacio por igual. Si por el contrario el ancho es mayor, se deberán usar varias balizas.
+	\item Colocar las balizas aproximadamente 1m antes de los lugares de interés (\textit{landmarks}) en los que las personas necesitarán la siguiente instrucción. Ejemplo: puertas, ascensores, escaleras, esquinas, etc.
+	\item Considerar la orientación adecuada de la antena direccional del \textit{beacon}, aunque esta depende por completo del fabricante. En ocasiones la baliza no emite una señal simétrica por completo sino que emite una señal en forma elíptica.
+\end{itemize}
+
+Otros factores difíciles de controlar que también afectan a la señal son las condiciones meteorológicas, la señal Wi-Fi, las señales bluetooth de otros dispositivos \citep{beaconsinterferences}...
 
 
 \section{Conclusiones}
+\label{sec:conclusionesposicionamiento}
 %Conclusiones de los dos apartados, ya me dices qué te parece tener esto así
 
 Tras este breve recorrido por algunas de las aplicaciones de navegación adaptadas para personas ciegas o con visibilidad reducida podemos decir que cada vez son más las opciones disponibles. Hemos visto desde aplicaciones de navegación por exteriores, como también por interiores, llegando hasta algunas tan específicas como \textit{Wayfindr} que está dirigida al metro de Londres concretamente. Todas ellas se rigen por un patrón común: el de la simpleza, sin conllevar por ello una reducción de la funcionalidad. Estas aplicaciones nos permiten filtrar la información que se quiere recibir, guardar nuestros lugares más visitados, manejarlas mediante voz o con sacudidas del teléfono..., es decir, nos proporcionan un gran abanico de posibilidades que el usuario puede ejecutar de manera sencilla.
@@ -211,7 +223,6 @@ Por otro lado, si comparamos las apps, encontramos que aquellas de navegación p
 
 En cuanto al sistema de posicionamiento, descartamos desde un primer momento la tecnología GPS. En interiores su rendimiento no es el deseado, la señal pierde intensidad cuando el dispositivo se encuentra en un lugar cerrado. Así las cosas, aunque la alternativa tecnológica Wi-Fi es también adecuada para solventar el problema del posicionamiento en interiores y cuenta con ventajas como la de aprovechar la infraestructura del edificio sin necesitar ningún dispositivo extra, también conlleva ciertos inconvenientes. Ente ellos destacamos que la intensidad de las señales Wi-Fi dependen mucho del entorno y, en ocasiones, puede ser complicado diferenciar la posición entre plantas, si estas no se encuentran a suficiente distancia. Además, los \textit{beacons} cuentan con ventajas como su bajo coste y flexibilidad: podemos colocarlos donde queramos (son pequeños y ligeros) mientras que los puntos de acceso Wi-Fi vienen predeterminados, y tienen una precisión de 1 a 3 metros, algo más alta que con la señal Wi-Fi\footnote{\url{https://www.infsoft.com/technology/positioning-technologies/bluetooth-low-energy-beacons}}. Por ello, para este proyecto nos hemos decantado por las balizas bluetooth acompañadas del protocolo Eddystone y más concretamente por el método de los \textit{landmarks} ya que debido a las limitaciones de presupuesto y a las características de nuestros usuarios lo consideramos más adecuado pues así podemos estudiar mejor los puntos de interés y asegurarnos una buena señal y más precisión en ciertos puntos.
 
-%El posicionamiento en interiores no es la única salida que pueden tener los \textit{beacons}. Con ellos podemos, por ejemplo, traquear de dispositivos en una oficina, como proyectores o portátiles; si asociamos un \textit{beacon} a cada uno de estos objetos podremos localizarlos fácilmente, dar a conocer un establecimiento (la instalación de un beacon puede hacerlo más accesible, una persona ciega puede reconocer el establecimiento gracias a la señal que ha captado su móvil), entre otras. 
 
 
 

@@ -17,43 +17,6 @@ El servidor es una parte indispensable del proyecto ya que se encarga de realiza
 
 La aplicación servidor se divide en código java y los archivos .xml en los que se encuentra la información del edificio. Buena parte del código que los conforma ha sido reutilizado de trabajos anteriores, en concreto del proyecto \textit{Generador interactivo de instrucciones de guía sobre plataformas móviles} \citep{TFGguia} y del proyecto \textit{Sistema de guía por voz en interiores} \citep{TFGMariana}. Sin embargo se han introducido cambios notorios para el desarrollo de esta aplicación que comentaremos a continuación.
 
-\subsection{Archivos XML}
-Los ficheros xml en los que queda almacenada la información del edificio utilizando la técnica de mapeo expuesta en la Sección \ref{sec:mapeo} son de dos tipos: 
-
-\textbf{Edificio.xml:} En este archivo se guarda la información relativa a la estructura del edificio, es decir, se indican las distintas plantas y el archivo xml asociado a cada una de ellas. En la Figura \ref{fig:xmledificio} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
-\begin{itemize}
-	\item \textit{nombre:} Nombre representativo de la planta que estemos implementando. En el ejemplo se ha utilizado el valor \textit{nombrePlanta}.
-	\item \textit{archivo:} Nombre del fichero xml de la planta en cuestión. No es necesario añadir la extensión .xml. En el ejemplo lo hemos llamado \textit{nombreFichero}.
-\end{itemize}
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=1.1\textwidth]{Imagenes/Capitulo4/XMLEDIFICIO}
-	\caption{Ejemplo de un archivo con la misma estructura que edificio.xml.}
-	\label{fig:xmledificio}
-\end{figure}
-
-\textbf{NombreFichero.xml:} Se corresponde con el archivo propio de cada planta. Cada planta incluye un valor que indica el número de planta en el que nos encontramos y un idetificador de estancia que da nombre a la planta y que agrupa al conjunto de cuadrantes que la forman. A su vez, cada cuadrante contiene un identificador único, el nombre del \textit{beacon} asociado, información sobre los cuadrantes colindantes e información relevante del cuadrante. En la Figura \ref{fig:xmlplanta} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
-
-\begin{itemize}
-	\item \textit{Z:} Indica el número de planta. En el ejemplo le hemos dado el valor \textit{X}.
-	\item \textit{id:} Se corresponde con el nombre de la planta en la que nos encontramos. En el ejemplo la hemos llamado \textit{plantaX}.
-	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $0$.
-	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon0}.
-	\item \textit{conectado:} Indica los identificadores de los \textit{beacons} colindantes por los cuatro puntos cardinales. El valor $-1$ representa la pared.
-	\item \textit{info:} Este campo contiene la información relevante del cuadrante. En el ejemplo le hemos dado el valor \textit{info0}.
-	
-\end{itemize}
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=1.1\textwidth]{Imagenes/Capitulo4/XMLPLANTA}
-	\caption{Ejemplo de un archivo que detalla la estructura de una planta.}
-	\label{fig:xmlplanta}
-\end{figure}
-
-
-
 \subsection{Código java}
 Para entender mejor la estructura de nuestro servidor, veamos las principales clases de las que se compone y su función. En la \ref{fig:diagServ} se puede ver el diagrama con las dependencias de cada una de ellas:
 
