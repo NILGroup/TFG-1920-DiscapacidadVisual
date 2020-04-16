@@ -210,26 +210,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         };
     }
 
-    /*private void temporizadorUsuarioPerdido(){
-
-        TimerTask timerTask = new TimerTask()
-        {
-            public void run()
-            {
-                // Aquí el código que queremos ejecutar.
-                if(!beacon_mas_cerca.equals(beaconClave)){
-                    //El usuario se ha perdido
-                    ttsManager.initQueue("El usuario se ha perdido");
-                }
-            }
-        };
-
-        // Aquí se pone en marcha el timer cada segundo.
-        Timer timer = new Timer();
-        // Dentro de 0 milisegundos avísame cada 3000 milisegundos
-        timer.scheduleAtFixedRate(timerTask, 0, 3000);
-    }*/
-
     private void conectaCliente(){
         String[] results = new String[4];
         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
@@ -317,54 +297,3 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         }
     }
 }
-   /* public void onEddystonesUpdated(List<IEddystoneDevice> eddystones, IEddystoneNamespace namespace) {
-        //Buscamos el beacon que está más cerca
-        beacon_mas_cerca = encuentraElMasCercano(eddystones);
-        Log.i(TAG, "Despues de buscar el mas cercano");
-        if (!beacon_mas_cerca.equals("NO")) {
-            String[] results = new String[3];
-            if (!hayRuta || beacon_mas_cerca.equals(beaconClave)) {
-                if (!hayRuta) {
-                    Log.i(TAG, "Si no hay ruta ya");
-                    origen = beacon_mas_cerca;
-                    Log.i(TAG, "Si no hay ruta ya, antes de llamar a cliente");
-                    hayRuta = true;
-                } else {
-                    Log.i(TAG, "Beacon mas cerca igual a beacon clave");
-                    mp.start(); //ha superado la instruccion anterior
-                    Log.i(TAG, "Si beacon mas cerca igual a beacon clave antes de llamar a cliente");
-                }
-                Cliente c = new Cliente(destino, beacon_mas_cerca, origen, verbose);
-                Log.i(TAG, "Despues de llamar al cliente");
-                //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-                results = c.createWebSocketClient().clone();
-                Log.i(TAG, "Despues de llamar a createWebSocketClient");
-                listaCuadrantes = results[0];
-                ruta = results[1];
-                beaconClave = results[2];
-
-                editText.setText(editText.getText() + "______________\n");
-                editText.setText(editText.getText() + ruta + "\n");
-                ttsManager.initQueue(ruta);
-                editText.setText(editText.getText() + "Beacon clave: " + beaconClave + "\n");
-                editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-                editText.setText(editText.getText() + "______________\n");
-            }
-
-            if (beaconClave.equals("FINAL")) {
-                vibrator.vibrate(1000);
-                stopScanning();
-            }
-        }
-
-        //para que haga scroll
-        if (editText.getLayout() != null) {
-            final int scrollAmount = editText.getLayout().getLineTop(editText.getLineCount()) - editText.getHeight();
-            // if there is no need to scroll, scrollAmount will be <=0
-            if (scrollAmount > 0)
-                editText.scrollTo(0, scrollAmount);
-            else
-                editText.scrollTo(0, 0);
-        }
-}
-*/

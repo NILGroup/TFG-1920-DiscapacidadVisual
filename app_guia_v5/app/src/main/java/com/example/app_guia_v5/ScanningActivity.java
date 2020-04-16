@@ -4,6 +4,7 @@ package com.example.app_guia_v5;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -12,7 +13,7 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
 import com.kontakt.sdk.android.ble.configuration.ScanMode;
 import com.kontakt.sdk.android.ble.configuration.ScanPeriod;
 import com.kontakt.sdk.android.ble.connection.OnServiceReadyListener;
@@ -156,16 +157,17 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     String[] results = new String[4];
                     if (!hayRuta) { //Es la primera vez que se llama al servidor
                         Log.i(TAG, "Si no hay ruta ya");
-                        //hayRuta = true;
                         //Hay que saber el origen
                         origen = beacon_mas_cerca;
 
                         //Preguntamos al cliente la info de la ruta
                         conectaCliente();
 
-                        if(hayServ) {//Si no ha habido ningún problema con el servidor
+                        if(hayServ) {//Si no ha habido ningún problema en la conexión con el servidor
                             hayRuta = true;
                             Log.i("WebSocket en Scanning", "si hay serv");
+                            ttsManager.addQueue("Bienvenido a la Facultad de Informática de la UCM.");
+                            ttsManager.addQueue("Iniciando ruta a " + destino);
                             ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
                             if (verbose) {
                                 if (!listaInfoAdicional.get(indiceRuta).equals("no")) {
@@ -227,8 +229,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                     if (hayServ && listaBeacons.get(indiceRuta).equals("FINAL")){
                         indiceRuta--; //Nos quedamos en la última instrucción
-                        //Hacer una vibración distinta
-                        vibrator.vibrate(500);
+                        //Patrón de vibración
+                        long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
+                        vibrator.vibrate(pattern,-1);
                         stopScanning();
                     }
 
@@ -323,6 +326,29 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         proximityManager.disconnect();
         ttsManager.shutDown();
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder popup=new AlertDialog.Builder(this);
+        popup.setMessage("¿Está seguro de que desea finalizar la ruta?");
+        popup.setTitle("Finalizar ruta");
+        popup.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        popup.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                 dialog.cancel();
+            }
+        });
+
+        AlertDialog dialog = popup.create();
+        dialog.show();
+      //super.onBackPressed();
     }
 
     public static void setVerbose(boolean verb) {

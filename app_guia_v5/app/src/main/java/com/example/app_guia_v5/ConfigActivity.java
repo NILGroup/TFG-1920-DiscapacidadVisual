@@ -1,6 +1,7 @@
 package com.example.app_guia_v5;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Button;
+import androidx.appcompat.app.AlertDialog;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,8 +59,10 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) { //switches
         switch (view.getId()) {
             case R.id.volumen_button:
-                mp.start();
-                vibrator.vibrate(1000);
+                onBackPressed();
+                //vibrator.vibrate(1000);
+                //long[] pattern={0,100,500,100,500,100,500,1000};
+                //vibrator.vibrate(pattern,-1);
                 break;
             case R.id.modo_verb_switch:
                 ScanningActivity.setVerbose(modo_verb_switch.isChecked());
@@ -73,5 +77,27 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
     protected void onDestroy() {
        ttsManager.shutDown();
         super.onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder popup = new AlertDialog.Builder(this);
+        popup.setMessage("¿Está seguro de que desea finalizar la ruta?");
+        popup.setTitle("Finalizar ruta");
+        popup.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                popup.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog dialog = popup.create();
+        dialog.show();
+        //super.onBackPressed();
     }
 }
