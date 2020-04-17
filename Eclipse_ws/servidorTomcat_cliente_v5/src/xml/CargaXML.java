@@ -9,7 +9,7 @@ import org.jdom2.JDOMException; // |/ JDOM
 import org.jdom2.input.SAXBuilder; // |
 
 import routes.Cuadrante;
-import routes.Estancia;
+import routes.Planta;
 
 
 /**
@@ -20,7 +20,7 @@ import routes.Estancia;
  */
 public class CargaXML {
 
-	private ArrayList<Estancia> aEstancias;
+	private ArrayList<Planta> aEstancias;
 	private ArrayList<Cuadrante> aCuadrantes = new ArrayList<Cuadrante>();
 
 	@SuppressWarnings("rawtypes")
@@ -38,7 +38,7 @@ public class CargaXML {
 	        List lista_estancias = rootNode.getChildren( "estancia" );//Se obtiene la lista de hijos de la raiz 'planta'
 	        String planta = rootNode.getChildText("Z");
 	        
-	       aEstancias = new ArrayList<Estancia>();
+	       aEstancias = new ArrayList<Planta>();
 	        for ( int indexEstancia = 0; indexEstancia < lista_estancias.size(); indexEstancia++ )//Se recorre la lista de 'estancias'
 	        {
 	            Element estancia = (Element) lista_estancias.get(indexEstancia);//Se obtiene el elemento 'estancia'
@@ -49,7 +49,7 @@ public class CargaXML {
 	            Element cuadrantes = estancia.getChild("cuadrantes");//Obtener el elemento 'cuadrantes'
             	 List lista_cuadrantes = cuadrantes.getChildren(); //Cogemos la lista de hijos de un cuadrante
 	            
-	            Estancia e = new Estancia(idEstancia);
+	            Planta e = new Planta(idEstancia);
 	            
 	            for ( int indexCuadrante = 0; indexCuadrante < lista_cuadrantes.size(); indexCuadrante++ ) //Se recorre la lista de 'cuadrantes'
 	            {
@@ -90,7 +90,7 @@ public class CargaXML {
 	}
 
 
-	public ArrayList<Estancia> getEstancias(){
+	public ArrayList<Planta> getEstancias(){
 		return aEstancias;
 	}
 

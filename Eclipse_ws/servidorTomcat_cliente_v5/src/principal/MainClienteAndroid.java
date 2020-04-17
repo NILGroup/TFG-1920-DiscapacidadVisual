@@ -4,7 +4,7 @@ package principal;
 import java.util.ArrayList;
 
 import routes.Cuadrante;
-import routes.Estancia;
+import routes.Planta;
 import routes.GenerarRuta;
 import routes.LectorDestino;
 import routes.ListaCuadrantes;
@@ -41,7 +41,7 @@ public class MainClienteAndroid {
 
 	
 	private static ArrayList<Integer> lCuadrantes = new ArrayList<Integer>();
-	private static ArrayList<Estancia> aEstancias; //todas las estancias del edificio
+	private static ArrayList<Planta> aEstancias; //todas las estancias del edificio
 	private static ArrayList<Cuadrante> aCuadrantes; //todos los cuadrantes del edificio
 	private static Edificio edificio;
 	private String beaconOrigen = "no", destino = "no";

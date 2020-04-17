@@ -17,11 +17,11 @@ import java.util.Iterator;
 public class GenerarRuta {
 	
 	private ArrayList<Integer> lCuadrantes;
-	private ArrayList<Estancia> aEstancias;
+	private ArrayList<Planta> aEstancias;
 	private ArrayList<Cuadrante> aCuadrantes;
 	private int cuadranteClave;
 
-	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Estancia> _aEstancias, ArrayList<Cuadrante> _aCuadrantes) {
+	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Planta> _aEstancias, ArrayList<Cuadrante> _aCuadrantes) {
 		
 		lCuadrantes=_lCuadrantes;
 		aEstancias=_aEstancias;
@@ -142,7 +142,7 @@ public class GenerarRuta {
 		}
 		else {
 			
-			Estancia est = null;
+			Planta est = null;
 			if(c1.getZ() == 1) {
 				est = aEstancias.get(0);
 			}

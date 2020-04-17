@@ -11,7 +11,7 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 import routes.Cuadrante;
-import routes.Estancia;
+import routes.Planta;
 
 /**
  * 
@@ -23,7 +23,7 @@ import routes.Estancia;
 public class Edificio {
 
 	private CargaXML carga;
-	private ArrayList<Estancia> aEstancias = new ArrayList<Estancia>();
+	private ArrayList<Planta> aEstancias = new ArrayList<Planta>();
 	private ArrayList<Cuadrante> aCuadrantes= new ArrayList<Cuadrante>();
 
 	public Edificio() {
@@ -62,7 +62,7 @@ public class Edificio {
 		    }
 		}
 	
-	public ArrayList<Estancia> getEstancias(){
+	public ArrayList<Planta> getEstancias(){
 		return aEstancias;
 	}
 	
