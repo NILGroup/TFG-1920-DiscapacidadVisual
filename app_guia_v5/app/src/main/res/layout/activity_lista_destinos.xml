@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/img_btn_hablar"
-        android:layout_width="102dp"
-        android:layout_height="102dp"
+        android:layout_width="141dp"
+        android:layout_height="141dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -18,8 +18,8 @@
         android:layout_marginLeft="144dp"
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
-        android:layout_marginBottom="60dp"
-        android:background="@android:drawable/presence_audio_online"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/mic_logo"
         android:contentDescription="@string/microfono_descripcion"
         android:onClick="onClickImgBtnHablar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         android:layout_height="315dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="200dp"
@@ -48,18 +48,21 @@
                 android:id="@+id/aulas_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border_light"
                 android:text="@string/aulas_button" />
 
             <Button
                 android:id="@+id/cafeteria_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/cafeteria_button" />
 
             <Button
                 android:id="@+id/biblioteca_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/biblioteca_button" />
 
         </TableRow>
@@ -72,18 +75,21 @@
                 android:id="@+id/salon_actos_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/salon_actos_button" />
 
             <Button
                 android:id="@+id/sala_juntas_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/sala_juntas_button" />
 
             <Button
                 android:id="@+id/sala_grados_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/sala_grados_button" />
         </TableRow>
 
@@ -95,6 +101,7 @@
                 android:id="@+id/conserjeria_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:contentDescription="@string/conserjeria_button"
                 android:text="@string/conserjeria_button"
                 android:textSize="13sp" />
@@ -103,12 +110,14 @@
                 android:id="@+id/puerta_principal_button"
                 android:layout_width="110dp"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/puerta_principal_button" />
 
             <Button
                 android:id="@+id/secretaria_button"
                 android:layout_width="wrap_content"
                 android:layout_height="103dp"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/secretaria_button" />
         </TableRow>
 
@@ -123,9 +132,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="?attr/actionModeBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
     </SearchView>
 

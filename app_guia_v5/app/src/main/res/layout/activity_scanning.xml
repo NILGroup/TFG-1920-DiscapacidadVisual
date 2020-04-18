@@ -51,15 +51,16 @@
             android:id="@+id/iniciar_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#93DD3C"
             android:drawableLeft="@android:drawable/ic_media_play"
             android:text="@string/iniciar_button"
+            android:textColor="@android:color/background_light"
             android:textSize="24sp" />
 
         <Button
             android:id="@+id/repetir_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="@drawable/edit_text_border_light"
             android:drawableLeft="@android:drawable/ic_menu_rotate"
             android:text="@string/repetir_button"
             android:textSize="24sp" />
@@ -76,6 +77,7 @@
             android:id="@+id/parar_button"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="@drawable/edit_text_border_light"
             android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
             android:text="@string/parar_button"
             android:textSize="24sp" />
