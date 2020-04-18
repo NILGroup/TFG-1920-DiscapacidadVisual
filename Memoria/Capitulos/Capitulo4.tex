@@ -3,22 +3,22 @@
 
 %Hacer intro de esta sección, supongo que cuando esté algo más hecho será más fácil hacerla.
 
-Hemos planteado la aplicación como un modelo cliente-servidor, en la que el servidor se encargará de ejecutar el programa que lleve a cabo todos los cálculos de la ruta y se los proporcionará al cliente (dispositivo móvil) cuando este lo solicite. De esta manera, nuestro programa estará mejor organizado, será mas rápido y evitaremos que nuestro dispositivo móvil se quede sin batería rápidamente debido a una pesada carga de cómputos. A continuación detallaremos el diseño y los detalles técnicos de la implementación tanto del cliente como del servidor.
+Hemos planteado la aplicación como un modelo cliente-servidor, en la que el servidor se encargará de ejecutar el programa que lleve a cabo todos los cálculos de la ruta y se los proporcionará al cliente (dispositivo móvil) cuando este lo solicite. De esta manera, nuestro programa estará mejor organizado, será mas rápido y evitaremos que nuestro dispositivo móvil se quede sin batería rápidamente debido a una pesada carga computacional. A continuación detallaremos el diseño y los detalles técnicos de la implementación tanto del cliente como del servidor.
 
 
 \section{Servidor}
-El servidor constituye una parte indispensable del proyecto ya que se encarga de realizar los cálculos más pesados para no sobrecargar al dispositivo móvil. Las principales tareas de las que se encarga son:
+El servidor constituye una parte indispensable del proyecto ya que se encarga de realizar los cálculos más pesados para no sobrecargar al dispositivo móvil. Sus principales funcionalidades son:
 \begin{itemize}
-	\item Almacenar la estructura del edificio mapeado.
+	\item Almacenar la estructura e información referente al edificio mapeado.
 	\item Permanecer a la escucha de cualquier cliente que solicite conexión.
 	\item Solventar el posicionamiento del cliente conectado.
-	\item Generar ruta óptima (más corta y mejor adaptada) desde la posición actual hasta el destino indicados por el cliente.
+	\item Generar ruta óptima desde la posición actual hasta el destino indicados por el cliente.
 \end{itemize} 
 
 La aplicación servidor está diferenciada en dos partes: el código realizado en java y los archivos correspondientes al edificio que se mapea, en nuestro caso la Facultad de Informática de la UCM. Estos archivos son los xml mencionados en la Sección \ref{sec:mapeo} y un archivo json que contiene información referente a los cuadrantes que son denominados destinos en nuestra aplicación (por ejemplo, secretaría, conserjería, las aulas, la cafetería, etc). 
-Buena parte del código que conforma el servidor ha sido reutilizado de trabajos anteriores, concretamente de los proyectos \textit{Generador interactivo de instrucciones de guía sobre plataformas móviles} \citep{TFGguia} y del proyecto \textit{Sistema de guía por voz en interiores} \citep{TFGMariana}. La estructura de nuestro servidor conserva la realizada en \cite{TFGguia}. Sin embargo se han introducido cambios notorios para el desarrollo de esta aplicación que comentaremos a continuación.
+Buena parte del código que conforma el servidor ha sido reutilizado de trabajos anteriores, concretamente de los proyectos \textit{Generador interactivo de instrucciones de guía sobre plataformas móviles} \citep{TFGguia} y del proyecto \textit{Sistema de guía por voz en interiores} \citep{TFGMariana}. La estructura de nuestro servidor conserva la realizada en \cite{TFGguia}. Sin embargo, se han introducido cambios notorios para el desarrollo de esta aplicación que comentaremos a continuación.
 
-\subsection{Funcionalidad del servidor}
+\subsection{Funcionamiento del servidor}
 
 Para entender mejor la estructura del servidor, haremos un recorrido desde la carga de la información de los archivos que representan el edificio mapeado hasta la conexión con el cliente y el cálculo de la ruta: 
 
@@ -45,9 +45,9 @@ Para entender mejor la estructura del servidor, haremos un recorrido desde la ca
 \subsection{Cálculo de la ruta óptima}
 \label{sub:rutaOptima}
 
-En esta sección veremos las modificaciones que se han hecho para lograr guiar al usuario por la ruta más conveniente. Como ya hemos visto, el mapeo que hemos visto en la Sección \ref{sec:mapeo} nos proporciona un grafo, en el que los cuadrantes son los nodos y las conexiones entre ellos, las aristas. Para su representación hemos empleado una matriz de adyacencia y de esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reduce al algoritmo de \textit{Dijkstra}.
+En esta sección veremos las modificaciones que se han hecho para lograr guiar al usuario por la ruta más conveniente. Como ya hemos visto, el mapeo que hemos visto en la Sección \ref{sec:mapeo} nos proporciona un grafo, en el que los cuadrantes son los nodos y, las conexiones entre ellos, las aristas. Para su representación hemos empleado una matriz de adyacencia y de esta manera, el cálculo de la ruta más corta entre dos cuadrantes se reduce al algoritmo de \textit{Dijkstra}.
 
-Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final muy concreto: personas con discapacidad visual. Es por ello que la ruta debe ser lo más sencilla posible, libre de obstáculos y otros elementos que puedan entorpecerles, por lo que en ocasiones la ruta óptima no coincide con la más corta. Para ello, a aquellas conexiones que presenten mayor dificultad para una persona no vidente se les ha asignado un peso mayor, a fin de evitar tomar esa ruta siempre que exista una alternativa. Por ejemplo, la Figura \ref{fig:ruta_optima} ilustra está situación: si quisiéramos ir desde el aula 3 (cuadrante $24$) a la puerta principal ($34$), el camino más corto implicaría pasar por delante de los ascensores (ruta roja). Sin embargo, la conexión entre los cuadrantes $31$ y $32$ así como la conexión entre $22$ y $31$ puede resultar tediosa para una persona invidente por varias razones: el tramo compuesto por los cuadrantes $31$, $32$ y $22$ es más estrecho que su camino paralelo por el \textit{hall}, presenta más giros, normalmente, acumula más gente (es zona de paso por los ascensores, escaleras y zona de salida y entrada de la cafetería) y obliga a pasar por dos pequeños peldaños o una rampa estrecha, algo que se convierte en problemático si, además, vamos acompañados de un perro guía o un bastón. Tras el ajuste de pesos en la matriz de adyacencia, la ruta obtenida es la señalada en verde en la Figura \ref{fig:ruta_optima}. De esta manera hacemos que el paso por el pasillo de los ascensores se limite únicamente al caso en el es estrictamente necesario, cuando se va a hacer un cambio de planta.
+Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final muy concreto: personas con discapacidad visual. Es por ello que la ruta debe ser lo más sencilla posible, libre de obstáculos y otros elementos que puedan entorpecerles, por lo que en ocasiones la ruta óptima no coincide con la más corta. Para ello, a aquellas conexiones que presenten mayor dificultad para una persona no vidente se les ha asignado un peso mayor, a fin de evitar tomar esa ruta siempre que exista una alternativa. Por ejemplo, la Figura \ref{fig:ruta_optima} ilustra está situación: si quisiéramos ir desde el aula 3 (cuadrante $24$) a la puerta principal (cuadrante $34$), el camino más corto implicaría pasar por delante de los ascensores (ruta roja). Sin embargo, la conexión entre los cuadrantes $31$ y $32$ así como la conexión entre $22$ y $31$ puede resultar tediosa para una persona invidente por varias razones: el tramo compuesto por los cuadrantes $31$, $32$ y $22$ es más estrecho que su camino paralelo por el \textit{hall}, presenta más giros, normalmente, acumula más gente (es zona de paso por los ascensores, escaleras y zona de salida y entrada de la cafetería) y obliga a pasar por dos pequeños peldaños o una rampa estrecha, algo que se convierte en problemático si, además, vamos acompañados de un perro guía o un bastón. Tras el ajuste de pesos en la matriz de adyacencia, la ruta obtenida es la señalada en verde en la Figura \ref{fig:ruta_optima}. De esta manera hacemos que el paso por el pasillo de los ascensores se limite únicamente al caso en el es estrictamente necesario, cuando se va a hacer un cambio de planta.
 
 
 \begin{figure}[t]
@@ -64,14 +64,12 @@ Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final m
 La función que contiene toda la lógica relativa la generación de las instrucciones es \textit{generar}. Esta función es una de las que más modificaciones ha sufrido con respecto a los trabajos predecesores \citep{TFGguia}, pues no solo la hemos adaptado para personas con discapacidad visual sino que también hemos incluido mucha complejidad al añadir cambios de planta y demás casuística que no estaba previamente incluida y que presentamos a continuación:
 
 \begin{itemize}
-	\item Se ha añadido a las instrucciones más precisión e información. Cuando el usuario llega al destino, la propia instrucción indica dónde se encuentra. Por ejemplo, ``Su destino está a la derecha'' o a la izquierda o delante del usuario, pues dependiendo de por dónde haya llegado el usuario estará a un lado o a otro. Además, se ha incluido en las instrucciones los metros que el usuario debe recorrer hasta hacer un giro. En la Figura \ref{fig:ejemplo_ruta} podemos ver un ejemplo: a medida que el usuario va recorriendo los cuadrantes la distancia va disminuyendo, lo que hace percibir al usuario que va en el camino correcto. Las instrucciones se van dando en cada cuadrante, sin saltarse hasta ocho cuadrantes como se hacía en \cite{TFGguia}. Esto se ha hecho así porque creemos muy conveniente que el usuario reciba de manera continuada aprobación por parte de la aplicación. 
-	
-	En el caso de que la instrucción siguiente corresponde a un giro se invierte el orden y se indica primero este y luego los metros que debe continuar el usuario en la nueva dirección.
+	\item Se ha añadido a las instrucciones más precisión e información. Cuando el usuario llega al destino, la propia instrucción indica dónde se encuentra. Por ejemplo, ``Su destino está a la derecha'' o a la izquierda o delante del usuario, pues dependiendo de por dónde haya llegado el usuario estará a un lado o a otro. Además, se ha incluido en las instrucciones los metros que el usuario debe recorrer hasta hacer un giro. En la Figura \ref{fig:ejemplo_ruta} podemos ver un ejemplo: a medida que el usuario va recorriendo los cuadrantes la distancia va disminuyendo, lo que hace percibir al usuario que va en el camino correcto. Las instrucciones se van dando en cada cuadrante, sin saltarse hasta ocho cuadrantes como se hacía en \cite{TFGguia}. Esto se ha hecho así porque creemos muy conveniente que el usuario reciba de manera continuada aprobación por parte de la aplicación. En el caso de que la instrucción siguiente corresponde a un giro se invierte el orden y se indica primero este y luego los metros que debe continuar el usuario en la nueva dirección.
 	
 	
-	\item Se han incluido cambios de planta. Esto supone una novedad respecto a \cite{TFGguia}, pues es totalmente nuevo. Ahora los cuadrantes correspondientes a los ascensores están unidos, permitiendo así que la lista de cuadrantes de la ruta esté formada por cuadrantes de distinta planta. La función \textit{generar} detecta cuando el siguiente cuadrante al que queremos ir no está en la misma planta que el de nuestra posición actual y genera la ruta en consonancia ``Los ascensores están a tu izquierda. Sube a la primera planta.'' o ``El ascensor está delante. Sube a la primera planta.'', por ejemplo. También se tiene en cuenta el caso especial de las zonas de ascensores, pues no son simétricas. Para salir de la zona de los ascensores correspondientes al cuadrante $31$ (los que se sitúan detrás de conserjería) debemos dirigirnos hacia uno de los lados, mientras que para salir de los de la zona de la puerta trasera de la cafetería (cuadrante $29$) debemos caminar hacia adelante para salir de ese vestíbulo. A pesar de que en la Facultad de Informática contamos con ascensores y escaleras, se ha supuesto que la ruta se seguirá por medio de los ascensores ya que de esta manera es más fácil el cambio de planta y, además, estos se encuentran adaptados con botones en \textit{braille}.
+	\item Se han incluido cambios de planta. Esto supone una novedad respecto a \cite{TFGguia}, pues es totalmente nuevo. Ahora los cuadrantes correspondientes a los ascensores están unidos\footnote{El cuadrante $31$ (correspondiente a los ascensores situados detrás de conserjería) está conectado con el $18$ (ascensor correspondiente al anterior en la planta 1) y el $29$ (ascensor más cercano a la puerta trasera de la cafetería) con el $10$ (ascensor correspondiente al anterior en la planta 1).}, permitiendo así que la lista de cuadrantes de la ruta esté formada por cuadrantes de distinta planta. La función \textit{generar} detecta cuando el siguiente cuadrante al que queremos ir no está en la misma planta que el de nuestra posición actual y genera la ruta en consonancia ``Los ascensores están a tu izquierda. Sube a la primera planta.'' o ``El ascensor está delante. Sube a la primera planta.'', por ejemplo. También se tiene en cuenta el caso especial de las zonas de ascensores, pues no son simétricas. Para salir de la zona de los ascensores correspondientes al cuadrante $31$ (los que se sitúan detrás de conserjería) debemos dirigirnos hacia uno de los lados, mientras que para salir de los de la zona de la puerta trasera de la cafetería (cuadrante $29$) debemos caminar hacia adelante para salir de ese vestíbulo. A pesar de que en la Facultad de Informática contamos con ascensores y escaleras, se ha supuesto que la ruta se seguirá por medio de los ascensores ya que de esta manera es más fácil el cambio de planta y, además, estos se encuentran adaptados con botones en \textit{braille}.
 	
-	\item Otra novedad es que la ruta incluye la posibilidad de informar anticipadamente sobre lo que el usuario se va a encontrar a su paso, como pueden ser pequeños escalones, baños, la cafetería, el despacho de Delegación de Alumnos, etc. Esto es fundamental pues además de dar seguridad al usuario le da la opción de tener una mejor idea global del espacio en el que se encuentra. Para ello lo que se hace es incluir en la ruta la información contenida en el cuadrante siguiente al que se encuentra el usuario, de esta manera conseguimos adelantarnos y avisar al usuario con antelación.
+	\item Otra novedad es que la ruta incluye la posibilidad de informar anticipadamente sobre lo que el usuario se va a encontrar a su paso, como pueden ser pequeños escalones, baños, la cafetería, el despacho de Delegación de Alumnos, etc. Esto es fundamental pues además de dar seguridad al usuario le da la opción de tener una mejor idea global del espacio en el que se encuentra. Para ello lo que se hace es incluir en la ruta la información contenida en el cuadrante siguiente al que se encuentra el usuario, de esta manera conseguimos adelantarnos y avisar al usuario con antelación. Así mismo, la función \textit{generar} da información sobre cuándo el usuario debe hacer un giro para permitir avisar a este de manera especial desde la aplicación del cliente.
 	
 \end{itemize}
 
@@ -87,3 +85,34 @@ La función que contiene toda la lógica relativa la generación de las instrucc
 
 
 \section{Cliente}
+
+El cliente de nuestro proyecto está constituido por la aplicación Blind Bit desarrollada para Android. Con esta aplicación podemos conectarnos al servidor e iniciar la ruta al destino deseado desde el punto en el que nos encontremos (siempre que este sea el exterior de las aulas u otras estancias). La aplicación se encarga de darnos, en el momento adecuado, las instrucciones necesarias para llegar al destino y va avisándonos mediante sonidos o vibraciones de diferentes acciones como giros o aprobación de que seguimos en el camino correcto. A continuación presentamos tanto los detalles de diseño de la aplicación como los detalles técnicos de su implementación. 
+
+
+\subsection{Diseño de la aplicación Blind Bit}
+
+%Aquí hablar de la interfaz y justificar el por qué de las decisiones tomadas (el título de las pantallas, posición y forma de los botones, soniditos y vibraciones, etc) + fotos de la interfaz.
+
+INTRODUCCIÓN (no estoy inspirada)
+
+A continuación describimos las pantallas de nuestra aplicación y los detalles de su diseño:
+
+\begin{itemize}
+	\item \textit{Pantalla principal:}
+	
+	\item \textit{Pantalla de destinos:}
+	
+	\item \textit{Pantalla de ruta:}
+	
+	\item \textit{Pantalla modo de uso:}
+\end{itemize}
+
+\subsection{Implementación}
+
+En esta sección se exponen los detalles técnicos más relevantes. 
+
+\begin{itemize}
+	\item \textit{Conexión con el servidor}: la parte de la clase Cliente
+	\item \textit{Seguimiento de la ruta}: la parte de onEddistonUpdate (o como se llame bien)
+	\item \textit{Posicionamiento}: El tema de cómo se leen los \textit{beacons}
+\end{itemize}
