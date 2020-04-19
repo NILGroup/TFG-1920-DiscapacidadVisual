@@ -55,7 +55,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private String origen;
     private String beacon_mas_cerca;
 
-    private List<String> listaInstrucciones, listaBeacons, listaCuadrantes, listaGiros, listaInfoAdicional;
+    private List<String> listaInstrucciones, listaBeacons, listaGiros, listaInfoAdicional;
     private Integer indiceRuta = 0, numPasosPerdidos = 0;
     private static boolean verbose = true; //Por defecto esta a true
     private Button iniciar_button, modo_verb_button, stop_button, repet_button;
@@ -213,7 +213,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     if (hayServ && listaBeacons.get(indiceRuta).equals("FINAL")){
                         indiceRuta--; //Nos quedamos en la última instrucción
                         //Patrón de vibración
-                        long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
+                        //long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
+                        long[] pattern={0,100,200,200};
                         vibrator.vibrate(pattern,-1);
                         stopScanning();
                     }
@@ -280,11 +281,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         }
         else {
             hayServ = true;
-            listaCuadrantes = Arrays.asList(results[0].split(Pattern.quote(" ")));
-            listaBeacons = Arrays.asList(results[1].split(Pattern.quote(" ")));
-            listaInstrucciones = Arrays.asList(results[2].split(Pattern.quote("@")));
-            listaGiros = Arrays.asList(results[3].split(Pattern.quote("@")));
-            listaInfoAdicional = Arrays.asList(results[4].split(Pattern.quote("@")));
+            listaBeacons = Arrays.asList(results[0].split(Pattern.quote(" ")));
+            listaInstrucciones = Arrays.asList(results[1].split(Pattern.quote("@")));
+            listaGiros = Arrays.asList(results[2].split(Pattern.quote("@")));
+            listaInfoAdicional = Arrays.asList(results[3].split(Pattern.quote("@")));
         }
     }
 

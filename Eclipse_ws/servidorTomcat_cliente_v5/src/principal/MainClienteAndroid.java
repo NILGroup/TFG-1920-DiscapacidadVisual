@@ -90,10 +90,10 @@ public class MainClienteAndroid {
 		
 		//Mandamos la lista de cuadrantes:
 		String [] cuadRutaStr = calculaRuta(cuadOrigen, cuadDestino);  
-		echoMsg = cuadRutaStr[0] + "|";
+		//echoMsg = cuadRutaStr[0] + "|";
 		
 		//Mandamos la lista de beacons:
-		echoMsg += cuadRutaStr[1] + " FINAL" +"|";
+		echoMsg = cuadRutaStr[1] + " FINAL" +"|";
 		
 		//Gerenamos las instrucciones
 		gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
