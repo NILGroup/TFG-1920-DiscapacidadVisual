@@ -50,7 +50,8 @@
         <Button
             android:id="@+id/iniciar_button"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="#93DD3C"
             android:drawableLeft="@android:drawable/ic_media_play"
             android:text="@string/iniciar_button"
@@ -59,7 +60,8 @@
         <Button
             android:id="@+id/repetir_button"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:drawableLeft="@android:drawable/ic_menu_rotate"
             android:text="@string/repetir_button"
             android:textSize="24sp" />
@@ -67,7 +69,8 @@
         <Button
             android:id="@+id/modo_verb_ruta_button"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:drawableLeft="@android:drawable/ic_lock_silent_mode_off"
             android:text="@string/verbose_ruta_button"
             android:textSize="24sp" />
@@ -75,7 +78,8 @@
         <Button
             android:id="@+id/parar_button"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
             android:text="@string/parar_button"
             android:textSize="24sp" />

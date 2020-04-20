@@ -29,24 +29,28 @@
                 android:id="@+id/aula_1_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_1_button" />
 
             <Button
                 android:id="@+id/aula_2_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_2_button" />
 
             <Button
                 android:id="@+id/aula_3_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_3_button" />
 
             <Button
                 android:id="@+id/aula_4_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_4_button" />
         </TableRow>
 
@@ -58,24 +62,28 @@
                 android:id="@+id/aula_5_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_5_button" />
 
             <Button
                 android:id="@+id/aula_6_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_6_button" />
 
             <Button
                 android:id="@+id/aula_7_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_7_button" />
 
             <Button
                 android:id="@+id/aula_8_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_8_button" />
         </TableRow>
 
@@ -87,24 +95,28 @@
                 android:id="@+id/aula_9_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_9_button" />
 
             <Button
                 android:id="@+id/aula_10_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_10_button" />
 
             <Button
                 android:id="@+id/aula_11_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_11_button" />
 
             <Button
                 android:id="@+id/aula_12_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_12_button" />
         </TableRow>
 
@@ -114,26 +126,30 @@
 
             <Button
                 android:id="@+id/aula_13_button"
-                android:layout_width="47dp"
+                android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_13_button" />
 
             <Button
                 android:id="@+id/aula_14_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_14_button" />
 
             <Button
                 android:id="@+id/aula_15_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_15_button" />
 
             <Button
                 android:id="@+id/aula_16_button"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
+                android:layout_weight="1"
                 android:text="@string/aula_16_button" />
         </TableRow>
 

@@ -46,20 +46,23 @@
 
             <Button
                 android:id="@+id/aulas_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/aulas_button" />
 
             <Button
                 android:id="@+id/cafeteria_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/cafeteria_button" />
 
             <Button
                 android:id="@+id/biblioteca_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/biblioteca_button" />
 
         </TableRow>
@@ -70,20 +73,23 @@
 
             <Button
                 android:id="@+id/salon_actos_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/salon_actos_button" />
 
             <Button
                 android:id="@+id/sala_juntas_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/sala_juntas_button" />
 
             <Button
                 android:id="@+id/sala_grados_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/sala_grados_button" />
         </TableRow>
 
@@ -93,22 +99,25 @@
 
             <Button
                 android:id="@+id/conserjeria_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:contentDescription="@string/conserjeria_button"
                 android:text="@string/conserjeria_button"
                 android:textSize="13sp" />
 
             <Button
                 android:id="@+id/puerta_principal_button"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/puerta_principal_button" />
 
             <Button
                 android:id="@+id/secretaria_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="103dp"
+                android:layout_weight="1"
                 android:text="@string/secretaria_button" />
         </TableRow>
 
