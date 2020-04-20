@@ -13,7 +13,7 @@ import java.util.Iterator;
  *
  */
 
-public class Estancia {
+public class Planta {
 
 	//private String tipo;
 	private String id;
@@ -24,9 +24,9 @@ public class Estancia {
 	 * 
 	 * @param i: identificador único para la estancia
 	 * 
-	 * Ejemplo: Estancia("plantabaja")
+	 * Ejemplo: Planta("plantabaja")
 	 */
-	public Estancia(String i) {
+	public Planta(String i) {
 		
 		//tipo = t;
 		id = i;

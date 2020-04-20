@@ -48,28 +48,13 @@ public class Cliente {
                 Log.i("WebSocket", "Message received");
                 List<String> splittedMessage = Arrays.asList(message.split(Pattern.quote("|")));
 
-                /*listaCuadrantes = splittedMessage.get(0);
-                results[0] = listaCuadrantes;
+                results[0] = splittedMessage.get(0); //Lista de beacons
 
-                beaconsClave = splittedMessage.get(1);
-                ruta = splittedMessage.get(1);
-                results[1] = ruta;
+                results[1] = splittedMessage.get(1); //Lista de instrucciones
 
-                hayGiro = splittedMessage.get(2);
-                results[2] = hayGiro;
+                results[2] = splittedMessage.get(2); //Lista de giros
 
-                beaconClave = splittedMessage.get(3);
-                results[3] = beaconClave;*/
-
-                results[0] = splittedMessage.get(0); //Lista de cuadrantes
-
-                results[1] = splittedMessage.get(1); //Lista de beacons
-
-                results[2] = splittedMessage.get(2); //Lista de instrucciones
-
-                results[3] = splittedMessage.get(3); //Lista de giros
-
-                results[4] = splittedMessage.get(4); //Lista de info adicional
+                results[3] = splittedMessage.get(3); //Lista de info adicional
 
                 synchronized(webSocketClient) {//Ya tenemos toda la información
                     infoRecibida = "si";

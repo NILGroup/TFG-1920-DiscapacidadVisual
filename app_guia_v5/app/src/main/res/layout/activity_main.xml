@@ -11,6 +11,7 @@
         android:layout_height="301dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="64dp"
@@ -18,13 +19,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <Button
             android:id="@+id/button_start_searching"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_text_border"
             android:drawableLeft="@android:drawable/ic_menu_mylocation"
             android:text="@string/button_start_searching"
             android:textSize="30sp" />
@@ -34,6 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_text_border_light"
             android:drawableLeft="@android:drawable/ic_menu_preferences"
             android:text="@string/config_button"
             android:textSize="30sp" />
@@ -43,6 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_height="100dp"
+            android:background="@drawable/edit_text_border_light"
             android:drawableLeft="@android:drawable/ic_menu_help"
             android:text="@string/instructions_button"
             android:textSize="30sp" />
@@ -53,14 +61,17 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="190dp"
+        android:layout_width="306dp"
+        android:layout_height="271dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:contentDescription="@string/logo_image"
         android:importantForAccessibility="no"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />

@@ -10,13 +10,13 @@
     <TableLayout
         android:layout_width="358dp"
         android:layout_height="282dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginBottom="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/img_btn_hablar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aulas_searchView">
@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_1_button" />
 
             <Button
@@ -37,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_2_button" />
 
             <Button
@@ -44,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_3_button" />
 
             <Button
@@ -51,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_4_button" />
         </TableRow>
 
@@ -63,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_5_button" />
 
             <Button
@@ -70,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_6_button" />
 
             <Button
@@ -77,6 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_7_button" />
 
             <Button
@@ -84,6 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_8_button" />
         </TableRow>
 
@@ -96,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_9_button" />
 
             <Button
@@ -103,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_10_button" />
 
             <Button
@@ -110,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_11_button" />
 
             <Button
@@ -117,6 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_12_button" />
         </TableRow>
 
@@ -129,6 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_13_button" />
 
             <Button
@@ -136,6 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_14_button" />
 
             <Button
@@ -143,6 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_15_button" />
 
             <Button
@@ -150,6 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
                 android:text="@string/aula_16_button" />
         </TableRow>
 
@@ -157,8 +173,8 @@
 
     <ImageButton
         android:id="@+id/img_btn_hablar"
-        android:layout_width="102dp"
-        android:layout_height="102dp"
+        android:layout_width="141dp"
+        android:layout_height="141dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -166,8 +182,8 @@
         android:layout_marginLeft="144dp"
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
-        android:layout_marginBottom="60dp"
-        android:background="@android:drawable/presence_audio_online"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/mic_logo"
         android:contentDescription="@string/microfono_descripcion_aulas"
         android:onClick="onClickImgBtnHablar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -184,6 +200,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="?attr/actionModeBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

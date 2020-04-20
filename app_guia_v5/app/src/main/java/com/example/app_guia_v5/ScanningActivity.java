@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -54,7 +55,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private String origen;
     private String beacon_mas_cerca;
 
-    private List<String> listaInstrucciones, listaBeacons, listaCuadrantes, listaGiros, listaInfoAdicional;
+    private List<String> listaInstrucciones, listaBeacons, listaGiros, listaInfoAdicional;
     private Integer indiceRuta = 0, numPasosPerdidos = 0;
     private static boolean verbose = true; //Por defecto esta a true
     private Button iniciar_button, modo_verb_button, stop_button, repet_button;
@@ -87,11 +88,11 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         editText.setMovementMethod(new ScrollingMovementMethod());
 
         iniciar_button = (Button) findViewById(R.id.iniciar_button);
-        iniciar_button.setBackgroundColor(Color.parseColor("#68EC07"));
+        iniciar_button.setBackgroundColor(Color.parseColor("#58028B"));
         iniciar_button.setOnClickListener(this);
 
         modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
-        modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
+        modo_verb_button.setBackgroundColor(Color.parseColor("#CC95ED"));
         modo_verb_button.setOnClickListener(this);
 
         stop_button = (Button) findViewById(R.id.parar_button);
@@ -165,39 +166,21 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
                         if(hayServ) {//Si no ha habido ningún problema en la conexión con el servidor
                             hayRuta = true;
-                            Log.i("WebSocket en Scanning", "si hay serv");
+
                             ttsManager.addQueue("Bienvenido a la Facultad de Informática de la UCM.");
                             ttsManager.addQueue("Iniciando ruta a " + destino);
-                            ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
-                            if (verbose) {
-                                if (!listaInfoAdicional.get(indiceRuta).equals("no")) {
-                                    ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
-                                }
-                            }
-                            if (listaGiros.get(indiceRuta).equals("si")) {
-                                vibrator.vibrate(1000);
-                            }
+                            indicaInstruccion();
                             escribeEditText();
                             indiceRuta++;
                         }
-                        Log.i("WebSocket en Scanning", "despues de si hay serv");
+
                     } else {//Solo actualizamos la posición actual y llamamos al servidor cuando estamos en el cuadrante clave
-                        Log.i(TAG, "Si hay ruta ya");
+
                         if (beacon_mas_cerca.equals(listaBeacons.get(indiceRuta))) {
                             numPasosPerdidos = 0; //Ha encontrado el siguiente paso
                             //como ha llegado al beaconClave salta el sonido de acierto
                             mp.start();
-                            Log.i(TAG, "Si hay ruta ya, antes de llamar a cliente");
-
-                            ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
-                            if(verbose){
-                                if(!listaInfoAdicional.get(indiceRuta).equals("no")) {
-                                    ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
-                                }
-                            }
-                            if(listaGiros.get(indiceRuta).equals("si")){
-                                vibrator.vibrate(1000);
-                            }
+                            indicaInstruccion();
                             escribeEditText();
                             indiceRuta++;
                         }
@@ -223,14 +206,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                             hayServ = false;
                             //Se para de escanear y se espera a que el usuario vuelva a iniciar la ruta
                             stopScanning();
-                            iniciar_button.setBackgroundColor(Color.parseColor("#68EC07"));
+                            iniciar_button.setBackgroundColor(Color.parseColor("#58028B"));
                         }
                     }
 
                     if (hayServ && listaBeacons.get(indiceRuta).equals("FINAL")){
                         indiceRuta--; //Nos quedamos en la última instrucción
                         //Patrón de vibración
-                        long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
+                        //long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
+                        long[] pattern={0,100,200,200};
                         vibrator.vibrate(pattern,-1);
                         stopScanning();
                     }
@@ -264,6 +248,18 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         return -1;
     }
 
+    private void indicaInstruccion(){
+        ttsManager.addQueue(listaInstrucciones.get(indiceRuta));
+        if(verbose){
+            if(!listaInfoAdicional.get(indiceRuta).equals("no")) {
+                ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
+            }
+        }
+        if(listaGiros.get(indiceRuta).equals("si")){
+            vibrator.vibrate(1000);
+        }
+    }
+
     private void escribeEditText(){
         editText.setText(editText.getText() + "______________\n");
         editText.setText(editText.getText() + listaInstrucciones.get(indiceRuta) + "\n");
@@ -285,11 +281,10 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         }
         else {
             hayServ = true;
-            listaCuadrantes = Arrays.asList(results[0].split(Pattern.quote(" ")));
-            listaBeacons = Arrays.asList(results[1].split(Pattern.quote(" ")));
-            listaInstrucciones = Arrays.asList(results[2].split(Pattern.quote("@")));
-            listaGiros = Arrays.asList(results[3].split(Pattern.quote("@")));
-            listaInfoAdicional = Arrays.asList(results[4].split(Pattern.quote("@")));
+            listaBeacons = Arrays.asList(results[0].split(Pattern.quote(" ")));
+            listaInstrucciones = Arrays.asList(results[1].split(Pattern.quote("@")));
+            listaGiros = Arrays.asList(results[2].split(Pattern.quote("@")));
+            listaInfoAdicional = Arrays.asList(results[3].split(Pattern.quote("@")));
         }
     }
 
@@ -336,7 +331,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         popup.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
+                onStop(); finish();
             }
         });
         popup.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -361,18 +356,21 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         switch (v.getId()) { //cambiar el de config
             case R.id.iniciar_button:
                 //iniciar_button.setBackgroundColor(Color.parseColor("#49A605"));
-                iniciar_button.setBackgroundColor(Color.GRAY);
+                iniciar_button.getBackground().setAlpha(128);  // 50% transparent
                 startScanning();
                 break;
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
                 if (verbose) {
                     verbose = false;
-                    modo_verb_button.setBackgroundColor(Color.GRAY);
+                    //modo_verb_button.setAlpha(.5f);
+                    modo_verb_button.getBackground().setAlpha(128);  // 50% transparent
+                    //modo_verb_button.setBackgroundColor(Color.LTGRAY);
                     ttsManager.addQueue("Funcionalidad instrucciones detalladas desactivada");
                 }
                 else {
                     verbose = true;
-                    modo_verb_button.setBackgroundColor(Color.parseColor("#F49A06"));
+                    //modo_verb_button.setAlpha(.10f);
+                    modo_verb_button.setBackgroundColor(Color.parseColor("#CC95ED"));
                     ttsManager.addQueue("Funcionalidad instrucciones detalladas activada");
                 }
                 break;
