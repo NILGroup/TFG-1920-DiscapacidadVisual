@@ -17,6 +17,7 @@ La aplicación servidor está diferenciada en dos partes: el código escrito en 
 Buena parte del código que conforma el servidor ha sido reutilizado de trabajos anteriores, concretamente de los proyectos de TFG \textit{Generador interactivo de instrucciones de guía sobre plataformas móviles} \citep{TFGguia} y del proyecto \textit{Sistema de guía por voz en interiores} \citep{TFGMariana}. La estructura de nuestro servidor se corresponde con la de \cite{TFGguia}. Sin embargo, hemos introducido cambios notorios para el desarrollo de esta aplicación que comentaremos a continuación.
 
 \subsection{Funcionamiento del servidor}
+\label{sub:func_servidor}
 
 Para entender mejor la estructura del servidor, haremos un recorrido desde la carga de la información procedente de los archivos xml que representan el mapeo del edificio hasta la conexión con el cliente y el cálculo de la ruta: 
 
@@ -96,7 +97,7 @@ En nuestro proyecto el cliente constituye la aplicación en sí misma. Esta la h
 
 
 \subsection{Diseño de la aplicación Blind Bit}
-
+\label{sub:diseño}
 %Aquí hablar de la interfaz y justificar el por qué de las decisiones tomadas (el título de las pantallas, posición y forma de los botones, soniditos y vibraciones, etc) + fotos de la interfaz.
 A la hora de abordar el diseño de la aplicación hemos tenido muy presente el hecho de que nuestros potenciales usuarios finales son personas con discapacidad visual. Por ello hemos plateado interfaces sencillas y poco aglomeradas, en las que los botones sean lo más grandes posibles y estén bien organizados para que sea fácil de utilizar y memorizar. De esta manera, la mayor parte de los botones que hemos incluido son de forma rectangular, ocupando todo el ancho de la pantalla, esto favorece el uso de la app con ayuda del lector de pantalla. No solo hemos tenido en cuenta el lector de pantalla en la forma y el tamaño de los botones sino también a la hora de cambiar el nombre de cada pantalla especificando en cual se encuentra el usuario (por defecto aparecía el mismo nombre en todas) y en el hecho de evitar que este reproduzca todas las figuras que aparecen en la pantalla (modo por defecto) ya que sobrecarga al usuario, proporcionándole información que en algunos casos carece de interés, como por ejemplo el logotipo de la app o ciertos cuadros de texto.
 
@@ -136,15 +137,22 @@ A continuación describimos las pantallas de nuestra aplicación y los detalles 
 		%\subfloat[H]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}}
 	\end{tabularx}
 	
-	\caption{Interfaz de la aplicación Blind Bit}\label{foo}
+	\caption{Interfaz de la aplicación Blind Bit}\label{fig:interfaz}
 \end{figure}
 
-\subsection{Implementación}
+\subsection{Funcionamiento del cliente}
 
-En esta sección se exponen los detalles técnicos más relevantes. 
+En esta sección se exponen los detalles técnicos más relevantes. Veremos el funcionamiento de la aplicación desde la interacción con el usuario hasta la conexión con el servidor y gestión de la ruta. 
 
 \begin{itemize}
-	\item \textit{Conexión con el servidor}: la parte de la clase Cliente
-	\item \textit{Seguimiento de la ruta}: la parte de onEddistonUpdate (o como se llame bien)
-	\item \textit{Posicionamiento}: El tema de cómo se leen los \textit{beacons}
+	\item \textit{Interacción con el usuario}: Como ya hemos tratado en la Sección \ref{sub:diseño} la aplicación está diseñada para que el usuario pueda lograr el objetivo con la mínima cantidad de pasos. Tanto es así que la interacción con el usuario queda reducida al mínimo, tan solo se pide al usuario el destino al que quiere ir. Esto se hace a través de las pantallas \textit{Lista de destinos} y \textit{Lista de aulas} que se pueden ver en la Figura \ref{fig:interfaz}. Cuando el usuario selecciona el destino, la aplicación resuelve el problema de posicionamiento y conecta con el servidor para solicitar la ruta deseada. Una vez el usuario está en la pantalla \textit{Ruta} y pulsa sobre \textit{Iniciar ruta} la aplicación conecta con el servidor y comienza la ruta con instrucciones guiadas por voz.
+	
+	\item \textit{Posicionamiento}: En la Sección \ref{sub:conclusiones_posicionam} concluimos que el problema del posicionamiento se resolvería asignando al usuario el cuadrante correspondiente a su \textit{beacon} más cercano. La lógica que lleva a cabo este proceso está en la clase \textit{ScanningActivity}. Para ello comienza el escaneo de los \textit{beacons} con la función \textit{startScanning}, que permite actualizar los resultados obtenidos cada $2$ segundos (parámetro configurable). Una vez se tiene la lista de \textit{beacons} que están en el rango visible al dispositivo del usuario, se toma el más cercano y, cuando se pulsa el botón \textit{Iniciar ruta}, se conecta con el servidor. 
+	
+	
+	\item \textit{Conexión con el servidor}: El código correspondiente a esta funcionalidad se recoge en la clase \textit{Cliente}. Cuando se llama a esta clase se pasan como parámetros el \textit{beacon} más cercano y el destino al que quiere ir el usuario. Con esta información se genera un mensaje del tipo \textit{IDdelBeacon$|$destino} que se manda al servidor por medio de un \textit{webSocket}. Cuando el servidor genera la ruta manda al cliente un mensaje con toda la información referente a la ruta (ver Sección \ref{sub:func_servidor}). Este mensaje se recibe y desglosa en la lista de \textit{beacons} de la ruta, las instrucciones, la información sobre los giros y la información adicional de los cuadrantes de la ruta. Cuando tiene toda la información avisa a la aplicación (que ha quedado esperando la llegada de esta información) y la ejecución continua de nuevo en \textit{ScanningActivity}, donde se guarda la información de la ruta en vectores que se irán recorriendo según avance el usuario. Si no se consigue conectar con el servidor la aplicación genera un mensaje especial que se gestiona en \textit{ScanningActivity}.
+	
+	
+	\item \textit{Seguimiento de la ruta}: Una vez que la conexión con el servidor ha tenido éxito y tenemos toda la información de la ruta almacenada en los vectores correspondientes se comienza la ruta. Para ello 
+	
 \end{itemize}

@@ -78,6 +78,7 @@ La Figura \ref{fig:dist_8v2c} recoge cuatro mediciones para el \textit{beacon} 8
 \end{figure}
 
 \subsection{Conclusiones}
+\label{sub:conclusiones_posicionam}
 Con todos estos resultados reunidos hemos decidido que para el posicionamiento utilizaremos el dato del \textit{beacon} más cercano ya que es la medida más fiable (por estar a menos metros del dispositivo) y consideraremos que el usuario se encuentra en las inmediaciones de dicho \textit{beacon}. En la Sección \ref{sec:mapeo} especificamos la asociación realizada entre ``las inmediaciones de un \textit{beacon}'' y un punto concreto de la Facultad de Informática.
 
 Con esta idea hemos desarrollado una primera aplicación de prueba que además de captar el \textit{beacon} más próximo al usuario emite un pitido a mayor o menor frecuencia según su categoría de proximidad. Esta app se llama \textit{pruebaSonido} y presenta la misma estética que \textit{cuadrantes\_v1}. Su funcionamiento es sencillo, al iniciar el escaneo capta el \textit{beacon} más cercano y lo fija. Tras ello, actualiza su información (concretamente, la distancia registrada y la categoría de proximidad) y pita a una frecuencia u otra según la distancia a la que se encuentre el \textit{beacon} (cuanto más cerca, el pitido es más rápido y se ralentiza a medida que la baliza está a mayor distancia). La actividad continua hasta que el botón Stop Scanning es pulsado. Al igual que en \textit{cuadrantes v1} la información sobre las balizas detectadas queda plasmada en el cuadro de texto.
