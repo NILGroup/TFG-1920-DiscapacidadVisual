@@ -50,7 +50,8 @@
                 android:layout_height="103dp"
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_border_light"
-                android:text="@string/aulas_button" />
+                android:text="@string/aulas_button"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/cafeteria_button"

@@ -25,7 +25,6 @@
         <Button
             android:id="@+id/button_start_searching"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
             android:background="@drawable/edit_text_border"
@@ -36,7 +35,6 @@
         <Button
             android:id="@+id/config_button"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
             android:background="@drawable/edit_text_border_light"
@@ -47,7 +45,6 @@
         <Button
             android:id="@+id/instructions_button"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
             android:background="@drawable/edit_text_border_light"
@@ -59,8 +56,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="0dp"
-        android:layout_height="190dp"
+
         android:layout_width="306dp"
         android:layout_height="271dp"
         android:layout_marginStart="40dp"
