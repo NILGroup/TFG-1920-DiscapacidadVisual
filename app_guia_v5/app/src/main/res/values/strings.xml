@@ -29,6 +29,15 @@
 
     <!-- MODO DE USO -->
     <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
+    <string name="general_button">Modo de uso \ngeneral</string>
+    <string name="buscar_destino_button">Buscar destino</string>
+    <string name="instruc_detalladas_button">Instrucciones detalladas</string>
+    <string name="repetir_instrucc_button">Repetir instrucción</string>
+
+    <!-- INSTRUCCIONES -->
+    <string name="anterior_button">Anterior</string>
+    <string name="rep_button">Reproducir</string>
+    <string name="siguiente_button">Siguiente</string>
 
     <!-- LISTA DESTINOS -->
     <string name="conserjeria_button">Conserjería\n</string>
