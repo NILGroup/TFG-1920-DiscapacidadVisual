@@ -40,12 +40,16 @@ public class ModoDeUsoActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.instgeneral_button:
+                startActivity(InstruccionesDeActivity.createIntent(this,0));
                 break;
             case R.id.instdestino_button:
+                startActivity(InstruccionesDeActivity.createIntent(this,1));
                 break;
             case R.id.instdetalladas_button:
+                startActivity(InstruccionesDeActivity.createIntent(this,4));
                 break;
             case R.id.instrepetir_button:
+                startActivity(InstruccionesDeActivity.createIntent(this,5));
                 break;
         }
     }
