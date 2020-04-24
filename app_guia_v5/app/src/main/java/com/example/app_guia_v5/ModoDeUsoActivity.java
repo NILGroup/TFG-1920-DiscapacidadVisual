@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.app_guia_v5.R;
 
-public class ModoDeUsoActivity extends AppCompatActivity {
+public class ModoDeUsoActivity extends AppCompatActivity implements View.OnClickListener  {
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ModoDeUsoActivity.class);
     }
@@ -18,6 +20,34 @@ public class ModoDeUsoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modo_de_uso);
 
+        setupButtons();
+
+    }
+    private void setupButtons(){
+        Button general_button = (Button) findViewById(R.id.instgeneral_button);
+        Button destinos_button = (Button) findViewById(R.id.instdestino_button);
+        Button repetir_button = (Button) findViewById(R.id.instrepetir_button);
+        Button idetalladas_button = (Button) findViewById(R.id.instdetalladas_button);
+
+
+        general_button.setOnClickListener(this);
+        destinos_button.setOnClickListener(this);
+        repetir_button.setOnClickListener(this);
+        idetalladas_button.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.instgeneral_button:
+                break;
+            case R.id.instdestino_button:
+                break;
+            case R.id.instdetalladas_button:
+                break;
+            case R.id.instrepetir_button:
+                break;
+        }
     }
 
 }

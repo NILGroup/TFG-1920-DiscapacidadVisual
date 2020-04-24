@@ -6,25 +6,35 @@
     android:layout_height="match_parent"
     tools:context="com.example.app_guia_v5.ModoDeUsoActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="201dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+    <EditText
+        android:id="@+id/modo_uso_text"
+        android:layout_width="314dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fadeScrollbars="true"
         android:importantForAccessibility="no"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:verticalScrollbarPosition="right"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="311dp"
-        android:layout_height="410dp"
+        android:layout_width="309dp"
+        android:layout_height="249dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
@@ -36,41 +46,34 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/instgeneral_button"
+            android:id="@+id/anterior_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/edit_text_border_light"
-            android:text="@string/general_button"
+            android:drawableLeft="@android:drawable/ic_media_previous"
+            android:text="@string/anterior_button"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/instdestino_button"
+            android:id="@+id/repetir_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/edit_text_border_light"
-            android:text="@string/buscar_destino_button"
+            android:drawableLeft="@android:drawable/ic_media_play"
+            android:text="@string/rep_button"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/instdetalladas_button"
+            android:id="@+id/siguiente_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/edit_text_border_light"
-            android:text="@string/instruc_detalladas_button"
+            android:drawableLeft="@android:drawable/ic_media_next"
+            android:text="@string/siguiente_button"
             android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/instrepetir_button"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/edit_text_border_light"
-            android:text="@string/repetir_instrucc_button"
-            android:textSize="24sp" />
-
 
     </LinearLayout>
 
