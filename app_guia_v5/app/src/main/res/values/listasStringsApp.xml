@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="instrucciones_array">
+        <item>Instrucciones de la pantalla principal:</item>
+        <item>Intrucciones de la busqueda de destino:</item>
+        <item>Lista de destinos:</item>
+        <item>Instrucciones de la pantalla de ruta:</item>
+        <item>Instrucciones de la funcionalidad instrucciones detalladas:</item>
+        <item>Instrucciones de la funcionalidad repetir instruccion:</item>
+    </string-array>
+
+    <string-array name="destinos_array">
+        <item>aula 1</item>
+        <item>aula 2</item>
+        <item>aula 3</item>
+        <item>aula 4</item>
+        <item>aula 5</item>
+        <item>aula 6</item>
+        <item>aula 7</item>
+        <item>aula 8</item>
+        <item>aula 9</item>
+        <item>aula 10</item>
+        <item>aula 11</item>
+        <item>aula 12</item>
+        <item>aula 13</item>
+        <item>aula 14</item>
+        <item>aula 15</item>
+        <item>aula 16</item>
+        <item>sala de grados</item>
+        <item>sala de juntas</item>
+        <item>salon de actos</item>
+        <item>cafeteria</item>
+        <item>puerta principal</item>
+        <item>secretaria</item>
+        <item>conserjeria</item>
+        <item>biblioteca</item>
+    </string-array>
+
+</resources>

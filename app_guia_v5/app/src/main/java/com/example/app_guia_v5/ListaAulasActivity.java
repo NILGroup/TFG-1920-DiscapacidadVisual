@@ -3,6 +3,7 @@ package com.example.app_guia_v5;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.example.app_guia_v5.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ListaAulasActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener{
 
@@ -24,31 +26,21 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         return new Intent(context, ListaAulasActivity.class);
     }
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
-
     private SearchView barra_busqueda = null;
-
     private static final String ORIGINAL = "áéíóú";
     private static final String REPLACEMENT = "aeiou";
+    private static List<String> listaDestinos;
 
-    private static ArrayList<String> listaDestinos = new ArrayList<String>(
-            Arrays.asList(
-                    "aula 1", "aula 2", "aula 3", "aula 4", "aula 5",
-                    "aula 6", "aula 7", "aula 8", "aula 9", "aula 10",
-                    "aula 11", "aula 12", "aula 13", "aula 14", "aula 15",
-                    "aula 16", "sala de grados", "sala de juntas",
-                    "salon de actos",
-                    "cafeteria",
-                    "cafeteria trasera", "puerta principal",
-                    "secretaria",
-                    "conserjeria",
-                    "biblioteca"
-            ));
-
+    private TTSManager ttsManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_aulas);
+
+        //Text to speech
+        ttsManager = new TTSManager();
+        ttsManager.init(this);
 
         setupButtons();
     }
@@ -92,6 +84,10 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
 
         barra_busqueda.setOnQueryTextListener(this);
         barra_busqueda.setQueryHint("Introduce el destino");
+
+        Resources res = getResources();
+        // Convert String Array to List
+        listaDestinos  = Arrays.asList(res.getStringArray(R.array.destinos_array));
     }
 
 
@@ -115,9 +111,10 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                         startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
                     else{ //Mensaje con destino no valido, habrá que hacerlo por voz
-                        Toast.makeText(getApplicationContext(),
+                        /*Toast.makeText(getApplicationContext(),
                                 "El destino introducido no es valido",
-                                Toast.LENGTH_SHORT).show();
+                                Toast.LENGTH_SHORT).show();*/
+                        ttsManager.addQueue("El destino introducido no es válido.");
                     }
                 }
                 break;
@@ -157,7 +154,16 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                 array[index] = REPLACEMENT.charAt(pos);
             }
         }
-        return new String(array);
+        str_clean = new String(array);
+
+        //El micrófono de Google funciona mal con estas dos
+        if(str_clean.equals("aula1")){
+            str_clean = "aula 1";
+        }
+        else if(str_clean.equals("aula2")){
+            str_clean = "aula 2";
+        }
+        return str_clean;
     }
 
     @Override
@@ -214,8 +220,6 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-
-
     @Override
     public boolean onQueryTextSubmit(String query) {
         String dest = cleanString(query);
@@ -227,9 +231,10 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
             startActivity(ScanningActivity.createIntent(this, dest));
         }
         else{ //Mensaje con destino no valido, habrá que hacerlo por voz
-            Toast.makeText(getApplicationContext(),
+            /*Toast.makeText(getApplicationContext(),
                     "El destino introducido no es valido",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show();*/
+            ttsManager.addQueue("El destino introducido no es válido.");
         }
         return false;
     }

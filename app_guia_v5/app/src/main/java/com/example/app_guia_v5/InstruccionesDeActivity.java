@@ -2,6 +2,7 @@ package com.example.app_guia_v5;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -23,16 +24,12 @@ import static java.lang.Math.abs;
 
 public class InstruccionesDeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private List<String> listaModoUso;
+    private String[] listaModoUso;
     private static int indice_modoUso;
     private Button anterior_button, repro_button, siguiente_button;
     private EditText editText_modoUso;
-    private String inst_PantallaPrincipal = "Instrucciones de la pantalla principal";
-    private String inst_BusqDest = "Instrucciones para la búsqueda del destino";
-    private String listaDest = "Lista de destinos";
-    private String inst_PantallaRuta = "Instrucciones para la pantalla de ruta";
-    private String inst_InstDetall = "Instrucciones para instrcciones detalladas";
-    private String inst_RepetirInst = "Instrucciones para repetir instruccion";
+
+    private TTSManager ttsManager = null;
 
     public static Intent createIntent(@NonNull Context context, int i) {
         indice_modoUso = i;
@@ -43,6 +40,10 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instrucciones);
+
+        //Inicializamos el objeto de la clase TTSManager
+        ttsManager = new TTSManager();
+        ttsManager.init(this);
 
         setupButtons();
         setupListaModoUso();
@@ -61,17 +62,15 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
     }
 
     private void setupListaModoUso(){
-        listaModoUso  = Arrays.asList(inst_PantallaPrincipal,
-                inst_BusqDest,
-                listaDest,
-                inst_PantallaRuta,
-                inst_InstDetall,
-                inst_RepetirInst);
+        Resources res = getResources();
+        listaModoUso  = res.getStringArray(R.array.instrucciones_array);
     }
 
     private void actualizaModoUso(){
-        editText_modoUso.setText(listaModoUso.get(indice_modoUso));
-        //llamar al tts
+        editText_modoUso.setText(listaModoUso[indice_modoUso]);
+        //Reproducimos las instrucciones:
+        ttsManager.addQueue(listaModoUso[indice_modoUso]);
+
     }
 
     @Override
