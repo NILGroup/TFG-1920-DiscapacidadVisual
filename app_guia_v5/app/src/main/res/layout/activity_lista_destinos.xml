@@ -54,14 +54,6 @@
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/cafeteria_button"
-                android:layout_width="match_parent"
-                android:layout_height="103dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_border"
-                android:text="@string/cafeteria_button" />
-
-            <Button
                 android:id="@+id/biblioteca_button"
                 android:layout_width="match_parent"
                 android:layout_height="103dp"
@@ -69,35 +61,14 @@
                 android:background="@drawable/edit_text_border"
                 android:text="@string/biblioteca_button" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
             <Button
-                android:id="@+id/salon_actos_button"
+                android:id="@+id/cafeteria_button"
                 android:layout_width="match_parent"
                 android:layout_height="103dp"
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_border"
-                android:text="@string/salon_actos_button" />
+                android:text="@string/cafeteria_button" />
 
-            <Button
-                android:id="@+id/sala_juntas_button"
-                android:layout_width="match_parent"
-                android:layout_height="103dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_border"
-                android:text="@string/sala_juntas_button" />
-
-            <Button
-                android:id="@+id/sala_grados_button"
-                android:layout_width="match_parent"
-                android:layout_height="103dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_border"
-                android:text="@string/sala_grados_button" />
         </TableRow>
 
         <TableRow
@@ -121,6 +92,36 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_border"
                 android:text="@string/puerta_principal_button" />
+
+            <Button
+                android:id="@+id/sala_grados_button"
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:text="@string/sala_grados_button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/sala_juntas_button"
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:text="@string/sala_juntas_button" />
+
+            <Button
+                android:id="@+id/salon_actos_button"
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"
+                android:text="@string/salon_actos_button" />
 
             <Button
                 android:id="@+id/secretaria_button"
