@@ -27,14 +27,14 @@
         <item>aula 14</item>
         <item>aula 15</item>
         <item>aula 16</item>
+        <item>biblioteca</item>
+        <item>cafeteria</item>
+        <item>conserjeria</item>
+        <item>puerta principal</item>
         <item>sala de grados</item>
         <item>sala de juntas</item>
         <item>salon de actos</item>
-        <item>cafeteria</item>
-        <item>puerta principal</item>
         <item>secretaria</item>
-        <item>conserjeria</item>
-        <item>biblioteca</item>
     </string-array>
 
 </resources>

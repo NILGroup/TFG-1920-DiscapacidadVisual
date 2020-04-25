@@ -144,7 +144,7 @@ A continuación describimos las pantallas de nuestra aplicación, que pueden ver
 
 \subsection{Funcionamiento del cliente}
 
-En esta sección se exponen los detalles técnicos más relevantes. Veremos el funcionamiento de la aplicación desde la interacción con el usuario hasta la conexión con el servidor y gestión de la ruta. 
+En esta sección veremos el funcionamiento de la aplicación desde la interacción con el usuario hasta la conexión con el servidor y gestión de la ruta. 
 
 \begin{itemize}
 	\item \textit{Interacción con el usuario}: Como ya hemos tratado en la Sección \ref{sub:diseño} la aplicación está diseñada para que el usuario pueda lograr el objetivo con la mínima cantidad de pasos. Tanto es así que la interacción con el usuario queda reducida al mínimo. Para iniciar una ruta tan solo se pide al usuario que introduzca el destino al que quiere ir (una vez ha pulsado \textit{Iniciar ruta} en la pantalla \textit{principal}). Esto se hace a través de las pantallas \textit{Lista de destinos} y \textit{Lista de aulas}, que se pueden ver en la Figura \ref{fig:interfaz}. Cuando el usuario selecciona el destino, la aplicación abre la pantalla \textit{Ruta}, resuelve el problema de posicionamiento y espera a que el usuario pulse sobre \textit{Iniciar ruta}. En ese momento, la aplicación conecta con el servidor y comienza la ruta con instrucciones guiadas por voz.
@@ -162,3 +162,7 @@ En esta sección se exponen los detalles técnicos más relevantes. Veremos el f
 	Se espera que el usuario pueda llegar al destino con la guía que proporciona la aplicación. Sin embargo, también se ha contemplado el hecho de que el usuario salga de la ruta. Este caso se detecta cuando se pasa por la función \textit{onEddystonesUpdated} diez veces\footnote{Este es un parámetro configurable. Debido a que no se han podido realizar pruebas físicas en la Facultad por la situación sanitaria debida al COVID-19 ajustarlo a lo que podría haber sido una situación real no ha sido posible.} pero en ninguna de ellas obtenemos que el \textit{beacon} más cercano es el siguiente \textit{beacon} (o un \textit{beacon} más avanzado\footnote{Podría ocurrir que, en un pasillo, por ejemplo, el usuario haya pasado por el siguiente \textit{beacon} pero la aplicación no lo haya detectado. En ese caso el usuario habría avanzado un cuadrante sin notificar a la aplicación, pero como no se ha salido de la ruta se continúa sin notificar al usuario.}) de la ruta, se considera que el usuario se ha salido de la misma. En este caso, cesa el escaneo de los \textit{beacons} y se notifica al usuario que no se encuentra en el camino correcto y que tras pulsar \textit{Iniciar ruta} de nuevo, la aplicación lo redirigirá al destino al que quería ir. En términos de implementación, se vuelve a resolver el problema del posicionamiento, conectar con el servidor e iniciar de nuevo la ruta correspondiente.
 	
 \end{itemize}
+
+%\subsection{Detalles técnicos de la implementación}
+%
+%En las dos secciones anteriores, se ha puesto de manifiesto que uno de los retos principales de la aplicación es que ésta esté adaptada para personas con discapacidad visual. Sin embargo, no de

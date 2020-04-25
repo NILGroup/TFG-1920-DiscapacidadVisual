@@ -164,29 +164,29 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
             case R.id.aulas_button:
                 startActivity(ListaAulasActivity.createIntent(this));
                 break;
-            case R.id.secretaria_button:
-                startActivity(ScanningActivity.createIntent(this, "secretaria"));
-                break;
-            case R.id.conserjeria_button:
-                startActivity(ScanningActivity.createIntent(this, "conserjeria"));
-                break;
             case R.id.biblioteca_button:
-                startActivity(ScanningActivity.createIntent(this, "biblioteca"));
-                break;
-            case R.id.puerta_principal_button:
-                startActivity(ScanningActivity.createIntent(this, "puerta principal"));
-                break;
-            case R.id.sala_grados_button:
-                startActivity(ScanningActivity.createIntent(this, "sala de grados"));
-                break;
-            case R.id.sala_juntas_button:
-                startActivity(ScanningActivity.createIntent(this, "sala de juntas"));
-                break;
-            case R.id.salon_actos_button:
-                startActivity(ScanningActivity.createIntent(this, "salon de actos"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(16)));
                 break;
             case R.id.cafeteria_button:
-                startActivity(ScanningActivity.createIntent(this, "cafeteria"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(17)));
+                break;
+            case R.id.conserjeria_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(18)));
+                break;
+            case R.id.puerta_principal_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(19)));
+                break;
+            case R.id.sala_grados_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(20)));
+                break;
+            case R.id.sala_juntas_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(21)));
+                break;
+            case R.id.salon_actos_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(22)));
+                break;
+            case R.id.secretaria_button:
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(23)));
                 break;
         }
     }

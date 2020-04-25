@@ -88,6 +88,25 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
         Resources res = getResources();
         // Convert String Array to List
         listaDestinos  = Arrays.asList(res.getStringArray(R.array.destinos_array));
+
+        //Ponemos el texto a los botones según el nombre de los destinos
+        //Es lo mismo que hacerlo desde la interfaz
+        /*aula1_button.setText(listaDestinos.get(0));
+        aula2_button.setText(listaDestinos.get(1));
+        aula3_button.setText(listaDestinos.get(2));
+        aula4_button.setText(listaDestinos.get(3));
+        aula5_button.setText(listaDestinos.get(4));
+        aula6_button.setText(listaDestinos.get(5));
+        aula7_button.setText(listaDestinos.get(6));
+        aula8_button.setText(listaDestinos.get(7));
+        aula9_button.setText(listaDestinos.get(8));
+        aula10_button.setText(listaDestinos.get(9));
+        aula11_button.setText(listaDestinos.get(10));
+        aula12_button.setText(listaDestinos.get(11));
+        aula14_button.setText(listaDestinos.get(12));
+        aula14_button.setText(listaDestinos.get(13));
+        aula15_button.setText(listaDestinos.get(14));
+        aula16_button.setText(listaDestinos.get(15));*/
     }
 
 
@@ -110,7 +129,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                                 Toast.LENGTH_SHORT).show();
                         startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
-                    else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+                    else{
                         /*Toast.makeText(getApplicationContext(),
                                 "El destino introducido no es valido",
                                 Toast.LENGTH_SHORT).show();*/
@@ -122,7 +141,6 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
-
 
     //Reconocedor de voz
     public void onClickImgBtnHablar(View v) {
@@ -170,52 +188,68 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) { //botones normales
         switch (view.getId()) {
             case R.id.aula_1_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 1"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 1"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(0)));
                 break;
             case R.id.aula_2_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 2"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 2"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(1)));
                 break;
             case R.id.aula_3_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 3"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 3"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(2)));
                 break;
             case R.id.aula_4_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 4"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 4"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(3)));
                 break;
             case R.id.aula_5_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 5"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 5"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(4)));
                 break;
             case R.id.aula_6_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 6"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 6"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(5)));
                 break;
             case R.id.aula_7_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 7"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 7"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(6)));
                 break;
             case R.id.aula_8_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 8"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 8"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(7)));
                 break;
             case R.id.aula_9_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 9"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 9"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(8)));
                 break;
             case R.id.aula_10_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 10"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 10"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(9)));
                 break;
             case R.id.aula_11_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 11"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 11"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(10)));
                 break;
             case R.id.aula_12_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 12"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 12"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(11)));
                 break;
             case R.id.aula_13_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 13"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 13"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(12)));
                 break;
             case R.id.aula_14_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 14"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 14"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(13)));
                 break;
             case R.id.aula_15_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 15"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 15"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(14)));
                 break;
             case R.id.aula_16_button:
-                startActivity(ScanningActivity.createIntent(this, "aula 16"));
+                //startActivity(ScanningActivity.createIntent(this, "aula 16"));
+                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(15)));
                 break;
         }
     }
@@ -230,7 +264,7 @@ public class ListaAulasActivity extends AppCompatActivity implements View.OnClic
                     Toast.LENGTH_SHORT).show();
             startActivity(ScanningActivity.createIntent(this, dest));
         }
-        else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+        else{
             /*Toast.makeText(getApplicationContext(),
                     "El destino introducido no es valido",
                     Toast.LENGTH_SHORT).show();*/
