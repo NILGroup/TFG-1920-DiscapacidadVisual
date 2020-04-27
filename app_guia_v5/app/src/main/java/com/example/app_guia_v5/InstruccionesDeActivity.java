@@ -66,6 +66,12 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
     }
 
     @Override
+    public void onBackPressed() {
+        ttsManager.initQueue("");
+        super.onBackPressed();
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.anterior_button:
