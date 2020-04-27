@@ -2,12 +2,36 @@
 <resources>
 
     <string-array name="instrucciones_array">
-        <item>Instrucciones de la pantalla principal:</item>
-        <item>Intrucciones de la busqueda de destino:</item>
-        <item>Lista de destinos:</item>
-        <item>Instrucciones de la pantalla de ruta:</item>
-        <item>Instrucciones de la funcionalidad instrucciones detalladas:</item>
-        <item>Instrucciones de la funcionalidad repetir instruccion:</item>
+        <item> Cómo iniciar una ruta:\n
+            - Abre la app "Blind Bit" en tu dispositivo móvil o tablet. Si aún no tienes la app descárgatela desde Play Store.\n
+            - Una vez abierta aparecerá una pantalla principal a modo de menú con 3 opciones: Iniciar Ruta, Ajustes e Instrucciones.\n
+            - Para empezar con la navegación pulsa Iniciar Ruta y empieza con la búsqueda de tu destino. Si por el contrario prefieres modificar la configuración de la app, ve a Ajustes. </item>
+        <item> Cómo buscar tu destino:\n
+            - Una vez pulsado el botón Iniciar Ruta aparece la pantalla "Lista de destinos".\n
+            - En ella aparecen tres vías distintas para seleccionar el lugar final de la Facultad de Informática de la UCM al que te quieres dirigir.
+            Estas tres alternativas son: Pulsar alguno de los botones que aparecen en la zona central de la pantalla en los que vienen los nombres de los destinos en orden alfabético. Indicar el destino mediante voz con ayuda del botón que tiene forma de micrófono situado en la zona inferior. O escribirlo directamente con ayuda del teclado pulsando sobre la barra de escritura que se encuentra en la zona superior de la pantalla.\n
+            - Para indicarlo mediante voz o letra es necesario escribirlo de manera adecuada. Pulsa Siguiente para ver la lista de destinos.</item>
+        <item>Lista de destinos:\n
+            Aula [de 1 a 16] \n
+            Biblioteca \n
+            Cafetería \n
+            Consejería \n
+            Puerta Principal \n
+            Secretaría \n
+            Sala de Grados \n
+            Sala de Juntas \n
+            Salón de Actos</item>
+        <item>Pantalla de Ruta:\n
+            - Una vez seleccionado el destino, aparece la pantalla "Ruta". En ella hay un cuadro de texto que ocupa la mitad superior de la pantalla y cuatro botones colocados en una columna que ocupan toda la parte inferior de la pantalla.\n
+            - Para empezar con la navegación pulsa el primer botón, coloreado en morado, de la columna, Iniciar Ruta, y aparecerán las instrucciones tanto por escrito en el cuadro de texto como reproducidas en voz alta. \n
+            - Para finalizar la navegación pulsa el cuarto botón, Finalizar Ruta, o pulsa el botón de atrás de tu dispositivo móvil o tablet. Si esto sucede saltará una ventana emergente para pedir confirmación.\n
+            - Para continuar con la explicación de los otros dos botones pulsa Siguiente.</item>
+        <item>Modo Instrucciones Detalladas:\n
+            Este modo se activa y se desactiva con el botón de color lila que ocupa la tercera posición de la columna. Una vez pulsado, el lector de pantalla o Talkback indica el estado actual en el que se encuentra. \n
+            Este modo consiste en proporcionar instrucciones mucho más informadas que las que aparecen por defecto. En ellas aparece información extra sobre lo que hay alrededor a medida que avanzas hacia tu destino.\n
+            Por defecto este modo se encuentra desactivado.</item>
+        <item>Botón Repetir instruccion:\n
+            Es el segundo botón de la columna, con él se reproduce de nuevo la última instrucción dada antes de pasar a la siguiente.</item>
     </string-array>
 
     <string-array name="destinos_array">

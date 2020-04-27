@@ -29,10 +29,10 @@
 
     <!-- MODO DE USO -->
     <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
-    <string name="general_button">Modo de uso \ngeneral</string>
-    <string name="buscar_destino_button">Buscar destino</string>
-    <string name="instruc_detalladas_button">Instrucciones detalladas</string>
-    <string name="repetir_instrucc_button">Repetir instrucción</string>
+    <string name="general_button">Cómo iniciar una ruta</string>
+    <string name="buscar_destino_button">Cómo buscar un destino</string>
+    <string name="instruc_detalladas_button">Qué son las instrucciones detalladas</string>
+    <string name="repetir_instrucc_button">En qué consiste repetir instrucción</string>
 
     <!-- INSTRUCCIONES -->
     <string name="anterior_button">Anterior</string>
