@@ -3,7 +3,7 @@
 
     <string-array name="instrucciones_array">
         <item> Cómo iniciar una ruta:\n
-            <!-- - Abre la app "Blind Bit" en tu dispositivo móvil o tablet. Si aún no tienes la app descárgatela desde Play Store.\n-->
+            - Abre la app "Blind Bit" en tu dispositivo móvil o tablet. Si aún no tienes la app descárgatela desde Play Store.\n
             - Una vez abierta la aplicación aparecerá una pantalla principal a modo de menú con 3 opciones: Iniciar Ruta, Ajustes e Instrucciones.\n
             - Para empezar con la navegación pulsa Iniciar Ruta y empieza con la búsqueda de tu destino. Si por el contrario, prefieres modificar la configuración de la app, ve a Ajustes.\n
             Pulsa siguiente para saber más acerca de cómo buscar el destino.
@@ -32,12 +32,12 @@
             - Para empezar con la navegación pulsa el primer botón, coloreado en morado: Iniciar Ruta, y aparecerán las instrucciones tanto por escrito en el cuadro de texto como reproducidas en voz alta. \n
             - Para finalizar la navegación pulsa el cuarto botón, Finalizar Ruta, o pulsa el botón de atrás de tu dispositivo móvil o tablet. Si esto sucede saltará una ventana emergente para pedir confirmación.\n
             - Para continuar con la explicación de los otros dos botones pulsa Siguiente.</item>
+        <item>Botón Repetir instruccion:\n
+            Es el segundo botón de la columna, con él se reproduce de nuevo la última instrucción dada antes de pasar a la siguiente.</item>
         <item>Modo Instrucciones Detalladas:\n
             Este modo se activa y se desactiva con el botón de color lila que ocupa la tercera posición de la columna.\n
             Este modo consiste en proporcionar instrucciones mucho más informadas que las que aparecen por defecto. En ellas aparece información extra sobre lo que hay alrededor a medida que avanzas hacia tu destino.\n
             Una vez pulsado el lector de pantalla o Talkback indican su estado. Por defecto este modo se encuentra activado.</item>
-        <item>Botón Repetir instruccion:\n
-            Es el segundo botón de la columna, con él se reproduce de nuevo la última instrucción dada antes de pasar a la siguiente.</item>
     </string-array>
 
     <string-array name="destinos_array">

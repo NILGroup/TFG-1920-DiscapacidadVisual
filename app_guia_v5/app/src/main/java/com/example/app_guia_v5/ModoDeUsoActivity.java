@@ -45,10 +45,10 @@ public class ModoDeUsoActivity extends AppCompatActivity implements View.OnClick
             case R.id.instdestino_button:
                 startActivity(InstruccionesDeActivity.createIntent(this,1));
                 break;
-            case R.id.instdetalladas_button:
+            case R.id.instrepetir_button:
                 startActivity(InstruccionesDeActivity.createIntent(this,4));
                 break;
-            case R.id.instrepetir_button:
+            case R.id.instdetalladas_button:
                 startActivity(InstruccionesDeActivity.createIntent(this,5));
                 break;
         }
