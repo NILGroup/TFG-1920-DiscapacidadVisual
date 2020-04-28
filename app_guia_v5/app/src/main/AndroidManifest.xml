@@ -25,8 +25,8 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.example.app_guia_v5.ModoDeUsoActivity"
             android:label="@string/ventana_instruc"/>
-        <activity android:name="com.example.app_guia_v5.InstruccionesDeActivity"
-            android:label=""/>
+        <activity android:name="com.example.app_guia_v5.InstruccionesAppActivity"
+            android:label="Instrucciones"/>
         <activity android:name="com.example.app_guia_v5.ListaDestinosActivity"
             android:label="@string/ventana_destinos"/>
         <activity android:name="com.example.app_guia_v5.ListaAulasActivity"

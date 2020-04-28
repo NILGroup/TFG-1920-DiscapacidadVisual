@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.app_guia_v5.R;
-
 public class ModoDeUsoActivity extends AppCompatActivity implements View.OnClickListener  {
     public static Intent createIntent(@NonNull Context context) {
         return new Intent(context, ModoDeUsoActivity.class);
@@ -40,16 +38,16 @@ public class ModoDeUsoActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.instgeneral_button:
-                startActivity(InstruccionesDeActivity.createIntent(this,0));
+                startActivity(InstruccionesAppActivity.createIntent(this,0));
                 break;
             case R.id.instdestino_button:
-                startActivity(InstruccionesDeActivity.createIntent(this,1));
+                startActivity(InstruccionesAppActivity.createIntent(this,1));
                 break;
             case R.id.instrepetir_button:
-                startActivity(InstruccionesDeActivity.createIntent(this,4));
+                startActivity(InstruccionesAppActivity.createIntent(this,4));
                 break;
             case R.id.instdetalladas_button:
-                startActivity(InstruccionesDeActivity.createIntent(this,5));
+                startActivity(InstruccionesAppActivity.createIntent(this,5));
                 break;
         }
     }

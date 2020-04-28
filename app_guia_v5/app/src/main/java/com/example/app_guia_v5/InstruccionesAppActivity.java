@@ -10,11 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class InstruccionesDeActivity extends AppCompatActivity implements View.OnClickListener {
+public class InstruccionesAppActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String[] listaModoUso;
     private static int indice_modoUso;
@@ -25,7 +24,7 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
 
     public static Intent createIntent(@NonNull Context context, int i) {
         indice_modoUso = i;
-        return new Intent(context, InstruccionesDeActivity.class);
+        return new Intent(context, InstruccionesAppActivity.class);
     }
 
     @Override
@@ -46,6 +45,7 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
         siguiente_button = (Button) findViewById(R.id.siguiente_button);
 
         editText_modoUso = findViewById(R.id.modo_uso_text);
+        editText_modoUso.setText("Pulsa reproducir para comenzar");
         editText_modoUso.setMovementMethod(new ScrollingMovementMethod());
 
         anterior_button.setOnClickListener(this);
@@ -60,6 +60,8 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
 
     private void actualizaModoUso(){
         editText_modoUso.setText(listaModoUso[indice_modoUso]);
+        //si se estaba reproduciendo algo lo paramos
+        ttsManager.initQueue("");
         //Reproducimos las instrucciones:
         ttsManager.addQueue(listaModoUso[indice_modoUso]);
 
@@ -67,6 +69,7 @@ public class InstruccionesDeActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onBackPressed() {
+        //si se estaba reproduciendo algo lo paramos
         ttsManager.initQueue("");
         super.onBackPressed();
     }
