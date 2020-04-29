@@ -24,11 +24,12 @@ public class Cuadrante {
 	 * conectado[3] = oeste
 	 */
 	String[] conectado = new String[4];
+	int[] pesos = new int[4];
 
 	String info;
 	
 	
-	public Cuadrante(int id, String beac, int z, String[] conexiones, String dir ,String informacion, float longi){
+	public Cuadrante(int id, String beac, int z, String[] conexiones, String dir, int[] pesosMatriz ,String informacion, float longi){
 		
 		ID = id;
 		info = informacion;
@@ -37,6 +38,7 @@ public class Cuadrante {
 		Z = z;
 		direccion = dir;
 		metros = longi;
+		pesos = pesosMatriz;
 		
 	}
 
@@ -53,7 +55,7 @@ public class Cuadrante {
 	
 	public Cuadrante clone(){
 		
-		return new Cuadrante(this.ID, this.beacon, this.Z, this.conectado, this.direccion, this.info, this.metros);
+		return new Cuadrante(this.ID, this.beacon, this.Z, this.conectado, this.direccion, this.pesos, this.info, this.metros);
 		
 	}
 	
@@ -140,6 +142,10 @@ public class Cuadrante {
 	
 	public String getInfo() {
 		return info;
+	}
+	
+	public int[] getPesos() {
+		return pesos;
 	}
 		
 }
