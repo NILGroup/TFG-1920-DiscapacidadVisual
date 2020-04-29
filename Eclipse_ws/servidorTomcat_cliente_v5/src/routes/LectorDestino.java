@@ -22,9 +22,12 @@ public class LectorDestino {
 	
 	private Hashtable<String,Integer> t_valores;
 	
+	//private Hashtable<String,Par> t_valores;
+	
 	public LectorDestino(){
 		
 		t_valores=new Hashtable<String,Integer>();
+		//t_valores=new Hashtable<String,Par>();
 		JSONParser parser = new JSONParser();
 		JSONArray destinos;
 		
@@ -38,10 +41,12 @@ public class LectorDestino {
 				
 				String lugar = (String) dest.get("lugar");
 				String numCuadrante = (String) dest.get("cuadrante");
+				//String dir = (String) dest.get("direccion");
 				Integer cuadrante = Integer.parseInt(numCuadrante);
-
+				//Par p = new Par(cuadrante,dir);
+				
 				t_valores.put(lugar, cuadrante);
-
+				//t_valores.put(lugar, p);
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
