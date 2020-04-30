@@ -36,8 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         final Button beaconsStartScanningButton = findViewById(R.id.button_start_searching);
         //final Button beaconsStopScanningButton = findViewById(R.id.button_stop_scanning);
+        final Button dynamicInterface = findViewById(R.id.button_dynamic_interface);
+
 
         beaconsStartScanningButton.setOnClickListener(this);
+        dynamicInterface.setOnClickListener(this);
         //beaconsStopScanningButton.setOnClickListener(this);
     }
     //Since Android Marshmallow starting a Bluetooth Low Energy scan requires permission from location group.
@@ -67,9 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_start_searching:
                 startActivity(ScanningActivity.createIntent(this));
                 break;
-            /*case R.id.button_stop_scanning:
-                //startActivity(BeaconProScanActivity.createIntent(this));
-                break;*/
+            case R.id.button_dynamic_interface:
+                startActivity(dynamicActivity.createIntent(this));
+                break;
         }
     }
 

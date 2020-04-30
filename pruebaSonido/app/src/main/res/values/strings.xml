@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">pruebaSonido</string>
     <string name="button_start_searching">START SEARCHING BEACONS</string>
+
+    <string name="button_dynamic_interface">dynamic interface</string>
+
     <string name="start_scan_button">START SCANNING</string>
     <string name="stop_scan_button">STOP SCANNING</string>
 
