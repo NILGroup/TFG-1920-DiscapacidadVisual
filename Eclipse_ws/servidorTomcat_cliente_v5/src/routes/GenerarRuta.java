@@ -207,9 +207,11 @@ public class GenerarRuta {
 				dirDeLaQueVengo = cuadAnterior.getDireccion(c1);
 			}
 			
-			//int cont = 1; //Contador de cuadrantes que avanzamos sin instrucción
+			
 			float metros = c1.getMetros();
 			int contHastaCambioDir = 1;
+			//int contSaltoCuadrante = 0; //Contador de cuadrantes que avanzamos sin instrucción
+			//int maxCuadSaltados = 2; //Máximo número de cuadrantes que avanzamos sin instrucción
 			
 			cuadranteClave = c2.getID(); //El cuadrante clave siempre es el siguiente
 										//Para modificarlo basta con poner esta instruccion detrás del bucle siguiente
@@ -222,7 +224,7 @@ public class GenerarRuta {
 					direccionSig = c2.getDireccion(c3);
 					if(direccionSig == direccionPrincipal) {
 						c2 = c3;
-						//cont++;
+						//contSaltoCuadrante++;
 						direccion = direccionSig;
 						metros += c2.getMetros();
 											
@@ -230,6 +232,9 @@ public class GenerarRuta {
 					else {//hay que girar
 						break;
 					}
+					/*
+					 if(contSaltoCuadrante == maxCuadSaltados){ 
+					 break;}*/
 				contHastaCambioDir++;
 			}
 			

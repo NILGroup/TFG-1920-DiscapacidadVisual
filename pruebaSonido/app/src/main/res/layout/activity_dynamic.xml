@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/my_ll"
-        android:layout_width="325dp"
-        android:layout_height="607dp"
+        android:layout_width="238dp"
+        android:layout_height="528dp"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
         android:layout_marginTop="83dp"
@@ -22,4 +22,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

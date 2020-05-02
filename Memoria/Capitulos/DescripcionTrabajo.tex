@@ -171,32 +171,42 @@ de manera sencilla las diferentes plantas del edificio y es un método genérico
 
 \textbf{Edificio.xml:} En este archivo se guarda la información relativa a la estructura del edificio, es decir, se indican las distintas plantas y el archivo xml asociado a cada una de ellas. En la Figura \ref{fig:xmledificio} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
 \begin{itemize}
-	\item \textit{nombre:} Nombre representativo de la planta que estemos implementando. En el ejemplo se ha utilizado el valor \textit{nombrePlanta}.
-	\item \textit{archivo:} Nombre del fichero xml de la planta en cuestión. No es necesario añadir la extensión .xml. En el ejemplo lo hemos llamado \textit{nombreFichero}.
+	\item \textit{nombre:} Nombre representativo de la planta que estemos implementando. En el ejemplo se ha utilizado el valor \textit{planta1principal} y \textit{plantabaja}.
+	\item \textit{archivo:} Nombre del fichero xml de la planta en cuestión. No es necesario añadir la extensión .xml. En el ejemplo lo hemos llamado \textit{planta1} y \textit{plantabaja}.
 \end{itemize}
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1.1\textwidth]{Imagenes/Descripciondeltrabajo/XMLEDIFICIO}
+	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/edificioXML}
 	\caption{Ejemplo de un archivo con la misma estructura que edificio.xml.}
 	\label{fig:xmledificio}
 \end{figure}
 
-\textbf{NombreFichero.xml:} Se corresponde con el archivo propio de cada planta. Cada planta incluye un valor que indica el número de planta en el que nos encontramos y un idetificador de estancia que da nombre a la planta y que agrupa al conjunto de cuadrantes que la forman. A su vez, cada cuadrante contiene un identificador único, el nombre del \textit{beacon} asociado, información sobre los cuadrantes colindantes, información relevante del cuadrante y la medida en metros del mismo. En la Figura \ref{fig:xmlplanta} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
+\textbf{NombreFichero.xml:} Se corresponde con el archivo propio de cada planta. Cada planta incluye un valor que indica el número de planta en el que nos encontramos y un identificador de estancia que da nombre a la planta y que agrupa al conjunto de cuadrantes que la forman. A su vez, cada cuadrante contiene un identificador único, el nombre del \textit{beacon} asociado, información sobre los cuadrantes colindantes, la posición en el cuadrante donde se encuentra el punto de interés (norte, sur, este u oeste), información sobre los pesos que tiene cada una de sus conexiones (cuya utilidad se presenta en la Sección \ref{sub:rutaOptima}), información relevante del cuadrante y la medida en metros del mismo. En la Figura \ref{fig:xmlplanta} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
 
 \begin{itemize}
-	\item \textit{Z:} Indica el número de planta. En el ejemplo le hemos dado el valor \textit{X}.
-	\item \textit{id:} Se corresponde con el nombre de la planta en la que nos encontramos. En el ejemplo la hemos llamado \textit{plantaX}.
-	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $0$.
-	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon0}.
+	\item \textit{Z:} Indica el número de planta. En el ejemplo le hemos dado el valor $0$.
+	
+	\item \textit{id:} Se corresponde con el nombre de la planta en la que nos encontramos. En el ejemplo la hemos llamado \textit{plantabaja}.
+	
+	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $20$.
+	
+	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon20}.
+	
 	\item \textit{conectado:} Indica los identificadores de los cuadrantes colindantes por los cuatro puntos cardinales. El valor $-1$ representa la pared. Este campo ha sido reutilizado de trabajos anteriores ya que resulta clave para establecer una red de cuadrantes que nos permita generar una ruta válida pasando a través de ellos.
-	\item \textit{info:} Este campo contiene la información relevante del cuadrante. La utilidad e importancia de este campo radica en informar al usuario, si lo desea, de qué hay a su paso por la ruta hasta el destino seleccionado. Esta idea nació tras la reunión en la ONCE en la que nos acercamos mucho a las necesidades de nuestros usuarios. En el ejemplo le hemos dado el valor \textit{info0}.
-	\item \textit{metros:} Este campo contiene la medida en metros del cuadrante lo que aporta mucha precisión a las instrucciones. En el ejemplo le hemos dado el valor \textit{M}.
+	
+	\item \textit{dirección:} Nos indica en qué posición del cuadrante está situado el punto de interés. En nuestro caso es el salón de actos, correspondiente al cuadrante $20$, como se puede ver en la Figura \ref{fig:cuadrantesPbaja} el salón de actos se sitúa al lado derecho del cuadrante (oeste)\footnote{La nomenclatura se establece con el sur en la parte de arriba, el oeste a la derecha, el norte abajo y el este a la izquierda del cuadrante.}.
+	
+	\item \textit{pesos:} Para cada una de las conexiones del cuadrante se establece el peso de dicha conexión. Esto será de gran utilidad pues el algoritmo utilizado para el cálculo de la ruta es el algoritmo de \textit{Dijkstra}. Los detalles pueden verse en la Sección \ref{sub:rutaOptima}. Los pesos negativos se asignan a conexiones inexistentes.
+	
+	\item \textit{info:} Este campo contiene la información relevante del cuadrante. La utilidad e importancia de este campo radica en informar al usuario, si lo desea, de qué hay a su paso por la ruta hasta el destino seleccionado. Esta idea nació tras la reunión en la ONCE en la que nos acercamos mucho a las necesidades de nuestros usuarios. En el ejemplo le hemos dado el valor \textit{salon de actos}.
+	
+	\item \textit{metros:} Este campo contiene la medida en metros del cuadrante lo que aporta mucha precisión a las instrucciones. En el ejemplo le hemos dado el valor $5$.
 \end{itemize}
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1.1\textwidth]{Imagenes/Descripciondeltrabajo/XMLPLANTA}
+	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/plantaXML}
 	\caption{Ejemplo de un archivo que detalla la estructura de una planta.}
 	\label{fig:xmlplanta}
 \end{figure}
