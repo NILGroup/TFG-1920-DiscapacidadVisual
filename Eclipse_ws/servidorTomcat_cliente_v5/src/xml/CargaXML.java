@@ -63,12 +63,26 @@ public class CargaXML {
  		            String este = conectado.getChildText("este");
  		            String oeste = conectado.getChildText("oeste");
 	           
+ 		            String dir = cuadrante.getChildTextTrim("direccion"); 
+ 		            
+ 		            Element pesos = cuadrante.getChild("pesos");
+		            String p_norte = pesos.getChildText("p_norte");
+		            String p_sur = pesos.getChildText("p_sur");
+		            String p_este = pesos.getChildText("p_este");
+		            String p_oeste = pesos.getChildText("p_oeste");
+		            
+		            System.out.println("Cuadrante: " + idCuadrante);
+		            System.out.println("Pesos: " + p_norte + " " + p_sur + " " + p_este + " " + p_oeste);
+ 		            
 	 	            String info = cuadrante.getChildTextTrim("info"); 
 	 	            
 	 	            String m = cuadrante.getChildTextTrim("metros");
 	 	            float metros = Float.parseFloat(m);
 
-	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, Integer.parseInt(planta), new String[]{norte,sur,este,oeste},/* aO,*/ info, metros);
+	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, Integer.parseInt(planta),
+	 	            		new String[]{norte,sur,este,oeste}, dir,
+	 	            		new int[] {Integer.parseInt(p_norte),Integer.parseInt(sur),
+	 	            				Integer.parseInt(este),Integer.parseInt(oeste)},info, metros);
 	 	            aCuadrantes.add(c);
 	 	            e.add(c);
 		 	        		 	            	 
