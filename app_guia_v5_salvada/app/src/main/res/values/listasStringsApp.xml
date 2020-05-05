@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="instrucciones_array">
+        <item> Cómo iniciar una ruta:\n
+            - Abre la app "Blind Bit" en tu dispositivo móvil o tablet. Si aún no tienes la app descárgatela desde Play Store.\n
+            - Una vez abierta la aplicación aparecerá una pantalla principal a modo de menú con 3 opciones: Iniciar Ruta, Ajustes e Instrucciones.\n
+            - Para empezar con la navegación pulsa Iniciar Ruta y empieza con la búsqueda de tu destino. Si por el contrario, prefieres modificar la configuración de la app, ve a Ajustes.\n
+            Pulsa siguiente para saber más acerca de cómo buscar el destino.
+        </item>
+
+        <item> Cómo buscar tu destino:\n
+            - Una vez pulsado el botón Iniciar Ruta aparece la pantalla "Lista de destinos".\n
+            - En ella aparecen tres vías distintas para seleccionar el lugar final de la Facultad de Informática de la UCM al que te quieres dirigir.
+            La primera de ellas, situada en la zona superior de la pantalla es una barra de búsqueda que permite introducir el destino mediante un teclado.
+            En la zona central de la pantalla aparecen distintos botones con el nombre de los destinos disponibles por órden alfabético.
+            Por último en la zona central de la parte inferior hay un botón con forma de micrófono que permite introducir el destino mediante voz.\n
+            <!-- Estas tres alternativas son: Pulsar alguno de los botones que aparecen en la zona central de la pantalla en los que vienen los nombres de los destinos en orden alfabético. Indicar el destino mediante voz con ayuda del botón que tiene forma de micrófono situado en la zona inferior. O escribirlo directamente con ayuda del teclado pulsando sobre la barra de escritura que se encuentra en la zona superior de la pantalla.\n-->
+            - Para indicar el destino mediante voz o de forma escrita es necesario introducirlo de manera adecuada. Pulsa Siguiente para ver la lista de destinos.</item>
+        <item>Lista de destinos:\n
+            Aula [de 1 a 16] \n
+            Biblioteca \n
+            Cafetería \n
+            Conserjería \n
+            Puerta Principal \n
+            Secretaría \n
+            Sala de Grados \n
+            Sala de Juntas \n
+            Salón de Actos</item>
+        <item>Pantalla de Ruta:\n
+            - Una vez seleccionado el destino, aparece la pantalla "Ruta". En ella hay un cuadro de texto que ocupa la mitad superior de la pantalla y cuatro botones colocados en una columna que ocupan toda la parte inferior de la pantalla.\n
+            - Para empezar con la navegación pulsa el primer botón, coloreado en morado: Iniciar Ruta, y aparecerán las instrucciones tanto por escrito en el cuadro de texto como reproducidas en voz alta. \n
+            - Para finalizar la navegación pulsa el cuarto botón, Finalizar Ruta, o pulsa el botón de atrás de tu dispositivo móvil o tablet. Si esto sucede saltará una ventana emergente para pedir confirmación.\n
+            - Para continuar con la explicación de los otros dos botones pulsa Siguiente.</item>
+        <item>Botón Repetir instruccion:\n
+            Es el segundo botón de la columna, con él se reproduce de nuevo la última instrucción dada antes de pasar a la siguiente.</item>
+        <item>Modo Instrucciones Detalladas:\n
+            Este modo se activa y se desactiva con el botón de color lila que ocupa la tercera posición de la columna.\n
+            Este modo consiste en proporcionar instrucciones mucho más informadas que las que aparecen por defecto. En ellas aparece información extra sobre lo que hay alrededor a medida que avanzas hacia tu destino.\n
+            Una vez pulsado el lector de pantalla o Talkback indican su estado. Por defecto este modo se encuentra activado.</item>
+    </string-array>
+
+    <string-array name="destinos_array">
+        <item>aula 1</item>
+        <item>aula 2</item>
+        <item>aula 3</item>
+        <item>aula 4</item>
+        <item>aula 5</item>
+        <item>aula 6</item>
+        <item>aula 7</item>
+        <item>aula 8</item>
+        <item>aula 9</item>
+        <item>aula 10</item>
+        <item>aula 11</item>
+        <item>aula 12</item>
+        <item>aula 13</item>
+        <item>aula 14</item>
+        <item>aula 15</item>
+        <item>aula 16</item>
+        <item>biblioteca</item>
+        <item>cafeteria</item>
+        <item>conserjeria</item>
+        <item>puerta principal</item>
+        <item>sala de grados</item>
+        <item>sala de juntas</item>
+        <item>salon de actos</item>
+        <item>secretaria</item>
+    </string-array>
+
+</resources>
