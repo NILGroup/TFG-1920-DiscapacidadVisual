@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.app_guia_v5.ConfigActivity">
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -15,11 +15,11 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="160dp"
         android:orientation="vertical"
+        android:id="@+id/botonesajustes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
-
 
         <Switch
             android:id="@+id/modo_verb_switch"
