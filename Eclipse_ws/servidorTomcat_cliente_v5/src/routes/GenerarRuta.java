@@ -240,9 +240,10 @@ public class GenerarRuta {
 			
 			String dir = indicaDirFinal(dirDeLaQueVengo, direccionPrincipal);
 			if(dirDeLaQueVengo.equals(direccionPrincipal)) {//Aún no hay que girar
-				s = "Continua recto " + Float.toString(metros) +" metros.";
+				s = "Continua recto " + Float.toString(metros) +" metros. ";
+				dir = indicaDirFinal(dirDeLaQueVengo, direccionSig);
 				if(dir.equals("delante")) {
-					//s += "espera la siguiente instrucción";
+					//s += "espera la siguiente instrucción"; se elimina de las instrucciones
 				}
 				else {//Hay que hacer algún giro
 					s += "Luego gira " + dir + ".";
