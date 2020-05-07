@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.app_guia_v5_salvada">
+    package="com.example.app_guia_v5">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -16,26 +16,26 @@
     -->
 
     <application
-        android:name="com.example.app_guia_v5_salvada.App"
+        android:name="com.example.app_guia_v5.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.app_guia_v5_salvada.ModoDeUsoActivity"
+        <activity android:name="com.example.app_guia_v5.ModoDeUsoActivity"
             android:label="@string/ventana_instruc"/>
-        <activity android:name="com.example.app_guia_v5_salvada.InstruccionesAppActivity"
+        <activity android:name="com.example.app_guia_v5.InstruccionesAppActivity"
             android:label="Instrucciones"/>
-        <activity android:name="com.example.app_guia_v5_salvada.ListaDestinosActivity"
+        <activity android:name="com.example.app_guia_v5.ListaDestinosActivity"
             android:label="@string/ventana_destinos"/>
-        <activity android:name="com.example.app_guia_v5_salvada.ListaAulasActivity"
+        <activity android:name="com.example.app_guia_v5.ListaAulasActivity"
             android:label="@string/ventana_aulas"/>
-        <activity android:name="com.example.app_guia_v5_salvada.ScanningActivity"
+        <activity android:name="com.example.app_guia_v5.ScanningActivity"
             android:label="@string/ventana_ruta"/>
-        <activity android:name="com.example.app_guia_v5_salvada.ConfigActivity"
+        <activity android:name="com.example.app_guia_v5.ConfigActivity"
             android:label="@string/ventana_config"/>
-        <activity android:name="com.example.app_guia_v5_salvada.MainActivity">
+        <activity android:name="com.example.app_guia_v5.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

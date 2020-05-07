@@ -23,7 +23,7 @@ import routes.Planta;
 public class Edificio {
 
 	private CargaXML carga;
-	private ArrayList<Planta> aEstancias = new ArrayList<Planta>();
+	private ArrayList<Planta> aPlantas = new ArrayList<Planta>();
 	private ArrayList<Cuadrante> aCuadrantes= new ArrayList<Cuadrante>();
 
 	public Edificio() {
@@ -51,7 +51,7 @@ public class Edificio {
 		           String archivo = planta.getChildText("archivo");
 		           if (!archivo.equals("nada")){
 		        	   carga= new CargaXML(archivo);
-		        	   aEstancias.addAll(carga.getEstancias());
+		        	   aPlantas.addAll(carga.getPlantas());
 		        	   aCuadrantes.addAll(carga.getCuadrantes());
 		           }
 		        }
@@ -62,8 +62,8 @@ public class Edificio {
 		    }
 		}
 	
-	public ArrayList<Planta> getEstancias(){
-		return aEstancias;
+	public ArrayList<Planta> getPlantas(){
+		return aPlantas;
 	}
 	
 	public ArrayList<Cuadrante> getCuadrantes() {

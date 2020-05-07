@@ -1,4 +1,4 @@
-package com.example.app_guia_v5_salvada;
+package com.example.app_guia_v5;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.app_guia_v5_salvada.R;
+import com.example.app_guia_v5.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

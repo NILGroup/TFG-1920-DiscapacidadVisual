@@ -20,7 +20,7 @@ import routes.Planta;
  */
 public class CargaXML {
 
-	private ArrayList<Planta> aEstancias;
+	private ArrayList<Planta> aPlantas;
 	private ArrayList<Cuadrante> aCuadrantes = new ArrayList<Cuadrante>();
 
 	@SuppressWarnings("rawtypes")
@@ -38,7 +38,7 @@ public class CargaXML {
 	        List lista_estancias = rootNode.getChildren( "estancia" );//Se obtiene la lista de hijos de la raiz 'planta'
 	        String planta = rootNode.getChildText("Z");
 	        
-	       aEstancias = new ArrayList<Planta>();
+	        aPlantas = new ArrayList<Planta>();
 	        for ( int indexEstancia = 0; indexEstancia < lista_estancias.size(); indexEstancia++ )//Se recorre la lista de 'estancias'
 	        {
 	            Element estancia = (Element) lista_estancias.get(indexEstancia);//Se obtiene el elemento 'estancia'
@@ -88,7 +88,7 @@ public class CargaXML {
 		 	        		 	            	 
 	            }
 	            
-	            aEstancias.add(e);
+	            aPlantas.add(e);
 	
 	        }
 	        
@@ -104,8 +104,8 @@ public class CargaXML {
 	}
 
 
-	public ArrayList<Planta> getEstancias(){
-		return aEstancias;
+	public ArrayList<Planta> getPlantas(){
+		return aPlantas;
 	}
 
 

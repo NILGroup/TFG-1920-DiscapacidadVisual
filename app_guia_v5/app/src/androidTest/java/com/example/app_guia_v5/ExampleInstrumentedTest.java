@@ -1,4 +1,4 @@
-package com.example.app_guia_v5_salvada;
+package com.example.app_guia_v5;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.app_guia_v5_salvada", appContext.getPackageName());
+        assertEquals("com.example.app_guia_v5", appContext.getPackageName());
     }
 }

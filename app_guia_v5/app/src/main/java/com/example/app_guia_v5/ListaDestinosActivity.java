@@ -1,4 +1,4 @@
-package com.example.app_guia_v5_salvada;
+package com.example.app_guia_v5;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +18,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.*;
 
-import com.example.app_guia_v5_salvada.R;
+import com.example.app_guia_v5.R;
 
 public class ListaDestinosActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener{
 

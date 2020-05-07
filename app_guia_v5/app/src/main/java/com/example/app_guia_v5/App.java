@@ -1,4 +1,4 @@
-package com.example.app_guia_v5_salvada;
+package com.example.app_guia_v5;
 
 import android.app.Application;
 import com.kontakt.sdk.android.common.KontaktSDK;

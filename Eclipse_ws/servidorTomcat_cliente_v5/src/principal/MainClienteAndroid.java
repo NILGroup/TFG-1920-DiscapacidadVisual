@@ -41,7 +41,7 @@ public class MainClienteAndroid {
 
 	
 	private static ArrayList<Integer> lCuadrantes = new ArrayList<Integer>();
-	private static ArrayList<Planta> aEstancias; //todas las estancias del edificio
+	private static ArrayList<Planta> aPlantas; //todas las estancias del edificio
 	private static ArrayList<Cuadrante> aCuadrantes; //todos los cuadrantes del edificio
 	private static Edificio edificio;
 	private String beaconOrigen = "no", destino = "no";
@@ -57,7 +57,7 @@ public class MainClienteAndroid {
         
         //Cargamos la estructura del edificio
         edificio = new Edificio();
-    	aEstancias = edificio.getEstancias();
+    	aPlantas = edificio.getPlantas();
     	aCuadrantes = edificio.getCuadrantes();
     	
     	//Cargamos los destinos
@@ -98,7 +98,7 @@ public class MainClienteAndroid {
 		echoMsg = cuadRutaStr[1] + " FINAL" +"|";
 		
 		//Gerenamos las instrucciones
-		gr = new GenerarRuta(lCuadrantes, aEstancias,aCuadrantes);
+		gr = new GenerarRuta(lCuadrantes, aPlantas,aCuadrantes);
     	
     	String [] auxGenerar = new String[2];
     	String instrucciones = "";
@@ -145,7 +145,7 @@ public class MainClienteAndroid {
 			Persona p = new Persona(ori, dest, aCuadrantes);
 			lCuadrantes = p.getCamino();
 			
-			int [][] m = p.getMatrizAdy();
+			//int [][] m = p.getMatrizAdy();
 			//System.out.println("Matriz ady\n" + m.toString());
 			
 			//System.out.println("Lista Cuadrantes" + lCuadrantes.toString());
