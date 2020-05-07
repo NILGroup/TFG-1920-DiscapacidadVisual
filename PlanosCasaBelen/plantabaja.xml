@@ -11,7 +11,7 @@
 					<este>-1</este>
 					<oeste>2</oeste>
 				</conectado>
-				<direccion>oeste</direccion>
+				<direccion>no?</direccion>
 				<pesos>
 					<p_norte>-1</p_norte>
 					<p_sur>-1</p_sur>
@@ -65,7 +65,7 @@
 					<este>3</este>
 					<oeste>8</oeste>
 				</conectado>
-				<direccion>sur</direccion>
+				<direccion>no</direccion>
 				<pesos>
 					<p_norte>1</p_norte>
 					<p_sur>1</p_sur>
@@ -188,15 +188,15 @@
 				<conectado>
 					<norte>-1</norte>
 					<sur>-1</sur>
-					<este>10</este>
-					<oeste>-1</oeste>
+					<este>-1</este>
+					<oeste>10</oeste>
 				</conectado>
 				<direccion>oeste</direccion>
 				<pesos>
 					<p_norte>-1</p_norte>
 					<p_sur>-1</p_sur>
-					<p_este>1</p_este>
-					<p_oeste>-1</p_oeste>
+					<p_este>-1</p_este>
+					<p_oeste>1</p_oeste>
 				</pesos>
 				<info>terrassa</info>
 				<metros>5</metros>
