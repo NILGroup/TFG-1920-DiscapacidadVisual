@@ -51,17 +51,12 @@ public class ListaCuadrantes {
 		for (int i=0; i<size;i++) {
 			
 			String[] conectado = lista.get(i).getConectado();
-			int[] pesos = lista.get(i).getPesos();
 			
 			try {
 			
 				int norte = Integer.parseInt(conectado[0]);
 				if (norte >= 0) {
-					//matrizAdy[i][norte] = 1;
 					matrizAdy[i][norte] = lista.get(i).getPesos()[0];
-					/*if(norte == 31 || norte == 32) {//Conexion 22-31, 31-32
-						matrizAdy[i][norte] = 5;
-					}*/
 				}
 				
 			} catch (NumberFormatException e) {
@@ -72,11 +67,7 @@ public class ListaCuadrantes {
 				
 				int sur = Integer.parseInt(conectado[1]);
 				if (sur >= 0) {
-					//matrizAdy[i][sur] = 1;
 					matrizAdy[i][sur] = lista.get(i).getPesos()[1];
-					/*if(sur == 31 || sur == 22) {//Conexion 32-31, 31-22
-						matrizAdy[i][sur] = 5;
-					}*/
 				}
 				
 			} catch (NumberFormatException e) {
@@ -88,7 +79,6 @@ public class ListaCuadrantes {
 				int este = Integer.parseInt(conectado[2]);
 				if (este >= 0) {
 					matrizAdy[i][este] = lista.get(i).getPesos()[2];
-					//matrizAdy[i][este] = 1;
 				}
 				
 			} catch (NumberFormatException e) {
@@ -100,7 +90,6 @@ public class ListaCuadrantes {
 				int oeste = Integer.parseInt(conectado[3]);
 				if (oeste >= 0) {
 					matrizAdy[i][oeste] = lista.get(i).getPesos()[3];
-					//matrizAdy[i][oeste] = 1;
 				}
 									
 			} catch (NumberFormatException e) {

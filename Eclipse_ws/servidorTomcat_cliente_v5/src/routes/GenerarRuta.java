@@ -17,14 +17,14 @@ import java.util.Iterator;
 public class GenerarRuta {
 	
 	private ArrayList<Integer> lCuadrantes;
-	private ArrayList<Planta> aEstancias;
+	private ArrayList<Planta> aPlantas;
 	private ArrayList<Cuadrante> aCuadrantes;
 	private int cuadranteClave;
 
-	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Planta> _aEstancias, ArrayList<Cuadrante> _aCuadrantes) {
+	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Planta> _aPlantas, ArrayList<Cuadrante> _aCuadrantes) {
 		
 		lCuadrantes=_lCuadrantes;
-		aEstancias=_aEstancias;
+		aPlantas=_aPlantas;
 		aCuadrantes = _aCuadrantes;
 		
 	}
@@ -66,7 +66,7 @@ public class GenerarRuta {
 				Cuadrante cuadAnt = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
 				
 				String dirAnt = cuadAnt.getDireccion(c1);
-				String dirDest = c1.getDireccion();
+				String dirDest = c1.getPosDestino();
 				
 				rutaFinal = "Su destino está " + indicaDirFinal(dirAnt, dirDest)
 				/*indicaDirFinal(cuadAnt,c1)*/ + ". El recorrido ha finalizado";
@@ -125,7 +125,7 @@ public class GenerarRuta {
 				subeBaja = "Baja";
 			}
 			String dirAnt = cuadAnt.getDireccion(c1);
-			String dirDest = c1.getDireccion();
+			String dirDest = c1.getPosDestino();
 			
 			//if(!cuadAnt.getDireccion(c1).equals(c1.getDireccion())) {//hay que girar para ponerse delante del ascensor
 				res[0] = "El ascensor está "+ indicaDirFinal(dirAnt,dirDest)
@@ -154,15 +154,18 @@ public class GenerarRuta {
 		}*/
 		else {//El siguiente cuadrante está en la misma planta
 			Planta est = null;
-			if(c1.getZ() == 1) {
-				est = aEstancias.get(0);
+			
+			/*if(c1.getZ() == 0) {
+				est = aPlantas.get(0);
 			}
-			else if(c1.getZ() == 0) {
-				est = aEstancias.get(1);
+			else if(c1.getZ() == 1) {
+				est = aPlantas.get(1);
 			}
 			else {
 				//otras plantas del edificio
-			}
+			}*/
+			
+			est = aPlantas.get(c1.getZ());
 			
 			String direccionPrincipal = c1.getDireccion(c2);
 			String direccion = direccionPrincipal;
@@ -192,7 +195,7 @@ public class GenerarRuta {
 					}*/
 					cuadranteClave = c2.getID();
 					String dirAnt = c1.getDireccion(c2);
-					String dirDest = c1.getDireccion();
+					String dirDest = c1.getPosDestino();
 					String dir = indicaDirFinal(dirAnt,dirDest);
 					if(dir.equals("delante")) {
 						res[0] ="Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";

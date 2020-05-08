@@ -32,7 +32,7 @@ public class Edificio {
 		    SAXBuilder builder = new SAXBuilder();
 		    
 		    File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();    
-		    File xmlFile = new File( catalinaBase, "webapps/xml_modif/edificio.xml" );
+		    File xmlFile = new File( catalinaBase, "webapps/xml_modif_2/edificio.xml" );
 		    
 		    
 		    try
