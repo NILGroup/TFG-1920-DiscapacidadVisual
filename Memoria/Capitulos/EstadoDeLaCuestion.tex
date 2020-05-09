@@ -3,7 +3,7 @@
 
 Este capítulo lo dedicaremos a estudiar el contexto sobre el que se sustenta nuestro trabajo. Antes de comenzar debemos conocer los trabajos previos que se han realizado en la navegación y cómo se han abordado desde el punto de vista tecnológico. Nos interesaremos, especialmente, en aquellos enfocados a la navegación por interiores y, en concreto, aquellos cuyo usuario final es una persona con discapacidad visual. 
 
-En la Sección \ref{sec:appGuia} se exponen distintas aplicaciones de navegación. De ellas extraemos sus puntos más fuertes y, sobre todo, sus carencias, pues serán esos puntos donde nuestro trabajo tratará de incidir en mayor medida. En la Sección \ref{sec:sisPos} veremos la tecnología necesaria para el posicionamiento, comparando las tres principales vertientes: GPS, Wi-Fi y Bluetooth.
+En la Sección \ref{sec:appGuia} se exponen distintas aplicaciones de navegación. De ellas extraemos sus puntos más fuertes y, sobre todo, sus carencias, pues serán esos puntos donde nuestro trabajo tratará de incidir en mayor medida. En la Sección \ref{sec:sisPos} veremos la tecnología necesaria para el posicionamiento, comparando las tres principales vertientes: GPS, Wi-Fi y Bluetooth. 
 
 \section{Aplicaciones de guía}
 \label{sec:appGuia}
@@ -211,6 +211,33 @@ Los \textit{beacons} son dispositivos que se pueden colocar tanto en interiores 
 \end{itemize}
 
 Otros factores difíciles de controlar que también afectan a la señal son las condiciones meteorológicas, la señal Wi-Fi, las señales bluetooth de otros dispositivos \citep{beaconsinterferences}...
+
+
+\section{Trabajos previos}
+
+Además del estudio de las aplicaciones ya existentes y de las distintas opciones para resolver el problema del posicionamiento, es importante conocer algunos de los trabajos previos que se han hecho en el campo de la navegación por interiores. En concreto nos centramos en dos trabajos de fin de grado realizados por alumnos de la Facultad de Informática de la UCM. Estos son especialmente interesantes puesto que, al igual que el nuestro, su caso de estudio se centra en la misma Facultad. Así mismo, se pone de manifiesto el relevante trabajo de otros compañeros.
+
+
+\subsection{Sistema de guía por voz en interiores 2012-2013}
+
+Proyecto realizado por Mariana Martín- Calderín de la Villa como trabajo de fin de grado durante los años 2012 y 2013 \citep{TFGMariana}.
+
+Este proyecto establece las bases para la creación de un sistema de guía en interiores. Es uno de los trabajos sobre el que se basó el proyecto de la sección siguiente y, por ende, también el nuestro. 
+
+La finalidad de este trabajo es guiar a un usuario en un escenario provisto de red Wi-Fi. En este caso, se utilizó como escenario, la primera planta de la Facultad de Informática de la Universidad Complutense de Madrid. Mediante el posicionamiento Wi-Fi, el sistema es capaz de captar la posición en la que se encuentra el usuario. Gracias al sistema de voz integrado en la aplicación, el usuario debe indicar a través de él el destino al que desea ir. Una vez queda localizado en el escenario el origen y el destino del usuario, el sistema genera una serie de instrucciones que serán transmitidas por voz al usuario e indicarán la ruta que debe seguir para alcanzar el destino solicitado.
+%Se realizaron cambios significativos respecto al proyecto AVANTI. Como es la adaptación del proyecto a la nuevas versiones Android, que incluyen mejoras en los sistemas del acelerómetro y la brújula.Utilizando el mismo sistema de posicionamiento por wi-fi que venía desarrollándose en proyectos previos, se consiguió calcular una ruta mínima entre dos puntos para poder guiar al usuario por la primera planta de la Facultad de Informática. Generando un listado de instrucciones basadas en nuestra orientación y distancia en metros.Además, para facilitar al usuario el manejo de la aplicación, se implantaron los sistemas de reconocimiento y reproducción de voz, utilizados para captar el destino deseado y la lectura de las instrucciones generadas
+
+\subsection{Generador interactivo de instrucciones de guía sobre plataformas móviles 2013-2014}
+\label{sub:genInterTFG}
+
+
+Proyecto realizado por Víctor Manuel Pose Murga, Víctor Gutiérrez Rodríguez y Juan Diego Lozano Martín como trabajo de fin de grado durante los años 2013 y 2014 \citep{TFGguia}. 
+
+Como el propio título del trabajo ya avanza, este proyecto tenía como finalidad el desarrollo de una aplicación de guía sobre Android. Esta aplicación permitía al usuario introducir el destino al que quería dirigirse mediante voz para que el sistema de generación de instrucciones le guiara paso a paso, mediante instrucciones sencillas. El caso de estudio utilizado en su caso fue la Facultad de Informática y el sistema de posicionamiento utilizado fue la triangulación mediante señales Wi-Fi.
+
+Este proyecto estaba claramente dividido en dos partes, el cliente y el servidor. El cliente estaba constituido por la propia aplicación, mientras que el servidor constituía la parte lógica y con más carga computacional, pues era el encargado de la generación de instrucciones. Este servidor estaba implementado de manera independiente al edificio en el que se fuera a utilizar. Esto fue posible gracias a que la estructura, dividida en distintas secciones (ver Sección \ref{sec:mapeo}), del edificio se guardaba en archivos xml independientes del código. En su caso solo se disponía de la estructura correspondiente a la primera planta de la Facultad.
+
+En los capítulos que siguen veremos con detalle los aspectos de este trabajo que han sido utilizados total o parcialmente.
 
 
 \section{Conclusiones}
