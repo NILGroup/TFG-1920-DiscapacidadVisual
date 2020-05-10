@@ -27,6 +27,8 @@
     <string name="parar_button">Finalizar ruta</string>
     <string name="verbose_ruta_button">Instrucciones detalladas</string>
 
+    <string name="mute_button">Modo silencio</string>
+
     <!-- MODO DE USO -->
     <string name="instrucciones_text">Aquí meteremos las instrucciones de uso de nuestra app.\n</string>
     <string name="general_button">Cómo iniciar una ruta</string>

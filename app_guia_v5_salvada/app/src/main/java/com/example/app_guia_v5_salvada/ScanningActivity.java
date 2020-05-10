@@ -1,18 +1,23 @@
 package com.example.app_guia_v5_salvada;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import com.kontakt.sdk.android.ble.configuration.ScanMode;
@@ -36,11 +41,13 @@ import androidx.annotation.NonNull;
 import android.widget.EditText;
 
 import 	android.text.method.ScrollingMovementMethod;
+import android.widget.ImageButton;
 
 public class ScanningActivity extends AppCompatActivity  implements View.OnClickListener {
 
     private ProximityManager proximityManager;
     public static final String TAG = "ProximityManager";
+    private List<String> uri; //uri del servidor
 
     private EditText editText;
     private TTSManager ttsManager = null;
@@ -51,7 +58,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     private static String destino;
 
-    private boolean hayRuta = false, hayServ = false;
+    private boolean hayRuta = false, hayServ = false, modoSilencio = false;
     private String origen;
     private String beacon_mas_cerca;
 
@@ -59,6 +66,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private Integer indiceRuta = 0, numPasosPerdidos = 0;
     private static boolean verbose = true; //Por defecto esta a true
     private Button iniciar_button, modo_verb_button, stop_button, repet_button;
+    private Button mute_button;
+
+    //private PowerManager.WakeLock wakeLock;
 
     public static Intent createIntent(@NonNull Context context, String dest) {
         destino = dest;
@@ -80,6 +90,11 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setupButtons();
         //Initialize and configure proximity manager
         setupProximityManager();
+
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //PowerManager mgr = (PowerManager)getSystemService(Context.POWER_SERVICE);
+        //wakeLock = mgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "BlindBit::WakelockTag");
     }
 
 
@@ -100,6 +115,13 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
         repet_button = (Button) findViewById(R.id.repetir_button);
         repet_button.setOnClickListener(this);
+
+        mute_button = (Button) findViewById(R.id.mute_button);
+        mute_button.setOnClickListener(this);
+
+        Resources res = getResources();
+        // Convert String Array to List
+        uri  = Arrays.asList(res.getStringArray(R.array.uri_servidor));
     }
 
     private void setupProximityManager() {
@@ -132,6 +154,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 //Toast.makeText(ScanningActivity.this, "Scanning started", Toast.LENGTH_SHORT).show();
             }
         });
+        //wakeLock.acquire();
     }
 
     private void stopScanning() {
@@ -140,6 +163,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             proximityManager.stopScanning();
             //Toast.makeText(this, "Scanning stopped", Toast.LENGTH_SHORT).show();
         }
+        //wakeLock.release();
     }
 
     private EddystoneListener createEddystoneListener() {
@@ -167,7 +191,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                         if(hayServ) {//Si no ha habido ningún problema en la conexión con el servidor
                             hayRuta = true;
 
-                            ttsManager.addQueue("Bienvenido a la Facultad de Informática de la UCM.");
+                            //ttsManager.addQueue("Bienvenido a la Facultad de Informática de la UCM.");
                             ttsManager.addQueue("Iniciando ruta a " + destino);
                             indicaInstruccion();
                             escribeEditText();
@@ -271,7 +295,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private void conectaCliente(){
         String[] results = new String[4];
         //Hacemos un hilo que llame al servidor para que nos de los parámetros que queremos
-        Cliente c = new Cliente(destino, origen);
+        Cliente c = new Cliente(destino, origen, uri.get(0));
+        Log.i("URI", uri.get(0) +"\n");
         results = c.createWebSocketClient().clone();
 
         if(results[0].equals("noInfo")){
@@ -320,6 +345,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         //Remember to disconnect when finished.
         proximityManager.disconnect();
         ttsManager.shutDown();
+        //wakeLock.release();
         super.onDestroy();
     }
 
@@ -351,6 +377,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
@@ -388,6 +415,23 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     editText.setText(editText.getText() + "______________\n");
                     editText.setText(editText.getText() + "Ruta repetida:" + listaInstrucciones.get(indiceRuta) + "\n");
                     editText.setText(editText.getText() + "______________\n");
+                }
+                break;
+
+            case R.id.mute_button:
+                if(!modoSilencio){
+                    modoSilencio = true;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mute_button.setBackground(getResources().getDrawable(R.drawable.speakeroff));
+                        ttsManager.shutDown();
+                    }
+                }
+                else{
+                    modoSilencio = false;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mute_button.setBackground(getResources().getDrawable(R.drawable.speaker));
+                        ttsManager.init(this);
+                    }
                 }
                 break;
         }

@@ -66,7 +66,7 @@ public class MainClienteAndroid {
     	
     	System.out.println(aCuadrantes.get(0).getBeacon());
     	System.out.println(aCuadrantes.get(7).getPosDestino());
-    	System.out.println(aCuadrantes.get(38).getPosDestino());
+    	//System.out.println(aCuadrantes.get(38).getPosDestino());
     	//System.out.println(lectorDest.buscarDestino("ascensor_cafe_trasera_p1").getDireccion());
     	System.out.println("Datos cargados ...");
     }

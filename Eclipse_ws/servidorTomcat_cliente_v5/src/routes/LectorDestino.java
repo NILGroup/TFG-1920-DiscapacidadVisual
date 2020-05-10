@@ -34,7 +34,7 @@ public class LectorDestino {
 		try {
 			File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();
 			//System.out.println("Catalina: " + catalinaBase);
-			destinos = (JSONArray) parser.parse(new FileReader(catalinaBase + "/webapps/destinosModif.json"));
+			destinos = (JSONArray) parser.parse(new FileReader(catalinaBase + "/webapps/destinosBelen.json"));
 			for (Object o : destinos){
 	
 				JSONObject dest = (JSONObject) o;

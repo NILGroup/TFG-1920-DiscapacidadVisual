@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -24,27 +25,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.app_guia_v5_salvada.ModoDeUsoActivity"
-            android:label="@string/ventana_instruc"/>
+            android:label="@string/ventana_instruc"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.InstruccionesAppActivity"
-            android:label="Instrucciones"/>
+            android:label="Instrucciones"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.ListaDestinosActivity"
-            android:label="@string/ventana_destinos"/>
+            android:label="@string/ventana_destinos"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.ListaAulasActivity"
-            android:label="@string/ventana_aulas"/>
+            android:label="@string/ventana_aulas"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.ScanningActivity"
-            android:label="@string/ventana_ruta"/>
+            android:label="@string/ventana_ruta"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.ConfigActivity"
-            android:label="@string/ventana_config"/>
-        <activity android:name="com.example.app_guia_v5_salvada.MainActivity">
+            android:label="@string/ventana_config"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.example.app_guia_v5_salvada.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Services -->
         <service
             android:name="com.kontakt.sdk.android.ble.service.ProximityService"
             android:exported="false" />
+
     </application>
 
 </manifest>

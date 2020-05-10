@@ -67,4 +67,8 @@
         <item>secretaria</item>
     </string-array>
 
+    <string-array name="uri_servidor">
+        <item>ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint</item>
+    </string-array>
+
 </resources>

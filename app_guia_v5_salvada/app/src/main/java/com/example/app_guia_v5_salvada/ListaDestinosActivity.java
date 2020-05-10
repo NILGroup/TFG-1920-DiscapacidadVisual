@@ -165,22 +165,28 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                 startActivity(ListaAulasActivity.createIntent(this));
                 break;
             case R.id.biblioteca_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(16)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(16)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 0"));
                 break;
             case R.id.cafeteria_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(17)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(17)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 2"));
                 break;
             case R.id.conserjeria_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(18)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(18)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 5"));
                 break;
             case R.id.puerta_principal_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(19)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(19)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 6"));
                 break;
             case R.id.sala_grados_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(20)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(20)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 8"));
                 break;
             case R.id.sala_juntas_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(21)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(21)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 10"));
                 break;
             case R.id.salon_actos_button:
                 startActivity(ScanningActivity.createIntent(this, listaDestinos.get(22)));

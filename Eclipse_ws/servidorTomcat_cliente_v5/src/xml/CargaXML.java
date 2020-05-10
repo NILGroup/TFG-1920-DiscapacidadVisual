@@ -29,7 +29,7 @@ public class CargaXML {
 		 //Se crea un SAXBuilder para poder parsear el archivo
 	    SAXBuilder builder = new SAXBuilder();
 	    File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();
-	    File xmlFile = new File(catalinaBase,"webapps/xml_modif_2/"+nombreXML+".xml");
+	    File xmlFile = new File(catalinaBase,"webapps/xml_modif_belen/"+nombreXML+".xml");
 	    try
 	    {
 
