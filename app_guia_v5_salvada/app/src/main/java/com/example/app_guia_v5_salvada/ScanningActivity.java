@@ -65,8 +65,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private List<String> listaInstrucciones, listaBeacons, listaGiros, listaInfoAdicional;
     private Integer indiceRuta = 0, numPasosPerdidos = 0;
     private static boolean verbose = true; //Por defecto esta a true
-    private Button iniciar_button, modo_verb_button, stop_button, repet_button;
-    private Button mute_button;
+    private Button iniciar_button, modo_verb_button, stop_button, repet_button, mute_button;
 
     //private PowerManager.WakeLock wakeLock;
 
@@ -279,13 +278,18 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 ttsManager.addQueue(listaInfoAdicional.get(indiceRuta));
             }
         }
-        if(listaGiros.get(indiceRuta).equals("si")){
-            vibrator.vibrate(1000);
+        if(listaGiros.get(indiceRuta).equals("iz")){
+            vibrator.vibrate(1000); //vibración larga
+        }
+        else if(listaGiros.get(indiceRuta).equals("der")){
+            long[] pattern={500,500}; //dos vibraciones cortas
+            vibrator.vibrate(pattern,-1);
         }
     }
 
     private void escribeEditText(){
         editText.setText(editText.getText() + "______________\n");
+        editText.setText(editText.getText() + "Destino: " + destino + "\n");
         editText.setText(editText.getText() + listaInstrucciones.get(indiceRuta) + "\n");
         editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
         editText.setText(editText.getText() + "Beacon clave: " + listaBeacons.get(indiceRuta+1) + "\n");
@@ -301,6 +305,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
         if(results[0].equals("noInfo")){
             ttsManager.initQueue("No se ha podido conectar con el servidor");
+            editText.setText("No se ha podido conectar con el servidor.");
             hayServ = false;
             onStop();
         }
@@ -327,10 +332,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             }
         }
         return masCercano;
-    }
-
-    public void escribeResultados() {
-        Log.i(TAG, editText.getText().toString() + "\n");
     }
 
     @Override

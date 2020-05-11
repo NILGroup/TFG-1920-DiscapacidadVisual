@@ -25,10 +25,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.app_guia_v5_salvada.ModoDeUsoActivity"
-            android:label="@string/ventana_instruc"
+            android:label="@string/ventana_modoDeUso"
             android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.InstruccionesAppActivity"
-            android:label="Instrucciones"
+            android:label="@string/ventana_guiaDeUso"
             android:screenOrientation="portrait"/>
         <activity android:name="com.example.app_guia_v5_salvada.ListaDestinosActivity"
             android:label="@string/ventana_destinos"

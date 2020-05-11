@@ -1,14 +1,17 @@
 <resources>
 
     <string name="app_name">Blind Bit Salvada</string>
-    <string name="ventana_instruc">Instrucciones</string>
+
     <string name="ventana_config"> Ajustes</string>
     <string name="ventana_ruta">Ruta</string>
     <string name="ventana_destinos">Lista de destinos</string>
     <string name="ventana_aulas">Lista de aulas</string>
+    <string name="ventana_modoDeUso">Modo de uso</string>
+    <string name="ventana_guiaDeUso">Guía de uso</string>
+
     <string name="button_start_searching">Iniciar ruta</string>
     <string name="config_button">Ajustes</string>
-    <string name="instructions_button">Instrucciones</string>
+    <string name="instructions_button">Modo de uso</string>
     <string name="logo_image">Logo de la aplicación</string>
 
     <!-- CONFIGURACION -->

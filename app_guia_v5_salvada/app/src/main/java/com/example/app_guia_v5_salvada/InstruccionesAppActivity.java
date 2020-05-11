@@ -3,6 +3,7 @@ package com.example.app_guia_v5_salvada;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -17,8 +18,9 @@ public class InstruccionesAppActivity extends AppCompatActivity implements View.
 
     private String[] listaModoUso;
     private static int indice_modoUso;
-    private Button anterior_button, repro_button, siguiente_button;
+    private Button anterior_button, repro_button, siguiente_button, mute_button;
     private EditText editText_modoUso;
+    private boolean modoSilencio = false;
 
     private TTSManager ttsManager = null;
 
@@ -47,6 +49,9 @@ public class InstruccionesAppActivity extends AppCompatActivity implements View.
         editText_modoUso = findViewById(R.id.modo_uso_text);
         editText_modoUso.setText("Pulsa reproducir para comenzar");
         editText_modoUso.setMovementMethod(new ScrollingMovementMethod());
+
+        mute_button = (Button) findViewById(R.id.mute_button);
+        mute_button.setOnClickListener(this);
 
         anterior_button.setOnClickListener(this);
         repro_button.setOnClickListener(this);
@@ -90,6 +95,22 @@ public class InstruccionesAppActivity extends AppCompatActivity implements View.
             case R.id.siguiente_button:
                 indice_modoUso = (indice_modoUso + 1)%6;
                 actualizaModoUso();
+                break;
+            case R.id.mute_button:
+                if(!modoSilencio){
+                    modoSilencio = true;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mute_button.setBackground(getResources().getDrawable(R.drawable.speakeroff));
+                        ttsManager.shutDown();
+                    }
+                }
+                else{
+                    modoSilencio = false;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mute_button.setBackground(getResources().getDrawable(R.drawable.speaker));
+                        ttsManager.init(this);
+                    }
+                }
                 break;
         }
     }
