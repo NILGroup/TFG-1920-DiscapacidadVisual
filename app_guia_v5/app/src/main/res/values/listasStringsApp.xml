@@ -67,4 +67,15 @@
         <item>secretaria</item>
     </string-array>
 
+    <string-array name="destinosdinamicos_array">
+        <item> Aulas|aula 1,aula 2,aula 3, aula 4,  aula 5, aula 6, aula 7,aula 8,aula 9,aula 10, aula 11, aula 12, aula 13, aula 14, aula 15, aula 16, , ,</item>
+        <item> Biblioteca|no </item>
+        <item> Cafeteria|no </item>
+        <item> Conserjeria|no </item>
+        <item> Puerta principal|no </item>
+        <item> Sala de grados|no </item>
+        <item> Sala de juntas|no </item>
+        <item> Salon de actos|no </item>
+        <item> Secretaria|no </item>
+    </string-array>
 </resources>
