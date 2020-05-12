@@ -17,14 +17,14 @@ import java.util.Iterator;
 public class GenerarRuta {
 	
 	private ArrayList<Integer> lCuadrantes;
-	private ArrayList<Planta> aEstancias;
+	private ArrayList<Planta> aPlantas;
 	private ArrayList<Cuadrante> aCuadrantes;
 	private int cuadranteClave;
 
-	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Planta> _aEstancias, ArrayList<Cuadrante> _aCuadrantes) {
+	public GenerarRuta(ArrayList<Integer> _lCuadrantes, ArrayList<Planta> _aPlantas, ArrayList<Cuadrante> _aCuadrantes) {
 		
 		lCuadrantes=_lCuadrantes;
-		aEstancias=_aEstancias;
+		aPlantas=_aPlantas;
 		aCuadrantes = _aCuadrantes;
 		
 	}
@@ -66,29 +66,9 @@ public class GenerarRuta {
 				Cuadrante cuadAnt = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
 				
 				String dirAnt = cuadAnt.getDireccion(c1);
-				String dirDest = c1.getDireccion();
+				String dirDest = c1.getPosDestino();
 				
-				rutaFinal = "Su destino está " + indicaDirFinal(dirAnt, dirDest)
-				/*indicaDirFinal(cuadAnt,c1)*/ + ". El recorrido ha finalizado";
-				
-				/*if((posDest >= 0 && posDest <= 7) || (posDest >= 21 && posDest <= 26) || 
-						(posDest >= 12 && posDest <= 16) || posDest == 30 || posDest == 36 
-						|| posDest == 35) { //El destino es un aula
-					
-					if(c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("este") || posDest == 30
-							|| (c1.getDireccion(lCuadrantes.get(primerCuadrante-1)).equals("oeste") && 
-							(posDest >= 12 && posDest <= 16) ) || 
-							(posDest == 36 && (cuadAnt.getID() == 32 || cuadAnt.getID() == 35))
-							|| (posDest == 35 && cuadAnt.getID() == 34)) { //La direccion en la que vas es oeste
-						rutaFinal = "Su destino está a la izquierda. El recorrido ha finalizado.";
-					}
-					else { //Vas en direcion este
-						rutaFinal = "Su destino está a la derecha. El recorrido ha finalizado.";
-					}
-				}
-				else { //El destino no es un aula
-					rutaFinal = "Su destino está delante. El recorrido ha finalizado.";
-				}*/
+				rutaFinal = "Su destino está " + indicaDirFinal(dirAnt, dirDest);
 				res[0] = rutaFinal;
 				return res;
 			}
@@ -111,58 +91,23 @@ public class GenerarRuta {
 		//Suponemos que no va a iniciar la ruta en el ascensor. En ese caso te devuelve que el ascensor está delante
 		if (c1.getZ() != c2.getZ()) {
 			cuadranteClave = c2.getID();
-			/*if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22) {
-				res[0] = "Los ascensores están a tu izquierda. Baja a la planta cero.";
-				return res;
-			}
-			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
-				res[0] = "Los ascensores están a tu derecha. Baja a la planta cero.";
-				return res;
-			}*/
+			
 			String subeBaja = "Sube";
 			
 			if (c1.getZ() > c2.getZ()) {
 				subeBaja = "Baja";
 			}
 			String dirAnt = cuadAnt.getDireccion(c1);
-			String dirDest = c1.getDireccion();
+			String dirDest = c1.getPosDestino();
 			
-			//if(!cuadAnt.getDireccion(c1).equals(c1.getDireccion())) {//hay que girar para ponerse delante del ascensor
-				res[0] = "El ascensor está "+ indicaDirFinal(dirAnt,dirDest)
-						/*indicaDirFinal(cuadAnt,c1)*/ + ". " + subeBaja + " a la planta " + Integer.toString(c2.getZ()) + ".";
+			res[0] = "El ascensor está "+ indicaDirFinal(dirAnt,dirDest) + ". " + subeBaja + " a la planta " + Integer.toString(c2.getZ()) + ".";
 				return res;
-			//}
-			/*else {
-				res[0] = "El ascensor está delante. "+ subeBaja + " a la planta " + Integer.toString(c2.getZ()) + ".";
-				return res;
-			}*/
 		}
-		/*else if(c2.getZ() > c1.getZ()) {
-			cuadranteClave = c2.getID();
-			if(cuadAnt.getID() == 2 || cuadAnt.getID() == 22) {
-				res[0] = "Los ascensores están a tu izquierda. Sube a la primera planta.";
-				return res;
-			}
-			else if(cuadAnt.getID() == 32 || cuadAnt.getID() == 17) {
-				res[0] = "Los ascensores están a tu derecha. Sube a la primera planta.";
-				return res;
-			}
-			else {
-				res[0] = "El ascensor está delante. Sube a la primera planta.";
-				return res;
-			}
-		}*/
+		
 		else {//El siguiente cuadrante está en la misma planta
 			Planta est = null;
-			if(c1.getZ() == 1) {
-				est = aEstancias.get(0);
-			}
-			else if(c1.getZ() == 0) {
-				est = aEstancias.get(1);
-			}
-			else {
-				//otras plantas del edificio
-			}
+			
+			est = aPlantas.get(c1.getZ());
 			
 			String direccionPrincipal = c1.getDireccion(c2);
 			String direccion = direccionPrincipal;
@@ -172,27 +117,10 @@ public class GenerarRuta {
 			if(primerCuadrante > 0) { //Ya estamos en ruta
 				cuadAnterior = aCuadrantes.get(lCuadrantes.get(primerCuadrante-1));
 				if(cuadAnterior.getZ() != c1.getZ()) { //Acabamos de subir o bajar una planta
-					/*if(c1.getID() == 29 || c1.getID() == 10) {
-						cuadranteClave = c2.getID();
-						res[0] ="Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
-						return res;
-					}
-					else if(c1.getID() == 31) {
-						cuadranteClave = c2.getID();
-						if(c2.getID() == 32) {
-							res[0] = "Gira a la izquierda y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
-							res[1] = "si";
-							return res;
-						}
-						else {
-							res[0] = "Gira a la derecha y avanza " + Float.toString(c1.getMetros()) + "metros. Espera la siguiente indicación.";
-							res[1] = "si";
-							return res;
-						}
-					}*/
+					
 					cuadranteClave = c2.getID();
 					String dirAnt = c1.getDireccion(c2);
-					String dirDest = c1.getDireccion();
+					String dirDest = c1.getPosDestino();
 					String dir = indicaDirFinal(dirAnt,dirDest);
 					if(dir.equals("delante")) {
 						res[0] ="Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
@@ -200,7 +128,13 @@ public class GenerarRuta {
 					}
 					else {
 						res[0] = "Gira " + dir + " y avanza " + Float.toString(c1.getMetros()) + " metros. Espera la siguiente indicación.";
-						res[1] = "si";
+						//res[1] = "si";
+						if(dir.equals("a la derecha")){
+							res[1]="der";
+						}
+						else {
+							res[1]="iz";
+						}
 						return res;
 					}
 				}
@@ -251,24 +185,16 @@ public class GenerarRuta {
 			}
 			
 			else {
-				s = s += "Gira " + dir + ".";//generaInstruccion(direccionPrincipal, direccion, dirDeLaQueVengo);
+				s = s += "Gira " + dir + ".";
 				s += "Luego continua recto " + Float.toString(metros) +" metros.";
-				res[1]="si";
-			}
-			
-			/*if(direccion.equals(dirDeLaQueVengo)) {
-				s = "Continua recto " + Float.toString(metros) +" metros. Luego ";
-				direccion = direccionSig;	
-				s += generaInstruccion(direccionPrincipal, direccion, dirDeLaQueVengo);					
-			}
-			else {
-				if(!dirDeLaQueVengo.equals(direccionSig)) {
-					direccion = direccionSig;
+				//res[1]="si";
+				if(dir.equals("a la derecha")){
+					res[1]="der";
 				}
-				s = generaInstruccion(direccionPrincipal, direccion, dirDeLaQueVengo);
-				s += " .Luego continua recto " + Float.toString(metros) +" metros.";
-				res[1]="si";
-			}*/
+				else {
+					res[1]="iz";
+				}
+			}
 		}
 		
 		res[0] = s;
@@ -314,80 +240,6 @@ public class GenerarRuta {
 		return dirFinal;
 	}
 	
-	/*public String generaInstruccion(String direccionPrincipal, String direccion,
-			String dirDeLaQueVengo) {
-		String s = "";
-		
-		if (!direccion.equals(direccionPrincipal)) { //Giramos
-			s += ("Gira a la ");
-			
-			if (direccionPrincipal == "norte" ) {
-				
-				if (direccion == "este")
-					s += ("derecha.");
-				else if (direccion == "oeste")
-					s += ("izquierda.");
-				
-			}else if (direccionPrincipal == "sur") {
-				
-				if (direccion == "oeste")
-					s += ("derecha.");
-				else if (direccion == "este")
-					s += ("izquierda.");
-				
-			}else if (direccionPrincipal == "este" ) {
-				
-				if (direccion == "sur")
-					s += ("derecha.");
-				else if (direccion == "norte")
-					s += ("izquierda.");
-				
-			}else if (direccionPrincipal == "oeste" ) {
-				
-				if (direccion == "norte")
-					s += ("derecha.");
-				else if (direccion == "sur")
-					s += ("izquierda.");
-				
-			}
-			
-		}else if (!direccion.equals(dirDeLaQueVengo) ) { //Giramos
-			s += ("Gira a la ");
-			
-			if (dirDeLaQueVengo == "norte") {
-				
-				if (direccion == "este")
-					s += ("derecha.");
-				else if (direccion == "oeste")
-					s += ("izquierda.");
-				
-			}else if (dirDeLaQueVengo == "sur") {
-				
-				if (direccion == "oeste")
-					s += ("derecha.");
-				else if (direccion == "este")
-					s += ("izquierda.");
-				
-			}else if (dirDeLaQueVengo == "este") {
-				
-				if (direccion == "sur")
-					s += ("derecha.");
-				else if (direccion == "norte")
-					s += ("izquierda.");
-				
-			}else if (dirDeLaQueVengo == "oeste") {
-				
-				if (direccion == "norte")
-					s += ("derecha.");
-				else if (direccion == "sur")
-					s += ("izquierda.");
-			}
-			
-		} else {//No cambio de dirección
-			s += ("espera a la siguiente indicación.");
-		}
-		return s;
-	}*/
 
 	public int getCuadranteClave() {
 		return cuadranteClave;

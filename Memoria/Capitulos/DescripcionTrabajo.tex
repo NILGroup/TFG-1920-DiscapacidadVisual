@@ -8,7 +8,7 @@ En este capítulo explicamos el estudio realizado sobre el funcionamiento de los
 
 Una vez que hemos concluido, por las razones expuestas en la Sección \ref{sec:conclusionesposicionamiento}, escoger los \textit{beacons} como sistema de posicionamiento, vamos a realizar un estudio profundizando en los aspectos tecnológicos de estas balizas. El objetivo es comprender por completo su funcionamiento y comportamiento a la hora de medir distancias, es decir, cuánto rango tiene la señal bluetooth, con ayuda de qué función podemos recibir esta señal e interpretarla para determinar la distancia, qué margen de error presenta, en qué lugares es más aconsejable establecer las balizas para recibir mejor la señal y, por tanto, reducir el error, cómo de precisa es la distancia medida cuando el dispositivo móvil que recibe la señal bluetooth está en movimiento, etc. 
 
-Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de Desarrollo Software) propia de su marca (\textit{Kontakt}) en la que incluyen funciones ya implementadas que nos permiten conocer qué \textit{beacons} están en nuestro rango en un momento determinado y a cuántos metros están, y se va actualizando cada cierto tiempo. También incluye un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
+Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de Desarrollo Software) propia de su marca (\textit{Kontakt}) en la que incluyen funciones ya implementadas que nos permiten conocer qué \textit{beacons} están en nuestro rango en un momento determinado y a cuántos metros están. Esta información se va actualizando cada cierto tiempo. También incluye un sistema de categorías en función de cómo de cerca o lejos esté un cierto dispositivo. Las categorías son las siguientes:
 
 \begin{itemize}
 	\item \textit{IMMEDIATE:} Si el dispositivo se encuentra a menos de $0,5$ metros.
@@ -17,16 +17,16 @@ Los \textit{beacons} utilizados para este proyecto cuentan con una SDK (Kit de D
 	\item \textit{UNKNOWN:} Si se ha perdido la señal del dispositivo.
 \end{itemize}
 
-Una vez descubiertas estas funciones y comprendido el código decidimos desarrollar dos pequeñas aplicaciones que nos sirviesen por un lado, para tener una primera toma de contacto con el entorno de programación escogido, Android Studio, y con la incorporación de las funciones ofrecidas por la librería de \textit{Kontakt}. Y por otro, para analizar la precisión de la señal bluetooth (en parado y en movimiento), concretar la posición óptima de los \textit{beacons} y desarrollar una primera idea sobre la estructuración de la información relevante del edificio en el mapeo y la implementación del código relativo al posicionamiento en el edificio. A continuación presentamos las dos aplicaciones desarrolladas para estos fines:
+Una vez descubiertas estas funciones y comprendido el código decidimos desarrollar dos pequeñas aplicaciones que sirviesen para un doble propósito. Por un lado, para tener una primera toma de contacto con el entorno de programación escogido, Android Studio, y con la incorporación de las funciones ofrecidas por la librería de \textit{Kontakt}. Y por otro, para analizar la precisión de la señal bluetooth (con y sin movimiento), concretar la posición óptima de los \textit{beacons} y desarrollar una primera idea sobre la estructuración de la información relevante del edificio en el mapeo y la implementación del código relativo al posicionamiento en el edificio. En las siguientes secciones presentamos las dos aplicaciones desarrolladas para estos fines.
 
 
 \subsection{Aplicación \textit{miniapp}}
 Esta aplicación constituye la primera toma de contacto con los \textit{beacons} y con el código de la SDK. Presenta una interfaz sencilla en la que aparece una tabla con las distintas categorías de proximidad para 3 balizas y, debajo, el espacio donde se indica el identificador de la baliza correspondiente. En el cuadro inferior aparecen dos botones muy intuitivos con los que el usuario puede interactuar con la app: Stop Scanning y Start Scanning. De esta manera, una vez que empieza el escaneo y las balizas se encuentran en el radio de detección, se incluyen los identificadores en cuestión y se colorea en verde la categoría de proximidad estimada en cada caso según corresponda. La lectura de los \textit{beacons} se actualiza cada 2 segundos, tiempo establecido de antemano. En la Figura \ref{fig:miniapp} podemos ver la interfaz descrita.
 
-La idea que subyace al desarrollo de esta aplicación es introducirnos en Android Studio y manejar las funciones ofrecidas por la SDK de \textit{Kontakt}, de ahí que hayamos creado una primera interfaz con botones, cambios de color, cuadros de texto, etc. Una vez hecho esto, comprobamos que las funciones preestablecidas por la SDK funcionaban y realizamos distintas pruebas en parado para establecer el grado de confianza que podíamos tener en las categorías de proximidad definidas por \textit{Kontakt}. El resultado fue muy positivo puesto que, en su mayoría, la categoría asignada se ajustaba a la realidad. Sin embargo, nos faltaba saber la precisión estricta de los \textit{beacons} al recibir la distancia exacta en metros. Por ello creamos una segunda aplicación que, aunque fuese menos visual desde el punto de vista de la interfaz, nos diese más información sobre los \textit{beacons} detectados.
+La idea que subyace al desarrollo de esta aplicación es introducirnos en Android Studio y manejar las funciones ofrecidas por la SDK de \textit{Kontakt}, de ahí que hayamos creado una primera interfaz con botones, cambios de color, cuadros de texto, etc. Una vez hecho esto, comprobamos que las funciones preestablecidas por la SDK funcionaban y realizamos distintas pruebas en una posición fija para establecer el grado de confianza que podíamos tener en las categorías de proximidad definidas por \textit{Kontakt}. El resultado fue muy positivo puesto que, en su mayoría, la categoría asignada se ajustaba a la realidad. Sin embargo, nos faltaba saber la precisión estricta de los \textit{beacons} al recibir la distancia exacta en metros. Por ello creamos una segunda aplicación que, aunque fuese menos visual desde el punto de vista de la interfaz, nos diese más información sobre los \textit{beacons} detectados.
 
 \subsection{Aplicación \textit{cuadrantes\_v1}}
- \textit{Cuadrantes\_v1} es una aplicación austera, en ella aparece un gran cuadro de texto que ocupa practicamente la totalidad de la pantalla y dos botones que se sitúan en el cuadro inferior,  Stop Scanning y Start Scanning, a través de los cuales el usuario puede interactuar con la app. Su funcionamiento es sencillo e intuitivo: cuando el usuario pulsa Start Scanning comienza el escaneo de balizas y cuando una o varias entran en el radio de detección, la app plasma su información (identificador, distancia en metros y categoría de proximidad) en el cuadro de texto. Esta información se actualiza cada 2 segundos (tiempo configurable) hasta que el botón Stop Scanning es pulsado, momento en el cual cesa el escaneo. La Figura \ref{fig:cuadrantesv1} muestra la interfaz de la aplicación descrita.
+ \textit{Cuadrantes\_v1} es una aplicación austera. En ella aparece un gran cuadro de texto que ocupa practicamente la totalidad de la pantalla y dos botones que se sitúan en el cuadro inferior,  Stop Scanning y Start Scanning, a través de los cuales el usuario puede interactuar con la app. Su funcionamiento es sencillo e intuitivo: cuando el usuario pulsa Start Scanning comienza el escaneo de balizas y cuando una o varias entran en el radio de detección, la app plasma su información (identificador, distancia en metros y categoría de proximidad) en el cuadro de texto. Esta información se actualiza cada 2 segundos (tiempo configurable) hasta que el botón Stop Scanning es pulsado, momento en el cual cesa el escaneo. La Figura \ref{fig:cuadrantesv1} muestra la interfaz de la aplicación descrita.
 
 Como mencionamos anteriormente, hemos creado esta aplicación con el fin de obtener más información sobre el error cometido a la hora de determinar la distancia en metros a la que se encuentran los \textit{beacons} (tanto si el dispositivo se encuentra parado como en movimiento), así como para estudiar cuales son los factores que alteran su señal. De esta manera podremos determinar los puntos claves donde colocar las balizas y abordar, tras ello, el mapeo del edificio. De ahí que el nombre de la aplicación sea \textit{cuadrantes\_v1} ya que, como veremos, los cuadrantes serán una pieza fundamental en el mapeo. A continuación exponemos las pruebas realizadas con ayuda de esta aplicación y algunas de las consecuencias derivadas de los resultados.
 
@@ -46,7 +46,7 @@ Como mencionamos anteriormente, hemos creado esta aplicación con el fin de obte
 
 Las primeras pruebas realizadas con la aplicación \textit{cuadrantes\_v1} han consistido en colocar tres \textit{beacons}, concretamente aquellos con identificadores CPne, 8v2c y eAaw, en distintos puntos de la Facultad de Informática y observar la distancia registrada desde un dispositivo móvil ubicado en un punto fijo. De esta manera, hemos podido medir el error cometido en cada caso y estimar las posibles interferencias. Para mostrar los resultados hemos creado tres gráficas que muestran la distancia a la que se detectan las balizas a lo largo del tiempo y la medida real a la que estaban situadas. 
 
-En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha proporcionado la aplicación \textit{cuadrantes v1} del \textit{beacon} con identificador CPne. En este caso, hemos realizado 4 estudios independientes marcados con distintos colores: azul -\textit{beacon} a 64cm, naranja -\textit{beacon} a 2m, gris -\textit{beacon} a 2,5m aproximadamente- y amarillo -\textit{beacon} a 5 metros-. De esta gráfica concluimos que cuanto mayor es la distancia a la que se encuentra la baliza, véase la función amarilla (5m), más fluctúa la medida estimada convirtiéndose en un dato poco fiable. Correlativamente, a menor distancia menor error. Podemos ver que la función naranja (2m) es bastante fiel a la realidad, fluctúa en un intervalo de un metro a lo largo de toda la medición. Por último, el resultado de la gráfica azul (64cm) es bastante preciso, presenta un error despreciable durante toda la medición.
+En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha proporcionado la aplicación \textit{cuadrantes v1} del \textit{beacon} con identificador CPne. En este caso, hemos realizado 4 estudios independientes marcados con distintos colores: azul -\textit{beacon} a 64cm, naranja -\textit{beacon} a 2m, gris -\textit{beacon} a 2,5m y amarillo -\textit{beacon} a 5 metros-. De esta gráfica concluimos que cuanto mayor es la distancia a la que se encuentra la baliza, véase la función amarilla (5m), más fluctúa la medida estimada convirtiéndose en un dato poco fiable. Correlativamente, a menor distancia menor error. Podemos ver que la función naranja (2m) es bastante fiel a la realidad, fluctúa en un intervalo de un metro a lo largo de toda la medición. Por último, el resultado de la gráfica azul (64cm) es bastante preciso, presenta un error despreciable durante toda la medición.
 
 \begin{figure}[t]
 	\centering
@@ -55,7 +55,7 @@ En la Figura \ref{fig:dist_CPne} vemos las lecturas que nos ha proporcionado la 
 	\label{fig:dist_CPne}
 \end{figure}
 
-En el caso de la Figura \ref{fig:dist_eAaw}, en la que se estima la distancia para el \textit{beacon} eAaw, el comportamiento es similar. En líneas generales, el valor medio estimado se corresponde con la distancia real a la que se encuentran las balizas. Sin embargo, en esta medición hemos contemplado una novedad que se ha repetido en numerosas ocasiones convirtiéndose en un patrón de comportamiento y es que durante los primeros segundos en los que arranca la aplicación, las estimaciones son menos precisas, dando lugar a picos importantes que más tarde se suavizan. 
+En el caso de la Figura \ref{fig:dist_eAaw}, en la que se estima la distancia para el \textit{beacon} eAaw, pero usando distancias más pequeñas, el comportamiento es similar. En líneas generales, el valor medio estimado se corresponde con la distancia real a la que se encuentran las balizas. Sin embargo, en esta medición hemos contemplado una novedad que se ha repetido en numerosas ocasiones convirtiéndose en un patrón de comportamiento y es que durante los primeros segundos en los que arranca la aplicación, las estimaciones son menos precisas, dando lugar a picos importantes que más tarde se suavizan. 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Imagenes/Descripciondeltrabajo/dist_eAaw}
@@ -63,7 +63,7 @@ En el caso de la Figura \ref{fig:dist_eAaw}, en la que se estima la distancia pa
 	\label{fig:dist_eAaw}
 \end{figure}
 
-La Figura \ref{fig:dist_8v2c} recoge cuatro mediciones para el \textit{beacon} 8v2c, tres de ellas tomadas para una misma distancia (4m) y una a 64 cm. Observamos de nuevo que el error es despreciable cuando la baliza se encuentra muy próxima. Por el contrario, los valores que recogen las gráficas en las que el dispositivo se encuentra a 4m están muy por debajo de lo esperado, solo una de ellas alcanza el valor real. Este factor común nos reveló una alteración considerable de la intensidad de la señal por lo que empezamos a entrever que había factores en el entorno que la debilitan. Es por esto que la última gráfica, plasmada en la Figura \ref{fig:dist_conjunto}, hace referencia a una situación particular. Se trata de dos \textit{beacons} diferentes situados a la misma distancia uno encima del otro. El objetivo de este estudio era ver si uno de los factores que podía alterar la intensidad de señal era la presencia de otras balizas, y efectivamente como podemos observar, la intensidad de ambas señales es bastante más baja de lo esperado, prácticamente en ningún momento alcanzan el valor real. En este caso particular, el error es tolerable ya que los \textit{beacons} están situados a muy poca distancia pero sí nos advierte de que la señal bluetooth es sensible a interferencias provocadas por otros \textit{beacons} del entorno, lo cual hemos de tener muy presente a la hora de determinar la ubicación de los beacons a lo largo de la facultad para no colocarlos demasiado próximos. En la Sección \ref{sec:Interferencias} del Capítulo \ref{cap:estadoDeLaCuestion} exponemos algunas de las causas de las interferencias.
+La Figura \ref{fig:dist_8v2c} recoge cuatro mediciones para el \textit{beacon} 8v2c, tres de ellas tomadas para una misma distancia (4m) y una a 64 cm. Observamos de nuevo que el error es despreciable cuando la baliza se encuentra muy próxima. Por el contrario, los valores que recogen las gráficas en las que el dispositivo se encuentra a 4m están muy por debajo de lo esperado, y solo una de ellas alcanza el valor real y en todas las direcciones. Este factor común nos reveló una alteración considerable de la intensidad de la señal por lo que empezamos a entrever que había factores en el entorno que la debilitan. Es por esto que la última gráfica, plasmada en la Figura \ref{fig:dist_conjunto}, hace referencia a una situación particular. Se trata de dos \textit{beacons} diferentes situados a la misma distancia uno encima del otro. El objetivo de este estudio era ver si uno de los factores que podía alterar la intensidad de señal era la presencia de otras balizas, y efectivamente como podemos observar, la intensidad de ambas señales es bastante más baja de lo esperado, prácticamente en ningún momento alcanzan el valor real. En este caso particular, el error es tolerable ya que los \textit{beacons} están situados a muy poca distancia pero sí nos advierte de que la señal bluetooth es sensible a interferencias provocadas por otros \textit{beacons} del entorno, lo cual hemos de tener muy presente a la hora de determinar la ubicación de los beacons a lo largo de la facultad para no colocarlos demasiado próximos. En la Sección \ref{sec:Interferencias} del Capítulo \ref{cap:estadoDeLaCuestion} se han expuesto algunas de las causas de las interferencias.
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Imagenes/Descripciondeltrabajo/dist_8v2c}
@@ -77,13 +77,13 @@ La Figura \ref{fig:dist_8v2c} recoge cuatro mediciones para el \textit{beacon} 8
 	\label{fig:dist_conjunto}
 \end{figure}
 
-\subsection{Conclusiones}
+\subsection{Conclusiones de la precisión de los \textit{beacons}}
 \label{sub:conclusiones_posicionam}
-Con todos estos resultados reunidos hemos decidido que para el posicionamiento utilizaremos el dato del \textit{beacon} más cercano ya que es la medida más fiable (por estar a menos metros del dispositivo) y consideraremos que el usuario se encuentra en las inmediaciones de dicho \textit{beacon}. En la Sección \ref{sec:mapeo} especificamos la asociación realizada entre ``las inmediaciones de un \textit{beacon}'' y un punto concreto de la Facultad de Informática.
+Con todos estos resultados hemos decidido que para el posicionamiento utilizaremos el dato del \textit{beacon} más cercano ya que es la medida más fiable (por estar a menos metros del dispositivo) y consideraremos que el usuario se encuentra en las inmediaciones de dicho \textit{beacon}. En la Sección \ref{sec:mapeo} especificaremos la asociación realizada entre ``las inmediaciones de un \textit{beacon}'' y un punto concreto de la Facultad de Informática.
 
-Con esta idea hemos desarrollado una primera aplicación de prueba que además de captar el \textit{beacon} más próximo al usuario emite un pitido a mayor o menor frecuencia según su categoría de proximidad. Esta app se llama \textit{pruebaSonido} y presenta la misma estética que \textit{cuadrantes\_v1}. Su funcionamiento es sencillo, al iniciar el escaneo capta el \textit{beacon} más cercano y lo fija. Tras ello, actualiza su información (concretamente, la distancia registrada y la categoría de proximidad) y pita a una frecuencia u otra según la distancia a la que se encuentre el \textit{beacon} (cuanto más cerca, el pitido es más rápido y se ralentiza a medida que la baliza está a mayor distancia). La actividad continua hasta que el botón Stop Scanning es pulsado. Al igual que en \textit{cuadrantes v1} la información sobre las balizas detectadas queda plasmada en el cuadro de texto.
+Con esta idea hemos desarrollado una primera aplicación de prueba que además de captar el \textit{beacon} más próximo al usuario emite un pitido a mayor o menor frecuencia según su categoría de proximidad. Esta app se llama \textit{pruebaSonido} y presenta la misma estética que \textit{cuadrantes\_v1}. Su funcionamiento es sencillo: al iniciar el escaneo capta el \textit{beacon} más cercano y lo fija. Tras ello, actualiza su información (concretamente, la distancia registrada y la categoría de proximidad) y pita a una frecuencia u otra según la distancia a la que se encuentre el \textit{beacon} (cuanto más cerca, el pitido es más rápido y se ralentiza a medida que la baliza está a mayor distancia). La actividad continúa hasta que el botón Stop Scanning es pulsado. Al igual que en \textit{cuadrantes v1} la información sobre las balizas detectadas queda plasmada en el cuadro de texto.
 
-El objetivo de \textit{pruebaSonido} no es solo generar un primer código que seleccione el \textit{beacon} más cercano sino también llevar a cabo las primeras pruebas de estimación de la distancia a la que se encuentran las balizas en movimiento. Estos resultados han sido muy similares a los obtenidos estáticamente, la estimación sigue siendo más precisa cuanto más próxima está la baliza del dispositivo que la rastrea. Sin embargo, hay que ajustar el tiempo de actualización del escaneo si se quiere caminar a mayor velocidad (para que la aplicación vaya en tiempo real y no sufra retrasos). Tras diversas pruebas hemos concluido que 2s es una medida óptima en lo que a nuestra aplicación concierne ya que nuestros usuarios, al presentar discapacidad visual, no caminan especialmente rápido. Por otro lado, esta aplicación nos ha servido también para incluir sonidos. Esto puede parecer insignificante, sin embargo si nos paramos a pensarlo hay muchísimos sonidos que tenemos asociados con determinadas acciones, situaciones y/o aplicaciones que sin darnos cuenta nos guían en su uso y nos proporcionan la seguridad de que estamos utilizándola bien o la certeza de que tenemos que rectificar. Este recurso es indispensable en nuestra app ya que nuestros principales usuarios son invidentes.
+El objetivo de \textit{pruebaSonido} no es solo generar un primer código que seleccione el \textit{beacon} más cercano sino también llevar a cabo las primeras pruebas de estimación de la distancia a la que se encuentran las balizas en movimiento. Estos resultados han sido muy similares a los obtenidos estáticamente: la estimación sigue siendo más precisa cuanto más próxima está la baliza del dispositivo que la rastrea. Sin embargo, hay que ajustar el tiempo de actualización del escaneo si se quiere caminar a mayor velocidad (para que la aplicación reaccione en tiempo real y no sufra retrasos). Tras diversas pruebas hemos concluido que 2s es una medida óptima en lo que a nuestra aplicación concierne ya que nuestros usuarios, al presentar discapacidad visual, no caminan especialmente rápido. Por otro lado, esta aplicación nos ha servido también para incluir sonidos. Esto puede parecer insignificante, pero si nos paramos a pensarlo hay muchísimos sonidos que tenemos asociados con determinadas acciones, situaciones y/o aplicaciones que sin darnos cuenta nos guían en su uso y nos proporcionan la seguridad de que estamos utilizándola bien o la certeza de que tenemos que rectificar. Este recurso es indispensable en nuestra app ya que nuestros principales usuarios no podrán ver la aplicación.
 
 
 \begin{figure}[t]
@@ -104,7 +104,7 @@ Originariamente, cada cuadrante se correspondía con nueve baldosas aproximadame
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplanta1_cuadrantes3}
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapeoPlanta1}
 	\caption{Versión final del mapeo de la primera planta de la Facultad de Informática.}
 	\label{fig:cuadrantesP1_v3}
 \end{figure}
@@ -114,7 +114,7 @@ Como nuestro posicionamiento se fundamenta en el \textit{beacon} más cercano, h
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapaplantabaja_cuadrantes3}
+	\includegraphics[width=1\textwidth]{Imagenes/Descripciondeltrabajo/mapeoPlantaBaja}
 	\caption{Mapeo de la planta baja de la Facultad de Informática, incluyendo la numeración de los cuadrantes y las posiciones de los \textit{beacons}.}
 	\label{fig:cuadrantesPbaja}
 \end{figure}
@@ -176,33 +176,37 @@ Este estudio no ha sido todo lo extenso que nos hubiese gustado debido al cierre
 
 En el próximo apartado veremos cómo queda reflejado todo el mapeo visto en la Sección \ref{sec:mapeo}.
 
-\subsection{Representación del mapeo en los XML}
+\section{Representación del mapeo en los XML}
 \label{sub:mapeo_xml}
 Todo nuestro mapeo se representa en ficheros XML que hemos sacado fuera de la aplicación (se encuentran en una carpeta llamada xml\_modif). En ellos hemos seguido el sistema de divisiones y estructuración del proyecto de TFG \textit{Generador interactivo de instrucciones de guía sobre plataformas móviles} \citep{TFGguia}, este permite que se puedan incluir
 de manera sencilla las diferentes plantas del edificio y es un método genérico, lo que facilita que pueda ser empleado también por otros edificios. El sistema descrito se compone de ficheros de dos tipos:
 
-\textbf{Edificio.xml:} En este archivo se guarda la información relativa a la estructura del edificio, es decir, se indican las distintas plantas y el archivo xml asociado a cada una de ellas. En la Figura \ref{fig:xmledificio} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
+\textbf{Edificio.xml:} En este archivo se guarda la información relativa a la estructura del edificio, es decir, se indican las distintas plantas y el archivo xml asociado a cada una de ellas. A continuación detallamos el significado de cada campo y vemos un ejemplo de la estructura del archivo.
+
 \begin{itemize}
-	\item \textit{nombre:} Nombre representativo de la planta que estemos implementando. En el ejemplo se ha utilizado el valor \textit{planta1principal} y \textit{plantabaja}.
-	\item \textit{archivo:} Nombre del fichero xml de la planta en cuestión. No es necesario añadir la extensión .xml. En el ejemplo lo hemos llamado \textit{planta1} y \textit{plantabaja}.
+	\item \textit{nombre:} Nombre representativo de la planta que estemos implementando. En el ejemplo se ha utilizado el valor \textit{plantabaja} y \textit{planta1}.
+	
+	\item \textit{archivo:} Nombre del fichero xml de la planta en cuestión. No es necesario añadir la extensión .xml. En el ejemplo lo hemos llamado \textit{plantabajaarchivo} y \textit{planta1archivo}.
 \end{itemize}
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/edificioXML}
-	\caption{Ejemplo de un archivo con la misma estructura que edificio.xml.}
-	\label{fig:xmledificio}
-\end{figure}
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/edificioXML}
+%	\caption{Ejemplo de un archivo con la misma estructura que edificio.xml.}
+%	\label{fig:xmledificio}
+%\end{figure}
 
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/plantaXML}
-	\caption{Ejemplo de un archivo que detalla la estructura de una planta.}
-	\label{fig:xmlplanta}
-\end{figure}
+\lstinputlisting[language=XML]{Imagenes/Descripciondeltrabajo/edificio.xml}
 
-\textbf{NombreFichero.xml:} Se corresponde con el archivo propio de cada planta. Cada planta incluye un valor que indica el número de planta en el que nos encontramos y un identificador de estancia que da nombre a la planta y que agrupa al conjunto de cuadrantes que la forman. A su vez, cada cuadrante contiene un identificador único, el nombre del \textit{beacon} asociado, información sobre los cuadrantes colindantes, la posición en el cuadrante donde se encuentra el punto de interés (norte, sur, este u oeste), información sobre los pesos que tiene cada una de sus conexiones (cuya utilidad se presenta en la Sección \ref{sub:rutaOptima}), información relevante del cuadrante y la medida en metros del mismo. En la Figura \ref{fig:xmlplanta} podemos ver un ejemplo de archivo xml de este tipo. A continuación detallamos cada campo:
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{Imagenes/Descripciondeltrabajo/plantaXML}
+%	\caption{Ejemplo de un archivo que detalla la estructura de una planta.}
+%	\label{fig:xmlplanta}
+%\end{figure}
+
+\textbf{NombreFichero.xml:} Se corresponde con el archivo propio de cada planta. Cada planta incluye un valor que indica el número de planta en el que nos encontramos y un identificador de estancia que da nombre a la planta y que agrupa al conjunto de cuadrantes que la forman. A su vez, cada cuadrante contiene un identificador único, el nombre del \textit{beacon} asociado, información sobre los cuadrantes colindantes, la posición en el cuadrante donde se encuentra el punto de interés (norte, sur, este u oeste), información sobre los pesos que tiene cada una de sus conexiones (cuya utilidad se presenta en la Sección \ref{sub:rutaOptima}), información relevante del cuadrante y la medida en metros del mismo. A continuación detallamos el significado de cada campo y vemos un ejemplo de la estructura del archivo.
 
 \begin{itemize}
 	\item \textit{Z:} Indica el número de planta. En el ejemplo le hemos dado el valor $0$.
@@ -211,11 +215,11 @@ de manera sencilla las diferentes plantas del edificio y es un método genérico
 	
 	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $20$.
 	
-	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon20}.
+	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon0}.
 	
 	\item \textit{conectado:} Indica los identificadores de los cuadrantes colindantes por los cuatro puntos cardinales. El valor $-1$ representa la pared. Este campo ha sido reutilizado de trabajos anteriores ya que resulta clave para establecer una red de cuadrantes que nos permita generar una ruta válida pasando a través de ellos.
 	
-	\item \textit{dirección:} Nos indica en qué posición del cuadrante está situado el punto de interés. En nuestro caso es el salón de actos, correspondiente al cuadrante $20$, como se puede ver en la Figura \ref{fig:cuadrantesPbaja} el salón de actos se sitúa al lado derecho del cuadrante (oeste)\footnote{La nomenclatura se establece con el sur en la parte de arriba, el oeste a la derecha, el norte abajo y el este a la izquierda del cuadrante.}.
+	\item \textit{posdestino:} Nos indica en qué posición del cuadrante está situado el punto de interés. En nuestro caso es el salón de actos, correspondiente al cuadrante $0$, como se puede ver en la Figura \ref{fig:cuadrantesPbaja} el salón de actos se sitúa al lado derecho del cuadrante (oeste)\footnote{La nomenclatura se establece con el sur en la parte de arriba, el oeste a la derecha, el norte abajo y el este a la izquierda del cuadrante.}.
 	
 	\item \textit{pesos:} Para cada una de las conexiones del cuadrante se establece el peso de dicha conexión. Esto será de gran utilidad pues el algoritmo utilizado para el cálculo de la ruta es el algoritmo de \textit{Dijkstra}. Los detalles pueden verse en la Sección \ref{sub:rutaOptima}. Los pesos negativos se asignan a conexiones inexistentes.
 	
@@ -225,5 +229,5 @@ de manera sencilla las diferentes plantas del edificio y es un método genérico
 \end{itemize}
 
 
-
+\lstinputlisting[language=XML]{Imagenes/Descripciondeltrabajo/planta.xml}
 

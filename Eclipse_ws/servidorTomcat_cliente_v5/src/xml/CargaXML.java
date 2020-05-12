@@ -29,7 +29,7 @@ public class CargaXML {
 		 //Se crea un SAXBuilder para poder parsear el archivo
 	    SAXBuilder builder = new SAXBuilder();
 	    File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();
-	    File xmlFile = new File(catalinaBase,"webapps/xml_modif/"+nombreXML+".xml");
+	    File xmlFile = new File(catalinaBase,"webapps/xml_modif_belen/"+nombreXML+".xml");
 	    try
 	    {
 
@@ -42,7 +42,7 @@ public class CargaXML {
 	        for ( int indexEstancia = 0; indexEstancia < lista_estancias.size(); indexEstancia++ )//Se recorre la lista de 'estancias'
 	        {
 	            Element estancia = (Element) lista_estancias.get(indexEstancia);//Se obtiene el elemento 'estancia'
-	            String idEstancia = estancia.getAttributeValue("id");//Se obtiene el atribullo 'id'
+	            String idEstancia = estancia.getAttributeValue("id");//Se obtiene el atributo 'id'
 	            //String tipo = estancia.getChildText("tipo");
 	            
 	            
@@ -63,7 +63,7 @@ public class CargaXML {
  		            String este = conectado.getChildText("este");
  		            String oeste = conectado.getChildText("oeste");
 	           
- 		            String dir = cuadrante.getChildTextTrim("direccion"); 
+ 		            String posdestino = cuadrante.getChildTextTrim("posdestino"); 
  		            
  		            Element pesos = cuadrante.getChild("pesos");
 		            String p_norte = pesos.getChildText("p_norte");
@@ -80,9 +80,9 @@ public class CargaXML {
 	 	            float metros = Float.parseFloat(m);
 
 	 	            Cuadrante c = new Cuadrante(Integer.parseInt(idCuadrante), beacon, Integer.parseInt(planta),
-	 	            		new String[]{norte,sur,este,oeste}, dir,
-	 	            		new int[] {Integer.parseInt(p_norte),Integer.parseInt(sur),
-	 	            				Integer.parseInt(este),Integer.parseInt(oeste)},info, metros);
+	 	            		new String[]{norte,sur,este,oeste}, posdestino,
+	 	            		new int[] {Integer.parseInt(p_norte),Integer.parseInt(p_sur),
+	 	            				Integer.parseInt(p_este),Integer.parseInt(p_oeste)},info, metros);
 	 	            aCuadrantes.add(c);
 	 	            e.add(c);
 		 	        		 	            	 

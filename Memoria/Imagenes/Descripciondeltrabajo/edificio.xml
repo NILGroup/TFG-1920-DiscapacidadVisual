@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edificio>
+	<planta nombre="plantabaja">
+		<archivo>plantabajaarchivo</archivo>
+	</planta>
+	<planta nombre="planta1">
+		<archivo>planta1archivo</archivo>
+	</planta>
+</edificio>

@@ -11,7 +11,7 @@
 
         <item> Cómo buscar tu destino:\n
             - Una vez pulsado el botón Iniciar Ruta aparece la pantalla "Lista de destinos".\n
-            - En ella aparecen tres vías distintas para seleccionar el lugar final de la Facultad de Informática de la UCM al que te quieres dirigir.
+            - En ella aparecen tres vías distintas para seleccionar el lugar final al que te quieres dirigir.
             La primera de ellas, situada en la zona superior de la pantalla es una barra de búsqueda que permite introducir el destino mediante un teclado.
             En la zona central de la pantalla aparecen distintos botones con el nombre de los destinos disponibles por órden alfabético.
             Por último en la zona central de la parte inferior hay un botón con forma de micrófono que permite introducir el destino mediante voz.\n
@@ -65,6 +65,10 @@
         <item>sala de juntas</item>
         <item>salon de actos</item>
         <item>secretaria</item>
+    </string-array>
+
+    <string-array name="uri_servidor">
+        <item>ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint</item>
     </string-array>
 
 </resources>
