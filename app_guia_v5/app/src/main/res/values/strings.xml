@@ -53,6 +53,7 @@
 
     <string name="microfono_descripcion">Micrófono</string>
     <string name="microfono_descripcion_aulas">Micrófono</string>
+    <string name="microfono_dinamico">Micrófono</string>
 
     <!-- LISTA AULAS -->
     <string name="aula_1_button">Aula 1</string>

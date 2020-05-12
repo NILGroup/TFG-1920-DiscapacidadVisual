@@ -29,6 +29,8 @@
             android:label="Instrucciones"/>
         <activity android:name="com.example.app_guia_v5.ListaDestinosActivity"
             android:label="@string/ventana_destinos"/>
+        <activity android:name="com.example.app_guia_v5.ListaDestinosDinamicaActivity"
+            android:label="@string/ventana_destinosdinamica"/>
         <activity android:name="com.example.app_guia_v5.ListaAulasActivity"
             android:label="@string/ventana_aulas"/>
         <activity android:name="com.example.app_guia_v5.ScanningActivity"
