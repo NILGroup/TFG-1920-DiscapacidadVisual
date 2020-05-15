@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/beacon_text"
-        android:layout_width="334dp"
-        android:layout_height="134dp"
+        android:layout_width="333dp"
+        android:layout_height="193dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="88dp"
@@ -33,14 +33,14 @@
         android:verticalScrollbarPosition="right"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="311dp"
-        android:layout_height="410dp"
+        android:layout_width="308dp"
+        android:layout_height="339dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"

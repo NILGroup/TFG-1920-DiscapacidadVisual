@@ -189,10 +189,12 @@ public class ListaDestinosActivity extends AppCompatActivity implements View.OnC
                 startActivity(ScanningActivity.createIntent(this, "estancia 10"));
                 break;
             case R.id.salon_actos_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(22)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(22)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 9"));
                 break;
             case R.id.secretaria_button:
-                startActivity(ScanningActivity.createIntent(this, listaDestinos.get(23)));
+                //startActivity(ScanningActivity.createIntent(this, listaDestinos.get(23)));
+                startActivity(ScanningActivity.createIntent(this, "estancia 13"));
                 break;
         }
     }
