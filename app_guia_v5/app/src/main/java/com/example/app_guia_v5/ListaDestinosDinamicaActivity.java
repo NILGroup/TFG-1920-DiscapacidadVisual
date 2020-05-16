@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -34,9 +36,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
-//TAMAÑO BOTONES
-//BARRA BUSQUEDA
-//VOZ
 
 public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements SearchView.OnQueryTextListener{
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
@@ -100,7 +99,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
         String[] nombresbotones;
         //primer nivel
         if (nivel==1){
-             nombresbotones = tablaDestinos.keySet().toArray(new String[0]); //HE VISTO QUE SE PONE EL 0 PERO ESTO SE HACE BIEN??
+             nombresbotones = tablaDestinos.keySet().toArray(new String[0]);
         }
         //segundo nivel
         else{
@@ -113,10 +112,24 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             ArrayList<String> elementos=new ArrayList<>();
             elementos.add(nombresbotones[pos]);
             elementos.add(nombresbotones[pos+1]);
-            //elementos.add(nombresbotones[pos+2]);
-            elementos.add("");
-            agregarFilaTabla(elementos);
+            elementos.add(nombresbotones[pos+2]);
+            //elementos.add("");
+            agregarFilaTabla(elementos, pos);
             pos=pos+3;
+        }
+        if(nombresbotones.length%3 == 1){
+            ArrayList<String> elementos=new ArrayList<>();
+            elementos.add(nombresbotones[pos]);
+            elementos.add("");
+            elementos.add("");
+            agregarFilaTabla(elementos,pos);
+        }
+        if(nombresbotones.length%3 == 2){
+            ArrayList<String> elementos=new ArrayList<>();
+            elementos.add(nombresbotones[pos]);
+            elementos.add(nombresbotones[pos+1]);
+            elementos.add("");
+            agregarFilaTabla(elementos,pos);
         }
     }
 
@@ -125,7 +138,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
      * @param elementos Elementos de la fila
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public void agregarFilaTabla(final ArrayList<String> elementos)
+    public void agregarFilaTabla(final ArrayList<String> elementos, int pos)
     {
         //igual como ultimo parametro en los layauts hay que meter un 1
         TableRow.LayoutParams layoutCelda = new TableRow.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -138,14 +151,35 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             final Button mybutton = new Button(this);
             mybutton.setLayoutParams(layoutCelda);
             mybutton.setText(elementos.get(i));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_border_light));
-            }
-            //mybutton.setBackgroundColor(Color.WHITE);
-            //button.setGravity(Gravity.CENTER_HORIZONTAL);
             Log.i("DINAMICA", "nivel: " + nivel);
 
-            if(!elementos.get(i).equals(" ")){ //si el boton no es vacio
+            if(!elementos.get(i).equals(" ")){//si el boton no es vacio
+                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                     if(pos%2==0){ //fila par ->coloreamos los pares
+                         if (i%2 == 0){
+                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                 mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+                             }
+                         }
+                         else {
+                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                 mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_border_light));
+                             }
+                         }
+                     }
+                     else{//fila impar-> coloreamos los impares
+                         if (i%2 == 1){
+                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                 mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+                             }
+                         }
+                         else {
+                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                 mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_border_light));
+                             }
+                         }
+                     }
+            }
                 mybutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -159,6 +193,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
                     }
                 });
             }
+            if (elementos.get(i).equals("")) mybutton.setBackgroundColor(Color.WHITE);
 
             fila.addView(mybutton);
         }

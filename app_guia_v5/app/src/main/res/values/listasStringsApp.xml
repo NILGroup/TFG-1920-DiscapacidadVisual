@@ -68,7 +68,7 @@
     </string-array>
 
     <string-array name="destinosdinamicos_array">
-        <item> Aulas|aula 1,aula 2,aula 3, aula 4,  aula 5, aula 6, aula 7,aula 8,aula 9,aula 10, aula 11, aula 12, aula 13, aula 14, aula 15, aula 16, , ,</item>
+        <item> Aulas|aula 1,aula 2,aula 3, aula 4,  aula 5, aula 6, aula 7,aula 8,aula 9,aula 10, aula 11, aula 12, aula 13, aula 14, aula 15, aula 16</item>
         <item> Biblioteca|no </item>
         <item> Cafeteria|no </item>
         <item> Conserjeria|no </item>
@@ -78,7 +78,7 @@
         <item> Salon de actos|no </item>
         <item> Secretaria|no </item>
         <item> Inventado|no </item>
-        <item> Inventado2|i1, i2, i3 </item>
+        <item> Inventado2|i1, i2 </item>
         <item> Inventado3|no </item>
 
     </string-array>
