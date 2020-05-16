@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.speech.RecognizerIntent;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.Array;
@@ -52,11 +55,11 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
     public static Intent createIntent(@NonNull Context context,int niv, String k) {
         nivel=niv;
         clave_segundonivel=k;
+        //Log.i("DINAMICA", "createIntent: " + pantallaCreada);
         return new Intent(context, ListaDestinosDinamicaActivity.class);
     }
 
-
-
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_destinosdinamica);
@@ -66,12 +69,11 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
 
         //Text to speech
         ttsManager = new TTSManager();
+
         ttsManager.init(this);
 
         leerDestinos();
         setupButtons();
-
-
     }
     private void leerDestinos(){
         Resources res = getResources();
@@ -89,6 +91,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void setupButtons() {
 
         barra_busqueda = (SearchView) findViewById(R.id.destinosdinamicos_searchView);
@@ -110,7 +113,8 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             ArrayList<String> elementos=new ArrayList<>();
             elementos.add(nombresbotones[pos]);
             elementos.add(nombresbotones[pos+1]);
-            elementos.add(nombresbotones[pos+2]);
+            //elementos.add(nombresbotones[pos+2]);
+            elementos.add("");
             agregarFilaTabla(elementos);
             pos=pos+3;
         }
@@ -120,6 +124,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
      * Agrega una fila a la tabla
      * @param elementos Elementos de la fila
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void agregarFilaTabla(final ArrayList<String> elementos)
     {
         //igual como ultimo parametro en los layauts hay que meter un 1
@@ -133,8 +138,13 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             final Button mybutton = new Button(this);
             mybutton.setLayoutParams(layoutCelda);
             mybutton.setText(elementos.get(i));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                mybutton.setBackground(getResources().getDrawable(R.drawable.edit_text_border_light));
+            }
             //mybutton.setBackgroundColor(Color.WHITE);
             //button.setGravity(Gravity.CENTER_HORIZONTAL);
+            Log.i("DINAMICA", "nivel: " + nivel);
+
             if(!elementos.get(i).equals(" ")){ //si el boton no es vacio
                 mybutton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -261,13 +271,20 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
     @Override
     protected void onStop() {
         //Stop scanning when leaving screen.
+        ttsManager.shutDown();
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
         //Remember to disconnect when finished.
+        ttsManager.shutDown();
         super.onDestroy();
     }
 
+    @Override
+    public void onBackPressed() {
+        nivel--;
+        super.onBackPressed();
+    }
 }
