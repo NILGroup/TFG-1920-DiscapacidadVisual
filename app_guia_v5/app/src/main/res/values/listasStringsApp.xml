@@ -80,6 +80,9 @@
         <item> Inventado|no </item>
         <item> Inventado2|i1, i2 </item>
         <item> Inventado3|no </item>
+    </string-array>
 
+    <string-array name="uri_servidor">
+        <item>ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint</item>
     </string-array>
 </resources>

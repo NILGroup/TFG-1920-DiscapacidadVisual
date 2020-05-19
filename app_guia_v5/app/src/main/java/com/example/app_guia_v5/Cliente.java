@@ -1,6 +1,8 @@
 package com.example.app_guia_v5;
-
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.regex.Pattern;
 import java.util.Arrays;
 import java.util.List;
@@ -9,18 +11,20 @@ import java.net.URISyntaxException;
 import tech.gusavila92.websocketclient.WebSocketClient;
 
 
-public class Cliente {
+public class Cliente  {
 
     private WebSocketClient webSocketClient;
 
 
     private String dest, ori;
-    String infoRecibida = "no";
+    private String infoRecibida = "no";
     final String [] results = new  String[5];
+    private String uri_serv;
 
-    public Cliente(String destino, String origen){
+    public Cliente(String destino, String origen, String uri){
         dest = destino;
         ori = origen;
+        uri_serv = uri;
     }
 
     protected String[] createWebSocketClient() {
@@ -28,7 +32,8 @@ public class Cliente {
 
         try {
             // Connect to local host
-            uri = new URI("ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint");
+            //uri = new URI("ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint");
+            uri = new URI(uri_serv);
         }
         catch (URISyntaxException e) {
             e.printStackTrace();

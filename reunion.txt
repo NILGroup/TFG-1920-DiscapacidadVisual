@@ -23,3 +23,9 @@ Convocatoria de junio
  Entrega de la memoria final y de la autorización de difusión: viernes 26 de junio
  Exposiciones públicas de todos los alumnos considerados aptos: 6, 7 y 8 de julio
 
+APP:
+-juntar la última versión de la app en v5
+-instrucciones (lista de strings)
+MEMORIA:
+-mirar que esté el apartado que habla de los trabajos previos.
+-
