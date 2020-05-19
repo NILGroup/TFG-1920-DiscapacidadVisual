@@ -12,9 +12,6 @@ https://developer.android.com/guide/components/services
 PARA MANTENER EL DISPOSITIVO ACTIVO:
 https://developer.android.com/training/scheduling/wakelock
 
-INTERFAZ:
--hacer mas pequeños los botones de scanning y mas grande el cuadro de texto.
-
 CAPITULO QUE HA HECHO CADA UNA:
 https://eprints.ucm.es/48834/1/007.pdf
 
@@ -26,6 +23,3 @@ Convocatoria de junio
  Entrega de la memoria final y de la autorización de difusión: viernes 26 de junio
  Exposiciones públicas de todos los alumnos considerados aptos: 6, 7 y 8 de julio
 
-APP:
--Mirar si cuadro lo de los botones.
--Mirar poner un boton blanco otro lila.
