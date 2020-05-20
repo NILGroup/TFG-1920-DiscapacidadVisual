@@ -15,7 +15,6 @@ import java.util.Iterator;
 
 public class Planta {
 
-	//private String tipo;
 	private String id;
 	private ArrayList<Cuadrante> listaCuadrantes;
 	
@@ -28,7 +27,6 @@ public class Planta {
 	 */
 	public Planta(String i) {
 		
-		//tipo = t;
 		id = i;
 		listaCuadrantes = new ArrayList<Cuadrante>();
 		
@@ -39,18 +37,6 @@ public class Planta {
 		listaCuadrantes.add(c);
 		
 	}
-	
-	/*public String getTipo() {
-		
-		return tipo;
-		
-	}
-	
-	public String getTipoString() {
-		
-		return tipo.toString();
-		
-	}*/
 	
 	public String getId() {
 		

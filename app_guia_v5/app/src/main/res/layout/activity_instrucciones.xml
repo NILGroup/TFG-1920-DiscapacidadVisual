@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_border"
+            android:background="@drawable/edit_text_borderandbackground"
             android:drawableLeft="@android:drawable/ic_media_play"
             android:text="@string/rep_button"
             android:textSize="24sp" />
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_border_light"
+            android:background="@drawable/edit_text_borderandbackground"
             android:drawableLeft="@android:drawable/ic_media_previous"
             android:text="@string/anterior_button"
             android:textSize="24sp" />

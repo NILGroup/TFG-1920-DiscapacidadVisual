@@ -56,10 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#93DD3C"
             android:drawableLeft="@android:drawable/ic_media_play"
             android:text="@string/iniciar_button"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/black"
             android:textSize="24sp" />
 
         <Button

@@ -66,8 +66,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     private static boolean verbose = true; //Por defecto esta a true
     private Button iniciar_button, modo_verb_button, stop_button, repet_button, mute_button;
 
-    //private PowerManager.WakeLock wakeLock;
-
     public static Intent createIntent(@NonNull Context context, String dest) {
         destino = dest;
         return new Intent(context, ScanningActivity.class);
@@ -88,11 +86,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         setupButtons();
         //Initialize and configure proximity manager
         setupProximityManager();
-
-
+        //Pantalla siempre encendida
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        //PowerManager mgr = (PowerManager)getSystemService(Context.POWER_SERVICE);
-        //wakeLock = mgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "BlindBit::WakelockTag");
     }
 
 
@@ -101,11 +96,15 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         editText.setMovementMethod(new ScrollingMovementMethod());
 
         iniciar_button = (Button) findViewById(R.id.iniciar_button);
-        iniciar_button.setBackgroundColor(Color.parseColor("#58028B"));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            iniciar_button.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+        }
         iniciar_button.setOnClickListener(this);
 
         modo_verb_button = (Button) findViewById(R.id.modo_verb_ruta_button);
-        modo_verb_button.setBackgroundColor(Color.parseColor("#CC95ED"));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            modo_verb_button.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+        }
         modo_verb_button.setOnClickListener(this);
 
         stop_button = (Button) findViewById(R.id.parar_button);
@@ -152,7 +151,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 //Toast.makeText(ScanningActivity.this, "Scanning started", Toast.LENGTH_SHORT).show();
             }
         });
-        //wakeLock.acquire();
     }
 
     private void stopScanning() {
@@ -240,7 +238,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                             hayServ = false;
                             //Se para de escanear y se espera a que el usuario vuelva a iniciar la ruta
                             stopScanning();
-                            iniciar_button.setBackgroundColor(Color.parseColor("#58028B"));
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                iniciar_button.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+                            }
                         }
                     }
 
@@ -262,7 +262,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                         editText.setText("Te encuentras fuera del alcance de la aplicación" +
                                 "Dirígete al interior del edificio, la ruta comenzará cuando pulses sobre iniciar ruta.");
                         stopScanning();
-                        iniciar_button.setBackgroundColor(Color.parseColor("#58028B"));
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                            iniciar_button.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+                        }
                     }
                 }
                 //para que haga scroll
@@ -313,8 +315,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         editText.setText(editText.getText() + "______________\n");
         editText.setText(editText.getText() + "Destino: " + destino + "\n");
         editText.setText(editText.getText() + listaInstrucciones.get(indiceRuta) + "\n");
-        editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
-        editText.setText(editText.getText() + "Beacon clave: " + listaBeacons.get(indiceRuta+1) + "\n");
+        //editText.setText(editText.getText() + "Beacon más cercano: " + beacon_mas_cerca + "\n");
+        //editText.setText(editText.getText() + "Beacon clave: " + listaBeacons.get(indiceRuta+1) + "\n");
         editText.setText(editText.getText() + "______________\n");
     }
 
@@ -345,7 +347,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
         double distMin = 20;
 
         for (int i = 0; i < eddystones.size(); i++) {
-            //double distance = (double)Math.round(eddystones.get(i).getDistance() * 1000d) / 1000d;
             double distance = eddystones.get(i).getDistance();
 
             if (distance < distMin) {
@@ -388,7 +389,8 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             popup.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
+                    startScanning();
+                    //dialog.cancel();
                 }
             });
 
@@ -412,7 +414,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) { //cambiar el de config
             case R.id.iniciar_button:
-                //iniciar_button.setBackgroundColor(Color.parseColor("#49A605"));
                 iniciar_button.getBackground().setAlpha(128);  // 50% transparent
                 ttsManager.addQueue("Iniciando ruta a " + destino);
                 startScanning();
@@ -420,31 +421,28 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
             case R.id.modo_verb_ruta_button: // que cuando se pulse se ponga al contrario de lo que está
                 if (verbose) {
                     verbose = false;
-                    //modo_verb_button.setAlpha(.5f);
                     modo_verb_button.getBackground().setAlpha(128);  // 50% transparent
-                    //modo_verb_button.setBackgroundColor(Color.LTGRAY);
                     ttsManager.addQueue("Funcionalidad instrucciones detalladas desactivada");
                 }
                 else {
                     verbose = true;
-                    //modo_verb_button.setAlpha(.10f);
-                    modo_verb_button.setBackgroundColor(Color.parseColor("#CC95ED"));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        modo_verb_button.setBackground(getResources().getDrawable(R.drawable.edit_text_borderandbackground));
+                    }
                     ttsManager.addQueue("Funcionalidad instrucciones detalladas activada");
                 }
                 break;
 
             case R.id.parar_button:
                 onStop();
-                //ttsManager.initQueue("Se ha detenido la ruta");
                 onBackPressed();
-                //startActivity(ListaDestinosActivity.createIntent(this));
                 break;
 
             case R.id.repetir_button:
                 if(hayServ) {
                     ttsManager.initQueue(listaInstrucciones.get(indiceRuta));
                     editText.setText(editText.getText() + "______________\n");
-                    editText.setText(editText.getText() + "Ruta repetida:" + listaInstrucciones.get(indiceRuta) + "\n");
+                    editText.setText(editText.getText() + "Instrucción repetida:" + listaInstrucciones.get(indiceRuta) + "\n");
                     editText.setText(editText.getText() + "______________\n");
                 }
                 break;

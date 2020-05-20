@@ -25,9 +25,9 @@
         <Button
             android:id="@+id/button_start_searching"
             android:layout_width="match_parent"
-            android:layout_weight="1"
             android:layout_height="100dp"
-            android:background="@drawable/edit_text_border"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_borderandbackground"
             android:drawableLeft="@android:drawable/ic_menu_mylocation"
             android:text="@string/button_start_searching"
             android:textSize="30sp" />
@@ -45,9 +45,9 @@
         <Button
             android:id="@+id/instructions_button"
             android:layout_width="match_parent"
-            android:layout_weight="1"
             android:layout_height="100dp"
-            android:background="@drawable/edit_text_border_light"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_borderandbackground"
             android:drawableLeft="@android:drawable/ic_menu_help"
             android:text="@string/instructions_button"
             android:textSize="30sp" />

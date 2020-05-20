@@ -75,7 +75,7 @@ public class InstruccionesAppActivity extends AppCompatActivity implements View.
     @Override
     public void onBackPressed() {
         //si se estaba reproduciendo algo lo paramos
-        ttsManager.initQueue("");
+        ttsManager.shutDown();
         super.onBackPressed();
     }
 

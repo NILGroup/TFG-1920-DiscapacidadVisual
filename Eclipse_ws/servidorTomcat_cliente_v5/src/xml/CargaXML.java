@@ -29,7 +29,7 @@ public class CargaXML {
 		 //Se crea un SAXBuilder para poder parsear el archivo
 	    SAXBuilder builder = new SAXBuilder();
 	    File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();
-	    File xmlFile = new File(catalinaBase,"webapps/xml_modif_belen/"+nombreXML+".xml");
+	    File xmlFile = new File(catalinaBase,"webapps/xml_modif/"+nombreXML+".xml");
 	    try
 	    {
 
@@ -43,7 +43,6 @@ public class CargaXML {
 	        {
 	            Element estancia = (Element) lista_estancias.get(indexEstancia);//Se obtiene el elemento 'estancia'
 	            String idEstancia = estancia.getAttributeValue("id");//Se obtiene el atributo 'id'
-	            //String tipo = estancia.getChildText("tipo");
 	            
 	            
 	            Element cuadrantes = estancia.getChild("cuadrantes");//Obtener el elemento 'cuadrantes'

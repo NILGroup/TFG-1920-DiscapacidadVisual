@@ -15,8 +15,6 @@ public class ListaCuadrantes {
 
 	public static final int MAX = 9999;
 	private static final int NO_PARENT = -1;
-
-	//private static int[] prev;
 		
 	private ArrayList<Cuadrante> lista;
 	private int[][] matrizAdy;
@@ -25,7 +23,6 @@ public class ListaCuadrantes {
 		
 	public ListaCuadrantes(ArrayList<Cuadrante> aCuadrantes){
 
-		//Edificio xml = new Edificio();
 		lista = aCuadrantes;
 		iniciarLista();
 		
@@ -106,7 +103,7 @@ public class ListaCuadrantes {
 			
 			Cuadrante c = aCuadrantes.get(i);
 			
-			if (c.getBeacon().equals(beaconActual))//en principio no hace falta comprobar la z
+			if (c.getBeacon().equals(beaconActual))
 				return c.getID();
 		}
 		

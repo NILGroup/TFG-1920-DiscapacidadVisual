@@ -21,7 +21,7 @@
     <string name="stop_scan_button">STOP SCANNING</string>
 
     <string name="beacon_text">Beacons encontrados:\n</string>
-    <string name="inst_text">Instrucciones:\n</string>
+    <string name="inst_text">Destino: aula 1.\nContinua recto 5.0 metros. Luego gira a la izquierda.</string>
 
     <string name="iniciar_button">Iniciar ruta</string>
     <string name="repetir_button">Repetir instrucción</string>

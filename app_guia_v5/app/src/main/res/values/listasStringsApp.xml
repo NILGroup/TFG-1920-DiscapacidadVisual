@@ -77,9 +77,6 @@
         <item> Sala de juntas|no </item>
         <item> Salon de actos|no </item>
         <item> Secretaria|no </item>
-        <item> Inventado|no </item>
-        <item> Inventado2|i1, i2 </item>
-        <item> Inventado3|no </item>
     </string-array>
 
     <string-array name="uri_servidor">

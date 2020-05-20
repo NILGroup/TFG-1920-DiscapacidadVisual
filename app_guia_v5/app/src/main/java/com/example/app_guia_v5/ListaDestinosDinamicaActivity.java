@@ -54,7 +54,6 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
     public static Intent createIntent(@NonNull Context context,int niv, String k) {
         nivel=niv;
         clave_segundonivel=k;
-        //Log.i("DINAMICA", "createIntent: " + pantallaCreada);
         return new Intent(context, ListaDestinosDinamicaActivity.class);
     }
 

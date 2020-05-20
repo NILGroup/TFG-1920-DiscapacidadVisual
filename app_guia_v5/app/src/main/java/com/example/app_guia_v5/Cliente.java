@@ -32,7 +32,6 @@ public class Cliente  {
 
         try {
             // Connect to local host
-            //uri = new URI("ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint");
             uri = new URI(uri_serv);
         }
         catch (URISyntaxException e) {
@@ -98,10 +97,10 @@ public class Cliente  {
         synchronized (webSocketClient){
             try {
                 if(infoRecibida.equals("no")) {
-                    Log.i("WebSocket", "Vamos a esperar a los datos");
+                    //Esperamos a recibir los datos
                     webSocketClient.wait();
 
-                    if(infoRecibida.equals("no")){
+                    if(infoRecibida.equals("no")){//Si no se ha podido conectar con el servidor
                         webSocketClient.close();
                         String [] noServInfo = new String[1];
                         noServInfo[0] = "noInfo";

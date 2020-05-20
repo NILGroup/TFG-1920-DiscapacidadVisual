@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_border_light"
+            android:background="@drawable/edit_text_borderandbackground"
             android:text="@string/general_button"
             android:textSize="24sp" />
 
@@ -54,12 +54,13 @@
             android:background="@drawable/edit_text_border_light"
             android:text="@string/buscar_destino_button"
             android:textSize="24sp" />
+
         <Button
             android:id="@+id/instrepetir_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_border_light"
+            android:background="@drawable/edit_text_borderandbackground"
             android:text="@string/repetir_instrucc_button"
             android:textSize="24sp" />
 

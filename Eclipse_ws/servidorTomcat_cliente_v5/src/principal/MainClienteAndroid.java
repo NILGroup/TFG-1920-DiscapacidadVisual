@@ -36,10 +36,6 @@ import javax.websocket.server.ServerEndpoint;
 @ServerEndpoint("/websocketendpoint")
 public class MainClienteAndroid {
 	
-	//Mapa con las sesiones que hay
-	//Map<String, Session> sessions = new ConcurrentHashMap<>();
-
-	
 	private static ArrayList<Integer> lCuadrantes = new ArrayList<Integer>();
 	private static ArrayList<Planta> aPlantas; //todas las estancias del edificio
 	private static ArrayList<Cuadrante> aCuadrantes; //todos los cuadrantes del edificio
@@ -145,11 +141,6 @@ public class MainClienteAndroid {
 
 			Persona p = new Persona(ori, dest, aCuadrantes);
 			lCuadrantes = p.getCamino();
-			
-			//int [][] m = p.getMatrizAdy();
-			//System.out.println("Matriz ady\n" + m.toString());
-			
-			//System.out.println("Lista Cuadrantes" + lCuadrantes.toString());
 			
 			for (int i = 0; i < lCuadrantes.size(); i++) {
 				if(i!=0) {

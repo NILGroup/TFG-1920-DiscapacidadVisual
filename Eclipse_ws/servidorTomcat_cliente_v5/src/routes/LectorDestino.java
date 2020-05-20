@@ -22,31 +22,26 @@ public class LectorDestino {
 	
 	private Hashtable<String,Integer> t_valores;
 	
-	//private Hashtable<String,Par> t_valores;
-	
 	public LectorDestino(){
 		
 		t_valores=new Hashtable<String,Integer>();
-		//t_valores=new Hashtable<String,Par>();
 		JSONParser parser = new JSONParser();
 		JSONArray destinos;
 		
 		try {
 			File catalinaBase = new File( System.getProperty( "catalina.base" ) ).getAbsoluteFile();
 			//System.out.println("Catalina: " + catalinaBase);
-			destinos = (JSONArray) parser.parse(new FileReader(catalinaBase + "/webapps/destinosBelen.json"));
+			destinos = (JSONArray) parser.parse(new FileReader(catalinaBase + "/webapps/destinos.json"));
 			for (Object o : destinos){
 	
 				JSONObject dest = (JSONObject) o;
 				
 				String lugar = (String) dest.get("lugar");
 				String numCuadrante = (String) dest.get("cuadrante");
-				//String dir = (String) dest.get("direccion");
 				Integer cuadrante = Integer.parseInt(numCuadrante);
-				//Par p = new Par(cuadrante,dir);
 				
 				t_valores.put(lugar, cuadrante);
-				//t_valores.put(lugar, p);
+			
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

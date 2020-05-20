@@ -114,16 +114,6 @@ class Dijkstra {
 		//int nVertices = distances.length; 
 		System.out.print("Vertex\t Distance\tPath"); 
 		
-		/*for (int vertexIndex = 0;vertexIndex < nVertices;vertexIndex++) { 
-			if (vertexIndex != startVertex) 
-			{ 
-				System.out.print("\n" + startVertex + " -> "); 
-				System.out.print(vertexIndex + " \t\t "); 
-				System.out.print(distances[vertexIndex] + "\t\t"); 
-				printPath(vertexIndex, parents); 
-			} 
-		} */
-		
 		System.out.print("\n" + startVertex + " -> "); 
 		System.out.print(4 + " \t\t "); 
 		System.out.print(distances[4] + "\t\t"); 
