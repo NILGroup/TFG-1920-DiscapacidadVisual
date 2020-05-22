@@ -3,7 +3,7 @@
 
 En este capítulo se describe el proceso de evaluación de la aplicación que se ha llevado a cabo. Como ya se puso de manifiesto en el Plan de trabajo (ver Sección \ref{sec:planTrabajo}), la idea inicial era la de realizar una evaluación con usuarios finales y, preferiblemente, en la Facultad de Informática de la UCM, pues ese espacio es nuestro caso de estudio inicial. Debido a la crisis sanitaria y el estado de emergencia declarado en marzo de 2020 a causa de la COVID-19, no ha sido posible la ejecución dicha evaluación. Sin embargo, se ha adaptado, en la medida de lo posible, a esta situación. En las secciones que siguen se detalla cómo se ha llevado a cabo la adaptación tanto del plan de evaluación como el despliegue de la aplicación en otro edificio, destacando así su generalidad. 
 
-En la Sección \ref{sec:adaptacionApp} se describen los pasos a seguir, tanto en el servidor (Sección \ref{sub:cambiosServidor}) como en el cliente (Sección \ref{sub:cambiosCliente}) para poder adaptar la aplicación a otro espacio. Por su parte, la Sección \ref{sec:objetivosEval} detalla los objetivos de la evaluación. Las pruebas que se llevaron a cabo a fin de valorar el cumplimiento de estos objetivos se expone en la Sección \ref{sec:realizYresult} y las conclusiones finales de la evaluación pueden verse en la última sección (Sección \ref{sec:conclusionesEval}).
+En la Sección \ref{sec:adaptacionApp} se describen los pasos a seguir, tanto en el servidor (Sección \ref{sub:cambiosServidor}) como en el cliente (Sección \ref{sub:cambiosCliente}) para poder adaptar la aplicación a otro espacio. Por su parte, la Sección \ref{sec:objetivosEval} detalla los objetivos de la evaluación. Las pruebas que se llevaron a cabo a fin de valorar el cumplimiento de estos objetivos se expone en la Sección \ref{sec:realizYresult} y las conclusiones finales de la evaluación pueden verse en la última sección (Sección \ref{sec:conclusionesEval}). 
 
 
 \section{Adaptación de la aplicación a un nuevo edificio}
@@ -12,7 +12,7 @@ En la Sección \ref{sec:adaptacionApp} se describen los pasos a seguir, tanto en
 En esta sección detallaremos los cambios que se deben realizar para poder utilizar la aplicación Blind Bit en un edificio nuevo. Tanto el código del servidor como el del cliente se han implementado de tal manera que la información relativa al edificio sobre el que se despliega quede reducida a la información contenida en archivos adicionales que no forman parte del código. Sin embargo, son algunas las consideraciones que hay que tener en cuenta antes de comenzar con el mapeo de un nuevo espacio. 
 
 \subsection{Cambios en el servidor}
-\label{sub:cambiosServidor}
+\label{sub:cambiosServidor_vivienda}
 
 Como se puso de manifiesto en la Sección \ref{sec:servidor}, la información sobre la estructura del edificio que emplea el servidor para el cálculo de la ruta está contenida en los archivos xml y json correspondientes (ver Sección \ref{sec:mapeo}). Gracias a los archivos xml, el servidor conoce los cuadrantes que hay en una planta y, por tanto, sabe identificar cuándo hay que hacer un cambio de planta. Además, conoce la dirección en la que se mueve el usuario ya que sabe la dirección de conexión de los cuadrantes. Así mismo, permite indicar al usuario hacia qué dirección se encuentra su destino en función del camino que haya seguido para llegar a él. De esta manera, el código que genera la ruta es totalmente independiente del edificio. Tan solo se espera que el cambio de planta se haga por medio de un ascensor, lo que parece de esperar cuando se mapean lugares como una facultad o un museo. Además, los ascensores suelen estar adaptados con escritura en braille. A continuación se detallan las claves para realizar el mapeo de un nuevo edificio.
 
@@ -31,14 +31,14 @@ Una vez mapeado el edificio el siguiente paso ha de ser estructurar la informaci
 
 
 \subsection{Cambios en el cliente}
-\label{sub:cambiosCliente}
+\label{sub:cambiosCliente_vivienda}
 
 En las Secciones \ref{sub:diseño} y \ref{sub:func_cliente}, revisamos el diseño de la interfaz de la aplicación Blind Bit y su funcionamiento, respectivamente. En cuanto a la interfaz se refiere, es sencillo darse cuenta de que la parte dependiente del edificio corresponde a la pantalla de destinos. Sin embargo, esta está implementada de manera dinámica. Es decir, los nombres de los botones, así como la lista de destinos con la etiqueta correspondiente a los destinos tal y como aparecen en el archivo \textit{destinos.json} del servidor\footnote{Los destinos en la interfaz pueden aparecer con tildes, mayúsculas y otros caracteres especiales que puede no ser posible añadir en el archivo \textit{destinos.json}. Es por ello que se guardan los destinos en dos estructuras, una para la interfaz y otra para la conexión con el servidor.} se guardan en un archivo xml. El archivo donde se guardan estos y otros strings correspondientes a la aplicación, tales como el texto de las instrucciones o la uri del servidor es \textit{listasStringsApp.xml}. Las estructuras referentes a la lista de destinos son \textit{destinos\_array} y \textit{destinosdinamicos\_array}. Mientras que en la primera basta con introducir cada destino en un \textit{<item>}, en la segunda hay que indicar si ese destino tiene un segundo nivel. Por ejemplo, en el caso de la Facultad de Informática tenemos un botón aulas, que no corresponde con un destino sino con el acceso a un segundo nivel donde se muestran las aulas destino disponibles. La estructura que debe seguirse es la siguiente: 
 
 
-\lstinputlisting[language=XML]{Imagenes/Evaluacion/destinos_array.xml} 
+%\lstinputlisting[language=XML]{Imagenes/Evaluacion/destinos_array.xml} 
 
-\lstinputlisting[language=XML]{Imagenes/Evaluacion/destinosdinamicos_array.xml}
+%\lstinputlisting[language=XML]{Imagenes/Evaluacion/destinosdinamicos_array.xml}
 
 Donde un ``no'' tras la barra indica que no hay un segundo nivel y cualquier otra cadena de strings se entiende como los destinos correspondientes a ese nivel, separados por comas. Este constituye el único cambio necesario para adaptar el cliente a un nuevo espacio.
 
@@ -86,24 +86,6 @@ Como ya se avanzaba en la introducción, el edificio sobre el que se basa la eva
 	\caption{Mapeo de la vivienda}
 	\label{fig:mapeoCasa}
 \end{figure}
-
-%	
-%\begin{figure}[t]
-%	\centering
-%	\includegraphics[width=0.9\textwidth]{Imagenes/Evaluacion/planoCasaPBaja}
-%	\caption{Mapeo de la planta baja de la vivienda.}
-%	\label{fig:mapeoCasaPBaja}
-%\end{figure}
-%
-%
-%\begin{figure}[t]
-%	\centering
-%	\includegraphics[width=0.9\textwidth]{Imagenes/Evaluacion/planoCasaPAlta}
-%	\caption{Mapeo de la planta alta de la vivienda.}
-%	\label{fig:mapeoCasaPAlta}
-%\end{figure}
-
-
 
 A continuación se describen las pruebas realizadas y se analizan los resultados obtenidos.
 
