@@ -116,7 +116,7 @@ Originariamente, cada cuadrante se correspondía con nueve baldosas aproximadame
 \end{figure}
 
 
-Como nuestro posicionamiento se fundamenta en el \textit{beacon} más cercano, hemos considerado que el usuario se encuentra en el cuadrante asociado a dicho \textit{beacon}, de esta manera aunque no proporcionamos coordenadas exactas de su posición le asociamos con un cuadrante concreto que representa las inmediaciones de su beacon más próximo. Sin embargo, por este mismo motivo, aquellos cuadrantes que no tienen asociada ninguna baliza Bluetooth carecen de interés ya que no hay manera de detectarlos y saber si el usuario se encuentra en ellos. Es por esto que el siguiente cambio ha sido dibujar nuevos cuadrantes que formen unos nuevos más grandes. En la Figura \ref{fig:cuadrantesP1_v3} encontramos la versión final del mapeo, en la que solo permanecen los cuadrantes con baliza. Además podemos observar que también hemos suprimido los cuadrantes de las aulas, sala de juntas, etc. Esto se debe a que nuestra aplicación no ofrece una guía dentro de estas estancias sino que funciona como guía de puerta a puerta. Por ello, en lugar de tener cuadrantes que se unen formando estancias, hemos realizado el cambio a cuadrantes que se agrupan en plantas.
+Como nuestro posicionamiento se fundamenta en el \textit{beacon} más cercano, hemos considerado que el usuario se encuentra en el cuadrante asociado a dicho \textit{beacon}, de esta manera aunque no proporcionamos coordenadas exactas de su posición le asociamos con un cuadrante concreto que representa las inmediaciones de su beacon más próximo. Sin embargo, por este mismo motivo, aquellos cuadrantes que no tienen asociada ninguna baliza Bluetooth carecen de interés ya que no hay manera de detectarlos y saber si el usuario se encuentra en ellos. Es por esto que el siguiente cambio ha sido dibujar nuevos cuadrantes que formen unos nuevos más grandes. En la Figura \ref{fig:cuadrantesP1_v3} encontramos la versión final del mapeo, en la que solo permanecen los cuadrantes con baliza. Además podemos observar que también hemos suprimido los cuadrantes de las aulas, sala de juntas, etc. Esto se debe a que nuestra aplicación no ofrece una guía dentro de estas estancias sino que funciona como guía de puerta a puerta. Por ello, en lugar de tener cuadrantes que se unen formando estancias, hemos realizado el cambio a cuadrantes que se agrupan en plantas. Para representar la lista de destinos finales hemos incluido un archivo llamado \textit{destinos.json} en el que asociamos el nombre del destino con el cuadrante en el que se encuentra.
 
 \begin{figure}[t]
 	\centering
@@ -126,8 +126,6 @@ Como nuestro posicionamiento se fundamenta en el \textit{beacon} más cercano, h
 \end{figure}
 
 La novedad más importante que incluye nuestro proyecto con respecto a los trabajos predecesores en este aspecto es el mapeo de la planta baja (ver Figura \ref{fig:cuadrantesPbaja}) y la conexión de unas plantas con otras a través de los cuadrantes en los que se encuentran los ascensores y escaleras de manera que sea viable incluir rutas de una a otra.
-
-
 
 \section{Mediciones y distribución de los \textit{beacons} en la Facultad de Informática}
 \label{sec:medicionesbeacons}
@@ -219,7 +217,7 @@ de manera sencilla las diferentes plantas del edificio y es un método genérico
 	
 	\item \textit{id:} Se corresponde con el nombre de la planta en la que nos encontramos. En el ejemplo la hemos llamado \textit{plantabaja}.
 	
-	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $20$.
+	\item \textit{idc:} Hace referencia al identificador único de cada cuadrante. En el ejemplo le hemos dado el valor $0$.
 	
 	\item \textit{beacon:} Hace referencia al identificador de la baliza asociada a dicho cuadrante. En el ejemplo le hemos dado el valor \textit{beacon0}.
 	
