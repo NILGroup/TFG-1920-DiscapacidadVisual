@@ -79,7 +79,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
         List<String> stringArray  = Arrays.asList(res.getStringArray(R.array.destinosdinamicos_array));
 
         for (String entry : stringArray) {
-            String[] splitResult = entry.split("\\|", 2); //ESTO LO PILLA BIEN???
+            String[] splitResult = entry.split("\\|", 2);
             String[] splitResult2;
             if (!splitResult[1].equals("no")) //hay un segundo nivel
                   splitResult2 = splitResult[1].split("\\,");
@@ -220,7 +220,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
                                 Toast.LENGTH_SHORT).show();
                         startActivity(ScanningActivity.createIntent(this, strSpeech2Text));
                     }
-                    else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+                    else{ //Mensaje con destino no valido
                         /*Toast.makeText(getApplicationContext(),
                                 "El destino introducido no es valido",
                                 Toast.LENGTH_SHORT).show();*/
@@ -286,7 +286,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
                     Toast.LENGTH_SHORT).show();
             startActivity(ScanningActivity.createIntent(this, dest));
         }
-        else{ //Mensaje con destino no valido, habrá que hacerlo por voz
+        else{ //Mensaje con destino no valido
             /*Toast.makeText(getApplicationContext(),
                     "El destino introducido no es valido",
                     Toast.LENGTH_SHORT).show();*/

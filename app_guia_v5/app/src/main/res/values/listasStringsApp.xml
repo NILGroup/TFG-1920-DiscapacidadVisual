@@ -67,7 +67,7 @@
         <item>secretaria</item>
     </string-array>
 
-    <string-array name="destinosdinamicos_array">
+    <!--<string-array name="destinosdinamicos_array">
         <item> Aulas|aula 1,aula 2,aula 3, aula 4,  aula 5, aula 6, aula 7,aula 8,aula 9,aula 10, aula 11, aula 12, aula 13, aula 14, aula 15, aula 16</item>
         <item> Biblioteca|no </item>
         <item> Cafeteria|no </item>
@@ -78,8 +78,28 @@
         <item> Salon de actos|no </item>
         <item> Secretaria|no </item>
     </string-array>
+    -->
+
+    <string-array name="destinosdinamicos_array">
+        <item> estancia 0|no </item>
+        <item> estancia 2|no </item>
+        <item> estancia 5|no </item>
+        <item> estancia 6|no </item>
+        <item> estancia 8|no </item>
+        <item> estancia 9|no </item>
+        <item> estancia 10|no </item>
+        <item> estancia 13|no </item>
+    </string-array>
 
     <string-array name="uri_servidor">
         <item>ws://192.168.1.38:8080/servidorTomcat_cliente_v5/websocketendpoint</item>
     </string-array>
+
+    <string-array name="variables_ruta">
+        <item>7</item> <!-- maximo para la variable numPasosPerdidos en caso de que el usuario
+                            salga de la ruta-->
+        <item>8</item>  <!-- maximo para la variable numPasosPerdidos en caso de que el usuario
+                            no detecte ningún beacon-->
+    </string-array>
+
 </resources>

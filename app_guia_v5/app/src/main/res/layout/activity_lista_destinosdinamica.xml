@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.app_guia_v5.ListaDestinosDinamicaActivity">
+
     <ImageButton
         android:id="@+id/img_btn_hablar"
         android:layout_width="141dp"
@@ -18,11 +19,11 @@
         android:layout_marginRight="144dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/mic_logo"
-        android:contentDescription="@string/microfono_descripcion"
+        android:contentDescription="@string/microfono_dinamico"
         android:onClick="onClickImgBtnHablar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

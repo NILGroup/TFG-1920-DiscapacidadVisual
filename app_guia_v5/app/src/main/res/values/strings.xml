@@ -4,9 +4,7 @@
     <string name="ventana_instruc">Instrucciones</string>
     <string name="ventana_config"> Ajustes</string>
     <string name="ventana_ruta">Ruta</string>
-    <string name="ventana_destinos">Lista de destinos vieja</string>
     <string name="ventana_destinosdinamica">Lista de destinos</string>
-    <string name="ventana_aulas">Lista de aulas vieja</string>
     <string name="button_start_searching">Iniciar ruta</string>
     <string name="config_button">Ajustes</string>
     <string name="instructions_button">Instrucciones</string>
@@ -21,7 +19,7 @@
     <string name="stop_scan_button">STOP SCANNING</string>
 
     <string name="beacon_text">Beacons encontrados:\n</string>
-    <string name="inst_text">Destino: aula 1.\nContinua recto 5.0 metros. Luego gira a la izquierda.</string>
+    <string name="inst_text">Pulsa sobre Iniciar ruta para comenzar.</string>
 
     <string name="iniciar_button">Iniciar ruta</string>
     <string name="repetir_button">Repetir instrucción</string>
@@ -41,7 +39,7 @@
     <string name="siguiente_button">Siguiente</string>
 
     <!-- LISTA DESTINOS -->
-    <string name="conserjeria_button">Conserjería\n</string>
+    <!--<string name="conserjeria_button">Conserjería\n</string>
     <string name="aulas_button">Aulas</string>
     <string name="secretaria_button">Secretaría\n</string>
     <string name="sala_grados_button">Sala de\ngrados</string>
@@ -53,10 +51,11 @@
 
     <string name="microfono_descripcion">Micrófono</string>
     <string name="microfono_descripcion_aulas">Micrófono</string>
+    -->
     <string name="microfono_dinamico">Micrófono</string>
 
     <!-- LISTA AULAS -->
-    <string name="aula_1_button">Aula 1</string>
+    <!--<string name="aula_1_button">Aula 1</string>
     <string name="aula_2_button">Aula 2</string>
     <string name="aula_3_button">Aula 3</string>
     <string name="aula_4_button">Aula 4</string>
@@ -72,6 +71,6 @@
     <string name="aula_14_button">Aula 14</string>
     <string name="aula_15_button">Aula 15</string>
     <string name="aula_16_button">Aula 16</string>
-
+    -->
 
 </resources>

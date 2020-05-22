@@ -46,7 +46,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
     private ProximityManager proximityManager;
     public static final String TAG = "ProximityManager";
-    private List<String> uri; //uri del servidor
+    private List<String> uri, umbrales_numPasosPerdidos; //uri del servidor y maximos para numPasosPerdidos
+        //umbrales_numPasosPerdidos.get(0) -> maximo para cuando el usuario sale de la ruta
+        //umbrales_numPasosPerdidos.get(1) -> maximo para cuando el usuario no detecta beacons
 
     private EditText editText;
     private TTSManager ttsManager = null;
@@ -118,7 +120,9 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
 
         Resources res = getResources();
         // Convert String Array to List
-        uri  = Arrays.asList(res.getStringArray(R.array.uri_servidor));
+        uri = Arrays.asList(res.getStringArray(R.array.uri_servidor));
+
+        umbrales_numPasosPerdidos = Arrays.asList(res.getStringArray(R.array.variables_ruta));
     }
 
     private void setupProximityManager() {
@@ -214,15 +218,13 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     }
                     Log.i(TAG, "userLost: " + "numPasosPerdidos: " + numPasosPerdidos);
 
-                    if(hayServ && numPasosPerdidos >= 10){//Consideramos que el usuario se ha perdido
+                    if(hayServ && numPasosPerdidos >= Integer.parseInt(umbrales_numPasosPerdidos.get(0))){//Consideramos que el usuario se ha perdido
                         Log.i(TAG, "userLost: " + "El usuario se ha perdido");
                         numPasosPerdidos = 0;
                         int indiceBmasCerca = indiceBeacon(beacon_mas_cerca);
                         if( indiceBmasCerca != -1 && indiceBmasCerca >= indiceRuta){//El usuario sigue en la ruta
                             //Volvemos a conectar con el servidor para que nos de las instrucciones
                             //de por donde vamos. El usuario va en la dirección correcta.
-                            //hayRuta = false;
-                            //hayServ = false;
                             indiceRuta = indiceBmasCerca;
                             Log.i(TAG, "userLost: " + "en el if");
                         }
@@ -247,7 +249,6 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                     if (hayServ && listaBeacons.get(indiceRuta).equals("FINAL")){
                         indiceRuta--; //Nos quedamos en la última instrucción
                         //Patrón de vibración
-                        //long[] pattern={0,100,1000,200,200,100,400,200,100,1000};
                         long[] pattern={0,500,0,500,0,500};
                         vibrator.vibrate(pattern,-1);
                         stopScanning();
@@ -256,7 +257,7 @@ public class ScanningActivity extends AppCompatActivity  implements View.OnClick
                 }
                 else{
                     numPasosPerdidos++;
-                    if(numPasosPerdidos >= 10) {
+                    if(numPasosPerdidos >= Integer.parseInt(umbrales_numPasosPerdidos.get(1))) {
                         ttsManager.addQueue("Te encuentras fuera del alcance de la aplicación. " +
                                 "Dirígete al interior del edificio, la ruta comenzará cuando pulses sobre iniciar ruta.");
                         editText.setText("Te encuentras fuera del alcance de la aplicación" +
