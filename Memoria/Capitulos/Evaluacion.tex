@@ -34,9 +34,9 @@ En la Sección \ref{sub:cambiosServidor} se exponen las claves para realizar el 
 \end{figure}
 
 \begin{enumerate}
-	\item \textit{Características del edificio y necesidades del cliente:} El mapeo de una vivienda tiene ciertas particularidades que no se nos presentaron a la hora de mapear la Facultad de Informática de la UCM. Por un lado, las distancias se acortan, las distintas estancias, pasillos e intersecciones están mucho más cerca de lo que estarían en un edificio abierto al público, lo que implica que hay que tener más cuidado a la hora de posicionar los \textit{beacons}. Por otro lado, el número de puntos de interés es bastante más reducido y las rutas de puerta a puerta quedan demasiado simples a la hora de hacer una evaluación. Por esta razón y a diferencia del trabajo realizado en la Facultad de Informática, en este caso sí hemos mapeado las distintas estancias, para añadir complejidad a la guía y que esta no se limite a ir por pasillos o recibidores.
+	\item \textit{Características del edificio y necesidades del cliente:} El mapeo de una vivienda tiene ciertas particularidades que no se nos presentaron a la hora de mapear la Facultad de Informática de la UCM. Por un lado, las distancias se acortan, las distintas estancias, pasillos e intersecciones están mucho más cerca de lo que estarían en un edificio abierto al público, lo que implica que hay que tener más cuidado a la hora de posicionar los \textit{beacons}. Por otro lado, el número de puntos de interés es bastante más reducido y las rutas de puerta a puerta quedan demasiado simples a la hora de hacer una evaluación. Por esta razón, y a diferencia del trabajo realizado en la Facultad de Informática, en este caso sí hemos mapeado las distintas estancias, para añadir complejidad a la guía y que esta no se limite a ir por pasillos o recibidores.
 	
-	\item \textit{Trazado de los cuadrantes:} Para ello, lo primero que se ha hecho ha sido dividir el edificio en cada una de sus plantas y finalmente dividir estas en cuadrantes únicos. Buena parte de la decisión de la ubicación de las fronteras de los cuadrantes venía dada por la propia estructura del edificio, sus paredes y estancias. Sin embargo, no se debe olvidar que los cuadrantes solo pueden tener un punto de decisión y que no pueden colindar con más de un cuadrante por lado. Se puede ver el resultado del trazado de cuadrantes, cuyos identificadores son los números que aparecen sobre ellos, (rojo) y la ubicación de los \textit{beacons} (amarillo) en la Figura \ref{fig:mapeoCasa}. En la Figura \ref{fig:mapeoCasaPBaja} vemos como hemos dividido la planta baja de la vivienda en 11 cuadrantes, siendo este último el que se corresponde con las escaleras que unen esta planta con el cuadrante 12 de la planta superior. El mapeo de la primera planta se encuentra en la Figura \ref{fig:mapeoCasaPAlta} que como vemos tiene la misma estructura que la planta inferior a excepción de la superficie que se corresponde con los cuadrantes $0$, $1$ y $10$ que desaparecen. Solo hemos incluido dos cuadrantes ya que la división es completamente análoga.	
+	\item \textit{Trazado de los cuadrantes:} Para ello, lo primero que se ha hecho ha sido dividir el edificio en cada una de sus plantas y finalmente dividir estas en cuadrantes únicos. Buena parte de la decisión de la ubicación de las fronteras de los cuadrantes venía dada por la propia estructura del edificio, sus paredes y estancias. Sin embargo, no se debe olvidar que los cuadrantes solo pueden tener un punto de decisión y que no pueden colindar con más de un cuadrante por lado. Se puede ver el resultado del trazado de cuadrantes (rojo), cuyos identificadores son los números que aparecen sobre ellos, y la ubicación de los \textit{beacons} (amarillo) en la Figura \ref{fig:mapeoCasa}. En la Figura \ref{fig:mapeoCasaPBaja} vemos como hemos dividido la planta baja de la vivienda en 11 cuadrantes, siendo este último el que se corresponde con las escaleras que unen esta planta con el cuadrante 12 de la planta superior. El mapeo de la primera planta se encuentra en la Figura \ref{fig:mapeoCasaPAlta} que como vemos tiene la misma estructura que la planta inferior a excepción de la superficie que se corresponde con los cuadrantes $0$, $1$ y $10$ que desaparecen. Solo hemos incluido dos cuadrantes ya que la división es completamente análoga.	
 	
 	\item \textit{Información de los cuadrantes:} En este caso, la información adicional sobre los cuadrantes ha quedado reducida, limitándose a rellenar los campos correspondientes con datos aproximados. Esto se debe a que los objetivos de la evaluación (ver Sección \ref{sec:objetivosEval}) se enfocan al \textit{testeo} de la aplicación, rebajando el peso a la parte de usabilidad, que no ha podido realizarse debido a las cuestiones sanitarias expuestas en la introducción. 
 	
@@ -77,7 +77,7 @@ Debido a la imposibilidad de realizar una evaluación con usuarios, nos vimos ob
 	
 	Cabe destacar que en el posicionamiento influye no solo la correcta implementación del código, sino también la ubicación de los \textit{beacons}, que debe adaptarse a las necesidades específicas de cada edificio. 
 	
-	\item \textit{Generación de instrucciones correctas:} Teniendo en cuenta la ubicación del usuario y el camino que ha seguido, es primordial que la aplicación sea capaz de generar instrucciones correctas. Tanto los giros como la señalización de puntos de interés como los ascensores o el destino debe corresponderse con la ubicación real de estos, tal y como se establece en los archivos xml (ver Sección \ref{sub:mapeo_xml}).
+	\item \textit{Generación de instrucciones correctas:} Teniendo en cuenta la ubicación del usuario y el camino que ha seguido, es primordial que la aplicación sea capaz de generar instrucciones correctas. Tanto los giros como la señalización de puntos de interés, como los ascensores o el destino, debe corresponderse con la ubicación real de estos, tal y como se establece en los archivos xml (ver Sección \ref{sub:mapeo_xml}).
 	
 	\item \textit{Precisión de las instrucciones:} Además de que las instrucciones sean correctas, hay que evaluar que el usuario las recibe en el momento adecuado. Esto está claramente relacionado con el posicionamiento, pues el momento de indicación de la ruta se basa en cuándo el usuario llega a un determinado cuadrante. Sin embargo, se debe prestar especial atención a las posibles variaciones que pueden darse (una instrucción puede darse con cierta antelación o, por el contrario, una vez pasado el punto óptimo) y evaluar si esa flexibilidad es asumible para el usuario.
 	
@@ -89,9 +89,9 @@ Debido a la imposibilidad de realizar una evaluación con usuarios, nos vimos ob
 \section{Realización y resultados de la evaluación}
 \label{sec:realizYresult}
 
-En esta sección se exponen las pruebas realizadas para evaluar la aplicación. A pesar de que el espacio con el que se cuenta para realizar estos ensayos no presenta tantas posibilidades como la Facultad de Informática de la UCM (es un espacio más reducido, con menos intersecciones, puntos de interés, obstáculos y tránsito de gente), estos han sido diseñados de tal manera que se cubran la mayor cantidad posible de casos. Con la finalidad de detectar no solo posibles errores sino también confirmar que la aplicación es capaz de adaptarse a un nuevo espacio y funcionar de la manera esperada.
+En esta sección se exponen las pruebas realizadas para evaluar la aplicación. A pesar de que el espacio con el que se cuenta para realizar estos ensayos no presenta tantas posibilidades como la Facultad de Informática de la UCM\footnote{Es un espacio más reducido, con menos intersecciones, puntos de interés, obstáculos y tránsito de gente.}, estos han sido diseñados de tal manera que se cubran la mayor cantidad posible de casos. Con la finalidad de detectar no solo posibles errores sino también confirmar que la aplicación es capaz de adaptarse a un nuevo espacio y funcionar de la manera esperada.
 
-A continuación se describen las pruebas realizadas y se analizan los resultados obtenidos.
+En lo que sigue, asumiremos que \textit{beacon$X$} es el \textit{beacon} asociado al cuadrante $X$. A continuación se describen las pruebas realizadas y se analizan los resultados obtenidos.
 
 \subsection{Seguimiento de la ruta}
 En esta sección se detallan las pruebas realizadas asumiendo que el usuario no va a salir de la ruta. Sin embargo, algunas de ellas están diseñadas para reproducir situaciones extremas como la pérdida de un \textit{beacon} o rutas potencialmente complicadas.
@@ -99,60 +99,176 @@ En esta sección se detallan las pruebas realizadas asumiendo que el usuario no 
 
 \subsubsection{Ruta del cuadrante $0$ al cuadrante $10$}
 \label{subsub:0al10}
-La primera ruta de la evaluación consiste en realizar la ruta desde el cuadrante $0$ hasta el cuadrante $10$ sin salir de la ruta. Se ha comenzado por esta porque es una de las rutas más largas y con más giros, de esta manera se pueden comprobar diversos comportamientos de la aplicación a la vez. 
+La primera ruta de la evaluación consiste en realizar la ruta desde el cuadrante $0$ hasta el cuadrante $10$ sin salir de la ruta. Se ha comenzado por esta porque es una de las rutas más largas y con más giros, de esta manera se pueden comprobar diversos comportamientos de la aplicación a la vez. La Figura \ref{fig:del0al10} ilustra el trazado de la ruta.
+
+
+\subsubsection*{Objetivos de la prueba}
+
+Se quiere comprobar el correcto funcionamiento de los siguientes puntos:
+\begin{itemize}
+	
+	\item Funcionamiento de los distintos métodos de entrada para introducir el destino (teclado, botón y micrófono).
+	
+	\item El posicionamiento del usuario en un cuadrante se realiza de manera correcta por medio del \textit{beacon} más cercano. 
+	
+	\item En base al posicionamiento y la ruta que sigue el usuario las instrucciones que se le indican son correctas. 
+	
+	\item Las instrucciones se reflejan en la pantalla (la última instrucción siempre queda visible, el resto se pueden recuperar haciendo \textit{scroll} hacia arriba) y se reproducen mediante voz (solo la instrucción siguiente).
+	
+	\item La información no verbal, como el sonido \textit{check} y las vibraciones asociadas a los giros y llegada al destino, están correctamente implementadas. Para las vibraciones se comprueba que son lo suficientemente distintas para que el usuario sea capaz de distinguirlas.
+	
+	\item Las instrucciones se indican al usuario en el momento adecuado. 
+\end{itemize}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Imagenes/Evaluacion/del0al10}
+	\caption{Ruta del cuadrante $0$ al $10$.}
+	\label{fig:del0al10}
+\end{figure}
+
+\subsubsection*{Comportamiento esperado}
+
+Al comienzo de la prueba la aplicación debe reconocer el destino \textit{estancia $10$} por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido, la aplicación debe mostrar la pantalla de ruta (ver Figura \ref{fig:interfaz}) y, tras pulsar \textit{Iniciar ruta}, se debe comenzar a guiar al usuario habiendo establecido que su posición inicial es el cuadrante $0$. Cuando el usuario cumpla con la primera instrucción y llegue al cuadrante $1$, esta debe emitir el sonido \textit{check} (esto mismo debe repetirse cada vez que se completa una instrucción). La instrucción correspondiente al cuadrante $1$ debe ser proporcionada al usuario hacia la mitad del cuadrante, de tal manera que sepa que debe completar unos metros antes de girar. En el caso del cuadrante $2$ (y de todos aquellos donde el giro sea inmediato, el resto) la instrucción debe darse con cierta anterioridad al giro, para evitar que el usuario pase la intersección (esto tiene que ver con el posicionamiento de los \textit{beacons}), y la dirección de giro debe ser la correcta. Durante toda la ruta se comprueba que en las instrucciones de giro el dispositivo móvil vibra acorde a la dirección de giro, una vibración larga cuando se trata de un giro a la izquierda y dos cortas cuando es un giro a la derecha. Al llegar al destino se comprueba que la vibración es la adecuada (tres vibraciones cortas) y que se indica al usuario la posición del punto de interés final, en este caso a la derecha (se estableció que el punto de interés del cuadrante $10$ está al sur).
+
+
+\subsubsection*{Comportamiento durante la prueba}
+ 
+El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularidades durante el transcurso de la ruta. A continuación se resume el comportamiento obtenido:
+
+\begin{itemize}
+	
+	\item El primer punto a destacar es que el reconocimiento del destino ``estancia $10$'' fue reconocido por medio del teclado, el botón y el micrófono. Tan solo en una ocasión el micrófono reconoció ``instancia $10$'' e indicó al usuario que se trataba de un destino no válido. Mediante el teclado se introdujo en la barra de búsqueda este mismo texto ``instancia $10$'' para comprobar el comportamiento. En este caso también se indicó al usuario que no era un destino válido. 
+	
+	Cuando el destino se reconoció con éxito, la aplicación despliega de manera automática la pantalla de ruta y espera a que el usuario pulse \textit{Iniciar ruta}. 
+	
+	\item El posicionamiento inicial del usuario en el cuadrante $0$ se hizo correctamente en cada una de las cinco pruebas.
+	
+	\item Las instrucciones generadas por la aplicación son correctas. Cuando el usuario no tiene que realizar un cambio de dirección de manera inmediata, primero se le indican los metros que debe continuar en esa dirección y luego hacia dónde tiene que girar (caso del cuadrante $0$). En caso de que el usuario deba cambiar la dirección de su marcha, primero se indica la dirección de giro y luego los metros que debe continuar en esa dirección (resto de cuadrantes de la ruta). Además, las instrucciones se muestran por pantalla y se indican mediante voz de la manera esperada.
+	
+	\item En la mayor parte de los casos, las instrucciones se indican al usuario en el momento adecuado. Sin embargo, en dos ocasiones las instrucciones correspondientes a los cuadrantes $1$ y $2$ se dieron demasiado pronto. 
+	
+	\item Las vibraciones asociadas a los giros y a la llegada del destino son lo suficientemente distintas para que el usuario pueda distinguirlas.
+	
+	\item En una de las ocasiones el \textit{beacon} asociado al cuadrante $4$ no fue detectado por la aplicación, provocando la pérdida de esa instrucción. En las pruebas siguientes se detalla el comportamiento de la aplicación en este caso. Ver Secciones \ref{subsub:0al10sin4} y \ref{sub:usuarioPerdido}).
+	
+	\item Una vez se ha llegado al destino, la posición del punto de interés se indica correctamente en función de la dirección desde la que proviene del usuario, ``su destino está a la derecha''. Además, se emiten tres vibraciones cortas, que hacen notar al usuario que es la última instrucción de la ruta.
+	
+\end{itemize}
+
+\subsubsection*{Conclusiones}
+
+Como hemos podido comprobar, el funcionamiento del código de la aplicación es correcto, puesto que las instrucciones generadas (verbales y no verbales) son las esperadas. Sin embargo, se ha detectado un problema de detección de \textit{beacons} en el punto con más aglomeración de la ruta, el comprendido por los cuadrantes $1$, $2$ y $4$. Llama, sobre todo la atención la pérdida de la instrucción correspondiente al \textit{beacon$4$}, esto sugiere que la aplicación no lo ha detectado como \textit{beacon} más cercano cuando debería. Tras observar la ubicación de los \textit{beacons}, lo más probable es que se detectara el \textit{beacon$1$} o el \textit{beacon$2$} como los más cercanos. En la siguiente prueba abordamos este problema con más detalle. 
+
+El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ puede deberse a que el \textit{beacon} del cuadrante $1$ está situado en una terraza, separado del $0$ por una puerta de cristal. La instrucción de giro se dio nada más pasar esa puerta, lo que implica demasiada antelación al giro. Una vez que se avanza hacia la puerta que separa los cuadrantes $1$ y $2$, la distancia que hay entre ellos es reducida, es por ello que el \textit{beacon$2$} se establece como el más cercano rápidamente, y provoca que la aplicación indique la instrucción de giro un metro antes de encontrar la puerta entre los cuadrantes $2$ y $4$.
+
+
+\subsubsection{Posicionamiento inicial en el cuadrante $1$}
+\label{subsub:pos1}
+
+En este caso lo que se pone a prueba es el posicionamiento inicial del usuario en el cuadrante $1$. La razón por la cual se decidió hacer esta prueba fue la pérdida de la instrucción del cuadrante $4$ en el caso anterior (Sección \ref{subsub:0al10}). Esa prueba indica que el \textit{beacon$4$} no se detectó como el más cercano cuando el usuario se encontraba en este mismo cuadrante, sugiriendo que el \textit{beacon} que se detectaba como más cercano debía ser el $1$ o el $2$, por la ubicación de los \textit{beacons}. 
+
 
 \subsubsection*{Objetivos de la prueba}
 
 \begin{itemize}
-	\item El posicionamiento del usuario se realiza de manera correcta por medio del \textit{beacon} más cercano. 
+	\item Establecer de manera correcta el posicionamiento inicial del usuario en el cuadrante $1$.
 	
-	\item En base al posicionamiento y la ruta que sigue el usuario las instrucciones que se le indican son correctas. 
-	
-	\item La información no verbal como son el sonido \textit{check} y las vibraciones asociadas a los giros y llegada al destino están correctamente implementadas. Para las vibraciones se comprueba que son lo suficientemente distintas para que el usuario sea capaz de distinguirlas.
-	
-	\item Las instrucciones se indican al usuario en el momento adecuado. 
-	
-	\item Funcionamiento de los distintos métodos de entrada para introducir el destino (teclado, botón y micrófono). 
+	\item Como la ruta no se desarrolla hasta el final, se comprueba el correcto funcionamiento del botón \textit{Finalizar ruta} (ver Figura \ref{fig:interfaz}).
 \end{itemize}
 
 \subsubsection*{Comportamiento esperado}
 
-Al comienzo de la prueba la aplicación debe reconocer el destino \textit{estancia $10$} por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido y tras pulsar \textit{Iniciar ruta}, la aplicación debe comenzar a guiar al usuario habiendo reconocido que su posición inicial es el cuadrante $0$. Cuando el usuario cumpla con la primera instrucción y llegue al cuadrante $1$, esta debe emitir el sonido \textit{check} (esto mismo debe repetirse cada vez que se completa una instrucción). La instrucción correspondiente al cuadrante $1$ debe ser proporcionada al usuario hacia la mitad del cuadrante, de tal manera que sepa que debe completar unos metros antes de girar. En el caso del cuadrante $2$ (y de todos aquellos donde el giro sea inmediato, el resto) la instrucción debe darse con anterioridad, para evitar que el usuario pase la intersección (esto tiene que ver con el posicionamiento de los \textit{beacons}). Durante toda la ruta se comprueba que en las instrucciones de giro el dispositivo móvil vibra acorde a la dirección de giro. Una vez que se llega al destino se comprueba que la vibración es la adecuada y que se indica al usuario la posición del punto de interés final, en este caso a la derecha (se estableció que el punto de interés del cuadrante $10$ estaba al sur).
+Tras introducir el destino ``estancia 10'' y haber pulsado \textit{Iniciar ruta} en la pantalla de ruta, la primera instrucción de la aplicación debe ser la correspondiente al cuadrante $1$ (Continuar recto y luego girar a la izquierda). En este caso no se continuó la prueba hasta el destino para no repetir lo realizado anteriormente. Por esta razón, una vez comprobado el posicionamiento se fuerza la finalización de la ruta mediante el botón \textit{Finalizar ruta}. Como hay una ruta iniciada este debe mostrar un cuadro de texto preguntando al usuario confirmación para la finalización de la ruta y la vuelta a la pantalla anterior. En caso de apretar aceptar se vuelve atrás, en caso de cancelar la ejecución de la aplicación continúa como hasta entonces.
+
 
 \subsubsection*{Comportamiento durante la prueba}
- 
-Este recorrido se realizó varias veces a fin de encontrar irregularidades en la ruta. A continuación se detallan las conclusiones obtenidas:
 
-\begin{itemize}
-	\item Las instrucciones generadas por la aplicación son correctas y, en la mayor parte de los casos, se indican al usuario en el momento adecuado.
-	
-	\item Las vibraciones asociadas a los giros y a la llegada del destino son lo suficientemente distintas para que el usuario pueda distinguirlas.
-	
-	\item En dos ocasiones las instrucciones correspondientes a los cuadrantes $1$ y $2$ se dieron demasiado pronto. Esto puede deberse a que el \textit{beacon} del cuadrante $1$ está situado en el exterior y que, una vez que se avanza hacia la puerta que separa los cuadrantes $1$ y $2$, la distancia que hay entre ellos es reducida.
-	
-	\item En una de las ocasiones el \textit{beacon} asociado al cuadrante $4$ no fue detectado por la aplicación, provocando la pérdida de esa instrucción (en las pruebas siguientes se detalla el comportamiento de la aplicación en este caso. Ver Secciones \ref{subsub:0al10sin4} y \ref{sub:usuarioPerdido}).
-	
-	\item Una vez se ha llegado al destino, la posición del mismo se indica correctamente en función de la dirección desde la que proviene del usuario.
-	
-\end{itemize}
+Se hicieron cinco pruebas y se pudo comprobar que en dos ocasiones este posicionamiento no se realizó de manera correcta. En una de ellas el \textit{beacon} más cercano inicial detectado por la aplicación fue el $4$ y en la otra el $2$.
 
-\subsubsection{Ruta del cuadrante $1$ al cuadrante $10$}
+El comportamiento del botón \textit{Finalizar ruta} fue el esperado. Se probaron tanto la opción \textit{aceptar} como \textit{cancelar} del \textit{pop-up}.
 
-Este caso es prácticamente idéntico al anterior (Sección \ref{subsub:0al10}), con la única diferencia que se pone a prueba el posicionamiento inicial del usuario. Tras comprobar que las instrucciones en el cuadrante $1$ se daban antes de lo previsto en algunas ocasiones, se decidió empezar la ruta en este cuadrante. De esta manera la aplicación debía detectar el \textit{beacon$1$} como \textit{beacon} más cercano. Se hicieron cinco pruebas y se pudo comprobar que en dos ocasiones este posicionamiento no se realizó de manera correcta. En uno de ellas el \textit{beacon} más cercano detectado por la aplicación fue el $4$ (lo que puede ser provocado porque la separación entre el $4$ y el $1$ es una ventana) y en otra el $2$ (cuya posible explicación  ya fue mencionada en la Sección \ref{subsub:0al10}).
+
+\subsubsection*{Conclusiones}
+
+De esta prueba destacamos la importancia de que los \textit{beacons} estén lo suficientemente separados y todos ellos estén, en la medida de lo posible, en las mismas condiciones (ver Sección \ref{sec:medicionesbeacons}). En este caso lo que ha ocurrido es que la separación entre los \textit{beacons} $1$ y $4$ está delimitada físicamente por una ventana, cuyo grosor es más fino que el de una pared o cierto mobiliario. Esto provoca que la distancia estimada a los \textit{beacons} no sea la correcta. Este hecho puede dar explicación a la pérdida del \textit{beacon$4$} en la sección anterior (Sección \ref{subsub:0al10}). La posible razón por la cual el \textit{beacon$2$} también fuera detectado como el más cercano está expuesta en la prueba anterior.
+
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Imagenes/Evaluacion/del0al10sin4}
+	\caption{Ruta del cuadrante $0$ al $10$, eliminando el \textit{beacon$4$}.}
+	\label{fig:del0al10sin4}
+\end{figure}
 
 \subsubsection{Ruta del cuadrante $0$ al cuadrante $10$, eliminando el \textit{beacon} del cuadrante $4$}
 \label{subsub:0al10sin4}
 
-En este caso se ha vuelto a repetir la ruta del cuadrante $0$ al $10$ con la particularidad de que el \textit{beacon$4$}\footnote{Asumiremos que \textit{beaconX} es el \textit{beacon} asociado al cuadrante X.} fue eliminado de la ruta. Sin embargo, no provocamos la situación de que el usuario se saliera de la ruta (como sería lógico en esta situación, pues la instrucción de giro del cuadrante $4$ se pierde), continuamos por el cuadrante $9$. De esta manera la aplicación no notifica que el usuario se ha perdido, pues sigue en la ruta. A pesar de que la instrucción indicada en el cuadrante $9$ fue la correcta (giro a la izquierda), la aplicación tardó demasiado. Esto se debe a que el umbral de la variable \textit{numPasosPerdidos}, que identifica el momento en el que el usuario puede haberse perdido (ver Sección \ref{sub:func_cliente}), es demasiado elevado para este edificio, donde las distancias entre \textit{beacons} son pequeñas.
+En este caso se ha vuelto a repetir la ruta del cuadrante $0$ al $10$ con la particularidad de que el \textit{beacon$4$} se eliminó de la ruta. Sin embargo, no provocamos la situación de que el usuario se saliera de la ruta (como sería lógico en esta situación, pues la instrucción de giro del cuadrante $4$ se pierde), continuamos por el cuadrante $9$ (ver Figura \ref{fig:del0al10sin4}, donde la instrucción perdida corresponde con la flecha discontinua). 
+
+\subsubsection*{Objetivo de la prueba}
+
+\begin{itemize}
+	\item Comprobación del correcto funcionamiento de la aplicación cuando no se percibe la llegada del usuario a un cuadrante pero este continua en la ruta en un cuadrante más avanzado.
+\end{itemize}
+
+
+\subsubsection*{Comportamiento esperado}
+
+El comportamiento de la aplicación debe ser el descrito en la Sección \ref{subsub:0al10} hasta llegar al cuadrante $4$. En ese momento la aplicación espera a que el \textit{beacon} más cercano sea el \textit{beacon$4$} durante cierto tiempo para dar la instrucción correspondiente (ver Seguimiento de la ruta en la Sección \ref{sub:func_cliente}). Este tiempo debe aproximarse al tiempo transcurrido en ir desde el cuadrante $2$ al $9$. Una vez que el usuario está en el cuadrante $9$ y la aplicación ha identificado que, a pesar de que el usuario no ha notificado la llegada al cuadrante $4$, se encuentra en un cuadrante que forma parte de la continuación de la ruta (no se ha perdido), debe indicarle la instrucción correcta atendiendo al camino que lleva recorrido (se supone que ha seguido la ruta), en este caso un giro a la izquierda. El final de la ruta debe ser el habitual: tres vibraciones cortas y la indicación de la posición del punto de interés, en este caso a la derecha como en la Sección \ref{subsub:0al10}.
+
+
+\subsubsection*{Comportamiento durante la prueba}
+
+Nos centraremos en el comportamiento transcurrido entre los cuadrantes $2$ y $9$, pues el resto ya ha sido comentado en \ref{subsub:0al10}. Una vez recibida la instrucción de giro a la izquierda del cuadrante $2$, se simuló la recepción de la instrucción de giro a la derecha del cuadrante $4$. Esta nunca llegó a oírse, pues el \textit{beacon$4$} no estaba en su posición. Cuando se llegó al cuadrante $9$ se esperó a la instrucción de giro a la izquierda correspondiente pero esta tardó demasiado en llegar. Esto se debe a que el umbral de la variable \textit{numPasosPerdidos}, que identifica el momento en el que el usuario puede haberse perdido (ver Seguimiento de la ruta en la Sección \ref{sub:func_cliente}), es demasiado elevado para este edificio, donde las distancias entre \textit{beacons} son pequeñas. Para solventar este problema lo que se hizo fue reducir este umbral de 10 a 5, de esta manera la instrucción se recibe en el momento adecuado. Como la aplicación sigue con la ejecución esperada desde el cuadrante $9$ no se percibe la falta del \textit{beacon$4$}, evitando que el usuario sea notificado sin necesidad.
+
+
+\subsubsection*{Conclusiones}
+
+De esta prueba destacamos la necesidad de ajustar los umbrales de la variable \textit{numPasosPerdidos} a las características del edificio. De esta manera podemos evitar que el usuario continúe por una ruta equivocada durante demasiado tiempo o, como en este caso, que reciba confirmación de su trayecto en el momento adecuado. En la prueba siguiente veremos otro caso donde se pone de manifiesto la importancia de este ajuste.
 
 
 \subsubsection{Ruta del cuadrante $1$ al cuadrante $5$, eliminando el \textit{beacon} del cuadrante $2$}
 \label{subsub:1al5sin2}
 
+Este caso está relacionado con el anterior. Pues la base del caso de estudio es la misma: la pérdida de un \textit{beacon}. Sin embargo, en esta prueba se pone de manifiesto la ventaja de la anticipación de instrucciones, pues favorecen que en caso de que un \textit{beacon} no sea detectado, el usuario permanezca en la ruta y llegue a su destino, aun cuando ese \textit{beacon} corresponda a una intersección. La ruta que se va a probar es la comprendida entre los cuadrantes $1$ y $5$, con la particularidad de que el \textit{beacon2} se ha eliminado. La Figura \ref{fig:del1al5sin2} ilustra este recorrido.
+
+\subsubsection*{Objetivo de la prueba}
+
+Como el comportamiento de la aplicación en caso de falta de detección de un \textit{beacon} y seguimiento de la ruta se ha abordado en la Sección \ref{subsub:0al10sin4}, se ha incluido en esta ruta el \textit{testeo} de otra funcionalidad de la aplicación. 
+
+\begin{itemize}
+	\item Comprobación del correcto funcionamiento de la aplicación cuando no se percibe la llegada del usuario a un cuadrante pero este continua en la ruta en un cuadrante más avanzado.
+	
+	\item Comprobación del correcto funcionamiento del \textit{modo mute} de la aplicación. Este se corresponde con la descripción del botón en forma de altavoz en la pantalla de ruta (ver Sección \ref{sub:diseño}). 
+\end{itemize}
+
+
+\subsubsection*{Comportamiento esperado}
+
+El inicio de la prueba debe ser el descrito en el comportamiento esperado de la Sección \ref{subsub:pos1}. Una vez resuelto el posicionamiento del cuadrante $1$, la aplicación debe indicar al usuario que avance unos metros y luego gire a la izquierda. En este caso el usuario no va a recibir la confirmación de giro correspondiente al cuadrante $2$, porque ese \textit{beacon} se ha eliminado. Sin embargo, para esta prueba, vamos a suponer que el usuario continúa la ruta por el cuadrante $4$. Cuando el usuario llega a la mitad del cuadrante $4$, se le debe indicar que continúe recto. Por último, en las inmediaciones del cuadrante $5$ se debe finalizar con tres vibraciones cortas y la indicación de que el destino se encuentra delante (en este caso la posición del punto de interés del cuadrante $5$ es este).
+
+Como se ha establecido en los objetivos de esta prueba, el modo silencio de la pantalla de ruta va a estar activado, lo que significa que ninguna instrucción debe emitirse por voz. Todas ellas deben ser leídas a través de la pantalla sin necesidad de hacer \textit{scroll}, pues siempre debe mostrarse la última instrucción escrita a pesar de que las instrucciones anteriores quedan en la parte superior a modo de registro. 
+
+
+\subsubsection*{Comportamiento durante la prueba}
+
+El comportamiento de la aplicación es el esperado. Sin embargo, se ha apreciado un ligero retraso en la llegada de la instrucción del cuadrante $4$. 
+
+ 
+\subsubsection*{Conclusiones}
+
 Este caso es interesante, pues, a pesar de que se ha eliminado uno de los \textit{beacons} correspondientes a una intersección, la información de giro del cuadrante $2$ no se pierde. Esto se debe a que, como la aplicación es capaz de avisar de los cambios de dirección con antelación, en el cuadrante $1$ ya se indica al usuario que, tras avanzar unos metros, debe girar a la izquierda. Bien es cierto que se pierde precisión, pues el usuario no percibe la instrucción de giro en el momento en el que debe realizarse, ni la confirmación sonora y vibración asociada a esta. Sin embargo, el hecho de que se den instrucciones por adelantado favorece que el usuario permanezca en la ruta aún cuando alguna instrucción se pierda. 
 
-Particularmente para esta ruta, el giro del cuadrante $2$ es el único que hay que realizar y, debido a esto, es más fácil que el usuario no se pierda. Si, por el contrario, el destino hubiera sido el cuadrante $10$, es probable que el usuario no hubiera llegado a recibir la instrucción de giro a la derecha del cuadrante $4$ tampoco. Esto se debe a que la aplicación necesita un tiempo (llegar a un número de pasos perdidos) para decidir si el usuario se ha perdido. De esta manera, cuando el usuario llega al cuadrante $4$ la aplicación sigue a la espera del cuadrante $2$ (el umbral de \textit{numPasosPerdidos} es demasiado alto. Ver funcionamiento en la Figura \ref{fig:diag_clienteSeguimientoRuta}). Esto implica que el usuario se salga de la ruta. Caso que abordamos en la Sección \ref{sub:usuarioPerdido}.
+Particularmente para esta ruta, el giro del cuadrante $2$ es el único que hay que realizar y, debido a esto, es más fácil que el usuario no se pierda. En caso de que el destino hubiera sido el cuadrante $10$, el ajuste del umbral de \textit{numPasosPerdidos} es esencial, pues un umbral muy alto provocaría que el usuario no hubiera llegado a recibir la instrucción de giro a la derecha del cuadrante $4$. Esto se debe a que la aplicación necesita un tiempo (llegar a un número de pasos perdidos) para decidir si el usuario se ha perdido. De esta manera, cuando el usuario llega al cuadrante $4$ la aplicación sigue a la espera del cuadrante $2$ (el umbral de \textit{numPasosPerdidos} es demasiado alto. Ver funcionamiento en la Figura \ref{fig:diag_clienteSeguimientoRuta}). Esto implica que el usuario se salga de la ruta. Caso que abordamos en la Sección \ref{sub:usuarioPerdido}.
 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Imagenes/Evaluacion/del1al5sin2}
+	\caption{Ruta del cuadrante $1$ al $5$, eliminando el \textit{beacon$2$}.}
+	\label{fig:del1al5sin2}
+\end{figure}
 
 \subsubsection{Ruta del cuadrante $1$ al cuadrante $13$}
 
