@@ -279,6 +279,7 @@ Particularmente para esta ruta, el giro del cuadrante $2$ es el único que hay q
 
 
 \subsubsection{Ruta del cuadrante $1$ al cuadrante $13$}
+\label{subsub:del1al13}
 
 En este caso, lo que se quería evaluar eran las instrucciones referentes al cambio de planta. Como ya se comentó en la Sección \ref{sub:cambiosServidor}, el código asume que los cambios de planta se realizan por medio de ascensores. Esta información se ha ignorado en esta ocasión, pues solo se disponía de escaleras. La ruta que se prueba es la comprendida entre los cuadrantes $1$ y $13$ (ver Figura \ref{fig:del1al13}).
 
@@ -318,7 +319,7 @@ Como las funcionalidades asociadas a las instrucciones de la ruta han sido \text
 
 \subsubsection*{Comportamiento esperado}
 
-La aplicación debe reconocer el destino ``estancia 13'' por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido y tras pulsar \textit{Iniciar ruta} se debe recibir la primera instrucción, correspondiente al cuadrante $1$. Esta instrucción debe indicar al usuario que continúe recto los metros estimados hasta las escaleras. En el cuadrante $2$ la instrucción debe ser la misma pero el número de metros debe haberse reducido al estimado desde ese cuadrante a las escaleras. Si la funcionalidad instrucciones detalladas está activada, la aplicación debe advertir de los ascensores del siguiente cuadrante. Una vez llegamos a cuadrante $11$ se debe indicar al usuario en qué posición se encuentran, en este caso delante, y la planta a la que se debe dirigir, acompañado de la acción de subida o bajada, en este caso ``sube a la planta 1''. Una vez se ha llegado al cuadrante $12$, la aplicación debe reconocer la nueva posición del usuario (este se encontrará mirando hacia la puerta del ascensor) e indicarle la instrucción adecuada, ``continua recto'' en esta ocasión. Por último, la llegada al cuadrante $13$ debe realizarse de la manera ya descrita, con tres vivbraciones cortas y la indicación de la oposición del punto de interés, como se estableció que la posición de este era norte, debe ser ``su destino está delante''. 
+La aplicación debe reconocer el destino ``estancia 13'' por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido y tras pulsar \textit{Iniciar ruta} se debe recibir la primera instrucción, correspondiente al cuadrante $1$. Esta instrucción debe indicar al usuario que continúe recto los metros estimados hasta las escaleras. En el cuadrante $2$ la instrucción debe ser la misma pero el número de metros debe haberse reducido al estimado desde ese cuadrante a las escaleras. Si la funcionalidad instrucciones detalladas está activada, la aplicación debe advertir de los ascensores del siguiente cuadrante. Una vez llegamos a cuadrante $11$ se debe indicar al usuario en qué posición se encuentran, en este caso delante, y la planta a la que se debe dirigir, acompañado de la acción de subida o bajada, en este caso ``sube a la planta 1''. Una vez se ha llegado al cuadrante $12$, la aplicación debe reconocer la nueva posición del usuario (este se encontrará mirando hacia la puerta del ascensor) e indicarle la instrucción adecuada, ``continua recto'' en esta ocasión. Por último, la llegada al cuadrante $13$ debe realizarse de la manera ya descrita, con tres vivbraciones cortas y la indicación de la oposición del punto de interés. Como se estableció que la posición de este era norte, debe ser ``su destino está delante''. 
 
 Durante la ruta, si el modo instrucciones detalladas está activado, el usuario debe recibir tras cada instrucción la información adicional del cuadrante siguiente en la ruta. Por el contrario, si está desactivada no se debe recibir esta información. El botón \textit{Repetir instrucción} debe mostrar en pantalla y reproducir la ultima instrucción que se le ha dado al usuario cada vez que se pulsa. 
 
@@ -327,7 +328,7 @@ Durante la ruta, si el modo instrucciones detalladas está activado, el usuario 
 
 El comportamiento durante el inicio de la aplicación fue el esperado, los metros que había que recorrer desde el cuadrante $1$ a las escaleras se fueron reduciendo hasta llegar a ese punto. De la llegada al cuadrante $11$ destacamos que la instrucción correspondiente a este cuadrante tardó unos segundos más de lo esperado. Sin embargo, en el cuadrante $12$ se recibió en el momento oportuno (justo antes de llegar al final de las escaleras). La llegada al cuadrante $13$ también fue la esperada. 
 
-El inicio de la ruta se hizo con el modo instrucciones detalladas activado, mientras que el final (a partir del cuadrante $12$) con esta funcionalidad desactivada. El comportamiento en ambos casos fue el descrito como esperado. Así mismo, en dos ocasiones se pulsó el botón \textit{Repetir instrucción}. Esto desencadenó la reproducción y escritura en pantalla de la última instrucción, como estaba establecido. 
+El inicio de la ruta se hizo con el modo instrucciones detalladas activado, mientras que el final (a partir del cuadrante $12$) con esta funcionalidad desactivada. El comportamiento en ambos casos fue el descrito como esperado. Así mismo, en dos ocasiones se pulsó el botón \textit{Repetir instrucción}, una antes de llegar al cuadrante $11$, cuando todavía no se había recibido la instrucción asociada a este, y otra justo al recibir la instrucción del cuadrante $12$. Esto desencadenó la reproducción y escritura en pantalla de la última instrucción que se había recibido, como estaba establecido. 
 
 \subsubsection*{Conclusiones}
 
@@ -337,7 +338,17 @@ De la ruta desde el cuadrante $1$ al $13$ destacamos un punto importante, que es
 \subsubsection{Ruta del cuadrante $13$ al cuadrante $8$}
 \label{subsub:13al8}
 
-La finalidad de esta ruta es, principalmente, comprobar el comportamiento de la aplicación en el \textit{hall} de la planta baja, así como el cambio de planta inverso. 
+La finalidad de esta ruta es, principalmente, comprobar el comportamiento de la aplicación en el \textit{hall} de la planta baja, así como el cambio de planta inverso. La ruta determinada para hacer esta prueba comienza en el cuadrante $13$ y finaliza en el $8$ (ver Figura \ref{fig:del13al8}). Como puede verse en la Figura \ref{fig:del11al8}, la disposición de los cuadrantes obliga al usuario a realizar dos giros a la izquierda para poder entrar al cuadrante $8$. Esto resulta un poco tedioso puesto que si olvidamos por un momento la estructura de cuadrantes habría bastado con indicar al usuario un giro a la izquierda en el cuadrante $11$. Sin embargo, las condiciones que debe cumplir el mapeo determinan, en gran medida, la disposición de los cuadrantes, pudiendo provocar situaciones como la que se detalla a continuación.
+
+\subsubsection*{Objetivos de la prueba}
+
+En esta prueba además de comprobar el comportamiento de la aplicación, concretamente de los puntos descritos en lo que sigue, activamos durante la ejecución el lector de pantalla (\textit{talkback}). 
+
+\begin{itemize}
+	\item Estudio del comportamiento de la aplicación en una situación como la ilustrada en la Figura \ref{fig:del11al8}, donde se producen varios giros en un espacio reducido. 
+	
+	\item Comprobación de que el comportamiento de la aplicación es el esperado cuando el lector de pantalla está activado. Esto es, no se produce ningún solapamiento en cuanto a la reproducción de información se refiere. Además, a través del lector de pantalla se deben poder acceder a todos los botones de la aplicación\footnote{Excepto los cuadros de texto, los cuales se han omitido para el lector de pantalla a fin de evitar que la información contenida en estos se lea al usuario, pues para ello se han implementado los botones correspondientes.} y recibir la descripción de los mismos cuando se pasa sobre ellos. 
+\end{itemize}
 
 \begin{figure}[t]
 	\centering
@@ -354,24 +365,124 @@ La finalidad de esta ruta es, principalmente, comprobar el comportamiento de la 
 	\label{fig:del13al8}
 \end{figure}
 
-El problema que surge aquí es que los giros que hay que realizar en la planta baja son bastante tediosos. Por un lado, la ubicación del \textit{beacon$2$} favorece que la instrucción de giro hacia el \textit{beacon$3$} tarde demasiado en llegar. Una vez que se proporciona esta instrucción, el cuadrante $3$ vuelve a hacer girar al usuario hacia el $8$, lo que provoca cierta confusión. De igual manera se probó la ruta inversa, desde el cuadrante $8$ al $13$, y el resultado fue análogo.
+\subsubsection*{Comportamiento esperado}
+
+Al arrancar la aplicación con el lector de pantalla activado se debe reproducir el nombre de la aplicación (que corresponde con el título de la pantalla inicial) así como el nombre del primer botón (\textit{Iniciar ruta}). Si nos desplazamos con el lector de pantalla por los tres botones existentes debemos escuchar el nombre de cada uno de ellos al posicionarnos encima. Una vez que se ha pulsado \textit{Iniciar ruta} y se despliega la pantalla de destinos debemos escuchar el título de la misma. Con ayuda del lector de pantalla se comprueba que se pueden recorrer todos los botones (incluida la barra de búsqueda y el micrófono) y se introduce el destino ``estancia 8'' por cada uno de ellos, comprobando que no se produce ningún solapamiento de información entre el lector y el \textit{text to speech} implementado, incluso si el destino no es correcto. Cuando se ha introducido el destino y se pasa a la pantalla de ruta, se comprueba que el usuario recibe la información del cambio de pantalla mediante la lectura del título de la misma y se pueden recorrer todos los botones de la misma manera. Una vez pulsado \textit{Iniciar ruta} las instrucciones comienzan a reproducirse de la manera esperada. Solo en el caso de que, mediante el lector, se cambie de botón se recibe información sobre este. De esta manera, la ejecución continúa de la forma descrita en las pruebas anteriores.  
+
+En cuanto a la generación de instrucciones se refiere se espera que en el \textit{hall} de la planta baja, la primera instrucción de giro (correspondiente al cuadrante $2$) se indique tras avanzar un par de pasos desde el cuadrante $11$. Una vez hecho el giro, el \textit{beacon$3$} debe avisar al usuario del otro giro a la izquierda rápidamente, para permitir que el usuario llegue a su destino de la manera más cómoda posible.
+
+\subsubsection*{Comportamiento durante la prueba}
+
+El arranque de la aplicación con el lector de pantalla activado se realiza de la manera descrita anteriormente. Cabe destacar que en la pantalla de destinos, la primera opción que lee el lector de pantalla es el primer botón correspondiente a un destino. Cuando se ha terminado de barrer los botones destino, se lee el de micrófono y el de la barra de búsqueda en ese orden. En la pantalla de ruta el primer botón que se lee es botón de modo silencio, seguido del resto. Se comprueba el barrido de todos ellos sin ningún comentario relevante y se inicia la ruta. Durante el transcurso de la ruta el lector de pantalla no reproduce nada, debido a que el único cambio que se produce en la interfaz es la actualización del texto correspondiente a las instrucciones y el lector no tiene acceso a él (por implementación). Se comprueba que si se intenta acceder a alguna funcionalidad mientras se está reproduciendo la información asociada a una instrucción, el \textit{text to speech} y el lector de pantalla se solapan. 
+
+En cuanto a la guía se refiere, se observa que la instrucción de giro del cuadrante $2$ tarda demasiado en llegar, haciendo que tengamos que recorrer casi todo el \textit{hall} hasta obtenerla. Esto puede deberse a la aglomeración de \textit{beacons} en esta zona y a que la ubicación del \textit{beacon$2$} favorece que la instrucción de giro hacia el \textit{beacon$3$} se de con cierto retraso. El final de la ruta se desarrolla de la manera esperada. 
+
+\subsubsection*{Conclusiones}
+
+El problema que surge aquí es que los giros que hay que realizar en la planta baja son bastante tediosos. Por un lado, la ubicación del \textit{beacon$2$} hace que la instrucción de giro hacia el \textit{beacon$3$} tarde demasiado en llegar, puesto que cuando el usuario llega al cuadrante $11$ y avanza, queda en mitad del \textit{hall}. Hasta que el usuario no prosigue unos metros, la aplicación no percibe el \textit{beacon$2$} como el más cercano. Una vez que se proporciona la instrucción de giro del cuadrante $2$, el cuadrante $3$ vuelve a hacer girar al usuario hacia el $8$, lo que provoca cierta confusión, por la cantidad de giros seguidos. De igual manera se probó la ruta inversa, desde el cuadrante $8$ al $13$, y el resultado fue análogo.
+
+Gracias a que la implementación de la aplicación está pensada para su utilización con el lector de pantalla activado, el funcionamiento de la misma con (y sin) esta opción no presenta ningún problema, siempre cuando no se utilice el lector para navegar por la pantalla mientras se está reproduciendo una instrucción u otra información asociada a la ejecución de la propia aplicación (la repetición de una instrucción o la activación/desactivación del modo instrucciones detalladas, por ejemplo).
 
 
 \subsubsection{Ruta del cuadrante $9$ al cuadrante $13$}
 \label{subsub:9al13}
 
-Como la ruta por el \textit{hall} de la planta baja había resultado tediosa en el caso anterior, se hizo una prueba desde el otro extremo. Esta vez la ubicación del \textit{beacon$2$} favorece el giro del usuario para encontrar el ascensor (escaleras en este caso). De esta manera la ruta resulta mucho más natural y organizada que en el caso anterior.
+Como la ruta por el \textit{hall} de la planta baja había resultado tediosa en el caso anterior, se hizo una prueba desde el otro extremo a fin de establecer si la ubicación de los \textit{beacons} daban lugar a un recorrido más sencillo. En este caso se detalla el comportamiento observado para la ruta con inicio en el cuadrante $9$ y final en el cuadrante $13$ (ver Figura \ref{fig:del9al3}).
+
+\subsubsection*{Objetivos de la prueba}
+
+\begin{itemize}
+	\item Observación y evaluación del comportamiento de la aplicación cuando se inicia una ruta que implica un cambio de planta desde los cuadrantes situados en la parte izquierda del mapa. Comparación de este comportamiento con el observado en la prueba anterior.
+\end{itemize}
+
+
+\subsubsection*{Comportamiento esperado}
+
+En este caso, lo que se quiere es observar cómo se comporta la aplicación en cuanto al momento en el que se indican las instrucciones. En la prueba anterior se puede leer que la ubicación del \textit{beacon$2$} favorece que la instrucción de giro hacia el cuadrante $3$ tarde en llegar cuando se viene del cuadrante $11$. Con esta prueba esperamos obtener la indicación en un momento más adecuado, pues el \textit{beacon$2$} está situado justo en la intersección entre este cuadrante y el $11$.
+
+\begin{figure}[t]
+	\centering
+	
+	\begin{tabular}{cc}
+		\subfloat[Ruta del cuadrante $9$ al $11$ en la planta baja de la vivienda.]{
+			\label{fig:del9al11}
+			\includegraphics[width=0.5\textwidth]{Imagenes/Evaluacion/del9al11}}
+		& \subfloat[Ruta del cuadrante $12$ al $13$ en la planta alta de la vivienda.]{
+			\label{fig:del12al13_2}
+			\includegraphics[width=0.5\textwidth]{Imagenes/Evaluacion/del1al13b}}\\
+	\end{tabular}
+	\caption{Ruta del cuadrante $9$ al $13$.}
+	\label{fig:del9al3}
+\end{figure}
+
+\subsubsection*{Comportamiento durante la prueba}
+
+Después del inicio de la ruta en el cuadrante $9$, la indicación de giro a la izquierda del cuadrante $4$ se indicó justo antes de hacer el giro. Mejor que en ninguna otra prueba realizada en este cuadrante anteriormente. Tras la llegada a la puerta que separa los cuadrantes $4$ y $2$ la instrucción de giro a la izquierda también fue inmediata. Por su parte, la instrucción del cuadrante $11$ tardó unos tres segundos en darse, una vez que nos ubicamos justo delante de las escaleras. El final de la prueba fue el esperado (ver Sección \ref{subsub:del1al13})
+
+\subsubsection*{Conclusiones}
+
+Esta vez la ubicación del \textit{beacon$2$} favorece el giro del usuario para encontrar el ascensor (escaleras en este caso). De esta manera la ruta resulta mucho más natural y organizada que en el caso anterior. Con esto se pone de manifiesto la importancia del mapeo y la ubicación de los \textit{beacons}.
+
 
 \subsection{Usuario perdido}
 \label{sub:usuarioPerdido}
 
 En esta sección se expone el comportamiento de la aplicación cuando el usuario sale de la ruta, basado en ejemplos de ejecución reales. 
 
-En la Sección \ref{subsub:0al10sin4} vimos un caso en el cual era probable que un usuario se desviara de la ruta, debido a la pérdida de la instrucción de giro asociada al cuadrante $4$. De esta manera el usuario continuaría hasta llegar al cuadrante $5$. Es entonces cuando la aplicación detecta que el usuario se ha salido de la ruta e indica al usuario que debe volver por la dirección en la que venía y le permite iniciar de nuevo la ruta al destino desde su posición actual. Como ya se ha comentado, esta indicación se da con cierto retraso debido a que el valor que debe alcanzar la variable \textit{numPasosPerdidos} es demasiado elevada para este edificio. 
+\subsubsection{Ruta del cuadrante $0$ al cuadrante $10$, eliminando el \textit{beacon} del cuadrante $4$}
 
-Además, la aplicación está preparada para el caso en el que no se detecte ningún \textit{beacon}. Si no se produjera ninguna detección transcurrido un tiempo (determinado por una variable umbral), la aplicación advierte al usuario de la situación indicándole que debe posicionarse dentro del edificio\footnote{Se asume que si ningún \textit{beacon} es detectado es porque el usuario no se encuentra dentro del edificio o la zona mapeada}. Esta situación se reprodujo avanzando hacia la izquierda del cuadrante $0$ y eliminando los \textit{beacons} más próximos a esa zona para provocar que ninguno de ellos fuera detectado.
+En la Sección \ref{subsub:0al10sin4} vimos un caso en el cual era probable que un usuario se desviara de la ruta, debido a la pérdida de la instrucción de giro asociada al cuadrante $4$. En esta ocasión hemos continuado recto a fin de comprobar si la aplicación es capaz de detectar la salida de la ruta por parte del usuario. 
 
-A pesar de que no ha sido detallado expresamente durante la realización de las pruebas, hay que mencionar que el resto de funcionalidades como el modo silencio, la repetición de la última instrucción, el modo instrucciones detalladas y la finalización anticipada de la ruta también fueron comprobados, sin destacar ningún comportamiento extraño o inesperado.
+\subsubsection*{Objetivo de la prueba}
+
+\begin{itemize}
+	\item Se quiere comprobar que la aplicación es capaz de identificar, en un tiempo razonable, que el usuario se ha salido de la ruta y redirigirlo al hacia el destino deseado.
+\end{itemize}
+
+
+\subsubsection*{Comportamiento esperado}
+
+Al perder la instrucción de giro del cuadrante $4$, lo más probable es que el usuario continúe recto hasta llegar al cuadrante $5$ (ver Figura \ref{fig:del0al10sin4perdido}). Si esto ocurre, el comportamiento de la aplicación debería ser el siguiente: Como ya se ha comentado en varias ocasiones, cuando no se detecta como más cercano el \textit{beacon} asociado al siguiente cuadrante de la ruta, la aplicación va contando en una variable \textit{numPasosPerdidos} el número de veces que ha escaneado los \textit{beacons} de su alcance. Cuando esta variable alcanza un umbral y el \textit{beacon} más cercano no corresponde con un \textit{beacon} más avanzado de la ruta, la aplicación interpreta que el usuario se ha salido de la ruta e indica que debe volver por la dirección en la que venía. Desde ese punto le permite iniciar de nuevo la ruta al destino desde su posición actual, pulsando sobre \textit{Iniciar ruta} en la pantalla de ruta. Para la ruta de la Figura \ref{fig:del0al10sin4perdido}, se debería estimar que el usuario se ha perdido cuando llega al cuadrante $5$. En este momento y tras comenzar la ruta de nuevo hacia la estancia 10, la primera instrucción debería ser ``continúa recto'', pues se presupone que el usuario se ha dado la vuelta como le sugiere la aplicación. A partir de ese momento, la ejecución debe proseguir de la manera descrita en la Sección \ref{subsub:0al10sin4}.
+
+\subsubsection*{Comportamiento durante la prueba}
+
+Tras recorrer el cuadrante $4$, la aplicación detectó la pérdida del usuario cuando pasaron apenas dos segundos desde que se llegó al cuadrante $5$. Se dieron las indicaciones establecidas y la ruta hacia la estancia 10 comenzó de nuevo al pulsar \textit{Iniciar ruta}. Cabe destacar que el posicionamiento inicial en el cuadrante $5$ se hizo de manera correcta. El final de la ruta se desarrolló de la manera prevista.
+
+\subsubsection*{Conclusiones}
+
+En esta sección hemos podido comprobar otro caso donde el umbral de la variable \textit{numPasosPerdidos} cobra importancia. Es necesario que este se ajuste a las características del mapeo, pues si en un caso como este el umbral hubiera sido muy elevado habríamos estado caminando en la dirección incorrecta demasiado (supongamos que a la izquierda del cuadrante $5$ hubiera más espacio). Como hemos podido comprobar, el ajuste está bien realizado y la aplicación es capaz de determinar con cierta exactitud cuándo un usuario se ha perdido.
+
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Imagenes/Evaluacion/del0al10sin4perdido}
+	\caption{Ruta del cuadrante $0$ al $10$, donde la instrucción del cuadrante $4$ se ha perdido.}
+	\label{fig:del0al10sin4perdido}
+\end{figure}
+
+
+\subsubsection{Usuario fuera del rango de los \textit{beacons}}
+
+Además, la aplicación está preparada para el caso en el que no se detecte ningún \textit{beacon}. Esta situación se reprodujo avanzando hacia la izquierda del cuadrante $0$ y eliminando los \textit{beacons} más próximos a esa zona para provocar que ninguno de ellos fuera detectado.
+
+\subsubsection*{Objetivo de la prueba}
+
+\begin{itemize}
+	\item Se quiere comprobar que la aplicación es capaz de identificar la situación en la cual no se detecte ningún \textit{beacon} cerca y advertir al usuario de la misma. 
+\end{itemize}
+
+\subsubsection*{Comportamiento esperado}
+
+ Si no se produjera ninguna detección transcurrido un tiempo (determinado por una variable umbral. Ver Sección \ref{sub:func_cliente}), la aplicación advierte al usuario de la situación indicándole que debe posicionarse dentro del edificio\footnote{Se asume que si ningún \textit{beacon} es detectado es porque el usuario no se encuentra dentro del edificio o la zona mapeada}. 
+ 
+\subsubsection*{Comportamiento durante la prueba}
+
+El comportamiento durante la ejecución de esta prueba se corresponde con el comportamiento esperado. El tiempo que tardó la aplicación en advertir al usuario fue relativamente corto. Lo que sugiere un posible ajuste de la variable umbral. En cualquier caso, el valor de este umbral no es tan crítico como el umbral relativo al usuario perdido que se ha visto en pruebas anteriores, lo que permite mayor libertad a la hora de asignar una cifra.
+
+\subsubsection*{Conclusiones}
+
+Es importante que la aplicación sea capaz de identificar este tipo de situaciones, pues permiten que el usuario conozca la razón por la cual la aplicación tarda en responder y en indicarle las instrucciones. De esta manera, el usuario descarta que sea un problema de funcionamiento de la aplicación o, incluso, de su propio dispositivo móvil. 
+
 
 \section{Conclusiones de la evaluación}
 \label{sec:conclusionesEval}
@@ -384,7 +495,7 @@ En las pruebas realizadas y descritas en la Sección \ref{sec:realizYresult} se 
 	
 	\item \textit{El mapeo del edificio juega un papel primordial:} Como se puede observar en las Secciones \ref{subsub:13al8} y \ref{subsub:9al13} la disposición de los cuadrantes y \textit{beacons} puede facilitar la ruta al usuario en gran medida. Por ello, cuantos menos cuadrantes más sencilla será la ruta. La ubicación de los \textit{beacons} debe ser lo más neutra posible. Es decir, que no favorezca más una ruta que otra.
 	
-	\item  \textit{Se debe ajustar el umbral de la variable numPasosPerdidos al espacio comprendido entre los beacons:} Han sido varias las ocasiones donde se ha puesto en evidencia que las indicaciones sobre el cambio de ruta debían haberse proporcionado con anterioridad. Para solucionarlo basta con reducir este umbral, teniendo en cuenta que el tiempo que tarda en recorrer un espacio una persona con discapacidad visual suele ser ligeramente mayor.
+	\item  \textit{Se debe ajustar el umbral de la variable numPasosPerdidos al espacio comprendido entre los beacons:} Han sido varias las ocasiones donde se ha puesto en evidencia la necesidad del ajuste de este umbral. Para asignar el valor del mismo hay que tener en cuenta la distancia entre lo \textit{beacons} y el tiempo que tarda en recorrer ese espacio una persona con discapacidad visual, que suele ser ligeramente mayor que el tiempo que tarda una persona vidente.
 	
 	\item \textit{La generalidad de la aplicación:} Debido a las circunstancias, la evaluación de la aplicación ha sido realizada en un edificio distinto a la Facultad de Informática de la UCM. Gracias a una implementación general, apenas dependiente del espacio donde se despliega, el esfuerzo para poder adaptarla queda reducido a la realización de los archivos xml y json de la Sección \ref{sec:mapeo}.
 	
@@ -392,4 +503,5 @@ En las pruebas realizadas y descritas en la Sección \ref{sec:realizYresult} se 
 
 \end{itemize}
 
+A pesar de que no ha sido detallado expresamente durante la realización de las pruebas, hay que mencionar que el resto de funcionalidades como la lectura y reproducción de las instrucciones del modo de uso de la aplicación o distintas pruebas con el micrófono y la barra de búsqueda para diferentes destinos, también fueron comprobados, sin destacar ningún comportamiento extraño o inesperado.
 
