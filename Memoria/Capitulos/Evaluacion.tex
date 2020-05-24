@@ -1,7 +1,7 @@
 \chapter{Evaluación}
 \label{cap:evaluacion}
 
-En este capítulo se describe el proceso de evaluación de la aplicación que se ha llevado a cabo. Como ya se puso de manifiesto en el Plan de trabajo (ver Sección \ref{sec:planTrabajo}), la idea inicial era la de realizar una evaluación con usuarios finales y, preferiblemente, en la Facultad de Informática de la UCM, pues ese espacio es nuestro caso de estudio inicial. Debido a la crisis sanitaria y el estado de emergencia declarado en marzo de 2020 a causa de la COVID-19, no ha sido posible la ejecución de dicha evaluación. Sin embargo, conseguimos sobreponernos a este contratiempo y poner de manifiesto la flexibilidad de la aplicación mapeando otro edificio y realizando diversas pruebas sobre este. Este edificio no pudo ser otro que una vivienda. Cabe destacar que este no es el escenario ideal sobre el que se desplegaría una aplicación como Blind Bit, pues el espacio queda considerablemente reducido en comparación con el de una facultad o museo, por ejemplo. A pesar de ello, permite probar el comportamiento de la aplicación en situaciones donde cierta aglomeración de \textit{beacons} es necesaria y poner a prueba el mapeo de un edifico con características distintas al ya planteado en la Sección \ref{sec:mapeo}. En las secciones que siguen se detalla cómo se ha llevado a cabo la adaptación tanto del plan de evaluación como el despliegue de la aplicación en otro edificio.
+En este capítulo se describe el proceso de evaluación de la aplicación que se ha llevado a cabo. Como ya se puso de manifiesto en el Plan de trabajo (ver Sección \ref{sec:planTrabajo}), la idea inicial era la de realizar una evaluación con usuarios finales y, preferiblemente, en la Facultad de Informática de la UCM, pues ese espacio es nuestro caso de estudio inicial. Debido a la crisis sanitaria y el estado de emergencia declarado en marzo de 2020 a causa de la COVID-19, no ha sido posible la ejecución de dicha evaluación. Sin embargo, conseguimos sobreponernos a este contratiempo y poner de manifiesto la flexibilidad de la aplicación mapeando otro edificio y realizando diversas pruebas sobre él. Este edificio no pudo ser otro que una vivienda. Cabe destacar que este no es el escenario ideal sobre el que se desplegaría una aplicación como Blind Bit, pues el espacio queda considerablemente reducido en comparación con el de una facultad o museo, por ejemplo. A pesar de ello, permite probar el comportamiento de la aplicación en situaciones donde cierta aglomeración de \textit{beacons} es necesaria y poner a prueba el mapeo de un edifico con características distintas al ya planteado en la Sección \ref{sec:mapeo}. En las secciones que siguen se detalla cómo se ha llevado a cabo la adaptación tanto del plan de evaluación como el despliegue de la aplicación en otro edificio.
 
 En la Sección \ref{sec:adaptacionApp} se describen los pasos a seguir, tanto en el servidor (Sección \ref{sub:cambiosServidor_vivienda}) como en el cliente (Sección \ref{sub:cambiosCliente_vivienda}) para poder adaptar la aplicación al nuevo espacio. Por su parte, la Sección \ref{sec:objetivosEval} detalla los objetivos de la evaluación. Las pruebas que se llevaron a cabo a fin de valorar el cumplimiento de estos objetivos se exponen en la Sección \ref{sec:realizYresult} y las conclusiones finales de la evaluación pueden verse en la última sección (Sección \ref{sec:conclusionesEval}).
 
@@ -65,6 +65,7 @@ En la Sección \ref{sub:cambiosCliente} destacamos la poca dependencia al edific
 
 \lstinputlisting[language=XML]{Imagenes/Evaluacion/destinosdinamicos_array_vivienda.xml}
 
+Donde el número que acompaña a la estancia indica el cuadrante correspondiente a la misma.
 
 \section{Objetivos de la evaluación}
 \label{sec:objetivosEval}
@@ -113,7 +114,7 @@ Se quiere comprobar el correcto funcionamiento de los siguientes puntos:
 	
 	\item En base al posicionamiento y la ruta que sigue el usuario las instrucciones que se le indican son correctas. 
 	
-	\item Las instrucciones se reflejan en la pantalla (la última instrucción siempre queda visible, el resto se pueden recuperar haciendo \textit{scroll} hacia arriba) y se reproducen mediante voz (solo la instrucción siguiente).
+	\item Las instrucciones se reflejan en la pantalla (la última instrucción siempre queda visible, el resto se pueden recuperar haciendo \textit{scroll} hacia arriba) y se reproducen mediante voz (solo la última instrucción).
 	
 	\item La información no verbal, como el sonido \textit{check} y las vibraciones asociadas a los giros y llegada al destino, están correctamente implementadas. Para las vibraciones se comprueba que son lo suficientemente distintas para que el usuario sea capaz de distinguirlas.
 	
@@ -131,6 +132,7 @@ Se quiere comprobar el correcto funcionamiento de los siguientes puntos:
 
 Al comienzo de la prueba la aplicación debe reconocer el destino \textit{estancia $10$} por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido, la aplicación debe mostrar la pantalla de ruta (ver Figura \ref{fig:interfaz}) y, tras pulsar \textit{Iniciar ruta}, se debe comenzar a guiar al usuario habiendo establecido que su posición inicial es el cuadrante $0$. Cuando el usuario cumpla con la primera instrucción y llegue al cuadrante $1$, esta debe emitir el sonido \textit{check} (esto mismo debe repetirse cada vez que se completa una instrucción). La instrucción correspondiente al cuadrante $1$ debe ser proporcionada al usuario hacia la mitad del cuadrante, de tal manera que sepa que debe completar unos metros antes de girar. En el caso del cuadrante $2$ (y de todos aquellos donde el giro sea inmediato, el resto) la instrucción debe darse con cierta anterioridad al giro, para evitar que el usuario pase la intersección (esto tiene que ver con el posicionamiento de los \textit{beacons}), y la dirección de giro debe ser la correcta. Durante toda la ruta se comprueba que en las instrucciones de giro el dispositivo móvil vibra acorde a la dirección de giro, una vibración larga cuando se trata de un giro a la izquierda y dos cortas cuando es un giro a la derecha. Al llegar al destino se comprueba que la vibración es la adecuada (tres vibraciones cortas) y que se indica al usuario la posición del punto de interés final, en este caso a la derecha (se estableció que el punto de interés del cuadrante $10$ está al sur).
 
+Durante el trayecto las instrucciones deben mostrarse por pantalla y ser reproducidas por voz de la manera descrita en los objetivos.
 
 \subsubsection*{Comportamiento durante la prueba}
  
@@ -140,7 +142,7 @@ El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularid
 	
 	\item El primer punto a destacar es que el reconocimiento del destino ``estancia $10$'' fue reconocido por medio del teclado, el botón y el micrófono. Tan solo en una ocasión el micrófono reconoció ``instancia $10$'' e indicó al usuario que se trataba de un destino no válido. Mediante el teclado se introdujo en la barra de búsqueda este mismo texto ``instancia $10$'' para comprobar el comportamiento. En este caso también se indicó al usuario que no era un destino válido. 
 	
-	Cuando el destino se reconoció con éxito, la aplicación despliega de manera automática la pantalla de ruta y espera a que el usuario pulse \textit{Iniciar ruta}. 
+	Cuando el destino se reconoce con éxito, la aplicación despliega de manera automática la pantalla de ruta y espera a que el usuario pulse \textit{Iniciar ruta}. 
 	
 	\item El posicionamiento inicial del usuario en el cuadrante $0$ se hizo correctamente en cada una de las cinco pruebas.
 	
@@ -158,7 +160,7 @@ El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularid
 
 \subsubsection*{Conclusiones}
 
-Como hemos podido comprobar, el funcionamiento del código de la aplicación es correcto, puesto que las instrucciones generadas (verbales y no verbales) son las esperadas. Sin embargo, se ha detectado un problema de detección de \textit{beacons} en el punto con más aglomeración de la ruta, el comprendido por los cuadrantes $1$, $2$ y $4$. Llama, sobre todo la atención la pérdida de la instrucción correspondiente al \textit{beacon$4$}, esto sugiere que la aplicación no lo ha detectado como \textit{beacon} más cercano cuando debería. Tras observar la ubicación de los \textit{beacons}, lo más probable es que se detectara el \textit{beacon$1$} o el \textit{beacon$2$} como los más cercanos. En la siguiente prueba abordamos este problema con más detalle. 
+Como hemos podido comprobar, el funcionamiento del código de la aplicación es correcto, puesto que las instrucciones generadas (verbales y no verbales) son las esperadas. Sin embargo, se ha detectado un problema de detección de \textit{beacons} en el punto con más aglomeración de la ruta, el comprendido por los cuadrantes $1$, $2$ y $4$. Llama la atención la pérdida de la instrucción correspondiente al \textit{beacon$4$}, esto sugiere que la aplicación no lo ha detectado como \textit{beacon} más cercano cuando debería. Tras observar la ubicación de los \textit{beacons}, lo más probable es que se detectara el \textit{beacon$1$} o el \textit{beacon$2$} como los más cercanos. En la siguiente prueba abordamos este problema con más detalle. 
 
 El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ puede deberse a que el \textit{beacon} del cuadrante $1$ está situado en una terraza, separado del $0$ por una puerta de cristal. La instrucción de giro se dio nada más pasar esa puerta, lo que implica demasiada antelación al giro. Una vez que se avanza hacia la puerta que separa los cuadrantes $1$ y $2$, la distancia que hay entre ellos es reducida, es por ello que el \textit{beacon$2$} se establece como el más cercano rápidamente, y provoca que la aplicación indique la instrucción de giro un metro antes de encontrar la puerta entre los cuadrantes $2$ y $4$.
 
@@ -168,6 +170,13 @@ El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ pu
 
 En este caso lo que se pone a prueba es el posicionamiento inicial del usuario en el cuadrante $1$. La razón por la cual se decidió hacer esta prueba fue la pérdida de la instrucción del cuadrante $4$ en el caso anterior (Sección \ref{subsub:0al10}). Esa prueba indica que el \textit{beacon$4$} no se detectó como el más cercano cuando el usuario se encontraba en este mismo cuadrante, sugiriendo que el \textit{beacon} que se detectaba como más cercano debía ser el $1$ o el $2$, por la ubicación de los \textit{beacons}. 
 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Imagenes/Evaluacion/posic1}
+	\caption{Problema del posicionamiento en el cuadrante $1$.}
+	\label{fig:posic1}
+\end{figure}
 
 \subsubsection*{Objetivos de la prueba}
 
@@ -179,7 +188,7 @@ En este caso lo que se pone a prueba es el posicionamiento inicial del usuario e
 
 \subsubsection*{Comportamiento esperado}
 
-Tras introducir el destino ``estancia 10'' y haber pulsado \textit{Iniciar ruta} en la pantalla de ruta, la primera instrucción de la aplicación debe ser la correspondiente al cuadrante $1$ (Continuar recto y luego girar a la izquierda). En este caso no se continuó la prueba hasta el destino para no repetir lo realizado anteriormente. Por esta razón, una vez comprobado el posicionamiento se fuerza la finalización de la ruta mediante el botón \textit{Finalizar ruta}. Como hay una ruta iniciada este debe mostrar un cuadro de texto preguntando al usuario confirmación para la finalización de la ruta y la vuelta a la pantalla anterior. En caso de apretar aceptar se vuelve atrás, en caso de cancelar la ejecución de la aplicación continúa como hasta entonces.
+La prueba comienza en el cuadrante $1$, tras introducir el destino ``estancia 10'' y haber pulsado \textit{Iniciar ruta} en la pantalla de ruta, la primera instrucción de la aplicación debe ser la correspondiente a este cuadrante (Continuar recto y luego girar a la izquierda). En este caso no se continuó la prueba hasta el destino para no repetir lo realizado anteriormente. Por esta razón, una vez comprobado el posicionamiento se fuerza la finalización de la ruta mediante el botón \textit{Finalizar ruta}. Como hay una ruta iniciada este debe mostrar un cuadro de texto preguntando al usuario confirmación para la finalización de la ruta y la vuelta a la pantalla anterior. En caso de apretar aceptar se vuelve atrás, en caso de cancelar la ejecución de la aplicación continúa como hasta entonces, permitiendo que el usuario siga recibiendo instrucciones sin necesidad de pulsar ningún otro botón.
 
 
 \subsubsection*{Comportamiento durante la prueba}
