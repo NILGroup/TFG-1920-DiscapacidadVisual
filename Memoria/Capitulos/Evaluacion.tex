@@ -38,7 +38,7 @@ En la Sección \ref{sub:cambiosServidor} se exponen las claves para realizar el 
 	
 	\item \textit{Trazado de los cuadrantes:} Para ello, lo primero que se ha hecho ha sido dividir el edificio en cada una de sus plantas y finalmente dividir estas en cuadrantes únicos. Buena parte de la decisión de la ubicación de las fronteras de los cuadrantes venía dada por la propia estructura del edificio, sus paredes y estancias. Sin embargo, no se debe olvidar que los cuadrantes solo pueden tener un punto de decisión y que no pueden colindar con más de un cuadrante por lado. Se puede ver el resultado del trazado de cuadrantes (rojo), cuyos identificadores son los números que aparecen sobre ellos, y la ubicación de los \textit{beacons} (amarillo) en la Figura \ref{fig:mapeoCasa}. En la Figura \ref{fig:mapeoCasaPBaja} vemos como hemos dividido la planta baja de la vivienda en 11 cuadrantes, siendo este último el que se corresponde con las escaleras que unen esta planta con el cuadrante 12 de la planta superior. El mapeo de la primera planta se encuentra en la Figura \ref{fig:mapeoCasaPAlta} que como vemos tiene la misma estructura que la planta inferior a excepción de la superficie que se corresponde con los cuadrantes $0$, $1$ y $10$ que desaparecen. Solo hemos incluido dos cuadrantes ya que la división es completamente análoga.	
 	
-	\item \textit{Información de los cuadrantes:} En este caso, la información adicional sobre los cuadrantes ha quedado reducida, limitándose a rellenar los campos correspondientes con datos aproximados. Esto se debe a que los objetivos de la evaluación (ver Sección \ref{sec:objetivosEval}) se enfocan al \textit{testeo} de la aplicación, rebajando el peso a la parte de usabilidad, que no ha podido realizarse debido a las cuestiones sanitarias expuestas en la introducción. 
+	\item \textit{Información de los cuadrantes:} En este caso, la información adicional sobre los cuadrantes ha quedado reducida, limitándose a rellenar los campos correspondientes con datos aproximados. Esto se debe a que los objetivos de la evaluación (ver Sección \ref{sec:objetivosEval}) se enfocan al \textit{testeo} de la aplicación, rebajando peso a la parte de usabilidad, que no ha podido realizarse debido a las cuestiones sanitarias expuestas en la introducción. 
 	
 	\item \textit{Estructuración de los archivos:} Una vez mapeado el edificio, el siguiente paso ha sido estructurar la información en tres archivos xml que contienen los mismos campos descritos en la Sección \ref{sub:mapeo_xml}: uno de ellos que haga referencia al esqueleto del edificio y los otros dos que plasmen la información de cada una de las plantas. Además, se ha incluido el archivo \textit{destinos.json} (descrito en la Sección \ref{sub:func_servidor}) con las estancias que se han considerado destino y su cuadrante asociado.%En el Apéndice X podemos ver estos archivos XML.
 \end{enumerate}
@@ -59,7 +59,7 @@ En la Sección \ref{sub:cambiosServidor} se exponen las claves para realizar el 
 \subsection{Cambios en el cliente}
 \label{sub:cambiosCliente_vivienda}
 
-En la Sección \ref{sub:cambiosCliente} destacamos la poca dependencia al edificio que contiene el código referente al cliente. De hecho, vimos que bastaba con sustituir los nombres de los destinos en dos estructuras creadas en xml. En nuestro caso, esas estructuras tienen la siguiente forma: 
+En la Sección \ref{sub:cambiosCliente} destacamos la poca dependencia al edificio que contiene el código referente al cliente. De hecho, vimos que bastaba con sustituir los nombres de los destinos en dos estructuras creadas en xml\footnote{Recordemos que la lista de destinos que se expone en las instrucciones de la aplicación y que se guarda en el mismo archivo (\textit{listasStringsApp.xml}) también debe ser modificada, en consonancia con la lista de destinos de la aplicación.}. En nuestro caso, esas estructuras tienen la siguiente forma: 
 
 \lstinputlisting[language=XML]{Imagenes/Evaluacion/destinos_array_vivienda.xml}
 
@@ -90,9 +90,7 @@ Debido a la imposibilidad de realizar una evaluación con usuarios, nos vimos ob
 \section{Realización y resultados de la evaluación}
 \label{sec:realizYresult}
 
-En esta sección se exponen las pruebas realizadas para evaluar la aplicación. A pesar de que el espacio con el que se cuenta para realizar estos ensayos no presenta tantas posibilidades como la Facultad de Informática de la UCM\footnote{Es un espacio más reducido, con menos intersecciones, puntos de interés, obstáculos y tránsito de gente.}, estos han sido diseñados de tal manera que se cubran la mayor cantidad posible de casos. Con la finalidad de detectar no solo posibles errores sino también confirmar que la aplicación es capaz de adaptarse a un nuevo espacio y funcionar de la manera esperada.
-
-En lo que sigue, asumiremos que \textit{beacon$X$} es el \textit{beacon} asociado al cuadrante $X$. A continuación se describen las pruebas realizadas y se analizan los resultados obtenidos.
+En esta sección se exponen las pruebas realizadas para evaluar la aplicación, así como su posterior análisis. A pesar de que el espacio con el que se cuenta para realizar estos ensayos no presenta tantas posibilidades como la Facultad de Informática de la UCM\footnote{Es un espacio más reducido, con menos intersecciones, puntos de interés, obstáculos y tránsito de gente.}, estos han sido diseñados de tal manera que se cubran la mayor cantidad posible de casos. Con la finalidad de detectar no solo posibles errores sino también confirmar que la aplicación es capaz de adaptarse a un nuevo espacio y funcionar de la manera esperada. En lo que sigue, asumiremos que \textit{beacon$X$} es el \textit{beacon} asociado al cuadrante $X$. 
 
 \subsection{Seguimiento de la ruta}
 En esta sección se detallan las pruebas realizadas asumiendo que el usuario no va a salir de la ruta. Sin embargo, algunas de ellas están diseñadas para reproducir situaciones extremas como la pérdida de un \textit{beacon} o rutas potencialmente complicadas.
@@ -162,7 +160,7 @@ El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularid
 
 Como hemos podido comprobar, el funcionamiento del código de la aplicación es correcto, puesto que las instrucciones generadas (verbales y no verbales) son las esperadas. Sin embargo, se ha detectado un problema de detección de \textit{beacons} en el punto con más aglomeración de la ruta, el comprendido por los cuadrantes $1$, $2$ y $4$. Llama la atención la pérdida de la instrucción correspondiente al \textit{beacon$4$}, esto sugiere que la aplicación no lo ha detectado como \textit{beacon} más cercano cuando debería. Tras observar la ubicación de los \textit{beacons}, lo más probable es que se detectara el \textit{beacon$1$} o el \textit{beacon$2$} como los más cercanos. En la siguiente prueba abordamos este problema con más detalle. 
 
-El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ puede deberse a que el \textit{beacon} del cuadrante $1$ está situado en una terraza, separado del $0$ por una puerta de cristal. La instrucción de giro se dio nada más pasar esa puerta, lo que implica demasiada antelación al giro. Una vez que se avanza hacia la puerta que separa los cuadrantes $1$ y $2$, la distancia que hay entre ellos es reducida, es por ello que el \textit{beacon$2$} se establece como el más cercano rápidamente, y provoca que la aplicación indique la instrucción de giro un metro antes de encontrar la puerta entre los cuadrantes $2$ y $4$.
+El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ se dieran con demasiada antelación puede deberse a que el \textit{beacon} del cuadrante $1$ está situado en una terraza, separado del $0$ por una puerta de cristal. La instrucción de giro se dio nada más pasar esa puerta, lo que implica demasiada antelación al giro. Una vez que se avanza hacia la puerta que separa los cuadrantes $1$ y $2$, la distancia que hay entre ellos es reducida, es por ello que el \textit{beacon$2$} se establece como el más cercano rápidamente, y provoca que la aplicación indique la instrucción de giro un metro antes de encontrar la puerta entre los cuadrantes $2$ y $4$.
 
 
 \subsubsection{Posicionamiento inicial en el cuadrante $1$}
@@ -249,7 +247,7 @@ Como el comportamiento de la aplicación en caso de falta de detección de un \t
 \begin{itemize}
 	\item Comprobación del correcto funcionamiento de la aplicación cuando no se percibe la llegada del usuario a un cuadrante pero este continua en la ruta en un cuadrante más avanzado.
 	
-	\item Comprobación del correcto funcionamiento del \textit{modo mute} de la aplicación. Este se corresponde con la descripción del botón en forma de altavoz en la pantalla de ruta (ver Sección \ref{sub:diseño}). 
+	\item Comprobación del correcto funcionamiento del \textit{modo mute} de la aplicación. Esta funcionalidad se corresponde con la descripción del botón en forma de altavoz en la pantalla de ruta (ver Sección \ref{sub:diseño}). 
 \end{itemize}
 
 \begin{figure}[t]
@@ -338,7 +336,7 @@ De la ruta desde el cuadrante $1$ al $13$ destacamos un punto importante, que es
 \subsubsection{Ruta del cuadrante $13$ al cuadrante $8$}
 \label{subsub:13al8}
 
-La finalidad de esta ruta es, principalmente, comprobar el comportamiento de la aplicación en el \textit{hall} de la planta baja, así como el cambio de planta inverso. La ruta determinada para hacer esta prueba comienza en el cuadrante $13$ y finaliza en el $8$ (ver Figura \ref{fig:del13al8}). Como puede verse en la Figura \ref{fig:del11al8}, la disposición de los cuadrantes obliga al usuario a realizar dos giros a la izquierda para poder entrar al cuadrante $8$. Esto resulta un poco tedioso puesto que si olvidamos por un momento la estructura de cuadrantes habría bastado con indicar al usuario un giro a la izquierda en el cuadrante $11$. Sin embargo, las condiciones que debe cumplir el mapeo determinan, en gran medida, la disposición de los cuadrantes, pudiendo provocar situaciones como la que se detalla a continuación.
+La finalidad de esta ruta es, principalmente, comprobar el comportamiento de la aplicación en el \textit{hall} de la planta baja, así como el cambio de planta inverso. La ruta determinada para hacer esta prueba comienza en el cuadrante $13$ y finaliza en el $8$ (ver Figura \ref{fig:del13al8}). Como puede verse en la Figura \ref{fig:del11al8}, la disposición de los cuadrantes obliga al usuario a realizar dos giros a la izquierda para poder entrar al cuadrante $8$. Esto a simple vista puede resultar un poco tedioso puesto que si olvidamos por un momento la estructura de cuadrantes la ruta óptima sería girar a la izquierda 180º en el cuadrante $11$. Sin embargo, las condiciones que debe cumplir el mapeo determinan, en gran medida, la disposición de los cuadrantes, pudiendo provocar situaciones como la que se detalla a continuación.
 
 \subsubsection*{Objetivos de la prueba}
 
@@ -420,6 +418,8 @@ En este caso, lo que se quiere es observar cómo se comporta la aplicación en c
 Después del inicio de la ruta en el cuadrante $9$, la indicación de giro a la izquierda del cuadrante $4$ se indicó justo antes de hacer el giro. Mejor que en ninguna otra prueba realizada en este cuadrante anteriormente. Tras la llegada a la puerta que separa los cuadrantes $4$ y $2$ la instrucción de giro a la izquierda también fue inmediata. Por su parte, la instrucción del cuadrante $11$ tardó unos tres segundos en darse, una vez que nos ubicamos justo delante de las escaleras. El final de la prueba fue el esperado (ver Sección \ref{subsub:del1al13})
 
 \subsubsection*{Conclusiones}
+
+El hecho de que la instrucción asociada al \textit{beacon$4$} se haya dado con tanta precision esta vez, puede deberse a que en la zona correspondiente al inicio de la ruta, la concentración de \textit{beacons} es mínima.
 
 Esta vez la ubicación del \textit{beacon$2$} favorece el giro del usuario para encontrar el ascensor (escaleras en este caso). De esta manera la ruta resulta mucho más natural y organizada que en el caso anterior. Con esto se pone de manifiesto la importancia del mapeo y la ubicación de los \textit{beacons}.
 
