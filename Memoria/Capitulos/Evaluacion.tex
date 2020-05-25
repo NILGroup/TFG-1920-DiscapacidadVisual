@@ -134,7 +134,27 @@ Durante el trayecto las instrucciones deben mostrarse por pantalla y ser reprodu
 
 \subsubsection*{Comportamiento durante la prueba}
  
-El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularidades durante el transcurso de la ruta. A continuación se resume el comportamiento obtenido:
+El recorrido se realizó hasta en cinco ocasiones a fin de encontrar irregularidades durante el transcurso de la ruta. 
+
+
+Las Instrucciones generadas para cada cuadrante fueron las siguientes\footnote{La distancia estimada de cada cuadrante ha sido 5.0 metros.}:
+
+\begin{itemize}
+	\item Cuadrante 0: \textit{Continúa recto 5.0 metros. Luego gira a la izquierda.}
+	
+	\item Cuadrante 1: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 2: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 4: \textit{Gira a la derecha. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 9: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	 
+	\item Cuadrante 10: \textit{Su destino está a la derecha.}
+\end{itemize}
+
+A continuación se presentan los puntos a destacar de las distintas pruebas realizadas.
+
 
 \begin{itemize}
 	
@@ -169,13 +189,6 @@ El hecho de que las instrucciones correspondientes a los cuadrantes $1$ y $2$ se
 En este caso lo que se pone a prueba es el posicionamiento inicial del usuario en el cuadrante $1$. La razón por la cual se decidió hacer esta prueba fue la pérdida de la instrucción del cuadrante $4$ en el caso anterior (Sección \ref{subsub:0al10}). Esa prueba indica que el \textit{beacon$4$} no se detectó como el más cercano cuando el usuario se encontraba en este mismo cuadrante, sugiriendo que el \textit{beacon} que se detectaba como más cercano debía ser el $1$ o el $2$, por la ubicación de los \textit{beacons} (ver Figura \ref{fig:posic1}).
 
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Imagenes/Evaluacion/posic1}
-	\caption{Problema del posicionamiento en el cuadrante $1$.}
-	\label{fig:posic1}
-\end{figure}
-
 \subsubsection*{Objetivos de la prueba}
 
 \begin{itemize}
@@ -183,6 +196,14 @@ En este caso lo que se pone a prueba es el posicionamiento inicial del usuario e
 	
 	\item Como la ruta no se desarrolla hasta el final, se comprueba el correcto funcionamiento del botón \textit{Finalizar ruta} (ver Figura \ref{fig:interfaz}).
 \end{itemize}
+
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Imagenes/Evaluacion/posic1}
+	\caption{Problema del posicionamiento en el cuadrante $1$.}
+	\label{fig:posic1}
+\end{figure}
 
 \subsubsection*{Comportamiento esperado}
 
@@ -266,7 +287,22 @@ Como se ha establecido en los objetivos de esta prueba, el modo silencio de la p
 
 \subsubsection*{Comportamiento durante la prueba}
 
-El comportamiento de la aplicación es el esperado. Sin embargo, se ha apreciado un ligero retraso en la llegada de la instrucción del cuadrante $4$. 
+El comportamiento de la aplicación es el esperado. Las instrucciones generadas fueron las siguientes: 
+
+
+\begin{itemize}
+	\item Cuadrante 1: \textit{Continúa recto 5.0 metros. Luego gira a la izquierda.}
+	
+	\item Cuadrante 2: \textit{Gira a la izquierda. Luego continúa recto 10.0 metros.} (Instrucción perdida).
+	
+	\item Cuadrante 4: \textit{Continúa recto 5.0 metros.}
+	
+	\item Cuadrante 5: \textit{Su destino está delante.}
+	
+\end{itemize}
+
+
+Sin embargo, se ha apreciado un ligero retraso en la llegada de la instrucción del cuadrante $4$. 
 
  
 \subsubsection*{Conclusiones}
@@ -308,13 +344,6 @@ Como las funcionalidades asociadas a las instrucciones de la ruta han sido \text
 	\label{fig:del1al13}
 \end{figure}
 
-%\begin{figure}[t!]
-%	\centering
-%	\includegraphics[width=0.4\textwidth]{Imagenes/Evaluacion/del1al13}
-%	\caption{Ruta del cuadrante $1$ al $13$.}
-%	\label{fig:del1al13}
-%\end{figure}
-
 \subsubsection*{Comportamiento esperado}
 
 La aplicación debe reconocer el destino ``estancia 13'' por cualquiera de sus métodos de entrada (teclado, botón y micrófono). Una vez reconocido y tras pulsar \textit{Iniciar ruta} se debe recibir la primera instrucción, correspondiente al cuadrante $1$. Esta instrucción debe indicar al usuario que continúe recto los metros estimados hasta las escaleras. En el cuadrante $2$ la instrucción debe ser la misma pero el número de metros debe haberse reducido al estimado desde ese cuadrante a las escaleras. Si la funcionalidad instrucciones detalladas está activada, la aplicación debe advertir de los ascensores del siguiente cuadrante. Una vez llegamos a cuadrante $11$ se debe indicar al usuario en qué posición se encuentran, en este caso delante, y la planta a la que se debe dirigir, acompañado de la acción de subida o bajada, en este caso ``sube a la planta 1''. Una vez se ha llegado al cuadrante $12$, la aplicación debe reconocer la nueva posición del usuario (este se encontrará mirando hacia la puerta del ascensor) e indicarle la instrucción adecuada, ``continua recto'' en esta ocasión. Por último, la llegada al cuadrante $13$ debe realizarse de la manera ya descrita, con tres vivbraciones cortas y la indicación de la oposición del punto de interés. Como se estableció que la posición de este era norte, debe ser ``su destino está delante''. 
@@ -324,7 +353,20 @@ Durante la ruta, si el modo instrucciones detalladas está activado, el usuario 
 
 \subsubsection*{Comportamiento durante la prueba}
 
-El comportamiento durante el inicio de la aplicación fue el esperado, los metros que había que recorrer desde el cuadrante $1$ a las escaleras se fueron reduciendo hasta llegar a ese punto. De la llegada al cuadrante $11$ destacamos que la instrucción correspondiente a este cuadrante tardó unos segundos más de lo esperado. Sin embargo, en el cuadrante $12$ se recibió en el momento oportuno (justo antes de llegar al final de las escaleras). La llegada al cuadrante $13$ también fue la esperada. 
+El comportamiento durante el inicio de la aplicación fue el esperado, los metros que había que recorrer desde el cuadrante $1$ a las escaleras se fueron reduciendo hasta llegar a ese punto. De la llegada al cuadrante $11$ destacamos que la instrucción correspondiente a este cuadrante tardó unos segundos más de lo esperado. Sin embargo, en el cuadrante $12$ se recibió en el momento oportuno (justo antes de llegar al final de las escaleras). La llegada al cuadrante $13$ también fue la esperada. Las instrucciones generadas fueron:
+
+\begin{itemize}
+	\item Cuadrante 1: \textit{Continúa recto 10.0 metros.}
+	
+	\item Cuadrante 2: \textit{Continúa recto 5.0 metros.} 
+	
+	\item Cuadrante 11: \textit{El ascensor está delante. Sube a la planta 1.}
+	
+	\item Cuadrante 12: \textit{Continúa recto 5.0 metros para salir de la zona de ascensores.}
+	
+	\item Cuadrante 13: \textit{Su destino está delante.}
+	
+\end{itemize}
 
 El inicio de la ruta se hizo con el modo instrucciones detalladas activado, mientras que el final (a partir del cuadrante $12$) con esta funcionalidad desactivada. El comportamiento en ambos casos fue el descrito como esperado. Así mismo, en dos ocasiones se pulsó el botón \textit{Repetir instrucción}, una antes de llegar al cuadrante $11$, cuando todavía no se había recibido la instrucción asociada a este, y otra justo al recibir la instrucción del cuadrante $12$. Esto desencadenó la reproducción y escritura en pantalla de la última instrucción que se había recibido, como estaba establecido. 
 
@@ -373,7 +415,24 @@ En cuanto a la generación de instrucciones se refiere se espera que en el \text
 
 El arranque de la aplicación con el lector de pantalla activado se realiza de la manera descrita anteriormente. Cabe destacar que en la pantalla de destinos, la primera opción que lee el lector de pantalla es el primer botón correspondiente a un destino. Cuando se ha terminado de barrer los botones destino, se lee el de micrófono y el de la barra de búsqueda en ese orden. En la pantalla de ruta el primer botón que se lee es botón de modo silencio, seguido del resto. Se comprueba el barrido de todos ellos sin ningún comentario relevante y se inicia la ruta. Durante el transcurso de la ruta el lector de pantalla no reproduce nada, debido a que el único cambio que se produce en la interfaz es la actualización del texto correspondiente a las instrucciones y el lector no tiene acceso a él (por implementación). Se comprueba que si se intenta acceder a alguna funcionalidad mientras se está reproduciendo la información asociada a una instrucción, el \textit{text to speech} y el lector de pantalla se solapan. 
 
-En cuanto a la guía se refiere, se observa que la instrucción de giro del cuadrante $2$ tarda demasiado en llegar, haciendo que tengamos que recorrer casi todo el \textit{hall} hasta obtenerla. Esto puede deberse a la aglomeración de \textit{beacons} en esta zona y a que la ubicación del \textit{beacon$2$} favorece que la instrucción de giro hacia el \textit{beacon$3$} se de con cierto retraso. El final de la ruta se desarrolla de la manera esperada. 
+A continuación se muestran las instrucciones generadas y el posterior análisis del desarrollo del proceso de guía.
+
+\begin{itemize}
+	\item Cuadrante 13: \textit{Continúa recto 5.0 metros.}
+	
+	\item Cuadrante 12: \textit{El ascensor está delante. Baja a la planta 0.}
+	
+	\item Cuadrante 11: \textit{Continúa recto 5.0 metros para salir de la zona de ascensores.}
+	
+	\item Cuadrante 2: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 3: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 8: \textit{Su destino está delante.}
+\end{itemize}
+
+
+Se observa que la instrucción de giro del cuadrante $2$ tarda demasiado en llegar, haciendo que tengamos que recorrer casi todo el \textit{hall} hasta obtenerla. Esto puede deberse a la aglomeración de \textit{beacons} en esta zona y a que la ubicación del \textit{beacon$2$} favorece que la instrucción de giro hacia el \textit{beacon$3$} se de con cierto retraso. El final de la ruta se desarrolla de la manera esperada. 
 
 \subsubsection*{Conclusiones}
 
@@ -415,6 +474,23 @@ En este caso, lo que se quiere es observar cómo se comporta la aplicación en c
 
 \subsubsection*{Comportamiento durante la prueba}
 
+Comenzamos exponiendo las instrucciones generadas por la aplicación para discutir posteriormente cómo se ha desarrollado la guía en este caso:
+
+\begin{itemize}
+	\item Cuadrante 9: \textit{Continúa recto 5.0 metros. Luego gira a la izquierda.}
+	
+	\item Cuadrante 4: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 2: \textit{Gira a la izquierda. Luego continúa recto 5.0 metros.}
+	
+	\item Cuadrante 11: \textit{El ascensor está delante. Sube a la planta 1.}
+	
+	\item Cuadrante 12: \textit{Continúa recto 5.0 metros para salir de la zona de ascensores.}
+	
+	\item Cuadrante 13: \textit{Su destino está delante.}
+\end{itemize}
+
+
 Después del inicio de la ruta en el cuadrante $9$, la indicación de giro a la izquierda del cuadrante $4$ se indicó justo antes de hacer el giro. Mejor que en ninguna otra prueba realizada en este cuadrante anteriormente. Tras la llegada a la puerta que separa los cuadrantes $4$ y $2$ la instrucción de giro a la izquierda también fue inmediata. Por su parte, la instrucción del cuadrante $11$ tardó unos tres segundos en darse, una vez que nos ubicamos justo delante de las escaleras. El final de la prueba fue el esperado (ver Sección \ref{subsub:del1al13})
 
 \subsubsection*{Conclusiones}
@@ -446,6 +522,18 @@ Al perder la instrucción de giro del cuadrante $4$, lo más probable es que el 
 
 \subsubsection*{Comportamiento durante la prueba}
 
+Exponemos, en primer lugar, las instrucciones que recibió el usuario:
+
+\begin{itemize}
+	\item Las instrucciones correspondientes a los cuadrantes del $0$ al $4$ son las mismas que las ya expuestas en la Sección \ref{subsub:0al10}. 
+	
+	\item Al llegar al cuadrante $5$, el usuario recibe el siguiente aviso: \textit{La dirección tomada no ha sido la correcta. Da la vuelta para volver en la dirección en la que venías. La nueva ruta comenzará cuando pulses Iniciar ruta.} Desde ese punto las instrucciones de guía hasta el cuadrante $10$ se reanudan tomando como origen el cuadrante $5$. 
+	
+	\item Cuadrante 5: \textit{Continúa recto 5.0 metros. Luego gira a la izquierda.}
+	
+	\item Las instrucciones correspondientes a los cuadrantes del $4$ al $10$ son las mismas que las ya expuestas en la Sección \ref{subsub:0al10}.
+\end{itemize}
+
 Tras recorrer el cuadrante $4$, la aplicación detectó la pérdida del usuario cuando pasaron apenas dos segundos desde que se llegó al cuadrante $5$. Se dieron las indicaciones establecidas y la ruta hacia la estancia 10 comenzó de nuevo al pulsar \textit{Iniciar ruta}. Cabe destacar que el posicionamiento inicial en el cuadrante $5$ se hizo de manera correcta. El final de la ruta se desarrolló de la manera prevista.
 
 \subsubsection*{Conclusiones}
@@ -473,7 +561,7 @@ Además, la aplicación está preparada para el caso en el que no se detecte nin
 
 \subsubsection*{Comportamiento esperado}
 
- Si no se produjera ninguna detección transcurrido un tiempo (determinado por una variable umbral. Ver Sección \ref{sub:func_cliente}), la aplicación advierte al usuario de la situación indicándole que debe posicionarse dentro del edificio\footnote{Se asume que si ningún \textit{beacon} es detectado es porque el usuario no se encuentra dentro del edificio o la zona mapeada}. 
+ Si no se produjera ninguna detección transcurrido un tiempo (determinado por una variable umbral. Ver Sección \ref{sub:func_cliente}), la aplicación advierte al usuario de la situación indicándole que debe posicionarse dentro del edificio\footnote{Se asume que si ningún \textit{beacon} es detectado es porque el usuario no se encuentra dentro del edificio o la zona mapeada.} \textit{Te encuentras fuera del alcance de la aplicación. Dirígete al interior del edificio, la ruta comenzará cuando pulses sobre Iniciar ruta.} 
  
 \subsubsection*{Comportamiento durante la prueba}
 
