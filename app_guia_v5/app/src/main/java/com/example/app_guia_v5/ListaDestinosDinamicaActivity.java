@@ -36,6 +36,8 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
+import static android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO;
+
 
 public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements SearchView.OnQueryTextListener{
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
@@ -50,6 +52,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
     private TableLayout tabla; // Layout donde se pintará la tabla
     private ArrayList<TableRow> filas; // Array de las filas de la tabla
     private Map<String, List<String>> tablaDestinos; // destinos que leemos del XML
+    private List<String> destinos_ordenados; //Array con los nombres de los destinos en el mismo orden del XML
 
     public static Intent createIntent(@NonNull Context context,int niv, String k) {
         nivel=niv;
@@ -77,6 +80,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
         Resources res = getResources();
         // Convert String Array to List
         List<String> stringArray  = Arrays.asList(res.getStringArray(R.array.destinosdinamicos_array));
+        destinos_ordenados = new ArrayList<String>();
 
         for (String entry : stringArray) {
             String[] splitResult = entry.split("\\|", 2);
@@ -86,6 +90,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             else splitResult2= new String[]{"no"}; //no hay segundo nivel
 
             tablaDestinos.put(splitResult[0], Arrays.asList(splitResult2));
+            destinos_ordenados.add(splitResult[0]);
         }
     }
 
@@ -95,24 +100,59 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
         barra_busqueda = (SearchView) findViewById(R.id.destinosdinamicos_searchView);
         barra_busqueda.setOnQueryTextListener(this);
         barra_busqueda.setQueryHint("Introduce el destino");
-        String[] nombresbotones;
+        String[] nombresbotones = new String[destinos_ordenados.size()];
         //primer nivel
         if (nivel==1){
-             nombresbotones = tablaDestinos.keySet().toArray(new String[0]);
+             //nombresbotones = tablaDestinos.keySet().toArray(new String[0]);
+            nombresbotones = destinos_ordenados.toArray(nombresbotones); //Para que los destinos salgan en el orden del XML
         }
         //segundo nivel
         else{
             nombresbotones =  tablaDestinos.get(clave_segundonivel).toArray(new String[0]);
         }
 
-        int pos = 0;
+        escribeBotones(nombresbotones);
+
+        /*int pos = 0;
+        //Arrays.sort(nombresbotones);
+
         for(int i = 0; i < nombresbotones.length/3; i++)
         {
             ArrayList<String> elementos=new ArrayList<>();
             elementos.add(nombresbotones[pos]);
             elementos.add(nombresbotones[pos+1]);
             elementos.add(nombresbotones[pos+2]);
-            //elementos.add("");
+            agregarFilaTabla(elementos, pos);
+            pos=pos+3;
+        }
+        if(nombresbotones.length%3 == 1){
+            ArrayList<String> elementos=new ArrayList<>();
+            elementos.add(nombresbotones[pos]);
+            elementos.add("");
+            elementos.add("");
+            agregarFilaTabla(elementos,pos);
+        }
+        if(nombresbotones.length%3 == 2){
+            ArrayList<String> elementos=new ArrayList<>();
+            elementos.add(nombresbotones[pos]);
+            elementos.add(nombresbotones[pos+1]);
+            elementos.add("");
+            agregarFilaTabla(elementos,pos);
+        }
+        */
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    void escribeBotones(String [] nombresbotones){
+        int pos = 0;
+        //Arrays.sort(nombresbotones);
+
+        for(int i = 0; i < nombresbotones.length/3; i++)
+        {
+            ArrayList<String> elementos=new ArrayList<>();
+            elementos.add(nombresbotones[pos]);
+            elementos.add(nombresbotones[pos+1]);
+            elementos.add(nombresbotones[pos+2]);
             agregarFilaTabla(elementos, pos);
             pos=pos+3;
         }
@@ -152,7 +192,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
             mybutton.setText(elementos.get(i));
             Log.i("DINAMICA", "nivel: " + nivel);
 
-            if(!elementos.get(i).equals(" ")){//si el boton no es vacio
+            if(!elementos.get(i).equals("")){//si el boton no es vacio
                  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                      if(pos%2==0){ //fila par ->coloreamos los pares
                          if (i%2 == 0){
@@ -185,6 +225,7 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
                         if (nivel==2)  startActivity(ScanningActivity.createIntent(getApplicationContext(),(String) mybutton.getText()));
                         else{ //estoy en el primer nivel
                             if(tablaDestinos.get(mybutton.getText()).contains("no")) //es un destino final
+                                //Log.i("DESTINO", cleanString( (String) mybutton.getText()));
                                 startActivity(ScanningActivity.createIntent(getApplicationContext(), cleanString( (String) mybutton.getText())));
                             else //no es un destino final porque tengo que ir a un segundo nivel
                                 startActivity(ListaDestinosDinamicaActivity.createIntent(getApplicationContext(),2,(String) mybutton.getText()));
@@ -192,7 +233,10 @@ public class ListaDestinosDinamicaActivity extends AppCompatActivity  implements
                     }
                 });
             }
-            if (elementos.get(i).equals("")) mybutton.setBackgroundColor(Color.WHITE);
+            if (elementos.get(i).equals("")){
+                mybutton.setBackgroundColor(Color.WHITE);
+                mybutton.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
+            }
 
             fila.addView(mybutton);
         }

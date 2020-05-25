@@ -20,7 +20,7 @@
         <activity android:name="com.example.app_guia_v5.ModoDeUsoActivity"
             android:label="@string/ventana_instruc"/>
         <activity android:name="com.example.app_guia_v5.InstruccionesAppActivity"
-            android:label="@string/ventana_instruc_2"/>/>
+            android:label="@string/ventana_instruc_2"/>
         <activity android:name="com.example.app_guia_v5.ListaDestinosDinamicaActivity"
             android:label="@string/ventana_destinosdinamica"/>
         <activity android:name="com.example.app_guia_v5.ScanningActivity"
