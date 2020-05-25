@@ -1,4 +1,4 @@
-%---------------------------------------------------------------------
+﻿%---------------------------------------------------------------------
 %
 %                            TeXiS_cover.tex
 %
@@ -101,7 +101,7 @@
 
 % Primer subtítulo de la segunda portada
 \def\textoPrimerSubtituloPortadaVal{%
-\textit{Memoria que presenta para optar al título de Doctor en Informática}  \\ [0.3em]%
+\textit{Memoria que presentan para optar al título de Graduadas en Informática}  \\ [0.3em]%
 \textbf{\autorPortadaVal}%
 }
 \newcommand{\textoPrimerSubtituloPortada}[1]{
@@ -110,7 +110,7 @@
 
 % Segundo subtítulo de la segunda portada
 \def\textoSegundoSubtituloPortadaVal{%
-\textit{Dirigida por el Doctor}  \\ [0.3em]
+\textit{Dirigida por los Doctores}  \\ [0.3em]
 \textbf{\directorPortadaVal}
 }
 \newcommand{\textoSegundoSubtituloPortada}[1]{
@@ -324,7 +324,7 @@
 
 \begin{center}
   {\Large \textbf{\tipoDocumentoVal}}\\
-  {\Large \textbf{Curso \thelastyear--\the\year}}
+  %{\Large \textbf{Curso \thelastyear--\the\year}}
   
 \end{center}
 
@@ -332,16 +332,18 @@
 
 \begin{large}
 \begin{center}
-{\Large \bfseries Autor}\\
+{\Large \itshape Realizado por}\\
 \textbf{\autorPortadaVal}\\[0.5cm]
-{\Large \bfseries Director}\\
+{\Large \itshape Dirigido por}\\
 \textbf{\directorPortadaVal}\\[0.5cm]
-{\Large \bfseries Colaborador}\\
-\textbf{\colaboradorPortadaVal}\\[0.5cm]
+%{\Large \bfseries Colaborador}\\
+%\textbf{\colaboradorPortadaVal}\\[0.5cm]
 \textbf{\institucionVal}\\[1em]
+{\Large \textbf{Curso \thelastyear--\the\year}}
 %\textbf{\fechaPublicacionVal}
 \end{center}
 \end{large}
+
 
 \vfill
 
@@ -354,27 +356,27 @@
 % aclaración de que debe imprimirse a doble cara.
 \thispagestyle{empty}
 \mbox{ }
-%\vfill%space*{4cm}
-%\begin{small} 
-%\begin{center}
-%\ifx\noTeXiSCreditsVal\undefined
-%  Documento maquetado con \texis\ v.\texisVer.
-%\else
-%\mbox{ }
-%\fi
-%\end{center}
-%\end{small}
-%\vspace*{2cm}
-%\begin{small} 
-%\begin{center}
-%\ifx\explicacionDobleCaraVal\undefined
-%\mbox{ }
-%\else
-%\noindent Este documento está preparado para ser imprimido a doble
-%cara.
-%\fi
-%\end{center}
-%\end{small}
+\vfill%space*{4cm}
+\begin{small} 
+\begin{center}
+\ifx\noTeXiSCreditsVal\undefined
+  Documento maquetado con \texis\ v.\texisVer.
+\else
+\mbox{ }
+\fi
+\end{center}
+\end{small}
+\vspace*{2cm}
+\begin{small} 
+\begin{center}
+\ifx\explicacionDobleCaraVal\undefined
+\mbox{ }
+\else
+\noindent Este documento está preparado para ser imprimido a doble
+cara.
+\fi
+\end{center}
+\end{small}
 
 %%%
 % Segunda portada
@@ -399,12 +401,12 @@
 \begin{center}
 \textoPrimerSubtituloPortadaVal
 \mbox{ } \\ \mbox{ } \\ 
-{\Large \bfseries Autor}\\
-\textbf{\autorPortadaVal}\\[1.0cm]
-{\Large \bfseries Director}\\
-\textbf{\directorPortadaVal}\\[0.3cm]
-{\Large \bfseries Colaborador}\\
-\textbf{\colaboradorPortadaVal}\\[0.3cm]
+%{\Large \bfseries Autor}\\
+%\textbf{\autorPortadaVal}\\[1.0cm]
+%{\Large \bfseries Director}\\
+%\textbf{\directorPortadaVal}\\[0.3cm]
+%{\Large \bfseries Colaborador}\\
+%\textbf{\colaboradorPortadaVal}\\[0.3cm]
 \mbox{ } \\ \mbox{ } \\ 
 \textoSegundoSubtituloPortadaVal \\ [0.3em]
 \end{center}
@@ -423,21 +425,21 @@
 
 \newpage
 \thispagestyle{empty}
-%\mbox{ }
-%
+\mbox{ }
+
 %% Información del ISBN y copyright
-%\vskip 13cm
-%\ifx\copyrightInfoVal\undefined
-%\mbox{ }
-%\else
-%Copyright \textcopyright\ \copyrightInfoVal
-%\fi
-%\vskip 3cm
-%\ifx\isbnVal\undefined
-%\mbox{ }
-%\else
-%ISBN \isbnVal
-%\fi
+\vskip 13cm
+\ifx\copyrightInfoVal\undefined
+\mbox{ }
+\else
+Copyright \textcopyright\ \copyrightInfoVal
+\fi
+\vskip 3cm
+\ifx\isbnVal\undefined
+\mbox{ }
+\else
+ISBN \isbnVal
+\fi
 
 } % \newcommand{\makeCover}
 
