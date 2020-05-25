@@ -5,12 +5,24 @@
 
 \section{Trabajo Futuro}
 
-Tal y como está diseñada, la aplicación Blind Bit es muy fácilmente reutilizable en cualquier edificio público. Por lo tanto, animamos a proyectos futuros a que utilicen y extiendan la aplicación en espacios más ambiciosos como museos, aeropuertos, estaciones... en los que todo tipo de personas pueden encontrar muy útil esta ayuda. Además, proponemos una serie de pequeñas mejoras que pueden hacer que la app crezca:
+Tal y como está diseñada, la aplicación Blind Bit es fácilmente reutilizable en cualquier edificio público. Por lo tanto, animamos a proyectos futuros a que utilicen y extiendan la aplicación en espacios más ambiciosos como museos, aeropuertos, estaciones... en los que todo tipo de personas pueden encontrar muy útil esta ayuda. Además, proponemos una serie de pequeñas mejoras que pueden hacer que la app crezca:
 \begin{itemize}
 	\item Evaluación en usuarios finales invidentes para encontrar puntos mejorables de la app prestando especial interés en los aspectos relativos a la interfaz, a las instrucciones proporcionadas, en cómo de intuitiva resulta, en funcionalidades que puedan echar de menos, etc.
+	
 	\item Implementación de los ajustes de configuración, entre los que proponemos la posibilidad de cambiar el idioma, el tipo de voz que lee las instrucciones (mujer por defecto), el volumen, la activación o desactivación del modo\textit{ Instrucciones detalladas}, ect. 
+	
 	\item La inclusión de una base de datos que permita registrar y reconocer a distintos usuarios de manera que hagan \textit{Log In} y dentro de su sesión tengan una lista de destinos favoritos, sitios recientes, tengan guardada su configuración favorita en lugar de la por defecto, etc.
+	
 	\item Ampliación a una app más inclusiva de manera que no esté exclusivamente centrada en usuarios con discapacidad visual o videntes sino que este preparada y sea accesible para personas con otras discapacidades como por ejemplo la auditiva.
+\end{itemize}
+
+A pesar de que el código está pensado e implementado para dar servicio a un edificio de características similares a la Facultad de Informática de la UCM también se ha pensado en posibles variantes que podrían surgir a la hora de adaptar el código a otro espacio. A continuación se plantean algunos casos y la solución propuesta: 
+
+
+\begin{itemize}
+	\item En el caso de la Facultad de Informática hemos establecido que cada cuadrante tiene un único punto de interés. Por ejemplo, los cuadrantes de los pasillos tienen un aula como punto de interés, pero podría ocurrir que en otra facultad hubiera aulas a ambos lados del pasillo y fuera, por tanto, necesario que un cuadrante tuviera más de un punto de interés. Esto se resolvería de manera sencilla adaptando la estructura del cuadrante en los archivos xml: incluyendo una etiqueta que estableciera la ubicación de cada punto de interés y adecuando en el código la lectura del mismo. En el archivo \textit{destinos.json} se incluiría una nueva entrada para el destino, de tal manera que tendríamos dos entradas con el mismo cuadrante (esto no supone un problema pues la clave de la tabla hash donde se almacena la información es el nombre del destino y no el cuadrante). Una vez modificados estos archivos bastaría con indicar a la función \textit{genera} cuál es la ubicación del destino dentro de su cuadrante para que indique al usuario la posición del destino correctamente al finalizar la ruta.
+	
+	\item Otra situación que nos podemos encontrar es aquella en la que la estructura del edificio y los puntos que se quieran mapear se encuentren a una distancia próxima, obligando a que el tamaño de los cuadrantes se vea reducido. En este caso, dar instrucciones al usuario cada cuadrante puede resultar molesto, puesto que se darían instrucciones con demasiada frecuencia. Es por ello que se incluye una variable contador en la función \textit{generar} que permite establecer el número de cuadrantes que queremos ``saltar'' antes de dar una nueva instrucción\footnote{En el propio código se han incluido en comentarios los cambios necesarios para la implementación de esta funcionaliadad.}, siempre que la dirección del usuario se mantenga estable. Es decir, no haya que hacer un giro, pues en ese caso el usuario debe ser advertido. 
 \end{itemize}
 
 
