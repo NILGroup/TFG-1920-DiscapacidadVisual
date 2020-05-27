@@ -123,7 +123,7 @@ public class GenerarRuta {
 					String dirDest = c1.getPosDestino();
 					String dir = indicaDirFinal(dirAnt,dirDest);
 					if(dir.equals("delante")) {
-						res[0] ="Continua recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
+						res[0] ="Continúa recto " + Float.toString(c1.getMetros()) +" metros para salir de la zona de ascensores.";
 						return res;
 					}
 					else {
@@ -174,7 +174,7 @@ public class GenerarRuta {
 			
 			String dir = indicaDirFinal(dirDeLaQueVengo, direccionPrincipal);
 			if(dirDeLaQueVengo.equals(direccionPrincipal)) {//Aún no hay que girar
-				s = "Continua recto " + Float.toString(metros) +" metros. ";
+				s = "Continúa recto " + Float.toString(metros) +" metros. ";
 				dir = indicaDirFinal(dirDeLaQueVengo, direccionSig);
 				if(dir.equals("delante")) {
 					//s += "espera la siguiente instrucción"; se elimina de las instrucciones
@@ -186,7 +186,7 @@ public class GenerarRuta {
 			
 			else {
 				s = s += "Gira " + dir + ".";
-				s += "Luego continua recto " + Float.toString(metros) +" metros.";
+				s += "Luego continúa recto " + Float.toString(metros) +" metros.";
 				//res[1]="si";
 				if(dir.equals("a la derecha")){
 					res[1]="der";
