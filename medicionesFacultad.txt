@@ -1194,7 +1194,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh FAR a 3.968 m
     _______________
     
-    Aquí hay un poco más de movida porque estamos como en medio de todos los beacon, pero más o menos nos podemos hacer una idea de por dónde estamos 
+    Aquí hay un poco más de movida porque estamos como en medio de todos los beacons, pero más o menos nos podemos hacer una idea de por dónde estamos 
     
     
 	
