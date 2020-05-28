@@ -18,7 +18,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>aula 6</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 6 y unas mesas en las que puedes trabajar en grupo.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="20">
@@ -36,7 +36,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 7, hay banios para mujeres</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 7 y aseos femeninos.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="21">
@@ -54,7 +54,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion</info>
+				<info>no</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="22">
@@ -72,7 +72,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 8</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 8.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="23">
@@ -90,7 +90,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 9</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 9.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="24">
@@ -108,7 +108,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 10</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 10.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="25">
@@ -126,7 +126,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 11</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 11.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="26">
@@ -144,7 +144,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 12</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 12.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="27">
@@ -162,7 +162,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion, hay banios</info>
+				<info>Muy cerca de ti hay unas mesas para trabajar en grupo y aseos (tanto femeninos como masculinos).</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="28">
@@ -180,7 +180,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion ascensores</info>
+				<info>Muy cerca de ti se encuentran unas salas reservadas a las asociaciones de la Facultad.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="29">
@@ -198,7 +198,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>ascensores y escaleras</info>
+				<info>Muy cerca de ti se encuentran los ascensores y las escaleras</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="30">
@@ -216,7 +216,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion, hay banios</info>
+				<info>Muy cerca de ti se encuentran los aseos (tanto femeninos como masculinos).</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="31">
@@ -234,7 +234,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 13</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 13.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="32">
@@ -252,7 +252,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 14</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 14.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="33">
@@ -270,7 +270,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 15</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 15.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="34">
@@ -288,7 +288,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 16</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 16.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="35">
@@ -306,7 +306,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>sala de grados</info>
+				<info>Muy cerca de ti se encuentra la puerta de la Sala de Grados.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="36">
@@ -324,7 +324,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion</info>
+				<info>no</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="37">
@@ -342,7 +342,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>ascensores a un lado escaleras al otro</info>
+				<info>Muy cerca de ti se encuentran los ascensores y las escaleras.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="38">
@@ -360,7 +360,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>sala de juntas, hay banios para hombres</info>
+				<info>Muy cerca de ti se encuentra la sala de juntas y aseos masculinos.</info>
 				<metros>5</metros>
 			</cuadrante>
 		</cuadrantes>
