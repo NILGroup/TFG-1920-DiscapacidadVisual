@@ -18,7 +18,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>salon de actos (necesitara medida de ancho y largo)</info>
+				<info>Muy cerca de ti se encuentra el Salon de Actos.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="1">
@@ -36,7 +36,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion,aula 1 y hay banios (medida largo). Hay dos pequenios escalones</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 1 y los aseos (tanto femeninos como masculinos). </info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="2">
@@ -54,7 +54,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion (medida de largo y ancho)</info>
+				<info>no</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="3">
@@ -72,7 +72,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 2</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 2.</info>
 				<metros>5</metros>
 			</cuadrante>
 				<cuadrante idc="4">
@@ -90,7 +90,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 3</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 3.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="5">
@@ -108,7 +108,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 4</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 4.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="6">
@@ -126,7 +126,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>aula 5</info>
+				<info>Muy cerca de ti se encuentra la puerta del aula 5.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="7">
@@ -144,7 +144,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>puerta lateral y hay banios (es un cuadrado, medida unica)</info>
+				<info>Muy cerca de ti se encuentra la puerta lateral de la Facultad y los aseos (tanto femeninos como masculinos).</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="8">
@@ -162,7 +162,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion con ascensores (necesitara medida de ancho y largo)</info>
+				<info>Muy cerca de ti se encuentran las salas reservadas para las asociaciones de la Facultad.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="9">
@@ -180,7 +180,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>ascensor y escalera (medida ancho)</info>
+				<info>Muy cerca de ti se encuentran los ascensores y las escaleras.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="10">
@@ -198,7 +198,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>cefeteria y hay banios(es un cuadrado)</info>
+				<info>Muy cerca de ti se encuentra la puerta trasera de cafeteria y los aseos (tanto femeninos como masculinos).</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="11">
@@ -216,7 +216,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>ascensores a un lado, escaleras al otro (cuadrado)</info>
+				<info>Muy cerca de ti se encuentran los ascensores y las escaleras.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="12">
@@ -234,7 +234,7 @@
 					<p_este>1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>interseccion (necesitara medida de ancho y largo). Hay dos pequenios escalones</info>
+				<info>En la mitad del pasillo hay dos escalones estrechos.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="13">
@@ -252,7 +252,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>cafeteria (medida largo)</info>
+				<info>Muy cerca de ti se encuentra la puerta principal de cafeteria.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="14">
@@ -270,7 +270,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>puerta principal (medida ancho)</info>
+				<info>Muy cerca de ti se encuentra la puerta principal de la Facultad.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="15">
@@ -288,7 +288,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>secretaria (medida ancho)</info>
+				<info>Muy cerca de ti se encuentra secretaria.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="16">
@@ -306,7 +306,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>interseccion y conserjeria (necesitara medida de ancho y de largo)</info>
+				<info>Muy cerca de ti se encuentra conserjeria.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="17">
@@ -324,7 +324,7 @@
 					<p_este>-1</p_este>
 					<p_oeste>1</p_oeste>
 				</pesos>
-				<info>puerta trasera (necesitara medida de ancho y de largo)</info>
+				<info>Muy cerca de ti se encuentra la puerta trasera de la Facultad.</info>
 				<metros>5</metros>
 			</cuadrante>
 			<cuadrante idc="18">
@@ -342,7 +342,7 @@
 					<p_este>1</p_este>
 					<p_oeste>-1</p_oeste>
 				</pesos>
-				<info>biblioteca (medida ancho)</info>
+				<info>Muy cerca de ti se encuentra la biblioteca.</info>
 				<metros>5</metros>
 			</cuadrante>
 		</cuadrantes>
