@@ -1,4 +1,4 @@
-﻿\chapter{Diseño e implementación}
+\chapter{Diseño e implementación}
 \label{cap:diseñoeimplementación}
 
 
@@ -29,7 +29,7 @@ Para entender mejor la estructura del servidor, haremos un recorrido desde la ca
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Capitulo4/diagramasUML/arranqueServidor}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Implementacion/diagramasUML/arranqueServidor}
 	\caption{Diagrama de secuencia para el arranque del servidor.}
 	\label{fig:diag_sec_arranqueServ}
 \end{figure}
@@ -47,7 +47,7 @@ Para entender mejor la estructura del servidor, haremos un recorrido desde la ca
 	
 	\begin{figure}[t]
 		\centering
-		\includegraphics[width=0.9\textwidth]{Imagenes/Capitulo4/ejemploRuta}
+		\includegraphics[width=0.9\textwidth]{Imagenes/Implementacion/ejemploRuta}
 		\caption{Ejemplo de la información generada por el servidor para una ruta desde el cuadrante $14$ al $4$.}
 		\label{fig:ejemplo_ruta}
 	\end{figure}
@@ -63,7 +63,7 @@ Para entender mejor la estructura del servidor, haremos un recorrido desde la ca
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Capitulo4/diagramasUML/generacionRuta}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Implementacion/diagramasUML/generacionRuta}
 	\caption{Diagrama de secuencia para la generación de la ruta.}
 	\label{fig:diag_sec_conexionYRutaServ}
 \end{figure}
@@ -86,7 +86,7 @@ Sin embargo, no debemos olvidar que nuestra aplicación tiene un usuario final m
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Capitulo4/mapa_ruta_optima}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Implementacion/mapa_ruta_optima}
 	\caption{Ejemplo de ruta óptima entre dos puntos.}
 	\label{fig:ruta_optima}
 \end{figure}
@@ -108,7 +108,7 @@ La función que contiene toda la lógica relativa a la generación de las instru
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Capitulo4/simulacion_giro}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Implementacion/simulacion_giro}
 	\caption{Ejemplo de giro en la ruta.}
 	\label{fig:simulacion_giro}
 \end{figure}
@@ -144,19 +144,19 @@ A continuación describimos las pantallas de nuestra aplicación, que pueden ver
 	\begin{tabularx}{\linewidth}{@{}cXX@{}}
 		%
 		\begin{tabular}{ccc}
-			\subfloat[Pantalla principal]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}} 
-			& \subfloat[Pantalla de destinos]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaListaDestinos}}
-			& \subfloat[Pantalla de aulas]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaListaAulas}}\\
-			\subfloat[Pantalla de ruta]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaRuta}} 
-			& \subfloat[Pantalla instrucciones de uso]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaInstrucciones1}}
-			& \subfloat[Segunda pantalla instrucciones de uso]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaInstrucciones2}}\\
-			%\subfloat[E]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}} 
-			%& \subfloat[F]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}}\\
+			\subfloat[Pantalla principal]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaPrincipal}} 
+			& \subfloat[Pantalla de destinos]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaListaDestinos}}
+			& \subfloat[Pantalla de aulas]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaListaAulas}}\\
+			\subfloat[Pantalla de ruta]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaRuta}} 
+			& \subfloat[Pantalla instrucciones de uso]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaInstrucciones1}}
+			& \subfloat[Segunda pantalla instrucciones de uso]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaInstrucciones2}}\\
+			%\subfloat[E]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaPrincipal}} 
+			%& \subfloat[F]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaPrincipal}}\\
 		\end{tabular}
 		%&
-		%\subfloat[G]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}}
+		%\subfloat[G]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaPrincipal}}
 		%&
-		%\subfloat[H]{\includegraphics[width=0.3\textwidth]{Imagenes/Capitulo4/PantallaPrincipal}}
+		%\subfloat[H]{\includegraphics[width=0.3\textwidth]{Imagenes/Implementacion/PantallaPrincipal}}
 	\end{tabularx}
 	
 	\caption{Interfaz de la aplicación Blind Bit}\label{fig:interfaz}
@@ -190,7 +190,7 @@ En esta sección veremos el funcionamiento de la aplicación desde la interacci�
 	
 	\begin{figure}[t]
 		\centering
-		\includegraphics[width=0.8\textwidth]{Imagenes/Capitulo4/diagramasUML/clienteHastaSeguimientoRuta}
+		\includegraphics[width=0.8\textwidth]{Imagenes/Implementacion/diagramasUML/clienteHastaSeguimientoRuta}
 		\caption{Diagrama de secuencia que comprende la interacción con el usuario, la resolución del posicionamiento y la conexión con el servidor en el cliente.}
 		\label{fig:diag_clientePrimeraParte}
 	\end{figure}
@@ -200,7 +200,7 @@ En esta sección veremos el funcionamiento de la aplicación desde la interacci�
 
 	\begin{figure}[t]
 		\centering
-		\includegraphics[width=1\textwidth]{Imagenes/Capitulo4/diagramasUML/onEddystonesUpdated}
+		\includegraphics[width=1\textwidth]{Imagenes/Implementacion/diagramasUML/onEddystonesUpdated}
 		\caption{Diagrama de actividad simplificado para la función \textit{onEddystonesUpdated}.}
 		\label{fig:diag_clienteSeguimientoRuta}
 	\end{figure}
@@ -250,9 +250,9 @@ De esta manera, si se quisiera utilizar el código del servidor para otro edific
 
 El cliente es la parte menos dependiente del edificio, puesto que apenas contiene información del mismo. En las Secciones \ref{sub:diseño} y \ref{sub:func_cliente}, revisamos el diseño de la interfaz de la aplicación Blind Bit y su funcionamiento, respectivamente. En cuanto a la interfaz se refiere, es sencillo darse cuenta de que la parte dependiente del edificio corresponde a la pantalla de destinos. Sin embargo, esta está implementada de manera dinámica. Es decir, los nombres de los botones, así como la lista de destinos con la etiqueta correspondiente a los destinos tal y como aparecen en el archivo \textit{destinos.json} del servidor\footnote{Los destinos en la interfaz pueden aparecer con tildes, mayúsculas y otros caracteres especiales que puede no ser posible añadir en el archivo \textit{destinos.json}. Es por ello que se guardan los destinos en dos estructuras, una para la interfaz y otra para la conexión con el servidor.} se guardan en un archivo XML. El archivo donde se guardan estos y otros strings correspondientes a la aplicación, tales como el texto de las instrucciones\footnote{En las instrucciones se incluye también una lista de destinos simplificada, que deberá ser modificada en consonancia con la lista de destinos de la interfaz.} o la uri del servidor, es \textit{listasStringsApp.xml}. Las estructuras referentes a la lista de destinos son \textit{destinos\_array} y \textit{destinosdinamicos\_array}. Mientras que en la primera basta con introducir cada destino en un \textit{<item>}, en la segunda hay que indicar si ese destino tiene un segundo nivel. Por ejemplo, en el caso de la Facultad de Informática tenemos un botón aulas, que no corresponde con un destino sino con el acceso a un segundo nivel donde se muestran las aulas destino disponibles. La estructura que debe seguirse es la siguiente: 
 
-\lstinputlisting[language=XML]{Imagenes/Capitulo4/destinos_array.xml} 
+\lstinputlisting[language=XML]{Imagenes/Implementacion/destinos_array.xml} 
 
-\lstinputlisting[language=XML]{Imagenes/Capitulo4/destinosdinamicos_array.xml}
+\lstinputlisting[language=XML]{Imagenes/Implementacion/destinosdinamicos_array.xml}
 
 Donde un ``no'' tras la barra indica que no hay un segundo nivel y cualquier otra cadena de strings se entiende como los destinos correspondientes a ese nivel, separados por comas. Este constituye el único cambio necesario para adaptar el cliente a un nuevo espacio, ya que el código no presenta ninguna dependencia al mismo.
 
