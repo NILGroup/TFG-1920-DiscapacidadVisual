@@ -1,3 +1,0 @@
-class WPSException
-!!!176642.java!!!	WPSException(in message : String)
-		super(message);

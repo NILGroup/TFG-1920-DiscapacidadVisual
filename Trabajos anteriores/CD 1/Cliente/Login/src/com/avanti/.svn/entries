@@ -1,76 +1,0 @@
-10
-
-dir
-134
-https://avanti.googlecode.com/svn/trunk/AVANTI/src/com/avanti
-https://avanti.googlecode.com/svn
-
-
-
-2010-05-11T18:43:19.052661Z
-133
-javierplaherr
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-979cd764-771a-11de-94da-c3e9e1814b9e
-
-http
-dir
-
-test
-dir
-
-routes
-dir
-
-dialogs
-dir
-
-computerVision
-dir
-
-camera
-dir
-
-service
-dir
-
-graphics
-dir
-
-tests
-dir
-
-menu
-dir
-
-position
-dir
-
-activities
-dir
-
-wps
-dir
-
-sensor
-dir
-
-GEO
-dir
-
-sockets
-dir
-
