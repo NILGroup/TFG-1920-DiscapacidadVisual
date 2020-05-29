@@ -1,4 +1,0 @@
-LINK AUDIO GUIA (instrucciones a tener en cuenta de las cosas que hay que indicar):
-http://www.wayfindr.net/wp-content/uploads/2018/08/Understanding-Audio-Wayfinding-and-Audio-Based-Navigation.pdf
-https://www.wayfindr.net/open-standard/getting-started#1-12
-http://www.wayfindr.net/wp-content/uploads/2018/07/Wayfindr-Open-Standard-Rec-2.0.pdf?version=recommendation-2
