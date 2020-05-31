@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planta>
+  	<Z>1</Z>
+	<estancia id="plantaalta">
+		<cuadrantes>
+            <cuadrante idc="12">
+  				<beacon>beacon12</beacon>
+				<conectado>
+					<norte>13</norte>
+					<sur>-1</sur>
+					<este>11</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>sur</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>escaleras arriba</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="13">
+   				<beacon>beacon13</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>12</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>norte</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>hall arriba</info>
+				<metros>5</metros>
+			</cuadrante>
+		</cuadrantes>
+	</estancia>
+</planta>

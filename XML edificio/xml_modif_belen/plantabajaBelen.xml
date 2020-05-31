@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planta>
+  	<Z>0</Z>
+	<estancia id="plantabaja">
+		<cuadrantes>
+            <cuadrante idc="0">
+  				<beacon>7rd7</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>1</oeste>
+				</conectado>
+				<posdestino>este</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>escaleras hacia la entrada desde el patio</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="1">
+   				<beacon>P0MK</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>2</sur>
+					<este>0</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>no</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>puerta principal</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="2">
+				<beacon>51j4</beacon>
+				<conectado>
+					<norte>1</norte>
+					<sur>11</sur>
+					<este>4</este>
+					<oeste>3</oeste>
+				</conectado>
+				<posdestino>este</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>hall izquierda</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="3">
+				<beacon>Wsxj</beacon>
+				<conectado>
+					<norte>6</norte>
+					<sur>8</sur>
+					<este>2</este>
+					<oeste>7</oeste>
+				</conectado>
+				<posdestino>no</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>hall derecha</info>
+				<metros>5</metros>
+			</cuadrante>
+				<cuadrante idc="4">
+  				<beacon>cmSc</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>9</sur>
+					<este>5</este>
+					<oeste>2</oeste>
+				</conectado>
+				<posdestino>no</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>salon con puerta</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="5">
+   				<beacon>mI49</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>4</oeste>
+				</conectado>
+				<posdestino>este</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>fondo del salon</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="6">
+				<beacon>CPne</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>3</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>oeste</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>sala</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="7">
+   				<beacon>beacon7</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>3</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>oeste</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>aseo</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="8">
+   				<beacon>z3bD</beacon>
+				<conectado>
+					<norte>3</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>norte</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>sala</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="9">
+				<beacon>Gq6A</beacon>
+				<conectado>
+					<norte>4</norte>
+					<sur>-1</sur>
+					<este>10</este>
+					<oeste>-1</oeste>
+				</conectado>
+				<posdestino>no</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>1</p_este>
+					<p_oeste>-1</p_oeste>
+				</pesos>
+				<info>estension salon</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="10">
+   				<beacon>0yDx</beacon>
+				<conectado>
+					<norte>-1</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>9</oeste>
+				</conectado>
+				<posdestino>sur</posdestino>
+				<pesos>
+					<p_norte>-1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>terrassa</info>
+				<metros>5</metros>
+			</cuadrante>
+			<cuadrante idc="11">
+   				<beacon>beacon11</beacon>
+				<conectado>
+					<norte>2</norte>
+					<sur>-1</sur>
+					<este>-1</este>
+					<oeste>12</oeste>
+				</conectado>
+				<posdestino>norte</posdestino>
+				<pesos>
+					<p_norte>1</p_norte>
+					<p_sur>-1</p_sur>
+					<p_este>-1</p_este>
+					<p_oeste>1</p_oeste>
+				</pesos>
+				<info>escaleras</info>
+				<metros>5</metros>
+			</cuadrante>
+		</cuadrantes>
+	</estancia>
+</planta>
