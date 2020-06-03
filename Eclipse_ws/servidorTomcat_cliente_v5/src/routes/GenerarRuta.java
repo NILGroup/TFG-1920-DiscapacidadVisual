@@ -68,7 +68,7 @@ public class GenerarRuta {
 				String dirAnt = cuadAnt.getDireccion(c1);
 				String dirDest = c1.getPosDestino();
 				
-				rutaFinal = "Su destino está " + indicaDirFinal(dirAnt, dirDest);
+				rutaFinal = "Tu destino está " + indicaDirFinal(dirAnt, dirDest);
 				res[0] = rutaFinal;
 				return res;
 			}
