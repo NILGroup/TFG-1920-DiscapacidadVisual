@@ -1,7 +1,35 @@
-﻿\chapter{Conclusiones y Trabajo Futuro}
+\chapter{Conclusiones y Trabajo Futuro}
 \label{cap:conclusiones}
 
+\section{Descripción de los resultados obtenidos}
+%USUARIO PERDIDO
+El primer objetivo de nuestra lista era conseguir localizar a un individuo dentro del edificio de la Facultad de Informática empleando para ello una tecnología nueva con respecto a trabajos anteriores, los \textit{beacons}. Este objetivo constituía una gran diferencia con respecto a los trabajos predecesores y por tanto, ha
+supuesto un reto ya que era una tarea que debíamos comenzar de cero, desde el estudio de la tecnología y su funcionamiento hasta su puesta en marcha. Sin embargo, finalmente este objetivo ha sido completado con éxito y se ha desarrollado un sistema de posicionamiento que ubica a un usuario dentro del edificio mencionado.
+
+De la mano de este objetivo surgió la necesidad de adaptar el mapeo de la facultad propuesto en trabajos anteriores al nuevo sistema de posicionamiento, precisamente porque ya no usaba Wi-Fi sino balizas Bluetooth. Esto ha supuesto una reestructuración completa de los cuadrantes implicando dibujar unos nuevos y modificar la información de los campos incluidos en los archivos XML. Esta adaptación se ha realizado con éxito ya que no solo se ha ajustado perfectamente a la tecnología empleada sino que también se ha mejorado la información aportada y añadido nueva que nos ha permitido proporcionar instrucciones más detalladas y precisas que han supuesto una gran mejoría en la aplicación. Por otro lado, se ha llevado a cabo el mapeo de la planta baja, planta que difiere en estructura al resto de las del edificio, proponiendo de esta manera un mapeo completo de toda la facultad.
+
+Consecuentemente, distinguimos otro de los resultados alcanzados y es que gracias al mapeo propuesto y a la lógica incluida en el servidor, más concretamente en la función encargada de generar la ruta y las instrucciones, se ha dotado a la aplicación de una gran complejidad que permite realizar rutas entre plantas, proporcionar instrucciones más intuitivas y adecuadas, y localizar cuando un usuario se ha perdido y recalcular la ruta.
+
+Otro de los objetivos primarios fue el de conseguir adaptar la aplicación de manera que sea inclusiva y permita su uso a personas con discapacidad visual. Para ello se han propuesto diseños en consecuencia tanto en el cliente (en la interfaz, modo de uso y nuevas funcionalidades) como en el servidor (a la hora de generar una ruta más adecuada) y el mapeo (información relevante sobre el cuadrante y la conexión entre cuadrantes). Todo esto ha sido añadido al proyecto satisfactoriamente y el resultado ha sido una aplicación completamente inclusiva y accesible a personas con discapacidad visual independientemente del grado de dicha discapacidad. Esta aplicación además de aportar una guía de punto a punto incluye si se quisiera una descripción del interior a medida que se avanza.
+
+Por último, se propuso un objetivo como consecuencia de la crisis provocada por la COVID-19 que consistía en lograr que la aplicación fuese completamente independiente de la Facultad de Informática. Este pretencioso objetivo ha supuesto modificar el código, tanto del Cliente como del Servidor, para obtener todos los datos necesarios de archivos externos (estructurados de una manera concreta) y conseguir así un código genérico que pueda ser reutilizado sobre cualquier edificio que siga las pautas indicadas: instalación de los \textit{beacons} en el edificio en cuestión y recopilación de la información necesaria relativa al mismo en archivos que sigan el modelo propuesto.
+
+
 \section{Conclusiones}
+
+La idea de este proyecto surge de la necesidad de empoderar a las personas con discapacidad visual en el campo de las tecnologías. Pese a que hoy en día son cada vez más los que optan por desarrollar aplicaciones accesibles e inclusivas para este colectivo, aún es considerable la brecha existente en cuanto al mercado de aplicaciones que se encuentran adaptadas para su uso. Por ello, hemos decidido estudiar e indagar en el campo de las tecnologías accesibles y aportar nuestro granito de arena para ayudar a reducir las distancias a las que se enfrentan en el día a día. Con este fin, nuestra aplicación constituye una solución satisfactoria al problema de la navegación por interiores siendo una guía completa por la Facultad de Informática perfectamente adaptada e inclusiva.
+
+El balance general de la aplicación es muy positivo ya que cumple los principales objetivos buscados. Entre sus puntos fuertes encontramos:
+\begin{itemize}
+	\item Da información sobre los metros que quedan hasta llegar a un punto determinado y a medida que se avanza en la dirección correcta se van actualizando disminuyendo.
+	\item Utiliza indicaciones sencillas: ``continua recto'', ``gira a la derecha (o a la izquierda)'', etc.
+	\item Avisa de las intersecciones mediante vibraciones.
+	\item Avisa de la consecución del destino final mediante vibraciones.
+	\item Cuando se supera una nueva indicación, la aplicación emite el sonido asociado a correcto o \textit{check}. En el caso de que la indicación no sea completada correctamente, la app informa y recalcula la ruta.
+	\item Tiene una funcionalidad de \textit{instrucciones detalladas} que describe el entorno del usuario permitiéndole familiarizarse con él más rápidamente.
+\end{itemize}
+
+Por otro lado, el gran potencial de esta app reside en que hemos desarrollado la aplicación de manera independiente al edificio original de modo que, si se siguen unas ciertas pautas de estructuración de la información, sea posible aplicar la guía a cualquier edificio. Para ello, es necesario contar con \textit{beacons} y distribuirlos por el interior del edificio, pues son los que determinan la posición del usuario, sin embargo gracias al sistema de posicionamiento empleado, basado en puntos de decisión, esta instalación es menos robusta y por tanto, facilita su integración en otros edificios. 
 
 \section{Trabajo Futuro}
 
