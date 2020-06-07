@@ -1,7 +1,41 @@
 \chapter{Introduction}
 \label{cap:introduction}
 
-Introduction to the subject area. This chapter contains the translation of Chapter \ref{cap:introduccion}.
+
+\section{Work plan}
+\label{sec:workPlan}
+
+
+At first, we approached our project as user-centred design, and so we drew up a work plan that began with a meeting at the National Organization of Spanish Blind People (ONCE) in which we intended to capture the requirements of the application's end users. After this, we had a clearer idea of the type of application we wanted to develop and, above all, what kind of issues needed to be taken into account. We then did a market study that allowed us to further narrow down to focus on the area where there was the greatest gap. Once the domain, interior navigation, was delimited, we looked for technological alternatives and we decided on \textit{beacons} to introduce singularity and innovation to our project. After this, we started with the implementation of the code, always intending to evaluate it with end-users who could provide us with reliable \textit{feedback} and then include the relevant changes and repeat the process as many times as necessary until a satisfactory version of the application was achieved. However, this design and development plan has been truncated due to the crisis caused by COVID-19, since in such circumstances of confinement it has been unfeasible to raise such contact with users. Therefore, we propose the evaluation with end-users as future work and we present below the alternative carried out.
+
+Plan B has consisted of including the necessary modifications to give the code a generic character so that the application can be adapted and deployed in any building. In this way, we have proceeded to create an information model from which the application can extract the necessary data to incorporate an appropriate guide to the space provided. Following this line, we propose an evaluation consisting of testing the adaptability of the app in another building (a private home) and proving that satisfactory guidance is indeed achieved inside it.
+
+
+\section{Document structure}
+
+The project developed in the following pages has a clear structure, which is determined by chapters:
+
+\begin{itemize}
+	
+	\item The context of this project is explained in Chapter \ref{cap:estadoDeLaCuestion}. Firstly, some of the existing applications in the field of navigation (both indoor and outdoor) are reviewed, paying special attention to those that are adapted or whose target users are visually impaired people (see Section \ref{sec:appGuia}). Section \ref{sec:sisPos} describes different technologies to solve the problem of positioning. Specifically, we deal with three: GPS, Wi-Fi and Bluetooth \textit{beacons}. Of each of them, we will highlight the advantages and disadvantages in terms of indoor positioning. In Section \ref{sec:trabajos_previos} we summarize the two previous Final Projects on which this one is based. Finally, in Section \ref{sec:conclusionesposicionamiento}, the conclusions on this chapter are detailed. Among them, we will see some of the basic characteristics that our application should have or the choice of technology used in this project to solve the problem of positioning. 
+	
+	\item In Chapter \ref{cap:once} we gather the notes we took during the meeting at the CTI (Tiflotechnology and Innovation Centre) of ONCE organization, where we were given a short talk on blindness and accessible technologies that have emerged to reduce the gap, and where we finally connected with potential users who told us about their tastes and needs. In Section \ref{sec:intro_reunion} the development of this meeting is detailed, including the questions asked, the answers obtained during the interview (Section \ref{sub:entrevista}). The conclusions reached after the subsequent analysis of the interview are detailed in Section \ref{sec:conclu_ONCE}. 
+	
+	\item In Chapter \ref{cap:descripcionTrabajo} is where the specific work of our application begins. The first section, Section \ref{sec:estudioPrecisionBeacons}, deals with the first research that was done with the Bluetooth \textit{beacons}. It details the study of the accuracy of \textit{beacons} in terms of distance. Two very simple applications were implemented, \textit{miniapp} and \textit{cuadrantes\_v1}, whose functionality can be seen in detail in Sections \ref{sub:miniapp} and \ref{sub:cuadrantesv1}, respectively. Likewise, Section \ref{sub:pruebasCuadrantesv1} makes an exhaustive study of the different tests that were carried out with the application of the text of quadrants, the conclusions of which are included in Section \ref{sub:conclusiones_posicionam}. Once the technology has been analyzed and its behaviour studied, the mapping of the Computer Science Faculty of the UCM begins in Section \ref{sec:mapeo}. It is in this section where the first approximation of the structure and implementation of the XML files in which the information regarding the building is collected is established. The detailed research on the measurements and different tests that were carried out to establish the division of the space and the final location of the text-beacons is collected in Section \ref{sec:medicionesbeacons}. Finally, Section \ref{sub:mapeo_xml} exposes the structure of the mentioned XML files.
+	
+	\item The technical details of the application design and implementation are covered in Chapter \ref{cap:diseñoeimplementación}. Just as the application is divided into two parts, the client and the server, so is this chapter. The first part, Section \ref{sec:servidor}, explains the general operation of the server (Section \ref{sub:func_servidor}) as well as the implementation of its two main functionalities: the calculation of the optimal path (Section \ref{sub:rutaOptima}) and the generation of instructions (Section \ref{sub:genInstruc}). The second, Section \ref{sec:cliente}, focuses on the implementation and design of the mobile application. In Section \ref{sub:diseño} we review the application interface and the justification of its design, while in Section \ref{sub:func_cliente} we go into its operation from a technical point of view. Finally, in Section \ref{sec:adaptacion} we detail the relevant changes to deploy the application in a building other than the Computer Science Faculty of the UCM.
+	
+	\item Chapter \ref{cap:evaluacion} details how the process of evaluation of the implementation has been carried out. Due to the impossibility of carrying out an evaluation with users or to test the behaviour of the application at the Computer Science Faculty of the UCM, both the evaluation plan and the building where it was finally executed have been restructured. In the Section \ref{sec:adaptacionApp} the steps to follow are described, both in the server (Section \ref{sub:cambiosServidor_vivienda}) and in the client (Section \ref{sub:cambiosCliente_vivienda}) in order to adapt the application to another space. The Section \ref{sec:objectivosEval} details the objectives of the evaluation. The tests that were performed to assess the fulfilment of these objectives are set out in the Section \ref{sec:realizYresult} and the conclusions of the evaluation can be seen in the last section (Section \ref{sec:conclusionesEval}).
+	
+	
+	\item The work carried out by each member of the working group for this project is detailed in Chapter \ref{cap:trabajoIndiv}. Section \ref{sec:trabajoBelen} describes the work done by Belén Serrano Antón, while Section \ref{sec:trabajoClara} describes the work done by Clara de Suso Seijas.
+	
+	\item In Chapter \ref{cap:conclusiones}, the conclusions obtained after the realization and analysis of the project are presented. The Section \ref{sec:descResult} details the results of the project objectives (see Section \ref{sec:objetivosProyecto}). The conclusions of the project can be seen in Section \ref{sec:concluFinales}, and finally, Section \ref{sec:trabajoFuturo} opens the project to new collaborations with different proposals for future work.
+	
+	\item Appendix \ref{Appendix:ResMediciones} shows the results of different measurements made at the Computer Science Faculty of the UCM.
+	
+\end{itemize}
+
 
 
 
