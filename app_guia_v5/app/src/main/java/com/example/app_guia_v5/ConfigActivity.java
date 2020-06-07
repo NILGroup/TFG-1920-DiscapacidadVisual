@@ -35,8 +35,6 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
         Button volume_button = (Button) findViewById(R.id.volumen_button);
         modo_verb_switch = (Switch) findViewById(R.id.modo_verb_switch);
 
-
-
         volume_button.setOnClickListener(this);
         modo_verb_switch.setOnClickListener(this);
     }
