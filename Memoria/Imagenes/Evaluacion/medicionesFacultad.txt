@@ -6,8 +6,8 @@ Desde la puerta de entrada de la biblioteca.
 Tenemos beacons (todos colocados en el suelo): 
     ZxPh: en la puerta de entrada de la calle, la de la biblioteca
     eAaw: en la puerta de la biblioteca
-    CPne: en la esquina conserjeria/aulas
-    8v2c: en conserjeria 
+    CPne: en la esquina Conserjería/aulas
+    8v2c: en Conserjería 
     
     Medimos desde la puerta de entrada de la calle, la de la biblioteca: 
     
@@ -91,7 +91,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh NEAR a 1.319 m
 
     
-    Otra medicion desde el mismo punto
+    Otra medición desde el mismo punto
     ______ seg: 0 _________
     beacon: ZxPh IMMEDIATE a 0.386 m
     beacon: eAaw NEAR a 1.871 m
@@ -165,7 +165,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: eAaw NEAR a 2.221 m
 
     
-    Medimos desde en frente de las escaleras, tirando una linea recta 
+    Medimos desde en frente de las escaleras, tirando una línea recta 
 	desde la puerta de entrada de la calle de la biblioteca
     
     ______ seg: 0 _________
@@ -237,7 +237,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: CPne NEAR a 1.716 m
     beacon: 8v2c FAR a 4.656 m
     
-    Medimos desde justo la esquina conserjeria/aulas
+    Medimos desde justo la esquina Conserjería/aulas
     
     ______ seg: 0 _________
     beacon: CPne NEAR a 1.105 m
@@ -270,7 +270,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: CPne NEAR a 0.769 m
     
     
-    Medimos desde justo la esquina de conserjeria
+    Medimos desde justo la esquina de Conserjería
     
     ______ seg: 0 _________
     beacon: 8v2c NEAR a 0.877 m
@@ -340,7 +340,7 @@ Tenemos beacons (todos colocados en el suelo):
     
     Comentarios:
         dan mediciones un poco raras, pilla beacons que desde la esquina 
-	conserjeria/aulas no pilla y eso que estan mas lejos.
+	Conserjería/aulas no pilla y eso que estan más lejos.
         Los primeros segundos van mejor.
         
     Cambiamos los beacons de sitio.
@@ -349,9 +349,9 @@ Tenemos beacons (todos colocados en el suelo):
 
 Tenemos beacons (todos colocados en el suelo): 
     ZxPh: en la puerta de entrada de la calle, la principal
-    eAaw: en secretaria
-    CPne: en la esquina conserjeria/aulas
-    8v2c: en conserjeria 
+    eAaw: en Secretaría
+    CPne: en la esquina Conserjería/aulas
+    8v2c: en Conserjería 
     
     
     Mediciones desde la puerta principal
@@ -421,9 +421,9 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh NEAR a 1.871 m
     beacon: 8v2c FAR a 5.447 m
     
-    Mediciones entre secretaria y conserjeria, justo enfrente 
-	de las escaleras tirando una linea recta desde la puerta principal
-    Notas: casi perdemos un beacon, la de la limpieza no sabia lo que era. 
+    Mediciones entre Secretaría y Conserjería, justo enfrente 
+	de las escaleras tirando una línea recta desde la puerta principal
+    Notas: casi perdemos un beacon, la de la limpieza no sabía lo que era. 
     
      ______ seg: 0 _________
     beacon: ZxPh FAR a 5.886 m
@@ -493,7 +493,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh FAR a 3.968 m
     beacon: eAaw NEAR a 2.417 m
    
-    Mediciones desde la rampa entre secretaria y conserjeria
+    Mediciones desde la rampa entre Secretaría y Conserjería
     
      ______ seg: 0 _________
     beacon: ZxPh FAR a 3.968 m
@@ -556,16 +556,16 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh FAR a 4.299 m
     beacon: CPne FAR a 4.656 m
     
-    Notas: el beacon 8v2c fluctua mucho y no acaba de dar una medida decente, 
-	aqui parece que esta mucho mas lejos de lo que en realidad estaba 
+    Notas: el beacon 8v2c fluctúa mucho y no acaba de dar una medida decente, 
+	aquí parece que esta mucho más lejos de lo que en realidad estaba 
 	(a metro y poco, como mucho)
     
     
-Tenemos beacons en la puerta de entrada de la cafeteria 
+Tenemos beacons en la puerta de entrada de la cafetería 
     
     CPne: en la puerta de entrada arriba -> este ya no esta en el suelo
-    8v2c: en la puerta de delegacion
-    eAaw: en la puerta del aula 5, la mas pegada a la puerta de entrada
+    8v2c: en la puerta de Delegación
+    eAaw: en la puerta del aula 5, la más pegada a la puerta de entrada
     ZxPh: en la puerta de las escaleras
     
     Debajo de la puerta principal: 
@@ -691,7 +691,7 @@ Tenemos beacons en la puerta de entrada de la cafeteria
     beacon: eAaw NEAR a 1.319 m
     beacon: CPne FAR a 3.373 m
     
-    Mediciones desde la puerta de delegacion
+    Mediciones desde la puerta de Delegación
     
        ______ seg: 0 _________
     beacon: ZxPh NEAR a 1.572 m
@@ -763,7 +763,7 @@ Tenemos beacons en la puerta de entrada de la cafeteria
     beacon: eAaw FAR a 5.038 m
     
     
-    desde delegacion cambiando el beacon a la puerta de los ascensores
+    desde Delegación cambiando el beacon a la puerta de los ascensores
     
     ______ seg: 0 _________
     beacon: CPne NEAR a 0.877 m
@@ -831,7 +831,7 @@ Tenemos beacons en la puerta de entrada de la cafeteria
     beacon: 8v2c NEAR a 1.572 m
     beacon: ZxPh FAR a 5.038 m
     
-    Desde el hall de las escaleras de la puerta de la cafeteria
+    Desde el hall de las escaleras de la puerta de la cafetería
     
     ______ seg: 0 _________
     beacon: ZxPh NEAR a 1.319 m
@@ -903,7 +903,7 @@ Tenemos beacons en la puerta de entrada de la cafeteria
 ******************************************************************************************************
 Tenemos beacons:
 
-    CPne: en la puerta de entrada de la calle, la de la cafeteria
+    CPne: en la puerta de entrada de la calle, la de la cafetería
     eAaw: aula 5
     ZxPh: aula 4
     8v2c: aula 3
@@ -1024,8 +1024,8 @@ Tenemos beacons:
     beacon: CPne NEAR a 1.207 m
     beacon: ZxPh NEAR a 2.63 m
     
-    Nota: el CPne da near y no puede ser, esta bastante lejos (en la puerta). 
-	Puede ser que el material sobre el que esta proyecta mas la onda 
+    Nota: el CPne da near y no puede ser, está bastante lejos (en la puerta). 
+	Puede ser que el material sobre el que está proyecta más la onda.
     
 
 *******************************************************************************************************************
@@ -1083,7 +1083,7 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: eAaw FAR a 4.656 m
     _______________
     
-    Medimos desde la puerta del aseo, mas o menos
+    Medimos desde la puerta del aseo, más o menos
     
     ______ seg: 0 _________
     beacon: ZxPh NEAR a 1.716 m
@@ -1201,8 +1201,8 @@ Tenemos beacons (todos colocados en el suelo):
     beacon: ZxPh FAR a 3.968 m
     _______________
     
-    Aqui es mas problematico porque estamos en medio de todos los beacons,
-	pero mas o menos nos podemos hacer una idea de por donde estamos 
+    Aquí es más problemático porque estamos en medio de todos los beacons,
+	pero más o menos nos podemos hacer una idea de por donde estamos.
     
     
 	
