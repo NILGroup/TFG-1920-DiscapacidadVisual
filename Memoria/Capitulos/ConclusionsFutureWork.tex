@@ -25,12 +25,45 @@ The overall balance of the application is very positive as it meets the main obj
 On the other hand, the great potential of this application lies in the fact that we have developed it independently from the original building so that, if certain guidelines for structuring the information are followed, it is possible to apply the guide to any building. To do this, it is necessary to have \textit{beacons} and distribute them inside the building, as they are the ones that determine the user's position. However, thanks to the positioning system used based on decision points, this installation is less rigid and therefore facilitates its integration into other buildings. 
 
 
-\section{Descripción de los resultados obtenidos}
+\section{Description of the results obtained}
 \label{sec:descResult_eng}
 
+The first objective of this project was to be able to generate a complete route from origin to destination. To do this, we had to locate an individual within the building of the Computer Science Faculty using \textit{beacons}, provide the necessary instructions for the guide, detect if a user is going in the right direction or has gotten lost and in that case recalculate the route, etc. This objective was a great challenge as it added many new features in comparison with the previous projects and was very complex. Furthermore, the fact that we used for the first time the \textit{beacon} technology instead of the Wi-Fi signal meant that we had to study how it works from scratch without being able to rely on previous researchs. Finally, this objective has been satisfactorily completed and a complete guide has been developed within the Faculty of Computer Science.
 
+Hand in hand with this objective came the need to adapt the mapping of the faculty proposed in previous works to the new positioning system, precisely because it no longer used Wi-Fi but Bluetooth beacons. This has meant a complete restructuring of the quadrants involving drawing new ones and modifying the information in the fields included in the XML files. This adaptation has been successful, since not only has it been perfectly adjusted to the technology used, but also the information provided and new added has been improved, allowing us to provide more detailed and precise instructions that have meant a great improvement in the application. On the other hand, the mapping of the ground floor has been carried out, a floor that differs in structure from the rest of the building, thus proposing a more extensive mapping of the faculty, which has allowed us to add a greater number of destinations and therefore routes (including those that go from one floor to another).
 
-\section{Trabajo Futuro}
+Another of the primary objectives was to adapt the application so that it is inclusive and can be used by visually impaired people. To this end, designs have been proposed accordingly both in the client (in the interface, mode of use and new functionalities) and in the server (when generating a more appropriate route) and the mapping (relevant information about the quadrant and the connection between quadrants). All this has been added to the project successfully and the result has been a fully inclusive application accessible to people with visual impairment regardless of the degree of such impairment. This application in addition to providing a point to point guide includes if desired a description of the interior of the building as it progresses.
+
+Finally, an extra objective was proposed as a result of the crisis caused by COVID-19, and that was to make the application completely independent of the Faculty of Computer Science. This objective has meant adapting the code, both client and server, so that the application is independent of the building and stores all the necessary data from external files (structured in a specific way). Thus, a generic code has been achieved that can be reused on any building that follows the indicated guidelines: installation of the \textit{beacons} in the building in question and collection of the necessary information related to it in files that follow the proposed model.
+
+\section {Future Work}
 \label{sec:trabajoFuturo_eng}
+
+As designed, Blind Bit application is easily reusable in any public building. Therefore, we encourage future projects to use and extend the application in more ambitious spaces such as museums, airports or stations where all kinds of people can find this help very useful. In addition, we propose a number of small improvements that can be made to improve the application:
+\begin{itemize}
+	\item Specification of the concrete meters of each quadrant in the XML (currently 5m by default due to the impossibility of carrying out real measurements in the Faculty because of the crisis of the COVID-19). Study of the possibility of adding a new field in the XML to indicate the meters of both the width of the quadrant and the length.
+	\item Evaluation with blind end users to find points for improvement with special interest in aspects related to the interface, the instructions provided, how intuitive it is, features that they may miss, etc.
+	\item Installation of the \textit{beacons} at the designated points of the Computer Science Faculty of the UCM, to make it accessible to the visually impaired.
+	\item Implementation of configuration adjustments, among which we propose the possibility of changing the language, the type of voice that reads the instructions (default woman), the volume, the activation or deactivation of the text mode, etc.
+	
+	\item The inclusion of a database that allows you to register and recognize different users so that they can do \textit{Log In} and within their session they have a list of favorite destinations, recent sites, they have also their favorite configuration saved instead of the default one, etc.
+	
+	\item Extension to a more inclusive application so that it is not exclusively focused on visually impaired users but is prepared for and accessible to people with other disabilities such as hearing.
+	
+\end{itemize}
+	
+Although the code is designed and implemented to provide service to a building with similar characteristics to the Faculty of Computer Science at the UCM, we have also thought about possible variants that could arise when adapting the code to another space. Below are some cases and the proposed solution: 
+	
+\begin{itemize}
+		
+	\item In the case of the Faculty of Computer Science we have established that each quadrant has a single point of interest. For example, the quadrants in the corridors have one classroom as a point of interest, but it could be that in another faculty there are classrooms on both sides of the corridor and it is therefore necessary that a quadrant has more than one point of interest. This would be solved in a simple way by adapting the structure of the quadrant in the XML files: including a tag that establishes the location of each point of interest and adapting the reading of the code. In the file \textit{destinos.json} a new entry for the destination would be included, so that we would have two entries with the same quadrant (this is not a problem since the key of the hash table where the information is stored is the name of the destination and not the quadrant). Once these files have been modified, it would be enough to tell the \textit{generate()} function which is the location of the destination within its quadrant so that it tells the user the position of the destination correctly at the end of the path.
+		
+	\item Another situation that we can find is that in which the structure of the building and the points that we want to map are too close together, forcing the size of the quadrants to be reduced. In this case, giving instructions to the user for each quadrant can be annoying, as instructions would be given too often. That is why a counter variable is included in the \textit{generate()} function that allows us to establish the number of quadrants we want to ``jump'' before giving a new instruction\footnote{In the code appear the changes required to implement this functionality as comments.}, as long as the user address remains stable. In other words, there is no need to make a turn, since in that case the user must be warned.  
+		
+\end{itemize}
+	
+In order to this project could be reused, the link to the public repository where the code, maps, XML files and other documents associated with this work are located can be seen below: \url{https://github.com/NILGroup/TFG-1920-DiscapacidadVisual}
+	
+
 
 
