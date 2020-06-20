@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name='socket_v1'
