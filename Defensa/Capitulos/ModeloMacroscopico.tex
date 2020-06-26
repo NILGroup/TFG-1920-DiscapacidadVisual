@@ -1,0 +1,115 @@
+
+\chapter{Modelo macroscópico para la dinámica de población de las células T durante la respuesta inmune.}
+\label{cap:modeloMacroscopico}
+
+En este capítulo se expone otro modelo matemático propuesto para determinar el algoritmo de decisión entre división o apoptosis de las células T durante una respuesta inmune (ver Sección \ref{cuestionAmodelizar}). En esta área aún son muchas las cuestiones que quedan por resolver: una vez que las células se activan, ¿hasta cuándo continúan dividiéndose?, ¿es esta decisión totalmente dependiente de las condiciones que hayan tenido las células en el momento de su activación?, ¿por qué hay un retraso respecto a la desaparición del patógeno en la \textit{contracción clonal}?... Estas cuestiones se abordaron en el Capítulo \ref{cap:descripcionTrabajo}, donde se establece la base teórica de un modelo matemático a nivel microscópico. Es decir, este modelo proporciona el algoritmo de decisión para cada célula, pues las decisiones de las células inmunes son, \textit{a priori}, independientes unas de otras (no se ha encontrado un órgano que regule estos mecanismos \citep{arias2016emergent}).
+
+En este capítulo lo que haremos será volver sobre este mismo problema, pero desde una perspectiva un poco distinta, desde un punto de vista macroscópico. Esto quiere decir que las ecuaciones diferenciales sobre las que se basa el modelo determinan el comportamiento de toda la población de células. Para entender esto podemos poner como ejemplo los movimientos de un equipo de fútbol: la estrategia de contraataque del equipo vista desde el punto de vista <<macroscópico>> sería recuperar el balón y avanzar rápidamente al campo del adversario para marcar gol. Sin embargo, si nos fijamos ahora en el mundo <<microscópico>> de cada jugador, vemos que cada uno tiene su papel, defender y recuperar la posesión, pasar a los centrales o a los delanteros, etc.
+
+Al comienzo de este capítulo, la Sección \ref{sec:iner_elast} desgrana las dos características poblacionales, inercia y elasticidad, sobre las que se sustenta el modelo y se detallan las ecuaciones que rigen la dinámica de población de las células T y del patógeno. En la sección siguiente (Sección \ref{sec:simu_macro}), se realizan simulaciones de este modelo y se comparan los resultados con los del modelo microscópico.
+
+
+
+\section{Inercia y elasticidad en las células T}
+\label{sec:iner_elast}
+
+
+Como ya se avanzaba en la introducción de este capítulo, nos centraremos en dos características de la dinámica de población de las células T: la elasticidad (la población se expande y se contrae, dando lugar a lo que se conoce como \textit{expansión} y \textit{contracción clonal}) y la inercia (la \textit{contracción clonal} se presenta con retraso tras la desaparición del patógeno) \citep{arias2015growth}. En base a estas dos propiedades, se detallan las ecuaciones que dan lugar a este modelo matemático. El modelo consta de un sistema de ecuaciones diferenciales de segundo orden. Este tipo de ecuaciones constituye la manera más simple de representar la inercia de la población \citep{arias2015growth}. Además, las ecuaciones de segundo grado son el marco general para las dinámicas \textit{newtonianas}. Esto nos lleva a modelar de manera natural la dinámica de las células T efectoras como el balance entre dos fuerzas opuestas actuando sobre la población: una fuerza por parte del \textit{antígeno} causada por la presencia del patógeno y una fuerza intrínseca elástica que devuelve a la población a su estado inicial. En concreto, asumiremos que la fuerza que ejerce el \textit{antígeno} es proporcional al número de células del patógeno y modelaremos la elasticidad mediante la \textit{Ley de Hooke}, que establece que la fuerza necesaria para restablecer el equilibrio una vez que la población ha llegado a cierto valor es proporcional a dicho valor \citep{arias2015growth}. También asumiremos que el patógeno prolifera con una ratio constante y que serán eliminados por la acción de las células T de manera proporcional a sus encuentros mutuos. De esta manera, presentamos el siguiente modelo:
+
+\begin{equation}
+	\label{sist_macro}
+	\left\{ \begin{array}{l}
+	{T^{\prime\prime}}(t) = -kT(t) + \lambda P(t) \\
+	{P^{\prime}}(t) = \alpha P(t) - \beta T(t)P(t) \\
+	\\
+	T(0)=0 \hspace{3cm} ,para\, T \geq 0,\, P \geq P_m \\
+	T^{\prime}(0)=0  \\
+	P(0)=P_0 \geq P_m  \\ 
+	\end{array}
+	\right.
+\end{equation}
+
+donde $T(t)$ y $P(t)$ son el número de células T efectoras y el número de células de patógeno, respectivamente. La primera ecuación diferencial que nos encontramos nos sugiere que, en ausencia de patógeno, la población de células T se puede caracterizar por una respuesta elástica en forma de soluciones oscilatorias. Así mismo, la presencia de patógeno tendría el efecto de una fuerza externa. Siguiendo con la segunda ecuación, observamos que, en ausencia de células T, la población de patógeno crece de manera exponencial. Sin embargo, una vez que las células T entran en acción empiezan a eliminar al patógeno de acuerdo a posibles encuentros entre $T(t)$ y $P(t)$ \citep{arias2016emergent}. La eficiencia de cada proceso se mide en base a cuatro parámetros y las condiciones iniciales del sistema. Estos parámetros son $\alpha$, $\beta$, $k$ y $\lambda$. Los dos primeros representan la tasa de crecimiento del patógeno y la tasa de eliminación del mismo a causa de las células T, respectivamente. Por su parte $k$ y $\lambda$ representan las constantes de elasticidad e inercia de la población, respectivamente. 
+
+El Sistema \ref{sist_macro} también puede expresarse de manera adimensional, reduciendo el número de parámetros a dos: 
+
+\begin{equation}
+	\label{sist_macro_nod}
+	\left\{ \begin{array}{l}
+	{T^{\prime\prime}}(t) = -T(t) + P(t) \\
+	{P^{\prime}}(t) = \alpha^{*} P(t) - \beta^{*} T(t)P(t) \\
+	\\
+	T(0)=0 \hspace{3cm} ,para\, T \geq 0,\, P \geq P_m^{*} \\
+	T^{\prime}(0)=0  \\
+	P(0)=1 \\ 
+	\end{array}
+	\right.
+\end{equation}
+
+Donde $\alpha^{*} = \frac{\alpha}{\sqrt k}$, $\beta^{*} = \frac{\beta \lambda P_0}{k \sqrt k}$ y $P_{m}^{*} = \frac{P_m}{P_0}$.
+
+En lo que sigue estudiaremos el comportamiento de estos dos sistemas mediante una serie de simulaciones numéricas, pues en este caso las ecuaciones no tienen una solución explícita.
+
+\section{Simulaciones del modelo macroscópico}
+\label{sec:simu_macro}
+
+A continuación, presentaremos distintas situaciones que se pueden dar con la simple variación de los parámetros del modelo macroscópico visto en la sección anterior. Para poder comparar estos resultados, se simulan las situaciones de tolerancia e intolerancia vistas en el Capítulo \ref{cap:simulaciones} para el modelo microscópico y veremos cómo los parámetros $\alpha^{*}$ y $\beta^{*}$ del Sistema \ref{sist_macro_nod} nos revelan la dependencia crucial que tienen sobre el modelo en estas dos situaciones.
+
+El código referente a esa sección puede verse en el Apéndice \ref{Appendix:A}.
+
+
+
+\subsection{Intolerancia al patógeno}
+\label{sub:simMacroIntoler}
+
+Como vimos en la Sección \ref{sim:intoler}, el caso de intolerancia al patógeno se da cuando las células inmunes consiguen eliminar al agente que causa la infección. 
+En este tipo de simulaciones vemos como el patógeno aumenta su población seguido de una rápida proliferación de las células T (\textit{expansión clonal}), cuya acción erradica al patógeno. Posteriormente a la desaparición del patógeno, y con cierto retraso, tiene lugar la \textit{contracción clonal}, que restaura los niveles de población de células T. En la Figura \ref{fig:macro_intolerance}, correspondiente a a simulación del Sistema \ref{sist_macro}, podemos ver esta situación gráficamente. 
+
+Queda, por tanto, de manifiesto la característica de inercia, pues se ve cómo las células T comienzan a disminuir en número después de que el patógeno haya desaparecido, y de elasticidad, pues la población de células T acaba recuperando sus niveles iniciales. Como vemos, el parecido de esta figura con la Figura \ref{fig:intolerance} es notable, ambos modelos, macroscópico y microscópico, simulan el mismo comportamiento desde dos puntos de vista distintos.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Imagenes/Simulaciones/macro_intoler}
+	\caption{Simulación del modelo macroscópico. Caso de intolerancia al patógeno. Parámetros: $\alpha=1,5$, $\beta=0,1$, $k=4$, $\lambda=0.5$, $P_m = 0$.}
+	\label{fig:macro_intolerance}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{cc}
+		\subfloat [Simulación: caso de tolerancia al patógeno en el modelo macroscópico. Parámetros: $\alpha=0.05$, $\beta=0,1$, $k=0.25$, $\lambda=0.15$, $P_m = 0$.]{
+			\label{fig:macro_tolerance_2}
+			\includegraphics[width=0.5\textwidth]{Imagenes/Simulaciones/macro_toler_2}}
+		
+		& \subfloat[Simulación: caso de tolerancia al patógeno en el modelo macroscópico adimensional. Parámetros: $\alpha^{*}=1,1$, $\beta^{*}=0,01$, $P_m^{*} = 0$.]{
+			\label{fig:macro_tolerance}
+			\includegraphics[width=0.5\textwidth]{Imagenes/Simulaciones/macro_toler}} \\
+	\end{tabular}
+	\subfloat [Simulación: caso de tolerancia al patógeno con recaída en la infección en el modelo macroscópico. Parámetros: $\alpha=0.4$, $\beta=0,008$, $k=0.25$, $\lambda=0.2$, $P_m = 0$.]{
+		\label{fig:macro_tolerance_osci}
+		\includegraphics[width=0.5\textwidth]{Imagenes/Simulaciones/macro_toler_osci}}\\
+	\caption{Simulaciones del modelo macroscópico. Casos de tolerancia al patógeno}%\label{foo}
+\end{figure}
+
+
+\subsection{Tolerancia al patógeno}
+\label{sub:simMacroToler}
+
+Veamos ahora al caso análogo a la Sección \ref{sim:toler}, donde vimos cómo un patógeno con una tasa de reproducción pequeña conseguía zafarse de las células T. En la Figura \ref{fig:macro_tolerance_2}, se ha simulado el Sistema \ref{sist_macro} con una tasa de reproducción, $\alpha$, pequeña respecto a la tasa de eliminación del patógeno, $\beta$. Al comienzo, las células T se reproducen rápidamente para controlar la infección, haciendo que la población de patógeno apenas pueda crecer. Sin embargo, cuando empieza la \textit{contracción clonal} se observa que el patógeno consigue escapar del ataque de las células T, cuya población desaparece. Esto se produce porque la fuerza que ejerce el patógeno no es suficiente para contrarrestar la fuerza elástica de las células T, provocando que la población de células T desaparezca irremediablemente. Un comportamiento análogo puede verse en la Figura \ref{fig:macro_tolerance}. En este caso se ha simulado el Sistema \ref{sist_macro_nod} con una tasa de reproducción, $\alpha^{*}$, elevada respecto a la tasa de eliminación del patógeno, $\beta$, al contrario que en el caso anterior. A pesar de ello, tenemos también un comportamiento de tolerancia, lo que sugiere que se necesita un valor mayor de estos parámetros para salir de la región de tolerancia (ver Sección \ref{sub:reg_tolerIntolerMacro}).  
+
+Por su parte, en la Figura \ref{fig:macro_tolerance_osci} se puede observar un comportamiento de tolerancia en el que ha tenido lugar una recaída de la infección. Tras la primera \textit{expansión clonal} de las células T, le sigue la \textit{contracción clonal}, sin embargo, en este caso, la tasa de reproducción del patógeno, $\alpha$, y el número de células del patógeno aún existentes son suficientes para contrarrestar la fuerza elástica de las células T, $k$, provocando así que vuelva a aumentar la población de estas últimas, repitiendo el proceso. Al contrario que en la ocasión anterior y debido a que el número de células del patógeno es menor, puede verse que el mecanismo de \textit{contracción clonal} termina, eliminando a todas las células T y permitiendo el libre crecimiento del patógeno, que crece de manera exponencial.
+
+\subsection{Regiones de tolerancia e intolerancia}
+\label{sub:reg_tolerIntolerMacro}
+
+Es interesante analizar la relación que existe entre el valor de los parámetros del modelo y las regiones de intolerancia y tolerancia. Este asunto se ha abordado para el modelo macroscópico adimensional (ver Sistema \ref{sist_macro_nod}). Para ello se ha implementado un programa que recorre los valores de $\alpha^{*}$ y $\beta^{*}$ entre $0,1$ y $2,5$ con un paso de $0,1$\footnote{Con paso nos referimos al valor del incremento del parámetro en cada iteración.}, y, para cada valor, simula el Sistema \ref{sist_macro_nod}. Una vez hecha la simulación se observa el número de células T y de patógeno para obtener el resultado de tolerancia, en caso de que las células T no consiguen acabar con el patógeno o intolerancia en caso contrario. La Figura \ref{fig:macro_toler_intoler} recoge el resultado de todas estas simulaciones, arrojando datos importantes: si dejamos uno de los dos parámetros fijos, es posible cambiar de una región a otra con tan solo modificar el otro parámetro. De hecho, de acuerdo con este modelo, patógenos (y tumores) pueden escapar de la acción de las células T por dos métodos: reduciendo el efecto de las células T, el parámetro $\beta^{*}$, o reduciendo su tasa de proliferación, el parámetro $\alpha^{*}$, \citep{arias2016emergent}. Una consecuencia que se puede extraer de esto es que mecanismos como la fiebre, que incrementa la tasa de proliferación del patógeno, o la inflamación, que aumenta la acción de las células T, favorecen que el patógeno sea vencido. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Imagenes/Simulaciones/macro_toler_intoler}
+	\caption{Simulación del modelo macroscópico adimensional. Variación de los parámetros $\alpha^{*}$ y $\beta^{*}$ para dar lugar a regiones de tolerancia e intolerancia al patógeno.}
+	\label{fig:macro_toler_intoler}
+\end{figure}
